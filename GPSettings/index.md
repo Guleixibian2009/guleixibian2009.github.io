@@ -13,7 +13,9 @@
 7.图片外链设置； <br />
 
 ## 1.加速Github
-[Github](github.com)是什么为了节省篇幅我就不讲了,自己去查[百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin)吧。
+[Github](github.com)是啥为了节省篇幅我就不讲了,自己去查[百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin)吧。
+不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
+首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。
 
 
 最后更新：2021-04-12
