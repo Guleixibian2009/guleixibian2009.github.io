@@ -20,13 +20,16 @@
 > 1. <github.com> 这是主站
 > 2. <assets-cdn.github.com> 动态资源
 > 3. <github.global.ssl.fastly.net> 静态资源
+
 我现在查询如下：
+
 > 140.82.114.4 github.com
 > 185.199.108.153 assets-cdn.github.com
 > 185.199.109.153 assets-cdn.github.com
 > 185.199.110.153 assets-cdn.github.com
 > 185.199.111.153 assets-cdn.github.com
 > 199.232.69.194 github.global.ssl.fastly.net
+
 按照这样的格式输入到`hosts`文件里，再访问[Github](github.com)应该就很快了！
 
 
