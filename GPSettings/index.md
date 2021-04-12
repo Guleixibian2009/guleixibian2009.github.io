@@ -31,9 +31,7 @@
 > 185.199.111.153 assets-cdn.github.com  
 > 199.232.69.194 github.global.ssl.fastly.net  
 
-按照这样的格式输入到`hosts`
-
-文件里，再访问[Github](github.com)应该就很快了！
+按照这样的格式输入到`hosts`文件里，再访问[Github](github.com)应该就很快了！
 
 ## 安装配套软件
 1.将文件上传到GitHub，我们会用到Git；  
