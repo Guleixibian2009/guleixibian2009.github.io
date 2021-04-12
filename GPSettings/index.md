@@ -12,5 +12,9 @@
 6.Markdown初级语法（有外链）；<br />
 7.图片外链设置； <br />
 
+## 1.加速Github
+[Github](github.com)是什么为了节省篇幅我就不讲了,自己去查[百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin)吧。
+
+
 最后更新：2021-04-12
 
