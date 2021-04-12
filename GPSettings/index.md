@@ -15,7 +15,19 @@
 ## 1.加速Github
 [Github](github.com)是啥为了节省篇幅我就不讲了,自己去查[百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin)吧。
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
-首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。
+首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。这个文件里在没有改动的情况下只有几行注释，忽略即可。
+现在我们到[Ipaddress](www.ipaddress.com)查下面三个网址的IP：
+> 1. <github.com> 这是主站
+> 2. <assets-cdn.github.com> 动态资源
+> 3. <github.global.ssl.fastly.net> 静态资源
+我现在查询如下：
+> 140.82.114.4 github.com
+> 185.199.108.153 assets-cdn.github.com
+> 185.199.109.153 assets-cdn.github.com
+> 185.199.110.153 assets-cdn.github.com
+> 185.199.111.153 assets-cdn.github.com
+> 199.232.69.194 github.global.ssl.fastly.net
+按照这样的格式输入到`hosts`文件里，再访问[Github](github.com)应该就很快了！
 
 
 最后更新：2021-04-12
