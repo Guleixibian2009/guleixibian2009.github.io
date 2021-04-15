@@ -50,7 +50,7 @@
 ### 2.2 Typora
 编写页面，我们需要写Markdown，我推荐Typora。  
 这个编辑器支持写完一小段代码你就可以看到它实际上看起来是什么样的。  
-Typora官网：https://typora.io/
+Typora官网：<https://typora.io/>
 
 ### 2.3 SublimeText3
 修改其他文件，比如`_config.yml`，我们用SublimeText3。   
@@ -63,4 +63,4 @@ Typora官网：https://typora.io/
 现在，我们可以做一些基本配置了。
 
 
-最后更新：2021-04-12
+最后更新：2021-04-15
