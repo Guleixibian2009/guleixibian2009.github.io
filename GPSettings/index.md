@@ -1,7 +1,8 @@
 # 从头开始建设GithubPages
 --by Guleixibian2009
 
-有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。
+有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。  
+PS：这个教程用Windows7 64位系统操作，适合Win7以上！
 
 ## 步骤分解
 1.加速github，改hosts；  
