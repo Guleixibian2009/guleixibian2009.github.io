@@ -33,7 +33,7 @@
 > 185.199.111.153 assets-cdn.github.com  
 > 199.232.69.194 github.global.ssl.fastly.net  
 
-按照这样的格式输入到 hosts 文件里，再访问[Github](github.com)应该就很快了！  
+按照这样的格式输入到 hosts 文件里，再访问[Github](https://github.com/)应该就很快了！  
 **小提示：平时只用查主站的IP就好了，其他的基本不会变~**  
 
 ### 1.2 DevSidecar----边车系统
