@@ -20,9 +20,9 @@
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。这个文件里在没有改动的情况下只有几行注释，忽略即可。
 现在我们到[Ipaddress](https://www.ipaddress.com)查下面三个网址的IP：
-> 1. github.com 这是主站
-> 2. assets-cdn.github.com 动态资源
-> 3. github.global.ssl.fastly.net 静态资源
+> github.com 这是主站
+> assets-cdn.github.com 动态资源
+> github.global.ssl.fastly.net 静态资源
 
 我现在查询如下：
 
