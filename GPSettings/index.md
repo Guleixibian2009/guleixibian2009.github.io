@@ -2,7 +2,7 @@
 --by Guleixibian2009
 
 有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。  
-PS：这个教程用Windows7 64位系统操作，适合Win7以上！
+PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 ## 步骤分解
 1.加速github，改hosts；  
@@ -65,7 +65,7 @@ Typora官网：<https://typora.io/>
 现在，我们可以做一些基本配置了。
 
 ### 3.1 注册Github账号
-用Github，没个账号可不行。去官网注册一个账号，步骤如下：
+用Github，没个账号可不行。去官网注册一个账号，步骤如下：  
 如图，填写你的邮箱和用户名，应该就好了。
 
 ![frontpage](https://user-images.githubusercontent.com/79316026/115193983-67a72f00-a11f-11eb-89d1-3de617888508.png)
