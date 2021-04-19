@@ -80,6 +80,13 @@ Typora官网：<https://typora.io/>
 如图，点击右上角的 New 按钮，然后会弹出如下界面。
 
 ![create1](https://user-images.githubusercontent.com/79316026/115196027-0896e980-a122-11eb-901e-6a78824725c5.png)
+![create2](https://user-images.githubusercontent.com/79316026/115196866-f9646b80-a122-11eb-95df-dcde8f73dab7.png)
+
+我们如图勾选，
+
+
+![create3](https://user-images.githubusercontent.com/79316026/115196875-fb2e2f00-a122-11eb-802b-d81bef30fb85.png)
+
 
 
 最后更新：2021-04-19
