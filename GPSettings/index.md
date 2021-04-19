@@ -87,6 +87,7 @@ Typora官网：<https://typora.io/>
 EdogawaNotFound.github.io 。 
 README.md 是仓库简介，可以先不选。LISENCE 同理。  
  
+现在你应该有了一个新仓库了。打开你的仓库，如果你刚刚什么都没选，那应该是这样的：
 
 
 
