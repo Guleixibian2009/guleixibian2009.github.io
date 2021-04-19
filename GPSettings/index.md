@@ -43,22 +43,18 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 ## 2.安装配套软件
 
-### 2.1 Git
-将文件从本地上传到GitHub，我们会用到Git。   
-这个东东....待会讲吧。
-
-### 2.2 Typora
+### 2.1 Typora
 编写页面，我们需要写Markdown，我推荐Typora。  
 这个编辑器支持写完一小段代码你就可以看到它实际上看起来是什么样的。  
 Typora官网：<https://typora.io/>
 
-### 2.3 SublimeText3
+### 2.2 SublimeText3
 修改其他文件，比如`_config.yml`，我们用SublimeText3。  
 这个软件什么语言都能写，也可以当做简单的文本编辑器用。  
 官网：<https://www.sublimetext.com/>  
 你甚至可以用他们家的Git命令行，叫做SublimeMerge，比默认的好很多！
 
-安装这些软件一般都是一路Yes，会英文的同学可以仔细看看。安装包见附件。  
+安装这俩软件一般都是一路Yes，会英文的同学可以仔细看看。安装包见附件。  
 
 ## 3.账号设置
 现在，我们可以做一些基本配置了。
