@@ -68,5 +68,8 @@ Typora官网：<https://typora.io/>
 用Github，没个账号可不行。去官网注册一个账号，步骤如下：
 如图，填写你的邮箱和用户名，应该就好了。
 
+![frontpage](https://user-images.githubusercontent.com/79316026/115193983-67a72f00-a11f-11eb-89d1-3de617888508.png)
+![email](https://user-images.githubusercontent.com/79316026/115194097-902f2900-a11f-11eb-880b-569584da054a.png)
+
 
 最后更新：2021-04-15
