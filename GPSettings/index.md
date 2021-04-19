@@ -75,4 +75,7 @@ Typora官网：<https://typora.io/>
 
 ![myPage](https://user-images.githubusercontent.com/79316026/115195072-e781c900-a120-11eb-95da-904cd7917e70.png)
 
+### 3.2 创建一个仓库
+为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。
+
 最后更新：2021-04-19
