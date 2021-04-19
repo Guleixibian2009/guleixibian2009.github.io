@@ -89,6 +89,6 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
  
 现在你应该有了一个新仓库了。打开你的仓库，如果你刚刚什么都没选，那应该是这样的：
 
-
+![repo1](https://user-images.githubusercontent.com/79316026/115198822-169a3980-a125-11eb-8269-c7ef1d2da45b.png)
 
 最后更新：2021-04-19
