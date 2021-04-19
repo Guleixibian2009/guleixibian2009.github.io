@@ -72,6 +72,8 @@ Typora官网：<https://typora.io/>
 ![email](https://user-images.githubusercontent.com/79316026/115194097-902f2900-a11f-11eb-880b-569584da054a.png)
 
 我用360大家见谅哈~（尴尬：我注册时不是这样啊？？？）  
+不管怎么样了，现在你登录Github，（如果需要验证码就登录一下）大概是这个样子的：  
 
+![myPage](https://user-images.githubusercontent.com/79316026/115195072-e781c900-a120-11eb-95da-904cd7917e70.png)
 
 最后更新：2021-04-19
