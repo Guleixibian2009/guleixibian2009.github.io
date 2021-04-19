@@ -87,6 +87,8 @@ Typora官网：<https://typora.io/>
 
 ![create3](https://user-images.githubusercontent.com/79316026/115196875-fb2e2f00-a122-11eb-802b-d81bef30fb85.png)
 
+在 <username> 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫 EdogawaNotFound.github.io 。 
+
 
 
 最后更新：2021-04-19
