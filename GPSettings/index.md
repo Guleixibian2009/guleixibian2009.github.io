@@ -77,6 +77,9 @@ Typora官网：<https://typora.io/>
 
 ### 3.2 创建一个仓库
 为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。  
-如图，点击右上角的 New 按钮，然后
+如图，点击右上角的 New 按钮，然后会弹出如下界面。
+
+![create1](https://user-images.githubusercontent.com/79316026/115196027-0896e980-a122-11eb-901e-6a78824725c5.png)
+
 
 最后更新：2021-04-19
