@@ -71,5 +71,7 @@ Typora官网：<https://typora.io/>
 ![frontpage](https://user-images.githubusercontent.com/79316026/115193983-67a72f00-a11f-11eb-89d1-3de617888508.png)
 ![email](https://user-images.githubusercontent.com/79316026/115194097-902f2900-a11f-11eb-880b-569584da054a.png)
 
+我用360大家见谅哈~（尴尬：我注册时不是这样啊？？？）  
+
 
 最后更新：2021-04-15
