@@ -7,11 +7,10 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 ## 步骤分解
 1.加速github，改hosts；  
 2.安装SublimeText3、GitForWindows、Typora；  
-3.注册github，连接Git，配置SSH密钥；  
-4.讲解基本Git语法，创建<username>.github.io仓库；<br />
-5.使用Typora创建index.md,Sublime修改_config.yml；<br />
-6.Markdown初级语法（有外链）；<br />
-7.图片外链设置； <br />
+3.注册github，创建<username>.github.io仓库；<br />
+4.使用Typora创建index.md,Sublime修改_config.yml；<br />
+5.Markdown初级语法（有外链）；<br />
+6.图片外链设置； <br />
 
 ## 1.加速
 
