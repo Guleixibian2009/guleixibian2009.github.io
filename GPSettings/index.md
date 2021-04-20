@@ -104,8 +104,11 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 在使用这个功能之前，你要告诉GitHub你要把这个仓库当做网页源码。  
 在 Settings 里找到 pages 选项，应该是这样子的：
-![settings1](https://user-images.githubusercontent.com/79316026/115333421-333d7c80-a1cc-11eb-8dba-20284786fbd9.png)
+
 ![settings2](https://user-images.githubusercontent.com/79316026/115333423-346ea980-a1cc-11eb-82cd-0e16f970dd34.png)
+
+把 Sourse 调成你现有的分支，点击 Save 。  
+
 
 ### 4.2 编辑主页
 像这样，新建一个文件（如图）。
