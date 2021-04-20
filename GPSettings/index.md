@@ -101,5 +101,9 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 是网页就得有个页面吧。使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。  
 像这样，新建一个文件（如图）。
 
+![new1](https://user-images.githubusercontent.com/79316026/115333061-94b11b80-a1cb-11eb-96e8-0a06e10e95b9.png)
+
+点击 
+
 
 最后更新：2021-04-20
