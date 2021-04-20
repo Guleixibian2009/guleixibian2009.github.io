@@ -93,5 +93,7 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 当然，如果你选了刚刚那两项，那应该是这样的：
 
+![repo2](https://user-images.githubusercontent.com/79316026/115332591-b6f66980-a1ca-11eb-90f5-7c1bc9ab5899.png)
+
 
 最后更新：2021-04-19
