@@ -113,7 +113,13 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 
 ### 4.2 编辑主页
-像这样，新建一个文件（如图）。
+现在你访问你的网站，大概是这样的：
+
+![your1](https://user-images.githubusercontent.com/79316026/115334395-e8246900-a1cd-11eb-84e6-ed19b57b80a4.png)
+
+由于你的仓库里有一段文字（没有？你可能需要添加一个文件，方法在下面）
+
+
 
 ![new1](https://user-images.githubusercontent.com/79316026/115333061-94b11b80-a1cb-11eb-96e8-0a06e10e95b9.png)
 
