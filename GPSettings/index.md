@@ -109,6 +109,8 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 把 Sourse 调成你现有的分支，点击 Save 。  
 
+![settings3](https://user-images.githubusercontent.com/79316026/115333919-0f2e6b00-a1cd-11eb-8b0e-38db1148a331.png)
+
 
 ### 4.2 编辑主页
 像这样，新建一个文件（如图）。
