@@ -119,6 +119,9 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 由于你的仓库里有一段文字（没有？你可能需要添加一个文件，方法在下面）
 
+![your2](https://user-images.githubusercontent.com/79316026/115334722-74cf2700-a1ce-11eb-8bb5-f2a8854d6cd7.png)
+
+
 
 
 
