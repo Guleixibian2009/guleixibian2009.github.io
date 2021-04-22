@@ -103,6 +103,10 @@ EdogawaNotFound.github.io 。
 在GithubPages功能里，我们写文章的方法是写Markdown。
 不过，在学习它之前，我们要先做一点小小的改变。
 
+![change1](https://user-images.githubusercontent.com/79316026/115671708-6115f300-a37d-11eb-8480-0a520ef539d7.png)
+![change2](https://user-images.githubusercontent.com/79316026/115671718-62dfb680-a37d-11eb-909d-3a6ea5e1f83b.png)
+![change3](https://user-images.githubusercontent.com/79316026/115671720-63784d00-a37d-11eb-8f03-1f86d130a787.png)
+
 
 
 
