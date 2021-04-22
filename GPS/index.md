@@ -126,18 +126,12 @@ EdogawaNotFound.github.io 。
 
 点进去大概是这样的：
 
+![theme1](https://user-images.githubusercontent.com/79316026/115674595-658fdb00-a380-11eb-98aa-87a878572270.png)
+
+我选了一个Cayman。
+
 ![theme2](https://user-images.githubusercontent.com/79316026/115674378-29f51100-a380-11eb-8754-4deeab5e3056.png)
 
+现在样式也有了，你的界面基本上也就好了！ 
 
-
-
-
-
-![new1](https://user-images.githubusercontent.com/79316026/115333061-94b11b80-a1cb-11eb-96e8-0a06e10e95b9.png)
-
-点击 
-
-
-
-
-最后更新：2021-04-22
+最后更新：2021-04-22 
