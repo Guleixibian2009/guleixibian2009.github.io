@@ -42,10 +42,10 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
  介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的[Github项目地址](https://github.com/docmirror/dev-sidecar)。
 
 
-## 3.基础设置
+## 2.基础设置
 现在，我们可以做一些基本配置了。
 
-### 3.1 注册Github账号
+### 2.1 注册Github账号
 用Github，没个账号可不行。去官网注册一个账号，步骤如下：  
 如图，填写你的邮箱和用户名，应该就好了。
 
@@ -57,7 +57,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 ![myPage](https://user-images.githubusercontent.com/79316026/115195072-e781c900-a120-11eb-95da-904cd7917e70.png)
 
-### 3.2 创建一个仓库
+### 2.2 创建一个仓库
 为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。  
 如图，点击右上角的 New 按钮，然后会弹出如下界面。
 
@@ -83,10 +83,10 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 现在，你有了自己的仓库，就可以往仓库里放东西了。
 
-## 4.主页搭建
+## 3.主页搭建
 是网页就得有个页面吧。使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。  
 
-### 4.1 勾选Pages
+### 3.1 勾选Pages
 
 在使用这个功能之前，你要告诉GitHub你要把这个仓库当做网页源码。  
 在 Settings 里找到 pages 选项，应该是这样子的：
@@ -98,7 +98,7 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 ![settings3](https://user-images.githubusercontent.com/79316026/115333919-0f2e6b00-a1cd-11eb-8b0e-38db1148a331.png)
 
 
-### 4.2 编辑主页
+### 3.2 编辑主页
 现在你访问你的网站，大概是这样的：
 
 ![your1](https://user-images.githubusercontent.com/79316026/115334395-e8246900-a1cd-11eb-84e6-ed19b57b80a4.png)
@@ -119,4 +119,4 @@ README.md 是仓库简介，可以先不选。LISENCE 同理。
 
 
 
-最后更新：2021-04-20
+最后更新：2021-04-22
