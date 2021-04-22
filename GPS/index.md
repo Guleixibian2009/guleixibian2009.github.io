@@ -124,6 +124,10 @@ EdogawaNotFound.github.io 。
 
 ![settings3](https://user-images.githubusercontent.com/79316026/115333919-0f2e6b00-a1cd-11eb-8b0e-38db1148a331.png)
 
+点进去大概是这样的：
+
+
+
 
 
 
