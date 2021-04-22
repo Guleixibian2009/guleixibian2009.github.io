@@ -71,13 +71,8 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 在 <username> 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
 EdogawaNotFound.github.io 。 
-README.md 是仓库简介，可以先不选。LISENCE 同理。  
  
-现在你应该有了一个新仓库了。打开你的仓库，如果你刚刚什么都没选，那应该是这样的：
-
-![repo1](https://user-images.githubusercontent.com/79316026/115198822-169a3980-a125-11eb-8269-c7ef1d2da45b.png)
-
-当然，如果你选了刚刚那两项，那应该是这样的：
+现在你应该有了一个新仓库了。打开你的仓库，应该是这样的：
 
 ![repo2](https://user-images.githubusercontent.com/79316026/115332591-b6f66980-a1ca-11eb-90f5-7c1bc9ab5899.png)
 
