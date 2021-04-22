@@ -126,6 +126,8 @@ EdogawaNotFound.github.io 。
 
 点进去大概是这样的：
 
+![theme2](https://user-images.githubusercontent.com/79316026/115674378-29f51100-a380-11eb-8754-4deeab5e3056.png)
+
 
 
 
