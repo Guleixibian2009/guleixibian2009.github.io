@@ -115,7 +115,7 @@ EdogawaNotFound.github.io 。
 
 回来大概是这样的。  
 现在我们可以学Markdown了。我另写了一篇文章，在  
-< https://guleixibian2009.github.io/MS >。  
+< https://guleixibian2009.github.io/MS/ >。  
 
 
 
