@@ -98,7 +98,7 @@ EdogawaNotFound.github.io 。
 
 ![your1](https://user-images.githubusercontent.com/79316026/115334395-e8246900-a1cd-11eb-84e6-ed19b57b80a4.png)
 
-由于你的仓库里有一段文字（没有？你可能需要添加一个文件，方法在下面）
+由于你的仓库里有一段README,所以你的网页应该是这样的：
 
 ![your2](https://user-images.githubusercontent.com/79316026/115334722-74cf2700-a1ce-11eb-8bb5-f2a8854d6cd7.png)
 
