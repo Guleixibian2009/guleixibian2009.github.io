@@ -98,11 +98,10 @@ EdogawaNotFound.github.io 。
 
 ![your1](https://user-images.githubusercontent.com/79316026/115334395-e8246900-a1cd-11eb-84e6-ed19b57b80a4.png)
 
-由于你的仓库里有一段README,所以你的网页应该是这样的：
-
-![your2](https://user-images.githubusercontent.com/79316026/115334722-74cf2700-a1ce-11eb-8bb5-f2a8854d6cd7.png)
-
-
+（为什么标题是TEST？因为这是我的网页下的一个分支，你的页面一开始应该有一大堆文字） 
+现在，你说你想增加一点东西，怎么办呢？  
+在GithubPages功能里，我们写文章的方法是写Markdown。
+不过，在学习它之前，我们要先做一点小小的改变。
 
 
 
