@@ -98,10 +98,10 @@ EdogawaNotFound.github.io 。
 
 ![your1](https://user-images.githubusercontent.com/79316026/115334395-e8246900-a1cd-11eb-84e6-ed19b57b80a4.png)
 
-（为什么标题是TEST？因为这是我的网页下的一个分支，你的页面一开始应该有一大堆文字） 
-现在，你说你想增加一点东西，怎么办呢？  
-在GithubPages功能里，我们写文章的方法是写Markdown。
-不过，在学习它之前，我们要先做一点小小的改变。
+（为什么标题是TEST？因为这是我的网页下的一个分支，你的页面一开始应该有一大堆文字）   
+现在，你说你想增加一点东西，怎么办呢？    
+在GithubPages功能里，我们写文章的方法是写Markdown。  
+不过，在学习它之前，我们要先做一点小小的改变。  
 
 ![change1](https://user-images.githubusercontent.com/79316026/115671708-6115f300-a37d-11eb-8480-0a520ef539d7.png)
 
@@ -116,6 +116,11 @@ EdogawaNotFound.github.io 。
 回来大概是这样的。  
 现在我们可以学Markdown了。我另写了一篇文章，在  
 < https://guleixibian2009.github.io/MS/ >。  
+
+### 4.3 换个样式
+
+不管你的主页现在写了什么，我们都想让他变好看点。GithubPages已经给你提供好了一些样式，我们可以直接用。  
+转到刚刚那个Settings/Pages,不过这次点ThemeChooser。
 
 
 
