@@ -122,6 +122,8 @@ EdogawaNotFound.github.io 。
 不管你的主页现在写了什么，我们都想让他变好看点。GithubPages已经给你提供好了一些样式，我们可以直接用。  
 转到刚刚那个Settings/Pages,不过这次点ThemeChooser。
 
+![settings3](https://user-images.githubusercontent.com/79316026/115333919-0f2e6b00-a1cd-11eb-8b0e-38db1148a331.png)
+
 
 
 
