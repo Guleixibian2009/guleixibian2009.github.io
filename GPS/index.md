@@ -104,8 +104,18 @@ EdogawaNotFound.github.io 。
 不过，在学习它之前，我们要先做一点小小的改变。
 
 ![change1](https://user-images.githubusercontent.com/79316026/115671708-6115f300-a37d-11eb-8480-0a520ef539d7.png)
+
+为了githubpages更好的识别你的主页，我们需要更名README。点击那支笔，进入如下界面。
+
 ![change2](https://user-images.githubusercontent.com/79316026/115671718-62dfb680-a37d-11eb-909d-3a6ea5e1f83b.png)
+
+红框框内的命称是文件名。我们把他改成 index.md
+
 ![change3](https://user-images.githubusercontent.com/79316026/115671720-63784d00-a37d-11eb-8f03-1f86d130a787.png)
+
+回来大概是这样的。  
+现在我们可以学Markdown了。我另写了一篇文章，在  
+< https://guleixibian2009.github.io/MS >。  
 
 
 
