@@ -18,8 +18,15 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 [Github](https://github.com)是啥为了节省篇幅我就不讲了,自己去查[百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin)吧。
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
-首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。这个文件里在没有改动的情况下只有几行注释，忽略即可。
-现在我们到[Ipaddress](https://www.ipaddress.com)查下面三个网址的IP：
+首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
+
+![hosts1](https://user-images.githubusercontent.com/79316026/115979442-85114880-a5b8-11eb-915a-30de3b591860.png)
+![hosts2](https://user-images.githubusercontent.com/79316026/115979450-8d698380-a5b8-11eb-8a25-6cbc538fa10b.png)
+![hosts3](https://user-images.githubusercontent.com/79316026/115979452-8e9ab080-a5b8-11eb-8a92-f1c4fc6f01f4.png)
+
+用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
+现在我们到[Ipaddress](https://www.ipaddress.com)查下面三个网址的IP：  
+
 > github.com 这是主站
 > assets-cdn.github.com 动态资源
 > github.global.ssl.fastly.net 静态资源
