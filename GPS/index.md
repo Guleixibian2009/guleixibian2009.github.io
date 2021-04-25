@@ -156,7 +156,7 @@ EdogawaNotFound.github.io 。
 ![issue3](https://user-images.githubusercontent.com/79316026/115979851-ea663900-a5ba-11eb-8661-eb6854f4b8f6.png)
 ![issue4](https://user-images.githubusercontent.com/79316026/115979852-ea663900-a5ba-11eb-9274-37daeba4aee5.png)
 
-最后，如果你碰到了什么问题，欢迎到GitHub评论！  
-下一篇（预告）：GitHubpages高级教程！  
+最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
+下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/AGPS/)！  
 
 最后更新：2021-04-25
