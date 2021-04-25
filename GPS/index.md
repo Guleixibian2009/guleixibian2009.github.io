@@ -151,4 +151,12 @@ EdogawaNotFound.github.io 。
 在你刚刚那个仓库里，点到 issue 界面。新建一个 issue ，命名为picture（其实无所谓）。  
 在comment栏里拖入图片，再把生成的链接直接复制进markdown，就可以了。
 
+![issue1](https://user-images.githubusercontent.com/79316026/115979848-e803df00-a5ba-11eb-8ab3-256bdb8fa6e7.png)
+![issue2](https://user-images.githubusercontent.com/79316026/115979850-e9cda280-a5ba-11eb-8e67-f5bd9ae7ef52.png)
+![issue3](https://user-images.githubusercontent.com/79316026/115979851-ea663900-a5ba-11eb-8661-eb6854f4b8f6.png)
+![issue4](https://user-images.githubusercontent.com/79316026/115979852-ea663900-a5ba-11eb-9274-37daeba4aee5.png)
+
+最后，如果你碰到了什么问题，欢迎到GitHub评论！  
+下一篇（预告）：GitHubpages高级教程！  
+
 最后更新：2021-04-25
