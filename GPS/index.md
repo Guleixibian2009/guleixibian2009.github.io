@@ -27,9 +27,9 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
 现在我们到[Ipaddress](https://www.ipaddress.com)查下面三个网址的IP：  
 
-> github.com 这是主站
-> assets-cdn.github.com 动态资源
-> github.global.ssl.fastly.net 静态资源
+> github.com 这是主站  
+> assets-cdn.github.com 动态资源  
+> github.global.ssl.fastly.net 静态资源  
 
 我现在查询如下：
 
@@ -41,7 +41,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 > 199.232.69.194 github.global.ssl.fastly.net  
 
 按照这样的格式输入到 hosts 文件里，再访问[Github](https://github.com/)应该就很快了！  
-**小提示：平时只用查主站的IP就好了，其他的基本不会变~**  
+**小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
 
 ### 1.2 DevSidecar----边车系统
 
