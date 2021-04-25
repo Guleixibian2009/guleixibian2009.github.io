@@ -46,7 +46,12 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 ### 1.2 DevSidecar----边车系统
 
  **小提示：使用此系统可能会造成系统网络配置更变，请小心驾驶**  
- 介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的[Github项目地址](https://github.com/docmirror/dev-sidecar)。
+ 介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的[Github项目地址](https://github.com/docmirror/dev-sidecar)。  
+ 用之前要先安装证书，随后选择默认模式。  
+ 
+![sidecar1](https://user-images.githubusercontent.com/79316026/115979578-492ab300-a5b9-11eb-8a08-80215db60791.png)
+![sidecar4](https://user-images.githubusercontent.com/79316026/115979580-4af47680-a5b9-11eb-8447-cd3326ff0a03.png)
+
 
 
 ## 2.基础设置
@@ -140,5 +145,7 @@ EdogawaNotFound.github.io 。
 ![theme2](https://user-images.githubusercontent.com/79316026/115674378-29f51100-a380-11eb-8754-4deeab5e3056.png)
 
 现在样式也有了，你的界面基本上也就好了！ 
+
+## 5. 图片外链
 
 最后更新：2021-04-22 
