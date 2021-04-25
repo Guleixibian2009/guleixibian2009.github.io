@@ -6,6 +6,6 @@
 共2篇
 - 编程
     1. Markdown
-        1. Markdown 基本语法
+        1.1 Markdown 基本语法
     2. GitHub
-        1. 从头开始建设GithubPages
+        2.1 从头开始建设GithubPages
