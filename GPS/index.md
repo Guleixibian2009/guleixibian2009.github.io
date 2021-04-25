@@ -129,7 +129,7 @@ EdogawaNotFound.github.io 。
 现在我们可以学Markdown了。我另写了一篇文章，在  
 <https://guleixibian2009.github.io/MS/>。  
 
-### 4.3 换个样式
+### 3.3 换个样式
 
 不管你的主页现在写了什么，我们都想让他变好看点。GithubPages已经给你提供好了一些样式，我们可以直接用。  
 转到刚刚那个Settings/Pages,不过这次点ThemeChooser。
@@ -146,6 +146,6 @@ EdogawaNotFound.github.io 。
 
 现在样式也有了，你的界面基本上也就好了！ 
 
-## 5. 图片外链
+## 4. 图片外链
 
 最后更新：2021-04-22 
