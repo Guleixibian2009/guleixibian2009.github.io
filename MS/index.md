@@ -1,6 +1,8 @@
 # Markdown基本语法
 --by Guleixibian2009
 
+在很多博客、论坛，包括GithubPages（参见[这篇文章](https://guleixibian2009.github.io/GPS/)）里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台
+
 ## 1. Markdown 是什么？
 >Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。  
 >它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。  
