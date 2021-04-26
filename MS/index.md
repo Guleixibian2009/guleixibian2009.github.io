@@ -15,13 +15,16 @@
 
 ### 1.1 像HTML一样写标题
 在HTML里，标题分六级：
+
 ```HTML
 <h1>This is an H1</h1>
 <h2>This is an H1</h2>
 <h3>This is an H1</h3>
 ...
 ```
-同样，Markdown标题
+
+相对应的，Markdown标题也分六级。
+
 ```markdown
 # This is an H1  
 ## This is an H2  
@@ -31,6 +34,17 @@
 
 就像你看到的那样，每层标题就是几个**\#**。
 
+### 1.2 Markdown专属标题
+不过，在Markdown中表示标题也可以用一种特殊的方式。
+
+```Markdown
+
+This is an H1
+=============
+
+```
+This is an H1
+=============
 ## 2. Word Syntax(文字样式语法)
 
 在Markdown中，文字可以是*斜体*、**粗体**、***粗斜体***,~~删除线~~，<u>下划线</u>。
