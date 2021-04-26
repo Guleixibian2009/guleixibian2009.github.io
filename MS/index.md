@@ -3,17 +3,25 @@
 
 在很多博客、论坛，包括GithubPages（参见[这篇文章](https://guleixibian2009.github.io/GPS/)）里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！
 
-## 1. Markdown 是什么？
+## 0. Markdown 是什么？
 >Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。  
 >它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。  
 >由于Markdown的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用Markdown来撰写帮助文档或是用于论坛上发表消息。    
 >如GitHub、OpenStreetMap 、SourceForge、简书等，甚至还能被使用来撰写电子书。    
 >（摘自百度百科）  
 
-## 2. Headings(标题)
+## 1. 标题
+标题在文章中随处可见（包括这篇）。
 
-标题分六级：
-
+### 1.1 像HTML一样写标题
+在HTML里，标题分六级：
+```HTML
+<h1>This is an H1</h1>
+<h2>This is an H1</h2>
+<h3>This is an H1</h3>
+...
+```
+同样，Markdown标题
 ```markdown
 # This is an H1  
 ## This is an H2  
@@ -21,9 +29,9 @@
 ###### This is an H6  
 ```
 
-就像你看到的那样，每层Header就是几个**\#**。
+就像你看到的那样，每层标题就是几个**\#**。
 
-## 3. Word Syntax(文字样式语法)
+## 2. Word Syntax(文字样式语法)
 
 在Markdown中，文字可以是*斜体*、**粗体**、***粗斜体***,~~删除线~~，<u>下划线</u>。
 
