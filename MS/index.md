@@ -1,9 +1,9 @@
-# Markdown-Portfolio(Markdown语法)
+# Markdown基本语法
 --by Guleixibian2009
 
-## Markdown 是什么？
+## 1. Markdown 是什么？
 
-## Headings(标题)
+## 2. Headings(标题)
 
 标题分六级：
 
@@ -16,7 +16,7 @@
 
 就像你看到的那样，每层Header就是几个**\#**。
 
-## Word Syntax(文字样式语法)
+## 3. Word Syntax(文字样式语法)
 
 在Markdown中，文字可以是*斜体*、**粗体**、***粗斜体***,~~删除线~~，<u>下划线</u>。
 
