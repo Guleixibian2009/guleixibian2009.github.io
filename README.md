@@ -1,7 +1,4 @@
 # Guleixibian2009.github.io
-我的网页
+我的网站，持续更新中！
 
-文章代号：  
-Index : Contents,目录  
-GPS : GPSettings  
-MS : MarkdownSyntax  
+
