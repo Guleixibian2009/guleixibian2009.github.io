@@ -1,19 +1,17 @@
 # Markdown-Portfolio(Markdown语法)
+--by Guleixibian2009
 
-​                                                                                                  --by Guleixibian2009
-
-
-
+## Markdown 是什么？
 
 ## Headings(标题)
 
 标题分六级：
 
 ```markdown
-# This is an H1
-## This is an H2
-...
-###### This is an H6
+# This is an H1  
+## This is an H2  
+...  
+###### This is an H6  
 ```
 
 就像你看到的那样，每层Header就是几个**\#**。
