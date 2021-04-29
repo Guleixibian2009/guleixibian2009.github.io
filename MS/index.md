@@ -121,9 +121,9 @@ This is an H2
 ### 4.3 To do list
 通过无序列表我们还可以创建一个任务表（To do list），如下：
 
-- [x] No.1
-- [ ] No.2
-- [x] No.3
+- [x]  No.1
+- [ ]  No.2
+- [x]  No.3
 
 语法如下：
 ```Markdown
