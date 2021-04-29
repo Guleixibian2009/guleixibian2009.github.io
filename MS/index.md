@@ -67,6 +67,12 @@ This is an H2
 <font color=red> Some text </font>
 ```
 
+## 3. 链接与图片
+
+### 3.1 链接
+文章中的“链接”指“超链接”。 [这是一个超链接实例](https://guleixibian2009.github.io/) ，它指向我的主页。  
+链接的语法为 \[Name\]\(Place\)
+
 
 
 最后更新：2021-04-29
