@@ -64,7 +64,7 @@ This is an H2
 下划线是用HTML实现的，在HTML里下划线是` <u> `,所以语法就是` <u>这是下划线</u> `,显示出来就是<u>这是下划线</u>  
 如果你需要给文字调颜色，可以用 ` <p> ` 标签，语法为
 ```HTML
-<p >
+<p style="color:red">Some text</p>
 ```
 
 
