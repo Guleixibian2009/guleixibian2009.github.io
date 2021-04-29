@@ -61,8 +61,11 @@ This is an H2
 
 > 由于Markdown可以直接转换成HTML（在百科里说过了），所以所有（应该是）HTML标签都可以在Markdown中使用。（惊不惊喜？学过HTML的朋友福利大放送！）
 
+#### 2.2.1 瞎划线（下划线）
 下划线是用HTML实现的，在HTML里下划线是` <u> `,所以语法就是` <u>这是下划线</u> `,显示出来就是<u>这是下划线</u>  
-如果你需要给文字调 <font color=red> 颜色 </font> ，可以用 ` <font> ` 标签，语法为
+
+#### 2.2.2 颜色
+如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 ` <font> ` 标签，语法为
 ```HTML
 <font color=red> Some text </font>
 ```
