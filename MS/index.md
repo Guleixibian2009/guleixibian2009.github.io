@@ -1,6 +1,6 @@
 # Markdown基本语法
 --by Guleixibian2009  
-version： ![version](https://img.shields.io/badge/Version-21.05.01-brightgreen)  
+![version](https://img.shields.io/badge/Version-21.05.01-brightgreen)  
 在很多博客、论坛，包括GithubPages（参见[这篇文章](https://guleixibian2009.github.io/GPS/)）里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！
 
 ## 0. Markdown 是什么？
