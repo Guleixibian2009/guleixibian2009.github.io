@@ -71,7 +71,10 @@ This is an H2
 ```
 
 ### 2.3 脚注
-这是一个脚注 [^1] 。
+这是一个脚注 [^1] 。脚注的语法是：
+```Markdown
+TextTextText [^name] TextTextText
+```
 
 ## 3. 链接与图片
 
