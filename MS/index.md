@@ -143,6 +143,5 @@ TextTextText [^name] TextTextText
 
 
 
-https://blog.csdn.net/SL_World/article/details/89046285  
-https://shields.io/   
+
 [^1]:这是一个脚注示例。  
