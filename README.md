@@ -6,7 +6,7 @@
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)  
 ![GitHub Release Date](https://img.shields.io/github/release-date/Guleixibian2009/guleixibian2009.github.io)  
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
-![GitHub Repo stars](https://img.shields.io/github/stars/Guleixibian2009/guleixibian2009.github.io)
+![GitHub Repo stars](https://img.shields.io/github/stars/Guleixibian2009/guleixibian2009.github.io)  
 
 
 
