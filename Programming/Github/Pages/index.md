@@ -5,12 +5,11 @@
 PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 ## 步骤分解
-1.加速github，改hosts；  
-2.安装SublimeText3、GitForWindows、Typora；  
-3.注册github，创建<username>.github.io仓库；<br />
-4.创建index.md；<br />
-5.Markdown初级语法（有外链）；<br />
-6.图片外链设置； <br />
+1.加速github，改hosts；   
+2.注册github，创建<username>.github.io仓库；<br />
+3.创建index.md；<br />
+4.Markdown初级语法（有外链）；<br />
+5.图片外链设置； <br />
 
 ## 1.加速
 
