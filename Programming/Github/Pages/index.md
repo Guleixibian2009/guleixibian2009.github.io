@@ -1,5 +1,5 @@
 # 从头开始建设GithubPages
---by Guleixibian2009
+--by Guleixibian2009  
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![Last Update](https://img.shields.io/badge/LatestUpdate-05.11-brightgreen)  
 有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。  
