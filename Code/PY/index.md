@@ -27,13 +27,13 @@ for letter in string:
 
 *现在讲解代码！*首先我们定义了一个字符串(string就是字符串)，内容是一些字母，既有大写又有小写。然后用一个for循环，遍历每一个字母，再检测他是不是大写(`if letter.isupper()`)。如果字母大写就打印出来。  
 
-![PictureHere1]()  
+![Run1](https://guleixibian2009.github.io/Sourse/Pics/Code/PY/1/run1.png)  
 
 看吧，他回复了你ACEG。  
 
 > 小知识#2  
 >
-> 我们不仅仅可以用`letter.isupper()`来判定一个字母是否是大写，也可以用`letter.islower()`来判定一个字母是否是小写。当然，`"hello".upper()`可以将`"hello"`这个字符串大写，`"HELLO".lower()` 可以将  `"HELLO"` 变成小写。
+> 我们不仅仅可以用`letter.isupper()`来判定一个字母是否是大写，也可以用`letter.islower()`来判定一个字母是否是小写。当然，`"hello".upper()`可以将"hello"这个字符串大写，`"HELLO".lower()` 可以将 "HELLO" 变成小写。
 
 ## 2.凯撒密码
 
