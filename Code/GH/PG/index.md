@@ -21,8 +21,8 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
 
 ![hosts1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/hosts1.png)
-![hosts2](https://user-images.githubusercontent.com/79316026/115979450-8d698380-a5b8-11eb-8a25-6cbc538fa10b.png)
-![hosts3](https://user-images.githubusercontent.com/79316026/115979452-8e9ab080-a5b8-11eb-8a92-f1c4fc6f01f4.png)
+![hosts2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/hosts2.png)
+![hosts3](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/hosts3.png)
 
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
 现在我们到[Ipaddress](https://www.ipaddress.com)查下面三个网址的IP：  
@@ -49,8 +49,8 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
  介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的[Github项目地址](https://github.com/docmirror/dev-sidecar)。  
  用之前要先安装证书，随后选择默认模式。  
 
-![sidecar1](https://user-images.githubusercontent.com/79316026/115979578-492ab300-a5b9-11eb-8a08-80215db60791.png)
-![sidecar4](https://user-images.githubusercontent.com/79316026/115979580-4af47680-a5b9-11eb-8447-cd3326ff0a03.png)
+![sidecar1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/sidecar1.png)
+![sidecar2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/sidecar2.png)
 
 
 
@@ -61,32 +61,32 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 用Github，没个账号可不行。去官网注册一个账号，步骤如下：  
 如图，填写你的邮箱和用户名，应该就好了。
 
-![frontpage](https://user-images.githubusercontent.com/79316026/115193983-67a72f00-a11f-11eb-89d1-3de617888508.png)
-![email](https://user-images.githubusercontent.com/79316026/115194097-902f2900-a11f-11eb-880b-569584da054a.png)
+![frontpage](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/frontpage.png)
+![email](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/email.png)
 
 我用360大家见谅哈~（尴尬：我注册时不是这样啊？？？）  
 不管怎么样了，现在你登录Github，（如果需要验证码就登录一下）大概是这个样子的：  
 
-![myPage](https://user-images.githubusercontent.com/79316026/115195072-e781c900-a120-11eb-95da-904cd7917e70.png)
+![myPage](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/myPage.png)
 
 ### 2.2 创建一个仓库
 为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。  
 如图，点击右上角的 New 按钮，然后会弹出如下界面。
 
-![create1](https://user-images.githubusercontent.com/79316026/115196027-0896e980-a122-11eb-901e-6a78824725c5.png)
-![create2](https://user-images.githubusercontent.com/79316026/115196866-f9646b80-a122-11eb-95df-dcde8f73dab7.png)
+![create1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/create1.png)
+![create2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/create2.png)
 
 我们如图勾选，
 
 
-![create3](https://user-images.githubusercontent.com/79316026/115196875-fb2e2f00-a122-11eb-802b-d81bef30fb85.png)
+![create3](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/create3.png)
 
 在 <username> 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
 EdogawaNotFound.github.io 。 
 
 现在你应该有了一个新仓库了。打开你的仓库，应该是这样的：
 
-![repo2](https://user-images.githubusercontent.com/79316026/115332591-b6f66980-a1ca-11eb-90f5-7c1bc9ab5899.png)
+![repo2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/repo2.png)
 
 现在，你有了自己的仓库，就可以往仓库里放东西了。
 
@@ -98,32 +98,32 @@ EdogawaNotFound.github.io 。
 在使用这个功能之前，你要告诉GitHub你要把这个仓库当做网页源码。  
 在 Settings 里找到 pages 选项，应该是这样子的：
 
-![settings2](https://user-images.githubusercontent.com/79316026/115333423-346ea980-a1cc-11eb-82cd-0e16f970dd34.png)
+![settings2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/settings2.png)
 
 把 Sourse 调成你现有的分支，点击 Save 。  
 
-![settings3](https://user-images.githubusercontent.com/79316026/115333919-0f2e6b00-a1cd-11eb-8b0e-38db1148a331.png)
+![settings3](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/settings3.png)
 
 
 ### 3.2 编辑主页
 现在你访问你的网站，大概是这样的：
 
-![your1](https://user-images.githubusercontent.com/79316026/115334395-e8246900-a1cd-11eb-84e6-ed19b57b80a4.png)
+![your1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/your1.png)
 
 （为什么标题是TEST？因为这是我的网页下的一个分支，你的页面一开始应该有一大堆文字）   
 现在，你说你想增加一点东西，怎么办呢？    
 在GithubPages功能里，我们写文章的方法是写Markdown。  
 不过，在学习它之前，我们要先做一点小小的改变。  
 
-![change1](https://user-images.githubusercontent.com/79316026/115671708-6115f300-a37d-11eb-8480-0a520ef539d7.png)
+![change1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/change1.png)
 
 为了githubpages更好的识别你的主页，我们需要更名README。点击那支笔，进入如下界面。
 
-![change2](https://user-images.githubusercontent.com/79316026/115671718-62dfb680-a37d-11eb-909d-3a6ea5e1f83b.png)
+![change2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/change2.png)
 
 红框框内的命称是文件名。我们把他改成 index.md
 
-![change3](https://user-images.githubusercontent.com/79316026/115671720-63784d00-a37d-11eb-8f03-1f86d130a787.png)
+![change3](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/change3.png)
 
 回来大概是这样的。  
 现在我们可以学Markdown了。我另写了一篇文章，在  
@@ -134,29 +134,23 @@ EdogawaNotFound.github.io 。
 不管你的主页现在写了什么，我们都想让他变好看点。GithubPages已经给你提供好了一些样式，我们可以直接用。  
 转到刚刚那个Settings/Pages,不过这次点ThemeChooser。
 
-![settings3](https://user-images.githubusercontent.com/79316026/115333919-0f2e6b00-a1cd-11eb-8b0e-38db1148a331.png)
+![settings3](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/settings3.png)
 
 点进去大概是这样的：
 
-![theme1](https://user-images.githubusercontent.com/79316026/115674595-658fdb00-a380-11eb-98aa-87a878572270.png)
+![theme1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/theme1.png)
 
 我选了一个Cayman。
 
-![theme2](https://user-images.githubusercontent.com/79316026/115674378-29f51100-a380-11eb-8754-4deeab5e3056.png)
+![theme2](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/theme2.png)
 
 现在样式也有了，你的界面基本上也就好了！ 
 
 ## 4. 图片外链
 这里最后给大家一个小技巧。由于很多人的页面上想放图片，将图片保存到本地又没用，我们把他保存到GitHub上。  
-在你刚刚那个仓库里，点到 issue 界面。新建一个 issue ，命名为picture（其实无所谓）。  
-在comment栏里拖入图片，再把生成的链接直接复制进markdown，就可以了。
-
-![issue1](https://user-images.githubusercontent.com/79316026/115979848-e803df00-a5ba-11eb-8ab3-256bdb8fa6e7.png)
-![issue2](https://user-images.githubusercontent.com/79316026/115979850-e9cda280-a5ba-11eb-8e67-f5bd9ae7ef52.png)
-![issue3](https://user-images.githubusercontent.com/79316026/115979851-ea663900-a5ba-11eb-8661-eb6854f4b8f6.png)
-![issue4](https://user-images.githubusercontent.com/79316026/115979852-ea663900-a5ba-11eb-9274-37daeba4aee5.png)
+（待会再写啦啦啦啦~）  
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/AGPS/)！  
 
-最后更新：2021-04-25
+最后更新：2021-06-13
