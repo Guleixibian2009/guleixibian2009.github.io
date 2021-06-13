@@ -20,7 +20,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
 
-![hosts1](https://user-images.githubusercontent.com/79316026/115979442-85114880-a5b8-11eb-915a-30de3b591860.png)
+![hosts1](https://guleixibian2009.github.io/Sourse/Pics/Code/GH/PG/hosts1.png)
 ![hosts2](https://user-images.githubusercontent.com/79316026/115979450-8d698380-a5b8-11eb-8a25-6cbc538fa10b.png)
 ![hosts3](https://user-images.githubusercontent.com/79316026/115979452-8e9ab080-a5b8-11eb-8a92-f1c4fc6f01f4.png)
 
@@ -48,7 +48,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
  **小提示：使用此系统可能会造成系统网络配置更变，请小心驾驶**  
  介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的[Github项目地址](https://github.com/docmirror/dev-sidecar)。  
  用之前要先安装证书，随后选择默认模式。  
- 
+
 ![sidecar1](https://user-images.githubusercontent.com/79316026/115979578-492ab300-a5b9-11eb-8a08-80215db60791.png)
 ![sidecar4](https://user-images.githubusercontent.com/79316026/115979580-4af47680-a5b9-11eb-8447-cd3326ff0a03.png)
 
@@ -83,7 +83,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 在 <username> 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
 EdogawaNotFound.github.io 。 
- 
+
 现在你应该有了一个新仓库了。打开你的仓库，应该是这样的：
 
 ![repo2](https://user-images.githubusercontent.com/79316026/115332591-b6f66980-a1ca-11eb-90f5-7c1bc9ab5899.png)
