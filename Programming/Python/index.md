@@ -33,7 +33,7 @@ for letter in string:
 
 > 小知识#2  
 >
-> 我们不仅仅可以用`letter.isupper()`来判定一个字母是否是大写，也可以用`letter.islower()`来判定一个字母是否是小写。当然，`"hello".upper()`可以将`"hello"`这个字符串大写， ` "HELLO".lower()`可以将`"HELLO"`变成小写。
+> 我们不仅仅可以用`letter.isupper()`来判定一个字母是否是大写，也可以用`letter.islower()`来判定一个字母是否是小写。当然，`"hello".upper()`可以将`"hello"`这个字符串大写， ` "HELLO".lower()` 可以将  `"HELLO"` 变成小写。
 
 ## 2.凯撒密码
 
