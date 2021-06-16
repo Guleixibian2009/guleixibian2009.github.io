@@ -127,7 +127,7 @@ EdogawaNotFound.github.io 。
 
 回来大概是这样的。  
 现在我们可以学Markdown了。我另写了一篇文章，在  
-<https://guleixibian2009.github.io/MS/>。  
+<https://guleixibian2009.github.io/Code/MD/ST/>。  
 
 ### 3.3 换个样式
 
@@ -151,6 +151,6 @@ EdogawaNotFound.github.io 。
 （待会再写啦啦啦啦~）  
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
-下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/AGPS/)！  
+下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/GH/PG/A/)！  
 
 最后更新：2021-06-13
