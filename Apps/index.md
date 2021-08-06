@@ -8,7 +8,7 @@
 ### 1.1 Typora
 Typora官网：<https://typora.io/>
 
-### 1.2 SublimeText3
+### 1.2 SublimeText4
 官网：<https://www.sublimetext.com/>  
 
 

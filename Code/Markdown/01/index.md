@@ -2,7 +2,7 @@
 --by Guleixibian2009  
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![Last Update](https://img.shields.io/badge/LatestUpdate-05.11-brightgreen)  
-在很多博客、论坛，包括GithubPages（参见[这篇文章](https://guleixibian2009.github.io/GPS/)）里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！
+在很多博客、论坛，包括GithubPages(参见[这篇文章](https://guleixibian2009.github.io/GPS/)) 里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！
 
 ## 0. Markdown 是什么？
 >Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。  
@@ -82,12 +82,14 @@ TextTextText [^name] TextTextText
 ### 3.1 链接
 文章中的“链接”指“超链接”。 [这是一个超链接实例](https://guleixibian2009.github.io/) ，它指向我的主页。  
 链接的语法为 
+
 ```Markdown
 [Name](Place) 
 ```
 
 ### 3.2 图片
 图片的语法和链接很相似，只是在 \[Name\]\(Place\) 之前加上一个 \! (记住都是英文标点！！！),如
+
 ```Markdown
 ![Name](Place "替代名")
 ```
@@ -98,8 +100,8 @@ TextTextText [^name] TextTextText
 ### 4.1 有序列表
 有序列表，就像  
 ```Markdown
-1. 第一个元素
-2. 第二个元素
+1. 第一个元素  
+2. 第二个元素  
 3. 第三个元素
 ```  
 在Markdown中，直接打 1. 就会出现一个有序列表。当然， i. a. 甚至不从头开始也可以：
@@ -158,4 +160,4 @@ TextTextText [^name] TextTextText
 ## 注释
 以下是注释内容：  
 
-[^1]:这是一个脚注示例。  
+[^1]: 这是一个脚注示例。  
