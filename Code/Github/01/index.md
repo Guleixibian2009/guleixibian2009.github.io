@@ -100,7 +100,7 @@ EdogawaNotFound.github.io 。
 
 ![settings2](https://guleixibian2009.github.io/Sourse/Pics/Code/Github/#1/settings2.png)
 
-把 Sourse 调成你现有的分支，点击 Save 。  
+把 Source 调成你现有的分支，点击 Save 。  
 
 ![settings3](https://guleixibian2009.github.io/Sourse/Pics/Code/Github/#1/settings3.png)
 
