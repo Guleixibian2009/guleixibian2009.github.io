@@ -8,6 +8,9 @@
 1.增加目录Code\Github\01
 2.增加Code\Github\01\index.md
 
+[Changed]
+1.修改了主页面（参照我朋友的）
+
 
 [v1.0.0] 2021-04-01  
 [Added]
