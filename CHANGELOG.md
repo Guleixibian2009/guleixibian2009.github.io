@@ -4,6 +4,15 @@
 注：此仓库为我的个人网站，所以更新日志会比较简单~
 
 [v1.0.0] 2020-04-01  
+[Added]
+1.创建仓库
+2.启用GithubPages功能
+3.选择CaymanTheme
+4.创建`index.md`
+
+[Changed]
+1.删除`index.md`自带内容
+
 
 ## 致谢
 
