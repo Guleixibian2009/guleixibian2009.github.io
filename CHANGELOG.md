@@ -3,13 +3,29 @@
 以下是此网站的更新日志。（前面一大部分没有写，就算重写了一份吧。）  
 注：此仓库为我的个人网站，所以更新日志会比较简单~
 
+[v1.0.5] 2021-04-20
+[Changed]  
+1.继续写`GithubPages`  
+2.给`GithubPages`添加“勋章”
+
+[v1.0.4] 2021-04-19  
+[Changed]  
+1.继续写`GithubPages`
+
+[v1.0.3] 2021-04-15  
+[Added]  
+1.选择`GPL-3.0`作为`LICENSE`
+
+[Changed]  
+1.继续写`GithubPages`
+
 [v1.0.2] 2021-04-12  
 [Added]  
 1.添加`_config.yml`（准确的说是github加的）
 
 [Changed]  
 1.给`_config.yml`添加`title`与`theme`属性  
-2.更新`GithubPages`
+2.更新`GithubPages`  
 3.更新总目录
 
 
