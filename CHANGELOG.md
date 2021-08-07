@@ -5,13 +5,18 @@
 
 [v1.0.2] 2021-04-12  
 [Added]  
-1.添加_config.yml（准确的说是github加的）
+1.添加`_config.yml`（准确的说是github加的）
+
+[Changed]  
+1.给`_config.yml`添加`title`与`theme`属性  
+2.更新`GithubPages`
+3.更新总目录
 
 
 [v1.0.1] 2021-04-08  
 [Added]  
-1.增加目录Code\Github\01  
-2.增加Code\Github\01\index.md  
+1.增加目录`Code\Github\01`  
+2.增加`Code\Github\01\index.md`  
 
 [Changed]  
 1.修改了主页面（参照我朋友的）  
