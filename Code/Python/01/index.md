@@ -27,7 +27,7 @@ for letter in string:
 
 *现在讲解代码！*首先我们定义了一个字符串(string就是字符串)，内容是一些字母，既有大写又有小写。然后用一个for循环，遍历每一个字母，再检测他是不是大写(`if letter.isupper()`)。如果字母大写就打印出来。  
 
-![Run1](https://guleixibian2009.github.io/Sourse/Pics/Code/Python/01/run1.png)  
+![Run1](https://guleixibian2009.github.io/Source/Pics/Code/Python/01/run1.png)  
 
 看吧，他回复了你ACEG。  
 
