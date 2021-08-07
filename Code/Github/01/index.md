@@ -3,7 +3,7 @@
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![Last Update](https://img.shields.io/badge/LatestUpdate-06.21-brightgreen)  
 有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。  
-PS：这个教程用Windows7 64位系统操作，适合Win7以上。
+PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 
 ## 步骤分解
 1.加速github，改hosts；   
@@ -16,7 +16,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 
 ### 1.1 查IP
 
-[Github](https://github.com)是啥为了节省篇幅我就不讲了,自己去查[百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin)吧。
+[Github](https://github.com) 是啥为了节省篇幅我就不讲了,自己去查 [百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin) 吧。
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
 
@@ -25,7 +25,7 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 ![hosts3](https://guleixibian2009.github.io/Sourse/Pics/Code/Github/#1/hosts3.png)
 
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
-现在我们到[Ipaddress](https://www.ipaddress.com)查下面三个网址的IP：  
+现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP：  
 
 > github.com 这是主站  
 > assets-cdn.github.com 动态资源  
@@ -40,13 +40,13 @@ PS：这个教程用Windows7 64位系统操作，适合Win7以上。
 > 185.199.111.153 assets-cdn.github.com  
 > 199.232.69.194 github.global.ssl.fastly.net  
 
-按照这样的格式输入到 hosts 文件里，再访问[Github](https://github.com/)应该就很快了！  
+按照这样的格式输入到 hosts 文件里，再访问 [Github](https://github.com/) 应该就很快了！  
 **小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
 
 ### 1.2 DevSidecar----边车系统
 
  **小提示：使用此系统可能会造成系统网络配置更变，请小心驾驶**  
- 介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的[Github项目地址](https://github.com/docmirror/dev-sidecar)。  
+ 介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的 [Github项目地址](https://github.com/docmirror/dev-sidecar) 。  
  用之前要先安装证书，随后选择默认模式。  
 
 ![sidecar1](https://guleixibian2009.github.io/Sourse/Pics/Code/Github/#1/sidecar1.png)
