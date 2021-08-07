@@ -7,4 +7,5 @@
 
 ## 致谢
 
-感谢 [KeepAChangeLog](https://keepachangelog.com/zh-CN/1.0.0/) 给了我写这篇更新日志的“灵感”和方法。
+感谢 [KeepAChangeLog](https://keepachangelog.com/zh-CN/1.0.0/) 给了我写这篇更新日志的“灵感”和方法。  
+如果你想知道如何写更新日志，可以访问上面的网站，或到`docs`文件夹找到我复制的文章。
