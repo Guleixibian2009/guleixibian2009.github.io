@@ -10,6 +10,12 @@
 4.404页面   
 5.更新主页
 
+[v1.2.6] 2021-08-08
+[Changed]
+1.更新主页链接&文章列表
+
+[Added]
+1.增加`Code`、`Code/Python`、`Code/Github`、`Code/Markdown`四个文件夹的`index.md`
 
 [v1.2.5] 2021-08-08  
 [Changed]  
