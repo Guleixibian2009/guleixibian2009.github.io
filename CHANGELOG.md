@@ -3,6 +3,42 @@
 以下是此网站的更新日志。（前面一大部分没有写，就算重写了一份吧。）  
 注：此仓库为我的个人网站，所以更新日志会比较简单~
 
+[v1.1.5] 2021-06-13  
+[Changed]  
+1.继续写`MarkdownSyntax`
+
+[Fixed]
+1.给所有图片建仓库
+
+[v1.1.4] 2021-05-11  
+[Changed]  
+1.继续写`MarkdownSyntax`
+
+[Fixed]  
+1.精简链接
+
+[v1.1.3] 2021-05-10  
+[Changed]  
+1.继续写`MarkdownSyntax`
+
+[v1.1.2] 2021-05-06  
+[Changed]  
+1.继续写`MarkdownSyntax`
+
+[v1.1.1] 2021-04-29  
+[Changed]  
+1.编辑主页  
+2.继续写`MarkdownSyntax`  
+
+[v1.1.0] 2021-04-26  
+[Changed]   
+1.选择CaymanTheme
+
+[Added]  
+1.增加目录`Code\Markdown\01`  
+2.增加`Code\Markdown\01\index.md`
+
+
 [v1.0.7] 2021-04-25  
 [Changed]  
 1.继续写`GithubPages`  
@@ -55,7 +91,7 @@
 [Added]  
 1.创建仓库  
 2.启用GithubPages功能  
-3.选择CaymanTheme  
+3.选择LeapDayTheme  
 4.创建`index.md`  
 
 [Changed]  
