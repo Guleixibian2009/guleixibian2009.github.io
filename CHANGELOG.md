@@ -6,9 +6,8 @@
 [Unreleased]  
 1.更新`GithubPages`  
 2.更新`MarkdownSyntax`  
-3.更改图床......？  
-4.404页面   
-5.更新主页
+3.更改图床......？   
+4.更新主页
 
 [v1.2.7] 2021-08-09  
 [Changed]  
@@ -18,6 +17,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)
 3.修改Github专区介绍
 
+[Added]
+1.404页面
 
 [v1.2.6] 2021-08-08
 [Changed]
