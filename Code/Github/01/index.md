@@ -9,7 +9,7 @@ PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 1.加速github，改hosts；   
 2.注册github，创建<username>.github.io仓库；<br />
 3.创建index.md；<br />
-4.Markdown初级语法（有外链）；<br />
+4.创建_config.yml，选择样式；<br />
 5.图片外链设置； <br />
 
 ## 1.加速
@@ -90,8 +90,7 @@ EdogawaNotFound.github.io 。
 
 现在，你有了自己的仓库，就可以往仓库里放东西了。
 
-## 3.主页搭建
-是网页就得有个页面吧。使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。  
+## 3.切入正题
 
 ### 3.1 勾选Pages
 
@@ -104,17 +103,6 @@ EdogawaNotFound.github.io 。
 
 ![settings3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings3.png)
 
-
-### 3.2 编辑主页
-现在你访问你的网站，大概是这样的：
-
-![your1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/your1.png)
-
-（为什么标题是TEST？因为这是我的网页下的一个分支，你的页面一开始应该有一大堆文字）   
-现在，你说你想增加一点东西，怎么办呢？    
-在GithubPages功能里，我们写文章的方法是写Markdown。  
-不过，在学习它之前，我们要先做一点小小的改变。  
-
 ![change1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change1.png)
 
 为了githubpages更好的识别你的主页，我们需要更名README。点击那支笔，进入如下界面。
@@ -126,25 +114,33 @@ EdogawaNotFound.github.io 。
 ![change3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change3.png)
 
 回来大概是这样的。  
-现在我们可以学Markdown了。我另写了一篇文章，在  
-<https://guleixibian2009.github.io/Code/MD/ST/>。  
+你的网站，如果已经Publish，应该叫做`<username>.github.io>`
+现在访问你的网站，如果可以访问，恭喜你，你已经成功了！  
+但是网站的默认文本，不过是对githubPages功能的介绍。这样的网站，也许对于别人来说没有意义。  
+所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。
+使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。 而在GithubPages功能里，我们写文章的方法是写Markdown。  
+等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))
+让我们给自己的网站换个样式。  
+不过，如果你想现在学习Markdown了。我另写了一篇文章， [传送门](https://guleixibian2009.github.io/Code/Markdown/01/) 。  
 
 ### 3.3 换个样式
 
-不管你的主页现在写了什么，我们都想让他变好看点。GithubPages已经给你提供好了一些样式，我们可以直接用。  
+一个网站，也许最重要的不是文章的内容，而是他的主页--它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。  
+GithubPages已经给你提供好了一些样式，我们可以直接用。  
 转到刚刚那个Settings/Pages,不过这次点ThemeChooser。
 
 ![settings3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings3.png)
 
-点进去大概是这样的：
+在这个界面，你可以选择一个你喜欢的样式（Theme）。
 
 ![theme1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/theme1.png)
 
-我选了一个Cayman。
+在这里面我选了一个Cayman（简约大气）。
 
 ![theme2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/theme2.png)
 
-现在样式也有了，你的界面基本上也就好了！ 
+不管你选了哪个，有没有发现你的网站好看多了呢？ 
+
 
 ## 4. 图片外链
 这里最后给大家一个小技巧。由于很多人的页面上想放图片，将图片保存到本地又没用，我们把他保存到GitHub上。  
