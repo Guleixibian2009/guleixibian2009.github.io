@@ -52,8 +52,6 @@ PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 ![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar1.png)
 ![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar2.png)
 
-
-
 ## 2.基础设置
 现在，我们可以做一些基本配置了。
 
@@ -78,10 +76,9 @@ PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 
 我们如图勾选，
 
-
 ![create3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/create3.png)
 
-在 <username> 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
+在 `<username>` 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
 EdogawaNotFound.github.io 。 
 
 现在你应该有了一个新仓库了。打开你的仓库，应该是这样的：
@@ -109,7 +106,7 @@ EdogawaNotFound.github.io 。
 
 ![change2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change2.png)
 
-红框框内的命称是文件名。我们把他改成 index.md
+红框框内的命称是文件名。我们把他改成 index.md(如果不太对的话......也有可能是我记错了)
 
 ![change3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change3.png)
 
@@ -141,12 +138,17 @@ GithubPages已经给你提供好了一些样式，我们可以直接用。
 
 不管你选了哪个，有没有发现你的网站好看多了呢？ 
 
+### 3.4 _config.yml
+不知道细心的你有没有发现，你的仓库里面多了一个`_config.yml`文件（千万不要删！）
+打开这个文件，你会发现里面有一行文字：
+```yml
+theme: jekyll-theme-cayman
+```
+这个`theme`就指的是样式。`jekyll-theme`指的是GithubPages默认给你使用jekyll渲染网站界面。  
+在这个文件里你可以调整你的网站的标题，仔细看！
 
-## 4. 图片外链
-这里最后给大家一个小技巧。由于很多人的页面上想放图片，将图片保存到本地又没用，我们把他保存到GitHub上。  
-（待会再写啦啦啦啦~）  
+![Title](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/Title.png)
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  
 
-最后更新：2021-06-20

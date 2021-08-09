@@ -14,9 +14,9 @@
 1.更新（但我不知道更新了什么）`Python小程序`
 2.给现存N篇文章添加标签，如下：
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
 3.修改Github专区介绍  
-4.更新`GithubPages`
+4.更新`GithubPages`并添加一张图片
 
 [Added]
 1.404页面
