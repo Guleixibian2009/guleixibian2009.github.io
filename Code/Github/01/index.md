@@ -27,18 +27,18 @@ PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
 现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP：  
 
-> github.com 这是主站  
-> assets-cdn.github.com 动态资源  
-> github.global.ssl.fastly.net 静态资源  
+> GitHub.com 这是主站  
+> assets-cdn.GitHub.com 动态资源  
+> GitHub.global.ssl.fastly.net 静态资源  
 
 我现在查询如下：
 
-> 140.82.114.4 github.com  
-> 185.199.108.153 assets-cdn.github.com  
-> 185.199.109.153 assets-cdn.github.com  
-> 185.199.110.153 assets-cdn.github.com  
-> 185.199.111.153 assets-cdn.github.com  
-> 199.232.69.194 github.global.ssl.fastly.net  
+> 140.82.114.4 GitHub.com  
+> 185.199.108.153 assets-cdn.GitHub.com  
+> 185.199.109.153 assets-cdn.GitHub.com  
+> 185.199.110.153 assets-cdn.GitHub.com  
+> 185.199.111.153 assets-cdn.GitHub.com  
+> 199.232.69.194 GitHub.global.ssl.fastly.net  
 
 按照这样的格式输入到 hosts 文件里，再访问 [Github](https://github.com/) 应该就很快了！  
 **小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
@@ -46,7 +46,7 @@ PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 ### 1.2 DevSidecar----边车系统
 
  **小提示：使用此系统可能会造成系统网络配置更变，请小心驾驶**  
- 介东西是我某个同学推荐的，具体好不好我也不好说，快是真的快......具体教程请去他的 [Github项目地址](https://github.com/docmirror/dev-sidecar) 。  
+ 介东西是我某个同学推荐的，具体好不好我也不好说，快是真地快......具体教程请去他的 [Github项目地址](https://github.com/docmirror/dev-sidecar) 。  
  用之前要先安装证书，随后选择默认模式。  
 
 ![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar1.png)
@@ -79,7 +79,7 @@ PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
 ![create3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/create3.png)
 
 在 `<username>` 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
-EdogawaNotFound.github.io 。 
+EdogawaNotFound.GitHub.io 。 
 
 现在你应该有了一个新仓库了。打开你的仓库，应该是这样的：
 
@@ -148,6 +148,14 @@ theme: jekyll-theme-cayman
 在这个文件里你可以调整你的网站的标题，仔细看！
 
 ![Title](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/Title.png)
+
+其实很简单，只要往下面添加一行就可以啦！
+```yml
+title: My Website~
+```
+你，都学废了吗？
+
+
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  
