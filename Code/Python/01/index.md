@@ -6,7 +6,8 @@ by Guleixibian2009
 
 > 小知识#1  
 >
-> Python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。  
+> Python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
+> 最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越多被用于独立的、大型项目的开发。  
 >
 > 如果你不知道Python的话，就去 [Python官网](https://www.python.org/about/gettingstarted/) 看看吧。
 
@@ -20,12 +21,12 @@ by Guleixibian2009
 string = 'AbCdEfG'
 for letter in string:
 	if letter.isupper():
-		print(letter)
+		print(letter)、
 ```
 
 敢说大部分人都写得出来这种程序吧，不过我还是把它写上了。不过我一开始还真没相信 `for letter in string`这一行......[尴尬]  
 
-*现在讲解代码！*首先我们定义了一个字符串(string就是字符串)，内容是一些字母，既有大写又有小写。然后用一个for循环，遍历每一个字母，再检测他是不是大写(`if letter.isupper()`)。如果字母大写就打印出来。  
+*现在讲解代码！* 首先我们定义了一个字符串(string就是字符串)，内容是一些字母，既有大写又有小写。然后用一个for循环，遍历每一个字母，再检测他是不是大写(`if letter.isupper()`)。如果字母大写就打印出来。  
 
 ![Run1](https://guleixibian2009.github.io/Source/Pics/Code/Python/01/run1.png)  
 
