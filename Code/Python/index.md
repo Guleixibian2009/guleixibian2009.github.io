@@ -1,5 +1,6 @@
 # 编程/Python
-
+![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
 ......你是怎么找到这里的？  
 不过，既然来了，就把Python的简介看完呗~  
 
