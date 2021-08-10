@@ -77,9 +77,14 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 ......
 ```
 有没有注意到那个`url`后面跟了一个`https://github.com.cnpmjs.org`？
-为了让它“恢复正常”，要把它改回`https://github.com`。
+为了让它“恢复正常”，要把它改回`https://github.com`。  
 现在，应该就可以了吧！（如果没有.git文件夹说明你没有Push过，或者这不是你的项目）
+
 ## 2.2 网页版
+`https://github.com.cnpmjs.org`并不是GitHub的唯一镜像。如果你觉得GitHub太慢，
+你可以注册一个中文版GitHub，叫做gitee。  
+注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！
+
 ## 3. 我天天要用GitHub，给个靠谱的方法！
 
 在Gitee上有一个项目，叫做`@docmirror/DevSidecar`，中文名
