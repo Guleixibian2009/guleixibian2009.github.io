@@ -84,7 +84,8 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 `https://github.com.cnpmjs.org`并不是GitHub的唯一镜像。如果你觉得GitHub太慢，
 你可以注册一个中文版GitHub，叫做gitee。  
 注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！
-
+![import1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/import1.png)
+![import2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/import2.png)
 ## 3. 我天天要用GitHub，给个靠谱的方法！
 
 在Gitee上有一个项目，叫做`@docmirror/DevSidecar`，中文名
