@@ -68,9 +68,17 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 这并不是你想要Push回去的地址，于是，经过无数尝试，我发现在.git文件夹（是隐藏的）中有一个
 `config`文件，里边是这样写的：
 ```
+......
 
+[remote "origin"]
+    url = https://github.com.cnpmjs.org/Guleixibian2009/guleixibian2009.github.io.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+
+......
 ```
-
+有没有注意到那个`url`后面跟了一个`https://github.com.cnpmjs.org`？
+为了让它“恢复正常”，要把它改回`https://github.com`。
+现在，应该就可以了吧！（如果没有.git文件夹说明你没有Push过，或者这不是你的项目）
 ## 2.2 网页版
 ## 3. 我天天要用GitHub，给个靠谱的方法！
 
