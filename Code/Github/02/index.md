@@ -11,6 +11,35 @@
 
 ## 0.目录
 
-- 方法一：修改`Host`  
-- 方法二：改链接，做镜像  
-- 方法三：装“边车”，速度嗖嗖嗖直窜3秒！
+- 方法一：修改`Host`，其实更加浪费生命  
+- 方法二：改链接，做镜像，世界变得更加美好  
+- 方法三：装“边车”，速度嗖嗖嗖直窜3秒！  
+
+## 1. 我有大把时间，我要改hosts！
+好吧，如果你真的这么无聊，那我就讲一讲吧......  
+首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
+
+![hosts1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts1.png)
+![hosts2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts2.png)
+![hosts3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts3.png)
+
+用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
+现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP：
+
+> GitHub.com 这是主站  
+> assets-cdn.GitHub.com 动态资源  
+> GitHub.global.ssl.fastly.net 静态资源
+
+我现在查询如下：
+
+> 140.82.114.4 GitHub.com  
+> 185.199.108.153 assets-cdn.GitHub.com  
+> 185.199.109.153 assets-cdn.GitHub.com  
+> 185.199.110.153 assets-cdn.GitHub.com  
+> 185.199.111.153 assets-cdn.GitHub.com  
+> 199.232.69.194 GitHub.global.ssl.fastly.net
+
+按照这样的格式输入到 hosts 文件里，再访问 [Github](https://github.com/) 应该就很快了！  
+**小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
+
+## 2. 我只用GitHub下载程序，不使用其他功能！

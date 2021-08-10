@@ -18,30 +18,7 @@ __话不多说，直接上步骤！__
 
 [Github](https://github.com) 是啥为了节省篇幅我就不讲了,自己去查 [百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin) 吧。
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
-首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
-
-![hosts1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts1.png)
-![hosts2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts2.png)
-![hosts3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts3.png)
-
-用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
-现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP：  
-
-> GitHub.com 这是主站  
-> assets-cdn.GitHub.com 动态资源  
-> GitHub.global.ssl.fastly.net 静态资源  
-
-我现在查询如下：
-
-> 140.82.114.4 GitHub.com  
-> 185.199.108.153 assets-cdn.GitHub.com  
-> 185.199.109.153 assets-cdn.GitHub.com  
-> 185.199.110.153 assets-cdn.GitHub.com  
-> 185.199.111.153 assets-cdn.GitHub.com  
-> 199.232.69.194 GitHub.global.ssl.fastly.net  
-
-按照这样的格式输入到 hosts 文件里，再访问 [Github](https://github.com/) 应该就很快了！  
-**小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
+  
 
 ### 1.2 DevSidecar----边车系统
 
