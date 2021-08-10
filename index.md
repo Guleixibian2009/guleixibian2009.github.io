@@ -12,6 +12,7 @@
         1.1 [Markdown基本语法](https://guleixibian2009.github.io/Code/Markdown/01/)  
     2. [GitHub](https://guleixibian2009.github.io/Code/Github/)  
         2.1 [从头开始建设GithubPages](https://guleixibian2009.github.io/Code/Github/01/)  
+        2.2 [3招提速你的GitHub](https://guleixibian2009.github.io/Code/Github/02/)
     3. [Python](https://guleixibian2009.github.io/Code/Python/)  
         3.1 [Python小程序](https://guleixibian2009.github.io/Code/Python/01/)  
 - [APP(暂未更新)](https://guleixibian2009.github.io/APP/)  
