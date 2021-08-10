@@ -98,4 +98,9 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 ![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar1.png)
 ![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar2.png)
 
-不过后来我又发现一个问题......如果你用的是Firefox，那么他会有如下界面：
+不过后来我又发现一个问题......如果你用的是Firefox，那么他会有“未连接”的界面。
+白天速度不算慢，你就关掉代理就好了。但是晚上......等明天吧。  
+所以，你学废了吗？  
+
+___
+__THE END__ 谢谢你的阅读~
