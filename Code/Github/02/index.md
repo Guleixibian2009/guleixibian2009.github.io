@@ -15,6 +15,7 @@
 - 方法二：改链接，做镜像，世界变得更加美好  
 - 方法三：装“边车”，速度嗖嗖嗖直窜3秒！  
 
+___
 ## 1. 我有大把时间，我要改hosts！
 好吧，如果你真的这么无聊，那我就讲一讲吧......  
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
@@ -51,10 +52,11 @@ IPAddress HostName
 按照这样的格式输入到 hosts 文件里，再访问 Github 应该就很快了！  
 **小提示：据我所知，每次只用查主站的IP就好了，其他的基本不会变~**  
 
+___
 ## 2. 我只用GitHub下载程序，不使用其他功能！
 
 ## 2.1 Git版
-如果你是用Git Clone仓库，你么你就走运了。平时，我们clone时语法是这样的：
+如果你是用Git Clone仓库，那么你就走运了。平时，我们clone时语法是这样的：
 ```git
 git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git
 ```
@@ -82,15 +84,17 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 
 ## 2.2 网页版
 `https://github.com.cnpmjs.org`并不是GitHub的唯一镜像。如果你觉得GitHub太慢，
-你可以注册一个中文版GitHub，叫做gitee。  
+你可以注册一个中文版GitHub，叫做Gitee。  
 注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！
 ![import1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/import1.png)
 ![import2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/import2.png)
+
+___
 ## 3. 我天天要用GitHub，给个靠谱的方法！
 
-在Gitee上有一个项目，叫做`@docmirror/DevSidecar`，中文名叫边车（也就是我现在用的）。  
+在GitHub上有一个项目，叫做`@docmirror/DevSidecar`，中文名叫开发者边车（也就是我现在用的）。  
 **小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶**  
-介东西是我某个同学推荐的，几乎解决了关于Github速度的所有问题。
+这个软件是我某个同学推荐的，几乎解决了关于Github速度的所有问题。
 如果你需要下载或帮助，请去他的 [Github项目地址](https://github.com/docmirror/dev-sidecar) 
 或 [Gitee地址](https://gitee.com/docmirror/dev-sidecar) 。  
 用之前要先安装证书，随后选择默认模式。
@@ -98,9 +102,11 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 ![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar1.png)
 ![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar2.png)
 
-不过后来我又发现一个问题......如果你用的是Firefox，那么他会有“未连接”的界面。
+不过后来我又发现一个问题......如果你用的是Firefox，那么他有时会有“未连接”的界面。
 ![problem](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/problem.png)  
-白天速度不算慢，你就关掉代理就好了。但是晚上......等明天吧。  
+白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，
+这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的
+证书。  
 所以，你学废了吗？  
 
 ___

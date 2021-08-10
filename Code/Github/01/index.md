@@ -16,7 +16,7 @@ __话不多说，直接上步骤！__
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
   
 
-
+___
 ## 2.基础设置
 现在，我们可以做一些基本配置了。
 
@@ -52,6 +52,7 @@ EdogawaNotFound.GitHub.io 。
 
 现在，你有了自己的仓库，就可以往仓库里放东西了。
 
+___
 ## 3.切入正题
 
 ### 3.1 勾选Pages
@@ -122,8 +123,11 @@ title: My Website~
 ```
 你，都学废了吗？
 
+___
 ## 4.404页面
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  
 
+___
+__THE END__ 谢谢你的阅读~
