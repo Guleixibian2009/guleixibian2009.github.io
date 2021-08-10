@@ -110,9 +110,20 @@ ___
 这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的
 证书。  
 所以，你学废了吗？  
-不过，经过一晚上的查询，我终于查到了一个解决办法。
+不过，经过一晚上的查询，我终于查到了一个解决办法。  
+在网址栏里输入`about:config`，会显示如下界面，是的，我们来修改底层配置。
 
+![config1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/config1.png)
 
+点击“接受风险并继续”，会显示如下界面，我们输入`security.enterprise_roots.enabled`。
+
+![config2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/config2.png)
+
+我们默默地把布尔值修改成True，重启浏览器，搞定！
+
+![config3](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/config3.png)
+
+如果点击“那把锁”后出现如下界面，说明你成功啦！
 
 ___
 __THE END__ 谢谢你的阅读~
