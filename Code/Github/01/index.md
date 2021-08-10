@@ -2,9 +2,13 @@
 --by Guleixibian2009  
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
-有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。
+有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
+
+[TOC]
 
 ## 步骤分解
+__话不多说，直接上步骤！__
+
 1.加速github，改hosts；   
 2.注册github，创建<username>.github.io仓库；<br />
 3.创建index.md；<br />

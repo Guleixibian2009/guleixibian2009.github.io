@@ -11,7 +11,7 @@
 
 [v1.2.8] 2021-08-10  
 [Changed]  
-1.更新`GithubPages`
+1.更新`GithubPages`，添加目录
 
 [v1.2.7] 2021-08-09  
 [Changed]  
