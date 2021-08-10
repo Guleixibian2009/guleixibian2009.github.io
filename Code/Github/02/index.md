@@ -24,20 +24,16 @@
 ![hosts3](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts3.png)
 
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
-现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP：
+现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP，现在查询如下：
 
-> GitHub.com 这是主站  
-> assets-cdn.GitHub.com 动态资源  
-> GitHub.global.ssl.fastly.net 静态资源
-
-我现在查询如下：
-
-> 140.82.114.4 GitHub.com  
-> 185.199.108.153 assets-cdn.GitHub.com  
-> 185.199.109.153 assets-cdn.GitHub.com  
-> 185.199.110.153 assets-cdn.GitHub.com  
-> 185.199.111.153 assets-cdn.GitHub.com  
-> 199.232.69.194 GitHub.global.ssl.fastly.net
+|网址|解释|IP|
+|:--:|:--:|:--:|
+|github.com|这是主站|140.82.114.4|
+|assets-cdn.github.com|动态资源|185.199.108.153|
+|assets-cdn.github.com|动态资源|185.199.109.153|
+|assets-cdn.github.com|动态资源|185.199.110.153|
+|assets-cdn.github.com|动态资源|185.199.111.153|
+|github.global.ssl.fastly.net|静态资源|199.232.69.194|
 
 按照这样的格式输入到 hosts 文件里，再访问 [Github](https://github.com/) 应该就很快了！  
 **小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
