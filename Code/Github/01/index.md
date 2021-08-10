@@ -6,7 +6,6 @@
 
 ## 步骤分解
 __话不多说，直接上步骤！__
-
 1.加速github，改hosts；   
 2.注册github，创建<username>.github.io仓库；<br />
 3.创建index.md；<br />
