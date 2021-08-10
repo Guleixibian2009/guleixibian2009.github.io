@@ -100,6 +100,8 @@ EdogawaNotFound.GitHub.io 。
 
 ![settings3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings3.png)
 
+### 3.2 重命名README
+
 ![change1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change1.png)
 
 为了githubpages更好的识别你的主页，我们需要更名README。点击那支笔，进入如下界面。
@@ -113,7 +115,7 @@ EdogawaNotFound.GitHub.io 。
 回来大概是这样的。  
 你的网站，如果已经Publish，应该叫做`<username>.github.io>`
 现在访问你的网站，如果可以访问，恭喜你，你已经成功了！  
-但是网站的默认文本，不过是对githubPages功能的介绍。这样的网站，也许对于别人来说没有意义。  
+但是网站的默认文本是对githubPages功能的介绍。这样的网站，也许对于别人来说没有意义。  
 所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。
 使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。 而在GithubPages功能里，我们写文章的方法是写Markdown。  
 等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))
@@ -155,7 +157,7 @@ title: My Website~
 ```
 你，都学废了吗？
 
-
+## 4.404页面
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  
