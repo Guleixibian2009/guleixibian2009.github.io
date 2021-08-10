@@ -35,11 +35,43 @@
 |assets-cdn.github.com|动态资源|185.199.111.153|
 |github.global.ssl.fastly.net|静态资源|199.232.69.194|
 
-按照这样的格式输入到 hosts 文件里，再访问 [Github](https://github.com/) 应该就很快了！  
-**小提示：每次只用查主站的IP就好了，其他的基本不会变~**  
+注意，写入`hosts`的格式如下：
+```hosts
+IPAddress HostName
+```
+如：
+```hosts
+140.82.114.4    github.com  
+185.199.108.153 assets-cdn.github.com  
+185.199.109.153 assets-cdn.github.com  
+185.199.110.153 assets-cdn.github.com  
+185.199.111.153 assets-cdn.github.com
+199.232.69.194  github.global.ssl.fastly.net
+```
+按照这样的格式输入到 hosts 文件里，再访问 Github 应该就很快了！  
+**小提示：据我所知，每次只用查主站的IP就好了，其他的基本不会变~**  
 
 ## 2. 我只用GitHub下载程序，不使用其他功能！
 
+## 2.1 Git版
+如果你是用Git Clone仓库，你么你就走运了。平时，我们clone时语法是这样的：
+```git
+git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git
+```
+但如果你用了镜像网站，速度会极快：
+```git
+git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git
+```
+`https://github.com.cnpmjs.org`是一个极为神奇的网站：作为一个镜像网站，他把几百KiB/S
+的速度提到了几十MiB/S，速度大幅提升！  
+但这样会有一个bug：Git会把你Push回去的网址变为`https://github.com.cnpmjs.org`。很尴尬的是，
+这并不是你想要Push回去的地址，于是，经过无数尝试，我发现在.git文件夹（是隐藏的）中有一个
+`config`文件，里边是这样写的：
+```
+
+```
+
+## 2.2 网页版
 ## 3. 我天天要用GitHub，给个靠谱的方法！
 
 在Gitee上有一个项目，叫做`@docmirror/DevSidecar`，中文名
