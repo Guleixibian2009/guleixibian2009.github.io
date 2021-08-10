@@ -2,8 +2,7 @@
 --by Guleixibian2009  
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
-有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。  
-PS：这个教程用Windows10 64位系统编写，适合Win7及以上。
+有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面。
 
 ## 步骤分解
 1.加速github，改hosts；   
