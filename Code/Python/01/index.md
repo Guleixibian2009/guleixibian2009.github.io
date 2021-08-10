@@ -1,7 +1,7 @@
 # 一些新鲜出炉的Python代码！
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
-by Guleixibian2009  
+--by Guleixibian2009  
 
 我一直喜欢Python这种语言，我也经常写Python的程序，今天就给大家共享一下吧！  
 

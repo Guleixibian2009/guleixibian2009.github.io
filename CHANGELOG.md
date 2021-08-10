@@ -12,6 +12,10 @@
 [v1.2.8] 2021-08-10  
 [Changed]  
 1.更新`GithubPages`
+2.更新`Python小程序`
+
+[Added]
+1.新增文章`3招解决GitHub速度问题`
 
 [v1.2.7] 2021-08-09  
 [Changed]  
