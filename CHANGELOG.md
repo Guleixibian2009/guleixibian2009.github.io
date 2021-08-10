@@ -13,6 +13,7 @@
 [Changed]  
 1.更新`GithubPages`
 2.更新`Python小程序`
+3.更新5张图片
 
 [Added]
 1.新增文章`3招解决GitHub速度问题`

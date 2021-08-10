@@ -19,9 +19,9 @@
 好吧，如果你真的这么无聊，那我就讲一讲吧......  
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
 
-![hosts1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts1.png)
-![hosts2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts2.png)
-![hosts3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/hosts3.png)
+![hosts1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts1.png)
+![hosts2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts2.png)
+![hosts3](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts3.png)
 
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
 现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP：
@@ -51,6 +51,6 @@
 介东西是我某个同学推荐的，具体好不好我也不好说，快是真地快......具体教程请去他的 [Github项目地址](https://github.com/docmirror/dev-sidecar) 。  
 用之前要先安装证书，随后选择默认模式。
 
-![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar1.png)
-![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar2.png)
+![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar1.png)
+![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar2.png)
 
