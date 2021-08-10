@@ -12,22 +12,10 @@ __话不多说，直接上步骤！__
 4.创建_config.yml，选择样式；<br />
 5.图片外链设置； <br />
 
-## 1.加速
-
-### 1.1 查IP
-
 [Github](https://github.com) 是啥为了节省篇幅我就不讲了,自己去查 [百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin) 吧。
 不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
   
 
-### 1.2 DevSidecar----边车系统
-
- **小提示：使用此系统可能会造成系统网络配置更变，请小心驾驶**  
- 介东西是我某个同学推荐的，具体好不好我也不好说，快是真地快......具体教程请去他的 [Github项目地址](https://github.com/docmirror/dev-sidecar) 。  
- 用之前要先安装证书，随后选择默认模式。  
-
-![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar1.png)
-![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/sidecar2.png)
 
 ## 2.基础设置
 现在，我们可以做一些基本配置了。
