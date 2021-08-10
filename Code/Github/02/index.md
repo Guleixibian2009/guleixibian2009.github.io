@@ -103,11 +103,16 @@ ___
 ![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar2.png)
 
 不过后来我又发现一个问题......如果你用的是Firefox，那么他有时会有“未连接”的界面。
+
 ![problem](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/problem.png)  
+
 白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，
 这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的
 证书。  
 所以，你学废了吗？  
+不过，经过一晚上的查询，我终于查到了一个解决办法。
+
+
 
 ___
 __THE END__ 谢谢你的阅读~
