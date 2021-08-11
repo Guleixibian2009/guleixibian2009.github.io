@@ -13,7 +13,7 @@ __我看到了一个熟悉的东西__————这个网址里有github的字�
 然后搜到好多有关“用Github.io创作个人博客”的文章，没想到做网站也可以这么简单。
 
 ## 步骤分解
-__话不多说，直接上步骤！__   
+__话不多说，直接上步骤！__    
 1.注册github，创建<username>.github.io仓库；  
 2.创建index.md；  
 3.创建_config.yml，选择样式；  
@@ -23,19 +23,19 @@ ___
 ## 1.基础设置
 想必大家看完上文已经知道了我们的网站依托于 [Github](https://github.com/) 。
 身为程序员，大家应该都知道GitHub是什么吧。如果你不知道的话，可以看看 [这里](https://guleixibian2009.github.io/Code/Github/) 
-或者查询 [百度百科]
+或者查询 [百度百科](https://baike.baidu.com/item/Github) 。
 
 ### 1.1 注册Github账号
-用Github，没个账号可不行。去官网注册一个账号，步骤如下：  
+如果你没用过Github，就去官网注册一个账号，步骤如下：  
 如图，填写你的邮箱和用户名，应该就好了。
 
 ![frontpage](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/frontpage.png)
 ![email](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/email.png)
 
-我用360大家见谅哈~（尴尬：我注册时不是这样啊？？？）  
-不管怎么样了，现在你登录Github，（如果需要验证码就登录一下）大概是这个样子的：  
+（尴尬：我注册时不是这样啊？？？）  
+登录Github可能会需要验证码。登录一下注册时的邮箱，你会收到Github（`noreply@github.com`）的邮件，比如说：
 
-![myPage](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/myPage.png)
+![Authentication](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/Authentication.png)
 
 ### 1.2 创建一个仓库
 为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。  
@@ -75,18 +75,25 @@ ___
 
 ![change1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change1.png)
 
-为了githubpages更好的识别你的主页，我们需要更名README。点击那支笔，进入如下界面。
+为了GithubPages更好的识别你的主页，我们需要新建一个index.md。你可以保留你的README不动，没有关系。
 
-![change2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change2.png)
+![New1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/New1.png)
 
-红框框内的命称是文件名。我们把他改成 index.md(如果不太对的话......也有可能是我记错了)
+点击 + 按钮，选择Create New File，然后进入如下界面：
+
+![New2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/New2.png)
+
+在输入框里输入index.md。Index指索引。你将会在这个新文件里写主页。
+
+![New3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/New3.png)
+
+点击Commit New Changes。
 
 ![change3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change3.png)
 
 回来大概是这样的。  
 你的网站，如果已经Publish，应该叫做`<username>.github.io>`
-现在访问你的网站，如果可以访问，恭喜你，你已经成功了！  
-但是网站的默认文本是对githubPages功能的介绍。这样的网站，也许对于别人来说没有意义。  
+现在访问你的网站，如果可以访问，恭喜你，你已经成功了！   
 所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。
 使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。 而在GithubPages功能里，我们写文章的方法是写Markdown。  
 等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))
@@ -110,6 +117,8 @@ GithubPages已经给你提供好了一些样式，我们可以直接用。
 ![theme2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/theme2.png)
 
 不管你选了哪个，有没有发现你的网站好看多了呢？ 
+不过，他会自动填充你的index.md。网站的默认文本是对githubPages功能的介绍。这样的网站，也许对于别人来说没有意义。
+(不过如果没有的话......也许是因为你先创建了文件再选择样式，其实也没事)  
 
 ### 2.4 _config.yml
 不知道细心的你有没有发现，你的仓库里面多了一个`_config.yml`文件（千万不要删！）
@@ -130,6 +139,7 @@ title: My Website~
 
 ___
 ## 3.404页面
+
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  

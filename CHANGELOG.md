@@ -11,7 +11,7 @@
 
 [v1.2.10] 2021-08-11  
 [Changed]  
-1.修改GithubPages卷首语
+1.修改GithubPages卷首语、创建文件
 2.更新gitignore文件
 
 [v1.2.9] 2021-08-10
