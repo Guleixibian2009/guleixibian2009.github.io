@@ -5,7 +5,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
 
 今天我就教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
-其实我一直想要做网站。在6个月前（2021年2月），我开始看着W3School上的教程，用SublimeText写HTML。
+其实我一直想要做网站。在6个月前（2021年2月），我开始看着 [W3School](https://www.w3school.com.cn/)
+上的教程，用SublimeText写HTML。
 但写了一两个月后，我突然想起来一件事。  
 大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了）。他给了我一个网址，然后，
 __我看到了一个熟悉的东西__————这个网址里有github的字样。于是，我搜（百）索（度）了一会子，
@@ -16,15 +17,13 @@ __话不多说，直接上步骤！__
 1.注册github，创建<username>.github.io仓库；  
 2.创建index.md；  
 3.创建_config.yml，选择样式；  
-4.404页面；  
-
-  
-
-  
+4.404页面；
 
 ___
 ## 1.基础设置
-现在，我们可以做一些基本配置了。
+想必大家看完上文已经知道了我们的网站依托于 [Github](https://github.com/) 。
+身为程序员，大家应该都知道GitHub是什么吧。如果你不知道的话，可以看看 [这里](https://guleixibian2009.github.io/Code/Github/) 
+或者查询 [百度百科]
 
 ### 1.1 注册Github账号
 用Github，没个账号可不行。去官网注册一个账号，步骤如下：  
