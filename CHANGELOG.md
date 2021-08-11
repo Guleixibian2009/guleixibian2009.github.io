@@ -12,6 +12,7 @@
 [v1.2.10] 2021-08-11  
 [Changed]  
 1.修改GithubPages卷首语
+2.更新gitignore文件
 
 [v1.2.9] 2021-08-10
 [Changed]  
