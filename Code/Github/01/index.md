@@ -1,26 +1,32 @@
-# 从头开始建设GithubPages
+# GithubPages——简单易上手的网站制作
 --by Guleixibian2009  
+
 ![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
-有人问，这个`github.io`是怎么做出来的？其实很简单，今天我就教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
+
+今天我就教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
+其实我一直想要做网站。在6个月前（2021年2月），我开始看着W3School上的教程，用SublimeText写HTML。
+但写了一两个月后，我突然想起来一件事。  
+大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了）。他给了我一个网址，然后，
+__我看到了一个熟悉的东西__————这个网址里有github的字样。于是，我搜（百）索（度）了一会子，
+然后搜到好多有关“用Github.io创作个人博客”的文章，没想到做网站也可以这么简单。
 
 ## 步骤分解
-__话不多说，直接上步骤！__
-1.加速github，改hosts；   
-2.注册github，创建<username>.github.io仓库；<br />
-3.创建index.md；<br />
-4.创建_config.yml，选择样式；<br />
-5.图片外链设置； <br />
+__话不多说，直接上步骤！__   
+1.注册github，创建<username>.github.io仓库；  
+2.创建index.md；  
+3.创建_config.yml，选择样式；  
+4.404页面；  
 
-[Github](https://github.com) 是啥为了节省篇幅我就不讲了,自己去查 [百度百科](https://baike.baidu.com/item/Github/10145341?fr=aladdin) 吧。
-不过这东东是国外的，所以我们会需要去加速它。这里推荐一种最安全的方法----查IP。
+  
+
   
 
 ___
-## 2.基础设置
+## 1.基础设置
 现在，我们可以做一些基本配置了。
 
-### 2.1 注册Github账号
+### 1.1 注册Github账号
 用Github，没个账号可不行。去官网注册一个账号，步骤如下：  
 如图，填写你的邮箱和用户名，应该就好了。
 
@@ -32,7 +38,7 @@ ___
 
 ![myPage](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/myPage.png)
 
-### 2.2 创建一个仓库
+### 1.2 创建一个仓库
 为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。  
 如图，点击右上角的 New 按钮，然后会弹出如下界面。
 
@@ -53,9 +59,9 @@ EdogawaNotFound.GitHub.io 。
 现在，你有了自己的仓库，就可以往仓库里放东西了。
 
 ___
-## 3.切入正题
+## 2.切入正题
 
-### 3.1 勾选Pages
+### 2.1 勾选Pages
 
 在使用这个功能之前，你要告诉GitHub你要把这个仓库当做网页源码。  
 在 Settings 里找到 pages 选项，应该是这样子的：
@@ -66,7 +72,7 @@ ___
 
 ![settings3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings3.png)
 
-### 3.2 重命名README
+### 2.2 重命名README
 
 ![change1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change1.png)
 
@@ -88,7 +94,7 @@ ___
 让我们给自己的网站换个样式。  
 不过，如果你想现在学习Markdown了。我另写了一篇文章， [传送门](https://guleixibian2009.github.io/Code/Markdown/01/) 。  
 
-### 3.3 换个样式
+### 2.3 换个样式
 
 一个网站，也许最重要的不是文章的内容，而是他的主页--它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。  
 GithubPages已经给你提供好了一些样式，我们可以直接用。  
@@ -106,7 +112,7 @@ GithubPages已经给你提供好了一些样式，我们可以直接用。
 
 不管你选了哪个，有没有发现你的网站好看多了呢？ 
 
-### 3.4 _config.yml
+### 2.4 _config.yml
 不知道细心的你有没有发现，你的仓库里面多了一个`_config.yml`文件（千万不要删！）
 打开这个文件，你会发现里面有一行文字：
 ```yml
@@ -124,7 +130,7 @@ title: My Website~
 你，都学废了吗？
 
 ___
-## 4.404页面
+## 3.404页面
 
 最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/Guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
 下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  
