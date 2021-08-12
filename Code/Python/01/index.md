@@ -1,7 +1,7 @@
 # 一些新鲜出炉的Python代码！
-![license](https://img.shields.io/github/license/guleixibian/guleixibian.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian/guleixibian.github.io)  
---by guleixibian  
+![license](https://img.shields.io/github/license/guleixibian2009/guleixibian2009.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian2009/guleixibian2009.github.io)  
+--by guleixibian2009  
 
 我一直喜欢Python这种语言，我也经常写Python的程序，今天就给大家共享一下吧！  
 
@@ -29,7 +29,7 @@ for letter in string:
 
 *现在讲解代码！* 首先我们定义了一个字符串(string就是字符串)，内容是一些字母，既有大写又有小写。然后用一个for循环，遍历每一个字母，再检测他是不是大写(`if letter.isupper()`)。如果字母大写就打印出来。  
 
-![Run1](https://guleixibian.github.io/Source/Pics/Code/Python/01/run1.png)  
+![Run1](https://guleixibian2009.github.io/Source/Pics/Code/Python/01/run1.png)  
 
 看吧，他回复了你ACEG。  
 

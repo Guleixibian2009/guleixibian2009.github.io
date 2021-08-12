@@ -1,8 +1,8 @@
 # GithubPages——简单易上手的网站制作
---by guleixibian  
+--by guleixibian2009  
 
-![license](https://img.shields.io/github/license/guleixibian/guleixibian.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian/guleixibian.github.io)  
+![license](https://img.shields.io/github/license/guleixibian2009/guleixibian2009.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian2009/guleixibian2009.github.io)  
 
 今天我就来教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
 其实我一直想要做网站。在6个月前（2021年2月），我开始看着 [W3School](https://www.w3school.com.cn/)
@@ -22,31 +22,31 @@ __话不多说，直接上步骤！__
 ___
 ## 1.基础设置
 想必大家看完上文已经知道了我们的网站依托于 [Github](https://github.com/) 。
-身为程序员，大家应该都知道GitHub是什么吧。如果你不知道的话，可以看看 [这里](https://guleixibian.github.io/Code/Github/) 
+身为程序员，大家应该都知道GitHub是什么吧。如果你不知道的话，可以看看 [这里](https://guleixibian2009.github.io/Code/Github/) 
 或者查询 [百度百科](https://baike.baidu.com/item/Github) 。
 
 ### 1.1 注册Github账号
 如果你没用过Github，就去官网注册一个账号，步骤如下：  
 如图，填写你的邮箱和用户名，应该就好了。
 
-![frontpage](https://guleixibian.github.io/Source/Pics/Code/Github/01/frontpage.png)
-![email](https://guleixibian.github.io/Source/Pics/Code/Github/01/email.png)
+![frontpage](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/frontpage.png)
+![email](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/email.png)
 
 （尴尬：我注册时不是这样啊？？？）  
 登录Github可能会需要验证码。登录一下注册时的邮箱，你会收到Github（`noreply@github.com`）的邮件，比如说：
 
-![Authentication](https://guleixibian.github.io/Source/Pics/Code/Github/01/Authentication.png)
+![Authentication](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/Authentication.png)
 
 ### 1.2 创建一个仓库
 为了储存我们的代码，我们需要分配给他一个空间，学名 repository ，意思是仓库。  
 如图，点击右上角的 New 按钮，然后会弹出如下界面。
 
-![create1](https://guleixibian.github.io/Source/Pics/Code/Github/01/create1.png)
-![create2](https://guleixibian.github.io/Source/Pics/Code/Github/01/create2.png)
+![create1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/create1.png)
+![create2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/create2.png)
 
 我们如图勾选，
 
-![create3](https://guleixibian.github.io/Source/Pics/Code/Github/01/create3.png)
+![create3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/create3.png)
 
 在 `<username>` 处填上你的名字，如果名字是 EdogawaNotFound , 那仓库名就叫  
 EdogawaNotFound.GitHub.io 。 
@@ -61,31 +61,31 @@ ___
 在使用这个功能之前，你要告诉GitHub你要把这个仓库当做网页源码。  
 在 Settings 里找到 pages 选项，应该是这样子的：
 
-![settings2](https://guleixibian.github.io/Source/Pics/Code/Github/01/settings2.png)
+![settings2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings2.png)
 
 把 Source 调成你现有的分支，点击 Save 。  
 
-![settings3](https://guleixibian.github.io/Source/Pics/Code/Github/01/settings3.png)
+![settings3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings3.png)
 
 ### 2.2 重命名README
 
-![change1](https://guleixibian.github.io/Source/Pics/Code/Github/01/change1.png)
+![change1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change1.png)
 
 为了GithubPages更好的识别你的主页，我们需要新建一个index.md。你可以保留你的README不动，没有关系。
 
-![New1](https://guleixibian.github.io/Source/Pics/Code/Github/01/New1.png)
+![New1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/New1.png)
 
 点击 + 按钮，选择Create New File，然后进入如下界面：
 
-![New2](https://guleixibian.github.io/Source/Pics/Code/Github/01/New2.png)
+![New2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/New2.png)
 
 在输入框里输入index.md。Index指索引。你将会在这个新文件里写主页。
 
-![New3](https://guleixibian.github.io/Source/Pics/Code/Github/01/New3.png)
+![New3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/New3.png)
 
 点击Commit New Changes。
 
-![change3](https://guleixibian.github.io/Source/Pics/Code/Github/01/change3.png)
+![change3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/change3.png)
 
 回来大概是这样的。  
 你的网站，如果已经Publish，应该叫做`<username>.github.io>`
@@ -94,7 +94,7 @@ ___
 使用GitHubpages功能时，你并不需要会写HTML，只需要写文章就行了。 而在GithubPages功能里，我们写文章的方法是写Markdown。  
 等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))
 让我们给自己的网站换个样式。  
-不过，如果你想现在学习Markdown了。我另写了一篇文章， [传送门](https://guleixibian.github.io/Code/Markdown/01/) 。  
+不过，如果你想现在学习Markdown了。我另写了一篇文章， [传送门](https://guleixibian2009.github.io/Code/Markdown/01/) 。  
 
 ### 2.3 换个样式
 
@@ -102,15 +102,15 @@ ___
 GithubPages已经给你提供好了一些样式，我们可以直接用。  
 转到刚刚那个Settings/Pages,不过这次点ThemeChooser。
 
-![settings3](https://guleixibian.github.io/Source/Pics/Code/Github/01/settings3.png)
+![settings3](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/settings3.png)
 
 在这个界面，你可以选择一个你喜欢的样式（Theme）。
 
-![theme1](https://guleixibian.github.io/Source/Pics/Code/Github/01/theme1.png)
+![theme1](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/theme1.png)
 
 在这里面我选了一个Cayman（简约大气）。
 
-![theme2](https://guleixibian.github.io/Source/Pics/Code/Github/01/theme2.png)
+![theme2](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/theme2.png)
 
 不管你选了哪个，有没有发现你的网站好看多了呢？ 
 不过，他会自动填充你的index.md。网站的默认文本是对githubPages功能的介绍。这样的网站，也许对于别人来说没有意义。
@@ -125,7 +125,7 @@ theme: jekyll-theme-cayman
 这个`theme`就指的是样式。`jekyll-theme`指的是GithubPages默认给你使用jekyll渲染网站界面。  
 在这个文件里你可以调整你的网站的标题，仔细看！
 
-![Title](https://guleixibian.github.io/Source/Pics/Code/Github/01/Title.png)
+![Title](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/Title.png)
 
 其实很简单，只要往下面添加一行就可以啦！
 ```yml
@@ -137,12 +137,12 @@ ___
 ## 3.404页面
 在访问你的网站时，别人总有输错网址的时候。Github其实有自带的404，像这样：
 
-![404](https://guleixibian.github.io/Source/Pics/Code/Github/01/404.png)
+![404](https://guleixibian2009.github.io/Source/Pics/Code/Github/01/404.png)
 
 不过这个灰色的404实在是不好看，那么，我就有了一个疑问：我能不能自己定制
 
-最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/guleixibian/guleixibian.github.io/issues/2) 评论！  
-下一篇（预告）：[GitHubpages高级教程](https://guleixibian.github.io/Code/Github/02)！  
+最后，如果你碰到了什么问题，欢迎到 [GitHub](https://github.com/guleixibian2009/guleixibian2009.github.io/issues/2) 评论！  
+下一篇（预告）：[GitHubpages高级教程](https://guleixibian2009.github.io/Code/Github/02)！  
 
 ___
 __THE END__ 谢谢你的阅读~
