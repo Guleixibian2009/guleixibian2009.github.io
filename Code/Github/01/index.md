@@ -4,7 +4,7 @@
 ![license](https://img.shields.io/github/license/guleixibian/guleixibian.github.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian/guleixibian.github.io)  
 
-今天我就教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
+今天我就来教大家创建一个`GithubPages(github.io)`页面，分享一下我做网站时的心得。
 其实我一直想要做网站。在6个月前（2021年2月），我开始看着 [W3School](https://www.w3school.com.cn/)
 上的教程，用SublimeText写HTML。
 但写了一两个月后，我突然想起来一件事。  
