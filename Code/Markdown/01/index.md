@@ -1,8 +1,8 @@
 # Markdown基本语法
---by Guleixibian2009  
-![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
-在很多博客、论坛，包括GithubPages(参见[这篇文章](https://guleixibian2009.github.io/GPS/)) 里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！
+--by guleixibian  
+![license](https://img.shields.io/github/license/guleixibian/guleixibian.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian/guleixibian.github.io)  
+在很多博客、论坛，包括GithubPages(参见[这篇文章](https://guleixibian.github.io/GPS/)) 里都有大量运用到一种叫做Markdown的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！
 
 ## 0. Markdown 是什么？
 >Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。  
@@ -83,7 +83,7 @@ ___
 ## 3. 链接与图片
 
 ### 3.1 链接
-文章中的“链接”指“超链接”。 [这是一个超链接实例](https://guleixibian2009.github.io/) ，它指向我的主页。  
+文章中的“链接”指“超链接”。 [这是一个超链接实例](https://guleixibian.github.io/) ，它指向我的主页。  
 链接的语法为 
 
 ```Markdown
@@ -107,7 +107,7 @@ ___
 1. 第一个元素  
 2. 第二个元素  
 3. 第三个元素
-```  
+```
 在Markdown中，直接打 1. 就会出现一个有序列表。当然， i. a. 甚至不从头开始也可以：
 
 

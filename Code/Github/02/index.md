@@ -1,7 +1,7 @@
 # 3个小妙招加速你的GitHub，妈妈再也不怕你的GitHub上不去啦！
---by Guleixibian2009  
-![license](https://img.shields.io/github/license/Guleixibian2009/guleixibian2009.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/Guleixibian2009/guleixibian2009.github.io)  
+--by guleixibian  
+![license](https://img.shields.io/github/license/guleixibian/guleixibian.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/guleixibian/guleixibian.github.io)  
 想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。
 但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  
 在我头几次用github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。
@@ -20,9 +20,9 @@ ___
 好吧，如果你真的这么无聊，那我就讲一讲吧......  
 首先在`C:\Windows\System32\drivers\etc`找到`hosts`文件。如果你以前没用过，那可能需要打开权限。（如下图）
 
-![hosts1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts1.png)
-![hosts2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts2.png)
-![hosts3](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/hosts3.png)
+![hosts1](https://guleixibian.github.io/Source/Pics/Code/Github/02/hosts1.png)
+![hosts2](https://guleixibian.github.io/Source/Pics/Code/Github/02/hosts2.png)
+![hosts3](https://guleixibian.github.io/Source/Pics/Code/Github/02/hosts3.png)
 
 用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。  
 现在我们到 [Ipaddress](https://www.ipaddress.com) 查下面三个网址的IP，现在查询如下：
@@ -58,11 +58,11 @@ ___
 ## 2.1 Git版
 如果你是用Git Clone仓库，那么你就走运了。平时，我们clone时语法是这样的：
 ```git
-git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git
+git clone https://github.com/guleixibian/guleixibian.github.io.git
 ```
 但如果你用了镜像网站，速度会极快：
 ```git
-git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git
+git clone https://github.com.cnpmjs.org/guleixibian/guleixibian.github.io.git
 ```
 `https://github.com.cnpmjs.org`是一个极为神奇的网站：作为一个镜像网站，他把几百KiB/S
 的速度提到了几十MiB/S，速度大幅提升！  
@@ -73,7 +73,7 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 ......
 
 [remote "origin"]
-    url = https://github.com.cnpmjs.org/Guleixibian2009/guleixibian2009.github.io.git
+    url = https://github.com.cnpmjs.org/guleixibian/guleixibian.github.io.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 
 ......
@@ -86,8 +86,8 @@ git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.i
 `https://github.com.cnpmjs.org`并不是GitHub的唯一镜像。如果你觉得GitHub太慢，
 你可以注册一个中文版GitHub，叫做Gitee。  
 注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！
-![import1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/import1.png)
-![import2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/import2.png)
+![import1](https://guleixibian.github.io/Source/Pics/Code/Github/02/import1.png)
+![import2](https://guleixibian.github.io/Source/Pics/Code/Github/02/import2.png)
 
 ___
 ## 3. 我天天要用GitHub，给个靠谱的方法！
@@ -99,12 +99,12 @@ ___
 或 [Gitee地址](https://gitee.com/docmirror/dev-sidecar) 。  
 用之前要先安装证书，随后选择默认模式。
 
-![sidecar1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar1.png)
-![sidecar2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/sidecar2.png)
+![sidecar1](https://guleixibian.github.io/Source/Pics/Code/Github/02/sidecar1.png)
+![sidecar2](https://guleixibian.github.io/Source/Pics/Code/Github/02/sidecar2.png)
 
 不过后来我又发现一个问题......如果你用的是Firefox，那么他有时会有“未连接”的界面。
 
-![problem](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/problem.png)  
+![problem](https://guleixibian.github.io/Source/Pics/Code/Github/02/problem.png)  
 
 白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，
 这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的
@@ -113,15 +113,15 @@ ___
 不过，经过一晚上的查询，我终于查到了一个解决办法。  
 在网址栏里输入`about:config`，会显示如下界面，是的，我们来修改底层配置。
 
-![config1](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/config1.png)
+![config1](https://guleixibian.github.io/Source/Pics/Code/Github/02/config1.png)
 
 点击“接受风险并继续”，会显示如下界面，我们输入`security.enterprise_roots.enabled`。
 
-![config2](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/config2.png)
+![config2](https://guleixibian.github.io/Source/Pics/Code/Github/02/config2.png)
 
 我们默默地把布尔值修改成True，重启浏览器，搞定！
 
-![config3](https://guleixibian2009.github.io/Source/Pics/Code/Github/02/config3.png)
+![config3](https://guleixibian.github.io/Source/Pics/Code/Github/02/config3.png)
 
 如果点击“那把锁”后出现如下界面，说明你成功啦！
 
