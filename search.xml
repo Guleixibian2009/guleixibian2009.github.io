@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>3个小妙招加速你的GitHub，妈妈再也不怕你的GitHub上不去啦！</title>
+    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
+    <content><![CDATA[<p>想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  </p>
+<span id="more"></span>
+<p>在我头几次用github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天（也许不是天天）更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
+<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
+<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
+<li>方法二：改链接，做镜像，世界变得更加美好  </li>
+<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
+</ul>
+<hr>
+<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改hosts！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
+<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com">Ipaddress</a> 查下面三个网址的IP，现在查询如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">网址</th>
+<th style="text-align:center">解释</th>
+<th style="text-align:center">IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">github.com</td>
+<td style="text-align:center">这是主站</td>
+<td style="text-align:center">140.82.114.4</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.108.153</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.109.153</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.110.153</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.111.153</td>
+</tr>
+<tr>
+<td style="text-align:center">github.global.ssl.fastly.net</td>
+<td style="text-align:center">静态资源</td>
+<td style="text-align:center">199.232.69.194</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意，写入<code>hosts</code>的格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 assets-cdn.github.com  </span><br><span class="line">185.199.109.153 assets-cdn.github.com  </span><br><span class="line">185.199.110.153 assets-cdn.github.com  </span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br><span class="line">199.232.69.194  github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+<p>按照这样的格式输入到 hosts 文件里，再访问 Github 应该就很快了！<br><strong>小提示：每次只用查主站的IP就好了，其他的基本不会变~</strong>  </p>
+<hr>
+<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用GitHub下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 Git版</h3><p>如果你是用Git Clone仓库，那么你就走运了。平时，我们clone时语法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p>但如果你用了镜像网站，速度会极快：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p><code>https://github.com.cnpmjs.org</code>是一个极为神奇的网站：作为一个镜像网站，他把几百KiB/S的速度提到了几十MiB/S，速度大幅提升！<br>但这样会有一个bug：Git会把你Push回去的网址变<code>https://github.com.cnpmjs.org</code>。很尴尬的是，这并不是你想要Push回去的地址，于是，经过无数尝试，我发现在.git文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://github.com.cnpmjs.org</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有.git文件夹说明你没有Push过，或者这不是你的项目）</em></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://github.com.cnpmjs.org</code>并不是GitHub的唯一镜像。如果你觉得GitHub太慢，<br>你可以注册一个中文版GitHub，叫做Gitee。<br>注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！<br><img src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<hr>
+<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用GitHub，给个靠谱的方法！</h2><p>在GitHub上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫开发者边车（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了<strong>关于Github速度的所有问题</strong>。<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar">Github项目地址</a><br>或 <a href="https://gitee.com/docmirror/dev-sidecar">Gitee地址</a> 。<br>用之前要先安装证书，随后选择默认模式。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
+<p>不过后来我又发现一个问题……如果你用的是Firefox，那么他有时会有“未连接”的界面。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
+<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，<br>这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的<br>证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，是的，我们来修改底层配置。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
+<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
+<p>我们默默地把布尔值修改成True，重启浏览器，搞定！</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
+<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
+<hr>
+<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>DevSidecar</tag>
+        <tag>FAQs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GithubPages：简单易上手的网站制作(Jekyll版)</title>
+    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
+    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/">W3School</a>上的教程，用SublimeText写HTML。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有Github的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用Github.io创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
+<span id="more"></span>
+<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
+<hr>
+<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/">GitHub</a> 的 <a href="https://pages.github.com/">Pages</a> 功能。<br>身为程序员，大家肯定都听说过GitHub吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
+<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册GitHub账号</h3><p>（如果你有GitHub账号，请跳过这一步）如果你没用过GitHub，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
+<p>（尴尬：我注册时不是这样啊？？？）<br>登录GitHub可能会需要验证码。登录一下注册时的邮箱，你会收到GitHub（<code>noreply@github.com</code>）的邮件，比如说：</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
+<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 New 按钮，然后会弹出如下界面。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
+<p>我们如图勾选，</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
+<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
+<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
+<hr>
+<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选Pages</h3><p>在使用这个功能之前，你要告诉GitHub你要把这个仓库当做网页源码。<br>在 Settings 里找到 <code>pages</code> 选项，应该是这样子的：</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
+<p>把 <code>Source</code> 调成你现有的分支，点击 Save 。  </p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建index.md</h3><p><img src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
+<p>为了GithubPages更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
+<p>点击 <code>+</code> 按钮，选择Create New File，然后进入如下界面：</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
+<p>在输入框里输入<code>index.md</code>。Index指索引。你将会在这个新文件里写主页。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
+<p>点击Commit New Changes。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用GitHubPages功能时，你并不需要会写HTML，只需要写文章就行了。 而在GithubPages功能里，我们写文章的方法是写Markdown。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习Markdown了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/Code/Markdown/01/">传送门</a> 。  </p>
+<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br>GithubPages已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<p>在这个界面，你可以选择一个你喜欢的样式（Theme）。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
+<p>在这里面我选了一个Cayman（简约大气）。</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
+<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对GithubPages功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
+<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 _config.yml</h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
+<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是GithubPages默认给你使用jekyll渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
+<p>其实很简单，只要往下面添加一行就可以啦！</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
+<p>你，都学废了吗？</p>
+<hr>
+<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. 404页面</h2><p>在访问你的网站时，别人总有输错网址的时候。Github其实有自带的404，像这样：</p>
+<p><img src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
+<p>不过这个灰色的404实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
+<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用Markdown填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
+<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的404对其他<code>github.io</code>不起作用），它依然会显示那个灰色的404。  </p>
+<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
+<hr>
+<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和404页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
+<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><hr>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Website</tag>
+        <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
