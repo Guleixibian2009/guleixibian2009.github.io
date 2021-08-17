@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Guleixibian2009的个人博客~</title>
+  
+  <subtitle>一些编程上的小窍门~</subtitle>
+  <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://guleixibian2009.github.io/"/>
+  <updated>2021-08-17T00:59:44.586Z</updated>
+  <id>https://guleixibian2009.github.io/</id>
+  
+  <author>
+    <name>Guleixibian2009</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GithubPages：简单易上手的网站制作(Jekyll版)</title>
+    <link href="https://guleixibian2009.github.io/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/"/>
+    <id>https://guleixibian2009.github.io/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</id>
+    <published>2021-08-15T12:29:48.000Z</published>
+    <updated>2021-08-17T00:59:44.586Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;其实我一直想要做网站。在6个月前（2021年2月），我开始看着 &lt;a href=&quot;https://www.w3school.com.cn/&quot;&gt;W3School&lt;/a&gt;上的教程，用SublimeText写HTML。&lt;br&gt;但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了）。他给了我一个网址，然后，&lt;strong&gt;我看到了一个熟悉的东西&lt;/strong&gt;————这个网址里有Github的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用Github.io创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个&lt;code&gt;GithubPages(github.io)&lt;/code&gt;页面，分享一下我做网站时的心得。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Github" scheme="https://guleixibian2009.github.io/categories/Github/"/>
+    
+    
+    <category term="Github" scheme="https://guleixibian2009.github.io/tags/Github/"/>
+    
+    <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
+    
+    <category term="Jekyll" scheme="https://guleixibian2009.github.io/tags/Jekyll/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3个小妙招加速你的GitHub，妈妈再也不怕你的GitHub上不去啦！</title>
+    <link href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/"/>
+    <id>https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</id>
+    <published>2021-08-14T00:10:08.000Z</published>
+    <updated>2021-08-17T02:03:30.050Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。&lt;br&gt;但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Github" scheme="https://guleixibian2009.github.io/categories/Github/"/>
+    
+    
+    <category term="Github" scheme="https://guleixibian2009.github.io/tags/Github/"/>
+    
+    <category term="DevSidecar" scheme="https://guleixibian2009.github.io/tags/DevSidecar/"/>
+    
+    <category term="FAQs" scheme="https://guleixibian2009.github.io/tags/FAQs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://guleixibian2009.github.io/2021/08/13/hello-world/"/>
+    <id>https://guleixibian2009.github.io/2021/08/13/hello-world/</id>
+    <published>2021-08-13T13:23:54.886Z</published>
+    <updated>2021-08-14T23:52:48.844Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
