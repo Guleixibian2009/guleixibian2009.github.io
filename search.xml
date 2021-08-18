@@ -117,11 +117,11 @@
   <entry>
     <title>GithubPages：简单易上手的网站制作(Jekyll版)</title>
     <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
-    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/">W3School</a>上的教程，用SublimeText写HTML。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有Github的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用Github.io创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
+    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/">W3School</a>上的教程，用SublimeText写HTML。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<em>Github</em>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em>Github.io</em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
 <span id="more"></span>
 <h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
 <hr>
-<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/">GitHub</a> 的 <a href="https://pages.github.com/">Pages</a> 功能。<br>身为程序员，大家肯定都听说过GitHub吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
+<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/">GitHub</a> 的 <strong><a href="https://pages.github.com/">Pages</a></strong> 功能。<br>身为程序员，大家肯定都听说过GitHub吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
 <h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册GitHub账号</h3><p>（如果你有GitHub账号，请跳过这一步）如果你没用过GitHub，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
 <p><img src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
 <p>（尴尬：我注册时不是这样啊？？？）<br>登录GitHub可能会需要验证码。登录一下注册时的邮箱，你会收到GitHub（<code>noreply@github.com</code>）的邮件，比如说：</p>
@@ -172,8 +172,13 @@
 <hr>
 <h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和404页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
 <h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实GithubPages也可以做到这一点。如果你想让Jekyll在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
-<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！</p>
-<h3 id="4-2-添加一些特效"><a href="#4-2-添加一些特效" class="headerlink" title="4.2 添加一些特效"></a>4.2 添加一些特效</h3><hr>
+<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用Markdown填进去，再次访问就有啦！</p>
+<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于Ruby的桌面版Jekyll，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
+<p>其实这个很容易实现，其实是一段JavaScript脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">&quot;javascript&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">	<span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用GithubPages作为域名做网站的方法有很多，</p>
 <p><strong>THE END</strong> 谢谢你的阅读~</p>
 ]]></content>
       <categories>
