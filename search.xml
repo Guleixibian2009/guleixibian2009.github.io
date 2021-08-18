@@ -171,7 +171,9 @@
 <p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
 <hr>
 <h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和404页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
-<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><hr>
+<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实GithubPages也可以做到这一点。如果你想让Jekyll在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
+<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！</p>
+<h3 id="4-2-添加一些特效"><a href="#4-2-添加一些特效" class="headerlink" title="4.2 添加一些特效"></a>4.2 添加一些特效</h3><hr>
 <p><strong>THE END</strong> 谢谢你的阅读~</p>
 ]]></content>
       <categories>
