@@ -178,7 +178,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">&quot;javascript&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">	<span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
 <hr>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用GithubPages作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用GithubPages作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有HEXO 和 Wordpress等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
 <p><strong>THE END</strong> 谢谢你的阅读~</p>
 ]]></content>
       <categories>
