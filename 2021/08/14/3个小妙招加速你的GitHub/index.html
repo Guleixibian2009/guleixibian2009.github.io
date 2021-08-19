@@ -282,9 +282,9 @@
 </ul>
 <hr>
 <h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改hosts！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
 <p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a target="_blank" rel="noopener" href="https://www.ipaddress.com">Ipaddress</a> 查下面三个网址的IP，现在查询如下：</p>
 <div class="table-container">
 <table>
@@ -342,18 +342,18 @@
 <p><code>https://github.com.cnpmjs.org</code>是一个极为神奇的网站：作为一个镜像网站，他把几百KiB/S的速度提到了几十MiB/S，速度大幅提升！<br>但这样会有一个bug：Git会把你Push回去的网址变<code>https://github.com.cnpmjs.org</code>。很尴尬的是，这并不是你想要Push回去的地址，于是，经过无数尝试，我发现在.git文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 <p>有没有注意到那个<code>url</code>后面跟了一个<code>https://github.com.cnpmjs.org</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有.git文件夹说明你没有Push过，或者这不是你的项目）</em></p>
-<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://github.com.cnpmjs.org</code>并不是GitHub的唯一镜像。如果你觉得GitHub太慢，<br>你可以注册一个中文版GitHub，叫做Gitee。<br>注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！<br><img src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://github.com.cnpmjs.org</code>并不是GitHub的唯一镜像。如果你觉得GitHub太慢，<br>你可以注册一个中文版GitHub，叫做Gitee。<br>注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
 <hr>
 <h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用GitHub，给个靠谱的方法！</h2><p>在GitHub上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫开发者边车（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了<strong>关于Github速度的所有问题</strong>。<br>如果你需要下载或帮助，请去他的 <a target="_blank" rel="noopener" href="https://github.com/docmirror/dev-sidecar">Github项目地址</a><br>或 <a target="_blank" rel="noopener" href="https://gitee.com/docmirror/dev-sidecar">Gitee地址</a> 。<br>用之前要先安装证书，随后选择默认模式。</p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
 <p>不过后来我又发现一个问题……如果你用的是Firefox，那么他有时会有“未连接”的界面。</p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
 <p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，<br>这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的<br>证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，是的，我们来修改底层配置。</p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
 <p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
 <p>我们默默地把布尔值修改成True，重启浏览器，搞定！</p>
-<p><img src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
 <p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
 <hr>
 <p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
@@ -685,5 +685,5 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/clicklove.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":280,"height":560},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"live2d-widget-model-wonko"},"display":{"position":"left","width":280,"height":560},"mobile":{"show":true},"log":false});</script></body>
 </html>
