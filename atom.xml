@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2021-08-25T06:53:31.950Z</updated>
+  <updated>2021-08-25T23:15:38.008Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,13 +21,19 @@
     <link href="https://guleixibian2009.github.io/2021/08/25/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/08/25/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
     <published>2021-08-25T06:46:50.000Z</published>
-    <updated>2021-08-25T06:53:31.950Z</updated>
+    <updated>2021-08-25T23:15:38.008Z</updated>
     
     
     
+    
+    <category term="Code" scheme="https://guleixibian2009.github.io/categories/Code/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/categories/Code/Markdown/"/>
     
     
     <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
+    
+    <category term="Coding" scheme="https://guleixibian2009.github.io/tags/Coding/"/>
     
   </entry>
   

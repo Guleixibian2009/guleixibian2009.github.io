@@ -67,14 +67,21 @@
 
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
+    <loc>https://guleixibian2009.github.io/tags/Github/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Github/</loc>
+    <loc>https://guleixibian2009.github.io/tags/DevSidecar/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/FAQs/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -95,14 +102,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/DevSidecar/</loc>
+    <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/FAQs/</loc>
+    <loc>https://guleixibian2009.github.io/tags/Coding/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -118,7 +125,21 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/categories/Code/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/categories/Github/Pages/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/categories/Code/Markdown/</loc>
     <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
