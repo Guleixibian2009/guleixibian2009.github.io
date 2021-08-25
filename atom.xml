@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2021-08-25T06:46:50.346Z</updated>
+  <updated>2021-08-25T06:53:31.950Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,11 +21,13 @@
     <link href="https://guleixibian2009.github.io/2021/08/25/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/08/25/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
     <published>2021-08-25T06:46:50.000Z</published>
-    <updated>2021-08-25T06:46:50.346Z</updated>
+    <updated>2021-08-25T06:53:31.950Z</updated>
     
     
     
     
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
     
   </entry>
   
@@ -55,11 +57,11 @@
   </entry>
   
   <entry>
-    <title>3个小妙招加速你的GitHub，妈妈再也不怕你的GitHub上不去啦！</title>
+    <title>3个小妙招加速你的GitHub~</title>
     <link href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/"/>
     <id>https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</id>
     <published>2021-08-14T00:10:08.000Z</published>
-    <updated>2021-08-17T02:03:30.050Z</updated>
+    <updated>2021-08-25T06:52:27.938Z</updated>
     
     
     <summary type="html">&lt;p&gt;想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。&lt;br&gt;但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  &lt;/p&gt;</summary>
