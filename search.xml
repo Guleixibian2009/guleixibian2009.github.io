@@ -1,103 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>3个小妙招加速你的GitHub~</title>
-    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
-    <content><![CDATA[<p>想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  </p>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
-<p>在我头几次用github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天（也许不是天天）更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
-<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
-<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
-<li>方法二：改链接，做镜像，世界变得更加美好  </li>
-<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
-</ul>
-<hr>
-<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改hosts！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
-<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com">Ipaddress</a> 查下面三个网址的IP，现在查询如下：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">网址</th>
-<th style="text-align:center">解释</th>
-<th style="text-align:center">IP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">github.com</td>
-<td style="text-align:center">这是主站</td>
-<td style="text-align:center">140.82.114.4</td>
-</tr>
-<tr>
-<td style="text-align:center">assets-cdn.github.com</td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.108.153</td>
-</tr>
-<tr>
-<td style="text-align:center">assets-cdn.github.com</td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.109.153</td>
-</tr>
-<tr>
-<td style="text-align:center">assets-cdn.github.com</td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.110.153</td>
-</tr>
-<tr>
-<td style="text-align:center">assets-cdn.github.com</td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.111.153</td>
-</tr>
-<tr>
-<td style="text-align:center">github.global.ssl.fastly.net</td>
-<td style="text-align:center">静态资源</td>
-<td style="text-align:center">199.232.69.194</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>注意，写入<code>hosts</code>的格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
-<p>如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 assets-cdn.github.com  </span><br><span class="line">185.199.109.153 assets-cdn.github.com  </span><br><span class="line">185.199.110.153 assets-cdn.github.com  </span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br><span class="line">199.232.69.194  github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
-<p>按照这样的格式输入到 hosts 文件里，再访问 Github 应该就很快了！<br><strong>小提示：每次只用查主站的IP就好了，其他的基本不会变~</strong>  </p>
-<hr>
-<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用GitHub下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 Git版</h3><p>如果你是用Git Clone仓库，那么你就走运了。平时，我们clone时语法是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p>但如果你用了镜像网站，速度会极快：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p><code>https://github.com.cnpmjs.org</code>是一个极为神奇的网站：作为一个镜像网站，他把几百KiB/S的速度提到了几十MiB/S，速度大幅提升！<br>但这样会有一个bug：Git会把你Push回去的网址变<code>https://github.com.cnpmjs.org</code>。很尴尬的是，这并不是你想要Push回去的地址，于是，经过无数尝试，我发现在.git文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://github.com.cnpmjs.org</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有.git文件夹说明你没有Push过，或者这不是你的项目）</em></p>
-<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://github.com.cnpmjs.org</code>并不是GitHub的唯一镜像。如果你觉得GitHub太慢，<br>你可以注册一个中文版GitHub，叫做Gitee。<br>注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
-<hr>
-<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用GitHub，给个靠谱的方法！</h2><p>在GitHub上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫开发者边车（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了<strong>关于Github速度的所有问题</strong>。<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar">Github项目地址</a><br>或 <a href="https://gitee.com/docmirror/dev-sidecar">Gitee地址</a> 。<br>用之前要先安装证书，随后选择默认模式。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
-<p>不过后来我又发现一个问题……如果你用的是Firefox，那么他有时会有“未连接”的界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
-<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，<br>这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的<br>证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，是的，我们来修改底层配置。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
-<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
-<p>我们默默地把布尔值修改成True，重启浏览器，搞定！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
-<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
-<hr>
-<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>Github</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>DevSidecar</tag>
-        <tag>FAQs</tag>
-      </tags>
   </entry>
   <entry>
     <title>GithubPages：简单易上手的网站制作(Jekyll版)</title>
@@ -284,18 +200,102 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>3个小妙招加速你的GitHub~</title>
+    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
+    <content><![CDATA[<p>想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  </p>
 <span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>在我头几次用github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天（也许不是天天）更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
+<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
+<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
+<li>方法二：改链接，做镜像，世界变得更加美好  </li>
+<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
+</ul>
+<hr>
+<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改hosts！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
+<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com">Ipaddress</a> 查下面三个网址的IP，现在查询如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">网址</th>
+<th style="text-align:center">解释</th>
+<th style="text-align:center">IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">github.com</td>
+<td style="text-align:center">这是主站</td>
+<td style="text-align:center">140.82.114.4</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.108.153</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.109.153</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.110.153</td>
+</tr>
+<tr>
+<td style="text-align:center">assets-cdn.github.com</td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.111.153</td>
+</tr>
+<tr>
+<td style="text-align:center">github.global.ssl.fastly.net</td>
+<td style="text-align:center">静态资源</td>
+<td style="text-align:center">199.232.69.194</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意，写入<code>hosts</code>的格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 assets-cdn.github.com  </span><br><span class="line">185.199.109.153 assets-cdn.github.com  </span><br><span class="line">185.199.110.153 assets-cdn.github.com  </span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br><span class="line">199.232.69.194  github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+<p>按照这样的格式输入到 hosts 文件里，再访问 Github 应该就很快了！<br><strong>小提示：每次只用查主站的IP就好了，其他的基本不会变~</strong>  </p>
+<hr>
+<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用GitHub下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 Git版</h3><p>如果你是用Git Clone仓库，那么你就走运了。平时，我们clone时语法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p>但如果你用了镜像网站，速度会极快：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p><code>https://github.com.cnpmjs.org</code>是一个极为神奇的网站：作为一个镜像网站，他把几百KiB/S的速度提到了几十MiB/S，速度大幅提升！<br>但这样会有一个bug：Git会把你Push回去的网址变<code>https://github.com.cnpmjs.org</code>。很尴尬的是，这并不是你想要Push回去的地址，于是，经过无数尝试，我发现在.git文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://github.com.cnpmjs.org</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有.git文件夹说明你没有Push过，或者这不是你的项目）</em></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://github.com.cnpmjs.org</code>并不是GitHub的唯一镜像。如果你觉得GitHub太慢，<br>你可以注册一个中文版GitHub，叫做Gitee。<br>注册后，点击+号，并且导入你的GitHub仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<hr>
+<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用GitHub，给个靠谱的方法！</h2><p>在GitHub上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫开发者边车（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了<strong>关于Github速度的所有问题</strong>。<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar">Github项目地址</a><br>或 <a href="https://gitee.com/docmirror/dev-sidecar">Gitee地址</a> 。<br>用之前要先安装证书，随后选择默认模式。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
+<p>不过后来我又发现一个问题……如果你用的是Firefox，那么他有时会有“未连接”的界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
+<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，<br>这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的<br>证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，是的，我们来修改底层配置。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
+<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
+<p>我们默默地把布尔值修改成True，重启浏览器，搞定！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
+<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
+<hr>
+<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
 ]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>DevSidecar</tag>
+        <tag>FAQs</tag>
+      </tags>
   </entry>
 </search>
