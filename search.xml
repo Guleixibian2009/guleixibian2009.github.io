@@ -5,7 +5,7 @@
     <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
     <content><![CDATA[<p>想必大家都知道Github是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是GitHub实在太！慢！啦！  </p>
 <span id="more"></span>
-<p>在我头几次用github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天（也许不是天天）更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
+<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天（也许不是天天）更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
 <h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
 <li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
 <li>方法二：改链接，做镜像，世界变得更加美好  </li>
@@ -66,7 +66,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 assets-cdn.github.com  </span><br><span class="line">185.199.109.153 assets-cdn.github.com  </span><br><span class="line">185.199.110.153 assets-cdn.github.com  </span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br><span class="line">199.232.69.194  github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
 <p>按照这样的格式输入到 hosts 文件里，再访问 Github 应该就很快了！<br><strong>小提示：每次只用查主站的IP就好了，其他的基本不会变~</strong>  </p>
 <hr>
-<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用GitHub下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 Git版</h3><p>如果你是用Git Clone仓库，那么你就走运了。平时，我们clone时语法是这样的：</p>
+<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用GitHub下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 Git版</h3><p>如果你是用Git Clone仓库，那么你就走运了。平时，我们Clone时语法是这样的：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
 <p>但如果你用了镜像网站，速度会极快：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
@@ -79,7 +79,7 @@
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
 <p>不过后来我又发现一个问题……如果你用的是Firefox，那么他有时会有“未连接”的界面。</p>
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
-<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，<br>这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的<br>证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，是的，我们来修改底层配置。</p>
+<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，<br>这个模式不需要证书。实际上，造成刚刚那个界面就是因为Firefox无法识别边车自动生成的<br>证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
 <p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
@@ -177,23 +177,6 @@
       </tags>
   </entry>
   <entry>
-    <title>序言</title>
-    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
-    <content><![CDATA[<blockquote>
-<p>在现实断裂的地方<br>梦 汇成了海</p>
-<p>顾城 《弥合》  </p>
-</blockquote>
-<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
-<span id="more"></span>
-<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
-<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
-<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
-<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
-<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2021/08/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -209,23 +192,22 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Markdown基本语法</title>
-    <url>/2021/08/25/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <title>真的非常简单：Markdown基本语法</title>
+    <url>/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95%EF%BC%9AMarkdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>在很多博客、论坛，包括<code>GithubPages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！</p>
 <span id="more"></span>
 <h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. Markdown 是什么？</h2><blockquote>
 <p>Markdown是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。<br>它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。<br>由于Markdown的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用Markdown来撰写帮助文档或是用于论坛上发表消息。如<code>GitHub</code>、<code>OpenStreetMap</code> 、<code>SourceForge</code>、简书等，甚至还能被使用来撰写电子书。<br>（摘自百度百科）  </p>
 </blockquote>
 <hr>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><p>标题在文章中随处可见（包括这篇）。</p>
-<h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像HTML一样写标题</h3><p>在HTML里，标题分六级：</p>
+<h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像HTML一样写标题</h3><p>在HTML里，标题分六级：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>相对应的，Markdown标题也分六级。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># This is an H1  </span></span><br><span class="line"><span class="section">## This is an H2  </span></span><br><span class="line">...  </span><br><span class="line"><span class="section">###### This is an H6  </span></span><br></pre></td></tr></table></figure>
 <p>就像你看到的那样，每层标题就是几个<strong><code>#</code></strong>。</p>
 <h3 id="1-2-Markdown专属标题"><a href="#1-2-Markdown专属标题" class="headerlink" title="1.2 Markdown专属标题"></a>1.2 Markdown专属标题</h3><p>不过，在Markdown中表示标题也可以用一种特殊的方式。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section">This is an H1</span></span><br><span class="line"><span class="section">=============</span></span><br><span class="line"></span><br><span class="line"><span class="section">This is an H2</span></span><br><span class="line"><span class="section">-------------</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>不过它本身只支持2种标题（即大、小标题）。</p>
+<p>不过它本身只支持2种标题，即大、小标题。</p>
 <hr>
 <h2 id="2-文字样式语法"><a href="#2-文字样式语法" class="headerlink" title="2. 文字样式语法"></a>2. 文字样式语法</h2><p>在Markdown中，文字可以是<em>斜体</em>、<strong>粗体</strong>、<strong><em>粗斜体</em></strong>,<del>删除线</del>，<u>下划线</u>。</p>
 <h3 id="2-1-基本样式"><a href="#2-1-基本样式" class="headerlink" title="2.1 基本样式"></a>2.1 基本样式</h3><ul>
@@ -235,10 +217,60 @@
 <li>删除线用两个~包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del></li>
 </ul>
 <h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自HTML的样式</h3><blockquote>
-<p>由于Markdown可以直接转换成HTML（在百科里说过了），所以有很多HTML标签都可以在Markdown中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code> 。他们会直接被插入生成的HTML文件中。</p>
+<p>由于Markdown可以直接转换成HTML（在百科里说过了），所以有很多HTML标签都可以在Markdown中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code> 。<strong>他们会直接被插入生成的HTML文件中</strong>。</p>
 </blockquote>
 <h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用HTML实现的，在HTML里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>  </p>
 <h4 id="2-2-2-颜色"><a href="#2-2-2-颜色" class="headerlink" title="2.2.2 颜色"></a>2.2.2 颜色</h4><p>如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 <code>&lt;font&gt;</code> 标签，语法为<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span> Some text <span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这个<code>&lt;font&gt;</code>标签接收一个参数<code>color</code>。你可以把它设为一些常见的颜色，比如</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">颜色</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Red&gt;</code></td>
+<td style="text-align:center"><font color=Red>Red</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Yellow&gt;</code></td>
+<td style="text-align:center"><font color=Yellow>Yellow</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Blue&gt;</code></td>
+<td style="text-align:center"><font color=Blue>Blue</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Green&gt;</code></td>
+<td style="text-align:center"><font color=Green>Green</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Gold&gt;</code></td>
+<td style="text-align:center"><font color=Gold>Gold</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Grey&gt;</code></td>
+<td style="text-align:center"><font color=Grey>Grey</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Purple&gt;</code></td>
+<td style="text-align:center"><font color=Purple>Purple</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Azure&gt;</code></td>
+<td style="text-align:center"><font color=Azure>Azure</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=GreenYellow&gt;</code></td>
+<td style="text-align:center"><font color=GreenYellow>GreenYellow</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~</p>
 <h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
@@ -282,5 +314,22 @@
         <tag>编程</tag>
         <tag>语法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
+    <content><![CDATA[<blockquote>
+<p>在现实断裂的地方<br>梦 汇成了海</p>
+<p>顾城 《弥合》  </p>
+</blockquote>
+<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
+<span id="more"></span>
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
+<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
+<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
+<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
+<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
+]]></content>
   </entry>
 </search>
