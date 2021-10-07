@@ -399,38 +399,16 @@ td {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  color: #fff;
-  font-size: 14px;
+  background: #fff;
+  border: 0;
+  font-size: 0.8125em;
   right: 0;
-  top: 2px;
-}
-.highlight-container {
-  background: #21252b;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
-  padding-top: 30px;
-}
-.highlight-container::before {
-  background: #fc625d;
-  border-radius: 50%;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  content: ' ';
-  height: 12px;
-  left: 12px;
-  margin-top: -20px;
-  position: absolute;
-  width: 12px;
-}
-.highlight-container .highlight {
-  border-radius: 0 0 5px 5px;
-}
-.highlight-container .highlight .table-container {
-  border-radius: 0 0 5px 5px;
+  top: 0;
 }
 .highlight,
 pre {
-  background: #000;
-  color: #eaeaea;
+  background: #262626;
+  color: #9e9e9e;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -447,7 +425,7 @@ code {
   word-wrap: break-word;
 }
 .highlight *::selection {
-  background: #424242;
+  background: #303030;
 }
 .highlight pre {
   border: 0;
@@ -464,8 +442,8 @@ code {
   padding: 0;
 }
 .highlight figcaption {
-  background: #292929;
-  color: #eaeaea;
+  background: #262626;
+  color: #9e9e9e;
   display: flex;
   font-size: 0.875em;
   justify-content: space-between;
@@ -473,10 +451,10 @@ code {
   padding: 0.5em;
 }
 .highlight figcaption a {
-  color: #eaeaea;
+  color: #9e9e9e;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #eaeaea;
+  border-bottom-color: #9e9e9e;
 }
 .highlight .gutter {
   -moz-user-select: none;
@@ -485,14 +463,14 @@ code {
   user-select: none;
 }
 .highlight .gutter pre {
-  background: #292929;
-  color: #666;
+  background: #262626;
+  color: #6a6a6a;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #000;
+  background: #262626;
   padding-left: 10px;
   width: 100%;
 }
@@ -508,7 +486,7 @@ pre {
 }
 pre code {
   background: none;
-  color: #eaeaea;
+  color: #9e9e9e;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
@@ -520,14 +498,14 @@ pre .addition {
   background: #008000;
 }
 pre .meta {
-  color: #e7c547;
+  color: #a68f01;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #969896;
+  color: #6a6a6a;
 }
 pre .variable,
 pre .attribute,
@@ -542,7 +520,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #d54e53;
+  color: #ff511a;
 }
 pre .number,
 pre .preprocessor,
@@ -552,7 +530,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #e78c45;
+  color: #dd7202;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -565,11 +543,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #b9ca4a;
+  color: #4ca340;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #70c0b1;
+  color: #07a38f;
 }
 pre .function,
 pre .python .decorator,
@@ -579,11 +557,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #7aa6da;
+  color: #3294ff;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #c397d8;
+  color: #cc62fe;
 }
 .blockquote-center {
   border-left: none;
@@ -1291,7 +1269,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff34;
+  background: #6affff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
