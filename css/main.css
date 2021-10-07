@@ -399,16 +399,18 @@ td {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  background: #fff;
-  border: 0;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
   font-size: 0.8125em;
-  right: 0;
-  top: 0;
+  right: 4px;
+  top: 8px;
 }
 .highlight,
 pre {
-  background: #262626;
-  color: #9e9e9e;
+  background: #fdf6e3;
+  color: #586e75;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -425,7 +427,7 @@ code {
   word-wrap: break-word;
 }
 .highlight *::selection {
-  background: #303030;
+  background: #eee8d5;
 }
 .highlight pre {
   border: 0;
@@ -442,8 +444,8 @@ code {
   padding: 0;
 }
 .highlight figcaption {
-  background: #262626;
-  color: #9e9e9e;
+  background: #fdf6e3;
+  color: #586e75;
   display: flex;
   font-size: 0.875em;
   justify-content: space-between;
@@ -451,10 +453,10 @@ code {
   padding: 0.5em;
 }
 .highlight figcaption a {
-  color: #9e9e9e;
+  color: #586e75;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #9e9e9e;
+  border-bottom-color: #586e75;
 }
 .highlight .gutter {
   -moz-user-select: none;
@@ -463,14 +465,14 @@ code {
   user-select: none;
 }
 .highlight .gutter pre {
-  background: #262626;
-  color: #6a6a6a;
+  background: #fdf6e3;
+  color: #93a1a1;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #262626;
+  background: #fdf6e3;
   padding-left: 10px;
   width: 100%;
 }
@@ -486,7 +488,7 @@ pre {
 }
 pre code {
   background: none;
-  color: #9e9e9e;
+  color: #586e75;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
@@ -498,14 +500,14 @@ pre .addition {
   background: #008000;
 }
 pre .meta {
-  color: #a68f01;
+  color: #b58900;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #6a6a6a;
+  color: #93a1a1;
 }
 pre .variable,
 pre .attribute,
@@ -520,7 +522,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #ff511a;
+  color: #dc322f;
 }
 pre .number,
 pre .preprocessor,
@@ -530,7 +532,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #dd7202;
+  color: #cb4b16;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -543,11 +545,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #4ca340;
+  color: #859900;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #07a38f;
+  color: #2aa198;
 }
 pre .function,
 pre .python .decorator,
@@ -557,11 +559,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #3294ff;
+  color: #268bd2;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #cc62fe;
+  color: #6c71c4;
 }
 .blockquote-center {
   border-left: none;
@@ -1269,7 +1271,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6affff;
+  background: #e3ffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
