@@ -928,11 +928,14 @@
 </ul>
 ]]></content>
       <categories>
+        <category>Coding</category>
         <category>Markdown</category>
-        <category>Latex</category>
+        <category>LaTex</category>
       </categories>
       <tags>
-        <tag>Coding,Markdown,LaTex</tag>
+        <tag>Markdown</tag>
+        <tag>LaTex</tag>
+        <tag>Maths</tag>
       </tags>
   </entry>
 </search>
