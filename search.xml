@@ -335,9 +335,9 @@
   <entry>
     <title>Markdown中Latex常用语法</title>
     <url>/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Markdown中Latex常用语法"><a href="#Markdown中Latex常用语法" class="headerlink" title="Markdown中Latex常用语法"></a>Markdown中Latex常用语法</h1><p><del>这篇文章是我<kbd>Ctrl+C</kbd><kbd>Ctrl+V</kbd>过来的，之后我还会再进行整合的，先凑活看着的吧</del></p>
+    <content><![CDATA[<p>这篇文章是我<kbd>Ctrl+C</kbd><kbd>Ctrl+V</kbd>过来的，之后我还会再进行整合的，先凑活看着的吧……</p>
 <span id="more"></span>
-<h2 id="常用希腊字母表"><a href="#常用希腊字母表" class="headerlink" title="常用希腊字母表"></a>常用希腊字母表</h2><div class="table-container">
+<h2 id="1-常用希腊字母表"><a href="#1-常用希腊字母表" class="headerlink" title="1. 常用希腊字母表"></a>1. 常用希腊字母表</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -544,7 +544,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="常用特殊字符表"><a href="#常用特殊字符表" class="headerlink" title="常用特殊字符表"></a>常用特殊字符表</h2><div class="table-container">
+<h2 id="2-常用特殊字符表"><a href="#2-常用特殊字符表" class="headerlink" title="2.常用特殊字符表"></a>2.常用特殊字符表</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -761,7 +761,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><div class="table-container">
+<h3 id="2-1-其他"><a href="#2-1-其他" class="headerlink" title="2.1 其他"></a>2.1 其他</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -882,7 +882,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="公式语法"><a href="#公式语法" class="headerlink" title="公式语法"></a>公式语法</h2><ul>
+<h2 id="4-公式语法"><a href="#4-公式语法" class="headerlink" title="4. 公式语法"></a>4. 公式语法</h2><ul>
 <li>上下标<code>_ ^ , _&#123;&#125;^&#123;&#125;</code>：<script type="math/tex; mode=display">y = x_i^{a_1^2}</script></li>
 <li>公式中插入文本<code>\mbox&#123;&#125;</code>：<script type="math/tex; mode=display">y = x^2 \; \mbox{(二次函数)}</script></li>
 <li><p>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：</p>
@@ -912,7 +912,7 @@
 <script type="math/tex; mode=display">r = \sqrt{x^2+y^2}</script><p>  多次根号<code>\sqrt[n]</code>： <script type="math/tex">x^{2/3} = \sqrt[3]{x^2}</script></p>
 </li>
 </ul>
-<h2 id="方程组"><a href="#方程组" class="headerlink" title="方程组"></a>方程组</h2><ul>
+<h2 id="5-方程组"><a href="#5-方程组" class="headerlink" title="5. 方程组"></a>5. 方程组</h2><ul>
 <li><p>左侧花括号</p>
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">% \begin&#123;equation*&#125; 加&#x27;*&#x27;去掉公式编号</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125;     %请使用&#x27;aligned&#x27;或&#x27;align*&#x27;</span><br><span class="line">2x + y &amp;= 1  \\     %加&#x27;&amp;&#x27;指定对齐位置</span><br><span class="line">2x + 2y &amp;= 2</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right.</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">% \end&#123;equation*&#125;   加&#x27;*&#x27;去掉公式编号</span><br><span class="line"></span><br><span class="line">% 注意：在 markdown 环境下，某些特殊字符，如&#x27;\&#x27;, &#x27;*&#x27;等，会首先被 markdown 语法转义，然后再被 Latex 转义。</span><br><span class="line">% 因此有时候 &#x27;\&#123;&#x27;需要写作&#x27;\\&#123;&#x27;，&#x27;*&#x27;需要写作&#x27;\*&#x27;，&#x27;\\&#x27;需要写作&#x27;\\\\&#x27;等，视不同的解释环境而定</span><br></pre></td></tr></table></figure>
 <p>  <strong>注</strong>：如果各个方程需要在某个字符处对齐（如等号对齐），只需在所有要对齐的字符前加上 <code>&amp;</code> 符号。如果不需要公式编号，只需在宏包名称后加上 <code>*</code> 号。</p>
