@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2021-11-28T12:02:27.417Z</updated>
+  <updated>2021-11-28T12:10:20.238Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,18 +21,18 @@
     <link href="https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
     <published>2021-11-28T11:35:40.000Z</published>
-    <updated>2021-11-28T12:02:27.417Z</updated>
+    <updated>2021-11-28T12:10:20.238Z</updated>
     
     
     <summary type="html">&lt;p&gt;这篇文章是我&lt;kbd&gt;Ctrl+C&lt;/kbd&gt;&lt;kbd&gt;Ctrl+V&lt;/kbd&gt;过来的，之后我还会再进行整合的，先凑活看着的吧……&lt;/p&gt;</summary>
     
     
     
-    <category term="Coding" scheme="https://guleixibian2009.github.io/categories/Coding/"/>
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/categories/Coding/Markdown/"/>
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/"/>
     
-    <category term="LaTex" scheme="https://guleixibian2009.github.io/categories/Coding/Markdown/LaTex/"/>
+    <category term="LaTex" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/"/>
     
     
     <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>

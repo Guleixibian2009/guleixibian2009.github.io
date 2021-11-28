@@ -29,7 +29,7 @@
 <meta property="og:description" content="这篇文章是我Ctrl+CCtrl+V过来的，之后我还会再进行整合的，先凑活看着的吧……">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-28T11:35:40.000Z">
-<meta property="article:modified_time" content="2021-11-28T12:02:27.417Z">
+<meta property="article:modified_time" content="2021-11-28T12:10:20.238Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Markdown">
 <meta property="article:tag" content="LaTex">
@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -240,7 +240,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-11-28 19:35:40 / 修改时间：20:02:27" itemprop="dateCreated datePublished" datetime="2021-11-28T19:35:40+08:00">2021-11-28</time>
+              <time title="创建时间：2021-11-28 19:35:40 / 修改时间：20:10:20" itemprop="dateCreated datePublished" datetime="2021-11-28T19:35:40+08:00">2021-11-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,15 +248,15 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Coding/Markdown/LaTex/" itemprop="url" rel="index"><span itemprop="name">LaTex</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/" itemprop="url" rel="index"><span itemprop="name">LaTex</span></a>
                 </span>
             </span>
 
@@ -390,7 +390,7 @@
 </tr>
 <tr>
 <td><code>\zeta</code></td>
-<td style="text-align:center"><script type="math/tex">\zeta</script></td>
+<td style="text-align:center"><script type="math/tex">\zeta</script>​</td>
 <td></td>
 <td style="text-align:center"></td>
 <td></td>
@@ -832,7 +832,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="4-公式语法"><a href="#4-公式语法" class="headerlink" title="4. 公式语法"></a>4. 公式语法</h2><ul>
+<h2 id="3-公式语法"><a href="#3-公式语法" class="headerlink" title="3. 公式语法"></a>3. 公式语法</h2><ul>
 <li>上下标<code>_ ^ , _&#123;&#125;^&#123;&#125;</code>：<script type="math/tex; mode=display">y = x_i^{a_1^2}</script></li>
 <li>公式中插入文本<code>\mbox&#123;&#125;</code>：<script type="math/tex; mode=display">y = x^2 \; \mbox{(二次函数)}</script></li>
 <li><p>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：</p>
@@ -862,7 +862,7 @@
 <script type="math/tex; mode=display">r = \sqrt{x^2+y^2}</script><p>  多次根号<code>\sqrt[n]</code>： <script type="math/tex">x^{2/3} = \sqrt[3]{x^2}</script></p>
 </li>
 </ul>
-<h2 id="5-方程组"><a href="#5-方程组" class="headerlink" title="5. 方程组"></a>5. 方程组</h2><ul>
+<h2 id="4-方程组"><a href="#4-方程组" class="headerlink" title="4. 方程组"></a>4. 方程组</h2><ul>
 <li><p>左侧花括号</p>
   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;equation&#125;</span><br><span class="line">% \begin&#123;equation*&#125; 加&#x27;*&#x27;去掉公式编号</span><br><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125;     %请使用&#x27;aligned&#x27;或&#x27;align*&#x27;</span><br><span class="line">2x + y &amp;= 1  \\     %加&#x27;&amp;&#x27;指定对齐位置</span><br><span class="line">2x + 2y &amp;= 2</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right.</span><br><span class="line">\end&#123;equation&#125;</span><br><span class="line">% \end&#123;equation*&#125;   加&#x27;*&#x27;去掉公式编号</span><br><span class="line"></span><br><span class="line">% 注意：在 markdown 环境下，某些特殊字符，如&#x27;\&#x27;, &#x27;*&#x27;等，会首先被 markdown 语法转义，然后再被 Latex 转义。</span><br><span class="line">% 因此有时候 &#x27;\&#123;&#x27;需要写作&#x27;\\&#123;&#x27;，&#x27;*&#x27;需要写作&#x27;\*&#x27;，&#x27;\\&#x27;需要写作&#x27;\\\\&#x27;等，视不同的解释环境而定</span><br></pre></td></tr></table></figure>
 <p>  <strong>注</strong>：如果各个方程需要在某个字符处对齐（如等号对齐），只需在所有要对齐的字符前加上 <code>&amp;</code> 符号。如果不需要公式编号，只需在宏包名称后加上 <code>*</code> 号。</p>
@@ -1038,7 +1038,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B8%B8%E7%94%A8%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D%E8%A1%A8"><span class="nav-text">1. 常用希腊字母表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B8%B8%E7%94%A8%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%A1%A8"><span class="nav-text">2.常用特殊字符表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%85%B6%E4%BB%96"><span class="nav-text">2.1 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-text">4. 公式语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-text">5. 方程组</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B8%B8%E7%94%A8%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D%E8%A1%A8"><span class="nav-text">1. 常用希腊字母表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B8%B8%E7%94%A8%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%A1%A8"><span class="nav-text">2.常用特殊字符表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%85%B6%E4%BB%96"><span class="nav-text">2.1 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-text">3. 公式语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-text">4. 方程组</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1061,7 +1061,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1237,6 +1237,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
