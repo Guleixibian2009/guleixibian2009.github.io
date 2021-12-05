@@ -892,11 +892,13 @@
 <li><p>省略号<code>\dots, \cdots</code></p>
 <script type="math/tex; mode=display">1,2,\dots  \qquad  1,2,\cdots</script></li>
 <li><p>积分<code>\int_&#123;&#125;^&#123;&#125;</code>：</p>
-<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><p>  双重积分<code>\iint</code>：<script type="math/tex">\iint_{-\infty}^{+\infty} f(x,y) \mathrm{d}x \mathrm{d}y</script><br>  行内积分：<script type="math/tex">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分limits模式<code>\int\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\int\limits_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分display模式<code>\displaystyle \int_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script></p>
-<p>  圆圈积分<code>\oint</code>：<script type="math/tex">\oint_{-\infty}^{+\infty}</script></p>
+<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><p>  双重积分<code>\iint</code>：<script type="math/tex">\iint_{-\infty}^{+\infty} f(x,y) \mathrm{d}x \mathrm{d}y</script><br>  行内积分：<script type="math/tex">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分limits模式<code>\int\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\int\limits_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分display模式<code>\displaystyle \int_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script>​  ​​​</p>
+<p>  圆圈积分<code>\oint</code>：<script type="math/tex">\oint_{-\infty}^{+\infty}</script>​  </p>
 </li>
 <li><p>求和<code>\sum_&#123;&#125;^&#123;&#125;</code>：</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n} i^2</script><p>  行内求和：<script type="math/tex">\sum_{i=1}^{n} i^2</script><br>  行内求和limits模式<code>\sum\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\sum\limits_{i=1}^{n} i^2</script><br>  行内求和display模式<code>\displaystyle \sum_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\displaystyle \sum_{i=1}^{n} i^2</script></p>
+<script type="math/tex; mode=display">\sum_{i=1}^{n} i^2 $$​  
+
+  行内求和：$$\sum_{i=1}^{n} i^2</script><p>  行内求和limits模式<code>\sum\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\sum\limits_{i=1}^{n} i^2</script><br>  行内求和display模式<code>\displaystyle \sum_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\displaystyle \sum_{i=1}^{n} i^2</script>​  ​​</p>
 </li>
 <li><p>求乘积<code>\prod_&#123;&#125;^&#123;&#125;</code>：</p>
 <script type="math/tex; mode=display">\prod_{i=1}^{n} a_i</script></li>
