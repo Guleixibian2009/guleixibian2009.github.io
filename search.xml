@@ -218,7 +218,7 @@
 </blockquote>
 <hr>
 <h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像HTML一样写标题</h3><p>在HTML里，标题分六级：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>相对应的，Markdown标题也分六级。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># This is an H1  </span></span><br><span class="line"><span class="section">## This is an H2  </span></span><br><span class="line">...  </span><br><span class="line"><span class="section">###### This is an H6  </span></span><br></pre></td></tr></table></figure>
 <p>就像你看到的那样，每层标题就是几个<strong><code>#</code></strong>。</p>
@@ -228,10 +228,15 @@
 <hr>
 <h2 id="2-文字样式语法"><a href="#2-文字样式语法" class="headerlink" title="2. 文字样式语法"></a>2. 文字样式语法</h2><p>在Markdown中，文字可以是<em>斜体</em>、<strong>粗体</strong>、<strong><em>粗斜体</em></strong>,<del>删除线</del>，<u>下划线</u>。</p>
 <h3 id="2-1-基本样式"><a href="#2-1-基本样式" class="headerlink" title="2.1 基本样式"></a>2.1 基本样式</h3><ul>
-<li>斜体用一个*包围，就像<code>*这是斜体*</code>，显示出来就是 <em>这是斜体</em> </li>
-<li>粗体用两个*包围，就像<code>**这是粗体**</code>，显示出来就是 <strong>这是粗体</strong></li>
-<li>粗斜体用三个*包围，就像<code>***这是粗斜体***</code>，显示出来就是 <strong><em>这是粗斜体</em></strong></li>
-<li>删除线用两个~包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del></li>
+<li><p>斜体用一个*包围，就像<code>*这是斜体*</code>，显示出来就是 <em>这是斜体</em> </p>
+</li>
+<li><p>粗体用两个*包围，就像<code>**这是粗体**</code>，显示出来就是 <strong>这是粗体</strong></p>
+</li>
+<li><p>粗斜体用三个*包围，就像<code>***这是粗斜体***</code>，显示出来就是 <strong><em>这是粗斜体</em></strong></p>
+<p>（本质上它其实就是<strong>粗体</strong>包住了<em>斜体</em>，所以<strong><em>你交学费</em></strong>了吗）</p>
+</li>
+<li><p>删除线用两个~包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del></p>
+</li>
 </ul>
 <h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自HTML的样式</h3><blockquote>
 <p>由于Markdown可以直接转换成HTML（在百科里说过了），所以有很多HTML标签都可以在Markdown中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code> 。<strong>他们会直接被插入生成的HTML文件中</strong>。</p>
@@ -335,11 +340,12 @@
   <entry>
     <title>Markdown中Latex常用语法</title>
     <url>/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>这篇文章是我<kbd>Ctrl+C</kbd><kbd>Ctrl+V</kbd>过来的，之后我还会再进行整合的，先凑活看着的吧……</p>
-<h2 id="LaTex-是什么？"><a href="#LaTex-是什么？" class="headerlink" title="LaTex 是什么？"></a>LaTex 是什么？</h2><blockquote>
-<p>LaTeX是一种基于ΤΕΧ的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.<br>利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。<br>对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</p>
+    <content><![CDATA[<p>这篇文章是我<kbd>Ctrl+C</kbd><kbd>Ctrl+V</kbd>过来的，之后我还会再进行修改的，先凑活看着的吧……有些 <script type="math/tex">\LaTeX</script> 标签可能显示不出来，同志们这是编译器的问题，因人而异……</p>
+<h2 id="0-LaTeX-是什么？"><a href="#0-LaTeX-是什么？" class="headerlink" title="0. LaTeX 是什么？"></a>0. LaTeX 是什么？</h2><blockquote>
+<p><script type="math/tex">\LaTeX</script>是一种基于ΤeΧ的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.<br>利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。<br>对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</p>
 </blockquote>
 <span id="more"></span>
+<p>文章中，标签以表格的形式呈现。<strong>如果出现<code>/</code>的情况，代表某字符没有此形式。</strong> <em>（如不存在<code>\varalpha</code>，这一格使用<code>/</code>填充）</em></p>
 <h2 id="1-常用希腊字母表"><a href="#1-常用希腊字母表" class="headerlink" title="1. 常用希腊字母表"></a>1. 常用希腊字母表</h2><div class="table-container">
 <table>
 <thead>
@@ -750,9 +756,10 @@
 <td style="text-align:center"><script type="math/tex">\uplus</script></td>
 <td><code>\biguplus</code></td>
 <td style="text-align:center"><script type="math/tex">\biguplus</script></td>
-<td></td>
-<td style="text-align:center"></td>
-<td></td>
+<td>/</td>
+<td style="text-align:center">/</td>
+<td>/</td>
+<td style="text-align:center">/</td>
 </tr>
 </tbody>
 </table>
@@ -873,15 +880,18 @@
 <tr>
 <td><code>\spadesuit</code></td>
 <td style="text-align:center"><script type="math/tex">\spadesuit</script></td>
-<td></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="3-公式语法"><a href="#3-公式语法" class="headerlink" title="3. 公式语法"></a>3. 公式语法</h2><ul>
-<li>上下标<code>_ ^ , _&#123;&#125;^&#123;&#125;</code>：<script type="math/tex; mode=display">y = x_i^{a_1^2}</script></li>
+<h2 id="3-公式语法"><a href="#3-公式语法" class="headerlink" title="3. 公式语法"></a>3. 公式语法</h2><ol>
+<li>上下标<code>_&#123;下标&#125;^&#123;上标&#125;</code>：<script type="math/tex; mode=display">y = x_i^{a_1^2}</script></li>
+</ol>
+<ul>
 <li>公式中插入文本<code>\mbox&#123;&#125;</code>：<script type="math/tex; mode=display">y = x^2 \; \mbox{(二次函数)}</script></li>
-<li>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：<script type="math/tex; mode=display">ab $$ $$ a\,b $$ $$ a\;b $$ $$ a\quad b $$ $$ a\qquad b</script></li>
+<li>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：<br>  <script type="math/tex">ab  \,  a\,b  \,  a\;b  \,  a\quad b  \,  a\qquad b</script>​</li>
 <li>字母上方横线<code>\overline&#123;&#125;, \bar&#123;&#125;</code>：<script type="math/tex; mode=display">\overline{xyz} \mbox{ 或 } \bar{x}</script></li>
 <li>字母下方横线<code>\underline&#123;&#125;</code>：<script type="math/tex; mode=display">\underline{ABC}</script></li>
 <li>字母上方波浪线<code>\tilde&#123;&#125;, \widetilde&#123;&#125;</code>：<script type="math/tex; mode=display">\tilde{A} \mbox{ 或 } \widetilde{ABC}</script></li>
@@ -931,7 +941,11 @@
   e^x \qquad & a \le 0
   \end{cases}</script></li>
 </ul>
-]]></content>
+<pre><code>## 5. 参考资料
+
+1. [Markdown中编写LaTeX数学公式](https://blog.csdn.net/fzch_struggling/article/details/44998901?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommen)
+2. 
+</code></pre>]]></content>
       <categories>
         <category>编程</category>
         <category>Markdown</category>

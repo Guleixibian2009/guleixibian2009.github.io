@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2021-12-05T06:47:30.325Z</updated>
+  <updated>2021-12-18T03:30:56.912Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
     <published>2021-11-28T11:35:40.000Z</published>
-    <updated>2021-12-05T06:47:30.325Z</updated>
+    <updated>2021-12-18T03:30:56.912Z</updated>
     
     
-    <summary type="html">&lt;p&gt;这篇文章是我&lt;kbd&gt;Ctrl+C&lt;/kbd&gt;&lt;kbd&gt;Ctrl+V&lt;/kbd&gt;过来的，之后我还会再进行整合的，先凑活看着的吧……&lt;/p&gt;
-&lt;h2 id=&quot;LaTex-是什么？&quot;&gt;&lt;a href=&quot;#LaTex-是什么？&quot; class=&quot;headerlink&quot; title=&quot;LaTex 是什么？&quot;&gt;&lt;/a&gt;LaTex 是什么？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;LaTeX是一种基于ΤΕΧ的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.&lt;br&gt;利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。&lt;br&gt;对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;这篇文章是我&lt;kbd&gt;Ctrl+C&lt;/kbd&gt;&lt;kbd&gt;Ctrl+V&lt;/kbd&gt;过来的，之后我还会再进行修改的，先凑活看着的吧……有些 &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; 标签可能显示不出来，同志们这是编译器的问题，因人而异……&lt;/p&gt;
+&lt;h2 id=&quot;0-LaTeX-是什么？&quot;&gt;&lt;a href=&quot;#0-LaTeX-是什么？&quot; class=&quot;headerlink&quot; title=&quot;0. LaTeX 是什么？&quot;&gt;&lt;/a&gt;0. LaTeX 是什么？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt;是一种基于ΤeΧ的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.&lt;br&gt;利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由TeX所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。&lt;br&gt;对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -70,7 +70,7 @@
     <link href="https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
     <published>2021-08-25T06:46:50.000Z</published>
-    <updated>2021-10-10T06:16:39.381Z</updated>
+    <updated>2021-12-18T03:12:34.341Z</updated>
     
     
     <summary type="html">&lt;p&gt;在很多博客、论坛，包括&lt;code&gt;GithubPages&lt;/code&gt;(参见&lt;a href=&quot;https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/&quot;&gt;这篇文章&lt;/a&gt;) 里都有大量运用到一种叫做&lt;code&gt;Markdown&lt;/code&gt;的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写Markdown。如果你想学习Markdown，你算是来对地方了！&lt;/p&gt;</summary>
