@@ -295,7 +295,7 @@
 <p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~</p>
 <h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
+<h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Place</span>) </span><br></pre></td></tr></table></figure>
 <h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在 [Name](Place) 之前加上一个 ! (记住都是英文标点！！！),如</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Place &quot;替代名&quot;</span>)</span><br></pre></td></tr></table></figure>
@@ -346,7 +346,7 @@
 </blockquote>
 <span id="more"></span>
 <p>文章中，标签以表格的形式呈现。<strong>如果出现<code>/</code>的情况，代表某字符没有此形式。</strong> <em>（如不存在<code>\varalpha</code>，这一格使用<code>/</code>填充）</em></p>
-<h2 id="1-常用希腊字母表"><a href="#1-常用希腊字母表" class="headerlink" title="1. 常用希腊字母表"></a>1. 常用希腊字母表</h2><div class="table-container">
+<h2 id="1-希腊字母表"><a href="#1-希腊字母表" class="headerlink" title="1. 希腊字母表"></a>1. 希腊字母表</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -362,16 +362,16 @@
 <tr>
 <td><code>\alpha</code></td>
 <td style="text-align:center"><script type="math/tex">\alpha</script></td>
-<td><code>\Alpha</code></td>
-<td style="text-align:center"><script type="math/tex">\Alpha</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
 <tr>
 <td><code>\beta</code></td>
 <td style="text-align:center"><script type="math/tex">\beta</script></td>
-<td><code>\Beta</code></td>
-<td style="text-align:center"><script type="math/tex">\Beta</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
@@ -394,8 +394,8 @@
 <tr>
 <td><code>\mu</code></td>
 <td style="text-align:center"><script type="math/tex">\mu</script></td>
-<td><code>\Mu</code></td>
-<td style="text-align:center"><script type="math/tex">\Mu</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
@@ -410,8 +410,8 @@
 <tr>
 <td><code>\epsilon</code></td>
 <td style="text-align:center"><script type="math/tex">\epsilon</script></td>
-<td><code>\Epsilon</code></td>
-<td style="text-align:center"><script type="math/tex">\Epsilon</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td><code>\varepsilon</code></td>
 <td style="text-align:center"><script type="math/tex">\varepsilon</script></td>
 </tr>
@@ -450,24 +450,24 @@
 <tr>
 <td><code>\zeta</code></td>
 <td style="text-align:center"><script type="math/tex">\zeta</script></td>
-<td><code>\zeta</code></td>
-<td style="text-align:center"><script type="math/tex">\Zeta</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
 <tr>
 <td><code>\chi</code></td>
 <td style="text-align:center"><script type="math/tex">\chi</script></td>
-<td><code>\Chi</code></td>
-<td style="text-align:center"><script type="math/tex">\Chi</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
 <tr>
 <td><code>\rho</code></td>
 <td style="text-align:center"><script type="math/tex">\rho</script></td>
-<td><code>\Rho</code></td>
-<td style="text-align:center"><script type="math/tex">\Rho</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td><code>\varrho</code></td>
 <td style="text-align:center"><script type="math/tex">\varrho</script></td>
 </tr>
@@ -482,8 +482,8 @@
 <tr>
 <td><code>\eta</code></td>
 <td style="text-align:center"><script type="math/tex">\eta</script></td>
-<td><code>\Eta</code></td>
-<td style="text-align:center"><script type="math/tex">\Eta</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
@@ -498,16 +498,16 @@
 <tr>
 <td><code>\kappa</code></td>
 <td style="text-align:center"><script type="math/tex">\kappa</script></td>
-<td><code>\kappa</code></td>
-<td style="text-align:center"><script type="math/tex">\Kappa</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td><code>\varkappa</code></td>
 <td style="text-align:center"><script type="math/tex">\varkappa</script></td>
 </tr>
 <tr>
 <td><code>\nu</code></td>
 <td style="text-align:center"><script type="math/tex">\nu</script></td>
-<td><code>\Nu</code></td>
-<td style="text-align:center"><script type="math/tex">\Nu</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
@@ -530,16 +530,16 @@
 <tr>
 <td><code>\tau</code></td>
 <td style="text-align:center"><script type="math/tex">\tau</script></td>
-<td><code>\Tau</code></td>
-<td style="text-align:center"><script type="math/tex">\Tau</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
 <tr>
 <td><code>\iota</code></td>
 <td style="text-align:center"><script type="math/tex">\iota</script></td>
-<td><code>\Iota</code></td>
-<td style="text-align:center"><script type="math/tex">\Iota</script></td>
+<td>/</td>
+<td style="text-align:center">/</td>
 <td>/</td>
 <td style="text-align:center">/</td>
 </tr>
@@ -890,32 +890,44 @@
 <li>上下标<code>_&#123;下标&#125;^&#123;上标&#125;</code>：<script type="math/tex; mode=display">y = x_i^{a_1^2}</script></li>
 </ol>
 <ul>
-<li>公式中插入文本<code>\mbox&#123;&#125;</code>：<script type="math/tex; mode=display">y = x^2 \; \mbox{(二次函数)}</script></li>
-<li>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：<br>  <script type="math/tex">ab  \,  a\,b  \,  a\;b  \,  a\quad b  \,  a\qquad b</script>​</li>
-<li>字母上方横线<code>\overline&#123;&#125;, \bar&#123;&#125;</code>：<script type="math/tex; mode=display">\overline{xyz} \mbox{ 或 } \bar{x}</script></li>
-<li>字母下方横线<code>\underline&#123;&#125;</code>：<script type="math/tex; mode=display">\underline{ABC}</script></li>
-<li>字母上方波浪线<code>\tilde&#123;&#125;, \widetilde&#123;&#125;</code>：<script type="math/tex; mode=display">\tilde{A} \mbox{ 或 } \widetilde{ABC}</script></li>
-<li>字母上方尖号^<code>\hat&#123;&#125;, \widehat&#123;&#125;</code>：<script type="math/tex; mode=display">\hat{A} \mbox{ 或 } \widehat{ABC}</script></li>
-<li>字母上方箭头<code>\vec&#123;&#125;, \overleftarrow&#123;&#125;, \overrightarrow&#123;&#125;</code>：<script type="math/tex; mode=display">\vec{ab} \mbox{ 或 } \overleftarrow{ab} \mbox{ 或 } \overrightarrow{ab}</script></li>
-<li>字母上方花括号<code>\overbrace&#123;&#125;</code>，或下方花括号<code>\underbrace&#123;&#125;</code>：<script type="math/tex; mode=display">\overbrace{1+2+3} \mbox{ 或 } \underbrace{1+2+3}</script></li>
-<li>字母上方点号<code>\dot&#123;&#125;, \ddot&#123;&#125;</code>：<script type="math/tex; mode=display">\dot{a} \mbox{ 或 } \ddot{a}</script></li>
+<li><p>公式中插入文本<code>\mbox&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">y = x^2 \; \mbox{(二次函数)}</script></li>
+<li><p>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：<br>  <script type="math/tex">ab  \,  a\,b  \,  a\;b  \,  a\quad b  \,  a\qquad b</script>​</p>
+</li>
+<li><p>字母上方横线<code>\overline&#123;&#125;, \bar&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\overline{xyz} \mbox{ 或 } \bar{x}</script></li>
+<li><p>字母下方横线<code>\underline&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\underline{ABC}</script></li>
+<li><p>字母上方波浪线<code>\tilde&#123;&#125;, \widetilde&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\tilde{A} \mbox{ 或 } \widetilde{ABC}</script></li>
+<li><p>字母上方尖号^<code>\hat&#123;&#125;, \widehat&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\hat{A} \mbox{ 或 } \widehat{ABC}</script></li>
+<li><p>字母上方箭头<code>\vec&#123;&#125;, \overleftarrow&#123;&#125;, \overrightarrow&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\vec{ab} \mbox{ 或 } \overleftarrow{ab} \mbox{ 或 } \overrightarrow{ab}</script></li>
+<li><p>字母上方花括号<code>\overbrace&#123;&#125;</code>，或下方花括号<code>\underbrace&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\overbrace{1+2+3} \mbox{ 或 } \underbrace{1+2+3}</script></li>
+<li><p>字母上方点号<code>\dot&#123;&#125;, \ddot&#123;&#125;</code>：</p>
+<script type="math/tex; mode=display">\dot{a} \mbox{ 或 } \ddot{a}</script></li>
 <li><p>省略号<code>\dots, \cdots</code></p>
 <script type="math/tex; mode=display">1,2,\dots  \qquad  1,2,\cdots</script></li>
-<li><p>积分<code>\int_&#123;&#125;^&#123;&#125;</code>：</p>
-<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><p>  双重积分<code>\iint</code>：<script type="math/tex">\iint_{-\infty}^{+\infty} f(x,y) \mathrm{d}x \mathrm{d}y</script><br>  行内积分：<script type="math/tex">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分limits模式<code>\int\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\int\limits_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分display模式<code>\displaystyle \int_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script>​  ​​​</p>
-<p>  圆圈积分<code>\oint</code>：<script type="math/tex">\oint_{-\infty}^{+\infty}</script>​  </p>
-</li>
-<li><p>求和<code>\sum_&#123;&#125;^&#123;&#125;</code>：</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n} i^2 $$​  
+<li><p>积分<code>\int_&#123;&#125;^&#123;&#125;</code>：  </p>
+<script type="math/tex; mode=display">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x $$​  ​
 
-  行内求和：$$\sum_{i=1}^{n} i^2</script><p>  行内求和limits模式<code>\sum\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\sum\limits_{i=1}^{n} i^2</script><br>  行内求和display模式<code>\displaystyle \sum_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\displaystyle \sum_{i=1}^{n} i^2</script>​  ​​</p>
+  双重积分`\iint`：$$ \iint_{-\infty}^{+\infty} f(x,y) \mathrm{d}x \mathrm{d}y</script><p>  行内积分：<script type="math/tex">\int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分limits模式<code>\int\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\int\limits_{-\infty}^{+\infty} f(x) \mathrm{d}x</script><br>  行内积分display模式<code>\displaystyle \int_&#123;&#125;^&#123;&#125;</code>：  <script type="math/tex">\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d}x</script>​​​  ​​​  </p>
+<p>  圆圈积分<code>\oint</code>：<script type="math/tex">\oint_{-\infty}^{+\infty}</script>​​    </p>
 </li>
-<li><p>求乘积<code>\prod_&#123;&#125;^&#123;&#125;</code>：</p>
-<script type="math/tex; mode=display">\prod_{i=1}^{n} a_i</script></li>
+<li><p>求和<code>\sum_&#123;&#125;^&#123;&#125;</code>：  </p>
+<script type="math/tex; mode=display">\sum_{i=1}^{n} i^2 $$​​​    
+
+  行内求和：$$\sum_{i=1}^{n} i^2</script><p>  行内求和limits模式<code>\sum\limits_&#123;&#125;^&#123;&#125;</code>：<script type="math/tex">\sum\limits_{i=1}^{n} i^2</script><br>  行内求和display模式<code>\displaystyle \sum_&#123;&#125;^&#123;&#125;</code>：  <script type="math/tex">\displaystyle \sum_{i=1}^{n} i^2</script>​​​  ​​  </p>
+</li>
+<li><p>求乘积<code>\prod_&#123;&#125;^&#123;&#125;</code>：<br>  <script type="math/tex">\prod_{i=1}^{n} a_i</script>​</p>
+</li>
 <li><p>分数<code>\frac&#123;up&#125;&#123;down&#125;</code>：</p>
 <script type="math/tex; mode=display">x_1,x_2 = \frac{b^2 \pm 4ac}{2a}</script></li>
 <li><p>根号<code>\sqrt</code>：</p>
-<script type="math/tex; mode=display">r = \sqrt{x^2+y^2}</script><p>  多次根号<code>\sqrt[n]</code>： <script type="math/tex">x^{2/3} = \sqrt[3]{x^2}</script></p>
+<script type="math/tex; mode=display">r = \sqrt{x^2+y^2}</script><p>  多次根号<code>\sqrt[n]</code>：   </p>
+<p>  <script type="math/tex">x^{2/3} = \sqrt[3]{x^2}</script>​</p>
 </li>
 </ul>
 <h2 id="4-方程组"><a href="#4-方程组" class="headerlink" title="4. 方程组"></a>4. 方程组</h2><ul>
@@ -941,11 +953,7 @@
   e^x \qquad & a \le 0
   \end{cases}</script></li>
 </ul>
-<pre><code>## 5. 参考资料
-
-1. [Markdown中编写LaTeX数学公式](https://blog.csdn.net/fzch_struggling/article/details/44998901?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommen)
-2. 
-</code></pre>]]></content>
+]]></content>
       <categories>
         <category>编程</category>
         <category>Markdown</category>
