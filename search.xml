@@ -1014,12 +1014,12 @@
 <h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
 ]]></content>
       <categories>
-        <category>编程</category>
         <category>GitHub</category>
         <category>GitHub-Cli</category>
       </categories>
       <tags>
-        <tag>Github,GitHub-Cli</tag>
+        <tag>Github</tag>
+        <tag>GitHub-Cli</tag>
       </tags>
   </entry>
 </search>
