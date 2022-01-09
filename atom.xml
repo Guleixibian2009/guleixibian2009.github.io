@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-01-09T11:00:43.295Z</updated>
+  <updated>2022-01-09T11:07:48.737Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,16 +21,10 @@
     <link href="https://guleixibian2009.github.io/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
     <id>https://guleixibian2009.github.io/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</id>
     <published>2022-01-09T10:58:00.000Z</published>
-    <updated>2022-01-09T11:00:43.295Z</updated>
+    <updated>2022-01-09T11:07:48.737Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;GitHub-Cli-的安装与使用&quot;&gt;&lt;a href=&quot;#GitHub-Cli-的安装与使用&quot; class=&quot;headerlink&quot; title=&quot;GitHub-Cli 的安装与使用&quot;&gt;&lt;/a&gt;GitHub-Cli 的安装与使用&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Take GitHub to the command line!&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;https://s4.ax1x.com/2022/01/08/7iGY1P.png&quot; alt=&quot;GitHub-Cli&quot;&gt;&lt;br&gt;想必&lt;code&gt;GitHub&lt;/code&gt;大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用&lt;code&gt;GitHub&lt;/code&gt;作为服务器和二级域名来做网站后，我访问&lt;code&gt;GitHub&lt;/code&gt;也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用&lt;code&gt;Git+Hexo&lt;/code&gt;本地生成+上传的模式。可用了一段时间后，我却发现有比&lt;code&gt;Git&lt;/code&gt;更快、更强、更高大上的终端命令行——&lt;strong&gt;&lt;code&gt;GitHub-Cli&lt;/code&gt;&lt;/strong&gt;(以下也简称gh)。&lt;/p&gt;</summary>
     
     
     
