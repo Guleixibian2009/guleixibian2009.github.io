@@ -887,10 +887,10 @@
 </table>
 </div>
 <h2 id="3-公式语法"><a href="#3-公式语法" class="headerlink" title="3. 公式语法"></a>3. 公式语法</h2><ol>
-<li>上下标<code>_&#123;下标&#125;^&#123;上标&#125;</code>：<br>| 语法              | 输出                  |<br>| ————————- | ——————————- |<br>| <code>y = x_i^&#123;a_1^2&#125;</code> | <script type="math/tex">y = x_i^{a_1^2}</script> |</li>
+<li>上下标<code>_&#123;下标&#125;^&#123;上标&#125;</code>：<br>|       语法        |         输出          |<br>| :———————-: | :—————————-: |<br>| <code>y = x_i^&#123;a_1^2&#125;</code> | <script type="math/tex">y = x_i^{a_1^2}</script> |</li>
 </ol>
 <ol>
-<li>公式中插入文本<code>\mbox&#123;&#125;</code>：<br>| 语法              | 输出                  |<br>| ————————- | ——————————- |<br>| <code>y = x^2 \; \mbox&#123;(二次函数)&#125;</code> | <script type="math/tex">y = x^2 \; \mbox{(二次函数)}</script> |</li>
+<li>公式中插入文本<code>\mbox&#123;&#125;</code>：<br>| 语法              | 输出                  |<br>| :———————-: | :—————————-: |<br>| <code>y = x^2 \; \mbox&#123;(二次函数)&#125;</code> | <script type="math/tex">y = x^2 \; \mbox{(二次函数)}</script> |</li>
 </ol>
 <ul>
 <li><p>公式中插入空格<code>\,  \;  \quad  \qquad</code>间隔依次变宽：<br>  <script type="math/tex">ab  \,  a\,b  \,  a\;b  \,  a\quad b  \,  a\qquad b</script>​</p>
