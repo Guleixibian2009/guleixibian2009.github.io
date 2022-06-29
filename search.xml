@@ -235,14 +235,15 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown中Latex常用语法</title>
+    <title>【转】Markdown中Latex常用语法</title>
     <url>/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>这篇文章是我<kbd>Ctrl+C</kbd><kbd>Ctrl+V</kbd>过来的，之后我还会再进行修改的，先凑活看着的吧……有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……</p>
+    <content><![CDATA[<p>这篇文章是我<kbd>Ctrl+C</kbd><kbd>Ctrl+V</kbd>过来的，现在正在进行修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……</p>
 <h2 id="0-LaTeX-是什么？"><a href="#0-LaTeX-是什么？" class="headerlink" title="0. LaTeX 是什么？"></a>0. LaTeX 是什么？</h2><blockquote>
 <p>$ \LaTeX $是一种基于<code>ΤeΧ</code>的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.<br>利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由<code>TeX</code>所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。<br>对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</p>
 </blockquote>
 <span id="more"></span>
-<h3 id="0-1"><a href="#0-1" class="headerlink" title="0.1"></a>0.1</h3><p>文章中，标签以表格的形式呈现。<strong>如果出现<code>/</code>的情况，代表某字符没有此形式。</strong> <em>（如不存在<code>\varalpha</code>，这一格使用<code>/</code>填充）</em></p>
+<h3 id="0-1-写在前面"><a href="#0-1-写在前面" class="headerlink" title="0.1 写在前面"></a>0.1 写在前面</h3><p>文章中，标签以表格的形式呈现。<strong>如果出现<code>/</code>的情况，代表某字符没有此形式。</strong> <em>（如不存在<code>\varalpha</code>，这一格使用<code>/</code>填充）</em>  </p>
+<p>想要补充我没写上的字符？可以直接滚动到页尾，登录<code>GitHub</code>账号后在聊天框里留言，<code>Gitalk</code>会自动同步到<code>GitHub issue</code>中，并用邮件通知我！</p>
 <h2 id="1-希腊字母表"><a href="#1-希腊字母表" class="headerlink" title="1. 希腊字母表"></a>1. 希腊字母表</h2><div class="table-container">
 <table>
 <thead>
@@ -1055,11 +1056,9 @@
 </tbody>
 </table>
 </div>
-<h3 id="3-13-求和-sum-："><a href="#3-13-求和-sum-：" class="headerlink" title="3.13 求和\sum_{}^{}："></a>3.13 求和<code>\sum_&#123;&#125;^&#123;&#125;</code>：</h3><pre><code>$ \sum_&#123;i=1&#125;^&#123;n&#125; i^2 $​​    
-
-行内求和：$\sum_&#123;i=1&#125;^&#123;n&#125; i^2$ 
-行内求和limits模式`\sum\limits_&#123;&#125;^&#123;&#125;`：$$um\limits_&#123;i=1&#125;^&#123;n&#125; i^2$$$  行内求和display模式`\displaystyle \sum_&#123;&#125;^&#123;&#125;`：  $$\$playstyle \sum_&#123;i=1&#125;^&#123;n&#125; i^2$$​​$​​  
-</code></pre><ul>
+<h3 id="3-13-求和-sum-："><a href="#3-13-求和-sum-：" class="headerlink" title="3.13 求和\sum_{}^{}："></a>3.13 求和<code>\sum_&#123;&#125;^&#123;&#125;</code>：</h3><p>$ p = \sum\limits_{n=1}^{100} a_n $​​    </p>
+<p>行内求和：$\sum<em>{i=1}^{n} i^2$<br>行内求和limits模式`\sum\limits</em>{}^{}<code>：$\sum\limits_&#123;i=1&#125;^&#123;n&#125; i^2$  行内求和display模式</code>\displaystyle \sum<em>{}^{}`：  $ \displaystyle\sum</em>{i=1}^{n} i^2 $$​​$​​  </p>
+<ul>
 <li><p>求乘积<code>\prod_&#123;&#125;^&#123;&#125;</code>：<br>  $ \prod_{i=1}^{n} a_i $</p>
 </li>
 <li><p>分数<code>\frac&#123;up&#125;&#123;down&#125;</code>：<br>  $ x_1,x_2 = \frac{b^2 \pm 4ac}{2a} $</p>
