@@ -151,7 +151,7 @@
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
-<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 查下面三个网址的<code>IP</code>，现在查询如下：</p>
+<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
 <div class="table-container">
 <table>
 <thead>
@@ -168,29 +168,44 @@
 <td style="text-align:center"><del>140.82.114.4</del></td>
 </tr>
 <tr>
-<td style="text-align:center"><code>assets-cdn.github.com</code></td>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
 <td style="text-align:center">动态资源</td>
 <td style="text-align:center">185.199.108.153</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>assets-cdn.github.com</code></td>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
 <td style="text-align:center">动态资源</td>
 <td style="text-align:center">185.199.109.153</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>assets-cdn.github.com</code></td>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
 <td style="text-align:center">动态资源</td>
 <td style="text-align:center">185.199.110.153</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>assets-cdn.github.com</code></td>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
 <td style="text-align:center">动态资源</td>
 <td style="text-align:center">185.199.111.153</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>github.global.ssl.fastly.net</code></td>
-<td style="text-align:center">静态资源</td>
-<td style="text-align:center">199.232.69.194</td>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.108.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.109.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.110.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.111.133</td>
 </tr>
 </tbody>
 </table>
@@ -198,17 +213,17 @@
 <p>注意，写入<code>hosts</code>的格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
 <p>如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 assets-cdn.github.com  </span><br><span class="line">185.199.109.153 assets-cdn.github.com  </span><br><span class="line">185.199.110.153 assets-cdn.github.com  </span><br><span class="line">185.199.111.153 assets-cdn.github.com</span><br><span class="line">199.232.69.194  github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
-<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
 <hr>
 <h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
 <p>但如果你用了镜像网站，速度会极快：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p><code>https://github.com.cnpmjs.org</code>是一个极为神奇的网站：作为一个镜像网站，他把几百<code>KiB/S</code>的速度提到了几十<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://github.com.cnpmjs.org</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://github.com.cnpmjs.org/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://github.com.cnpmjs.org</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
-<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://github.com.cnpmjs.org</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
 <hr>
 <h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
 <p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
@@ -1299,11 +1314,14 @@ e^x \qquad & a \le 0
 <hr>
 <h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
+<p>想要直接显示这个链接而不显示代替名？可以这样做：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://example.com&gt;</span></span><br></pre></td></tr></table></figure>
+<p>显示出来就是：<a href="https://example.com">https://example.com</a></p>
 <h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在<code>[Name](Place)</code> 之前加上一个 <code>!</code> (都是英文标点),如</p>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Link &quot;替代名&quot;</span>)</span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">![<span class="string">Pull Shark</span>](<span class="link">https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png &quot;Pull Shark&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>“替代名”不是必要的，它会被解析为<code>img</code>标签的<code>alt</code>属性。在方括号<code>[Pull Shark]</code>中的内容在有些编译器下会作为一种标题被显示在渲染的图片下面。e.g.</p>
 <p><img data-src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="Pull Shark" title="Pull Shark"></p>
-<p>当然一些高级一些的属性（如居中）还是用<code>HTML</code>做出来的！</p>
+<p>当然一些高级一些的属性（如居中）还是用<code>HTML</code>做出来的！（不知道为什么<code>Hexo</code>会自动居中）</p>
 <hr>
 <h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4. 列表"></a>4. 列表</h2><p>在<code>Markdown</code>中，列表分两种：有序的，和无序的。</p>
 <h3 id="4-1-有序列表"><a href="#4-1-有序列表" class="headerlink" title="4.1 有序列表"></a>4.1 有序列表</h3><p>有序列表，就像  </p>
@@ -1329,7 +1347,7 @@ e^x \qquad & a \le 0
 </ul>
 <p>语法如下：</p>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] No.1</span><br><span class="line"><span class="bullet">-</span> [ ] No.2</span><br><span class="line"><span class="bullet">-</span> [x] No.3</span><br></pre></td></tr></table></figure>
-<p>其中 <code>[x]</code> 表示“已完成”，<code>[ ]</code> 表示“未完成”。可能<code>Hexo</code>渲染不出来这个，大家可以移步<a href="https://github.com/Guleixibian2009/Website-Ariticle-Backup/blob/master/_posts/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.md">原文件</a>查看！</p>
+<p>其中 <code>[x]</code> 表示“已完成”，<code>[ ]</code> 表示“未完成”。可能<code>Hexo</code>有的时候渲染不出来这个，大家可以移步<a href="https://github.com/Guleixibian2009/Website-Ariticle-Backup/blob/master/_posts/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.md">原文件</a>查看！</p>
 <h3 id="4-4-合并列表"><a href="#4-4-合并列表" class="headerlink" title="4.4 合并列表"></a>4.4 合并列表</h3><p>你可以把多种列表嵌套起来。如：</p>
 <ul>
 <li><p>Hello World!</p>
@@ -1364,7 +1382,76 @@ e^x \qquad & a \le 0
 <h3 id="5-2-强制换行的几种方式"><a href="#5-2-强制换行的几种方式" class="headerlink" title="5.2 强制换行的几种方式"></a>5.2 强制换行的几种方式</h3><p>在<code>Markdown</code>里面如果你不进行所谓强制换行，那么连续的段落就会被自动连接在一起。这个时候，<code>HTML</code>大兄就会来打杂：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>直接把它放在某一行的结尾，这两行就会自动拆分。如果你嫌麻烦…那么在想要换行的地方（行尾）加两个空格就可以……我也是没法展示了，这个不够直观。</p>
-<h3 id="5-3-符号的转义-escaping"><a href="#5-3-符号的转义-escaping" class="headerlink" title="5.3 符号的转义(escaping)"></a>5.3 符号的转义(<code>escaping</code>)</h3><hr>
+<h3 id="5-3-符号的转义-escaping"><a href="#5-3-符号的转义-escaping" class="headerlink" title="5.3 符号的转义(escaping)"></a>5.3 符号的转义(<code>escaping</code>)</h3><p>什么，这么简单的<code>Markdown</code>都需要转义？好吧，我承认，这还真的要！如果你仔细回想一下（或者预知一下未来，看下面的代码块）你就会发现，我们在处理文字样式的时候我们使用了各种符号，现整理如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\</code></td>
+<td>反斜杠（转义本身）</td>
+<td>````</td>
+<td>反引号（代码块）</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>星号（加粗，斜体，无序列表等）</td>
+<td><code>_</code></td>
+<td>下划线（加粗，斜体等）</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>小括号（链接，图片）</td>
+<td><code>[]</code></td>
+<td>中括号（链接，图片）</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>波浪号（下标，删除线）</td>
+<td><code>$</code></td>
+<td>美元（某些情况下，<code>LaTex</code>）</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>井号（标题）</td>
+<td><code>+</code></td>
+<td>加号（无序列表）</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减号（无序列表）</td>
+<td><code>.</code></td>
+<td>点号（有序列表）</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>@号（<code>GFM</code>中，<code>@mention</code>）</td>
+<td>`\</td>
+<td>`</td>
+<td>竖线（表格）</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>左尖括号（<code>HTML</code>）</td>
+<td><code>&gt;</code></td>
+<td>友尖括号（<code>HTML</code>）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么，如何转义呢？只需要在需要转义的字符前面添加反斜杠就可以啦！比如，*这段文字其实不是斜体*！</p>
+<p>代码如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\<span class="emphasis">*这段文字其实不是斜体!\*</span></span><br><span class="line"><span class="emphasis">*但这个是！*</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-4-没什么用的注释"><a href="#5-4-没什么用的注释" class="headerlink" title="5.4 没什么用的注释"></a>5.4 没什么用的注释</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&lt;!-- 这就是个注释了，我甚至不想讲… --&gt;</span><br></pre></td></tr></table></figure>
+<p>对对，这就是个<code>HTML</code>注释而已。99.8%的情况下这个东东没有用，但如果…嗯好吧其实也不是一点作用都没有，如<code>Markdown</code>文档中的定位（比如你每天靠<code>GitHub Actions</code>生成点什么）或者<code>Hexo</code>文章的节选会使用<code>&lt;!-- More --&gt;</code>。</p>
+<hr>
 <h2 id="6-激动人心！代码块"><a href="#6-激动人心！代码块" class="headerlink" title="6. 激动人心！代码块"></a>6. 激动人心！代码块</h2><p><del>是不是等它好久了…</del> 行了也见了这么多行内代码块了，我怎么能不介绍一下呢。</p>
 <p>行内代码块，只需将代码块内的内容用 ````包围起来就可以了。如，</p>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="code">`hello, world!`</span></span><br></pre></td></tr></table></figure>
