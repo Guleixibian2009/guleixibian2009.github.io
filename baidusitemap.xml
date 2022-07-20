@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2022-07-20</lastmod>
+  </url>
+  <url>
     <loc>https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-07-20</lastmod>
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</loc>
@@ -11,10 +15,6 @@
   <url>
     <loc>https://guleixibian2009.github.io/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</loc>
     <lastmod>2022-07-02</lastmod>
-  </url>
-  <url>
-    <loc>https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2022-06-29</lastmod>
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>

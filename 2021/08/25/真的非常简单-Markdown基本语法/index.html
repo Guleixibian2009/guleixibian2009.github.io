@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png">
 <meta property="article:published_time" content="2021-08-25T06:46:50.000Z">
-<meta property="article:modified_time" content="2022-07-19T11:50:33.345Z">
+<meta property="article:modified_time" content="2022-07-20T12:27:37.161Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Markdown">
 <meta property="article:tag" content="编程">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-19 19:50:33" itemprop="dateModified" datetime="2022-07-19T19:50:33+08:00">2022-07-19</time>
+                <time title="修改时间：2022-07-20 20:27:37" itemprop="dateModified" datetime="2022-07-20T20:27:37+08:00">2022-07-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,14 +276,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.4k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -300,6 +300,7 @@
 <h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. <code>Markdown</code> 是什么？</h2><blockquote>
 <p><code>Markdown</code>是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。<br>它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的<code>XHTML</code>(或者<code>HTML</code>)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。<br>由于<code>Markdown</code>的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用<code>Markdown</code>来撰写帮助文档或是用于论坛上发表消息。如<code>GitHub</code>、<code>OpenStreetMap</code> 、<code>SourceForge</code>、简书等，甚至还能被使用来撰写电子书。<br>（摘自百度百科）  </p>
 </blockquote>
+<p>注：一个好的编辑器是学习的基础。如果你坚持<code>WYSIWYG</code>（所见即所得），这里推荐开源项目<code>MarkText</code>。官网：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>。当然你也可以用<code>VSCode</code>或者（付费，虽然超好）<code>Typora</code>。</p>
 <hr>
 <h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像<code>HTML</code>一样写标题</h3><p>在<code>HTML</code>里，标题分六级：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -321,11 +322,29 @@
 </li>
 <li><p>删除线用两个<code>~</code>包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del>  </p>
 </li>
+<li><p><code>@mention</code>：<code>GFM</code>中的一种“点名”的方式，其他时候基本没用。</p>
+</li>
 </ul>
+<h4 id="2-1-1-引用块"><a href="#2-1-1-引用块" class="headerlink" title="2.1.1 引用块"></a>2.1.1 引用块</h4><p>想要突出显示你引用了某段话？可以使用引用段落！</p>
+<blockquote>
+<p>这就是一个简单的引用了！你可以在这里面<em>使用</em> <strong>其他</strong><code>的语法</code>。它的语法是：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 引用引用引用引用引用引用引用引用！</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>引用以一个右尖括号开始。一般情况下，我们在多行引用时，会在每一行的开头加一个符号，但如果你懒……</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></span><br><span class="line"><span class="quote">&gt; tempor incididunt ut labore et dolore magna aliqua.</span></span><br></pre></td></tr></table></figure>
+<p>可以变为：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  </span></span><br><span class="line">tempor incididunt ut labore et dolore magna aliqua.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想要嵌套引用，直接多加一个符号！</p>
+<blockquote>
+<p>嵌套引用中！</p>
+</blockquote>
+</blockquote>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum...</span></span><br><span class="line"><span class="quote">&gt; &gt; Lorem ipsum...</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自<code>HTML</code>的样式</h3><blockquote>
 <p>由于<code>Markdown</code>可以直接转换成<code>HTML</code>（在百科里说过了），所以有很多<code>HTML</code>标签都可以在<code>Markdown</code>中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code>（当然也不是所有标签都受支持，得看编译器） 。<strong>如果可能，他们会直接被插入生成的<code>HTML</code>文件中</strong>。</p>
 </blockquote>
-<h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用<code>HTML</code>实现的，在<code>HTML</code>里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>  </p>
+<h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用<code>HTML</code>实现的，在<code>HTML</code>里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>。  </p>
 <h4 id="2-2-2-颜色"><a href="#2-2-2-颜色" class="headerlink" title="2.2.2 颜色"></a>2.2.2 颜色</h4><p>如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 <code>&lt;font&gt;</code> 标签，语法为</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span> Some text <span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这个<code>&lt;font&gt;</code>标签接收一个参数<code>color</code>。你可以把它设为一些常见的颜色，比如</p>
@@ -380,7 +399,8 @@
 <p>如果你还想要其他的颜色，你可以访问 <a target="_blank" rel="noopener" href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~  </p>
 <p>另外，这其实是一个过时了的<code>HTML</code> 标签。所以，我想，还是要避免使用吧。如果可行，可以试试行内<code>CSS</code>，即：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了</p>
+<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了，它表示一种快捷键方式。语法就是：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span>Ctrl+Shift+L<span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure>
 <p>这个脚注一般用数字表示。当然它还有更高级的功能，见下：</p>
@@ -389,7 +409,10 @@
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
 <p>想要直接显示这个链接而不显示代替名？可以这样做：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">&lt;https://example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p>显示出来就是：<a target="_blank" rel="noopener" href="https://example.com">https://example.com</a></p>
+<p>显示出来就是：<a target="_blank" rel="noopener" href="https://example.com">https://example.com</a>  </p>
+<p>想要在一处集中显示所有链接？可以这样使用脚注来替代！</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Example</span>](<span class="link">example</span>)</span><br><span class="line">[example] : https://www.example.com/</span><br></pre></td></tr></table></figure>
+<p>当然我不太习惯用这个。</p>
 <h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在<code>[Name](Place)</code> 之前加上一个 <code>!</code> (都是英文标点),如</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Link &quot;替代名&quot;</span>)</span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">![<span class="string">Pull Shark</span>](<span class="link">https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png &quot;Pull Shark&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>“替代名”不是必要的，它会被解析为<code>img</code>标签的<code>alt</code>属性。在方括号<code>[Pull Shark]</code>中的内容在有些编译器下会作为一种标题被显示在渲染的图片下面。e.g.</p>
@@ -637,6 +660,8 @@
 </table>
 </div>
 <hr>
+<p>到这里，你已经学完了基础的<code>Markdown</code>语法！想要学习<code>Markdown</code>中更高级的图表功能？敬请期待下一篇教程！</p>
+<hr>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>以下是注释内容：  </p>
 <blockquote id="fn_1">
 <sup>1</sup>. 你学废了吗？<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
@@ -810,7 +835,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Markdown-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-text">0. Markdown 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98-amp-%E5%B0%8F%E6%A0%87%E9%A2%98"><span class="nav-text">1. 文章标题&amp;小标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%83%8FHTML%E4%B8%80%E6%A0%B7%E5%86%99%E6%A0%87%E9%A2%98"><span class="nav-text">1.1 像HTML一样写标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Markdown%E4%B8%93%E5%B1%9E%E6%A0%87%E9%A2%98"><span class="nav-text">1.2 Markdown专属标题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%87%E5%AD%97%E6%A0%B7%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-text">2. 文字样式语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="nav-text">2.1 基本样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%9F%90%E4%BA%9B%E6%9D%A5%E8%87%AAHTML%E7%9A%84%E6%A0%B7%E5%BC%8F"><span class="nav-text">2.2 某些来自HTML的样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-%E7%9E%8E%E5%88%92%E7%BA%BF%EF%BC%88%E4%B8%8B%E5%88%92%E7%BA%BF%EF%BC%89"><span class="nav-text">2.2.1 瞎划线（下划线）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-%E9%A2%9C%E8%89%B2"><span class="nav-text">2.2.2 颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-%E6%8C%89%E9%94%AE%EF%BC%9F%EF%BC%9F"><span class="nav-text">2.2.3 按键？？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%84%9A%E6%B3%A8"><span class="nav-text">2.3 脚注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%9B%BE%E7%89%87"><span class="nav-text">3. 链接与图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E9%93%BE%E6%8E%A5"><span class="nav-text">3.1 链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%9B%BE%E7%89%87"><span class="nav-text">3.2 图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%88%97%E8%A1%A8"><span class="nav-text">4. 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">4.1 有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">4.2 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-To-do-list"><span class="nav-text">4.3 To do list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E5%90%88%E5%B9%B6%E5%88%97%E8%A1%A8"><span class="nav-text">4.4 合并列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E5%B0%8F%E2%80%9C%E9%9B%B6%E4%BB%B6%E2%80%9D"><span class="nav-text">5.  文档里的小“零件”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-text">5.1 分割线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">5.2 强制换行的几种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E7%AC%A6%E5%8F%B7%E7%9A%84%E8%BD%AC%E4%B9%89-escaping"><span class="nav-text">5.3 符号的转义(escaping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E6%B2%A1%E4%BB%80%E4%B9%88%E7%94%A8%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-text">5.4 没什么用的注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%BF%80%E5%8A%A8%E4%BA%BA%E5%BF%83%EF%BC%81%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">6. 激动人心！代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E8%A1%A8%E6%A0%BC%E6%9D%A5%E4%BA%86"><span class="nav-text">7. 表格来了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%9F%BA%E6%9C%AC%E8%A1%A8%E6%A0%BC"><span class="nav-text">7.1 基本表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E6%AF%8F%E5%88%97%E7%9A%84%E5%B1%85%E4%B8%AD%E3%80%81%E9%9D%A0%E5%8F%B3"><span class="nav-text">7.2 每列的居中、靠右</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-text">注释</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Markdown-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-text">0. Markdown 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98-amp-%E5%B0%8F%E6%A0%87%E9%A2%98"><span class="nav-text">1. 文章标题&amp;小标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%83%8FHTML%E4%B8%80%E6%A0%B7%E5%86%99%E6%A0%87%E9%A2%98"><span class="nav-text">1.1 像HTML一样写标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Markdown%E4%B8%93%E5%B1%9E%E6%A0%87%E9%A2%98"><span class="nav-text">1.2 Markdown专属标题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%87%E5%AD%97%E6%A0%B7%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="nav-text">2. 文字样式语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="nav-text">2.1 基本样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-%E5%BC%95%E7%94%A8%E5%9D%97"><span class="nav-text">2.1.1 引用块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%9F%90%E4%BA%9B%E6%9D%A5%E8%87%AAHTML%E7%9A%84%E6%A0%B7%E5%BC%8F"><span class="nav-text">2.2 某些来自HTML的样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-%E7%9E%8E%E5%88%92%E7%BA%BF%EF%BC%88%E4%B8%8B%E5%88%92%E7%BA%BF%EF%BC%89"><span class="nav-text">2.2.1 瞎划线（下划线）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-%E9%A2%9C%E8%89%B2"><span class="nav-text">2.2.2 颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-%E6%8C%89%E9%94%AE%EF%BC%9F%EF%BC%9F"><span class="nav-text">2.2.3 按键？？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%84%9A%E6%B3%A8"><span class="nav-text">2.3 脚注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%9B%BE%E7%89%87"><span class="nav-text">3. 链接与图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E9%93%BE%E6%8E%A5"><span class="nav-text">3.1 链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%9B%BE%E7%89%87"><span class="nav-text">3.2 图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%88%97%E8%A1%A8"><span class="nav-text">4. 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">4.1 有序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-text">4.2 无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-To-do-list"><span class="nav-text">4.3 To do list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E5%90%88%E5%B9%B6%E5%88%97%E8%A1%A8"><span class="nav-text">4.4 合并列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%96%87%E6%A1%A3%E9%87%8C%E7%9A%84%E5%B0%8F%E2%80%9C%E9%9B%B6%E4%BB%B6%E2%80%9D"><span class="nav-text">5.  文档里的小“零件”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-text">5.1 分割线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">5.2 强制换行的几种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E7%AC%A6%E5%8F%B7%E7%9A%84%E8%BD%AC%E4%B9%89-escaping"><span class="nav-text">5.3 符号的转义(escaping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E6%B2%A1%E4%BB%80%E4%B9%88%E7%94%A8%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-text">5.4 没什么用的注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%BF%80%E5%8A%A8%E4%BA%BA%E5%BF%83%EF%BC%81%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-text">6. 激动人心！代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E8%A1%A8%E6%A0%BC%E6%9D%A5%E4%BA%86"><span class="nav-text">7. 表格来了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%9F%BA%E6%9C%AC%E8%A1%A8%E6%A0%BC"><span class="nav-text">7.1 基本表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E6%AF%8F%E5%88%97%E7%9A%84%E5%B1%85%E4%B8%AD%E3%80%81%E9%9D%A0%E5%8F%B3"><span class="nav-text">7.2 每列的居中、靠右</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-text">注释</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -896,7 +921,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
