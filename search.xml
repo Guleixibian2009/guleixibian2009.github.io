@@ -1308,9 +1308,10 @@ e^x \qquad & a \le 0
 <p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~  </p>
 <p>另外，这其实是一个过时了的<code>HTML</code> 标签。所以，我想，还是要避免使用吧。如果可行，可以试试行内<code>CSS</code>，即：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了</p>
 <h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure>
-<p>这个脚注一般用数字表示。</p>
+<p>这个脚注一般用数字表示。当然它还有更高级的功能，见下：</p>
 <hr>
 <h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
@@ -1397,7 +1398,7 @@ e^x \qquad & a \le 0
 <tr>
 <td><code>\</code></td>
 <td>反斜杠（转义本身）</td>
-<td>````</td>
+<td>``</td>
 <td>反引号（代码块）</td>
 </tr>
 <tr>
@@ -1433,9 +1434,8 @@ e^x \qquad & a \le 0
 <tr>
 <td><code>@</code></td>
 <td>@号（<code>GFM</code>中，<code>@mention</code>）</td>
-<td>`\</td>
 <td>`</td>
-<td>竖线（表格）</td>
+<td>`</td>
 </tr>
 <tr>
 <td><code>&lt;</code></td>
@@ -1518,6 +1518,52 @@ e^x \qquad & a \le 0
 </div>
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+<h2 id="7-表格来了"><a href="#7-表格来了" class="headerlink" title="7. 表格来了"></a>7. 表格来了</h2><p>需要在自己的文档中直观地表示数据？可以尝试列一个表格！Here we go~</p>
+<h3 id="7-1-基本表格"><a href="#7-1-基本表格" class="headerlink" title="7.1 基本表格"></a>7.1 基本表格</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>第一列</th>
+<th>第二列</th>
+<th>第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一行</td>
+<td>数据1</td>
+<td>数据2</td>
+<td>数据3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>光看这个表可能还真猜不出来它的语法是什么……但其实如果我真的写出来却会觉得这种语法也很直观！（不觉得那些竖线很像网格线吗）</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">||第一列|第二列|第三列|</span><br><span class="line">|第一行|数据1|数据2|数据3|</span><br></pre></td></tr></table></figure>
+<p>所以，每两个<code>|</code>之间是一格，5个<code>|</code>就是4格。没有限制最多多少行或多少列，且不要求每行格数相同！只是我这里渲染不出来……</p>
+<h3 id="7-2-每列的居中、靠右"><a href="#7-2-每列的居中、靠右" class="headerlink" title="7.2 每列的居中、靠右"></a>7.2 每列的居中、靠右</h3><p>什么，还有这种功能？好吧，我们只需要一条特殊“控制行”：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">|     | 第一列 | 第二列 | 第三列 |</span><br><span class="line">| --- |:--- |:---:| ---:|</span><br><span class="line">| 第一行 | 靠左  | 居中  | 靠右  |</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left">第一列</th>
+<th style="text-align:center">第二列</th>
+<th style="text-align:right">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一行</td>
+<td style="text-align:left">靠左</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">靠右</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>以下是注释内容：  </p>
 <blockquote id="fn_1">
