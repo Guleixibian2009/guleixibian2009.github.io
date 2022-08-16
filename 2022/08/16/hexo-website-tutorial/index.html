@@ -21,18 +21,22 @@
     var CONFIG = {"hostname":"guleixibian2009.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Drown in an ocean of you~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Guleixibian2009的个人博客~">
-<meta property="og:url" content="https://guleixibian2009.github.io/categories/GitHub/">
+  <meta name="description" content="断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（Hexo网站的配置以及深度开发），应该够我写一阵子了……   好了，闲话少说，我们这篇超详细的Hexo网站教程，马上开始！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超详细：这个网站，到底是怎么做出来的？">
+<meta property="og:url" content="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/">
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
-<meta property="og:description" content="Drown in an ocean of you~">
+<meta property="og:description" content="断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（Hexo网站的配置以及深度开发），应该够我写一阵子了……   好了，闲话少说，我们这篇超详细的Hexo网站教程，马上开始！">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-16T11:20:27.000Z">
+<meta property="article:modified_time" content="2022-08-16T12:04:18.111Z">
 <meta property="article:author" content="Guleixibian2009">
-<meta property="article:tag" content="Python,Github,HEXO,Markdown">
+<meta property="article:tag" content="Website">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://guleixibian2009.github.io/categories/GitHub/">
+<link rel="canonical" href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/">
 
 
 <script id="page-configurations">
@@ -40,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: GitHub | Guleixibian2009的个人博客~</title>
+  <title>超详细：这个网站，到底是怎么做出来的？ | Guleixibian2009的个人博客~</title>
   
 
 
@@ -207,120 +211,196 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">GitHub
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Guleixibian2009">
+      <meta itemprop="description" content="Drown in an ocean of you~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guleixibian2009的个人博客~">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          超详细：这个网站，到底是怎么做出来的？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-16 19:20:27 / 修改时间：20:04:18" itemprop="dateCreated datePublished" datetime="2022-08-16T19:20:27+08:00">2022-08-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GitHub/" itemprop="url" rel="index"><span itemprop="name">GitHub</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GitHub/Pages/" itemprop="url" rel="index"><span itemprop="name">Pages</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>87</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <p>断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了……  </p>
+<p>好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章  为你推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\08\15\GithubPages-简单易上手的网站制作-Jekyll版\" rel="bookmark">GithubPages-简单易上手的网站制作(Jekyll版)</a></div>
+        <div class="popular-posts-excerpt"><p><p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a target="_blank" rel="noopener" href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p></p></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-08-16T19:20:27+08:00"
-              content="2022-08-16">
-          08-16
-        </time>
+        <div class="reward-container">
+  <div>赏作者一杯作业......</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/images/%E8%AE%BA%E4%BD%9C%E4%B8%9A%E6%95%B0%E9%87%8F.jpg" alt="Guleixibian2009 我没钱，但有作业">
+        <p>我没钱，但有作业</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/images/websiteQR.png" alt="Guleixibian2009 把我的网站分享给别人？">
+        <p>把我的网站分享给别人？</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/16/hexo-website-tutorial/" itemprop="url">
-            <span itemprop="name">超详细：这个网站，到底是怎么做出来的？</span>
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Guleixibian2009
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/" title="超详细：这个网站，到底是怎么做出来的？">https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian.github.io/">
+            <span class="icon">
+              <i class="fab fa-html5"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-09T18:58:00+08:00"
-              content="2022-01-09">
-          01-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">GitHub-Cli 的安装与使用</span>
+            <span class="label">旧版网站</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-15T20:29:48+08:00"
-              content="2021-08-15">
-          08-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/" itemprop="url">
-            <span itemprop="name">GithubPages-简单易上手的网站制作(Jekyll版)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-14T08:10:08+08:00"
-              content="2021-08-14">
-          08-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/" itemprop="url">
-            <span itemprop="name">3个小妙招加速你的GitHub~</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Website/" rel="tag"><i class="fa fa-tag"></i> Website</a>
+              <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="prev" title="GitHub-Cli 的安装与使用">
+      <i class="fa fa-chevron-left"></i> GitHub-Cli 的安装与使用
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -623,6 +703,25 @@
 
   
 
+<link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '182d88027b3ae850cbeb',
+      clientSecret: '9dbad5843bcb640f1547407b20ee2eb8e3d71c81',
+      repo        : 'guleixibian2009.github.io',
+      owner       : 'guleixibian2009',
+      admin       : ['guleixibian2009'],
+      id          : '49691d6d0719cedac055e4636235ec31',
+        language: 'zh-CN',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 
   <!-- 页面点击小红心 -->
