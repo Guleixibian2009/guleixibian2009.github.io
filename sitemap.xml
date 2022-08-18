@@ -116,6 +116,20 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/tags/GitHub-Cli/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/GitHub/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/tags/Website/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
@@ -123,14 +137,7 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
-    <lastmod>2022-08-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/GitHub-Cli/</loc>
+    <loc>https://guleixibian2009.github.io/tags/Hexo/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -158,6 +165,13 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
@@ -166,20 +180,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2022-08-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/GitHub/</loc>
-    <lastmod>2022-08-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/Hexo/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -195,7 +195,7 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
