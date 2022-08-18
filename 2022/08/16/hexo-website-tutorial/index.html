@@ -21,20 +21,30 @@
     var CONFIG = {"hostname":"guleixibian2009.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（Hexo网站的配置以及深度开发），应该够我写一阵子了……   好了，闲话少说，我们这篇超详细的Hexo网站教程，马上开始！">
+  <meta name="description" content="断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（Hexo网站的配置以及深度开发），应该够我写一阵子了……我也会随着教程的更新重复一遍过程，以保证内容的正确性。 顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的Hexo网站教程，马上开始！   注：本教程所用平台是Win10，其他系统可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="超详细：这个网站，到底是怎么做出来的？">
 <meta property="og:url" content="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/">
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
-<meta property="og:description" content="断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（Hexo网站的配置以及深度开发），应该够我写一阵子了……   好了，闲话少说，我们这篇超详细的Hexo网站教程，马上开始！">
+<meta property="og:description" content="断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（Hexo网站的配置以及深度开发），应该够我写一阵子了……我也会随着教程的更新重复一遍过程，以保证内容的正确性。 顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的Hexo网站教程，马上开始！   注：本教程所用平台是Win10，其他系统可">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/16/v04OaV.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/16/v057WD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vBcCg1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vBWTOI.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vB4wY8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vB5y9O.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vB563D.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vDVNFI.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/17/vDamKe.png">
 <meta property="article:published_time" content="2022-08-16T11:20:27.000Z">
-<meta property="article:modified_time" content="2022-08-16T12:04:18.111Z">
+<meta property="article:modified_time" content="2022-08-18T01:09:03.491Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Website">
 <meta property="article:tag" content="GitHub">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/08/16/v04OaV.png">
 
 <link rel="canonical" href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/">
 
@@ -240,10 +250,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-16 19:20:27 / 修改时间：20:04:18" itemprop="dateCreated datePublished" datetime="2022-08-16T19:20:27+08:00">2022-08-16</time>
+              <time title="创建时间：2022-08-16 19:20:27" itemprop="dateCreated datePublished" datetime="2022-08-16T19:20:27+08:00">2022-08-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-18 09:09:03" itemprop="dateModified" datetime="2022-08-18T09:09:03+08:00">2022-08-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -264,14 +280,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>87</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -283,8 +299,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了……  </p>
-<p>好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！</p>
+        <p>断更好久了，今天终于抽空来写一点。于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了……我也会随着教程的更新重复一遍过程，以保证内容的正确性。</p>
+<p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
+<p><strong>注：本教程所用平台是<code>Win10</code>，其他系统可能有细微差别~</strong></p>
+<span id="more"></span>
+<h2 id="1-准备工作部分"><a href="#1-准备工作部分" class="headerlink" title="1. 准备工作部分"></a>1. 准备工作部分</h2><h3 id="1-1-你可能一定会用到的那些软件"><a href="#1-1-你可能一定会用到的那些软件" class="headerlink" title="1.1 你可能一定会用到的那些软件"></a>1.1 你<del>可能</del>一定会用到的那些软件</h3><p>为了使用<code>Hexo</code>这个强大的框架，我们需要先安装一些依赖，还有一些其他的编程软件。为了真的把这个教程变得“新手向”一点，我就把你需要的软件都列在了这里：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>必要性</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖</td>
+<td>高</td>
+<td><code>NodeJS</code></td>
+</tr>
+<tr>
+<td>编程相关、配置网站参数</td>
+<td>中高</td>
+<td>（推荐）<code>VSCode</code>、<code>Sublime Text</code>以及任何你用着顺手的编辑器</td>
+</tr>
+<tr>
+<td>文章相关</td>
+<td>中<del>（你甚至可以用记事本）</del></td>
+<td>（推荐）<code>Marktext</code>（开源免费）、<code>Typora</code>（付费）</td>
+</tr>
+<tr>
+<td>命令行</td>
+<td>高</td>
+<td><code>Windows Terminal Preview</code>（集成终端，支持自定义）、<code>Git</code>（需要配置<code>SSH</code>连接，暂时请先自己搜）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：如果你使用<code>chocolatey</code>，你可以尝试先用命令行安装！</strong> 这些软件我们依次来说：</p>
+<h4 id="1-1-1-NodeJS"><a href="#1-1-1-NodeJS" class="headerlink" title="1.1.1 NodeJS"></a>1.1.1 <code>NodeJS</code></h4><p><code>NodeJS</code>是一款很流行的<code>JavaScript</code>运行时（环境），也是使用<code>Hexo</code>的必装依赖。打开<a target="_blank" rel="noopener" href="https://nodejs.org/en/">安装官网</a>，如下图，推荐选择左侧的长期支持版本（<code>LTS</code>版本）。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/16/v04OaV.png" alt=""></p>
+<p>安装之后，打开命令行，输入：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+<p>来检测是否安装成功。如果都可以成功返回版本号，那么你就可以进行下一步操作了！</p>
+<blockquote>
+<p>注：一般情况下，官方下载源会很慢，我们需要给<code>NodeJS</code>修改镜像源。使用</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+<p>来调整为国内镜像源。</p>
+</blockquote>
+<h4 id="1-1-2-Markdown编辑器Marktext"><a href="#1-1-2-Markdown编辑器Marktext" class="headerlink" title="1.1.2 Markdown编辑器Marktext"></a>1.1.2 <code>Markdown</code>编辑器<code>Marktext</code></h4><p><img data-src="https://s1.ax1x.com/2022/08/16/v057WD.png" alt=""></p>
+<p>纯净的界面，即时的渲染、开源与免费三大特点让我爱上了这款编辑器。别的咱也不说，好不好用你自己说了算！这个项目的开源地址在<code>GitHub</code>上：<a target="_blank" rel="noopener" href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>，之后怎么安装我就不用说了吧。</p>
+<h4 id="1-1-3-Windows终端·预览版"><a href="#1-1-3-Windows终端·预览版" class="headerlink" title="1.1.3 Windows终端·预览版"></a>1.1.3 <code>Windows</code>终端·预览版</h4><p>如果你嫌<code>CMD</code>或者<code>Powershell</code>的界面、字体不合你的心意，或者就想尝试一些新功能，你可以试一下<code>Windows Terminal Preview</code>。它把几个终端都打包在了一起，且支持自定义界面和启动位置等，同时可以分屏。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vBcCg1.png" alt=""></p>
+<p>你可以在<code>Microsoft Store</code>中下载到这款终端·预览。另外，需要改一下<code>powershell</code>的执行策略，管理员权限执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h4 id="1-1-4-hexo，你网站的框架"><a href="#1-1-4-hexo，你网站的框架" class="headerlink" title="1.1.4 hexo，你网站的框架"></a>1.1.4 <code>hexo</code>，你网站的框架</h4><p>上面的软件都准备好了吗？我们来安装博客框架罢。在<code>powershell</code>中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
+<p>就可以全局安装这个框架了。安装好之后，重启命令行，并用<code>hexo</code>命令检测是否安装成功：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vBWTOI.png" alt=""></p>
+<h3 id="1-2-你的repo与服务器"><a href="#1-2-你的repo与服务器" class="headerlink" title="1.2 你的repo与服务器"></a>1.2 你的<code>repo</code>与服务器</h3><p>我们来到<code>GitHub</code>，并新建一个仓库，名称叫作<code>&#123;username&#125;.github.io</code>。如果你曾跟着之前的文章做过<code>Jekyll</code>版网站、<code>master</code>分支被占用的话，你可以新建一个<code>hexo</code>分支。注意需要勾选<code>LICENSE</code>和<code>README</code>，这样可以形成一个<code>master</code>分支。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB4wY8.png" alt=""></p>
+<p>之后，你就会得到类似这样的一个页面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB5y9O.png" alt=""></p>
+<p>然后我们转到<code>Settings</code>，启用（修改）<code>GitHub Pages</code>的相关设置，选择<code>Deploy from a branch</code>后勾选你的目标分支。如果你完全跟着我来的，默认是<code>master</code>；如果你以前动用过这个仓库，则切换到你新的分支上。如下图，点击<code>Save</code>就可以触发一次更新：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB563D.png" alt=""></p>
+<p>稍等片刻（大概1~3分钟）后，访问<code>https://&#123;username&#125;.github.io</code>，如果显示的不是下面这个灰色的<code>404</code>，那么我们就可以开始下一步了！</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vDVNFI.png" alt=""></p>
+<blockquote>
+<p>注：我曾经在<code>Jekyll</code>那篇文章中说过，<code>GitHub Pages</code>会在每一次<code>commit</code>之后触发一次更新<code>action</code>，即自动化。由于需要在服务器上进行操作，可能会出现”排队“的情况，如果设置没错却迟迟出不来”非404“页面，我想，你可能需要继续等一等……</p>
+</blockquote>
+<h2 id="2-初始化、主题与一些设置"><a href="#2-初始化、主题与一些设置" class="headerlink" title="2. 初始化、主题与一些设置"></a>2. 初始化、主题与一些设置</h2><h3 id="2-1-让Hexo运行起来！"><a href="#2-1-让Hexo运行起来！" class="headerlink" title="2.1 让Hexo运行起来！"></a>2.1 让<code>Hexo</code>运行起来！</h3><p>接下来我们就来让<code>Hexo</code>发挥一下它的威力罢。找到一个合适的文件夹，然后执行下面这条命令来初始化一个<code>Hexo</code>项目（这里以我自己为例，自己修改文件夹名）：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo_website_tutorial //换上自己的文件夹名</span><br></pre></td></tr></table></figure>
+<p>正常情况下你获得到如下的结果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vDamKe.png" alt=""></p>
+<p>这个时候，我们<code>cd</code>看一下都创建了哪些东东：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├─.github</span><br><span class="line">├─node_modules</span><br><span class="line">├─scaffolds</span><br><span class="line">├─source</span><br><span class="line">│  └─_posts</span><br><span class="line">└─themes</span><br></pre></td></tr></table></figure>
+<p>简要说明一下：<code>.github</code>文件夹可以直接无视；<code>node_modules</code>是一些<code>hexo</code>本身的依赖；<code>scaffolds</code>里放了一些模板<code>Markdown</code>，暂且不用管它；<code>source</code>文件夹中会放我们的文章；<code>themes</code>文件夹则是为之后应用主题做准备。还有一个<code>_config.yml</code>文件，是我们网站的配置文件，稍后会用到。</p>
+<p>那么，我们怎么生成一个静态的网站呢？此时我们就要用到<code>hexo generate</code>（简称<code>hexo g</code>）命令了。它会读取我们写的文章，配合着主题设置生成静态文件，并复制二进制文件（图片、音频等）。执行截图：</p>
+<!--image here 2.1 hexo generate-->
+<p>执行之后，我们会发现多了一个<code>public</code>文件夹和<code>db.json</code>文件。<code>public</code>文件夹会在生成静态文件之后复制到这里，方便上传；<code>db.json</code>是网站的一些<code>meta</code>信息，可以不用管。</p>
+<p>生成完了，我们一定会想看一看生成后的效果。你可以使用<code>hexo server</code>命令在<code>4000</code>端口上启动一个服务器。为了方便，你可以加一个参数<code>-o</code>来自动打开浏览器。如下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
+<p>在<code>4000</code>端口上，我们的默认网站样式类似这样：</p>
+<!--image here 2.1 landscape-->
 
     </div>
 
@@ -447,6 +546,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%E9%83%A8%E5%88%86"><span class="nav-text">1. 准备工作部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%80%E5%AE%9A%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84%E9%82%A3%E4%BA%9B%E8%BD%AF%E4%BB%B6"><span class="nav-text">1.1 你可能一定会用到的那些软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-NodeJS"><span class="nav-text">1.1.1 NodeJS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-Markdown%E7%BC%96%E8%BE%91%E5%99%A8Marktext"><span class="nav-text">1.1.2 Markdown编辑器Marktext</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3-Windows%E7%BB%88%E7%AB%AF%C2%B7%E9%A2%84%E8%A7%88%E7%89%88"><span class="nav-text">1.1.3 Windows终端·预览版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-4-hexo%EF%BC%8C%E4%BD%A0%E7%BD%91%E7%AB%99%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-text">1.1.4 hexo，你网站的框架</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BD%A0%E7%9A%84repo%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">1.2 你的repo与服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E3%80%81%E4%B8%BB%E9%A2%98%E4%B8%8E%E4%B8%80%E4%BA%9B%E8%AE%BE%E7%BD%AE"><span class="nav-text">2. 初始化、主题与一些设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E8%AE%A9Hexo%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5%EF%BC%81"><span class="nav-text">2.1 让Hexo运行起来！</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -532,12 +632,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">21k</span>
+    <span title="站点总字数">24k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">22 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
