@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-08-18T10:24:45.963Z</updated>
+  <updated>2022-08-19T09:44:28.457Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/"/>
     <id>https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</id>
     <published>2022-08-16T11:20:27.000Z</published>
-    <updated>2022-08-18T10:24:45.963Z</updated>
+    <updated>2022-08-19T09:44:28.457Z</updated>
     
     
     <summary type="html">&lt;p&gt;断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（&lt;code&gt;Hexo&lt;/code&gt;网站的配置以及深度开发），应该够我写一阵子了，也算作送给这一年来的present……我也会随着教程的更新重复一遍过程，以保证内容的正确性。&lt;/p&gt;
@@ -195,7 +195,7 @@
     <link href="https://guleixibian2009.github.io/2021/08/13/hello-world/"/>
     <id>https://guleixibian2009.github.io/2021/08/13/hello-world/</id>
     <published>2021-08-13T13:23:54.886Z</published>
-    <updated>2022-08-17T09:56:23.429Z</updated>
+    <updated>2022-08-19T09:23:25.705Z</updated>
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
