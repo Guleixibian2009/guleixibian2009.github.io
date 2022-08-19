@@ -137,6 +137,20 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/tags/GitHub/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Hexo/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>daily</changefreq>
@@ -152,20 +166,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/Maths/</loc>
-    <lastmod>2022-08-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/GitHub/</loc>
-    <lastmod>2022-08-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/Hexo/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
