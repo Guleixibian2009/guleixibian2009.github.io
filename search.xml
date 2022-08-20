@@ -115,62 +115,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GitHub-Cli 的安装与使用</title>
-    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
-<span id="more"></span>
-<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
-<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
-<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
-<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
-<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
-<p>嗯……搞定了！</p>
-<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
-<p>然后就会有下面的提示语：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
-<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
-<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
-<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
-<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
-<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
-<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
-<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
-<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
-<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
-<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
-<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
-<p>示意图如下：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
-<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
-<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
-<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p>就可以获得有关命令的更多信息了！</p>
-<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>GitHub-Cli</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>GitHub-Cli</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
     <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
     <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
@@ -250,207 +194,59 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>GitHub-Cli 的安装与使用</title>
+    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
 <span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>超详细：这个网站，到底是怎么做出来的？</title>
-    <url>/2022/08/16/hexo-website-tutorial/</url>
-    <content><![CDATA[<p>断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了，也算作送给这一年来的present……我也会随着教程的更新重复一遍过程，以保证内容的正确性。</p>
-<p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
-<p><strong>注：本教程所用平台是<code>Win10</code>，其他系统可能有细微差别~由于涉及到<code>GitHub</code>，建议先参照<a href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/">3个小妙招</a>来加个速！</strong></p>
-<span id="more"></span>
-<h2 id="1-准备工作部分"><a href="#1-准备工作部分" class="headerlink" title="1. 准备工作部分"></a>1. 准备工作部分</h2><h3 id="1-1-你可能一定会用到的那些软件"><a href="#1-1-你可能一定会用到的那些软件" class="headerlink" title="1.1 你可能一定会用到的那些软件"></a>1.1 你<del>可能</del>一定会用到的那些软件</h3><p>为了使用<code>Hexo</code>这个强大的框架，我们需要先安装一些依赖，还有一些其他的编程软件。为了真的把这个教程变得“新手向”一点，我就把你需要的软件都列在了这里：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>类别</th>
-<th>必要性</th>
-<th>名称</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>依赖</td>
-<td>高</td>
-<td><code>NodeJS</code></td>
-</tr>
-<tr>
-<td>编程相关、配置网站参数</td>
-<td>中高</td>
-<td>（推荐）<code>VSCode</code>、<code>Sublime Text</code>以及任何你用着顺手的编辑器</td>
-</tr>
-<tr>
-<td>文章相关</td>
-<td>中<del>（你甚至可以用记事本）</del></td>
-<td>（推荐）<code>Marktext</code>（开源免费）、<code>Typora</code>（付费）</td>
-</tr>
-<tr>
-<td>命令行</td>
-<td>高</td>
-<td><code>Windows Terminal Preview</code>（集成终端，支持自定义）、<code>Git</code>（需要配置<code>SSH</code>连接，暂时请先自己搜）</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>注：如果你使用<code>chocolatey</code>，你可以尝试先用命令行安装！</strong> 这些软件我们依次来说：</p>
-<h4 id="1-1-1-NodeJS"><a href="#1-1-1-NodeJS" class="headerlink" title="1.1.1 NodeJS"></a>1.1.1 <code>NodeJS</code></h4><p><code>NodeJS</code>是一款很流行的<code>JavaScript</code>运行时（环境），也是使用<code>Hexo</code>的必装依赖。打开<a href="https://nodejs.org/en/">安装官网</a>，如下图，推荐选择左侧的长期支持版本（<code>LTS</code>版本）。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/16/v04OaV.png" alt=""></p>
-<p>安装之后，打开命令行，输入：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
-<p>来检测是否安装成功。如果都可以成功返回版本号，那么你就可以进行下一步操作了！</p>
-<blockquote>
-<p>注：一般情况下，官方下载源会很慢，我们需要给<code>NodeJS</code>修改镜像源。使用</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
-<p>来调整为国内镜像源。</p>
-</blockquote>
-<h4 id="1-1-2-Markdown编辑器Marktext"><a href="#1-1-2-Markdown编辑器Marktext" class="headerlink" title="1.1.2 Markdown编辑器Marktext"></a>1.1.2 <code>Markdown</code>编辑器<code>Marktext</code></h4><p><img data-src="https://s1.ax1x.com/2022/08/16/v057WD.png" alt=""></p>
-<p>周知所众，我们写博客一般都是用<code>Markdown</code>这种标记语言的（不会写？参见这篇<a href=""><code>Markdown</code>教程</a>。纯净的界面，即时的渲染、开源与免费三大特点让我爱上了这款编辑器。别的咱也不说，好不好用你自己说了算！这个项目的开源地址在<code>GitHub</code>上：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>，之后怎么安装我就不用说了吧。</p>
-<h4 id="1-1-3-Windows终端·预览版"><a href="#1-1-3-Windows终端·预览版" class="headerlink" title="1.1.3 Windows终端·预览版"></a>1.1.3 <code>Windows</code>终端·预览版</h4><p>如果你嫌<code>CMD</code>或者<code>Powershell</code>的界面、字体不合你的心意，或者就想尝试一些新功能，你可以试一下<code>Windows Terminal Preview</code>。它把几个终端都打包在了一起，且支持自定义界面和启动位置等，同时可以分屏。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vBcCg1.png" alt=""></p>
-<p>你可以在<code>Microsoft Store</code>中下载到这款终端·预览。另外，需要改一下<code>powershell</code>的执行策略，管理员权限执行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass</span><br></pre></td></tr></table></figure>
-<p>即可。</p>
-<h4 id="1-1-4-hexo，你网站的框架"><a href="#1-1-4-hexo，你网站的框架" class="headerlink" title="1.1.4 hexo，你网站的框架"></a>1.1.4 <code>hexo</code>，你网站的框架</h4><p>上面的软件都准备好了吗？我们来安装博客框架罢。在<code>powershell</code>中执行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
-<p>就可以全局安装这个框架了。安装好之后，重启命令行，并用<code>hexo</code>命令检测是否安装成功：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vBWTOI.png" alt=""></p>
-<h3 id="1-2-你的repo与服务器"><a href="#1-2-你的repo与服务器" class="headerlink" title="1.2 你的repo与服务器"></a>1.2 你的<code>repo</code>与服务器</h3><p>我们来到<code>GitHub</code>，并新建一个仓库，名称叫作<code>&#123;username&#125;.github.io</code>。如果你曾跟着之前的文章做过<code>Jekyll</code>版网站、<code>master</code>分支被占用的话，你可以新建一个<code>hexo</code>分支。注意需要勾选<code>LICENSE</code>和<code>README</code>，这样可以形成一个<code>master</code>分支。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vB4wY8.png" alt=""></p>
-<p>之后，你就会得到类似这样的一个页面：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vB5y9O.png" alt=""></p>
-<p>然后我们转到<code>Settings</code>，启用（修改）<code>GitHub Pages</code>的相关设置，选择<code>Deploy from a branch</code>后勾选你的目标分支。如果你完全跟着我来的，默认是<code>master</code>；如果你以前动用过这个仓库，则切换到你新的分支上。如下图，点击<code>Save</code>就可以触发一次更新：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vB563D.png" alt=""></p>
-<p>稍等片刻（大概1~3分钟）后，访问<code>https://&#123;username&#125;.github.io</code>，如果显示的不是下面这个灰色的<code>404</code>，那么我们就可以开始下一步了！</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vDVNFI.png" alt=""></p>
-<blockquote>
-<p>注：我曾经在<code>Jekyll</code>那篇文章中说过，<code>GitHub Pages</code>会在每一次<code>commit</code>之后触发一次更新<code>action</code>，即自动化。由于需要在服务器上进行操作，可能会出现”排队“的情况，如果设置没错却迟迟出不来”非404“页面，我想，你可能需要继续等一等……</p>
-</blockquote>
-<h2 id="2-初始化、主题与一些设置"><a href="#2-初始化、主题与一些设置" class="headerlink" title="2. 初始化、主题与一些设置"></a>2. 初始化、主题与一些设置</h2><h3 id="2-1-让Hexo运行起来！"><a href="#2-1-让Hexo运行起来！" class="headerlink" title="2.1 让Hexo运行起来！"></a>2.1 让<code>Hexo</code>运行起来！</h3><p>接下来我们就来让<code>Hexo</code>发挥一下它的威力罢。找到一个合适的文件夹，然后执行下面这条命令来初始化一个<code>Hexo</code>项目（这里以我自己为例，自己修改文件夹名）：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init hexo_website_tutorial //换上自己的文件夹名</span><br></pre></td></tr></table></figure>
-<p>正常情况下你获得到如下的结果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vDamKe.png" alt=""></p>
-<p>这个时候，我们<code>cd</code>看一下都创建了哪些东东：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├─.github</span><br><span class="line">├─node_modules</span><br><span class="line">├─scaffolds</span><br><span class="line">├─source</span><br><span class="line">│  └─_posts</span><br><span class="line">└─themes</span><br></pre></td></tr></table></figure>
-<p>简要说明一下：<code>.github</code>文件夹可以直接无视；<code>node_modules</code>是一些<code>hexo</code>本身的依赖；<code>scaffolds</code>里放了一些模板<code>Markdown</code>，暂且不用管它；<code>source</code>文件夹中会放我们的文章；<code>themes</code>文件夹则是为之后应用主题做准备。还有一个<code>_config.yml</code>文件，是我们网站的配置文件。</p>
-<p>那么，我们怎么生成一个静态的网站呢？此时我们就要用到<code>hexo generate</code>（简称<code>hexo g</code>）命令了。它会读取我们写的文章，配合着主题设置生成静态文件，并复制二进制文件（图片、音频等）。注意，为了网站资源链接可以正确工作，我们要在<code>_config.yml</code>文件中改一行，是你网站的链接：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkW28.png" alt=""></p>
-<p>修改好之后，执行截图：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXL8A.png" alt=""></p>
-<p>执行之后，我们会发现多了一个<code>public</code>文件夹和<code>db.json</code>文件。<code>public</code>文件夹会在生成静态文件之后复制到这里，方便上传；<code>db.json</code>是网站的一些<code>meta</code>信息，可以不用管。</p>
-<p>生成完了，我们一定会想看一看生成后的效果。你可以使用<code>hexo server</code>命令在<code>4000</code>端口上启动一个服务器。为了方便，你可以加一个参数<code>-o</code>来自动打开浏览器。如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo s <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
-<p>在<code>4000</code>端口上，我们的默认网站样式类似这样：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXOgI.png" alt=""></p>
-<p>此时这个主题叫做<code>landscape</code>。由于我个人有更喜欢的主题（<code>NeXT</code>）并且<code>landscape</code>主题可以开发的部分不多，我们不会使用这款主题。稍后你就会知道如何切换主题。</p>
-<h3 id="2-2-部署到服务器"><a href="#2-2-部署到服务器" class="headerlink" title="2.2 部署到服务器"></a>2.2 部署到服务器</h3><p>想让别人看到我们的网站，我们就要更新<code>GitHub</code>上的仓库，触发部署<code>action</code>。可是，我不希望每一次都要用3条<code>git</code>命令来上传，怎么办？一个好消息是，<code>hexo</code>提供给我们一个<code>deploy</code>命令。</p>
-<h4 id="2-2-1-远程仓库参数设置"><a href="#2-2-1-远程仓库参数设置" class="headerlink" title="2.2.1 远程仓库参数设置"></a>2.2.1 远程仓库参数设置</h4><p>当然了，<code>hexo</code>此时也不知道我们的仓库在哪里，对吧。这时候配置文件<code>_config.yml</code>就可以派上用场了。我们找到它的<code>Deploy</code>部分，并添加一些配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vrCnyj.png" alt=""></p>
-<p>具体格式如下：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:&#123;username&#125;/&#123;repo_name&#125;.git</span></span><br><span class="line">    <span class="attr">branch:</span> &#123;<span class="string">branch_name</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>然后，我们来试一下<code>hexo d</code>这个命令……</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vriuaq.png" alt=""></p>
-<p>诶，为什么会这样呢？<code>Deployer not found</code>是什么意思？原来，我们还需要安装一个官方插件：<code>hexo-deployer-git</code>。</p>
-<h4 id="2-2-2-hexo-deployer-git"><a href="#2-2-2-hexo-deployer-git" class="headerlink" title="2.2.2 hexo-deployer-git"></a>2.2.2 <code>hexo-deployer-git</code></h4><p>我们在网站根目录下执行这个命令：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
-<p>然后再执行<code>hexo d</code>（太长了，不用图片了）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Setting up Git deployment...</span><br><span class="line">Initialized empty Git repository in D:/08 网站/hexo_website_tutorial/.deploy_git/.git/</span><br><span class="line">[master (root-commit) 0b3e2b7] First commit</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 placeholder</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">[master 3a2b089] Site updated: 2022-08-18 17:47:15</span><br><span class="line"> 18 files changed, 5172 insertions(+)</span><br><span class="line"> create mode 100644 2022/08/17/hello-world/index.html</span><br><span class="line"> create mode 100644 archives/2022/08/index.html</span><br><span class="line"> create mode 100644 archives/2022/index.html</span><br><span class="line"> create mode 100644 archives/index.html</span><br><span class="line"> create mode 100644 css/fonts/FontAwesome.otf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.eot</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.svg</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.ttf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff2</span><br><span class="line"> create mode 100644 css/images/banner.jpg</span><br><span class="line"> create mode 100644 css/style.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.js</span><br><span class="line"> create mode 100644 index.html</span><br><span class="line"> create mode 100644 js/jquery-3.4.1.min.js</span><br><span class="line"> create mode 100644 js/script.js</span><br><span class="line"> delete mode 100644 placeholder</span><br><span class="line">Enumerating objects: 34, done.</span><br><span class="line">Counting objects: 100% (34/34), done.</span><br><span class="line">Delta compression using up to 8 threads</span><br><span class="line">Compressing objects: 100% (26/26), done.</span><br><span class="line">Writing objects: 100% (34/34), 882.39 KiB | 1.49 MiB/s, done.</span><br><span class="line">Total 34 (delta 3), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (3/3), done.</span><br><span class="line">To github.com:Guleixibian2009/hexo-website-tutorial.git</span><br><span class="line"> + 5066890...3a2b089 HEAD -&gt; master (forced update)</span><br><span class="line">branch &#x27;master&#x27; set up to track &#x27;git@github.com:Guleixibian2009/hexo-website-tutorial.git/master&#x27;.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
-<p>如果出现类似的结果，那我们就已经部署成功了。这个时候我们去<code>GitHub</code>上去，稍等一会后并访问你的网站看一下，你应该可以看到和本地端口上完全一样的页面。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkDDH.png" alt=""></p>
-<h3 id="2-3-切换到NexT主题"><a href="#2-3-切换到NexT主题" class="headerlink" title="2.3 切换到NexT主题"></a>2.3 切换到<code>NexT</code>主题</h3><p>当我们可以成功的部署到<code>GitHub</code>上去后，我们就可以开始切换主题了。我们要用的这个主题叫做<code>NexT</code>，准确的说，是<code>Gemini</code>子主题。为了使用这个主题，我们在根目录下克隆一下<code>GitHub</code>上面的主题仓库<code>theme-next/hexo-theme-next</code>：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/hexo<span class="literal">-theme</span><span class="literal">-next</span> themes/next</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrxxmt.png" alt=""></p>
-<p>然后打开根目录下的<code>_config.yml</code>（有区别于之后我们会用到主题内的<code>_config.yml</code>文件，切勿搞混）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzSTf.png" alt=""></p>
-<p>修改过后重新生成一遍静态文件（<code>hexo clean</code>+<code>hexo g</code>），打开本地端口（<code>hexo s -o</code>）可以看见，我们已经切换到<code>NexT</code>的<code>Muse</code>子主题了：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzDcd.png" alt=""></p>
-<p>实际上，<code>NexT</code>主题分别是有4个子主题的。打开<code>themes/next</code>文件夹下（简称主题文件夹下<code>_config.yml</code>），找到95行，可以看到所有子主题，以及黑夜模式的设置（本人并未开启）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzynI.png" alt=""></p>
-<p>要切换到<code>Gemini</code>子主题，只需把第100行注释掉，并取消注释第103行即可。我们重新生成一下（还记得那3条命令吧）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vspsTP.png" alt=""></p>
-<p>主题是切换过来了，可是我看着怎么是英文的呢？或者，感觉东西太少了？还有，为什么我叫<code>John Doe</code>？别急，下一步，便是设置一些<code>metadata</code>。</p>
-<h3 id="2-4-网站信息设置"><a href="#2-4-网站信息设置" class="headerlink" title="2.4 网站信息设置"></a>2.4 网站信息设置</h3><p>在网站根目录下的<code>_config.yml</code>的开头，你可以看到这样的几条配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsp6Ff.png" alt=""></p>
-<p>详细地解释一下（我自己先修改了）：<code>title</code>、<code>subtitle</code>、<code>description</code>、<code>author</code>、<code>language</code>几项在更改后会改变下图中的对应位置，<code>description</code>、<code>keywords</code>、<code>language</code>、<code>timezone</code>几项则是变成了网站<code>metadata</code>。（<kbd>Ctrl+I</kbd>应该可以查看）</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9EXd.png" alt=""></p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9ZnA.png" alt=""></p>
-<p><del>（可能做得有些丑，谅解下哈）</del></p>
-<blockquote>
-<p>回顾：<code>hexo</code>常用命令（以后我就不会再提醒咯）</p>
-<ul>
-<li><p>生成静态文件——<code>hexo g</code>。</p>
-</li>
-<li><p>部署到远程服务器——<code>hexo d</code>。</p>
-</li>
-<li><p>打开本地服务器端口——<code>hexo s</code>。</p>
-</li>
-</ul>
-<p>教你几个小妙招：</p>
-<ul>
-<li><p><code>hexo d</code>和<code>hexo g</code>其实可以合并成一个命令，叫做<code>hexo g -d</code>，就可以自动先生成在自动部署。</p>
-</li>
-<li><p><code>hexo s</code>加上参数<code>-o</code>就可以自动在浏览器中打开端口。</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="3-Gemini子主题的官方配置……"><a href="#3-Gemini子主题的官方配置……" class="headerlink" title="3. Gemini子主题的官方配置……"></a>3. <code>Gemini</code>子主题的官方配置……</h2><p>现在我们就可以给我们的网站添加一些功能与细节了。先打开本地端口，让我们从左往右说：</p>
-<h3 id="3-1-左侧的侧边栏"><a href="#3-1-左侧的侧边栏" class="headerlink" title="3.1 左侧的侧边栏"></a>3.1 左侧的侧边栏</h3><p>左边较窄的竖栏叫<code>sidebar</code>（侧边栏），分为上下两部分，上半部分是一个导航栏，存放了一些站内链接；下半部分是关于你、一些网站统计数据、友情链接，这里也是我们可以自定义的地方（非官方的插件，如音乐、天气等，我们在第5节非官方插件中说）。当你打开一片博客后，下半部分也可以作为一个文章目录。下面几张图供参考：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsihCV.png" alt=""></p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsi43T.png" alt=""></p>
-<h4 id="3-1-1-添加更多的站内链接"><a href="#3-1-1-添加更多的站内链接" class="headerlink" title="3.1.1 添加更多的站内链接"></a>3.1.1 添加更多的站内链接</h4><p>仔细研究主题<code>_config.yml</code>，你会找到这样一个区块，正是关于站内链接的：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsFpKe.png" alt=""></p>
-<p>看起来，我们目前有两个可用链接（主页、归档），相对应的就是<code>home</code>和<code>archive</code>。</p>
-<h5 id="3-1-1-1-添加链接"><a href="#3-1-1-1-添加链接" class="headerlink" title="3.1.1.1 添加链接"></a>3.1.1.1 添加链接</h5><p>我们来试试取消注释<code>about</code>、<code>tags</code>和<code>categories</code>：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vskVoR.png" alt=""></p>
-<p>诶，正好，同步增加了三个链接<del>（不过暂时打不开）</del>！那我们是不是就能总结出来填入的格式了？</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">key:</span> <span class="string">/link/</span> <span class="string">||</span> <span class="string">icon</span></span><br></pre></td></tr></table></figure>
-<p><code>key</code>指的是链接的名字（不代表链接地址，这个名字后面还会有用），一个冒号，然后是链接地址（可相对可绝对），然后是<code>||</code>标识符，后面跟一个<code>font-awesome</code>图标名（只能用免费版的）。</p>
-<p>掌握了语法之后，我们就可以尝试添加一个自己的链接了！假设你新建了一个歌单页面（具体操作参见后面第4节文章相关操作），它的链接是<code>/album/</code>，并且想要用<code>font-awesome</code>中<code>fas fa-compact-disc</code>这个图标，那我们就可以在配置文件中添加这样一行：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br></pre></td></tr></table></figure>
-<p>在你重新生成之前，你突发奇想想要把它放在主页那个链接下面，该怎么办呢？我发现，你只需要把这一行移动到<code>home</code>那一行后面即可：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
-<p>效果类似这样：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vskeF1.png" alt=""></p>
-<p>可是，明明其他链接都有中文，怎么新加的<code>album</code>就没有？</p>
-<h5 id="3-1-1-2-调整i18n"><a href="#3-1-1-2-调整i18n" class="headerlink" title="3.1.1.2 调整i18n"></a>3.1.1.2 调整<code>i18n</code></h5><p>别忘了，<code>NexT</code>主题的默认语言是英文！我们是通过修改配置强制翻译成中文的（可以回顾一下2.4节）。那…我们能不能手动翻译（学名<code>internationalization</code>，国际化，简称<code>i18n</code>)呢？其实是可以的。我们找到这个文件：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA5gf.png" alt=""></p>
-<p>然后我们重新生成，是不是就成功了呢？</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA48P.png" alt=""></p>
-<p>记住这个方法，我们之后也还是会用到的！</p>
-<h5 id="3-1-1-3-计数小“徽章”"><a href="#3-1-1-3-计数小“徽章”" class="headerlink" title="3.1.1.3 计数小“徽章”"></a>3.1.1.3 计数小“徽章”</h5><p>想要显示目前我们的博客内一共有几篇文章、几个分类和几个标签吗？我们可以用一个<code>badge</code>解决这件事。还是刚才那段配置，有没有在下面看到一段这样的选项？</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>我们把<code>badges</code>选项调成<code>true</code>，系统就会自动计数了。看一下效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsVzBF.png" alt=""></p>
-<p>嗯，光荣的<code>0 0 1</code>。当然现在我们的“标签”页还是打不开的。具体怎么调文章的分类或如何创建“标签”页面等，我会在第4节文章相关操作中讲到。</p>
-<h4 id="3-1-2-更新“综合信息中心”"><a href="#3-1-2-更新“综合信息中心”" class="headerlink" title="3.1.2 更新“综合信息中心”"></a>3.1.2 更新“综合信息中心”</h4><p>我之所以把这个侧边栏的下半部分称作一个“综合数据中心”，主要是因为你几乎可以在这里放任何你想放的信息，比如你的头像、个性签名、文章相关统计、个人链接等等。（至于天气和音乐播放器我们之后会在第5节非官方插件中讲到。）这是我的网站目前的样子：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEUsS.png" alt=""></p>
-<h5 id="3-1-2-1-你的头像"><a href="#3-1-2-1-你的头像" class="headerlink" title="3.1.2.1 你的头像"></a>3.1.2.1 你的头像</h5><p>想要给大家展示一下你的头像吗？当然可以。准备好一张照片（建议方形），移动到<code>/public/images</code>这个文件夹里（为了方便我没有更改）。然后打开主题配置文件，找到如下配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEaqg.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><code>url</code>是你图片的路径，格式就是<code>/images/</code>再加上文件名（不一定是<code>avatar.gif</code>）。<code>rounded</code>则是选择是否要显示为圆形，<code>rotated</code>是选择是否要在鼠标移动到图片上时旋转。我们看一下效果如何：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsENM8.png" alt=""></p>
-<h5 id="3-1-2-2-个人链接"><a href="#3-1-2-2-个人链接" class="headerlink" title="3.1.2.2 个人链接"></a>3.1.2.2 个人链接</h5><p>（未完待续）</p>
+<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
+<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
+<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
+<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
+<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
+<p>嗯……搞定了！</p>
+<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
+<p>然后就会有下面的提示语：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
+<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
+<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
+<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
+<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
+<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
+<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
+<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
+<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
+<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
+<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
+<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
+<p>示意图如下：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
+<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
+<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>就可以获得有关命令的更多信息了！</p>
+<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
 ]]></content>
       <categories>
         <category>GitHub</category>
-        <category>Pages</category>
+        <category>GitHub-Cli</category>
       </categories>
       <tags>
-        <tag>Website</tag>
-        <tag>GitHub</tag>
-        <tag>Hexo</tag>
+        <tag>Github</tag>
+        <tag>GitHub-Cli</tag>
       </tags>
   </entry>
   <entry>
@@ -1403,6 +1199,21 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>序言</title>
     <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
     <content><![CDATA[<blockquote>
@@ -1418,6 +1229,267 @@ e^x \qquad & a \le 0
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
 <p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>超详细：这个网站，到底是怎么做出来的？</title>
+    <url>/2022/08/16/hexo-website-tutorial/</url>
+    <content><![CDATA[<p>断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新重复一遍过程，以保证内容的正确性。</p>
+<p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
+<p><strong>注：本教程所用平台是<code>Win10</code>，其他系统可能有细微差别~由于涉及到<code>GitHub</code>，建议先参照<a href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/">3个小妙招</a>来加个速！</strong></p>
+<span id="more"></span>
+<h2 id="1-准备工作部分"><a href="#1-准备工作部分" class="headerlink" title="1. 准备工作部分"></a>1. 准备工作部分</h2><h3 id="1-1-你可能一定会用到的那些软件"><a href="#1-1-你可能一定会用到的那些软件" class="headerlink" title="1.1 你可能一定会用到的那些软件"></a>1.1 你<del>可能</del>一定会用到的那些软件</h3><p>为了使用<code>Hexo</code>这个强大的框架，我们需要先安装一些依赖，还有一些其他的编程软件。为了真的把这个教程变得“新手向”一点，我就把你需要的软件都列在了这里：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>必要性</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖</td>
+<td>高</td>
+<td><code>NodeJS</code></td>
+</tr>
+<tr>
+<td>编程相关、配置网站参数</td>
+<td>中高</td>
+<td>（推荐）<code>VSCode</code>、<code>Sublime Text</code>以及任何你用着顺手的编辑器</td>
+</tr>
+<tr>
+<td>文章相关</td>
+<td>中<del>（你甚至可以用记事本）</del></td>
+<td>（推荐）<code>Marktext</code>（开源免费）、<code>Typora</code>（付费）</td>
+</tr>
+<tr>
+<td>命令行</td>
+<td>高</td>
+<td><code>Windows Terminal Preview</code>（集成终端，支持自定义）、<code>Git</code>（需要配置<code>SSH</code>连接，暂时请先自己搜）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：如果你使用<code>chocolatey</code>，你可以尝试先用命令行安装！</strong> 这些软件我们依次来说：</p>
+<h4 id="1-1-1-NodeJS"><a href="#1-1-1-NodeJS" class="headerlink" title="1.1.1 NodeJS"></a>1.1.1 <code>NodeJS</code></h4><p><code>NodeJS</code>是一款很流行的<code>JavaScript</code>运行时（环境），也是使用<code>Hexo</code>的必装依赖。打开<a href="https://nodejs.org/en/">安装官网</a>，如下图，推荐选择左侧的长期支持版本（<code>LTS</code>版本）。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/16/v04OaV.png" alt=""></p>
+<p>安装之后，打开命令行，输入：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+<p>来检测是否安装成功。如果都可以成功返回版本号，那么你就可以进行下一步操作了！</p>
+<blockquote>
+<p>注：一般情况下，官方下载源会很慢，我们需要给<code>NodeJS</code>修改镜像源。使用</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+<p>来调整为国内镜像源。</p>
+</blockquote>
+<h4 id="1-1-2-Markdown编辑器Marktext"><a href="#1-1-2-Markdown编辑器Marktext" class="headerlink" title="1.1.2 Markdown编辑器Marktext"></a>1.1.2 <code>Markdown</code>编辑器<code>Marktext</code></h4><p><img data-src="https://s1.ax1x.com/2022/08/16/v057WD.png" alt=""></p>
+<p>周知所众，我们写博客一般都是用<code>Markdown</code>这种标记语言的（不会写？参见这篇<a href=""><code>Markdown</code>教程</a>）。纯净的界面，即时的渲染、开源与免费三大特点让我爱上了这款编辑器。别的咱也不说，好不好用你自己说了算！这个项目的开源地址在<code>GitHub</code>上：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>，之后怎么安装我就不用说了吧。</p>
+<h4 id="1-1-3-Windows终端·预览版"><a href="#1-1-3-Windows终端·预览版" class="headerlink" title="1.1.3 Windows终端·预览版"></a>1.1.3 <code>Windows</code>终端·预览版</h4><p>如果你嫌<code>CMD</code>或者<code>Powershell</code>的界面、字体不合你的心意，或者就想尝试一些新功能，你可以试一下<code>Windows Terminal Preview</code>。它把几个终端都打包在了一起，且支持自定义界面和启动位置等，同时可以分屏。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vBcCg1.png" alt=""></p>
+<p>你可以在<code>Microsoft Store</code>中下载到这款终端·预览。另外，需要改一下<code>powershell</code>的执行策略，管理员权限执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h4 id="1-1-4-hexo，你网站的框架"><a href="#1-1-4-hexo，你网站的框架" class="headerlink" title="1.1.4 hexo，你网站的框架"></a>1.1.4 <code>hexo</code>，你网站的框架</h4><p>上面的软件都准备好了吗？我们来安装博客框架罢。在<code>powershell</code>中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
+<p>就可以全局安装这个框架了。安装好之后，重启命令行，并用<code>hexo</code>命令检测是否安装成功：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vBWTOI.png" alt=""></p>
+<h3 id="1-2-你的repo与服务器"><a href="#1-2-你的repo与服务器" class="headerlink" title="1.2 你的repo与服务器"></a>1.2 你的<code>repo</code>与服务器</h3><p>我们来到<code>GitHub</code>，并新建一个仓库，名称叫作<code>&#123;username&#125;.github.io</code>。如果你曾跟着之前的文章做过<code>Jekyll</code>版网站、<code>master</code>分支被占用的话，你可以新建一个<code>hexo</code>分支。注意需要勾选<code>LICENSE</code>和<code>README</code>，这样可以形成一个<code>master</code>分支。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB4wY8.png" alt=""></p>
+<p>之后，你就会得到类似这样的一个页面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB5y9O.png" alt=""></p>
+<p>然后我们转到<code>Settings</code>，启用（修改）<code>GitHub Pages</code>的相关设置，选择<code>Deploy from a branch</code>后勾选你的目标分支。如果你完全跟着我来的，默认是<code>master</code>；如果你以前动用过这个仓库，则切换到你新的分支上。如下图，点击<code>Save</code>就可以触发一次更新：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB563D.png" alt=""></p>
+<p>稍等片刻（大概1~3分钟）后，访问<code>https://&#123;username&#125;.github.io</code>，如果显示的不是下面这个灰色的<code>404</code>，那么我们就可以开始下一步了！</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vDVNFI.png" alt=""></p>
+<blockquote>
+<p>注：我曾经在<code>Jekyll</code>那篇文章中说过，<code>GitHub Pages</code>会在每一次<code>commit</code>之后触发一次更新<code>action</code>，即自动化。由于需要在服务器上进行操作，可能会出现”排队“的情况，如果设置没错却迟迟出不来”非404“页面，我想，你可能需要继续等一等……</p>
+</blockquote>
+<h2 id="2-初始化、主题与一些设置"><a href="#2-初始化、主题与一些设置" class="headerlink" title="2. 初始化、主题与一些设置"></a>2. 初始化、主题与一些设置</h2><h3 id="2-1-让Hexo运行起来！"><a href="#2-1-让Hexo运行起来！" class="headerlink" title="2.1 让Hexo运行起来！"></a>2.1 让<code>Hexo</code>运行起来！</h3><p>接下来我们就来让<code>Hexo</code>发挥一下它的威力罢。找到一个合适的文件夹，然后执行下面这条命令来初始化一个<code>Hexo</code>项目（这里以我自己为例，自己修改文件夹名）：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init hexo_website_tutorial //换上自己的文件夹名</span><br></pre></td></tr></table></figure>
+<p>正常情况下你获得到如下的结果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vDamKe.png" alt=""></p>
+<p>这个时候，我们<code>cd</code>看一下都创建了哪些东东：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├─.github</span><br><span class="line">├─node_modules</span><br><span class="line">├─scaffolds</span><br><span class="line">├─source</span><br><span class="line">│  └─_posts</span><br><span class="line">└─themes</span><br></pre></td></tr></table></figure>
+<p>简要说明一下：<code>.github</code>文件夹可以直接无视；<code>node_modules</code>是一些<code>hexo</code>本身的依赖；<code>scaffolds</code>里放了一些模板<code>Markdown</code>，暂且不用管它；<code>source</code>文件夹中会放我们的文章；<code>themes</code>文件夹则是为之后应用主题做准备。还有一个<code>_config.yml</code>文件，是我们网站的配置文件。</p>
+<p>那么，我们怎么生成一个静态的网站呢？此时我们就要用到<code>hexo generate</code>（简称<code>hexo g</code>）命令了。它会读取我们写的文章，配合着主题设置生成静态文件，并复制二进制文件（图片、音频等）。注意，为了网站资源链接可以正确工作，我们要在<code>_config.yml</code>文件中改一行，是你网站的链接：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkW28.png" alt=""></p>
+<p>修改好之后，执行截图：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXL8A.png" alt=""></p>
+<p>执行之后，我们会发现多了一个<code>public</code>文件夹和<code>db.json</code>文件。<code>public</code>文件夹会在生成静态文件之后复制到这里，方便上传；<code>db.json</code>是网站的一些<code>meta</code>信息，可以不用管。</p>
+<p>生成完了，我们一定会想看一看生成后的效果。你可以使用<code>hexo server</code>命令在<code>4000</code>端口上启动一个服务器。为了方便，你可以加一个参数<code>-o</code>来自动打开浏览器。如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo s <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
+<p>在<code>4000</code>端口上，我们的默认网站样式类似这样：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXOgI.png" alt=""></p>
+<p>此时这个主题叫做<code>landscape</code>。由于我个人有更喜欢的主题（<code>NeXT</code>）并且<code>landscape</code>主题可以开发的部分不多，我们不会使用这款主题。稍后你就会知道如何切换主题。</p>
+<h3 id="2-2-部署到服务器"><a href="#2-2-部署到服务器" class="headerlink" title="2.2 部署到服务器"></a>2.2 部署到服务器</h3><p>想让别人看到我们的网站，我们就要更新<code>GitHub</code>上的仓库，触发部署<code>action</code>。可是，我不希望每一次都要用3条<code>git</code>命令来上传，怎么办？一个好消息是，<code>hexo</code>提供给我们一个<code>deploy</code>命令。</p>
+<h4 id="2-2-1-远程仓库参数设置"><a href="#2-2-1-远程仓库参数设置" class="headerlink" title="2.2.1 远程仓库参数设置"></a>2.2.1 远程仓库参数设置</h4><p>当然了，<code>hexo</code>此时也不知道我们的仓库在哪里，对吧。这时候配置文件<code>_config.yml</code>就可以派上用场了。我们找到它的<code>Deploy</code>部分，并添加一些配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vrCnyj.png" alt=""></p>
+<p>具体格式如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:&#123;username&#125;/&#123;repo_name&#125;.git</span></span><br><span class="line">    <span class="attr">branch:</span> &#123;<span class="string">branch_name</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，我们来试一下<code>hexo d</code>这个命令……</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vriuaq.png" alt=""></p>
+<p>诶，为什么会这样呢？<code>Deployer not found</code>是什么意思？原来，我们还需要安装一个官方插件：<code>hexo-deployer-git</code>。</p>
+<h4 id="2-2-2-hexo-deployer-git"><a href="#2-2-2-hexo-deployer-git" class="headerlink" title="2.2.2 hexo-deployer-git"></a>2.2.2 <code>hexo-deployer-git</code></h4><p>我们在网站根目录下执行这个命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>然后再执行<code>hexo d</code>（太长了，不用图片了）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Setting up Git deployment...</span><br><span class="line">Initialized empty Git repository in D:/08 网站/hexo_website_tutorial/.deploy_git/.git/</span><br><span class="line">[master (root-commit) 0b3e2b7] First commit</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 placeholder</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">[master 3a2b089] Site updated: 2022-08-18 17:47:15</span><br><span class="line"> 18 files changed, 5172 insertions(+)</span><br><span class="line"> create mode 100644 2022/08/17/hello-world/index.html</span><br><span class="line"> create mode 100644 archives/2022/08/index.html</span><br><span class="line"> create mode 100644 archives/2022/index.html</span><br><span class="line"> create mode 100644 archives/index.html</span><br><span class="line"> create mode 100644 css/fonts/FontAwesome.otf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.eot</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.svg</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.ttf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff2</span><br><span class="line"> create mode 100644 css/images/banner.jpg</span><br><span class="line"> create mode 100644 css/style.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.js</span><br><span class="line"> create mode 100644 index.html</span><br><span class="line"> create mode 100644 js/jquery-3.4.1.min.js</span><br><span class="line"> create mode 100644 js/script.js</span><br><span class="line"> delete mode 100644 placeholder</span><br><span class="line">Enumerating objects: 34, done.</span><br><span class="line">Counting objects: 100% (34/34), done.</span><br><span class="line">Delta compression using up to 8 threads</span><br><span class="line">Compressing objects: 100% (26/26), done.</span><br><span class="line">Writing objects: 100% (34/34), 882.39 KiB | 1.49 MiB/s, done.</span><br><span class="line">Total 34 (delta 3), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (3/3), done.</span><br><span class="line">To github.com:Guleixibian2009/hexo-website-tutorial.git</span><br><span class="line"> + 5066890...3a2b089 HEAD -&gt; master (forced update)</span><br><span class="line">branch &#x27;master&#x27; set up to track &#x27;git@github.com:Guleixibian2009/hexo-website-tutorial.git/master&#x27;.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+<p>如果出现类似的结果，那我们就已经部署成功了。这个时候我们去<code>GitHub</code>上去，稍等一会后并访问你的网站看一下，你应该可以看到和本地端口上完全一样的页面。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkDDH.png" alt=""></p>
+<h3 id="2-3-切换到NexT主题"><a href="#2-3-切换到NexT主题" class="headerlink" title="2.3 切换到NexT主题"></a>2.3 切换到<code>NexT</code>主题</h3><p>当我们可以成功的部署到<code>GitHub</code>上去后，我们就可以开始切换主题了。我们要用的这个主题叫做<code>NexT</code>，准确的说，是<code>Gemini</code>子主题。为了使用这个主题，我们在根目录下克隆一下<code>GitHub</code>上面的主题仓库<code>theme-next/hexo-theme-next</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/hexo<span class="literal">-theme</span><span class="literal">-next</span> themes/next</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrxxmt.png" alt=""></p>
+<p>然后打开根目录下的<code>_config.yml</code>（有区别于之后我们会用到主题内的<code>_config.yml</code>文件，切勿搞混）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzSTf.png" alt=""></p>
+<p>修改过后重新生成一遍静态文件（<code>hexo clean</code>+<code>hexo g</code>），打开本地端口（<code>hexo s -o</code>）可以看见，我们已经切换到<code>NexT</code>的<code>Muse</code>子主题了：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzDcd.png" alt=""></p>
+<p>实际上，<code>NexT</code>主题分别是有4个子主题的。打开<code>themes/next</code>文件夹下（简称主题文件夹下<code>_config.yml</code>），找到95行，可以看到所有子主题，以及黑夜模式的设置（本人并未开启）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzynI.png" alt=""></p>
+<p>要切换到<code>Gemini</code>子主题，只需把第100行注释掉，并取消注释第103行即可。我们重新生成一下（还记得那3条命令吧）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vspsTP.png" alt=""></p>
+<p>主题是切换过来了，可是我看着怎么是英文的呢？或者，感觉东西太少了？还有，为什么我叫<code>John Doe</code>？别急，下一步，便是设置一些<code>metadata</code>。</p>
+<h3 id="2-4-网站信息设置"><a href="#2-4-网站信息设置" class="headerlink" title="2.4 网站信息设置"></a>2.4 网站信息设置</h3><p>在网站根目录下的<code>_config.yml</code>的开头，你可以看到这样的几条配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsp6Ff.png" alt=""></p>
+<p>详细地解释一下（我自己先修改了）：<code>title</code>、<code>subtitle</code>、<code>description</code>、<code>author</code>、<code>language</code>几项在更改后会改变下图中的对应位置，<code>description</code>、<code>keywords</code>、<code>language</code>、<code>timezone</code>几项则是变成了网站<code>metadata</code>。（<kbd>Ctrl+I</kbd>应该可以查看）</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9EXd.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9ZnA.png" alt=""></p>
+<p><del>（可能做得有些丑，谅解下哈）</del></p>
+<blockquote>
+<p>回顾：<code>hexo</code>常用命令（以后我就不会再提醒咯）</p>
+<ul>
+<li><p>清除生成缓存——<code>hexo clean</code>。（对主题上的混乱或配置未生效有帮助）</p>
+</li>
+<li><p>生成静态文件——<code>hexo g</code>。</p>
+</li>
+<li><p>部署到远程服务器——<code>hexo d</code>。</p>
+</li>
+<li><p>打开本地服务器端口——<code>hexo s</code>。</p>
+</li>
+</ul>
+<p>教你几个小妙招：</p>
+<ul>
+<li><p><code>hexo d</code>和<code>hexo g</code>其实可以合并成一个命令，叫做<code>hexo g -d</code>，就可以自动先生成在自动部署。</p>
+</li>
+<li><p><code>hexo s</code>加上参数<code>-o</code>就可以自动在浏览器中打开端口。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="3-Gemini子主题的官方配置……"><a href="#3-Gemini子主题的官方配置……" class="headerlink" title="3. Gemini子主题的官方配置……"></a>3. <code>Gemini</code>子主题的官方配置……</h2><p>现在我们就可以给我们的网站添加一些功能与细节了。先打开本地端口，让我们从左往右说：</p>
+<h3 id="3-1-左侧的侧边栏"><a href="#3-1-左侧的侧边栏" class="headerlink" title="3.1 左侧的侧边栏"></a>3.1 左侧的侧边栏</h3><p>左边较窄的竖栏叫<code>sidebar</code>（侧边栏），分为上下两部分，上半部分是一个导航栏，存放了一些站内链接；下半部分是关于你、一些网站统计数据、友情链接，这里也是我们可以自定义的地方（非官方的插件，如音乐、天气等，我们在第5节非官方插件中说）。当你打开一片博客后，下半部分也可以作为一个文章目录。下面几张图供参考：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsihCV.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsi43T.png" alt=""></p>
+<h4 id="3-1-1-添加更多的站内链接"><a href="#3-1-1-添加更多的站内链接" class="headerlink" title="3.1.1 添加更多的站内链接"></a>3.1.1 添加更多的站内链接</h4><p>仔细研究主题<code>_config.yml</code>，你会找到这样一个区块，正是关于站内链接的：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsFpKe.png" alt=""></p>
+<p>看起来，我们目前有两个可用链接（主页、归档），相对应的就是<code>home</code>和<code>archive</code>。</p>
+<h5 id="3-1-1-1-添加链接"><a href="#3-1-1-1-添加链接" class="headerlink" title="3.1.1.1 添加链接"></a>3.1.1.1 添加链接</h5><p>我们来试试取消注释<code>about</code>、<code>tags</code>和<code>categories</code>：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vskVoR.png" alt=""></p>
+<p>诶，正好，同步增加了三个链接<del>（不过暂时打不开）</del>！那我们是不是就能总结出来填入的格式了？</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">key:</span> <span class="string">/link/</span> <span class="string">||</span> <span class="string">icon</span></span><br></pre></td></tr></table></figure>
+<p><code>key</code>指的是链接的名字（不代表链接地址，这个名字后面还会有用），一个冒号，然后是链接地址（可相对可绝对），然后是<code>||</code>标识符，后面跟一个<code>font-awesome</code>图标名（只能用免费版的）。</p>
+<p>掌握了语法之后，我们就可以尝试添加一个自己的链接了！假设你新建了一个歌单页面（具体操作参见后面第4节文章相关操作），它的链接是<code>/album/</code>，并且想要用<code>font-awesome</code>中<code>fas fa-compact-disc</code>这个图标，那我们就可以在配置文件中添加这样一行：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br></pre></td></tr></table></figure>
+<p>在你重新生成之前，你突发奇想想要把它放在主页那个链接下面，该怎么办呢？我发现，你只需要把这一行移动到<code>home</code>那一行后面即可：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+<p>效果类似这样：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vskeF1.png" alt=""></p>
+<p>可是，明明其他链接都有中文，怎么新加的<code>album</code>就没有？</p>
+<h5 id="3-1-1-2-调整i18n"><a href="#3-1-1-2-调整i18n" class="headerlink" title="3.1.1.2 调整i18n"></a>3.1.1.2 调整<code>i18n</code></h5><p>别忘了，<code>NexT</code>主题的默认语言是英文！我们是通过修改配置强制翻译成中文的（可以回顾一下2.4节）。那…我们能不能手动翻译（学名<code>internationalization</code>，国际化，简称<code>i18n</code>)呢？其实是可以的。我们找到这个文件：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA5gf.png" alt=""></p>
+<p>然后我们重新生成，是不是就成功了呢？</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA48P.png" alt=""></p>
+<p>记住这个方法，我们之后也还是会用到的！</p>
+<h5 id="3-1-1-3-计数小“徽章”"><a href="#3-1-1-3-计数小“徽章”" class="headerlink" title="3.1.1.3 计数小“徽章”"></a>3.1.1.3 计数小“徽章”</h5><p>想要显示目前我们的博客内一共有几篇文章、几个分类和几个标签吗？我们可以用一个<code>badge</code>解决这件事。还是刚才那段配置，有没有在下面看到一段这样的选项？</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>我们把<code>badges</code>选项调成<code>true</code>，系统就会自动计数了。看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsVzBF.png" alt=""></p>
+<p>嗯，光荣的<code>0 0 1</code>。当然现在我们的“标签”页还是打不开的。具体怎么调文章的分类或如何创建“标签”页面等，我会在第4节文章相关操作中讲到。</p>
+<h4 id="3-1-2-更新“综合信息中心”"><a href="#3-1-2-更新“综合信息中心”" class="headerlink" title="3.1.2 更新“综合信息中心”"></a>3.1.2 更新“综合信息中心”</h4><p>我之所以把这个侧边栏的下半部分称作一个“综合数据中心”，主要是因为你几乎可以在这里放任何你想放的信息，比如你的头像、个性签名、文章相关统计、个人链接等等。（至于天气和音乐播放器我们之后会在第5节非官方插件中讲到。）这是我的网站目前的样子：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEUsS.png" alt=""></p>
+<h5 id="3-1-2-1-你的头像"><a href="#3-1-2-1-你的头像" class="headerlink" title="3.1.2.1 你的头像"></a>3.1.2.1 你的头像</h5><p>想要给大家展示一下你的头像吗？当然可以。准备好一张照片（建议方形或圆形），移动到<code>/public/images</code>这个文件夹里。然后打开主题配置文件，找到如下配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEaqg.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><code>url</code>是你图片的路径，格式就是<code>/images/</code>再加上文件名（不一定是<code>avatar.gif</code>）。<code>rounded</code>则是选择是否要显示为圆形，<code>rotated</code>是选择是否要在鼠标移动到图片上时旋转。我们看一下效果如何：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsENM8.png" alt=""></p>
+<p>注：这个黑色的<code>N</code>就是<code>/images/</code>文件夹下的<code>logo.svg</code>。</p>
+<h5 id="3-1-2-2-个人链接"><a href="#3-1-2-2-个人链接" class="headerlink" title="3.1.2.2 个人链接"></a>3.1.2.2 个人链接</h5><p>既然说了，这里是“综合信息中心”，那我能不能放一点个人信息（个人链接）呢？当然是可以的。最终的效果如下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsY8B9.png" alt=""></p>
+<p>那这个是在哪里设置的呢？我们可以找到这样一段配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsYYA1.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/Guleixibian2009</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:guleixibian2009@outlook.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">https://guleixibian2009.github.io/hexo-website-tutorial/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br><span class="line">  <span class="attr">Website:</span> <span class="string">https://guleixibian2009.github.io/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-html5</span></span><br></pre></td></tr></table></figure>
+<p>它的语法和<code>3.1.1.1</code>节中链接的语法是相同的，这里就不再赘述了。</p>
+<h5 id="3-1-2-3-Creative-Commons文章版权声明"><a href="#3-1-2-3-Creative-Commons文章版权声明" class="headerlink" title="3.1.2.3 Creative Commons文章版权声明"></a>3.1.2.3 <code>Creative Commons</code>文章版权声明</h5><p>是开源项目总得有个开源许可证<code>LICENSE</code>吧。像博客一类非代码开源项目，我们一般选用<code>CC</code>版权声明。一共有6种形式（当然还有其他较特殊的协议，比如放弃权利<code>CC0</code>，可以自行搜索）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>协议</th>
+<th><code>by</code>（<code>Attribution</code>）</th>
+<th><code>nc</code>（<code>Noncommercial</code>）</th>
+<th><code>nd</code>（<code>No Derivative Works</code>）</th>
+<th><code>sa</code>（<code>Share Alike</code>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转载时必须标示原作者</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止修改</td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止商用</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止修改、商用</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止商用，必须相同协议</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>标示原作者，必须相同协议</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>一般我们选用<code>CC by-nc-sa</code>这种协议。那么，我们如何直观地向别人展示呢？<code>NexT</code>主题内置了小图标的功能，可以找到这一部分配置文件：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsYG7R.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">deed.zh</span></span><br></pre></td></tr></table></figure>
+<p>我们选中<code>sidebar</code>一项，<code>NexT</code>就会自动渲染出一个小图标了。至于<code>post</code>一项，我们放到3.2节中讲。<code>language</code>如果需要调整为中文，直接填写<code>deed.zh</code>即可。看一下渲染效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsY3nJ.png" alt=""></p>
+<p>（未完待续）</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>Pages</category>
+      </categories>
+      <tags>
+        <tag>Website</tag>
+        <tag>GitHub</tag>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>真的非常简单-Markdown基本语法</title>
