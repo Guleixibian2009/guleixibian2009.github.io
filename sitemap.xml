@@ -158,20 +158,6 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/LaTex/</loc>
-    <lastmod>2022-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/Maths/</loc>
-    <lastmod>2022-08-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>daily</changefreq>
@@ -180,6 +166,20 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/LaTex/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Maths/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -202,14 +202,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -223,14 +223,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
