@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-08-20T12:29:56.601Z</updated>
+  <updated>2022-08-29T02:44:54.438Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/"/>
     <id>https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</id>
     <published>2022-08-16T11:20:27.000Z</published>
-    <updated>2022-08-20T12:29:56.601Z</updated>
+    <updated>2022-08-29T02:44:54.438Z</updated>
     
     
-    <summary type="html">&lt;p&gt;断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（&lt;code&gt;Hexo&lt;/code&gt;网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新重复一遍过程，以保证内容的正确性。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（&lt;code&gt;Hexo&lt;/code&gt;网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新&lt;a href=&quot;/hexo-website-tutorial&quot;&gt;重复一遍过程&lt;/a&gt;，以保证内容的正确性。&lt;/p&gt;
 &lt;p&gt;顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的&lt;code&gt;Hexo&lt;/code&gt;网站教程，马上开始！  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注：本教程所用平台是&lt;code&gt;Win10&lt;/code&gt;，其他系统可能有细微差别~由于涉及到&lt;code&gt;GitHub&lt;/code&gt;，建议先参照&lt;a href=&quot;https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/&quot;&gt;3个小妙招&lt;/a&gt;来加个速！&lt;/strong&gt;&lt;/p&gt;</summary>
     
@@ -71,7 +71,7 @@
     <link href="https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
     <published>2021-11-28T11:35:40.000Z</published>
-    <updated>2022-08-19T10:24:31.010Z</updated>
+    <updated>2022-08-27T08:48:24.024Z</updated>
     
     
     <summary type="html">&lt;p&gt;这篇文章是我转载过来的（很抱歉的是原网址已经找不到了），自己进行了一些格式上的修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……&lt;/p&gt;
@@ -120,7 +120,7 @@
     <link href="https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
     <published>2021-08-25T06:46:50.000Z</published>
-    <updated>2022-07-20T12:27:37.161Z</updated>
+    <updated>2022-08-28T10:39:59.416Z</updated>
     
     
     <summary type="html">&lt;p&gt;在很多博客、论坛，包括&lt;code&gt;Github Pages&lt;/code&gt;(参见&lt;a href=&quot;https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/&quot;&gt;这篇文章&lt;/a&gt;) 里都有大量运用到一种叫做&lt;code&gt;Markdown&lt;/code&gt;的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写&lt;code&gt;Markdown&lt;/code&gt;。如果你想学习&lt;code&gt;Markdown&lt;/code&gt;，你算是来对地方了！&lt;/p&gt;</summary>
