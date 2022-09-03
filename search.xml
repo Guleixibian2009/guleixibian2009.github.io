@@ -1,120 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>3个小妙招加速你的GitHub~</title>
-    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
-    <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
-<span id="more"></span>
-<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天<em>（也许不是天天）</em>更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
-<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
-<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
-<li>方法二：改链接，做镜像，世界变得更加美好  </li>
-<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
-</ul>
-<hr>
-<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改<code>hosts</code>！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
-<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">网址</th>
-<th style="text-align:center">解释</th>
-<th style="text-align:center">IP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>github.com</code></td>
-<td style="text-align:center">这是主站</td>
-<td style="text-align:center"><del>140.82.114.4</del></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.108.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.109.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.110.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.111.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.108.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.109.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.110.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.111.133</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>注意，写入<code>hosts</code>的格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
-<p>如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
-<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
-<hr>
-<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p>但如果你用了镜像网站，速度会极快：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
-<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
-<hr>
-<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
-<p>不过后来我又发现一个问题……如果你用的是<code>Firefox</code>，那么他有时会有“未连接”的界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
-<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，这个模式不需要证书。实际上，造成刚刚那个界面的原因就是<code>Firefox</code>无法识别边车自动生成的证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
-<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
-<p>我们默默地把布尔值修改成<code>True</code>，重启浏览器，搞定！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
-<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
-<hr>
-<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>DevSidecar</tag>
-        <tag>FAQs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitHub-Cli 的安装与使用</title>
     <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
@@ -248,6 +134,120 @@
         <tag>Github</tag>
         <tag>Website</tag>
         <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>3个小妙招加速你的GitHub~</title>
+    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
+    <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
+<span id="more"></span>
+<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天<em>（也许不是天天）</em>更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
+<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
+<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
+<li>方法二：改链接，做镜像，世界变得更加美好  </li>
+<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
+</ul>
+<hr>
+<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改<code>hosts</code>！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
+<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">网址</th>
+<th style="text-align:center">解释</th>
+<th style="text-align:center">IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>github.com</code></td>
+<td style="text-align:center">这是主站</td>
+<td style="text-align:center"><del>140.82.114.4</del></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.108.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.109.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.110.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.111.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.108.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.109.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.110.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.111.133</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意，写入<code>hosts</code>的格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
+<hr>
+<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p>但如果你用了镜像网站，速度会极快：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<hr>
+<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
+<p>不过后来我又发现一个问题……如果你用的是<code>Firefox</code>，那么他有时会有“未连接”的界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
+<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，这个模式不需要证书。实际上，造成刚刚那个界面的原因就是<code>Firefox</code>无法识别边车自动生成的证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
+<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
+<p>我们默默地把布尔值修改成<code>True</code>，重启浏览器，搞定！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
+<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
+<hr>
+<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>DevSidecar</tag>
+        <tag>FAQs</tag>
       </tags>
   </entry>
   <entry>
@@ -1620,7 +1620,7 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>（更新中）超详细：这个网站，到底是怎么做出来的？</title>
+    <title>【更新中】超详细：这个网站，到底是怎么做出来的？</title>
     <url>/2022/08/16/hexo-website-tutorial/</url>
     <content><![CDATA[<p>断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新<a href="/hexo-website-tutorial">重复一遍过程</a>，以保证内容的正确性。</p>
 <p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
@@ -2108,7 +2108,27 @@ e^x \qquad & x \le 0
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas Nest</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest </span></span><br><span class="line"><span class="attr">canvas_nest:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> </span><br><span class="line">  <span class="attr">onmobile:</span> <span class="literal">true</span> </span><br><span class="line">  <span class="attr">color:</span> <span class="string">&#x27;0,0,0&#x27;</span> </span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.5</span> </span><br><span class="line">  <span class="attr">zIndex:</span> <span class="number">-1</span> </span><br><span class="line">  <span class="attr">count:</span> <span class="number">50</span> </span><br></pre></td></tr></table></figure>
 <p>可以修改的有几个参数：<code>color</code>指线的颜色，配合<code>opacity</code>透明度使用；<code>zIndex</code>指图层，<code>-1</code>代表最下层；<code>count</code>代表最多同时出现多少条线。修改之后渲染即可。我特地给你们看一下效果：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/03/voVaWt.png" alt=""></p>
-<h3 id="5-2-侧边栏插件"><a href="#5-2-侧边栏插件" class="headerlink" title="5.2 侧边栏插件"></a>5.2 侧边栏插件</h3><h4 id="5-2-1-外联播放器"><a href="#5-2-1-外联播放器" class="headerlink" title="5.2.1 外联播放器"></a>5.2.1 外联播放器</h4><h4 id="5-2-2-天气插件"><a href="#5-2-2-天气插件" class="headerlink" title="5.2.2 天气插件"></a>5.2.2 天气插件</h4><p>（未完待续，未完待续，真的还有很多）</p>
+<h3 id="5-2-侧边栏插件"><a href="#5-2-侧边栏插件" class="headerlink" title="5.2 侧边栏插件"></a>5.2 侧边栏插件</h3><p>总觉得侧边栏少了点东西，没有个性？我们可以尝试添加一些不同的东西……这是最后的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo8YT0.png" alt=""></p>
+<h4 id="5-2-1-外链播放器"><a href="#5-2-1-外链播放器" class="headerlink" title="5.2.1 外链播放器"></a>5.2.1 外链播放器</h4><p>音乐播放器的话是用的一个网易云的外链服务，好处在于方便（根本不需要登录什么的），快速（加载快播放也流畅）。我们先随便找一首歌（网页版的）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo8Jwq.png" alt=""></p>
+<h5 id="5-2-1-1-获取插件"><a href="#5-2-1-1-获取插件" class="headerlink" title="5.2.1.1 获取插件"></a>5.2.1.1 获取插件</h5><p>看到上面的红色框框了吗？点进去，就是一个外链的生成界面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo8eTP.png" alt=""></p>
+<p>出于兼容性的考虑我们只能用<code>&lt;iframe&gt;</code>版的，<code>flash</code>已经过时了。首先我们要调整一个宽度，自己觉得合适就可以。不过不要过宽，否则待会会放不下。我自己选的是<code>280x66</code>。然后尽量不选自动播放吧，用户体验可能不会特别好，万一读者不喜欢这首歌怎么办？然后复制下面的代码就可以了，类似这样：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginwidth</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginheight</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">280</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">&quot;//music.163.com/outchain/player?type=2&amp;id=2080607&amp;auto=0&amp;height=66&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意一下另外两个红框，是两个相同的数字，即歌曲<code>id</code>。以后需要更改歌曲只要打开网页版后复制网址中的<code>id</code>并替换就可以了。</p>
+<h5 id="5-2-1-2-调整侧边栏宽度"><a href="#5-2-1-2-调整侧边栏宽度" class="headerlink" title="5.2.1.2 调整侧边栏宽度"></a>5.2.1.2 调整侧边栏宽度</h5><p><code>Next</code>主题侧边栏的宽度默认是240，这个会有点窄，要调大一点。不是说一定要比插件的宽度长，短一点也可以，它会自动的缩短。然后我这边就选了260像素。看一下配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo8KfS.png" alt=""></p>
+<h5 id="5-2-1-3-插入swig模板"><a href="#5-2-1-3-插入swig模板" class="headerlink" title="5.2.1.3 插入swig模板"></a>5.2.1.3 插入<code>swig</code>模板</h5><p>到现在我们已经有了一个播放器，调了宽度，可是怎么把它插入到侧边栏里来呢？我们要到模板文件里去插。找到这个文件（<code>themes/next/layout/_partials/sidebar/site-overview.swig</code>），在105行左右（<code>CC</code>之后，<code>Blogroll</code>之前）插入代码即可：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo8uY8.png" alt=""></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.sidebar %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;cc-license motion-element&quot;</span> <span class="attr">itemprop</span>=<span class="string">&quot;license&quot;</span>&gt;</span></span><br><span class="line">  &#123;%- set ccImage = &#x27;<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&#x27; + url_for(theme.images + &#x27;/cc-&#x27; + theme.creative_commons.license + &#x27;.svg&#x27;) + &#x27;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Creative Commons&quot;</span>&gt;</span>&#x27; %&#125;</span><br><span class="line">    &#123;&#123; next_url(ccURL, ccImage, &#123;class: &#x27;cc-opacity&#x27;&#125;) &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginwidth</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginheight</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">280</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">&quot;//music.163.com/outchain/player?type=2&amp;id=2080607&amp;auto=0&amp;height=66&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;# Blogroll #&#125;</span><br><span class="line">&#123;%- if theme.links %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll motion-element&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-title&quot;</span>&gt;</span></span><br><span class="line">      &#123;%- if theme.links_settings.icon %&#125;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;&#123;&#123; theme.links_settings.icon &#125;&#125; fa-fw&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&#123;%- endif %&#125;</span><br><span class="line">      &#123;&#123; theme.links_settings.title &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-list&quot;</span>&gt;</span></span><br><span class="line">      &#123;%- for blogrollText, blogrollURL in theme.links %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-item&quot;</span>&gt;</span></span><br><span class="line">          &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      &#123;%- endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>最后我们来看一下渲染出来的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo8nFf.png" alt=""></p>
+<h4 id="5-2-2-天气插件"><a href="#5-2-2-天气插件" class="headerlink" title="5.2.2 天气插件"></a>5.2.2 天气插件</h4><p>接下来是一个天气的插件。我们这个插件来自<code>tianqi.com</code>，它这个可以实时获取城市，不过原来是直接使用的，现在要关注什么公众号了，不过我可以直接把代码给大家。这是我当时获取到的代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">width</span>=<span class="string">&quot;250&quot;</span> <span class="attr">height</span>=<span class="string">&quot;90&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">hspace</span>=<span class="string">&quot;0&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://i.tianqi.com/?c=code&amp;a=getcode&amp;id=7&amp;icon=1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>目前还是可以正常运行的，不要求什么密码。我们还是找到<code>site-overview.swig</code>，把上面的代码粘贴到外链播放器下面去。看一下最终的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voJXLj.png" alt=""></p>
+<h3 id="5-3-不蒜子访客统计"><a href="#5-3-不蒜子访客统计" class="headerlink" title="5.3 不蒜子访客统计"></a>5.3 不蒜子访客统计</h3><h3 id="5-4-相关文章插件"><a href="#5-4-相关文章插件" class="headerlink" title="5.4 相关文章插件"></a>5.4 相关文章插件</h3><p>（未完待续，未完待续，真的还有很多）</p>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
