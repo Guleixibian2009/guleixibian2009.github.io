@@ -116,6 +116,20 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/tags/Website/</loc>
+    <lastmod>2022-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
+    <lastmod>2022-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -137,14 +151,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Website/</loc>
+    <loc>https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
+    <loc>https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -159,20 +173,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/Hexo/</loc>
-    <lastmod>2022-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2022-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -230,14 +230,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

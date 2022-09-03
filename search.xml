@@ -171,6 +171,86 @@
       </tags>
   </entry>
   <entry>
+    <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
+    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
+    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
+<span id="more"></span>
+<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
+<hr>
+<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/"><code>GitHub</code></a> 的 <strong><a href="https://pages.github.com/"><code>Pages</code></a></strong> 功能。<br>身为程序员，大家肯定都听说过<code>GitHub</code>吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
+<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册<code>GitHub</code>账号</h3><p>（如果你有<code>GitHub</code>账号，请跳过这一步）如果你没用过<code>GitHub</code>，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
+<p>（尴尬：我注册时不是这样啊？？？）<br>登录<code>GitHub</code>可能会需要验证码。登录一下注册时的邮箱，你会收到<code>GitHub</code>（<code>noreply@github.com</code>）的邮件，比如说：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
+<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 <code>New</code> 按钮，然后会弹出如下界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
+<p>我们如图勾选，</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
+<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
+<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
+<hr>
+<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选<code>Pages</code></h3><p>在使用这个功能之前，你要告诉<code>GitHub</code>你要把这个仓库当做网页源码。<br>在 <code>Settings</code> 里找到 <code>pages</code> 选项，应该是这样子的：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
+<p>把 <code>Source</code> 调成你现有的分支，点击 <code>Save</code> 。  </p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建<code>index.md</code></h3><p><img data-src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
+<p>为了<code>Github Pages</code>更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
+<p>点击 <code>+</code> 按钮，选择<code>Create New File</code>，然后进入如下界面：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
+<p>在输入框里输入<code>index.md</code>。<code>Index</code>指索引。你将会在这个新文件里写主页。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
+<p>点击<code>Commit New Changes</code>。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用<code>GitHub Pages</code>功能时，你并不需要会写<code>HTML</code>，只需要写文章就行了。 而在<code>Github Pages</code>功能里，我们写文章的方法是写<code>Markdown</code>。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习<code>Markdown</code>了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/2021/08/25/真的非常简单-Markdown基本语法/">传送门</a> 。  </p>
+<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br><code>GithubPages</code>已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<p>在这个界面，你可以选择一个你喜欢的样式（<code>Theme</code>）。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
+<p>在这里面我选了一个<code>Cayman</code>（简约大气）。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
+<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对<code>Github Pages</code>功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
+<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 <code>_config.yml</code></h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
+<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是<code>Github Pages</code>默认给你使用<code>jekyll</code>渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
+<p>其实很简单，只要往下面添加一行就可以啦！</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
+<p>你，都学废了吗？</p>
+<hr>
+<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. <code>404</code>页面</h2><p>在访问你的网站时，别人总有输错网址的时候。<code>Github</code>其实有自带的<code>404</code>，像这样：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
+<p>不过这个灰色的<code>404</code>实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
+<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用<code>Markdown</code>填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
+<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的<code>404</code>对其他<code>github.io</code>不起作用），它依然会显示那个灰色的<code>404</code>。  </p>
+<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
+<hr>
+<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和<code>404</code>页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
+<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实<code>Github Pages</code>也可以做到这一点。如果你想让<code>Jekyll</code>在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
+<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用<code>Markdown</code>填进去，再次访问就有新界面啦！</p>
+<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于<code>Ruby</code>的桌面版<code>Jekyll</code>，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
+<p>其实这个很容易实现，其实是一段<code>JavaScript</code>脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
+<hr>
+<h2 id="5-GitHub-Pages的工作原理"><a href="#5-GitHub-Pages的工作原理" class="headerlink" title="5. GitHub Pages的工作原理"></a>5. <code>GitHub Pages</code>的工作原理</h2><p>说到这大家可能会想，<code>Pages</code>能有什么工作原理？其实，如果好奇的你曾经点进过<code>GitHub</code>仓库内<code>Actions</code>一个栏目，你就会发现每一次更新提交后，系统就会自动触发<code>Page Build Deployment</code>这个内置<code>Action</code>，说明白了，就是自动化！具体讲解，敬请等待以后的<code>GitHub Actions</code>使用指南！</p>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用<code>Github Pages</code>作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有<code>HEXO</code>和<code>Wordpress</code>等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>Pages</category>
+        <category>Jekyll</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Website</tag>
+        <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【转】Markdown中Latex常用语法</title>
     <url>/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>这篇文章是我转载过来的（很抱歉的是原网址已经找不到了），自己进行了一些格式上的修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……</p>
@@ -1120,86 +1200,6 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
-    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
-    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
-<span id="more"></span>
-<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
-<hr>
-<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/"><code>GitHub</code></a> 的 <strong><a href="https://pages.github.com/"><code>Pages</code></a></strong> 功能。<br>身为程序员，大家肯定都听说过<code>GitHub</code>吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
-<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册<code>GitHub</code>账号</h3><p>（如果你有<code>GitHub</code>账号，请跳过这一步）如果你没用过<code>GitHub</code>，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
-<p>（尴尬：我注册时不是这样啊？？？）<br>登录<code>GitHub</code>可能会需要验证码。登录一下注册时的邮箱，你会收到<code>GitHub</code>（<code>noreply@github.com</code>）的邮件，比如说：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
-<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 <code>New</code> 按钮，然后会弹出如下界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
-<p>我们如图勾选，</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
-<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
-<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
-<hr>
-<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选<code>Pages</code></h3><p>在使用这个功能之前，你要告诉<code>GitHub</code>你要把这个仓库当做网页源码。<br>在 <code>Settings</code> 里找到 <code>pages</code> 选项，应该是这样子的：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
-<p>把 <code>Source</code> 调成你现有的分支，点击 <code>Save</code> 。  </p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
-<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建<code>index.md</code></h3><p><img data-src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
-<p>为了<code>Github Pages</code>更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
-<p>点击 <code>+</code> 按钮，选择<code>Create New File</code>，然后进入如下界面：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
-<p>在输入框里输入<code>index.md</code>。<code>Index</code>指索引。你将会在这个新文件里写主页。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
-<p>点击<code>Commit New Changes</code>。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用<code>GitHub Pages</code>功能时，你并不需要会写<code>HTML</code>，只需要写文章就行了。 而在<code>Github Pages</code>功能里，我们写文章的方法是写<code>Markdown</code>。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习<code>Markdown</code>了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/2021/08/25/真的非常简单-Markdown基本语法/">传送门</a> 。  </p>
-<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br><code>GithubPages</code>已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
-<p>在这个界面，你可以选择一个你喜欢的样式（<code>Theme</code>）。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
-<p>在这里面我选了一个<code>Cayman</code>（简约大气）。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
-<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对<code>Github Pages</code>功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
-<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 <code>_config.yml</code></h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
-<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是<code>Github Pages</code>默认给你使用<code>jekyll</code>渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
-<p>其实很简单，只要往下面添加一行就可以啦！</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
-<p>你，都学废了吗？</p>
-<hr>
-<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. <code>404</code>页面</h2><p>在访问你的网站时，别人总有输错网址的时候。<code>Github</code>其实有自带的<code>404</code>，像这样：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
-<p>不过这个灰色的<code>404</code>实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
-<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用<code>Markdown</code>填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
-<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的<code>404</code>对其他<code>github.io</code>不起作用），它依然会显示那个灰色的<code>404</code>。  </p>
-<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
-<hr>
-<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和<code>404</code>页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
-<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实<code>Github Pages</code>也可以做到这一点。如果你想让<code>Jekyll</code>在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
-<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用<code>Markdown</code>填进去，再次访问就有新界面啦！</p>
-<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于<code>Ruby</code>的桌面版<code>Jekyll</code>，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
-<p>其实这个很容易实现，其实是一段<code>JavaScript</code>脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
-<hr>
-<h2 id="5-GitHub-Pages的工作原理"><a href="#5-GitHub-Pages的工作原理" class="headerlink" title="5. GitHub Pages的工作原理"></a>5. <code>GitHub Pages</code>的工作原理</h2><p>说到这大家可能会想，<code>Pages</code>能有什么工作原理？其实，如果好奇的你曾经点进过<code>GitHub</code>仓库内<code>Actions</code>一个栏目，你就会发现每一次更新提交后，系统就会自动触发<code>Page Build Deployment</code>这个内置<code>Action</code>，说明白了，就是自动化！具体讲解，敬请等待以后的<code>GitHub Actions</code>使用指南！</p>
-<hr>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用<code>Github Pages</code>作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有<code>HEXO</code>和<code>Wordpress</code>等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>Pages</category>
-        <category>Jekyll</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>Website</tag>
-        <tag>Jekyll</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2021/08/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -1213,486 +1213,6 @@ e^x \qquad & a \le 0
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>（更新中）超详细：这个网站，到底是怎么做出来的？</title>
-    <url>/2022/08/16/hexo-website-tutorial/</url>
-    <content><![CDATA[<p>断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新<a href="/hexo-website-tutorial">重复一遍过程</a>，以保证内容的正确性。</p>
-<p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
-<p><strong>注：本教程所用平台是<code>Win10</code>，其他系统可能有细微差别~由于涉及到<code>GitHub</code>，建议先参照<a href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/">3个小妙招</a>来加个速！</strong></p>
-<span id="more"></span>
-<h2 id="1-准备工作部分"><a href="#1-准备工作部分" class="headerlink" title="1. 准备工作部分"></a>1. 准备工作部分</h2><h3 id="1-1-你可能一定会用到的那些软件"><a href="#1-1-你可能一定会用到的那些软件" class="headerlink" title="1.1 你可能一定会用到的那些软件"></a>1.1 你<del>可能</del>一定会用到的那些软件</h3><p>为了使用<code>Hexo</code>这个强大的框架，我们需要先安装一些依赖，还有一些其他的编程软件。为了真的把这个教程变得“新手向”一点，我就把你需要的软件都列在了这里：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>类别</th>
-<th>必要性</th>
-<th>名称</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>依赖</td>
-<td>高</td>
-<td><code>NodeJS</code></td>
-</tr>
-<tr>
-<td>编程相关、配置网站参数</td>
-<td>中高</td>
-<td>（推荐）<code>VSCode</code>、<code>Sublime Text</code>以及任何你用着顺手的编辑器</td>
-</tr>
-<tr>
-<td>文章相关</td>
-<td>中<del>（你甚至可以用记事本）</del></td>
-<td>（推荐）<code>Marktext</code>（开源免费）、<code>Typora</code>（付费）</td>
-</tr>
-<tr>
-<td>命令行</td>
-<td>高</td>
-<td><code>Windows Terminal Preview</code>（集成终端，支持自定义）、<code>Git</code>（需要配置<code>SSH</code>连接，暂时请先自己搜）</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>注：如果你使用<code>chocolatey</code>，你可以尝试先用命令行安装！</strong> 这些软件我们依次来说：</p>
-<h4 id="1-1-1-NodeJS"><a href="#1-1-1-NodeJS" class="headerlink" title="1.1.1 NodeJS"></a>1.1.1 <code>NodeJS</code></h4><p><code>NodeJS</code>是一款很流行的<code>JavaScript</code>运行时（环境），也是使用<code>Hexo</code>的必装依赖。打开<a href="https://nodejs.org/en/">安装官网</a>，如下图，推荐选择左侧的长期支持版本（<code>LTS</code>版本）。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/16/v04OaV.png" alt=""></p>
-<p>安装之后，打开命令行，输入：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
-<p>来检测是否安装成功。如果都可以成功返回版本号，那么你就可以进行下一步操作了！</p>
-<blockquote>
-<p>注：一般情况下，官方下载源会很慢，我们需要给<code>NodeJS</code>修改镜像源。使用</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
-<p>来调整为国内镜像源。</p>
-</blockquote>
-<h4 id="1-1-2-Markdown编辑器Marktext"><a href="#1-1-2-Markdown编辑器Marktext" class="headerlink" title="1.1.2 Markdown编辑器Marktext"></a>1.1.2 <code>Markdown</code>编辑器<code>Marktext</code></h4><p><img data-src="https://s1.ax1x.com/2022/08/16/v057WD.png" alt=""></p>
-<p>周知所众，我们写博客一般都是用<code>Markdown</code>这种标记语言的（不会写？参见这篇<a href=""><code>Markdown</code>教程</a>）。纯净的界面，即时的渲染、开源与免费三大特点让我爱上了这款编辑器。别的咱也不说，好不好用你自己说了算！这个项目的开源地址在<code>GitHub</code>上：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>，之后怎么安装我就不用说了吧。</p>
-<h4 id="1-1-3-Windows终端·预览版"><a href="#1-1-3-Windows终端·预览版" class="headerlink" title="1.1.3 Windows终端·预览版"></a>1.1.3 <code>Windows</code>终端·预览版</h4><p>如果你嫌<code>CMD</code>或者<code>Powershell</code>的界面、字体不合你的心意，或者就想尝试一些新功能，你可以试一下<code>Windows Terminal Preview</code>。它把几个终端都打包在了一起，且支持自定义界面和启动位置等，同时可以分屏。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vBcCg1.png" alt=""></p>
-<p>你可以在<code>Microsoft Store</code>中下载到这款终端·预览。另外，需要改一下<code>powershell</code>的执行策略，管理员权限执行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass</span><br></pre></td></tr></table></figure>
-<p>即可。</p>
-<h4 id="1-1-4-hexo，你网站的框架"><a href="#1-1-4-hexo，你网站的框架" class="headerlink" title="1.1.4 hexo，你网站的框架"></a>1.1.4 <code>hexo</code>，你网站的框架</h4><p>上面的软件都准备好了吗？我们来安装博客框架罢。在<code>powershell</code>中执行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
-<p>就可以全局安装这个框架了。安装好之后，重启命令行，并用<code>hexo</code>命令检测是否安装成功：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vBWTOI.png" alt=""></p>
-<h3 id="1-2-你的repo与服务器"><a href="#1-2-你的repo与服务器" class="headerlink" title="1.2 你的repo与服务器"></a>1.2 你的<code>repo</code>与服务器</h3><p>我们来到<code>GitHub</code>，并新建一个仓库，名称叫作<code>&#123;username&#125;.github.io</code>。如果你曾跟着之前的文章做过<code>Jekyll</code>版网站、<code>master</code>分支被占用的话，你可以新建一个<code>hexo</code>分支。注意需要勾选<code>LICENSE</code>和<code>README</code>，这样可以形成一个<code>master</code>分支。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vB4wY8.png" alt=""></p>
-<p>之后，你就会得到类似这样的一个页面：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vB5y9O.png" alt=""></p>
-<p>然后我们转到<code>Settings</code>，启用（修改）<code>GitHub Pages</code>的相关设置，选择<code>Deploy from a branch</code>后勾选你的目标分支。如果你完全跟着我来的，默认是<code>master</code>；如果你以前动用过这个仓库，则切换到你新的分支上。如下图，点击<code>Save</code>就可以触发一次更新：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vB563D.png" alt=""></p>
-<p>稍等片刻（大概1~3分钟）后，访问<code>https://&#123;username&#125;.github.io</code>，如果显示的不是下面这个灰色的<code>404</code>，那么我们就可以开始下一步了！</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vDVNFI.png" alt=""></p>
-<blockquote>
-<p>注：我曾经在<code>Jekyll</code>那篇文章中说过，<code>GitHub Pages</code>会在每一次<code>commit</code>之后触发一次更新<code>action</code>，即自动化。由于需要在服务器上进行操作，可能会出现”排队“的情况，如果设置没错却迟迟出不来”非404“页面，我想，你可能需要继续等一等……</p>
-</blockquote>
-<h2 id="2-初始化、主题与一些设置"><a href="#2-初始化、主题与一些设置" class="headerlink" title="2. 初始化、主题与一些设置"></a>2. 初始化、主题与一些设置</h2><h3 id="2-1-让Hexo运行起来！"><a href="#2-1-让Hexo运行起来！" class="headerlink" title="2.1 让Hexo运行起来！"></a>2.1 让<code>Hexo</code>运行起来！</h3><p>接下来我们就来让<code>Hexo</code>发挥一下它的威力罢。找到一个合适的文件夹，然后执行下面这条命令来初始化一个<code>Hexo</code>项目（这里以我自己为例，自己修改文件夹名）：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init hexo_website_tutorial //换上自己的文件夹名</span><br></pre></td></tr></table></figure>
-<p>正常情况下你获得到如下的结果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/17/vDamKe.png" alt=""></p>
-<p>这个时候，我们<code>cd</code>看一下都创建了哪些东东：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├─.github</span><br><span class="line">├─node_modules</span><br><span class="line">├─scaffolds</span><br><span class="line">├─source</span><br><span class="line">│  └─_posts</span><br><span class="line">└─themes</span><br></pre></td></tr></table></figure>
-<p>简要说明一下：<code>.github</code>文件夹可以直接无视；<code>node_modules</code>是一些<code>hexo</code>本身的依赖；<code>scaffolds</code>里放了一些模板<code>Markdown</code>，暂且不用管它；<code>source</code>文件夹中会放我们的文章；<code>themes</code>文件夹则是为之后应用主题做准备。还有一个<code>_config.yml</code>文件，是我们网站的配置文件。</p>
-<p>那么，我们怎么生成一个静态的网站呢？此时我们就要用到<code>hexo generate</code>（简称<code>hexo g</code>）命令了。它会读取我们写的文章，配合着主题设置生成静态文件，并复制二进制文件（图片、音频等）。注意，为了网站资源链接可以正确工作，我们要在<code>_config.yml</code>文件中改一行，是你网站的链接：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkW28.png" alt=""></p>
-<p>修改好之后，执行截图：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXL8A.png" alt=""></p>
-<p>执行之后，我们会发现多了一个<code>public</code>文件夹和<code>db.json</code>文件。<code>public</code>文件夹会在生成静态文件之后复制到这里，方便上传；<code>db.json</code>是网站的一些<code>meta</code>信息，可以不用管。</p>
-<p>生成完了，我们一定会想看一看生成后的效果。你可以使用<code>hexo server</code>命令在<code>4000</code>端口上启动一个服务器。为了方便，你可以加一个参数<code>-o</code>来自动打开浏览器。如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo s <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
-<p>在<code>4000</code>端口上，我们的默认网站样式类似这样：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXOgI.png" alt=""></p>
-<p>此时这个主题叫做<code>landscape</code>。由于我个人有更喜欢的主题（<code>NeXT</code>）并且<code>landscape</code>主题可以开发的部分不多，我们不会使用这款主题。稍后你就会知道如何切换主题。</p>
-<h3 id="2-2-部署到服务器"><a href="#2-2-部署到服务器" class="headerlink" title="2.2 部署到服务器"></a>2.2 部署到服务器</h3><p>想让别人看到我们的网站，我们就要更新<code>GitHub</code>上的仓库，触发部署<code>action</code>。可是，我不希望每一次都要用3条<code>git</code>命令来上传，怎么办？一个好消息是，<code>hexo</code>提供给我们一个<code>deploy</code>命令。</p>
-<h4 id="2-2-1-远程仓库参数设置"><a href="#2-2-1-远程仓库参数设置" class="headerlink" title="2.2.1 远程仓库参数设置"></a>2.2.1 远程仓库参数设置</h4><p>当然了，<code>hexo</code>此时也不知道我们的仓库在哪里，对吧。这时候配置文件<code>_config.yml</code>就可以派上用场了。我们找到它的<code>Deploy</code>部分，并添加一些配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vrCnyj.png" alt=""></p>
-<p>具体格式如下：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:&#123;username&#125;/&#123;repo_name&#125;.git</span></span><br><span class="line">    <span class="attr">branch:</span> &#123;<span class="string">branch_name</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>然后，我们来试一下<code>hexo d</code>这个命令……</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vriuaq.png" alt=""></p>
-<p>诶，为什么会这样呢？<code>Deployer not found</code>是什么意思？原来，我们还需要安装一个官方插件：<code>hexo-deployer-git</code>。</p>
-<h4 id="2-2-2-hexo-deployer-git"><a href="#2-2-2-hexo-deployer-git" class="headerlink" title="2.2.2 hexo-deployer-git"></a>2.2.2 <code>hexo-deployer-git</code></h4><p>我们在网站根目录下执行这个命令：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
-<p>然后再执行<code>hexo d</code>（太长了，不用图片了）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Setting up Git deployment...</span><br><span class="line">Initialized empty Git repository in D:/08 网站/hexo_website_tutorial/.deploy_git/.git/</span><br><span class="line">[master (root-commit) 0b3e2b7] First commit</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 placeholder</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">[master 3a2b089] Site updated: 2022-08-18 17:47:15</span><br><span class="line"> 18 files changed, 5172 insertions(+)</span><br><span class="line"> create mode 100644 2022/08/17/hello-world/index.html</span><br><span class="line"> create mode 100644 archives/2022/08/index.html</span><br><span class="line"> create mode 100644 archives/2022/index.html</span><br><span class="line"> create mode 100644 archives/index.html</span><br><span class="line"> create mode 100644 css/fonts/FontAwesome.otf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.eot</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.svg</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.ttf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff2</span><br><span class="line"> create mode 100644 css/images/banner.jpg</span><br><span class="line"> create mode 100644 css/style.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.js</span><br><span class="line"> create mode 100644 index.html</span><br><span class="line"> create mode 100644 js/jquery-3.4.1.min.js</span><br><span class="line"> create mode 100644 js/script.js</span><br><span class="line"> delete mode 100644 placeholder</span><br><span class="line">Enumerating objects: 34, done.</span><br><span class="line">Counting objects: 100% (34/34), done.</span><br><span class="line">Delta compression using up to 8 threads</span><br><span class="line">Compressing objects: 100% (26/26), done.</span><br><span class="line">Writing objects: 100% (34/34), 882.39 KiB | 1.49 MiB/s, done.</span><br><span class="line">Total 34 (delta 3), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (3/3), done.</span><br><span class="line">To github.com:Guleixibian2009/hexo-website-tutorial.git</span><br><span class="line"> + 5066890...3a2b089 HEAD -&gt; master (forced update)</span><br><span class="line">branch &#x27;master&#x27; set up to track &#x27;git@github.com:Guleixibian2009/hexo-website-tutorial.git/master&#x27;.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
-<p>如果出现类似的结果，那我们就已经部署成功了。这个时候我们去<code>GitHub</code>上去，稍等一会后并访问你的网站看一下，你应该可以看到和本地端口上完全一样的页面。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkDDH.png" alt=""></p>
-<h3 id="2-3-切换到NexT主题"><a href="#2-3-切换到NexT主题" class="headerlink" title="2.3 切换到NexT主题"></a>2.3 切换到<code>NexT</code>主题</h3><p>当我们可以成功的部署到<code>GitHub</code>上去后，我们就可以开始切换主题了。我们要用的这个主题叫做<code>NexT</code>，准确的说，是<code>Gemini</code>子主题。为了使用这个主题，我们在根目录下克隆一下<code>GitHub</code>上面的主题仓库<code>theme-next/hexo-theme-next</code>：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/hexo<span class="literal">-theme</span><span class="literal">-next</span> themes/next</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrxxmt.png" alt=""></p>
-<p>然后打开根目录下的<code>_config.yml</code>（有区别于之后我们会用到主题内的<code>_config.yml</code>文件，切勿搞混）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzSTf.png" alt=""></p>
-<p>修改过后重新生成一遍静态文件（<code>hexo clean</code>+<code>hexo g</code>），打开本地端口（<code>hexo s -o</code>）可以看见，我们已经切换到<code>NexT</code>的<code>Muse</code>子主题了：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzDcd.png" alt=""></p>
-<p>实际上，<code>NexT</code>主题分别是有4个子主题的。打开<code>themes/next</code>文件夹下（简称主题文件夹下<code>_config.yml</code>），找到95行，可以看到所有子主题，以及黑夜模式的设置（本人并未开启）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzynI.png" alt=""></p>
-<p>要切换到<code>Gemini</code>子主题，只需把第100行注释掉，并取消注释第103行即可。我们重新生成一下（还记得那3条命令吧）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vspsTP.png" alt=""></p>
-<p>主题是切换过来了，可是我看着怎么是英文的呢？或者，感觉东西太少了？还有，为什么我叫<code>John Doe</code>？别急，下一步，便是设置一些<code>metadata</code>。</p>
-<h3 id="2-4-网站信息设置"><a href="#2-4-网站信息设置" class="headerlink" title="2.4 网站信息设置"></a>2.4 网站信息设置</h3><p>在网站根目录下的<code>_config.yml</code>的开头，你可以看到这样的几条配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsp6Ff.png" alt=""></p>
-<p>详细地解释一下（我自己先修改了）：<code>title</code>、<code>subtitle</code>、<code>description</code>、<code>author</code>、<code>language</code>几项在更改后会改变下图中的对应位置，<code>description</code>、<code>keywords</code>、<code>language</code>、<code>timezone</code>几项则是变成了网站<code>metadata</code>。（<kbd>Ctrl+I</kbd>应该可以查看）</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9EXd.png" alt=""></p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9ZnA.png" alt=""></p>
-<p><del>（可能做得有些丑，谅解下哈）</del></p>
-<blockquote>
-<p>回顾：<code>hexo</code>常用命令（以后我就不会再提醒咯）</p>
-<ul>
-<li><p>清除生成缓存——<code>hexo clean</code>。（对主题上的混乱或配置未生效有帮助）</p>
-</li>
-<li><p>生成静态文件——<code>hexo g</code>。</p>
-</li>
-<li><p>部署到远程服务器——<code>hexo d</code>。</p>
-</li>
-<li><p>打开本地服务器端口——<code>hexo s</code>。</p>
-</li>
-</ul>
-<p>教你几个小妙招：</p>
-<ul>
-<li><p><code>hexo d</code>和<code>hexo g</code>其实可以合并成一个命令，叫做<code>hexo g -d</code>，就可以自动先生成再自动部署。</p>
-</li>
-<li><p><code>hexo s</code>加上参数<code>-o</code>就可以自动在浏览器中打开端口。</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="3-Gemini子主题的官方配置……"><a href="#3-Gemini子主题的官方配置……" class="headerlink" title="3. Gemini子主题的官方配置……"></a>3. <code>Gemini</code>子主题的官方配置……</h2><p>现在我们就可以给我们的网站添加一些功能与细节了。先打开本地端口，让我们从左往右说：</p>
-<h3 id="3-1-左侧的侧边栏"><a href="#3-1-左侧的侧边栏" class="headerlink" title="3.1 左侧的侧边栏"></a>3.1 左侧的侧边栏</h3><p>左边较窄的竖栏叫<code>sidebar</code>（侧边栏），分为上下两部分，上半部分是一个导航栏，存放了一些站内链接；下半部分是关于你、一些网站统计数据、友情链接，这里也是我们可以自定义的地方（非官方的插件，如音乐、天气等，我们在第5节非官方插件中说）。当你打开一片博客后，下半部分也可以作为一个文章目录。下面几张图供参考：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsihCV.png" alt=""></p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsi43T.png" alt=""></p>
-<h4 id="3-1-1-添加更多的站内链接"><a href="#3-1-1-添加更多的站内链接" class="headerlink" title="3.1.1 添加更多的站内链接"></a>3.1.1 添加更多的站内链接</h4><p>仔细研究主题<code>_config.yml</code>，你会找到这样一个区块，正是关于站内链接的：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsFpKe.png" alt=""></p>
-<p>看起来，我们目前有两个可用链接（主页、归档），相对应的就是<code>home</code>和<code>archive</code>。</p>
-<h5 id="3-1-1-1-添加链接"><a href="#3-1-1-1-添加链接" class="headerlink" title="3.1.1.1 添加链接"></a>3.1.1.1 添加链接</h5><p>我们来试试取消注释<code>about</code>、<code>tags</code>和<code>categories</code>：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vskVoR.png" alt=""></p>
-<p>诶，正好，同步增加了三个链接<del>（不过暂时打不开）</del>！那我们是不是就能总结出来填入的格式了？</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">key:</span> <span class="string">/link/</span> <span class="string">||</span> <span class="string">icon</span></span><br></pre></td></tr></table></figure>
-<p><code>key</code>指的是链接的名字（不代表链接地址，这个名字后面还会有用），一个冒号，然后是链接地址（可相对可绝对），然后是<code>||</code>标识符，后面跟一个<code>font-awesome</code>图标名（只能用免费版的）。</p>
-<p>掌握了语法之后，我们就可以尝试添加一个自己的链接了！假设你新建了一个歌单页面（具体操作参见后面第4节文章相关操作），它的链接是<code>/album/</code>，并且想要用<code>font-awesome</code>中<code>fas fa-compact-disc</code>这个图标，那我们就可以在配置文件中添加这样一行：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br></pre></td></tr></table></figure>
-<p>在你重新生成之前，你突发奇想想要把它放在主页那个链接下面，该怎么办呢？我发现，你只需要把这一行移动到<code>home</code>那一行后面即可：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
-<p>效果类似这样：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vskeF1.png" alt=""></p>
-<p>可是，明明其他链接都有中文，怎么新加的<code>album</code>就没有？</p>
-<h5 id="3-1-1-2-调整i18n"><a href="#3-1-1-2-调整i18n" class="headerlink" title="3.1.1.2 调整i18n"></a>3.1.1.2 调整<code>i18n</code></h5><p>别忘了，<code>NexT</code>主题的默认语言是英文！我们是通过修改配置强制翻译成中文的（可以回顾一下2.4节）。那…我们能不能手动翻译（学名<code>internationalization</code>，国际化，简称<code>i18n</code>)呢？其实是可以的。我们找到这个文件：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA5gf.png" alt=""></p>
-<p>然后我们重新生成，是不是就成功了呢？</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA48P.png" alt=""></p>
-<p>记住这个方法，我们之后也还是会用到的！</p>
-<h5 id="3-1-1-3-计数小“徽章”"><a href="#3-1-1-3-计数小“徽章”" class="headerlink" title="3.1.1.3 计数小“徽章”"></a>3.1.1.3 计数小“徽章”</h5><p>想要显示目前我们的博客内一共有几篇文章、几个分类和几个标签吗？我们可以用一个<code>badge</code>解决这件事。还是刚才那段配置，有没有在下面看到一段这样的选项？</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>我们把<code>badges</code>选项调成<code>true</code>，系统就会自动计数了。看一下效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsVzBF.png" alt=""></p>
-<p>嗯，光荣的<code>0 0 1</code>。当然现在我们的“标签”页还是打不开的。具体怎么调文章的分类或如何创建“标签”页面等，我会在第4节文章相关操作中讲到。</p>
-<h4 id="3-1-2-更新“综合信息中心”"><a href="#3-1-2-更新“综合信息中心”" class="headerlink" title="3.1.2 更新“综合信息中心”"></a>3.1.2 更新“综合信息中心”</h4><p>我之所以把这个侧边栏的下半部分称作一个“综合数据中心”，主要是因为你几乎可以在这里放任何你想放的信息，比如你的头像、个性签名、文章相关统计、个人链接等等。（至于天气和音乐播放器我们之后会在第5节非官方插件中讲到。）这是我的网站目前的样子：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEUsS.png" alt=""></p>
-<h5 id="3-1-2-1-你的头像"><a href="#3-1-2-1-你的头像" class="headerlink" title="3.1.2.1 你的头像"></a>3.1.2.1 你的头像</h5><p>想要给大家展示一下你的头像吗？当然可以。准备好一张照片（建议方形或圆形），移动到<code>/public/images</code>这个文件夹里。然后打开主题配置文件，找到如下配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEaqg.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><code>url</code>是你图片的路径，格式就是<code>/images/</code>再加上文件名（不一定是<code>avatar.gif</code>）。<code>rounded</code>则是选择是否要显示为圆形，<code>rotated</code>是选择是否要在鼠标移动到图片上时旋转。我们看一下效果如何：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/19/vsENM8.png" alt=""></p>
-<p>注：这个黑色的<code>N</code>就是<code>/images/</code>文件夹下的<code>logo.svg</code>。</p>
-<h5 id="3-1-2-2-个人链接"><a href="#3-1-2-2-个人链接" class="headerlink" title="3.1.2.2 个人链接"></a>3.1.2.2 个人链接</h5><p>既然说了，这里是“综合信息中心”，那我能不能放一点个人信息（个人链接）呢？当然是可以的。最终的效果如下：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsY8B9.png" alt=""></p>
-<p>那这个是在哪里设置的呢？我们可以找到这样一段配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsYYA1.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/Guleixibian2009</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:guleixibian2009@outlook.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">https://guleixibian2009.github.io/hexo-website-tutorial/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br><span class="line">  <span class="attr">Website:</span> <span class="string">https://guleixibian2009.github.io/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-html5</span></span><br></pre></td></tr></table></figure>
-<p>它的语法和<code>3.1.1.1</code>节中链接的语法是相同的，这里就不再赘述了。</p>
-<h5 id="3-1-2-3-Creative-Commons文章版权声明"><a href="#3-1-2-3-Creative-Commons文章版权声明" class="headerlink" title="3.1.2.3 Creative Commons文章版权声明"></a>3.1.2.3 <code>Creative Commons</code>文章版权声明</h5><p>是开源项目总得有个开源许可证<code>LICENSE</code>吧。像博客一类非代码开源项目，我们一般选用<code>CC</code>版权声明。一共有6种形式（当然还有其他较特殊的协议，比如放弃权利<code>CC0</code>，可以自行搜索）：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>协议</th>
-<th><code>by</code>（<code>Attribution</code>）</th>
-<th><code>nc</code>（<code>NonCommercial</code>）</th>
-<th><code>nd</code>（<code>No Derivative Works</code>）</th>
-<th><code>sa</code>（<code>Share Alike</code>）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>转载时必须标示原作者</td>
-<td>√</td>
-<td>×</td>
-<td>×</td>
-<td>×</td>
-</tr>
-<tr>
-<td>标示原作者，且禁止修改</td>
-<td>√</td>
-<td>×</td>
-<td>√</td>
-<td>×</td>
-</tr>
-<tr>
-<td>标示原作者，且禁止商用</td>
-<td>√</td>
-<td>√</td>
-<td>×</td>
-<td>×</td>
-</tr>
-<tr>
-<td>标示原作者，且禁止修改、商用</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>×</td>
-</tr>
-<tr>
-<td>标示原作者，且禁止商用，必须相同协议</td>
-<td>√</td>
-<td>√</td>
-<td>×</td>
-<td>√</td>
-</tr>
-<tr>
-<td>标示原作者，必须相同协议</td>
-<td>√</td>
-<td>×</td>
-<td>×</td>
-<td>√</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>一般我们选用<code>CC by-nc-sa</code>这种协议。那么，我们如何直观地向别人展示呢？<code>NexT</code>主题内置了小图标的功能，可以找到这一部分配置文件：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsYG7R.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">deed.zh</span></span><br></pre></td></tr></table></figure>
-<p>我们选中<code>sidebar</code>一项，<code>NexT</code>就会自动渲染出一个小图标了。至于<code>post</code>一项，我们放到3.2节中讲。<code>language</code>如果需要调整为中文，直接填写<code>deed.zh</code>即可。看一下渲染效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsY3nJ.png" alt=""></p>
-<h4 id="3-1-3-文章目录"><a href="#3-1-3-文章目录" class="headerlink" title="3.1.3 文章目录"></a>3.1.3 文章目录</h4><p>如果你现在进入那篇默认的<code>Hello World</code>文章，你可以在原先“信息中心”的地方看到文章的目录。那么这个目录有没有可以自定义的地方呢？也是有的。我们可以找到对应的配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsdROO.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Automatically add list number to toc.</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, all words will placed on next lines if header width longer then sidebar width.</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span></span><br><span class="line">  <span class="attr">expand_all:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Maximum heading depth of generated toc.</span></span><br><span class="line">  <span class="attr">max_depth:</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
-<p>仔细观察一下生成的<code>toc</code>（<code>Table Of Contents</code>，简称<code>toc</code>），发现每一个标题都被自动编上了号。可是，这就对像我这种习惯手动编号的人很不友好啊，我们就可以把<code>number</code>这个选项关掉。<code>wrap</code>则是说过长的标题是全部显示还是省略号，我选择了全部显示。<code>expand_all</code>指要不要全部展开，如果启用的话就会显示所有标题，然而像我这篇非常长的文章明显是不太合适的，所以就保持在<code>false</code>上。这样它就只会显示当前浏览部分的目录了。<code>max_depth</code>是指要生成多少层标题（1~6）。如果你不想显示过于细致的标题，可以调小。那调整之后效果类似这样：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsdfmD.png" alt=""></p>
-<h3 id="3-2-文章板块相关配置"><a href="#3-2-文章板块相关配置" class="headerlink" title="3.2 文章板块相关配置"></a>3.2 文章板块相关配置</h3><p>终于到了我们的重头戏。有一个美观的<code>sidebar</code>只是基础，博客最重要的就是<code>post</code>（即博文部分）了。官方提供的自定义不多，但还是有可以打开的功能的。（注：在3.2节中我们只会讲关于这一板块的功能，并不会讲到类似“阅读全文按钮”等。我们把它留在第4节文章相关配置里讲。）</p>
-<h4 id="3-2-1-文章相关信息"><a href="#3-2-1-文章相关信息" class="headerlink" title="3.2.1 文章相关信息"></a>3.2.1 文章相关信息</h4><p>如果你细心的观察过文章标题下的小字，你就会发现诸如发布时间、更新时间、本文字数、分类等信息。而是否显示它们都是可以调的。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsgC9g.png" alt=""></p>
-<h5 id="3-2-1-1-基本配置"><a href="#3-2-1-1-基本配置" class="headerlink" title="3.2.1.1 基本配置"></a>3.2.1.1 基本配置</h5><p>你可以在这里找到一些基本配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsgP3Q.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post meta display settings</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>看起来现在所有功能都是打开的。<code>item_text</code>指的是要不要显示数据名称；<code>created_at</code>是发布时间；<code>categories</code>是文章的分类。由于默认的<code>Hello World</code>文章是没有分类的，所以它就没有显示。可是，为什么我没有看到字数统计等信息呢？原来这是通过另外一项设置实现的。</p>
-<h5 id="3-2-1-2-字数统计"><a href="#3-2-1-2-字数统计" class="headerlink" title="3.2.1.2 字数统计"></a>3.2.1.2 字数统计</h5><p>就在<code>post_meta</code>一节下面，有一个<code>symbols_count_time</code>。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsgicj.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>用之前我们还需要安装一个依赖，叫做<code>hexo-symbols-count-time</code>。直接使用<code>npm</code>安装即可：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-symbols</span><span class="literal">-count</span><span class="literal">-time</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
-<p>然后我们来看一下这些设置有什么用。<code>item_text_post</code>指的是要不要在文章标题下方显示本文字数&amp;阅读时间；<code>item_text_total</code>则是在页脚显示全站计数。我们重新渲染来看一下效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsI96U.png" alt=""></p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsIplT.png" alt=""></p>
-<h4 id="3-2-2-代码块样式"><a href="#3-2-2-代码块样式" class="headerlink" title="3.2.2 代码块样式"></a>3.2.2 代码块样式</h4><p>在默认的<code>Hello World</code>文章中，有4个代码块。也许你不喜欢这种较亮的主题；或者，你不介意主题，但只是想要添加一个复制按钮？这一切的一切都是可以修改的！我们找一下对应的配置，嗯，在这里：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsIim4.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">normal</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">default</span></span><br></pre></td></tr></table></figure>
-<p>高亮是默认开启的（没人不用这个功能，你真的不用的话到根目录<code>_config.yml</code>中<code># Writing</code>一节可以禁用）。你可以自己选一个喜欢的<code>highlight_theme</code>，我保留了<code>normal</code>，也就是浅色。<code>copy_button</code>中直接两个都调成<code>true</code>就可以显示复制按钮了。效果如下：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsICXF.png" alt=""></p>
-<h4 id="3-2-3-看见了还真不一定知道是什么的辅助功能"><a href="#3-2-3-看见了还真不一定知道是什么的辅助功能" class="headerlink" title="3.2.3  看见了还真不一定知道是什么的辅助功能"></a>3.2.3  看见了还真不一定知道是什么的辅助功能</h4><p>为了直观地展示这一节的内容，我将先超纲新建一篇文章，大家见谅哈。在这篇文章里既有中文又有英文，我还给了它一个标签，一个分类。</p>
-<h5 id="3-2-3-1-中英文空格——Pangu"><a href="#3-2-3-1-中英文空格——Pangu" class="headerlink" title="3.2.3.1 中英文空格——Pangu"></a>3.2.3.1 中英文空格——<code>Pangu</code></h5><p><img data-src="https://s1.ax1x.com/2022/08/20/vsT5f1.png" alt=""></p>
-<p>我个人觉得中、英文混杂时没有个空格很难受，有的时候又会忘记加（就是假设，假设！）。怎么办呢？<code>NexT</code>提供一个功能叫做<code>Pangu</code>。它可以自动在中英文之间添加空格。我们找到配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsTTl6.png" alt="">然后改成<code>true</code>即可。渲染一下试试：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsT4YR.png" alt=""></p>
-<h5 id="3-2-3-2-图片懒加载——lazyload"><a href="#3-2-3-2-图片懒加载——lazyload" class="headerlink" title="3.2.3.2 图片懒加载——lazyload"></a>3.2.3.2 图片懒加载——<code>lazyload</code></h5><p>一路看下来，有没有发现博客中的图片都是启用了懒加载的？就在<code>pangu</code>的配置附近，有一个：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Vanilla JavaScript plugin for lazyloading images.</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/ApoorvSaxena/lozad.js</span></span><br><span class="line"><span class="attr">lazyload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>改成<code>true</code>即可。它的原理就是先获取较快的占位图，再在滚动时加载新的图片。效果如下：</p>
-<p><img data-src="https://gcdnb.pbrd.co/images/62i8BHj3vjF7.gif?o=1" alt=""></p>
-<p>（是动图，压缩过，点击重新播放）</p>
-<h5 id="3-2-3-3-图片放大——fancybox"><a href="#3-2-3-3-图片放大——fancybox" class="headerlink" title="3.2.3.3 图片放大——fancybox"></a>3.2.3.3 图片放大——<code>fancybox</code></h5><p>想要实现一个图片点击放大功能吗？<code>fancybox</code>可以满足你的需求。我们找到这样一段配置：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.</span></span><br><span class="line"><span class="comment"># For more information: https://fancyapps.com/fancybox</span></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>改成<code>true</code>之后我们来看一下效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsToSx.png" alt=""></p>
-<h5 id="3-2-3-4-局部刷新——pjax"><a href="#3-2-3-4-局部刷新——pjax" class="headerlink" title="3.2.3.4 局部刷新——pjax"></a>3.2.3.4 局部刷新——<code>pjax</code></h5><p>想要快速的切换页面？启用<code>pjax</code>即可。可能很多人听说过<code>ajax</code>，其实<code>pjax</code>相当于类似的功能。</p>
-<p>启用之前需要先用<code>git</code>克隆<code>theme-next-pjax</code>的仓库。</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/theme<span class="literal">-next</span><span class="literal">-pjax</span> themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure>
-<p>然后在配置文件中启用<code>pjax</code>：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/20/vsqaj0.png" alt=""></p>
-<p>效果图我就不放了，动图上传起来太麻烦，得另找图床。可以自己试一下效果。</p>
-<h4 id="3-2-4-数学公式支持——mathjax"><a href="#3-2-4-数学公式支持——mathjax" class="headerlink" title="3.2.4 数学公式支持——mathjax"></a>3.2.4 数学公式支持——<code>mathjax</code></h4><p>如果你看过这篇<a href="https://guleixibian2009.github.io/2021/11/28/Markdown中Latex常用语法/">关于<code>LaTex</code>的文章</a>的话，你可能会知道，<code>Markdown</code>文章中是可以添加数学公式的。那么，<code>Hexo</code>有没有渲染数学公式的功能呢？是有的。我们可以找到如下配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/21/vycLss.png" alt=""></p>
-<p>当然注释里也说得很清楚了，我们需要安装另一个<code>hexo</code>编译器，即<code>hexo-renderer-kramed</code>。使用如下两个命令：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm un hexo<span class="literal">-renderer</span><span class="literal">-marked</span></span><br><span class="line">npm i hexo renderer<span class="literal">-kramed</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
-<p>安装即可。将<code>enable</code>那一行改为<code>true</code>，这个时候你就已经准备好<code>MathJax</code>了，来测试一下：</p>
-<script type="math/tex; mode=display">
-f(x) =
-\begin{cases}
-x^2 \qquad & x \gt 0 \\
-e^x \qquad & x \le 0
-\end{cases}</script><p>不过，使用<code>hexo-renderer-kramed</code>会带来一个小问题…</p>
-<h4 id="3-2-5-修复Todo-List无法渲染的问题"><a href="#3-2-5-修复Todo-List无法渲染的问题" class="headerlink" title="3.2.5 修复Todo List无法渲染的问题"></a>3.2.5 修复<code>Todo List</code>无法渲染的问题</h4><p>这个问题是我在写<code>Markdown</code>语法那篇文章时发现的。虽然<code>Todo List</code>不是一个非常重要的语法，但我想我们最好还是修复一下这个问题：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/27/vR74PS.png" alt=""></p>
-<p>解决办法是，打开<code>node_modules/hexo-renderer-kramed/lib/renderer.js</code>，并在第19行添加以下内容（对，就是查到的）：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Support To-Do List</span></span><br><span class="line">Renderer.prototype.listitem = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="regexp">/^\s*\[[x ]\]\s*/</span>.test(text)) &#123;</span><br><span class="line">    text = text.replace(<span class="regexp">/^\s*\[ \]\s*/</span>, <span class="string">&#x27;&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot;&gt;&lt;/input&gt; &#x27;</span>).replace(<span class="regexp">/^\s*\[x\]\s*/</span>, <span class="string">&#x27;&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot; checked&gt;&lt;/input&gt; &#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&lt;li style=&quot;list-style: none&quot;&gt;&#x27;</span> + text + <span class="string">&#x27;&lt;/li&gt;\n&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&lt;li&gt;&#x27;</span> + text + <span class="string">&#x27;&lt;/li&gt;\n&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
-<p>修改之后重新渲染一遍即可。还是来测试一下：</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> 这是一个<code>Todo List</code>。</li>
-<li style="list-style: none"><input type="checkbox" disabled="disabled"></input> 这是一个未被勾选的选项。</li>
-</ul>
-<h4 id="3-2-6-文末板块配置"><a href="#3-2-6-文末板块配置" class="headerlink" title="3.2.6 文末板块配置"></a>3.2.6 文末板块配置</h4><p>在文章末尾一般会放置一些关于文章的额外的信息。这是我的博客文末的功能：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2L2q.png" alt=""></p>
-<h5 id="3-2-6-1-版权声明方框"><a href="#3-2-6-1-版权声明方框" class="headerlink" title="3.2.6.1 版权声明方框"></a>3.2.6.1 版权声明方框</h5><p>很重视要告诉你的读者这是你的原创文章，或者觉得有必要强调自己使用了<code>Creative Commons</code>声明？可以考虑添加一个版权方框。至于设置的话，在这里：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2U81.png" alt=""></p>
-<p>把<code>post: false</code>调整为<code>true</code>即可。重新生成一下，看一下效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2Y59.png" alt=""></p>
-<p>当然，如果你对默认的翻译不满意的话，可以找到之前那个<code>i18n</code>配置文件，然后自行修改。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2NCR.png" alt=""></p>
-<h5 id="3-2-6-2-修改标签的小图标"><a href="#3-2-6-2-修改标签的小图标" class="headerlink" title="3.2.6.2 修改标签的小图标"></a>3.2.6.2 修改标签的小图标</h5><p>仔细看，在文章末尾会显示出这篇文章的标签。在上一节的图片中，它的样式是<code># Test</code>。我个人不喜欢这个<code>#</code>，想把它换掉。有这个功能吗？可以找到如下配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFMzd.png" alt=""></p>
-<p>把<code>tag_icon</code>一项改成<code>true</code>，然后重新渲染一下看看：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFniD.png" alt=""></p>
-<h5 id="3-2-6-3-其他发布渠道链接（引流）"><a href="#3-2-6-3-其他发布渠道链接（引流）" class="headerlink" title="3.2.6.3 其他发布渠道链接（引流）"></a>3.2.6.3 其他发布渠道链接（引流）</h5><p>需要在文章末尾给自己其他的发布渠道（如公众号，<code>CSDN</code>等）或其它前端项目引流吗？我们同样可以添加一个链接方框。这是添加后的效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFuJe.png" alt=""></p>
-<p>我们可以找到这样的配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFKRH.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Subscribe through Telegram Channel, Twitter, etc.</span></span><br><span class="line"><span class="comment"># Usage: `Key: permalink || icon` (Font Awesome)</span></span><br><span class="line"><span class="attr">follow_me:</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/username || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#Telegram: https://t.me/channel_name || fab fa-telegram</span></span><br><span class="line">  <span class="comment">#WeChat: /images/wechat_channel.jpg || fab fa-weixin</span></span><br><span class="line">  <span class="comment">#RSS: /atom.xml || fa fa-rss</span></span><br></pre></td></tr></table></figure>
-<p>它的语法和3.1.1.1节的是一样的，可以参考一下。同时，如果你觉得老是修改<code>i18n</code>很烦的话，可以直接用你想要的名字作为<code>Key</code>，如：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">follow_me:</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/username || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#Telegram: https://t.me/channel_name || fab fa-telegram</span></span><br><span class="line">  <span class="comment">#WeChat: /images/wechat_channel.jpg || fab fa-weixin</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br><span class="line">  <span class="string">旧版网站:</span> <span class="string">https://guleixibian.github.io/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-html5</span></span><br><span class="line">  <span class="string">手写网站:</span> <span class="string">https://guleixibian2009.github.io/Hand-Written-HTML-Site/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-laptop-code</span></span><br><span class="line">  <span class="string">Awesome-Bootstrap项目:</span> <span class="string">https://guleixibian2009.github.io/awesome-bs5/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bootstrap</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-2-6-4-打赏功能"><a href="#3-2-6-4-打赏功能" class="headerlink" title="3.2.6.4 打赏功能"></a>3.2.6.4 打赏功能</h5><p>在自己的网站上加几个打赏二维码还是一个不错的选择<del>（当然我其实没有放）</del>，包括一些项目<code>README</code>里面也会放。预先准备好几个收款码（一定是固定的那种）或者你想放的图片，放到<code>themes/next/source/images</code>文件夹中。找到这样的配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfBut0.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reward (Donate)</span></span><br><span class="line"><span class="comment"># Front-matter variable (unsupport animation).</span></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment">#comment: Donate comment here.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="comment">#wechatpay: /images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
-<p>这个打赏的配置有两部分。<code>reward_settings</code>是设置打赏按钮；图片地址要写在<code>reward</code>里面。先把<code>enable</code>调成<code>true</code>，然后添加几张图片试试：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">comment:</span> <span class="string">给作者买一杯作业...</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="comment">#wechatpay: /images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br><span class="line">  <span class="string">把我的网站分享给别人吧！:</span> <span class="string">/images/websiteQR.png</span></span><br></pre></td></tr></table></figure>
-<p>至于<code>comment</code>一行的话，是你想要在打赏按钮上方显示的句子。看一下效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfBnkq.png" alt=""></p>
-<h3 id="3-3-网站上的小“零件”"><a href="#3-3-网站上的小“零件”" class="headerlink" title="3.3 网站上的小“零件”"></a>3.3 网站上的小“零件”</h3><p>这一章是关于页面上的一些（官方的）小功能。比如说（并不是所有的）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfD88f.png" alt=""></p>
-<h4 id="3-3-1-页脚信息显示"><a href="#3-3-1-页脚信息显示" class="headerlink" title="3.3.1 页脚信息显示"></a>3.3.1 页脚信息显示</h4><p>页脚（<code>footer</code>）也是稍微有一些可以调整的地方的：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfDG28.png" alt=""></p>
-<p>我们目前的页脚是这样的：</p>
-<p><img title="" data-src="https://s1.ax1x.com/2022/08/29/vfD3PP.png" alt="" data-align="inline"></p>
-<p>看起来有一个版权符号，年份，作者名，还有一个爱心。但实际上，版权年份其实只会显示当前年份。如果想像我一样显示类似2021~2022，该如何实现呢？我们可以找到这样一段配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/29/vfDJxS.png" alt=""></p>
-<p>具体来讲一下：</p>
-<ol>
-<li><p>被注释掉的一行<code>since</code>指的是站点建立的时间。把它取消注释，并改为现在的年份，就可以每年更新了（每年要重新渲染一次）。</p>
-</li>
-<li><p>想要让爱心动起来的话，可以把<code>icon</code>中<code>animated</code>改为<code>true</code>。</p>
-</li>
-<li><p>版权默认使用项目名称，但如果希望使用我自己的名字，可以在<code>copyright</code>中写上自己的名字。</p>
-</li>
-<li><p><code>powered</code>指要不要显示“由<code>Hexo</code>强力驱动”，默认打开。</p>
-</li>
-<li><p><code>beian</code>中是网站<code>ICP</code>备案，我没备案就不写上了。修改完后，记得重新渲染一下。</p>
-</li>
-</ol>
-<p>那个计数是怎么实现的呢？那是一个第三方服务，我放在第5章中讲。</p>
-<h4 id="3-3-2-回到顶部按钮"><a href="#3-3-2-回到顶部按钮" class="headerlink" title="3.3.2 回到顶部按钮"></a>3.3.2 回到顶部按钮</h4><p>看完一篇非常长的文章，如果读者想要一键返回顶部，我们就需要一个<code>back2top</code>按钮。基本款的默认已经有了，但是我们还可以对它进行进一步配置。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhUJyj.png" alt=""></p>
-<p>这里一共有3个选项。<code>enable</code>默认开启；<code>sidebar</code>指的是按钮的位置要不要加在侧边栏下方；<code>scrollpercent</code>是显示阅读百分比。我开启了第三项。最终效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhU8Sg.png" alt=""></p>
-<h4 id="3-3-3-阅读进度条"><a href="#3-3-3-阅读进度条" class="headerlink" title="3.3.3 阅读进度条"></a>3.3.3 阅读进度条</h4><p>如何让读者清晰地看出自己已经读了多少呢？刚刚显示百分比的功能还是不错的。不过我们还有更加直观一些的方法——阅读进度条。找到这段配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhUGlQ.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span></span><br></pre></td></tr></table></figure>
-<p>如果你不介意进度条的颜色和高度的话，直接<code>enable: true</code>就已经可以用了。不满意的话可以自己调整一下下面三个参数。这是最终的效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhU1fS.png" alt=""></p>
-<h4 id="3-3-4-书签功能"><a href="#3-3-4-书签功能" class="headerlink" title="3.3.4 书签功能"></a>3.3.4 书签功能</h4><p>需要在关闭页面时记录下自己的阅读进度吗？可以打开（自动）书签功能。找一下：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdkKH.png" alt=""></p>
-<p>直接把<code>enable</code>调成<code>true</code>即可。默认的版本是<code>auto</code>，即关闭页面自动保存；你也可以调成<code>manual</code>，只在读者点击图标时保存。效果如下（自己尝试一下吧）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdC8O.png" alt=""></p>
-<h4 id="3-3-5-右上角GitHub徽标"><a href="#3-3-5-右上角GitHub徽标" class="headerlink" title="3.3.5 右上角GitHub徽标"></a>3.3.5 右上角<code>GitHub</code>徽标</h4><p>虽然我们已经在侧边栏中加过一个<code>github</code>链接了，但我们同样可以用一个更加明显的方式为自己的<code>github</code>账号引流。这就是大名鼎鼎的<code>GitHub Banner</code>。至于配置的话，就在刚才的下面：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdArd.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/Guleixibian2009</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub~</span></span><br></pre></td></tr></table></figure>
-<p>打开功能，先把<code>enable</code>调成<code>true</code>。<code>permalink</code>是指向你想要引流的链接（比如<code>github</code>账号，项目地址等），<code>title</code>是鼠标移到图标上时显示什么。来试一下：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdixe.png" alt=""></p>
-<p>不过如果细看的话…这个<code>banner</code>和书签在页面顶部时似乎有点小bug。重叠我能接受，可是露出一个角来就有点奇怪了啊！</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdP2D.png" alt=""></p>
-<p>我研究了一下，可以把书签的<code>CSS</code>中<code>right</code>属性调到<code>25px</code>就好了。找一下<code>/themes/next/source/css/_common/outline/header/bookmark.styl</code>文件…不太确定这是什么语言，但是不怕！找到上面那个<code>right</code>（第5行那个）把那个变量名称改成<code>25px</code>即可了。这样就不会重叠了。</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdEqA.png" alt=""></p>
-<blockquote>
-<p>另及：使用这个变量的本意应该是想让书签的右侧和<code>b2t</code>按钮右侧宽度相同，但我觉得<code>5px</code>应该不太看的出来吧。</p>
-</blockquote>
-<h4 id="3-3-6-加载进度条——pace"><a href="#3-3-6-加载进度条——pace" class="headerlink" title="3.3.6 加载进度条——pace"></a>3.3.6 加载进度条——<code>pace</code></h4><p>注意到网站上加载时的蓝色加载条了吗？</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhfg2j.png" alt=""></p>
-<p>这个进度条是基于<code>pace</code>做出来的。首先我们需要克隆<code>pace</code>的仓库：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/theme<span class="literal">-next</span><span class="literal">-pace</span> source/lib/pace</span><br></pre></td></tr></table></figure>
-<p>然后找到对应的配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhf2xs.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Progress bar in the top during page loading.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pace</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/HubSpot/pace</span></span><br><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Themes list:</span></span><br><span class="line">  <span class="comment"># big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span></span><br><span class="line">  <span class="comment"># corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">minimal</span></span><br></pre></td></tr></table></figure>
-<p>我用的是<code>minimal</code>。重新渲染一下，看一下效果吧。</p>
-<h4 id="3-3-7-网站图标——favicon"><a href="#3-3-7-网站图标——favicon" class="headerlink" title="3.3.7 网站图标——favicon"></a>3.3.7 网站图标——<code>favicon</code></h4><p>直到现在我们网站的图标还是那个黑色的<code>N</code>。能不能改一个好看一点的呢？先找一个自己喜欢的图标，然后转成<code>ico</code>格式的文件（可以用<code>convertio</code>试试）。复制两份，分别命名<code>16x16.ico</code>和<code>32x32.ico</code>。拖到<code>themes/next/source/images</code>文件夹里面。然后我们找到对应的配置：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/01/v5LMNj.png" alt=""></p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/16x16.ico</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/32x32.ico</span></span><br><span class="line">  <span class="comment">#apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment">#safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></span><br><span class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
-<p>只保留<code>small</code>和<code>medium</code>，再把文件名填进去即可。</p>
-<h2 id="4-文章相关配置"><a href="#4-文章相关配置" class="headerlink" title="4. 文章相关配置"></a>4. 文章相关配置</h2><p>现在我们已经把基本的一些配置好了。我们可以开始添加一些文章、页面<del>（心心念念的标签、分类页）</del>，还可以有搜索、<code>404</code>页面等。你会学到如何给文章添加标签、分类等等。</p>
-<h3 id="4-1-关于博客——post"><a href="#4-1-关于博客——post" class="headerlink" title="4.1 关于博客——post"></a>4.1 关于博客——<code>post</code></h3><p>如果你曾注意过<code>scaffolds</code>文件夹里的内容，你会看到<code>Hexo</code>一共有3种“类型”，分别是<code>post</code>博客、<code>page</code>页面和<code>draft</code>草稿。我不太习惯用草稿功能，就把它放过喽。我们先来把博客讲一下：</p>
-<h4 id="4-1-1-新建一篇文章"><a href="#4-1-1-新建一篇文章" class="headerlink" title="4.1.1 新建一篇文章"></a>4.1.1 新建一篇文章</h4><p>还记得3.2.3节中我超纲建文章吗？建文章的命令是<code>hexo new</code>。如下：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new a<span class="literal">-new</span><span class="literal">-post</span></span><br></pre></td></tr></table></figure>
-<p>然后我们就可以在<code>source/_post</code>里面找到一个<code>a-new-post.md</code>。打开看看：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vh5OMj.png" alt=""></p>
-<p>文件几乎是空白的，只有一小段<code>YML</code>（学名<code>YAML Front Matter</code>）。这里面存放着关于这篇文章的元信息：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">a-new-post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-08-30 17:02:10</span></span><br><span class="line"><span class="attr">tags:</span></span><br></pre></td></tr></table></figure>
-<p>默认是有三个字段的，即<code>title</code>、<code>date</code>和<code>tags</code>。<code>title</code>会先默认设置为文件名，你可以改成这篇文章的标题（比如“4.1.1节新建文章示例”）。<code>date</code>建议不要改，是你新建文章的时间。<code>tags</code>是这篇文章的标签。先在文章内部写点东西试试渲染一下。我现在修改成这样，渲染一下看看：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 4.1.1节新建文章示例</span><br><span class="line">date: 2022-08-30 17:02:10</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </span><br><span class="line">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </span><br><span class="line">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </span><br><span class="line">esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt </span><br><span class="line">in culpa qui officia deserunt mollit anim id est laborum.</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vh5xZq.png" alt=""></p>
-<h4 id="4-1-2-标签与分类"><a href="#4-1-2-标签与分类" class="headerlink" title="4.1.2 标签与分类"></a>4.1.2 标签与分类</h4><p>现在我们尝试给文章添加一些标签和分类（照例，用<code>Test</code>）。只需在<code>Front Matter</code>中加一点即可：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="number">4.1</span><span class="number">.1</span><span class="string">节新建文章示例</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-08-30 17:02:10</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">Test1</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Test2</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> [<span class="string">Test1</span>, <span class="string">Test2</span>]</span><br><span class="line"><span class="bullet">-</span> <span class="string">Test3</span></span><br></pre></td></tr></table></figure>
-<p>可以看到我们添加了一个<code>categories</code>字段。先讲标签：新建一行，然后用<code>-</code>打头，空格，然后输入分类名，可以重复多行。<code>categories</code>中是差不多的，可是这个<code>- []</code>是用来干嘛的呢？这代表分类下的子分类。待会新建分类<code>page</code>时你就会看出来它的效果。渲染一下看看：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhH89f.png" alt=""></p>
-<p>（为了一张图放完，这张图片是80%比例下的截图的）</p>
-<h4 id="4-1-3-主页节选——excerpt"><a href="#4-1-3-主页节选——excerpt" class="headerlink" title="4.1.3 主页节选——excerpt"></a>4.1.3 主页节选——<code>excerpt</code></h4><p>我们新加的博客内容都是很短的，可以完整的放在主页上。可像我这种几k字的，主页完全放不下啊！这是我们就可以使用节选功能，同时会自动显示一个按钮，提示“继续阅读”。语法如下：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">This is a piece of text. It&#x27;s going to be very long.</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </span><br><span class="line">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </span><br><span class="line">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </span><br><span class="line">esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt </span><br><span class="line">in culpa qui officia deserunt mollit anim id est laborum.</span><br></pre></td></tr></table></figure>
-<p>没错，只要在你想分开的地方加一个<code>&lt;!--more--&gt;</code>即可。我们拿<code>Hello World</code>那篇文章试一下：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/30/vhH14P.png" alt=""></p>
-<h4 id="4-1-4-文章置顶"><a href="#4-1-4-文章置顶" class="headerlink" title="4.1.4 文章置顶"></a>4.1.4 文章置顶</h4><p>在我的网站主页上有一篇置顶的序言，就像书的<code>preface</code>一样。<code>Hexo</code>文章在主页上的排列顺序（默认）是按发布时间后往前（即越新越往上）排布的，如何打破这个规则，强制在最上方呢？一开始我也没有查到对应的设置（都是手写进去代码），不过在翻看<code>hexo</code>的生成代码时（不太具体知道这是什么语言，似乎是一种<code>unmaintained</code>的<code>swig</code>语言，但我怎么找都没找到对应的<code>swig</code>包，又感jio像<code>ejs</code>，疯了），我注意到有一个<code>sticky</code>选项（而且似乎值是个数字），在这里：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/31/v4LWTJ.png" alt=""></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.sticky &gt; 0 %&#125;</span><br><span class="line">  &lt;span class=&quot;post-sticky-flag&quot; title=&quot;&#123;&#123; __(&#x27;post.sticky&#x27;) &#125;&#125;&quot;&gt;</span><br><span class="line">    &lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>然后我就找到一篇<code>post</code>，在<code>Front Matter</code>里面加上这么一行：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sticky:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>诶，神奇的是就好了！我在<code>_config.yml</code>中没有看到任何和<code>sticky</code>有关的配置，没想到自己摸索出来了。看一下最后的效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/31/v4LRw4.png" alt=""></p>
-<h4 id="4-1-5-分页功能"><a href="#4-1-5-分页功能" class="headerlink" title="4.1.5 分页功能"></a>4.1.5 分页功能</h4><p>目前来说，我们的主页上可能还没有几篇文章。可是，设想一下将来，当你有了几十篇博客（只是设想），难道还得全部一股脑的堆在主页上吗？我们可以尝试加一个分页功能。即：每满设定的文章数就会自动生成主页的下一页。先看一下效果吧，我是6篇一分：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/31/v4OXuT.png" alt=""></p>
-<p>找一下如下的配置（注意在<code>Hexo</code>配置文件内，切勿搞混了）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/08/31/v4OLvV.png" alt=""></p>
-<p>看起来是默认打开的啊？那我就把数值减小一点，改成6就好了。</p>
-<h3 id="4-2-关于页面——page"><a href="#4-2-关于页面——page" class="headerlink" title="4.2 关于页面——page"></a>4.2 关于页面——<code>page</code></h3><p>在3.1.1.1节中我们在侧边栏中添加了标签页、分类页，还有一个歌单的链接。这一章我们会把这些页面补齐，并给网站添加一个<code>404</code>页面。</p>
-<h4 id="4-2-1-新建页面"><a href="#4-2-1-新建页面" class="headerlink" title="4.2.1 新建页面"></a>4.2.1 新建页面</h4><p>新建页面和新建一篇博客的命令是差不多的。如下，只需要在<code>new</code>后面添加一个<code>page</code>：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p><code>tags</code>就是所有标签页。可是，执行这个命令到底会发生什么呢？我们来看一下<code>source</code>文件夹。多了一个<code>tags</code>文件夹，里面有一个<code>index.md</code>。打开看看：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/02/vIRp9g.png" alt=""></p>
-<p>嗯，和<code>post</code>差不多，一个时间一个标题，只是没有标签和分类。然后，看一下渲染的效果，有没有这个页面了：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/02/vIRCcj.png" alt=""></p>
-<p>但这个样子肯定是有<code>bug</code>的。第一，它的标题怎么叫<code>tags</code>？第二，之前链接列表中既然有这个默认的<code>tags</code>，那它为什么不是自动化的，不可能连统计标签的功能都没有吧！别急，马上就把这个功能加进来，只需要一行<code>Front Matter</code>，再把标题改下：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">所有标签</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
-<p>试一下渲染效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/02/vIR93Q.png" alt=""></p>
-<p>似乎好了耶！然后类似的，我们加一下分类、关于和歌单页，把<code>tags</code>分别换为<code>categories</code>、<code>about</code>、<code>album</code>即可。别忘了改页面的标题，并给分类页加上<code>type: categories</code>！这是最后的效果：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/03/voSauR.png" alt=""></p>
-<p>至于<code>about</code>和<code>album</code>页的话，可以放自己想放的东西。</p>
-<blockquote>
-<p>另及：还记得我们在4.1.2节中给文章添加了一个<code>- []</code>嵌套分类吗？现在你应该可以理解这是什么意思了吧：它表示分类下的子分类，比如“编程”，“编程-<code>Python</code>”等等。同时支持更多层嵌套。</p>
-</blockquote>
-<h4 id="4-2-2-404页面"><a href="#4-2-2-404页面" class="headerlink" title="4.2.2 404页面"></a>4.2.2 <code>404</code>页面</h4><p><code>404</code>页面和之前的页面做起来很相似。还是用<code>hexo new page 404</code>这个命令来新建出页面，然后我们来添加一些配置：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-08-15 16:28:02</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">sitemap:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404</span></span><br></pre></td></tr></table></figure>
-<p><code>title</code>设为空，这样就不会显示标题。<code>comments: false</code>表示不在本页上加载<code>Gitalk</code>，详见第5章。<code>sitemap: false</code>表示不把本页加入站点地图，详见第6章。最重要的是这个<code>permalink</code>，它会声明：这个页面是通用<code>404</code>页面。往里面加上一些提示性的句子，比如：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="section"># 404 Not Found 您访问的页面走丢了！</span></span><br><span class="line"></span><br><span class="line">将于10秒后返回 [<span class="string">首页</span>](<span class="link">https://guleixibian2009.github.io/hexo-website-tutorial</span>) ......</span><br></pre></td></tr></table></figure>
-<p>渲染出来就是这样：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/03/vo9hh8.png" alt=""></p>
-<h5 id="4-2-2-1-自动跳转功能"><a href="#4-2-2-1-自动跳转功能" class="headerlink" title="4.2.2.1 自动跳转功能"></a>4.2.2.1 自动跳转功能</h5><p>上面的代码块里提到了10秒后返回主页。这个是靠下面一段代码实现的：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">&quot;javascript&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我曾经在<code>Jekyll</code>那篇文章里面提到过，还记得吗？直接把它粘贴到<code>index.md</code>末尾即可。</p>
-<h3 id="4-3-关于搜索——searchdb"><a href="#4-3-关于搜索——searchdb" class="headerlink" title="4.3 关于搜索——searchdb"></a>4.3 关于搜索——<code>searchdb</code></h3><p>（未完待续！！）</p>
-<h3 id="4-4-如何对README和LICENSE禁用渲染"><a href="#4-4-如何对README和LICENSE禁用渲染" class="headerlink" title="4.4 如何对README和LICENSE禁用渲染"></a>4.4 如何对<code>README</code>和<code>LICENSE</code>禁用渲染</h3><p>（未完待续！！！！）</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
-<ol>
-<li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
-</li>
-<li><p><a href="https://corecabin.cn/2021/08/14/solve-some-problems-of-hexo-renderer-kramed-rendering-conflicts/">解决hexo-renderer-kramed渲染冲突的部分问题 | 卡洛的核心舱</a></p>
-</li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/30836436">Hexo+Next主题优化 | 知乎</a></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>Pages</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Website</tag>
-        <tag>GitHub</tag>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>序言</title>
@@ -2097,6 +1617,519 @@ e^x \qquad & x \le 0
         <tag>Markdown</tag>
         <tag>编程</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（更新中）超详细：这个网站，到底是怎么做出来的？</title>
+    <url>/2022/08/16/hexo-website-tutorial/</url>
+    <content><![CDATA[<p>断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新<a href="/hexo-website-tutorial">重复一遍过程</a>，以保证内容的正确性。</p>
+<p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
+<p><strong>注：本教程所用平台是<code>Win10</code>，其他系统可能有细微差别~由于涉及到<code>GitHub</code>，建议先参照<a href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/">3个小妙招</a>来加个速！</strong></p>
+<span id="more"></span>
+<h2 id="1-准备工作部分"><a href="#1-准备工作部分" class="headerlink" title="1. 准备工作部分"></a>1. 准备工作部分</h2><h3 id="1-1-你可能一定会用到的那些软件"><a href="#1-1-你可能一定会用到的那些软件" class="headerlink" title="1.1 你可能一定会用到的那些软件"></a>1.1 你<del>可能</del>一定会用到的那些软件</h3><p>为了使用<code>Hexo</code>这个强大的框架，我们需要先安装一些依赖，还有一些其他的编程软件。为了真的把这个教程变得“新手向”一点，我就把你需要的软件都列在了这里：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>必要性</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖</td>
+<td>高</td>
+<td><code>NodeJS</code></td>
+</tr>
+<tr>
+<td>编程相关、配置网站参数</td>
+<td>中高</td>
+<td>（推荐）<code>VSCode</code>、<code>Sublime Text</code>以及任何你用着顺手的编辑器</td>
+</tr>
+<tr>
+<td>文章相关</td>
+<td>中<del>（你甚至可以用记事本）</del></td>
+<td>（推荐）<code>Marktext</code>（开源免费）、<code>Typora</code>（付费）</td>
+</tr>
+<tr>
+<td>命令行</td>
+<td>高</td>
+<td><code>Windows Terminal Preview</code>（集成终端，支持自定义）、<code>Git</code>（需要配置<code>SSH</code>连接，暂时请先自己搜）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注：如果你使用<code>chocolatey</code>，你可以尝试先用命令行安装！</strong> 这些软件我们依次来说：</p>
+<h4 id="1-1-1-NodeJS"><a href="#1-1-1-NodeJS" class="headerlink" title="1.1.1 NodeJS"></a>1.1.1 <code>NodeJS</code></h4><p><code>NodeJS</code>是一款很流行的<code>JavaScript</code>运行时（环境），也是使用<code>Hexo</code>的必装依赖。打开<a href="https://nodejs.org/en/">安装官网</a>，如下图，推荐选择左侧的长期支持版本（<code>LTS</code>版本）。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/16/v04OaV.png" alt=""></p>
+<p>安装之后，打开命令行，输入：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+<p>来检测是否安装成功。如果都可以成功返回版本号，那么你就可以进行下一步操作了！</p>
+<blockquote>
+<p>注：一般情况下，官方下载源会很慢，我们需要给<code>NodeJS</code>修改镜像源。使用</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+<p>来调整为国内镜像源。</p>
+</blockquote>
+<h4 id="1-1-2-Markdown编辑器Marktext"><a href="#1-1-2-Markdown编辑器Marktext" class="headerlink" title="1.1.2 Markdown编辑器Marktext"></a>1.1.2 <code>Markdown</code>编辑器<code>Marktext</code></h4><p><img data-src="https://s1.ax1x.com/2022/08/16/v057WD.png" alt=""></p>
+<p>周知所众，我们写博客一般都是用<code>Markdown</code>这种标记语言的（不会写？参见这篇<a href=""><code>Markdown</code>教程</a>）。纯净的界面，即时的渲染、开源与免费三大特点让我爱上了这款编辑器。别的咱也不说，好不好用你自己说了算！这个项目的开源地址在<code>GitHub</code>上：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>，之后怎么安装我就不用说了吧。</p>
+<h4 id="1-1-3-Windows终端·预览版"><a href="#1-1-3-Windows终端·预览版" class="headerlink" title="1.1.3 Windows终端·预览版"></a>1.1.3 <code>Windows</code>终端·预览版</h4><p>如果你嫌<code>CMD</code>或者<code>Powershell</code>的界面、字体不合你的心意，或者就想尝试一些新功能，你可以试一下<code>Windows Terminal Preview</code>。它把几个终端都打包在了一起，且支持自定义界面和启动位置等，同时可以分屏。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vBcCg1.png" alt=""></p>
+<p>你可以在<code>Microsoft Store</code>中下载到这款终端·预览。另外，需要改一下<code>powershell</code>的执行策略，管理员权限执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> Bypass</span><br></pre></td></tr></table></figure>
+<p>即可。</p>
+<h4 id="1-1-4-hexo，你网站的框架"><a href="#1-1-4-hexo，你网站的框架" class="headerlink" title="1.1.4 hexo，你网站的框架"></a>1.1.4 <code>hexo</code>，你网站的框架</h4><p>上面的软件都准备好了吗？我们来安装博客框架罢。在<code>powershell</code>中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
+<p>就可以全局安装这个框架了。安装好之后，重启命令行，并用<code>hexo</code>命令检测是否安装成功：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vBWTOI.png" alt=""></p>
+<h3 id="1-2-你的repo与服务器"><a href="#1-2-你的repo与服务器" class="headerlink" title="1.2 你的repo与服务器"></a>1.2 你的<code>repo</code>与服务器</h3><p>我们来到<code>GitHub</code>，并新建一个仓库，名称叫作<code>&#123;username&#125;.github.io</code>。如果你曾跟着之前的文章做过<code>Jekyll</code>版网站、<code>master</code>分支被占用的话，你可以新建一个<code>hexo</code>分支。注意需要勾选<code>LICENSE</code>和<code>README</code>，这样可以形成一个<code>master</code>分支。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB4wY8.png" alt=""></p>
+<p>之后，你就会得到类似这样的一个页面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB5y9O.png" alt=""></p>
+<p>然后我们转到<code>Settings</code>，启用（修改）<code>GitHub Pages</code>的相关设置，选择<code>Deploy from a branch</code>后勾选你的目标分支。如果你完全跟着我来的，默认是<code>master</code>；如果你以前动用过这个仓库，则切换到你新的分支上。如下图，点击<code>Save</code>就可以触发一次更新：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vB563D.png" alt=""></p>
+<p>稍等片刻（大概1~3分钟）后，访问<code>https://&#123;username&#125;.github.io</code>（这就是你的网站域名了），如果显示的不是下面这个灰色的<code>404</code>，那么我们就可以开始下一步了！</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vDVNFI.png" alt=""></p>
+<blockquote>
+<p>注：我曾经在<code>Jekyll</code>那篇文章中说过，<code>GitHub Pages</code>会在每一次<code>commit</code>之后触发一次更新<code>action</code>，即自动化。由于需要在服务器上进行操作，可能会出现”排队“的情况，如果设置没错却迟迟出不来”非404“页面，我想，你可能需要继续等一等……</p>
+</blockquote>
+<h2 id="2-初始化、主题与一些设置"><a href="#2-初始化、主题与一些设置" class="headerlink" title="2. 初始化、主题与一些设置"></a>2. 初始化、主题与一些设置</h2><h3 id="2-1-让Hexo运行起来！"><a href="#2-1-让Hexo运行起来！" class="headerlink" title="2.1 让Hexo运行起来！"></a>2.1 让<code>Hexo</code>运行起来！</h3><p>接下来我们就来让<code>Hexo</code>发挥一下它的威力罢。找到一个合适的文件夹，然后执行下面这条命令来初始化一个<code>Hexo</code>项目（这里以我自己为例，自己修改文件夹名）：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init hexo_website_tutorial //换上自己的文件夹名</span><br></pre></td></tr></table></figure>
+<p>正常情况下你获得到如下的结果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/17/vDamKe.png" alt=""></p>
+<p>这个时候，我们<code>cd</code>看一下都创建了哪些东东：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├─.github</span><br><span class="line">├─node_modules</span><br><span class="line">├─scaffolds</span><br><span class="line">├─source</span><br><span class="line">│  └─_posts</span><br><span class="line">└─themes</span><br></pre></td></tr></table></figure>
+<p>简要说明一下：<code>.github</code>文件夹可以直接无视；<code>node_modules</code>是一些<code>hexo</code>本身的依赖；<code>scaffolds</code>里放了一些模板<code>Markdown</code>，暂且不用管它；<code>source</code>文件夹中会放我们的文章；<code>themes</code>文件夹则是为之后应用主题做准备。还有一个<code>_config.yml</code>文件，是我们网站的配置文件。</p>
+<p>那么，我们怎么生成一个静态的网站呢？此时我们就要用到<code>hexo generate</code>（简称<code>hexo g</code>）命令了。它会读取我们写的文章，配合着主题设置生成静态文件，并复制二进制文件（图片、音频等）。注意，为了网站资源链接可以正确工作，我们要在<code>_config.yml</code>文件中改一行，是你网站的链接：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkW28.png" alt=""></p>
+<p>修改好之后，执行截图：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXL8A.png" alt=""></p>
+<p>执行之后，我们会发现多了一个<code>public</code>文件夹和<code>db.json</code>文件。<code>public</code>文件夹会在生成静态文件之后复制到这里，方便上传；<code>db.json</code>是网站的一些<code>meta</code>信息，可以不用管。</p>
+<p>生成完了，我们一定会想看一看生成后的效果。你可以使用<code>hexo server</code>命令在<code>4000</code>端口上启动一个服务器。为了方便，你可以加一个参数<code>-o</code>来自动打开浏览器。如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo s <span class="literal">-o</span></span><br></pre></td></tr></table></figure>
+<p>在<code>4000</code>端口上，我们的默认网站样式类似这样：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vDXOgI.png" alt=""></p>
+<p>此时这个主题叫做<code>landscape</code>。由于我个人有更喜欢的主题（<code>NeXT</code>）并且<code>landscape</code>主题可以开发的部分不多，我们不会使用这款主题。稍后你就会知道如何切换主题。</p>
+<h3 id="2-2-部署到服务器"><a href="#2-2-部署到服务器" class="headerlink" title="2.2 部署到服务器"></a>2.2 部署到服务器</h3><p>想让别人看到我们的网站，我们就要更新<code>GitHub</code>上的仓库，触发部署<code>action</code>。可是，我不希望每一次都要用3条<code>git</code>命令来上传，怎么办？一个好消息是，<code>hexo</code>提供给我们一个<code>deploy</code>命令。</p>
+<h4 id="2-2-1-远程仓库参数设置"><a href="#2-2-1-远程仓库参数设置" class="headerlink" title="2.2.1 远程仓库参数设置"></a>2.2.1 远程仓库参数设置</h4><p>当然了，<code>hexo</code>此时也不知道我们的仓库在哪里，对吧。这时候配置文件<code>_config.yml</code>就可以派上用场了。我们找到它的<code>Deploy</code>部分，并添加一些配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vrCnyj.png" alt=""></p>
+<p>具体格式如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:&#123;username&#125;/&#123;repo_name&#125;.git</span></span><br><span class="line">    <span class="attr">branch:</span> &#123;<span class="string">branch_name</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，我们来试一下<code>hexo d</code>这个命令……</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vriuaq.png" alt=""></p>
+<p>诶，为什么会这样呢？<code>Deployer not found</code>是什么意思？原来，我们还需要安装一个官方插件：<code>hexo-deployer-git</code>。</p>
+<h4 id="2-2-2-hexo-deployer-git"><a href="#2-2-2-hexo-deployer-git" class="headerlink" title="2.2.2 hexo-deployer-git"></a>2.2.2 <code>hexo-deployer-git</code></h4><p>我们在网站根目录下执行这个命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>然后再执行<code>hexo d</code>（太长了，不用图片了）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Setting up Git deployment...</span><br><span class="line">Initialized empty Git repository in D:/08 网站/hexo_website_tutorial/.deploy_git/.git/</span><br><span class="line">[master (root-commit) 0b3e2b7] First commit</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 placeholder</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">[master 3a2b089] Site updated: 2022-08-18 17:47:15</span><br><span class="line"> 18 files changed, 5172 insertions(+)</span><br><span class="line"> create mode 100644 2022/08/17/hello-world/index.html</span><br><span class="line"> create mode 100644 archives/2022/08/index.html</span><br><span class="line"> create mode 100644 archives/2022/index.html</span><br><span class="line"> create mode 100644 archives/index.html</span><br><span class="line"> create mode 100644 css/fonts/FontAwesome.otf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.eot</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.svg</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.ttf</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff</span><br><span class="line"> create mode 100644 css/fonts/fontawesome-webfont.woff2</span><br><span class="line"> create mode 100644 css/images/banner.jpg</span><br><span class="line"> create mode 100644 css/style.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.css</span><br><span class="line"> create mode 100644 fancybox/jquery.fancybox.min.js</span><br><span class="line"> create mode 100644 index.html</span><br><span class="line"> create mode 100644 js/jquery-3.4.1.min.js</span><br><span class="line"> create mode 100644 js/script.js</span><br><span class="line"> delete mode 100644 placeholder</span><br><span class="line">Enumerating objects: 34, done.</span><br><span class="line">Counting objects: 100% (34/34), done.</span><br><span class="line">Delta compression using up to 8 threads</span><br><span class="line">Compressing objects: 100% (26/26), done.</span><br><span class="line">Writing objects: 100% (34/34), 882.39 KiB | 1.49 MiB/s, done.</span><br><span class="line">Total 34 (delta 3), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Resolving deltas: 100% (3/3), done.</span><br><span class="line">To github.com:Guleixibian2009/hexo-website-tutorial.git</span><br><span class="line"> + 5066890...3a2b089 HEAD -&gt; master (forced update)</span><br><span class="line">branch &#x27;master&#x27; set up to track &#x27;git@github.com:Guleixibian2009/hexo-website-tutorial.git/master&#x27;.</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+<p>如果出现类似的结果，那我们就已经部署成功了。这个时候我们去<code>GitHub</code>上去，稍等一会后并访问你的网站看一下，你应该可以看到和本地端口上完全一样的页面。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/18/vrkDDH.png" alt=""></p>
+<h3 id="2-3-切换到NexT主题"><a href="#2-3-切换到NexT主题" class="headerlink" title="2.3 切换到NexT主题"></a>2.3 切换到<code>NexT</code>主题</h3><p>当我们可以成功的部署到<code>GitHub</code>上去后，我们就可以开始切换主题了。我们要用的这个主题叫做<code>NexT</code>，准确的说，是<code>Gemini</code>子主题。为了使用这个主题，我们在根目录下克隆一下<code>GitHub</code>上面的主题仓库<code>theme-next/hexo-theme-next</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/hexo<span class="literal">-theme</span><span class="literal">-next</span> themes/next</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrxxmt.png" alt=""></p>
+<p>然后打开根目录下的<code>_config.yml</code>（有区别于之后我们会用到主题内的<code>_config.yml</code>文件，切勿搞混）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzSTf.png" alt=""></p>
+<p>修改过后重新生成一遍静态文件（<code>hexo clean</code>+<code>hexo g</code>），打开本地端口（<code>hexo s -o</code>）可以看见，我们已经切换到<code>NexT</code>的<code>Muse</code>子主题了：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzDcd.png" alt=""></p>
+<p>实际上，<code>NexT</code>主题分别是有4个子主题的。打开<code>themes/next</code>文件夹下（简称主题文件夹下<code>_config.yml</code>），找到95行，可以看到所有子主题，以及黑夜模式的设置（本人并未开启）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vrzynI.png" alt=""></p>
+<p>要切换到<code>Gemini</code>子主题，只需把第100行注释掉，并取消注释第103行即可。我们重新生成一下（还记得那3条命令吧）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vspsTP.png" alt=""></p>
+<p>主题是切换过来了，可是我看着怎么是英文的呢？或者，感觉东西太少了？还有，为什么我叫<code>John Doe</code>？别急，下一步，便是设置一些<code>metadata</code>。</p>
+<h3 id="2-4-网站信息设置"><a href="#2-4-网站信息设置" class="headerlink" title="2.4 网站信息设置"></a>2.4 网站信息设置</h3><p>在网站根目录下的<code>_config.yml</code>的开头，你可以看到这样的几条配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsp6Ff.png" alt=""></p>
+<p>详细地解释一下（我自己先修改了）：<code>title</code>、<code>subtitle</code>、<code>description</code>、<code>author</code>、<code>language</code>几项在更改后会改变下图中的对应位置，<code>description</code>、<code>keywords</code>、<code>language</code>、<code>timezone</code>几项则是变成了网站<code>metadata</code>。（<kbd>Ctrl+I</kbd>应该可以查看）</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9EXd.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vs9ZnA.png" alt=""></p>
+<p><del>（可能做得有些丑，谅解下哈）</del></p>
+<blockquote>
+<p>回顾：<code>hexo</code>常用命令（以后我就不会再提醒咯）</p>
+<ul>
+<li><p>清除生成缓存——<code>hexo clean</code>。（对主题上的混乱或配置未生效有帮助）</p>
+</li>
+<li><p>生成静态文件——<code>hexo g</code>。</p>
+</li>
+<li><p>部署到远程服务器——<code>hexo d</code>。</p>
+</li>
+<li><p>打开本地服务器端口——<code>hexo s</code>。</p>
+</li>
+</ul>
+<p>教你几个小妙招：</p>
+<ul>
+<li><p><code>hexo d</code>和<code>hexo g</code>其实可以合并成一个命令，叫做<code>hexo g -d</code>，就可以自动先生成再自动部署。</p>
+</li>
+<li><p><code>hexo s</code>加上参数<code>-o</code>就可以自动在浏览器中打开端口。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="3-Gemini子主题的官方配置……"><a href="#3-Gemini子主题的官方配置……" class="headerlink" title="3. Gemini子主题的官方配置……"></a>3. <code>Gemini</code>子主题的官方配置……</h2><p>现在我们就可以给我们的网站添加一些功能与细节了。先打开本地端口，让我们从左往右说：</p>
+<h3 id="3-1-左侧的侧边栏"><a href="#3-1-左侧的侧边栏" class="headerlink" title="3.1 左侧的侧边栏"></a>3.1 左侧的侧边栏</h3><p>左边较窄的竖栏叫<code>sidebar</code>（侧边栏），分为上下两部分，上半部分是一个导航栏，存放了一些站内链接；下半部分是关于你、一些网站统计数据、友情链接，这里也是我们可以自定义的地方（非官方的插件，如音乐、天气等，我们在第5节非官方插件中说）。当你打开一片博客后，下半部分也可以作为一个文章目录。下面几张图供参考：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsihCV.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsi43T.png" alt=""></p>
+<h4 id="3-1-1-添加更多的站内链接"><a href="#3-1-1-添加更多的站内链接" class="headerlink" title="3.1.1 添加更多的站内链接"></a>3.1.1 添加更多的站内链接</h4><p>仔细研究主题<code>_config.yml</code>，你会找到这样一个区块，正是关于站内链接的：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsFpKe.png" alt=""></p>
+<p>看起来，我们目前有两个可用链接（主页、归档），相对应的就是<code>home</code>和<code>archive</code>。</p>
+<h5 id="3-1-1-1-添加链接"><a href="#3-1-1-1-添加链接" class="headerlink" title="3.1.1.1 添加链接"></a>3.1.1.1 添加链接</h5><p>我们来试试取消注释<code>about</code>、<code>tags</code>和<code>categories</code>：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vskVoR.png" alt=""></p>
+<p>诶，正好，同步增加了三个链接<del>（不过暂时打不开）</del>！那我们是不是就能总结出来填入的格式了？</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">key:</span> <span class="string">/link/</span> <span class="string">||</span> <span class="string">icon</span></span><br></pre></td></tr></table></figure>
+<p><code>key</code>指的是链接的名字（不代表链接地址，这个名字后面还会有用），一个冒号，然后是链接地址（可相对可绝对），然后是<code>||</code>标识符，后面跟一个<code>font-awesome</code>图标名（只能用免费版的）。</p>
+<p>掌握了语法之后，我们就可以尝试添加一个自己的链接了！假设你新建了一个歌单页面（具体操作参见后面第4节文章相关操作），它的链接是<code>/album/</code>，并且想要用<code>font-awesome</code>中<code>fas fa-compact-disc</code>这个图标，那我们就可以在配置文件中添加这样一行：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">    <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br></pre></td></tr></table></figure>
+<p>在你重新生成之前，你突发奇想想要把它放在主页那个链接下面，该怎么办呢？我发现，你只需要把这一行移动到<code>home</code>那一行后面即可：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">album:</span> <span class="string">/album/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-compact-disc</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+<p>效果类似这样：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vskeF1.png" alt=""></p>
+<p>可是，明明其他链接都有中文，怎么新加的<code>album</code>就没有？</p>
+<h5 id="3-1-1-2-调整i18n"><a href="#3-1-1-2-调整i18n" class="headerlink" title="3.1.1.2 调整i18n"></a>3.1.1.2 调整<code>i18n</code></h5><p>别忘了，<code>NexT</code>主题的默认语言是英文！我们是通过修改配置强制翻译成中文的（可以回顾一下2.4节）。那…我们能不能手动翻译（学名<code>internationalization</code>，国际化，简称<code>i18n</code>)呢？其实是可以的。我们找到这个文件：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA5gf.png" alt=""></p>
+<p>然后我们重新生成，是不是就成功了呢？</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsA48P.png" alt=""></p>
+<p>记住这个方法，我们之后也还是会用到的！</p>
+<h5 id="3-1-1-3-计数小“徽章”"><a href="#3-1-1-3-计数小“徽章”" class="headerlink" title="3.1.1.3 计数小“徽章”"></a>3.1.1.3 计数小“徽章”</h5><p>想要显示目前我们的博客内一共有几篇文章、几个分类和几个标签吗？我们可以用一个<code>badge</code>解决这件事。还是刚才那段配置，有没有在下面看到一段这样的选项？</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>我们把<code>badges</code>选项调成<code>true</code>，系统就会自动计数了。看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsVzBF.png" alt=""></p>
+<p>嗯，光荣的<code>0 0 1</code>。当然现在我们的“标签”页还是打不开的。具体怎么调文章的分类或如何创建“标签”页面等，我会在第4节文章相关操作中讲到。</p>
+<h4 id="3-1-2-更新“综合信息中心”"><a href="#3-1-2-更新“综合信息中心”" class="headerlink" title="3.1.2 更新“综合信息中心”"></a>3.1.2 更新“综合信息中心”</h4><p>我之所以把这个侧边栏的下半部分称作一个“综合数据中心”，主要是因为你几乎可以在这里放任何你想放的信息，比如你的头像、个性签名、文章相关统计、个人链接等等。（至于天气和音乐播放器我们之后会在第5节非官方插件中讲到。）这是我的网站目前的样子：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEUsS.png" alt=""></p>
+<h5 id="3-1-2-1-你的头像"><a href="#3-1-2-1-你的头像" class="headerlink" title="3.1.2.1 你的头像"></a>3.1.2.1 你的头像</h5><p>想要给大家展示一下你的头像吗？当然可以。准备好一张照片（建议方形或圆形），移动到<code>/public/images</code>这个文件夹里。然后打开主题配置文件，找到如下配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsEaqg.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><code>url</code>是你图片的路径，格式就是<code>/images/</code>再加上文件名（不一定是<code>avatar.gif</code>）。<code>rounded</code>则是选择是否要显示为圆形，<code>rotated</code>是选择是否要在鼠标移动到图片上时旋转。我们看一下效果如何：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/19/vsENM8.png" alt=""></p>
+<p>注：这个黑色的<code>N</code>就是<code>/images/</code>文件夹下的<code>logo.svg</code>。</p>
+<h5 id="3-1-2-2-个人链接"><a href="#3-1-2-2-个人链接" class="headerlink" title="3.1.2.2 个人链接"></a>3.1.2.2 个人链接</h5><p>既然说了，这里是“综合信息中心”，那我能不能放一点个人信息（个人链接）呢？当然是可以的。最终的效果如下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsY8B9.png" alt=""></p>
+<p>那这个是在哪里设置的呢？我们可以找到这样一段配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsYYA1.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/Guleixibian2009</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:guleixibian2009@outlook.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">https://guleixibian2009.github.io/hexo-website-tutorial/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br><span class="line">  <span class="attr">Website:</span> <span class="string">https://guleixibian2009.github.io/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-html5</span></span><br></pre></td></tr></table></figure>
+<p>它的语法和<code>3.1.1.1</code>节中链接的语法是相同的，这里就不再赘述了。</p>
+<h5 id="3-1-2-3-Creative-Commons文章版权声明"><a href="#3-1-2-3-Creative-Commons文章版权声明" class="headerlink" title="3.1.2.3 Creative Commons文章版权声明"></a>3.1.2.3 <code>Creative Commons</code>文章版权声明</h5><p>是开源项目总得有个开源许可证<code>LICENSE</code>吧。像博客一类非代码开源项目，我们一般选用<code>CC</code>版权声明。一共有6种形式（当然还有其他较特殊的协议，比如放弃权利<code>CC0</code>，可以自行搜索）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>协议</th>
+<th><code>by</code>（<code>Attribution</code>）</th>
+<th><code>nc</code>（<code>NonCommercial</code>）</th>
+<th><code>nd</code>（<code>No Derivative Works</code>）</th>
+<th><code>sa</code>（<code>Share Alike</code>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转载时必须标示原作者</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止修改</td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止商用</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止修改、商用</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>标示原作者，且禁止商用，必须相同协议</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+</tr>
+<tr>
+<td>标示原作者，必须相同协议</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>一般我们选用<code>CC by-nc-sa</code>这种协议。那么，我们如何直观地向别人展示呢？<code>NexT</code>主题内置了小图标的功能，可以找到这一部分配置文件：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsYG7R.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">deed.zh</span></span><br></pre></td></tr></table></figure>
+<p>我们选中<code>sidebar</code>一项，<code>NexT</code>就会自动渲染出一个小图标了。至于<code>post</code>一项，我们放到3.2节中讲。<code>language</code>如果需要调整为中文，直接填写<code>deed.zh</code>即可。看一下渲染效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsY3nJ.png" alt=""></p>
+<h4 id="3-1-3-文章目录"><a href="#3-1-3-文章目录" class="headerlink" title="3.1.3 文章目录"></a>3.1.3 文章目录</h4><p>如果你现在进入那篇默认的<code>Hello World</code>文章，你可以在原先“信息中心”的地方看到文章的目录。那么这个目录有没有可以自定义的地方呢？也是有的。我们可以找到对应的配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsdROO.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Automatically add list number to toc.</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, all words will placed on next lines if header width longer then sidebar width.</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span></span><br><span class="line">  <span class="attr">expand_all:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Maximum heading depth of generated toc.</span></span><br><span class="line">  <span class="attr">max_depth:</span> <span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>仔细观察一下生成的<code>toc</code>（<code>Table Of Contents</code>，简称<code>toc</code>），发现每一个标题都被自动编上了号。可是，这就对像我这种习惯手动编号的人很不友好啊，我们就可以把<code>number</code>这个选项关掉。<code>wrap</code>则是说过长的标题是全部显示还是省略号，我选择了全部显示。<code>expand_all</code>指要不要全部展开，如果启用的话就会显示所有标题，然而像我这篇非常长的文章明显是不太合适的，所以就保持在<code>false</code>上。这样它就只会显示当前浏览部分的目录了。<code>max_depth</code>是指要生成多少层标题（1~6）。如果你不想显示过于细致的标题，可以调小。那调整之后效果类似这样：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsdfmD.png" alt=""></p>
+<h3 id="3-2-文章板块相关配置"><a href="#3-2-文章板块相关配置" class="headerlink" title="3.2 文章板块相关配置"></a>3.2 文章板块相关配置</h3><p>终于到了我们的重头戏。有一个美观的<code>sidebar</code>只是基础，博客最重要的就是<code>post</code>（即博文部分）了。官方提供的自定义不多，但还是有可以打开的功能的。（注：在3.2节中我们只会讲关于这一板块的功能，并不会讲到类似“阅读全文按钮”等。我们把它留在第4节文章相关配置里讲。）</p>
+<h4 id="3-2-1-文章相关信息"><a href="#3-2-1-文章相关信息" class="headerlink" title="3.2.1 文章相关信息"></a>3.2.1 文章相关信息</h4><p>如果你细心的观察过文章标题下的小字，你就会发现诸如发布时间、更新时间、本文字数、分类等信息。而是否显示它们都是可以调的。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsgC9g.png" alt=""></p>
+<h5 id="3-2-1-1-基本配置"><a href="#3-2-1-1-基本配置" class="headerlink" title="3.2.1.1 基本配置"></a>3.2.1.1 基本配置</h5><p>你可以在这里找到一些基本配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsgP3Q.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Post meta display settings</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>看起来现在所有功能都是打开的。<code>item_text</code>指的是要不要显示数据名称；<code>created_at</code>是发布时间；<code>categories</code>是文章的分类。由于默认的<code>Hello World</code>文章是没有分类的，所以它就没有显示。可是，为什么我没有看到字数统计等信息呢？原来这是通过另外一项设置实现的。</p>
+<h5 id="3-2-1-2-字数统计"><a href="#3-2-1-2-字数统计" class="headerlink" title="3.2.1.2 字数统计"></a>3.2.1.2 字数统计</h5><p>就在<code>post_meta</code>一节下面，有一个<code>symbols_count_time</code>。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsgicj.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>用之前我们还需要安装一个依赖，叫做<code>hexo-symbols-count-time</code>。直接使用<code>npm</code>安装即可：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-symbols</span><span class="literal">-count</span><span class="literal">-time</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>然后我们来看一下这些设置有什么用。<code>item_text_post</code>指的是要不要在文章标题下方显示本文字数&amp;阅读时间；<code>item_text_total</code>则是在页脚显示全站计数。我们重新渲染来看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsI96U.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsIplT.png" alt=""></p>
+<h4 id="3-2-2-代码块样式"><a href="#3-2-2-代码块样式" class="headerlink" title="3.2.2 代码块样式"></a>3.2.2 代码块样式</h4><p>在默认的<code>Hello World</code>文章中，有4个代码块。也许你不喜欢这种较亮的主题；或者，你不介意主题，但只是想要添加一个复制按钮？这一切的一切都是可以修改的！我们找一下对应的配置，嗯，在这里：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsIim4.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">normal</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">default</span></span><br></pre></td></tr></table></figure>
+<p>高亮是默认开启的（没人不用这个功能，你真的不用的话到根目录<code>_config.yml</code>中<code># Writing</code>一节可以禁用）。你可以自己选一个喜欢的<code>highlight_theme</code>，我保留了<code>normal</code>，也就是浅色。<code>copy_button</code>中直接两个都调成<code>true</code>就可以显示复制按钮了。效果如下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsICXF.png" alt=""></p>
+<h4 id="3-2-3-看见了还真不一定知道是什么的辅助功能"><a href="#3-2-3-看见了还真不一定知道是什么的辅助功能" class="headerlink" title="3.2.3  看见了还真不一定知道是什么的辅助功能"></a>3.2.3  看见了还真不一定知道是什么的辅助功能</h4><p>为了直观地展示这一节的内容，我将先超纲新建一篇文章，大家见谅哈。在这篇文章里既有中文又有英文，我还给了它一个标签，一个分类。</p>
+<h5 id="3-2-3-1-中英文空格——Pangu"><a href="#3-2-3-1-中英文空格——Pangu" class="headerlink" title="3.2.3.1 中英文空格——Pangu"></a>3.2.3.1 中英文空格——<code>Pangu</code></h5><p><img data-src="https://s1.ax1x.com/2022/08/20/vsT5f1.png" alt=""></p>
+<p>我个人觉得中、英文混杂时没有个空格很难受，有的时候又会忘记加（就是假设，假设！）。怎么办呢？<code>NexT</code>提供一个功能叫做<code>Pangu</code>。它可以自动在中英文之间添加空格。我们找到配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsTTl6.png" alt="">然后改成<code>true</code>即可。渲染一下试试：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsT4YR.png" alt=""></p>
+<h5 id="3-2-3-2-图片懒加载——lazyload"><a href="#3-2-3-2-图片懒加载——lazyload" class="headerlink" title="3.2.3.2 图片懒加载——lazyload"></a>3.2.3.2 图片懒加载——<code>lazyload</code></h5><p>一路看下来，有没有发现博客中的图片都是启用了懒加载的？就在<code>pangu</code>的配置附近，有一个：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Vanilla JavaScript plugin for lazyloading images.</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/ApoorvSaxena/lozad.js</span></span><br><span class="line"><span class="attr">lazyload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>改成<code>true</code>即可。它的原理就是先获取较快的占位图，再在滚动时加载新的图片。效果如下：</p>
+<p><img data-src="https://gcdnb.pbrd.co/images/62i8BHj3vjF7.gif?o=1" alt=""></p>
+<p>（是动图，压缩过，点击重新播放）</p>
+<h5 id="3-2-3-3-图片放大——fancybox"><a href="#3-2-3-3-图片放大——fancybox" class="headerlink" title="3.2.3.3 图片放大——fancybox"></a>3.2.3.3 图片放大——<code>fancybox</code></h5><p>想要实现一个图片点击放大功能吗？<code>fancybox</code>可以满足你的需求。我们找到这样一段配置：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.</span></span><br><span class="line"><span class="comment"># For more information: https://fancyapps.com/fancybox</span></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>改成<code>true</code>之后我们来看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsToSx.png" alt=""></p>
+<h5 id="3-2-3-4-局部刷新——pjax"><a href="#3-2-3-4-局部刷新——pjax" class="headerlink" title="3.2.3.4 局部刷新——pjax"></a>3.2.3.4 局部刷新——<code>pjax</code></h5><p>想要快速的切换页面？启用<code>pjax</code>即可。可能很多人听说过<code>ajax</code>，其实<code>pjax</code>相当于类似的功能。</p>
+<p>启用之前需要先用<code>git</code>克隆<code>theme-next-pjax</code>的仓库。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/theme<span class="literal">-next</span><span class="literal">-pjax</span> themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure>
+<p>然后在配置文件中启用<code>pjax</code>：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/20/vsqaj0.png" alt=""></p>
+<p>效果图我就不放了，动图上传起来太麻烦，得另找图床。可以自己试一下效果。</p>
+<h4 id="3-2-4-数学公式支持——mathjax"><a href="#3-2-4-数学公式支持——mathjax" class="headerlink" title="3.2.4 数学公式支持——mathjax"></a>3.2.4 数学公式支持——<code>mathjax</code></h4><p>如果你看过这篇<a href="https://guleixibian2009.github.io/2021/11/28/Markdown中Latex常用语法/">关于<code>LaTex</code>的文章</a>的话，你可能会知道，<code>Markdown</code>文章中是可以添加数学公式的。那么，<code>Hexo</code>有没有渲染数学公式的功能呢？是有的。我们可以找到如下配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/21/vycLss.png" alt=""></p>
+<p>当然注释里也说得很清楚了，我们需要安装另一个<code>hexo</code>编译器，即<code>hexo-renderer-kramed</code>。使用如下两个命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm un hexo<span class="literal">-renderer</span><span class="literal">-marked</span></span><br><span class="line">npm i hexo renderer<span class="literal">-kramed</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>安装即可。将<code>enable</code>那一行改为<code>true</code>，这个时候你就已经准备好<code>MathJax</code>了，来测试一下：</p>
+<script type="math/tex; mode=display">
+f(x) =
+\begin{cases}
+x^2 \qquad & x \gt 0 \\
+e^x \qquad & x \le 0
+\end{cases}</script><p>不过，使用<code>hexo-renderer-kramed</code>会带来一个小问题…</p>
+<h4 id="3-2-5-修复Todo-List无法渲染的问题"><a href="#3-2-5-修复Todo-List无法渲染的问题" class="headerlink" title="3.2.5 修复Todo List无法渲染的问题"></a>3.2.5 修复<code>Todo List</code>无法渲染的问题</h4><p>这个问题是我在写<code>Markdown</code>语法那篇文章时发现的。虽然<code>Todo List</code>不是一个非常重要的语法，但我想我们最好还是修复一下这个问题：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/27/vR74PS.png" alt=""></p>
+<p>解决办法是，打开<code>node_modules/hexo-renderer-kramed/lib/renderer.js</code>，并在第19行添加以下内容（对，就是查到的）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Support To-Do List</span></span><br><span class="line">Renderer.prototype.listitem = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="regexp">/^\s*\[[x ]\]\s*/</span>.test(text)) &#123;</span><br><span class="line">    text = text.replace(<span class="regexp">/^\s*\[ \]\s*/</span>, <span class="string">&#x27;&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot;&gt;&lt;/input&gt; &#x27;</span>).replace(<span class="regexp">/^\s*\[x\]\s*/</span>, <span class="string">&#x27;&lt;input type=&quot;checkbox&quot; disabled=&quot;disabled&quot; checked&gt;&lt;/input&gt; &#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&lt;li style=&quot;list-style: none&quot;&gt;&#x27;</span> + text + <span class="string">&#x27;&lt;/li&gt;\n&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&lt;li&gt;&#x27;</span> + text + <span class="string">&#x27;&lt;/li&gt;\n&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
+<p>修改之后重新渲染一遍即可。还是来测试一下：</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> 这是一个<code>Todo List</code>。</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"></input> 这是一个未被勾选的选项。</li>
+</ul>
+<h4 id="3-2-6-文末板块配置"><a href="#3-2-6-文末板块配置" class="headerlink" title="3.2.6 文末板块配置"></a>3.2.6 文末板块配置</h4><p>在文章末尾一般会放置一些关于文章的额外的信息。这是我的博客文末的功能：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2L2q.png" alt=""></p>
+<h5 id="3-2-6-1-版权声明方框"><a href="#3-2-6-1-版权声明方框" class="headerlink" title="3.2.6.1 版权声明方框"></a>3.2.6.1 版权声明方框</h5><p>很重视要告诉你的读者这是你的原创文章，或者觉得有必要强调自己使用了<code>Creative Commons</code>声明？可以考虑添加一个版权方框。至于设置的话，在这里：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2U81.png" alt=""></p>
+<p>把<code>post: false</code>调整为<code>true</code>即可。重新生成一下，看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2Y59.png" alt=""></p>
+<p>当然，如果你对默认的翻译不满意的话，可以找到之前那个<code>i18n</code>配置文件，然后自行修改。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/28/vW2NCR.png" alt=""></p>
+<h5 id="3-2-6-2-修改标签的小图标"><a href="#3-2-6-2-修改标签的小图标" class="headerlink" title="3.2.6.2 修改标签的小图标"></a>3.2.6.2 修改标签的小图标</h5><p>仔细看，在文章末尾会显示出这篇文章的标签。在上一节的图片中，它的样式是<code># Test</code>。我个人不喜欢这个<code>#</code>，想把它换掉。有这个功能吗？可以找到如下配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFMzd.png" alt=""></p>
+<p>把<code>tag_icon</code>一项改成<code>true</code>，然后重新渲染一下看看：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFniD.png" alt=""></p>
+<h5 id="3-2-6-3-其他发布渠道链接（引流）"><a href="#3-2-6-3-其他发布渠道链接（引流）" class="headerlink" title="3.2.6.3 其他发布渠道链接（引流）"></a>3.2.6.3 其他发布渠道链接（引流）</h5><p>需要在文章末尾给自己其他的发布渠道（如公众号，<code>CSDN</code>等）或其它前端项目引流吗？我们同样可以添加一个链接方框。这是添加后的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFuJe.png" alt=""></p>
+<p>我们可以找到这样的配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfFKRH.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Subscribe through Telegram Channel, Twitter, etc.</span></span><br><span class="line"><span class="comment"># Usage: `Key: permalink || icon` (Font Awesome)</span></span><br><span class="line"><span class="attr">follow_me:</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/username || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#Telegram: https://t.me/channel_name || fab fa-telegram</span></span><br><span class="line">  <span class="comment">#WeChat: /images/wechat_channel.jpg || fab fa-weixin</span></span><br><span class="line">  <span class="comment">#RSS: /atom.xml || fa fa-rss</span></span><br></pre></td></tr></table></figure>
+<p>它的语法和3.1.1.1节的是一样的，可以参考一下。同时，如果你觉得老是修改<code>i18n</code>很烦的话，可以直接用你想要的名字作为<code>Key</code>，如：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">follow_me:</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/username || fab fa-twitter</span></span><br><span class="line">  <span class="comment">#Telegram: https://t.me/channel_name || fab fa-telegram</span></span><br><span class="line">  <span class="comment">#WeChat: /images/wechat_channel.jpg || fab fa-weixin</span></span><br><span class="line">  <span class="attr">RSS:</span> <span class="string">/atom.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-rss</span></span><br><span class="line">  <span class="string">旧版网站:</span> <span class="string">https://guleixibian.github.io/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-html5</span></span><br><span class="line">  <span class="string">手写网站:</span> <span class="string">https://guleixibian2009.github.io/Hand-Written-HTML-Site/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-laptop-code</span></span><br><span class="line">  <span class="string">Awesome-Bootstrap项目:</span> <span class="string">https://guleixibian2009.github.io/awesome-bs5/</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-bootstrap</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-2-6-4-打赏功能"><a href="#3-2-6-4-打赏功能" class="headerlink" title="3.2.6.4 打赏功能"></a>3.2.6.4 打赏功能</h5><p>在自己的网站上加几个打赏二维码还是一个不错的选择<del>（当然我其实没有放）</del>，包括一些项目<code>README</code>里面也会放。预先准备好几个收款码（一定是固定的那种）或者你想放的图片，放到<code>themes/next/source/images</code>文件夹中。找到这样的配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfBut0.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reward (Donate)</span></span><br><span class="line"><span class="comment"># Front-matter variable (unsupport animation).</span></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment">#comment: Donate comment here.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="comment">#wechatpay: /images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
+<p>这个打赏的配置有两部分。<code>reward_settings</code>是设置打赏按钮；图片地址要写在<code>reward</code>里面。先把<code>enable</code>调成<code>true</code>，然后添加几张图片试试：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, reward will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">comment:</span> <span class="string">给作者买一杯作业...</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="comment">#wechatpay: /images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br><span class="line">  <span class="string">把我的网站分享给别人吧！:</span> <span class="string">/images/websiteQR.png</span></span><br></pre></td></tr></table></figure>
+<p>至于<code>comment</code>一行的话，是你想要在打赏按钮上方显示的句子。看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfBnkq.png" alt=""></p>
+<h3 id="3-3-网站上的小“零件”"><a href="#3-3-网站上的小“零件”" class="headerlink" title="3.3 网站上的小“零件”"></a>3.3 网站上的小“零件”</h3><p>这一章是关于页面上的一些（官方的）小功能。比如说（并不是所有的）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfD88f.png" alt=""></p>
+<h4 id="3-3-1-页脚信息显示"><a href="#3-3-1-页脚信息显示" class="headerlink" title="3.3.1 页脚信息显示"></a>3.3.1 页脚信息显示</h4><p>页脚（<code>footer</code>）也是稍微有一些可以调整的地方的：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfDG28.png" alt=""></p>
+<p>我们目前的页脚是这样的：</p>
+<p><img title="" data-src="https://s1.ax1x.com/2022/08/29/vfD3PP.png" alt="" data-align="inline"></p>
+<p>看起来有一个版权符号，年份，作者名，还有一个爱心。但实际上，版权年份其实只会显示当前年份。如果想像我一样显示类似2021~2022，该如何实现呢？我们可以找到这样一段配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/29/vfDJxS.png" alt=""></p>
+<p>具体来讲一下：</p>
+<ol>
+<li><p>被注释掉的一行<code>since</code>指的是站点建立的时间。把它取消注释，并改为现在的年份，就可以每年更新了（每年要重新渲染一次）。</p>
+</li>
+<li><p>想要让爱心动起来的话，可以把<code>icon</code>中<code>animated</code>改为<code>true</code>。</p>
+</li>
+<li><p>版权默认使用项目名称，但如果希望使用我自己的名字，可以在<code>copyright</code>中写上自己的名字。</p>
+</li>
+<li><p><code>powered</code>指要不要显示“由<code>Hexo</code>强力驱动”，默认打开。</p>
+</li>
+<li><p><code>beian</code>中是网站<code>ICP</code>备案，我没备案就不写上了。修改完后，记得重新渲染一下。</p>
+</li>
+</ol>
+<p>那个计数是怎么实现的呢？那是一个第三方服务，我放在第5章中讲。</p>
+<h4 id="3-3-2-回到顶部按钮"><a href="#3-3-2-回到顶部按钮" class="headerlink" title="3.3.2 回到顶部按钮"></a>3.3.2 回到顶部按钮</h4><p>看完一篇非常长的文章，如果读者想要一键返回顶部，我们就需要一个<code>back2top</code>按钮。基本款的默认已经有了，但是我们还可以对它进行进一步配置。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhUJyj.png" alt=""></p>
+<p>这里一共有3个选项。<code>enable</code>默认开启；<code>sidebar</code>指的是按钮的位置要不要加在侧边栏下方；<code>scrollpercent</code>是显示阅读百分比。我开启了第三项。最终效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhU8Sg.png" alt=""></p>
+<h4 id="3-3-3-阅读进度条"><a href="#3-3-3-阅读进度条" class="headerlink" title="3.3.3 阅读进度条"></a>3.3.3 阅读进度条</h4><p>如何让读者清晰地看出自己已经读了多少呢？刚刚显示百分比的功能还是不错的。不过我们还有更加直观一些的方法——阅读进度条。找到这段配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhUGlQ.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span></span><br></pre></td></tr></table></figure>
+<p>如果你不介意进度条的颜色和高度的话，直接<code>enable: true</code>就已经可以用了。不满意的话可以自己调整一下下面三个参数。这是最终的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhU1fS.png" alt=""></p>
+<h4 id="3-3-4-书签功能"><a href="#3-3-4-书签功能" class="headerlink" title="3.3.4 书签功能"></a>3.3.4 书签功能</h4><p>需要在关闭页面时记录下自己的阅读进度吗？可以打开（自动）书签功能。找一下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdkKH.png" alt=""></p>
+<p>直接把<code>enable</code>调成<code>true</code>即可。默认的版本是<code>auto</code>，即关闭页面自动保存；你也可以调成<code>manual</code>，只在读者点击图标时保存。效果如下（自己尝试一下吧）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdC8O.png" alt=""></p>
+<h4 id="3-3-5-右上角GitHub徽标"><a href="#3-3-5-右上角GitHub徽标" class="headerlink" title="3.3.5 右上角GitHub徽标"></a>3.3.5 右上角<code>GitHub</code>徽标</h4><p>虽然我们已经在侧边栏中加过一个<code>github</code>链接了，但我们同样可以用一个更加明显的方式为自己的<code>github</code>账号引流。这就是大名鼎鼎的<code>GitHub Banner</code>。至于配置的话，就在刚才的下面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdArd.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/Guleixibian2009</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub~</span></span><br></pre></td></tr></table></figure>
+<p>打开功能，先把<code>enable</code>调成<code>true</code>。<code>permalink</code>是指向你想要引流的链接（比如<code>github</code>账号，项目地址等），<code>title</code>是鼠标移到图标上时显示什么。来试一下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdixe.png" alt=""></p>
+<p>不过如果细看的话…这个<code>banner</code>和书签在页面顶部时似乎有点小bug。重叠我能接受，可是露出一个角来就有点奇怪了啊！</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdP2D.png" alt=""></p>
+<p>我研究了一下，可以把书签的<code>CSS</code>中<code>right</code>属性调到<code>25px</code>就好了。找一下<code>/themes/next/source/css/_common/outline/header/bookmark.styl</code>文件…不太确定这是什么语言，但是不怕！找到上面那个<code>right</code>（第5行那个）把那个变量名称改成<code>25px</code>即可了。这样就不会重叠了。</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhdEqA.png" alt=""></p>
+<blockquote>
+<p>另及：使用这个变量的本意应该是想让书签的右侧和<code>b2t</code>按钮右侧宽度相同，但我觉得<code>5px</code>应该不太看的出来吧。</p>
+</blockquote>
+<h4 id="3-3-6-加载进度条——pace"><a href="#3-3-6-加载进度条——pace" class="headerlink" title="3.3.6 加载进度条——pace"></a>3.3.6 加载进度条——<code>pace</code></h4><p>注意到网站上加载时的蓝色加载条了吗？</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhfg2j.png" alt=""></p>
+<p>这个进度条是基于<code>pace</code>做出来的。首先我们需要克隆<code>pace</code>的仓库：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/next</span><br><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/theme<span class="literal">-next</span><span class="literal">-pace</span> source/lib/pace</span><br></pre></td></tr></table></figure>
+<p>然后找到对应的配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhf2xs.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Progress bar in the top during page loading.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pace</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/HubSpot/pace</span></span><br><span class="line"><span class="attr">pace:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Themes list:</span></span><br><span class="line">  <span class="comment"># big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span></span><br><span class="line">  <span class="comment"># corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">minimal</span></span><br></pre></td></tr></table></figure>
+<p>我用的是<code>minimal</code>。重新渲染一下，看一下效果吧。</p>
+<h4 id="3-3-7-网站图标——favicon"><a href="#3-3-7-网站图标——favicon" class="headerlink" title="3.3.7 网站图标——favicon"></a>3.3.7 网站图标——<code>favicon</code></h4><p>直到现在我们网站的图标还是那个黑色的<code>N</code>。能不能改一个好看一点的呢？先找一个自己喜欢的图标，然后转成<code>ico</code>格式的文件（可以用<code>convertio</code>试试）。复制两份，分别命名<code>16x16.ico</code>和<code>32x32.ico</code>。拖到<code>themes/next/source/images</code>文件夹里面。然后我们找到对应的配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/01/v5LMNj.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/16x16.ico</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/32x32.ico</span></span><br><span class="line">  <span class="comment">#apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment">#safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></span><br><span class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
+<p>只保留<code>small</code>和<code>medium</code>，再把文件名填进去即可。</p>
+<h2 id="4-文章相关配置"><a href="#4-文章相关配置" class="headerlink" title="4. 文章相关配置"></a>4. 文章相关配置</h2><p>现在我们已经把基本的一些配置好了。我们可以开始添加一些文章、页面<del>（心心念念的标签、分类页）</del>，还可以有搜索、<code>404</code>页面等。你会学到如何给文章添加标签、分类等等。</p>
+<h3 id="4-1-关于博客——post"><a href="#4-1-关于博客——post" class="headerlink" title="4.1 关于博客——post"></a>4.1 关于博客——<code>post</code></h3><p>如果你曾注意过<code>scaffolds</code>文件夹里的内容，你会看到<code>Hexo</code>一共有3种“类型”，分别是<code>post</code>博客、<code>page</code>页面和<code>draft</code>草稿。我不太习惯用草稿功能，就把它放过喽。我们先来把博客讲一下：</p>
+<h4 id="4-1-1-新建一篇文章"><a href="#4-1-1-新建一篇文章" class="headerlink" title="4.1.1 新建一篇文章"></a>4.1.1 新建一篇文章</h4><p>还记得3.2.3节中我超纲建文章吗？建文章的命令是<code>hexo new</code>。如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new a<span class="literal">-new</span><span class="literal">-post</span></span><br></pre></td></tr></table></figure>
+<p>然后我们就可以在<code>source/_post</code>里面找到一个<code>a-new-post.md</code>。打开看看：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vh5OMj.png" alt=""></p>
+<p>文件几乎是空白的，只有一小段<code>YML</code>（学名<code>YAML Front Matter</code>）。这里面存放着关于这篇文章的元信息：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">a-new-post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-08-30 17:02:10</span></span><br><span class="line"><span class="attr">tags:</span></span><br></pre></td></tr></table></figure>
+<p>默认是有三个字段的，即<code>title</code>、<code>date</code>和<code>tags</code>。<code>title</code>会先默认设置为文件名，你可以改成这篇文章的标题（比如“4.1.1节新建文章示例”）。<code>date</code>建议不要改，是你新建文章的时间。<code>tags</code>是这篇文章的标签。先在文章内部写点东西试试渲染一下。我现在修改成这样，渲染一下看看：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 4.1.1节新建文章示例</span><br><span class="line">date: 2022-08-30 17:02:10</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </span><br><span class="line">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </span><br><span class="line">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </span><br><span class="line">esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt </span><br><span class="line">in culpa qui officia deserunt mollit anim id est laborum.</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vh5xZq.png" alt=""></p>
+<h4 id="4-1-2-标签与分类"><a href="#4-1-2-标签与分类" class="headerlink" title="4.1.2 标签与分类"></a>4.1.2 标签与分类</h4><p>现在我们尝试给文章添加一些标签和分类（照例，用<code>Test</code>）。只需在<code>Front Matter</code>中加一点即可：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="number">4.1</span><span class="number">.1</span><span class="string">节新建文章示例</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-08-30 17:02:10</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">Test1</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Test2</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> [<span class="string">Test1</span>, <span class="string">Test2</span>]</span><br><span class="line"><span class="bullet">-</span> <span class="string">Test3</span></span><br></pre></td></tr></table></figure>
+<p>可以看到我们添加了一个<code>categories</code>字段。先讲标签：新建一行，然后用<code>-</code>打头，空格，然后输入分类名，可以重复多行。<code>categories</code>中是差不多的，可是这个<code>- []</code>是用来干嘛的呢？这代表分类下的子分类。待会新建分类<code>page</code>时你就会看出来它的效果。渲染一下看看：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhH89f.png" alt=""></p>
+<p>（为了一张图放完，这张图片是80%比例下的截图的）</p>
+<h4 id="4-1-3-主页节选——excerpt"><a href="#4-1-3-主页节选——excerpt" class="headerlink" title="4.1.3 主页节选——excerpt"></a>4.1.3 主页节选——<code>excerpt</code></h4><p>我们新加的博客内容都是很短的，可以完整的放在主页上。可像我这种几k字的，主页完全放不下啊！这是我们就可以使用节选功能，同时会自动显示一个按钮，提示“继续阅读”。语法如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">This is a piece of text. It&#x27;s going to be very long.</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </span><br><span class="line">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </span><br><span class="line">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </span><br><span class="line">esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt </span><br><span class="line">in culpa qui officia deserunt mollit anim id est laborum.</span><br></pre></td></tr></table></figure>
+<p>没错，只要在你想分开的地方加一个<code>&lt;!--more--&gt;</code>即可。我们拿<code>Hello World</code>那篇文章试一下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/30/vhH14P.png" alt=""></p>
+<h4 id="4-1-4-文章置顶"><a href="#4-1-4-文章置顶" class="headerlink" title="4.1.4 文章置顶"></a>4.1.4 文章置顶</h4><p>在我的网站主页上有一篇置顶的序言，就像书的<code>preface</code>一样。<code>Hexo</code>文章在主页上的排列顺序（默认）是按发布时间后往前（即越新越往上）排布的，如何打破这个规则，强制在最上方呢？一开始我也没有查到对应的设置（都是手写进去代码），不过在翻看<code>hexo</code>的生成代码时（不太具体知道这是什么语言，似乎是一种<code>unmaintained</code>的<code>swig</code>语言，但我怎么找都没找到对应的<code>swig</code>包，又感jio像<code>ejs</code>，疯了），我注意到有一个<code>sticky</code>选项（而且似乎值是个数字），在这里：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/31/v4LWTJ.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.sticky &gt; 0 %&#125;</span><br><span class="line">  &lt;span class=&quot;post-sticky-flag&quot; title=&quot;&#123;&#123; __(&#x27;post.sticky&#x27;) &#125;&#125;&quot;&gt;</span><br><span class="line">    &lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我就找到一篇<code>post</code>，在<code>Front Matter</code>里面加上这么一行：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sticky:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>诶，神奇的是就好了！我在<code>_config.yml</code>中没有看到任何和<code>sticky</code>有关的配置，没想到自己摸索出来了。看一下最后的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/31/v4LRw4.png" alt=""></p>
+<h4 id="4-1-5-分页功能"><a href="#4-1-5-分页功能" class="headerlink" title="4.1.5 分页功能"></a>4.1.5 分页功能</h4><p>目前来说，我们的主页上可能还没有几篇文章。可是，设想一下将来，当你有了几十篇博客（只是设想），难道还得全部一股脑的堆在主页上吗？我们可以尝试加一个分页功能。即：每满设定的文章数就会自动生成主页的下一页。先看一下效果吧，我是6篇一分：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/31/v4OXuT.png" alt=""></p>
+<p>找一下如下的配置（注意在<code>Hexo</code>配置文件内，切勿搞混了）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/08/31/v4OLvV.png" alt=""></p>
+<p>看起来是默认打开的啊？那我就把数值减小一点，改成6就好了。</p>
+<h3 id="4-2-关于页面——page"><a href="#4-2-关于页面——page" class="headerlink" title="4.2 关于页面——page"></a>4.2 关于页面——<code>page</code></h3><p>在3.1.1.1节中我们在侧边栏中添加了标签页、分类页，还有一个歌单的链接。这一章我们会把这些页面补齐，并给网站添加一个<code>404</code>页面。</p>
+<h4 id="4-2-1-新建页面"><a href="#4-2-1-新建页面" class="headerlink" title="4.2.1 新建页面"></a>4.2.1 新建页面</h4><p>新建页面和新建一篇博客的命令是差不多的。如下，只需要在<code>new</code>后面添加一个<code>page</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p><code>tags</code>就是所有标签页。可是，执行这个命令到底会发生什么呢？我们来看一下<code>source</code>文件夹。多了一个<code>tags</code>文件夹，里面有一个<code>index.md</code>。打开看看：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/02/vIRp9g.png" alt=""></p>
+<p>嗯，和<code>post</code>差不多，一个时间一个标题，只是没有标签和分类。然后，看一下渲染的效果，有没有这个页面了：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/02/vIRCcj.png" alt=""></p>
+<p>但这个样子肯定是有<code>bug</code>的。第一，它的标题怎么叫<code>tags</code>？第二，之前链接列表中既然有这个默认的<code>tags</code>，那它为什么不是自动化的，不可能连统计标签的功能都没有吧！别急，马上就把这个功能加进来，只需要一行<code>Front Matter</code>，再把标题改下：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">所有标签</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
+<p>试一下渲染效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/02/vIR93Q.png" alt=""></p>
+<p>似乎好了耶！然后类似的，我们加一下分类、关于和歌单页，把<code>tags</code>分别换为<code>categories</code>、<code>about</code>、<code>album</code>即可。别忘了改页面的标题，并给分类页加上<code>type: categories</code>！这是最后的效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voSauR.png" alt=""></p>
+<p>至于<code>about</code>和<code>album</code>页的话，可以放自己想放的东西。</p>
+<blockquote>
+<p>另及：还记得我们在4.1.2节中给文章添加了一个<code>- []</code>嵌套分类吗？现在你应该可以理解这是什么意思了吧：它表示分类下的子分类，比如“编程”，“编程-<code>Python</code>”等等。同时支持更多层嵌套。</p>
+</blockquote>
+<h4 id="4-2-2-404页面"><a href="#4-2-2-404页面" class="headerlink" title="4.2.2 404页面"></a>4.2.2 <code>404</code>页面</h4><p><code>404</code>页面和之前的页面做起来很相似。还是用<code>hexo new page 404</code>这个命令来新建出页面，然后我们来添加一些配置：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-08-15 16:28:02</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">sitemap:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404</span></span><br></pre></td></tr></table></figure>
+<p><code>title</code>设为空，这样就不会显示标题。<code>comments: false</code>表示不在本页上加载<code>Gitalk</code>，详见第5章。<code>sitemap: false</code>表示不把本页加入站点地图，详见第6章。最重要的是这个<code>permalink</code>，它会声明：这个页面是通用<code>404</code>页面。往里面加上一些提示性的句子，比如：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="section"># 404 Not Found 您访问的页面走丢了！</span></span><br><span class="line"></span><br><span class="line">将于10秒后返回 [<span class="string">首页</span>](<span class="link">https://guleixibian2009.github.io/hexo-website-tutorial</span>) ......</span><br></pre></td></tr></table></figure>
+<p>渲染出来就是这样：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/vo9hh8.png" alt=""></p>
+<h5 id="4-2-2-1-自动跳转功能"><a href="#4-2-2-1-自动跳转功能" class="headerlink" title="4.2.2.1 自动跳转功能"></a>4.2.2.1 自动跳转功能</h5><p>上面的代码块里提到了10秒后返回主页。这个是靠下面一段代码实现的：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">&quot;javascript&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我曾经在<code>Jekyll</code>那篇文章里面提到过，还记得吗？直接把它粘贴到<code>index.md</code>末尾即可。重新渲染，可以自己去看一下效果。</p>
+<h3 id="4-3-关于搜索——searchdb"><a href="#4-3-关于搜索——searchdb" class="headerlink" title="4.3 关于搜索——searchdb"></a>4.3 关于搜索——<code>searchdb</code></h3><p>当我们网站上的文章渐渐多起来后，我们就需要一个方便读者找到对应文章的方式，这就是一个搜索功能。我们先安装一下对应的<code>package</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm i hexo<span class="literal">-generator</span><span class="literal">-searchdb</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>不同的是，我们不能直接去找主题<code>_config.yml</code>内的配置，而是得先在博客配置内添加这样的配置，添在底部即可：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>随后我们再去找这一段配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voAu79.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>先把<code>enable</code>调成<code>true</code>，就可以开启功能了。然后看到<code>top_n_per_article</code>的选项，意思是说每篇博客显示几个结果。可以调大一点，比如调成5。我们来看一下渲染的效果。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voAZXF.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voAmm4.png" alt=""></p>
+<p>然后顺便讲一下那个提示语是怎么改的。找到<code>i18n</code>文件，如下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voAn0J.png" alt=""></p>
+<p>把<code>placeholder</code>改成你想要的提示语即可。</p>
+<h3 id="4-4-如何对README和LICENSE禁用渲染"><a href="#4-4-如何对README和LICENSE禁用渲染" class="headerlink" title="4.4 如何对README和LICENSE禁用渲染"></a>4.4 如何对<code>README</code>和<code>LICENSE</code>禁用渲染</h3><p>也许你已经发现，我们在第1节中创建的<code>README</code>和<code>LICENSE</code>都已经被覆盖，找不到了，就连<code>commit</code>都消失的无影无踪。不过，经过我的尝试，我们还是有办法添加回它们的。我们先复制这两个文件进<code>source</code>文件夹，然后找到主题配置：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voA590.png" alt=""></p>
+<p>看到那行<code>skip_render</code>了吗？我们用一个列表来代表禁用渲染的文件：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> [<span class="string">README.md</span>, <span class="string">LICENSE</span>]</span><br></pre></td></tr></table></figure>
+<p><code>[]</code>就表示一个列表，每个文件名用逗号隔开即可。看一下渲染之后会发生什么：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voAhhq.png" alt=""></p>
+<p>这样，我们的<code>README</code>就不会被渲染成<code>HTML</code>了。以上这些，就是我们所有的较为基础的配置与文章相关的内容了。接下来我们会涉及到一些更高级的功能，使用到第三方插件，可以自己选择。</p>
+<h2 id="5-第三方插件配置"><a href="#5-第三方插件配置" class="headerlink" title="5. 第三方插件配置"></a>5. 第三方插件配置</h2><p>写到这文章已经很长了，将近20k字了。不管怎么样，我们来继续我们的教程，<del>争取再写20k啊</del>。</p>
+<h3 id="5-1-动态背景"><a href="#5-1-动态背景" class="headerlink" title="5.1 动态背景"></a>5.1 动态背景</h3><p>读了这么久的文章了，不会还没注意到我的动态背景吧。在背景上有50个点，随机游走，相互靠近时就会连成一条线。靠近鼠标时则会被“困住”，直到再次移动鼠标。这叫做<code>canvas_nest</code>。</p>
+<blockquote>
+<p>另及：<code>next</code>其实有官方的动态背景，但我个人不满意，所以搜到了这一款。它曾经被集成入<code>Next</code>，但现在已不默认被集成，所以我把它归在第三方插件中。</p>
+</blockquote>
+<p>我们先安装对应的插件，在<code>themes/next</code>文件夹下执行：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme<span class="literal">-next</span>/theme<span class="literal">-next</span><span class="literal">-canvas</span><span class="literal">-nest</span> source/lib/canvas<span class="literal">-nest</span></span><br></pre></td></tr></table></figure>
+<p>随后我们需要新增一段<code>yml</code>，加在主题配置文件内，随便加在哪里。不过便于后期修改，我把它和其他动态背景放在一起。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voVwSP.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas Nest</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest </span></span><br><span class="line"><span class="attr">canvas_nest:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> </span><br><span class="line">  <span class="attr">onmobile:</span> <span class="literal">true</span> </span><br><span class="line">  <span class="attr">color:</span> <span class="string">&#x27;0,0,0&#x27;</span> </span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.5</span> </span><br><span class="line">  <span class="attr">zIndex:</span> <span class="number">-1</span> </span><br><span class="line">  <span class="attr">count:</span> <span class="number">50</span> </span><br></pre></td></tr></table></figure>
+<p>可以修改的有几个参数：<code>color</code>指线的颜色，配合<code>opacity</code>透明度使用；<code>zIndex</code>指图层，<code>-1</code>代表最下层；<code>count</code>代表最多同时出现多少条线。修改之后渲染即可。我特地给你们看一下效果：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/03/voVaWt.png" alt=""></p>
+<h3 id="5-2-侧边栏插件"><a href="#5-2-侧边栏插件" class="headerlink" title="5.2 侧边栏插件"></a>5.2 侧边栏插件</h3><h4 id="5-2-1-外联播放器"><a href="#5-2-1-外联播放器" class="headerlink" title="5.2.1 外联播放器"></a>5.2.1 外联播放器</h4><h4 id="5-2-2-天气插件"><a href="#5-2-2-天气插件" class="headerlink" title="5.2.2 天气插件"></a>5.2.2 天气插件</h4><p>（未完待续，未完待续，真的还有很多）</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
+<ol>
+<li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
+</li>
+<li><p><a href="https://corecabin.cn/2021/08/14/solve-some-problems-of-hexo-renderer-kramed-rendering-conflicts/">解决hexo-renderer-kramed渲染冲突的部分问题 | 卡洛的核心舱</a></p>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/30836436">Hexo+Next主题优化 | 知乎</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/nightmare_dimple/article/details/86661502">Hexo博客优化之Next主题美化 | nightmare_dimple的博客 | CSDN博客</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>Pages</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Website</tag>
+        <tag>GitHub</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
