@@ -1109,7 +1109,8 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       admin       : ['guleixibian2009'],
       id          : '166d419ffc890c1dbc34a83fc8bf61aa',
         language: 'zh-CN',
-      distractionFreeMode: false
+      distractionFreeMode: false,
+      proxy       : 'https://github.com/login/oauth/access_token'
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
