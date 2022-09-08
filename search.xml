@@ -1,62 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GitHub-Cli 的安装与使用</title>
-    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
-<span id="more"></span>
-<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
-<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
-<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
-<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
-<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
-<p>嗯……搞定了！</p>
-<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
-<p>然后就会有下面的提示语：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
-<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
-<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
-<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
-<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
-<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
-<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
-<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
-<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
-<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
-<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
-<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
-<p>示意图如下：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
-<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
-<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
-<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p>就可以获得有关命令的更多信息了！</p>
-<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>GitHub-Cli</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>GitHub-Cli</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>3个小妙招加速你的GitHub~</title>
     <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
     <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
@@ -171,503 +115,59 @@
       </tags>
   </entry>
   <entry>
-    <title>序言</title>
-    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
-    <content><![CDATA[<blockquote>
-<p>在现实断裂的地方<br>梦 汇成了海</p>
-<p>顾城 《弥合》  </p>
-</blockquote>
-<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
+    <title>GitHub-Cli 的安装与使用</title>
+    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
 <span id="more"></span>
-<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
-<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
-<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
-<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
-<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
-    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
-    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
-<span id="more"></span>
-<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
-<hr>
-<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/"><code>GitHub</code></a> 的 <strong><a href="https://pages.github.com/"><code>Pages</code></a></strong> 功能。<br>身为程序员，大家肯定都听说过<code>GitHub</code>吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
-<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册<code>GitHub</code>账号</h3><p>（如果你有<code>GitHub</code>账号，请跳过这一步）如果你没用过<code>GitHub</code>，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
-<p>（尴尬：我注册时不是这样啊？？？）<br>登录<code>GitHub</code>可能会需要验证码。登录一下注册时的邮箱，你会收到<code>GitHub</code>（<code>noreply@github.com</code>）的邮件，比如说：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
-<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 <code>New</code> 按钮，然后会弹出如下界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
-<p>我们如图勾选，</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
-<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
-<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
-<hr>
-<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选<code>Pages</code></h3><p>在使用这个功能之前，你要告诉<code>GitHub</code>你要把这个仓库当做网页源码。<br>在 <code>Settings</code> 里找到 <code>pages</code> 选项，应该是这样子的：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
-<p>把 <code>Source</code> 调成你现有的分支，点击 <code>Save</code> 。  </p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
-<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建<code>index.md</code></h3><p><img data-src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
-<p>为了<code>Github Pages</code>更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
-<p>点击 <code>+</code> 按钮，选择<code>Create New File</code>，然后进入如下界面：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
-<p>在输入框里输入<code>index.md</code>。<code>Index</code>指索引。你将会在这个新文件里写主页。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
-<p>点击<code>Commit New Changes</code>。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用<code>GitHub Pages</code>功能时，你并不需要会写<code>HTML</code>，只需要写文章就行了。 而在<code>Github Pages</code>功能里，我们写文章的方法是写<code>Markdown</code>。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习<code>Markdown</code>了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/2021/08/25/真的非常简单-Markdown基本语法/">传送门</a> 。  </p>
-<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br><code>GithubPages</code>已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
-<p>在这个界面，你可以选择一个你喜欢的样式（<code>Theme</code>）。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
-<p>在这里面我选了一个<code>Cayman</code>（简约大气）。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
-<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对<code>Github Pages</code>功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
-<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 <code>_config.yml</code></h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
-<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是<code>Github Pages</code>默认给你使用<code>jekyll</code>渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
-<p>其实很简单，只要往下面添加一行就可以啦！</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
-<p>你，都学废了吗？</p>
-<hr>
-<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. <code>404</code>页面</h2><p>在访问你的网站时，别人总有输错网址的时候。<code>Github</code>其实有自带的<code>404</code>，像这样：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
-<p>不过这个灰色的<code>404</code>实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
-<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用<code>Markdown</code>填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
-<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的<code>404</code>对其他<code>github.io</code>不起作用），它依然会显示那个灰色的<code>404</code>。  </p>
-<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
-<hr>
-<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和<code>404</code>页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
-<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实<code>Github Pages</code>也可以做到这一点。如果你想让<code>Jekyll</code>在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
-<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用<code>Markdown</code>填进去，再次访问就有新界面啦！</p>
-<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于<code>Ruby</code>的桌面版<code>Jekyll</code>，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
-<p>其实这个很容易实现，其实是一段<code>JavaScript</code>脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
-<hr>
-<h2 id="5-GitHub-Pages的工作原理"><a href="#5-GitHub-Pages的工作原理" class="headerlink" title="5. GitHub Pages的工作原理"></a>5. <code>GitHub Pages</code>的工作原理</h2><p>说到这大家可能会想，<code>Pages</code>能有什么工作原理？其实，如果好奇的你曾经点进过<code>GitHub</code>仓库内<code>Actions</code>一个栏目，你就会发现每一次更新提交后，系统就会自动触发<code>Page Build Deployment</code>这个内置<code>Action</code>，说明白了，就是自动化！具体讲解，敬请等待以后的<code>GitHub Actions</code>使用指南！</p>
-<hr>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用<code>Github Pages</code>作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有<code>HEXO</code>和<code>Wordpress</code>等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
+<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
+<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
+<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
+<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
+<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
+<p>嗯……搞定了！</p>
+<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
+<p>然后就会有下面的提示语：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
+<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
+<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
+<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
+<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
+<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
+<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
+<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
+<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
+<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
+<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
+<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
+<p>示意图如下：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
+<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
+<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>就可以获得有关命令的更多信息了！</p>
+<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
 ]]></content>
       <categories>
         <category>GitHub</category>
-        <category>Pages</category>
-        <category>Jekyll</category>
+        <category>GitHub-Cli</category>
       </categories>
       <tags>
         <tag>Github</tag>
-        <tag>Website</tag>
-        <tag>Jekyll</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>真的非常简单-Markdown基本语法</title>
-    <url>/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p>
-<span id="more"></span>
-<h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. <code>Markdown</code> 是什么？</h2><blockquote>
-<p><code>Markdown</code>是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。<br>它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的<code>XHTML</code>(或者<code>HTML</code>)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。<br>由于<code>Markdown</code>的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用<code>Markdown</code>来撰写帮助文档或是用于论坛上发表消息。如<code>GitHub</code>、<code>OpenStreetMap</code> 、<code>SourceForge</code>、简书等，甚至还能被使用来撰写电子书。<br>（摘自百度百科）  </p>
-</blockquote>
-<p>注：一个好的编辑器是学习的基础。如果你坚持<code>WYSIWYG</code>（所见即所得），这里推荐开源项目<code>MarkText</code>。官网：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>。当然你也可以用<code>VSCode</code>或者（付费，虽然超好）<code>Typora</code>。</p>
-<hr>
-<h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像<code>HTML</code>一样写标题</h3><p>在<code>HTML</code>里，标题分六级：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>相对应的，<code>Markdown</code>标题也分六级。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># This is an H1  </span></span><br><span class="line"><span class="section">## This is an H2  </span></span><br><span class="line">...  </span><br><span class="line"><span class="section">###### This is an H6  </span></span><br></pre></td></tr></table></figure>
-<p>就像你看到的那样，每层标题就是几个 <strong><code>#</code></strong>。</p>
-<h3 id="1-2-Markdown专属标题"><a href="#1-2-Markdown专属标题" class="headerlink" title="1.2 Markdown专属标题"></a>1.2 <code>Markdown</code>专属标题</h3><p>不过，在<code>Markdown</code>中表示标题也可以用一种特殊的方式。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">This is an H1</span></span><br><span class="line"><span class="section">=============</span></span><br><span class="line"></span><br><span class="line"><span class="section">This is an H2</span></span><br><span class="line"><span class="section">-------------</span></span><br></pre></td></tr></table></figure>
-<p>不过它本身只支持2种标题，即大、小标题。</p>
-<hr>
-<h2 id="2-文字样式语法"><a href="#2-文字样式语法" class="headerlink" title="2. 文字样式语法"></a>2. 文字样式语法</h2><p>在<code>Markdown</code>中，文字可以是<em>斜体</em>、<strong>粗体</strong>、<strong><em>粗斜体</em></strong>,<del>删除线</del>，<u>下划线</u>。</p>
-<h3 id="2-1-基本样式"><a href="#2-1-基本样式" class="headerlink" title="2.1 基本样式"></a>2.1 基本样式</h3><ul>
-<li><p>斜体用一个<code>*</code>包围，就像<code>*这是斜体*</code>，显示出来就是 <em>这是斜体</em> </p>
-</li>
-<li><p>粗体用两个<code>*</code>包围，就像<code>**这是粗体**</code>，显示出来就是 <strong>这是粗体</strong></p>
-</li>
-<li><p>粗斜体用三个<code>*</code>包围，就像<code>***这是粗斜体***</code>，显示出来就是 <strong><em>这是粗斜体</em></strong></p>
-<p>（本质上它其实就是<strong>粗体</strong>包住了<em>斜体</em>，所以 <strong><em>你交学费</em></strong> 了吗）</p>
-</li>
-<li><p>删除线用两个<code>~</code>包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del>  </p>
-</li>
-<li><p><code>@mention</code>：<code>GFM</code>中的一种“点名”的方式，其他时候基本没用。</p>
-</li>
-</ul>
-<h4 id="2-1-1-引用块"><a href="#2-1-1-引用块" class="headerlink" title="2.1.1 引用块"></a>2.1.1 引用块</h4><p>想要突出显示你引用了某段话？可以使用引用段落！</p>
-<blockquote>
-<p>这就是一个简单的引用了！你可以在这里面<em>使用</em> <strong>其他</strong><code>的语法</code>。它的语法是：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用引用引用引用引用引用引用引用！</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>引用以一个右尖括号开始。一般情况下，我们在多行引用时，会在每一行的开头加一个符号，但如果你懒……</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></span><br><span class="line"><span class="quote">&gt; tempor incididunt ut labore et dolore magna aliqua.</span></span><br></pre></td></tr></table></figure>
-<p>可以变为：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  </span></span><br><span class="line">tempor incididunt ut labore et dolore magna aliqua.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>想要嵌套引用，直接多加一个符号！</p>
-<blockquote>
-<p>嵌套引用中！</p>
-</blockquote>
-</blockquote>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum...</span></span><br><span class="line"><span class="quote">&gt; &gt; Lorem ipsum...</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自<code>HTML</code>的样式</h3><blockquote>
-<p>由于<code>Markdown</code>可以直接转换成<code>HTML</code>（在百科里说过了），所以有很多<code>HTML</code>标签都可以在<code>Markdown</code>中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code>（当然也不是所有标签都受支持，得看编译器） 。<strong>如果可能，他们会直接被插入生成的<code>HTML</code>文件中</strong>。</p>
-</blockquote>
-<h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用<code>HTML</code>实现的，在<code>HTML</code>里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>。  </p>
-<h4 id="2-2-2-颜色"><a href="#2-2-2-颜色" class="headerlink" title="2.2.2 颜色"></a>2.2.2 颜色</h4><p>如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 <code>&lt;font&gt;</code> 标签，语法为</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span> Some text <span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这个<code>&lt;font&gt;</code>标签接收一个参数<code>color</code>。你可以把它设为一些常见的颜色，比如</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">颜色</th>
-<th style="text-align:center">效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Red&gt;</code></td>
-<td style="text-align:center"><font color=Red>Red</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Yellow&gt;</code></td>
-<td style="text-align:center"><font color=Yellow>Yellow</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Blue&gt;</code></td>
-<td style="text-align:center"><font color=Blue>Blue</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Green&gt;</code></td>
-<td style="text-align:center"><font color=Green>Green</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Gold&gt;</code></td>
-<td style="text-align:center"><font color=Gold>Gold</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Grey&gt;</code></td>
-<td style="text-align:center"><font color=Grey>Grey</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Purple&gt;</code></td>
-<td style="text-align:center"><font color=Purple>Purple</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Azure&gt;</code></td>
-<td style="text-align:center"><font color=Azure>Azure</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=GreenYellow&gt;</code></td>
-<td style="text-align:center"><font color=GreenYellow>GreenYellow</font></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~  </p>
-<p>另外，这其实是一个过时了的<code>HTML</code> 标签。所以，我想，还是要避免使用吧。如果可行，可以试试行内<code>CSS</code>，即：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了，它表示一种快捷键方式。语法就是：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span>Ctrl+Shift+L<span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure>
-<p>这个脚注一般用数字表示。当然它还有更高级的功能，见下：</p>
-<hr>
-<h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
-<p>想要直接显示这个链接而不显示代替名？可以这样做：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p>显示出来就是：<a href="https://example.com">https://example.com</a>  </p>
-<p>想要在一处集中显示所有链接？可以这样使用脚注来替代！</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Example</span>](<span class="link">example</span>)</span><br><span class="line">[example] : https://www.example.com/</span><br></pre></td></tr></table></figure>
-<p>当然我不太习惯用这个。</p>
-<h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在<code>[Name](Place)</code> 之前加上一个 <code>!</code> (都是英文标点),如</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Link &quot;替代名&quot;</span>)</span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">![<span class="string">Pull Shark</span>](<span class="link">https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png &quot;Pull Shark&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>“替代名”不是必要的，它会被解析为<code>img</code>标签的<code>alt</code>属性。在方括号<code>[Pull Shark]</code>中的内容在有些编译器下会作为一种标题被显示在渲染的图片下面。e.g.</p>
-<p><img data-src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="Pull Shark" title="Pull Shark"></p>
-<p>当然一些高级一些的属性（如居中）还是用<code>HTML</code>做出来的！（不知道为什么<code>Hexo</code>会自动居中）</p>
-<hr>
-<h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4. 列表"></a>4. 列表</h2><p>在<code>Markdown</code>中，列表分两种：有序的，和无序的。</p>
-<h3 id="4-1-有序列表"><a href="#4-1-有序列表" class="headerlink" title="4.1 有序列表"></a>4.1 有序列表</h3><p>有序列表，就像  </p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一个元素  </span><br><span class="line"><span class="bullet">2.</span> 第二个元素  </span><br><span class="line"><span class="bullet">3.</span> 第三个元素</span><br></pre></td></tr></table></figure>
-<p>在<code>Markdown</code>中，直接打 <code>1.</code> 就会出现一个有序列表。当然， <code>i.</code> <code>a.</code> 甚至不从头开始也可以：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">a. #1</span><br><span class="line">b. #2</span><br><span class="line">c. #3</span><br></pre></td></tr></table></figure>
-<p>当然这还是取决于你用的编译器啦！</p>
-<h3 id="4-2-无序列表"><a href="#4-2-无序列表" class="headerlink" title="4.2 无序列表"></a>4.2 无序列表</h3><p>无序列表的原理和有序列表一样，不过不以 <code>1.</code> 打头，而是：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 第一种方式</span><br><span class="line"><span class="bullet">-</span> 第一种方式</span><br></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">+</span> 第二种方式</span><br><span class="line"><span class="bullet">+</span> 第二种方式</span><br></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 第三种方式</span><br><span class="line"><span class="bullet">*</span> 第三种方式</span><br></pre></td></tr></table></figure>
-<p>显示出来都是</p>
-<ul>
-<li>无序列表</li>
-<li>无序列表</li>
-</ul>
-<p>怎么样，够简单吧……</p>
-<h3 id="4-3-To-do-list"><a href="#4-3-To-do-list" class="headerlink" title="4.3 To do list"></a>4.3 <code>To do list</code></h3><p>通过无序列表我们还可以创建一个任务表（<code>To do list</code>），如下：</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.1</li>
-<li style="list-style: none"><input type="checkbox" disabled="disabled"></input> No.2</li>
-<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.3</li>
-</ul>
-<p>语法如下：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] No.1</span><br><span class="line"><span class="bullet">-</span> [ ] No.2</span><br><span class="line"><span class="bullet">-</span> [x] No.3</span><br></pre></td></tr></table></figure>
-<p>其中 <code>[x]</code> 表示“已完成”，<code>[ ]</code> 表示“未完成”。可能<code>Hexo</code>有的时候渲染不出来这个，大家可以移步<a href="https://github.com/Guleixibian2009/Website-Ariticle-Backup/blob/master/_posts/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.md">原文件</a>查看！</p>
-<h3 id="4-4-合并列表"><a href="#4-4-合并列表" class="headerlink" title="4.4 合并列表"></a>4.4 合并列表</h3><p>你可以把多种列表嵌套起来。如：</p>
-<ul>
-<li><p>Hello World!</p>
-</li>
-<li><p>这是一个列表……</p>
-<ol>
-<li><p>里面还有一个列表！</p>
-</li>
-<li><p>的确是可以嵌套的！</p>
-</li>
-</ol>
-</li>
-<li><p>还是原来那个列表~</p>
-<ul>
-<li><p>可以同样嵌套无序列表</p>
-</li>
-<li><p>等等等等</p>
-</li>
-<li><p>[x] 还可以更改列表类型啊！</p>
-</li>
-<li><p>[ ] 怎么样？</p>
-</li>
-</ul>
-</li>
-<li><p>就是这样啦！</p>
-</li>
-</ul>
-<hr>
-<h2 id="5-文档里的小“零件”"><a href="#5-文档里的小“零件”" class="headerlink" title="5.  文档里的小“零件”"></a>5.  文档里的小“零件”</h2><h3 id="5-1-分割线"><a href="#5-1-分割线" class="headerlink" title="5.1 分割线"></a>5.1 分割线</h3><p>分割线这个东东在文章分节这个功能上还是非常的实用的。你可以这样创建一条：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">或</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
-<p>正如你看到的那样啦！</p>
-<h3 id="5-2-强制换行的几种方式"><a href="#5-2-强制换行的几种方式" class="headerlink" title="5.2 强制换行的几种方式"></a>5.2 强制换行的几种方式</h3><p>在<code>Markdown</code>里面如果你不进行所谓强制换行，那么连续的段落就会被自动连接在一起。这个时候，<code>HTML</code>大兄就会来打杂：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>直接把它放在某一行的结尾，这两行就会自动拆分。如果你嫌麻烦…那么在想要换行的地方（行尾）加两个空格就可以……我也是没法展示了，这个不够直观。</p>
-<h3 id="5-3-符号的转义-escaping"><a href="#5-3-符号的转义-escaping" class="headerlink" title="5.3 符号的转义(escaping)"></a>5.3 符号的转义(<code>escaping</code>)</h3><p>什么，这么简单的<code>Markdown</code>都需要转义？好吧，我承认，这还真的要！如果你仔细回想一下（或者预知一下未来，看下面的代码块）你就会发现，我们在处理文字样式的时候我们使用了各种符号，现整理如下：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>意义</th>
-<th>符号</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>\</code></td>
-<td>反斜杠（转义本身）</td>
-<td>``</td>
-<td>反引号（代码块）</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>星号（加粗，斜体，无序列表等）</td>
-<td><code>_</code></td>
-<td>下划线（加粗，斜体等）</td>
-</tr>
-<tr>
-<td><code>()</code></td>
-<td>小括号（链接，图片）</td>
-<td><code>[]</code></td>
-<td>中括号（链接，图片）</td>
-</tr>
-<tr>
-<td><code>~</code></td>
-<td>波浪号（下标，删除线）</td>
-<td><code>$</code></td>
-<td>美元（某些情况下，<code>LaTex</code>）</td>
-</tr>
-<tr>
-<td><code>#</code></td>
-<td>井号（标题）</td>
-<td><code>+</code></td>
-<td>加号（无序列表）</td>
-</tr>
-<tr>
-<td><code>-</code></td>
-<td>减号（无序列表）</td>
-<td><code>.</code></td>
-<td>点号（有序列表）</td>
-</tr>
-<tr>
-<td><code>@</code></td>
-<td>@号（<code>GFM</code>中，<code>@mention</code>）</td>
-<td>`\</td>
-<td>`</td>
-<td>竖线（表格）</td>
-</tr>
-<tr>
-<td><code>&lt;</code></td>
-<td>左尖括号（<code>HTML</code>）</td>
-<td><code>&gt;</code></td>
-<td>右尖括号（<code>HTML</code>）</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>那么，如何转义呢？只需要在需要转义的字符前面添加反斜杠就可以啦！比如，*这段文字其实不是斜体*！</p>
-<p>代码如下：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\<span class="emphasis">*这段文字其实不是斜体!\*</span></span><br><span class="line"><span class="emphasis">*但这个是！*</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-4-没什么用的注释"><a href="#5-4-没什么用的注释" class="headerlink" title="5.4 没什么用的注释"></a>5.4 没什么用的注释</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&lt;!-- 这就是个注释了，我甚至不想讲… --&gt;</span><br></pre></td></tr></table></figure>
-<p>对对，这就是个<code>HTML</code>注释而已。99.8%的情况下这个东东没有用，但如果…嗯好吧其实也不是一点作用都没有，如<code>Markdown</code>文档中的定位（比如你每天靠<code>GitHub Actions</code>生成点什么）或者<code>Hexo</code>文章的节选会使用<code>&lt;!-- More --&gt;</code>。</p>
-<hr>
-<h2 id="6-激动人心！代码块"><a href="#6-激动人心！代码块" class="headerlink" title="6. 激动人心！代码块"></a>6. 激动人心！代码块</h2><p><del>是不是等它好久了…</del> 行了也见了这么多行内代码块了，我怎么能不介绍一下呢。</p>
-<p>行内代码块，只需将代码块内的内容用 ````包围起来就可以了。如，</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="code">`hello, world!`</span></span><br></pre></td></tr></table></figure>
-<p>至于长篇的“大”代码块，有两种方法：</p>
-<ol>
-<li><p>在“代码块”前缩进4格，直到代码结束；</p>
-</li>
-<li><p>使用下面这种方式：</p>
-</li>
-</ol>
-<div class="highlight-container">
-  <figure class="highlight md">
-    <div class="table-container">
-      <table>
-        <tbody>
-          <tr>
-            <td class="gutter">
-              <pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span></pre>
-            </td>
-            <td class="code">
-              <pre><span class="line">```</span>
-<span class="line">Here is some code.</span>
-<span class="line">```</span></pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </figure>
-  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
-</div>
-
-<p>想要指定语法并获得高亮技能？看到下面那个<code>python</code>没有！</p>
-<div class="highlight-container">
-  <figure class="highlight md">
-    <div class="table-container">
-      <table>
-        <tbody>
-          <tr>
-            <td class="gutter">
-              <pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span></pre>
-            </td>
-            <td class="code">
-              <pre><span class="line">```python</span>
-<span class="line">def hello():</span>
-<span class="line">    print("Hello, world!")</span>
-<span class="line"></span>
-<span class="line">hello():</span>
-<span class="line">```</span></pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </figure>
-  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
-</div>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
-<h2 id="7-表格来了"><a href="#7-表格来了" class="headerlink" title="7. 表格来了"></a>7. 表格来了</h2><p>需要在自己的文档中直观地表示数据？可以尝试列一个表格！Here we go~</p>
-<h3 id="7-1-基本表格"><a href="#7-1-基本表格" class="headerlink" title="7.1 基本表格"></a>7.1 基本表格</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>第一列</th>
-<th>第二列</th>
-<th>第三列</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第一行</td>
-<td>数据1</td>
-<td>数据2</td>
-<td>数据3</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>光看这个表可能还真猜不出来它的语法是什么……但其实如果我真的写出来却会觉得这种语法也很直观！（不觉得那些竖线很像网格线吗）</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">||第一列|第二列|第三列|</span><br><span class="line">|第一行|数据1|数据2|数据3|</span><br></pre></td></tr></table></figure>
-<p>所以，每两个<code>|</code>之间是一格，5个<code>|</code>就是4格。没有限制最多多少行或多少列，且不要求每行格数相同！只是我这里渲染不出来……</p>
-<h3 id="7-2-每列的居中、靠右"><a href="#7-2-每列的居中、靠右" class="headerlink" title="7.2 每列的居中、靠右"></a>7.2 每列的居中、靠右</h3><p>什么，还有这种功能？好吧，我们只需要一条特殊“控制行”：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">|     | 第一列 | 第二列 | 第三列 |</span><br><span class="line">| --- |:--- |:---:| ---:|</span><br><span class="line">| 第一行 | 靠左  | 居中  | 靠右  |</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:left">第一列</th>
-<th style="text-align:center">第二列</th>
-<th style="text-align:right">第三列</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第一行</td>
-<td style="text-align:left">靠左</td>
-<td style="text-align:center">居中</td>
-<td style="text-align:right">靠右</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<p>到这里，你已经学完了基础的<code>Markdown</code>语法！想要学习<code>Markdown</code>中更高级的图表功能？敬请期待下一篇教程！</p>
-<hr>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>以下是注释内容：  </p>
-<blockquote id="fn_1">
-<sup>1</sup>. 你学废了吗？<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<hr>
-]]></content>
-      <categories>
-        <category>编程</category>
-        <category>Markdown</category>
-        <category>Markdown语法</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>编程</tag>
-        <tag>语法</tag>
+        <tag>GitHub-Cli</tag>
       </tags>
   </entry>
   <entry>
@@ -1620,6 +1120,506 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
+    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
+    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
+<span id="more"></span>
+<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
+<hr>
+<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/"><code>GitHub</code></a> 的 <strong><a href="https://pages.github.com/"><code>Pages</code></a></strong> 功能。<br>身为程序员，大家肯定都听说过<code>GitHub</code>吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
+<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册<code>GitHub</code>账号</h3><p>（如果你有<code>GitHub</code>账号，请跳过这一步）如果你没用过<code>GitHub</code>，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
+<p>（尴尬：我注册时不是这样啊？？？）<br>登录<code>GitHub</code>可能会需要验证码。登录一下注册时的邮箱，你会收到<code>GitHub</code>（<code>noreply@github.com</code>）的邮件，比如说：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
+<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 <code>New</code> 按钮，然后会弹出如下界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
+<p>我们如图勾选，</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
+<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
+<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
+<hr>
+<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选<code>Pages</code></h3><p>在使用这个功能之前，你要告诉<code>GitHub</code>你要把这个仓库当做网页源码。<br>在 <code>Settings</code> 里找到 <code>pages</code> 选项，应该是这样子的：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
+<p>把 <code>Source</code> 调成你现有的分支，点击 <code>Save</code> 。  </p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建<code>index.md</code></h3><p><img data-src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
+<p>为了<code>Github Pages</code>更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
+<p>点击 <code>+</code> 按钮，选择<code>Create New File</code>，然后进入如下界面：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
+<p>在输入框里输入<code>index.md</code>。<code>Index</code>指索引。你将会在这个新文件里写主页。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
+<p>点击<code>Commit New Changes</code>。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用<code>GitHub Pages</code>功能时，你并不需要会写<code>HTML</code>，只需要写文章就行了。 而在<code>Github Pages</code>功能里，我们写文章的方法是写<code>Markdown</code>。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习<code>Markdown</code>了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/2021/08/25/真的非常简单-Markdown基本语法/">传送门</a> 。  </p>
+<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br><code>GithubPages</code>已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<p>在这个界面，你可以选择一个你喜欢的样式（<code>Theme</code>）。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
+<p>在这里面我选了一个<code>Cayman</code>（简约大气）。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
+<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对<code>Github Pages</code>功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
+<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 <code>_config.yml</code></h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
+<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是<code>Github Pages</code>默认给你使用<code>jekyll</code>渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
+<p>其实很简单，只要往下面添加一行就可以啦！</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
+<p>你，都学废了吗？</p>
+<hr>
+<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. <code>404</code>页面</h2><p>在访问你的网站时，别人总有输错网址的时候。<code>Github</code>其实有自带的<code>404</code>，像这样：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
+<p>不过这个灰色的<code>404</code>实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
+<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用<code>Markdown</code>填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
+<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的<code>404</code>对其他<code>github.io</code>不起作用），它依然会显示那个灰色的<code>404</code>。  </p>
+<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
+<hr>
+<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和<code>404</code>页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
+<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实<code>Github Pages</code>也可以做到这一点。如果你想让<code>Jekyll</code>在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
+<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用<code>Markdown</code>填进去，再次访问就有新界面啦！</p>
+<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于<code>Ruby</code>的桌面版<code>Jekyll</code>，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
+<p>其实这个很容易实现，其实是一段<code>JavaScript</code>脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
+<hr>
+<h2 id="5-GitHub-Pages的工作原理"><a href="#5-GitHub-Pages的工作原理" class="headerlink" title="5. GitHub Pages的工作原理"></a>5. <code>GitHub Pages</code>的工作原理</h2><p>说到这大家可能会想，<code>Pages</code>能有什么工作原理？其实，如果好奇的你曾经点进过<code>GitHub</code>仓库内<code>Actions</code>一个栏目，你就会发现每一次更新提交后，系统就会自动触发<code>Page Build Deployment</code>这个内置<code>Action</code>，说明白了，就是自动化！具体讲解，敬请等待以后的<code>GitHub Actions</code>使用指南！</p>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用<code>Github Pages</code>作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有<code>HEXO</code>和<code>Wordpress</code>等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>Pages</category>
+        <category>Jekyll</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Website</tag>
+        <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
+    <content><![CDATA[<blockquote>
+<p>在现实断裂的地方<br>梦 汇成了海</p>
+<p>顾城 《弥合》  </p>
+</blockquote>
+<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
+<span id="more"></span>
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
+<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
+<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
+<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
+<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>真的非常简单-Markdown基本语法</title>
+    <url>/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p>
+<span id="more"></span>
+<h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. <code>Markdown</code> 是什么？</h2><blockquote>
+<p><code>Markdown</code>是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。<br>它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的<code>XHTML</code>(或者<code>HTML</code>)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。<br>由于<code>Markdown</code>的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用<code>Markdown</code>来撰写帮助文档或是用于论坛上发表消息。如<code>GitHub</code>、<code>OpenStreetMap</code> 、<code>SourceForge</code>、简书等，甚至还能被使用来撰写电子书。<br>（摘自百度百科）  </p>
+</blockquote>
+<p>注：一个好的编辑器是学习的基础。如果你坚持<code>WYSIWYG</code>（所见即所得），这里推荐开源项目<code>MarkText</code>。官网：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>。当然你也可以用<code>VSCode</code>或者（付费，虽然超好）<code>Typora</code>。</p>
+<hr>
+<h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像<code>HTML</code>一样写标题</h3><p>在<code>HTML</code>里，标题分六级：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>相对应的，<code>Markdown</code>标题也分六级。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># This is an H1  </span></span><br><span class="line"><span class="section">## This is an H2  </span></span><br><span class="line">...  </span><br><span class="line"><span class="section">###### This is an H6  </span></span><br></pre></td></tr></table></figure>
+<p>就像你看到的那样，每层标题就是几个 <strong><code>#</code></strong>。</p>
+<h3 id="1-2-Markdown专属标题"><a href="#1-2-Markdown专属标题" class="headerlink" title="1.2 Markdown专属标题"></a>1.2 <code>Markdown</code>专属标题</h3><p>不过，在<code>Markdown</code>中表示标题也可以用一种特殊的方式。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">This is an H1</span></span><br><span class="line"><span class="section">=============</span></span><br><span class="line"></span><br><span class="line"><span class="section">This is an H2</span></span><br><span class="line"><span class="section">-------------</span></span><br></pre></td></tr></table></figure>
+<p>不过它本身只支持2种标题，即大、小标题。</p>
+<hr>
+<h2 id="2-文字样式语法"><a href="#2-文字样式语法" class="headerlink" title="2. 文字样式语法"></a>2. 文字样式语法</h2><p>在<code>Markdown</code>中，文字可以是<em>斜体</em>、<strong>粗体</strong>、<strong><em>粗斜体</em></strong>,<del>删除线</del>，<u>下划线</u>。</p>
+<h3 id="2-1-基本样式"><a href="#2-1-基本样式" class="headerlink" title="2.1 基本样式"></a>2.1 基本样式</h3><ul>
+<li><p>斜体用一个<code>*</code>包围，就像<code>*这是斜体*</code>，显示出来就是 <em>这是斜体</em> </p>
+</li>
+<li><p>粗体用两个<code>*</code>包围，就像<code>**这是粗体**</code>，显示出来就是 <strong>这是粗体</strong></p>
+</li>
+<li><p>粗斜体用三个<code>*</code>包围，就像<code>***这是粗斜体***</code>，显示出来就是 <strong><em>这是粗斜体</em></strong></p>
+<p>（本质上它其实就是<strong>粗体</strong>包住了<em>斜体</em>，所以 <strong><em>你交学费</em></strong> 了吗）</p>
+</li>
+<li><p>删除线用两个<code>~</code>包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del>  </p>
+</li>
+<li><p><code>@mention</code>：<code>GFM</code>中的一种“点名”的方式，其他时候基本没用。</p>
+</li>
+</ul>
+<h4 id="2-1-1-引用块"><a href="#2-1-1-引用块" class="headerlink" title="2.1.1 引用块"></a>2.1.1 引用块</h4><p>想要突出显示你引用了某段话？可以使用引用段落！</p>
+<blockquote>
+<p>这就是一个简单的引用了！你可以在这里面<em>使用</em> <strong>其他</strong><code>的语法</code>。它的语法是：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用引用引用引用引用引用引用引用！</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>引用以一个右尖括号开始。一般情况下，我们在多行引用时，会在每一行的开头加一个符号，但如果你懒……</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></span><br><span class="line"><span class="quote">&gt; tempor incididunt ut labore et dolore magna aliqua.</span></span><br></pre></td></tr></table></figure>
+<p>可以变为：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  </span></span><br><span class="line">tempor incididunt ut labore et dolore magna aliqua.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想要嵌套引用，直接多加一个符号！</p>
+<blockquote>
+<p>嵌套引用中！</p>
+</blockquote>
+</blockquote>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum...</span></span><br><span class="line"><span class="quote">&gt; &gt; Lorem ipsum...</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自<code>HTML</code>的样式</h3><blockquote>
+<p>由于<code>Markdown</code>可以直接转换成<code>HTML</code>（在百科里说过了），所以有很多<code>HTML</code>标签都可以在<code>Markdown</code>中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code>（当然也不是所有标签都受支持，得看编译器） 。<strong>如果可能，他们会直接被插入生成的<code>HTML</code>文件中</strong>。</p>
+</blockquote>
+<h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用<code>HTML</code>实现的，在<code>HTML</code>里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>。  </p>
+<h4 id="2-2-2-颜色"><a href="#2-2-2-颜色" class="headerlink" title="2.2.2 颜色"></a>2.2.2 颜色</h4><p>如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 <code>&lt;font&gt;</code> 标签，语法为</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span> Some text <span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个<code>&lt;font&gt;</code>标签接收一个参数<code>color</code>。你可以把它设为一些常见的颜色，比如</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">颜色</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Red&gt;</code></td>
+<td style="text-align:center"><font color=Red>Red</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Yellow&gt;</code></td>
+<td style="text-align:center"><font color=Yellow>Yellow</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Blue&gt;</code></td>
+<td style="text-align:center"><font color=Blue>Blue</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Green&gt;</code></td>
+<td style="text-align:center"><font color=Green>Green</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Gold&gt;</code></td>
+<td style="text-align:center"><font color=Gold>Gold</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Grey&gt;</code></td>
+<td style="text-align:center"><font color=Grey>Grey</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Purple&gt;</code></td>
+<td style="text-align:center"><font color=Purple>Purple</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Azure&gt;</code></td>
+<td style="text-align:center"><font color=Azure>Azure</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=GreenYellow&gt;</code></td>
+<td style="text-align:center"><font color=GreenYellow>GreenYellow</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~  </p>
+<p>另外，这其实是一个过时了的<code>HTML</code> 标签。所以，我想，还是要避免使用吧。如果可行，可以试试行内<code>CSS</code>，即：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了，它表示一种快捷键方式。语法就是：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span>Ctrl+Shift+L<span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure>
+<p>这个脚注一般用数字表示。当然它还有更高级的功能，见下：</p>
+<hr>
+<h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
+<p>想要直接显示这个链接而不显示代替名？可以这样做：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://example.com&gt;</span></span><br></pre></td></tr></table></figure>
+<p>显示出来就是：<a href="https://example.com">https://example.com</a>  </p>
+<p>想要在一处集中显示所有链接？可以这样使用脚注来替代！</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Example</span>](<span class="link">example</span>)</span><br><span class="line">[example] : https://www.example.com/</span><br></pre></td></tr></table></figure>
+<p>当然我不太习惯用这个。</p>
+<h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在<code>[Name](Place)</code> 之前加上一个 <code>!</code> (都是英文标点),如</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Link &quot;替代名&quot;</span>)</span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">![<span class="string">Pull Shark</span>](<span class="link">https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png &quot;Pull Shark&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>“替代名”不是必要的，它会被解析为<code>img</code>标签的<code>alt</code>属性。在方括号<code>[Pull Shark]</code>中的内容在有些编译器下会作为一种标题被显示在渲染的图片下面。e.g.</p>
+<p><img data-src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="Pull Shark" title="Pull Shark"></p>
+<p>当然一些高级一些的属性（如居中）还是用<code>HTML</code>做出来的！（不知道为什么<code>Hexo</code>会自动居中）</p>
+<hr>
+<h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4. 列表"></a>4. 列表</h2><p>在<code>Markdown</code>中，列表分两种：有序的，和无序的。</p>
+<h3 id="4-1-有序列表"><a href="#4-1-有序列表" class="headerlink" title="4.1 有序列表"></a>4.1 有序列表</h3><p>有序列表，就像  </p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一个元素  </span><br><span class="line"><span class="bullet">2.</span> 第二个元素  </span><br><span class="line"><span class="bullet">3.</span> 第三个元素</span><br></pre></td></tr></table></figure>
+<p>在<code>Markdown</code>中，直接打 <code>1.</code> 就会出现一个有序列表。当然， <code>i.</code> <code>a.</code> 甚至不从头开始也可以：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">a. #1</span><br><span class="line">b. #2</span><br><span class="line">c. #3</span><br></pre></td></tr></table></figure>
+<p>当然这还是取决于你用的编译器啦！</p>
+<h3 id="4-2-无序列表"><a href="#4-2-无序列表" class="headerlink" title="4.2 无序列表"></a>4.2 无序列表</h3><p>无序列表的原理和有序列表一样，不过不以 <code>1.</code> 打头，而是：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 第一种方式</span><br><span class="line"><span class="bullet">-</span> 第一种方式</span><br></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">+</span> 第二种方式</span><br><span class="line"><span class="bullet">+</span> 第二种方式</span><br></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 第三种方式</span><br><span class="line"><span class="bullet">*</span> 第三种方式</span><br></pre></td></tr></table></figure>
+<p>显示出来都是</p>
+<ul>
+<li>无序列表</li>
+<li>无序列表</li>
+</ul>
+<p>怎么样，够简单吧……</p>
+<h3 id="4-3-To-do-list"><a href="#4-3-To-do-list" class="headerlink" title="4.3 To do list"></a>4.3 <code>To do list</code></h3><p>通过无序列表我们还可以创建一个任务表（<code>To do list</code>），如下：</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.1</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"></input> No.2</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.3</li>
+</ul>
+<p>语法如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] No.1</span><br><span class="line"><span class="bullet">-</span> [ ] No.2</span><br><span class="line"><span class="bullet">-</span> [x] No.3</span><br></pre></td></tr></table></figure>
+<p>其中 <code>[x]</code> 表示“已完成”，<code>[ ]</code> 表示“未完成”。可能<code>Hexo</code>有的时候渲染不出来这个，大家可以移步<a href="https://github.com/Guleixibian2009/Website-Ariticle-Backup/blob/master/_posts/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.md">原文件</a>查看！</p>
+<h3 id="4-4-合并列表"><a href="#4-4-合并列表" class="headerlink" title="4.4 合并列表"></a>4.4 合并列表</h3><p>你可以把多种列表嵌套起来。如：</p>
+<ul>
+<li><p>Hello World!</p>
+</li>
+<li><p>这是一个列表……</p>
+<ol>
+<li><p>里面还有一个列表！</p>
+</li>
+<li><p>的确是可以嵌套的！</p>
+</li>
+</ol>
+</li>
+<li><p>还是原来那个列表~</p>
+<ul>
+<li><p>可以同样嵌套无序列表</p>
+</li>
+<li><p>等等等等</p>
+</li>
+<li><p>[x] 还可以更改列表类型啊！</p>
+</li>
+<li><p>[ ] 怎么样？</p>
+</li>
+</ul>
+</li>
+<li><p>就是这样啦！</p>
+</li>
+</ul>
+<hr>
+<h2 id="5-文档里的小“零件”"><a href="#5-文档里的小“零件”" class="headerlink" title="5.  文档里的小“零件”"></a>5.  文档里的小“零件”</h2><h3 id="5-1-分割线"><a href="#5-1-分割线" class="headerlink" title="5.1 分割线"></a>5.1 分割线</h3><p>分割线这个东东在文章分节这个功能上还是非常的实用的。你可以这样创建一条：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">或</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
+<p>正如你看到的那样啦！</p>
+<h3 id="5-2-强制换行的几种方式"><a href="#5-2-强制换行的几种方式" class="headerlink" title="5.2 强制换行的几种方式"></a>5.2 强制换行的几种方式</h3><p>在<code>Markdown</code>里面如果你不进行所谓强制换行，那么连续的段落就会被自动连接在一起。这个时候，<code>HTML</code>大兄就会来打杂：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>直接把它放在某一行的结尾，这两行就会自动拆分。如果你嫌麻烦…那么在想要换行的地方（行尾）加两个空格就可以……我也是没法展示了，这个不够直观。</p>
+<h3 id="5-3-符号的转义-escaping"><a href="#5-3-符号的转义-escaping" class="headerlink" title="5.3 符号的转义(escaping)"></a>5.3 符号的转义(<code>escaping</code>)</h3><p>什么，这么简单的<code>Markdown</code>都需要转义？好吧，我承认，这还真的要！如果你仔细回想一下（或者预知一下未来，看下面的代码块）你就会发现，我们在处理文字样式的时候我们使用了各种符号，现整理如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\</code></td>
+<td>反斜杠（转义本身）</td>
+<td>``</td>
+<td>反引号（代码块）</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>星号（加粗，斜体，无序列表等）</td>
+<td><code>_</code></td>
+<td>下划线（加粗，斜体等）</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>小括号（链接，图片）</td>
+<td><code>[]</code></td>
+<td>中括号（链接，图片）</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>波浪号（下标，删除线）</td>
+<td><code>$</code></td>
+<td>美元（某些情况下，<code>LaTex</code>）</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>井号（标题）</td>
+<td><code>+</code></td>
+<td>加号（无序列表）</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减号（无序列表）</td>
+<td><code>.</code></td>
+<td>点号（有序列表）</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>@号（<code>GFM</code>中，<code>@mention</code>）</td>
+<td>`\</td>
+<td>`</td>
+<td>竖线（表格）</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>左尖括号（<code>HTML</code>）</td>
+<td><code>&gt;</code></td>
+<td>右尖括号（<code>HTML</code>）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么，如何转义呢？只需要在需要转义的字符前面添加反斜杠就可以啦！比如，*这段文字其实不是斜体*！</p>
+<p>代码如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\<span class="emphasis">*这段文字其实不是斜体!\*</span></span><br><span class="line"><span class="emphasis">*但这个是！*</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-4-没什么用的注释"><a href="#5-4-没什么用的注释" class="headerlink" title="5.4 没什么用的注释"></a>5.4 没什么用的注释</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&lt;!-- 这就是个注释了，我甚至不想讲… --&gt;</span><br></pre></td></tr></table></figure>
+<p>对对，这就是个<code>HTML</code>注释而已。99.8%的情况下这个东东没有用，但如果…嗯好吧其实也不是一点作用都没有，如<code>Markdown</code>文档中的定位（比如你每天靠<code>GitHub Actions</code>生成点什么）或者<code>Hexo</code>文章的节选会使用<code>&lt;!-- More --&gt;</code>。</p>
+<hr>
+<h2 id="6-激动人心！代码块"><a href="#6-激动人心！代码块" class="headerlink" title="6. 激动人心！代码块"></a>6. 激动人心！代码块</h2><p><del>是不是等它好久了…</del> 行了也见了这么多行内代码块了，我怎么能不介绍一下呢。</p>
+<p>行内代码块，只需将代码块内的内容用 ````包围起来就可以了。如，</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="code">`hello, world!`</span></span><br></pre></td></tr></table></figure>
+<p>至于长篇的“大”代码块，有两种方法：</p>
+<ol>
+<li><p>在“代码块”前缩进4格，直到代码结束；</p>
+</li>
+<li><p>使用下面这种方式：</p>
+</li>
+</ol>
+<div class="highlight-container">
+  <figure class="highlight md">
+    <div class="table-container">
+      <table>
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span></pre>
+            </td>
+            <td class="code">
+              <pre><span class="line">```</span>
+<span class="line">Here is some code.</span>
+<span class="line">```</span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </figure>
+  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
+</div>
+
+<p>想要指定语法并获得高亮技能？看到下面那个<code>python</code>没有！</p>
+<div class="highlight-container">
+  <figure class="highlight md">
+    <div class="table-container">
+      <table>
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span></pre>
+            </td>
+            <td class="code">
+              <pre><span class="line">```python</span>
+<span class="line">def hello():</span>
+<span class="line">    print("Hello, world!")</span>
+<span class="line"></span>
+<span class="line">hello():</span>
+<span class="line">```</span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </figure>
+  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
+</div>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+<h2 id="7-表格来了"><a href="#7-表格来了" class="headerlink" title="7. 表格来了"></a>7. 表格来了</h2><p>需要在自己的文档中直观地表示数据？可以尝试列一个表格！Here we go~</p>
+<h3 id="7-1-基本表格"><a href="#7-1-基本表格" class="headerlink" title="7.1 基本表格"></a>7.1 基本表格</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>第一列</th>
+<th>第二列</th>
+<th>第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一行</td>
+<td>数据1</td>
+<td>数据2</td>
+<td>数据3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>光看这个表可能还真猜不出来它的语法是什么……但其实如果我真的写出来却会觉得这种语法也很直观！（不觉得那些竖线很像网格线吗）</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">||第一列|第二列|第三列|</span><br><span class="line">|第一行|数据1|数据2|数据3|</span><br></pre></td></tr></table></figure>
+<p>所以，每两个<code>|</code>之间是一格，5个<code>|</code>就是4格。没有限制最多多少行或多少列，且不要求每行格数相同！只是我这里渲染不出来……</p>
+<h3 id="7-2-每列的居中、靠右"><a href="#7-2-每列的居中、靠右" class="headerlink" title="7.2 每列的居中、靠右"></a>7.2 每列的居中、靠右</h3><p>什么，还有这种功能？好吧，我们只需要一条特殊“控制行”：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">|     | 第一列 | 第二列 | 第三列 |</span><br><span class="line">| --- |:--- |:---:| ---:|</span><br><span class="line">| 第一行 | 靠左  | 居中  | 靠右  |</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left">第一列</th>
+<th style="text-align:center">第二列</th>
+<th style="text-align:right">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一行</td>
+<td style="text-align:left">靠左</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">靠右</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p>到这里，你已经学完了基础的<code>Markdown</code>语法！想要学习<code>Markdown</code>中更高级的图表功能？敬请期待下一篇教程！</p>
+<hr>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>以下是注释内容：  </p>
+<blockquote id="fn_1">
+<sup>1</sup>. 你学废了吗？<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<hr>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Markdown</category>
+        <category>Markdown语法</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>编程</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【更新中】超详细：这个网站，到底是怎么做出来的？</title>
     <url>/2022/08/16/hexo-website-tutorial/</url>
     <content><![CDATA[<p>断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（<code>Hexo</code>网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新<a href="/hexo-website-tutorial">重复一遍过程</a>，以保证内容的正确性。</p>
@@ -2188,7 +2188,14 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFXIH.png" alt=""></p>
 <p>直接把你的<code>data-uid</code>复制进去就好了。看一下渲染的效果：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFOde.png" alt=""></p>
-<p>（未完待续）</p>
+<h4 id="5-5-2-GiTalk"><a href="#5-5-2-GiTalk" class="headerlink" title="5.5.2 GiTalk"></a>5.5.2 <code>GiTalk</code></h4><p>由于这个服务暂时不能用，但是不排除恢复的可能（类似<code>jsdelivr</code>那样），所以我暂时用一篇转载来介绍一下：</p>
+<blockquote>
+<p>作为一名程序员，我个人比较喜欢 <code>GiTalk</code>，它是利用<code>GitHub</code> 的 <code>Issue</code> 来当评论，样式也比较不错。</p>
+<p>首先需要在<code>GitHub</code>上面注册一个<code>OAuth Application</code>，链接为：<a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a>，注册完毕之后拿到 <code>Client ID</code>、<code>Client Secret</code> 就可以了。</p>
+<p>然后找到<code>GiTalk</code>配置，添加它的各项配置：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># Demo: https://gitalk.github.io</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/gitalk/gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="string">NightTeam</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">nightteam.github.io</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> &#123;<span class="string">your</span> <span class="string">client</span> <span class="string">id</span>&#125; <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> &#123;<span class="string">your</span> <span class="string">client</span> <span class="string">secret</span>&#125; <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="string">germey</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+<p><code>GitHub</code> 授权登录之后就可以使用了，评论的内容会自动出现在 <code>Issue</code> 里面。</p>
+</blockquote>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
