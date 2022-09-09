@@ -1785,11 +1785,13 @@ e^x \qquad & x \le 0
 <p>然后便解决了。感谢<code>anran758</code>大佬。</p>
 <h3 id="5-5-评论系统"><a href="#5-5-评论系统" class="headerlink" title="5.5 评论系统"></a>5.5 评论系统</h3><p>在写到这里的时候我有点犹豫，因为原来用的<code>GiTalk</code>由于某些网络原因（见下）挂掉了，又没有决定换什么，所以迟了好久。最后我选中的是来必力<code>livere</code>。</p>
 <blockquote>
-<p>《论我捣鼓<code>GiTalk</code>的简要过程》</p>
+<p><strong>《论我捣鼓<code>GiTalk</code>的简要过程》</strong></p>
 <p>写到这里我本想去截图，结果一看启动不起来，没办法新建<code>issue</code>也没法登录<code>GitHub</code>账号。在排查了设置、网络的问题后，我发现有个致命的问题：<code>cors-anywhere.azm.workers.dev</code>被墙掉，然后<code>GiTalk</code>无法进行<code>GitHub oauth</code>，就不能用了。</p>
-<p>我于是尝试自己搭<code>worker</code>，结果发现是所有<code>Cloudflare worker</code>的链接都被墙掉了，然后我就彻底没招了，就只好作罢。</p>
+<p>我于是尝试自己搭<code>worker</code>，结果发现是所有<code>Cloudflare worker</code>的链接都被墙掉了，然后我就彻底没招了，就只好作罢。不过……真的吗？</p>
+<p>后来我找到了<code>GiTalk</code>的仓库，里面有类似的<code>Issue</code>，甚至翻出了<code>CORS Anywhere</code>的仓库，找到了一个基于<code>Heroku</code>的备用<code>demo</code>链接。在一个<code>Issue</code>的<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-870990778">某条评论</a>、<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-1012060775">某条评论</a>中找到了一些备用链接。于是，就可以恢复正常了！</p>
+<p><strong>另及：今年（2022）11月28号<code>Heroku</code>会关闭所有的免费服务，所以你看到类似<code>herokuapp.com</code>的链接都不用试了…</strong></p>
 </blockquote>
-<p>我还是决定把<code>GiTalk</code>也讲一讲，万一之后好了也还能用。最后的话成品是这样：</p>
+<p>最后的话成品是这样：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFLZD.png" alt=""></p>
 <h4 id="5-5-1-来必力livere"><a href="#5-5-1-来必力livere" class="headerlink" title="5.5.1 来必力livere"></a>5.5.1 来必力<code>livere</code></h4><p>这个服务来自韩国，是韩语的页面，但是一旦应用到网站上就是中文的。到<a href="https://livere.com">https://livere.com</a>注册一个账号（你可能需要翻译），登录然后点击页首“安装”按钮，选择<code>city</code>版，填入链接什么的：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFxJA.png" alt=""></p>
@@ -1800,14 +1802,7 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFXIH.png" alt=""></p>
 <p>直接把你的<code>data-uid</code>复制进去就好了。看一下渲染的效果：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFOde.png" alt=""></p>
-<h4 id="5-5-2-GiTalk"><a href="#5-5-2-GiTalk" class="headerlink" title="5.5.2 GiTalk"></a>5.5.2 <code>GiTalk</code></h4><p>由于这个服务暂时不能用，但是不排除恢复的可能（类似<code>jsdelivr</code>那样），所以我暂时用一篇转载来介绍一下：</p>
-<blockquote>
-<p>作为一名程序员，我个人比较喜欢 <code>GiTalk</code>，它是利用<code>GitHub</code> 的 <code>Issue</code> 来当评论，样式也比较不错。</p>
-<p>首先需要在<code>GitHub</code>上面注册一个<code>OAuth Application</code>，链接为：<a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a>，注册完毕之后拿到 <code>Client ID</code>、<code>Client Secret</code> 就可以了。</p>
-<p>然后找到<code>GiTalk</code>配置，添加它的各项配置：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># Demo: https://gitalk.github.io</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/gitalk/gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="string">NightTeam</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">nightteam.github.io</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> &#123;<span class="string">your</span> <span class="string">client</span> <span class="string">id</span>&#125; <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> &#123;<span class="string">your</span> <span class="string">client</span> <span class="string">secret</span>&#125; <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="string">germey</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
-<p><code>GitHub</code> 授权登录之后就可以使用了，评论的内容会自动出现在 <code>Issue</code> 里面。</p>
-</blockquote>
+<h4 id="5-5-2-GiTalk"><a href="#5-5-2-GiTalk" class="headerlink" title="5.5.2 GiTalk"></a>5.5.2 <code>GiTalk</code></h4><p>除了一些基本的配置以外，我们还需要更换<code>CORS Anywhere</code>的代理。</p>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
