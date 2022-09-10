@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>3个小妙招加速你的GitHub~</title>
+    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
+    <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
+<span id="more"></span>
+<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天<em>（也许不是天天）</em>更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
+<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
+<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
+<li>方法二：改链接，做镜像，世界变得更加美好  </li>
+<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
+</ul>
+<hr>
+<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改<code>hosts</code>！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
+<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">网址</th>
+<th style="text-align:center">解释</th>
+<th style="text-align:center">IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>github.com</code></td>
+<td style="text-align:center">这是主站</td>
+<td style="text-align:center"><del>140.82.114.4</del></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.108.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.109.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.110.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.111.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.108.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.109.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.110.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.111.133</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意，写入<code>hosts</code>的格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
+<hr>
+<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p>但如果你用了镜像网站，速度会极快：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<hr>
+<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
+<p>不过后来我又发现一个问题……如果你用的是<code>Firefox</code>，那么他有时会有“未连接”的界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
+<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，这个模式不需要证书。实际上，造成刚刚那个界面的原因就是<code>Firefox</code>无法识别边车自动生成的证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
+<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
+<p>我们默默地把布尔值修改成<code>True</code>，重启浏览器，搞定！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
+<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
+<hr>
+<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>DevSidecar</tag>
+        <tag>FAQs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GitHub-Cli 的安装与使用</title>
     <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
@@ -149,120 +263,6 @@
         <tag>Github</tag>
         <tag>Website</tag>
         <tag>Jekyll</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3个小妙招加速你的GitHub~</title>
-    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
-    <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
-<span id="more"></span>
-<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天<em>（也许不是天天）</em>更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
-<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
-<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
-<li>方法二：改链接，做镜像，世界变得更加美好  </li>
-<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
-</ul>
-<hr>
-<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改<code>hosts</code>！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
-<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">网址</th>
-<th style="text-align:center">解释</th>
-<th style="text-align:center">IP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>github.com</code></td>
-<td style="text-align:center">这是主站</td>
-<td style="text-align:center"><del>140.82.114.4</del></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.108.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.109.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.110.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.111.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.108.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.109.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.110.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.111.133</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>注意，写入<code>hosts</code>的格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
-<p>如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
-<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
-<hr>
-<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p>但如果你用了镜像网站，速度会极快：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
-<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
-<hr>
-<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
-<p>不过后来我又发现一个问题……如果你用的是<code>Firefox</code>，那么他有时会有“未连接”的界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
-<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，这个模式不需要证书。实际上，造成刚刚那个界面的原因就是<code>Firefox</code>无法识别边车自动生成的证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
-<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
-<p>我们默默地把布尔值修改成<code>True</code>，重启浏览器，搞定！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
-<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
-<hr>
-<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>DevSidecar</tag>
-        <tag>FAQs</tag>
       </tags>
   </entry>
   <entry>
@@ -1802,7 +1802,24 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFXIH.png" alt=""></p>
 <p>直接把你的<code>data-uid</code>复制进去就好了。看一下渲染的效果：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/07/vbFOde.png" alt=""></p>
-<h4 id="5-5-2-GiTalk"><a href="#5-5-2-GiTalk" class="headerlink" title="5.5.2 GiTalk"></a>5.5.2 <code>GiTalk</code></h4><p>除了一些基本的配置以外，我们还需要更换<code>CORS Anywhere</code>的代理。</p>
+<h4 id="5-5-2-GiTalk"><a href="#5-5-2-GiTalk" class="headerlink" title="5.5.2 GiTalk"></a>5.5.2 <code>GiTalk</code></h4><p>除了一些基本的配置以外，我们还需要更换<code>CORS Anywhere</code>的代理。我们先找到它的配置，看一下需要些什么：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/10/vLjhLQ.png" alt=""></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> </span><br></pre></td></tr></table></figure>
+<p>另外：这是人家的官网</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/10/vLjWQS.png" alt=""></p>
+<h5 id="5-5-2-1-获取GitHub-Application"><a href="#5-5-2-1-获取GitHub-Application" class="headerlink" title="5.5.2.1 获取GitHub Application"></a>5.5.2.1 获取<code>GitHub Application</code></h5><p>大部分配置都好填，可是这个<code>client_id</code>和<code>client_secret</code>怎么办？我们需要自己新建一个<code>GH App</code>。打开<a href="https://github.com/settings/developers">https://github.com/settings/developers</a>，并新建一个<code>Oauth APP</code>（右上角的按钮）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/10/vLj2z8.png" alt=""></p>
+<p>之后需要输入应用名称，应用官网（<code>Homepage URL</code>和<code>Authorization callback URL</code>），这两个一定一定要一样的，并且得加上<code>https://</code>。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/10/vLjfsg.png" alt=""></p>
+<p>注册以后复制<code>Client ID</code>，新建<code>Client secret</code>，按红框里的按钮。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/10/vLjgRf.png" alt=""></p>
+<p>新建后务必立刻复制，否则就只能重新建了。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/10/vLj5Zj.png" alt=""></p>
+<p>然后我们写到配置的<code>client_id</code>和<code>client_secret</code>里即可。至于其他的配置的话：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Gitalk</span></span><br><span class="line"><span class="comment"># For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span></span><br></pre></td></tr></table></figure>
+<p><code>enable</code>打开，<code>github_id</code>写上你的<code>GitHub</code>用户名，<code>repo</code>是你网站的仓库名（比如<code>guleixibian2009.github.io</code>），<code>admin_user</code>还是填自己的用户名。<code>distraction_free_mode</code>和<code>language</code>自己按喜好调即可。</p>
+<h5 id="5-5-2-2-配置proxy"><a href="#5-5-2-2-配置proxy" class="headerlink" title="5.5.2.2 配置proxy"></a>5.5.2.2 配置<code>proxy</code></h5><p>设置是好了，可是在用之前我们还需要改<code>CORS Anywhere</code>的镜像。我们如何把<code>proxy</code>改掉呢？</p>
+<p>（未完待续）</p>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
