@@ -2038,7 +2038,7 @@ e^x \qquad & x \le 0
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">This is a piece of text. It&#x27;s going to be very long.</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </span><br><span class="line">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </span><br><span class="line">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </span><br><span class="line">esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt </span><br><span class="line">in culpa qui officia deserunt mollit anim id est laborum.</span><br></pre></td></tr></table></figure>
 <p>没错，只要在你想分开的地方加一个<code>&lt;!--more--&gt;</code>即可。我们拿<code>Hello World</code>那篇文章试一下：</p>
 <p><img data-src="https://s1.ax1x.com/2022/08/30/vhH14P.png" alt=""></p>
-<h4 id="4-1-4-文章置顶"><a href="#4-1-4-文章置顶" class="headerlink" title="4.1.4 文章置顶"></a>4.1.4 文章置顶</h4><p>在我的网站主页上有一篇置顶的序言，就像书的<code>preface</code>一样。<code>Hexo</code>文章在主页上的排列顺序（默认）是按发布时间后往前（即越新越往上）排布的，如何打破这个规则，强制在最上方呢？一开始我也没有查到对应的设置（都是手写进去代码），不过在翻看<code>hexo</code>的生成代码时（不太具体知道这是什么语言，似乎是一种<code>unmaintained</code>的<code>swig</code>语言，但我怎么找都没找到对应的<code>swig</code>包，又感jio像<code>ejs</code>，疯了），我注意到有一个<code>sticky</code>选项（而且似乎值是个数字），在这里：</p>
+<h4 id="4-1-4-文章置顶"><a href="#4-1-4-文章置顶" class="headerlink" title="4.1.4 文章置顶"></a>4.1.4 文章置顶</h4><p>在我的网站主页上有一篇置顶的序言，就像书的<code>preface</code>一样。<code>Hexo</code>文章在主页上的排列顺序（默认）是按发布时间后往前（即越新越往上）排布的，如何打破这个规则，强制在最上方呢？一开始我也没有查到对应的设置（都是手写进去代码），不过在翻看<code>hexo</code>的生成代码时（不太具体知道这是什么语言，似乎是<code>mozilla</code>开发的<code>nunjucks</code>），我注意到有一个<code>sticky</code>选项（而且似乎值是个数字），在这里：</p>
 <p><img data-src="https://s1.ax1x.com/2022/08/31/v4LWTJ.png" alt=""></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if post.sticky &gt; 0 %&#125;</span><br><span class="line">  &lt;span class=&quot;post-sticky-flag&quot; title=&quot;&#123;&#123; __(&#x27;post.sticky&#x27;) &#125;&#125;&quot;&gt;</span><br><span class="line">    &lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>然后我就找到一篇<code>post</code>，在<code>Front Matter</code>里面加上这么一行：</p>
@@ -2263,6 +2263,29 @@ e^x \qquad & x \le 0
 </blockquote>
 <p>好耶！我们现在就把这8个功能配置完啦！接下来…我们来看一点更高级的东东！</p>
 <h2 id="6-更高级的功能"><a href="#6-更高级的功能" class="headerlink" title="6. 更高级的功能"></a>6. 更高级的功能</h2><p>这一章的话，主要讲一些“看不见”的东西，比如站点地图，<code>RSS</code>等等。</p>
+<h3 id="6-1-RSS订阅"><a href="#6-1-RSS订阅" class="headerlink" title="6.1 RSS订阅"></a>6.1 <code>RSS</code>订阅</h3><p>一般博客都是提供<code>RSS Feed</code>来订阅的。我们只需要安装插件<code>hexo-generator-feed</code>，每次<code>hexo g</code>都会自动生成。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-feed</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>不过，生成出来的文件在哪里呢？看一下…应该是<code>/atom.xml</code>。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpMo4.png" alt=""></p>
+<h3 id="6-2-站点地图sitemap"><a href="#6-2-站点地图sitemap" class="headerlink" title="6.2 站点地图sitemap"></a>6.2 站点地图<code>sitemap</code></h3><p>站点地图的话主要是为搜索引擎用的，这一小节算是给后文的一个铺垫。同样的，只需要安装插件<code>hexo-generator-sitemap</code>即可。这次生成出来的是<code>/sitemap.xml</code>。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpueU.png" alt=""></p>
+<h3 id="6-3-CDN与jsdelivr"><a href="#6-3-CDN与jsdelivr" class="headerlink" title="6.3 CDN与jsdelivr"></a>6.3 <code>CDN</code>与<code>jsdelivr</code></h3><p>默认的话，<code>next</code>会使用<code>jsdelivr</code>作为默认的<code>CDN</code>，不过<code>cdn.jsdelivr.net</code>这个节点不是特别的稳定（被墙过），所以我个人是换到了<code>fastly</code>节点上。具体位置的话，在这里，至于改不改就看你自己了。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXplFJ.png" alt=""></p>
+<h3 id="6-4-Bing-SEO"><a href="#6-4-Bing-SEO" class="headerlink" title="6.4 Bing SEO"></a>6.4 <code>Bing SEO</code></h3><p>搜索引擎优化确实是一件很重要的事情，最简单的是<code>Bing</code>。官网的话，<a href="https://www.bing.com/webmasters/about/">https://www.bing.com/webmasters/about/</a>，用<code>Microsoft</code>账户登录是最方便的（除非你有<code>FB</code>或者<code>Google</code>，不过这不太可能吧）。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpKwF.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpmLT.png" alt=""></p>
+<h4 id="6-4-1-注册与验证"><a href="#6-4-1-注册与验证" class="headerlink" title="6.4.1 注册与验证"></a>6.4.1 注册与验证</h4><p>登录进来之后，我们输入网址，登记页面（页面布局可能和图片有些许区别）。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpJQx.png" alt=""></p>
+<p>登记过后会要求我们验证页面。三种方法中最简单的是<code>&lt;meta&gt;</code>标签，直接复制代码，然后加到<code>_layout.swig</code>的<code>&lt;head&gt;</code>里去就好了。重新渲染、部署，然后等待片刻、验证。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpGS1.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXpYy6.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXp3WR.png" alt=""></p>
+<p>这就代表验证成功了。</p>
+<h4 id="6-4-2-提交网站地图"><a href="#6-4-2-提交网站地图" class="headerlink" title="6.4.2 提交网站地图"></a>6.4.2 提交网站地图</h4><p>点击右上角那个“提交站点地图”，并输入你刚生成的站点地图的网址，可以加速爬网。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXp1Y9.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vXptOK.png" alt=""></p>
+<p>然后…等待扫描…可能会需要一段时间。</p>
+<p>（未完待续！）</p>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
@@ -2282,6 +2305,8 @@ e^x \qquad & x \le 0
 <li><p><a href="https://tding.top/archives/58cff12b.html">Hexo-NexT 添加打字特效、鼠标点击特效 | 小丁的个人博客</a></p>
 </li>
 <li><p><a href="https://www.cnblogs.com/wangyuehan/p/9860371.html">Hexo+yilia添加helper-live2d插件宠物动画，很好玩的哦~~ | 王约翰 | 博客园</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/u010053344/article/details/50706790">Github 搭建 hexo （五）- 站点地图（sitemap.xml）|_Small蒙奇的博客 | CSDN博客</a></p>
 </li>
 </ol>
 ]]></content>
