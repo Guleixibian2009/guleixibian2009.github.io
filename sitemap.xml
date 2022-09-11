@@ -95,6 +95,20 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/tags/DevSidecar/</loc>
+    <lastmod>2022-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/FAQs/</loc>
+    <lastmod>2022-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/tags/Website/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
@@ -110,20 +124,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/GitHub-Cli/</loc>
-    <lastmod>2022-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/DevSidecar/</loc>
-    <lastmod>2022-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/FAQs/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,21 +188,7 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/</loc>
-    <lastmod>2022-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
-    <lastmod>2022-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -216,7 +202,21 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/</loc>
+    <lastmod>2022-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/</loc>
+    <lastmod>2022-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
