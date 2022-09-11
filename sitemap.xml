@@ -95,6 +95,13 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/tags/GitHub-Cli/</loc>
+    <lastmod>2022-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/tags/DevSidecar/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
@@ -117,13 +124,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
-    <lastmod>2022-09-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/GitHub-Cli/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -216,14 +216,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
     <lastmod>2022-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

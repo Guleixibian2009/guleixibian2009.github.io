@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>GitHub-Cli 的安装与使用</title>
+    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
+<span id="more"></span>
+<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
+<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
+<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
+<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
+<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
+<p>嗯……搞定了！</p>
+<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
+<p>然后就会有下面的提示语：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
+<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
+<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
+<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
+<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
+<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
+<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
+<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
+<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
+<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
+<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
+<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
+<p>示意图如下：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
+<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
+<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>就可以获得有关命令的更多信息了！</p>
+<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>GitHub-Cli</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>GitHub-Cli</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>3个小妙招加速你的GitHub~</title>
     <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
     <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
@@ -192,77 +263,6 @@
         <tag>Github</tag>
         <tag>Website</tag>
         <tag>Jekyll</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>GitHub-Cli 的安装与使用</title>
-    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
-<span id="more"></span>
-<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
-<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
-<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
-<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
-<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
-<p>嗯……搞定了！</p>
-<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
-<p>然后就会有下面的提示语：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
-<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
-<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
-<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
-<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
-<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
-<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
-<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
-<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
-<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
-<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
-<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
-<p>示意图如下：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
-<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
-<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
-<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p>就可以获得有关命令的更多信息了！</p>
-<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>GitHub-Cli</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>GitHub-Cli</tag>
       </tags>
   </entry>
   <entry>
@@ -2285,7 +2285,10 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXp1Y9.png" alt=""></p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXptOK.png" alt=""></p>
 <p>然后…等待扫描…可能会需要一段时间。</p>
-<p>（未完待续！）</p>
+<p>这就代表扫描完了：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vX9CX6.png" alt=""></p>
+<p>不过真正能搜到是需要2天时间的，先放一下我自己的博客的截图：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/11/vX9inK.png" alt=""></p>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
