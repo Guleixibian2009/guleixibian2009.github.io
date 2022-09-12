@@ -188,7 +188,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2022/09/11/vX9CX6.png">
 <meta property="og:image" content="https://s1.ax1x.com/2022/09/11/vX9inK.png">
 <meta property="article:published_time" content="2022-08-16T11:20:27.000Z">
-<meta property="article:modified_time" content="2022-09-12T14:06:03.124Z">
+<meta property="article:modified_time" content="2022-09-12T14:13:08.310Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Website">
 <meta property="article:tag" content="GitHub">
@@ -411,7 +411,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-12 22:06:03" itemprop="dateModified" datetime="2022-09-12T22:06:03+08:00">2022-09-12</time>
+                <time title="修改时间：2022-09-12 22:13:08" itemprop="dateModified" datetime="2022-09-12T22:13:08+08:00">2022-09-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -460,6 +460,7 @@
 <p>顾名思义，这篇文章就记录一下我在开发这个网站时的操作过程，以及可能会遇见的一些问题。你可以在我的基础上继续深入，自由发挥！好了，闲话少说，我们这篇超详细的<code>Hexo</code>网站教程，马上开始！  </p>
 <p><strong>注：本教程所用平台是<code>Win10</code>，其他系统可能有细微差别~由于涉及到<code>GitHub</code>，建议先参照<a href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/">3个小妙招</a>来加个速！</strong></p>
 <span id="more"></span>
+<hr>
 <h2 id="1-准备工作部分"><a href="#1-准备工作部分" class="headerlink" title="1. 准备工作部分"></a>1. 准备工作部分</h2><h3 id="1-1-你可能一定会用到的那些软件"><a href="#1-1-你可能一定会用到的那些软件" class="headerlink" title="1.1 你可能一定会用到的那些软件"></a>1.1 你<del>可能</del>一定会用到的那些软件</h3><p>为了使用<code>Hexo</code>这个强大的框架，我们需要先安装一些依赖，还有一些其他的编程软件。为了真的把这个教程变得“新手向”一点，我就把你需要的软件都列在了这里：</p>
 <div class="table-container">
 <table>
@@ -527,6 +528,7 @@
 <blockquote>
 <p>注：我曾经在<code>Jekyll</code>那篇文章中说过，<code>GitHub Pages</code>会在每一次<code>commit</code>之后触发一次更新<code>action</code>，即自动化。由于需要在服务器上进行操作，可能会出现”排队“的情况，如果设置没错却迟迟出不来”非404“页面，我想，你可能需要继续等一等……</p>
 </blockquote>
+<hr>
 <h2 id="2-初始化、主题与一些设置"><a href="#2-初始化、主题与一些设置" class="headerlink" title="2. 初始化、主题与一些设置"></a>2. 初始化、主题与一些设置</h2><h3 id="2-1-让Hexo运行起来！"><a href="#2-1-让Hexo运行起来！" class="headerlink" title="2.1 让Hexo运行起来！"></a>2.1 让<code>Hexo</code>运行起来！</h3><p>接下来我们就来让<code>Hexo</code>发挥一下它的威力罢。找到一个合适的文件夹，然后执行下面这条命令来初始化一个<code>Hexo</code>项目（这里以我自己为例，自己修改文件夹名）：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo_website_tutorial //换上自己的文件夹名</span><br></pre></td></tr></table></figure>
 <p>正常情况下你获得到如下的结果：</p>
@@ -596,6 +598,7 @@
 </li>
 </ul>
 </blockquote>
+<hr>
 <h2 id="3-Gemini子主题的官方配置……"><a href="#3-Gemini子主题的官方配置……" class="headerlink" title="3. Gemini子主题的官方配置……"></a>3. <code>Gemini</code>子主题的官方配置……</h2><p>现在我们就可以给我们的网站添加一些功能与细节了。先打开本地端口，让我们从左往右说：</p>
 <h3 id="3-1-左侧的侧边栏"><a href="#3-1-左侧的侧边栏" class="headerlink" title="3.1 左侧的侧边栏"></a>3.1 左侧的侧边栏</h3><p>左边较窄的竖栏叫<code>sidebar</code>（侧边栏），分为上下两部分，上半部分是一个导航栏，存放了一些站内链接；下半部分是关于你、一些网站统计数据、友情链接，这里也是我们可以自定义的地方（非官方的插件，如音乐、天气等，我们在第5节非官方插件中说）。当你打开一片博客后，下半部分也可以作为一个文章目录。下面几张图供参考：</p>
 <p><img data-src="https://s1.ax1x.com/2022/08/19/vsihCV.png" alt=""></p>
@@ -852,6 +855,7 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/01/v5LMNj.png" alt=""></p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/16x16.ico</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/32x32.ico</span></span><br><span class="line">  <span class="comment">#apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment">#safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></span><br><span class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
 <p>只保留<code>small</code>和<code>medium</code>，再把文件名填进去即可。</p>
+<hr>
 <h2 id="4-文章相关配置"><a href="#4-文章相关配置" class="headerlink" title="4. 文章相关配置"></a>4. 文章相关配置</h2><p>现在我们已经把基本的一些配置好了。我们可以开始添加一些文章、页面<del>（心心念念的标签、分类页）</del>，还可以有搜索、<code>404</code>页面等。你会学到如何给文章添加标签、分类等等。</p>
 <h3 id="4-1-关于博客——post"><a href="#4-1-关于博客——post" class="headerlink" title="4.1 关于博客——post"></a>4.1 关于博客——<code>post</code></h3><p>如果你曾注意过<code>scaffolds</code>文件夹里的内容，你会看到<code>Hexo</code>一共有3种“类型”，分别是<code>post</code>博客、<code>page</code>页面和<code>draft</code>草稿。我不太习惯用草稿功能，就把它放过喽。我们先来把博客讲一下：</p>
 <h4 id="4-1-1-新建一篇文章"><a href="#4-1-1-新建一篇文章" class="headerlink" title="4.1.1 新建一篇文章"></a>4.1.1 新建一篇文章</h4><p>还记得3.2.3节中我超纲建文章吗？建文章的命令是<code>hexo new</code>。如下：</p>
@@ -930,6 +934,7 @@ e^x \qquad & x \le 0
 <p><code>[]</code>就表示一个列表，每个文件名用逗号隔开即可。看一下渲染之后会发生什么：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/03/voAhhq.png" alt=""></p>
 <p>这样，我们的<code>README</code>就不会被渲染成<code>HTML</code>了。以上这些，就是我们所有的较为基础的配置与文章相关的内容了。接下来我们会涉及到一些更高级的功能，使用到第三方插件，可以自己选择。</p>
+<hr>
 <h2 id="5-第三方插件配置"><a href="#5-第三方插件配置" class="headerlink" title="5. 第三方插件配置"></a>5. 第三方插件配置</h2><p>写到这文章已经很长了，将近20k字了。不管怎么样，我们来继续我们的教程，<del>争取再写20k啊</del>。</p>
 <h3 id="5-1-动态背景"><a href="#5-1-动态背景" class="headerlink" title="5.1 动态背景"></a>5.1 动态背景</h3><p>读了这么久的文章了，不会还没注意到我的动态背景吧。在背景上有50个点，随机游走，相互靠近时就会连成一条线。靠近鼠标时则会被“困住”，直到再次移动鼠标。这叫做<code>canvas_nest</code>。</p>
 <blockquote>
@@ -1096,6 +1101,7 @@ e^x \qquad & x \le 0
 <p>还有…我本来想继续写下去，写一个<code>Widgetpack</code>打分功能。可惜人家服务器有问题，功能暂时下线了，等恢复了我再加上吧。</p>
 </blockquote>
 <p>好耶！我们现在就把这8个功能配置完啦！接下来…我们来看一点更高级的东东！</p>
+<hr>
 <h2 id="6-更高级的功能"><a href="#6-更高级的功能" class="headerlink" title="6. 更高级的功能"></a>6. 更高级的功能</h2><p>这一章的话，主要讲一些“看不见”的东西，比如站点地图，<code>RSS</code>等等。</p>
 <h3 id="6-1-RSS订阅"><a href="#6-1-RSS订阅" class="headerlink" title="6.1 RSS订阅"></a>6.1 <code>RSS</code>订阅</h3><p>一般博客都是提供<code>RSS Feed</code>来订阅的。之前我们提到过<code>RSS</code>，包括侧边栏链接、文章结尾的友链，等等。要生成的话我们只需要安装插件<code>hexo-generator-feed</code>，每次<code>hexo g</code>都会自动生成。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-feed</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
@@ -1139,6 +1145,7 @@ e^x \qquad & x \le 0
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block title %&#125;&#123;&#123; page.title &#125;&#125; | &#123;&#123; title &#125;&#125;&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
 <p>（来自<code>post.swig</code>）这里引用的<code>&#123;&#123; page.title &#125;&#125;</code>有前缀<code>page.</code>，代表当前正渲染的页面（准确地说是<code>post</code>或<code>page</code>的<code>Front Matter</code>）。</p>
 <h4 id="6-5-2-Stylus"><a href="#6-5-2-Stylus" class="headerlink" title="6.5.2 Stylus"></a>6.5.2 <code>Stylus</code></h4><p>这个就没太多好讲的了，因为我自己也没学过动态<code>CSS</code>。在<code>source/css</code>这个文件夹下所有<code>.styl</code>后缀的文件都是样式表。我们之前修改过一个书签的，还记得吗？</p>
+<hr>
 <h2 id="7-总结与回顾"><a href="#7-总结与回顾" class="headerlink" title="7. 总结与回顾"></a>7. 总结与回顾</h2><p>到这里，我们所有的教程已经写完了。在这“短暂的”几十分钟，几小时，甚至几天中，我们终于成功的做出来这样一个基于<code>Hexo</code>+<code>Next</code>的博客网站了。还记得那几条命令吧，我还是写在这里备用。</p>
 <ul>
 <li><p><code>hexo clean</code>清除本地缓存</p>
@@ -1154,7 +1161,8 @@ e^x \qquad & x \le 0
 <li><p><code>hexo new page</code>新建页面</p>
 </li>
 </ul>
-<p>接下来，就是你继续探索，大展身手的时刻了！我们下次再见喽~</p>
+<p>接下来，就是你继续探索，大展身手的时刻了！嗯…48k字，我也是圆了长久以来的梦想。那么，我们就下次再见喽~</p>
+<hr>
 <h2 id="8-致谢"><a href="#8-致谢" class="headerlink" title="8. 致谢"></a>8. 致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a target="_blank" rel="noopener" href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
