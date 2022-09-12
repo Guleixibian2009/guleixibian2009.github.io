@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>GitHub-Cli 的安装与使用</title>
     <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
@@ -184,103 +169,6 @@
         <tag>DevSidecar</tag>
         <tag>FAQs</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
-    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
-    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
-<span id="more"></span>
-<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
-<hr>
-<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/"><code>GitHub</code></a> 的 <strong><a href="https://pages.github.com/"><code>Pages</code></a></strong> 功能。<br>身为程序员，大家肯定都听说过<code>GitHub</code>吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
-<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册<code>GitHub</code>账号</h3><p>（如果你有<code>GitHub</code>账号，请跳过这一步）如果你没用过<code>GitHub</code>，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
-<p>（尴尬：我注册时不是这样啊？？？）<br>登录<code>GitHub</code>可能会需要验证码。登录一下注册时的邮箱，你会收到<code>GitHub</code>（<code>noreply@github.com</code>）的邮件，比如说：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
-<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 <code>New</code> 按钮，然后会弹出如下界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
-<p>我们如图勾选，</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
-<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
-<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
-<hr>
-<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选<code>Pages</code></h3><p>在使用这个功能之前，你要告诉<code>GitHub</code>你要把这个仓库当做网页源码。<br>在 <code>Settings</code> 里找到 <code>pages</code> 选项，应该是这样子的：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
-<p>把 <code>Source</code> 调成你现有的分支，点击 <code>Save</code> 。  </p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
-<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建<code>index.md</code></h3><p><img data-src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
-<p>为了<code>Github Pages</code>更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
-<p>点击 <code>+</code> 按钮，选择<code>Create New File</code>，然后进入如下界面：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
-<p>在输入框里输入<code>index.md</code>。<code>Index</code>指索引。你将会在这个新文件里写主页。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
-<p>点击<code>Commit New Changes</code>。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用<code>GitHub Pages</code>功能时，你并不需要会写<code>HTML</code>，只需要写文章就行了。 而在<code>Github Pages</code>功能里，我们写文章的方法是写<code>Markdown</code>。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习<code>Markdown</code>了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/2021/08/25/真的非常简单-Markdown基本语法/">传送门</a> 。  </p>
-<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br><code>GithubPages</code>已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
-<p>在这个界面，你可以选择一个你喜欢的样式（<code>Theme</code>）。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
-<p>在这里面我选了一个<code>Cayman</code>（简约大气）。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
-<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对<code>Github Pages</code>功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
-<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 <code>_config.yml</code></h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
-<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是<code>Github Pages</code>默认给你使用<code>jekyll</code>渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
-<p>其实很简单，只要往下面添加一行就可以啦！</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
-<p>你，都学废了吗？</p>
-<hr>
-<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. <code>404</code>页面</h2><p>在访问你的网站时，别人总有输错网址的时候。<code>Github</code>其实有自带的<code>404</code>，像这样：</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
-<p>不过这个灰色的<code>404</code>实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
-<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用<code>Markdown</code>填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
-<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的<code>404</code>对其他<code>github.io</code>不起作用），它依然会显示那个灰色的<code>404</code>。  </p>
-<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
-<hr>
-<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和<code>404</code>页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
-<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实<code>Github Pages</code>也可以做到这一点。如果你想让<code>Jekyll</code>在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
-<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用<code>Markdown</code>填进去，再次访问就有新界面啦！</p>
-<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于<code>Ruby</code>的桌面版<code>Jekyll</code>，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
-<p>其实这个很容易实现，其实是一段<code>JavaScript</code>脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
-<hr>
-<h2 id="5-GitHub-Pages的工作原理"><a href="#5-GitHub-Pages的工作原理" class="headerlink" title="5. GitHub Pages的工作原理"></a>5. <code>GitHub Pages</code>的工作原理</h2><p>说到这大家可能会想，<code>Pages</code>能有什么工作原理？其实，如果好奇的你曾经点进过<code>GitHub</code>仓库内<code>Actions</code>一个栏目，你就会发现每一次更新提交后，系统就会自动触发<code>Page Build Deployment</code>这个内置<code>Action</code>，说明白了，就是自动化！具体讲解，敬请等待以后的<code>GitHub Actions</code>使用指南！</p>
-<hr>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用<code>Github Pages</code>作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有<code>HEXO</code>和<code>Wordpress</code>等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>Pages</category>
-        <category>Jekyll</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>Website</tag>
-        <tag>Jekyll</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>序言</title>
-    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
-    <content><![CDATA[<blockquote>
-<p>在现实断裂的地方<br>梦 汇成了海</p>
-<p>顾城 《弥合》  </p>
-</blockquote>
-<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
-<span id="more"></span>
-<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
-<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
-<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
-<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
-<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
-]]></content>
   </entry>
   <entry>
     <title>【转】Markdown中Latex常用语法</title>
@@ -1232,6 +1120,118 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
+    <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
+    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
+    <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
+<span id="more"></span>
+<h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
+<hr>
+<h2 id="1-基础设置"><a href="#1-基础设置" class="headerlink" title="1. 基础设置"></a>1. 基础设置</h2><p>看完上文，大家已经知道了我们的网站依托于 <a href="https://github.com/"><code>GitHub</code></a> 的 <strong><a href="https://pages.github.com/"><code>Pages</code></a></strong> 功能。<br>身为程序员，大家肯定都听说过<code>GitHub</code>吧。如果你还不知道的话，可以查询 <a href="https://baike.baidu.com/item/Github">百度百科</a> 。</p>
+<h3 id="1-1-注册GitHub账号"><a href="#1-1-注册GitHub账号" class="headerlink" title="1.1 注册GitHub账号"></a>1.1 注册<code>GitHub</code>账号</h3><p>（如果你有<code>GitHub</code>账号，请跳过这一步）如果你没用过<code>GitHub</code>，就去官网注册一个账号，步骤如下：<br>如图，填写你的邮箱和用户名，应该就好了。会有一系列验证，比如说生日和性别等。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxQoR.png" alt="frontpage"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxKeJ.png" alt="email"></p>
+<p>（尴尬：我注册时不是这样啊？？？）<br>登录<code>GitHub</code>可能会需要验证码。登录一下注册时的邮箱，你会收到<code>GitHub</code>（<code>noreply@github.com</code>）的邮件，比如说：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxeQU.png" alt="Authentication"></p>
+<h3 id="1-2-创建一个仓库"><a href="#1-2-创建一个仓库" class="headerlink" title="1.2 创建一个仓库"></a>1.2 创建一个仓库</h3><p>为了储存我们的代码，我们需要分配给他一个空间，学名 <code>repository</code> ，意思是仓库。<br>如图，点击右上角的 <code>New</code> 按钮，然后会弹出如下界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxkiq.png" alt="create1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fgxmyF.png" alt="create2"></p>
+<p>我们如图勾选，</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxnL4.png" alt="create3"></p>
+<p>在 <code>&lt;username&gt;</code> 处填上你的名字，如果名字是 <code>EdogawaNotFound</code> , 那仓库名就叫<br><code>edogawanotfound.github.io</code>。如果是我的话，我也许会设成<code>guleixibian2009.github.io</code>。 </p>
+<p>现在你应该有了一个新仓库了。有了自己的仓库，就可以往仓库里放东西了。</p>
+<hr>
+<h2 id="2-切入正题"><a href="#2-切入正题" class="headerlink" title="2. 切入正题"></a>2. 切入正题</h2><h3 id="2-1-勾选Pages"><a href="#2-1-勾选Pages" class="headerlink" title="2.1 勾选Pages"></a>2.1 勾选<code>Pages</code></h3><p>在使用这个功能之前，你要告诉<code>GitHub</code>你要把这个仓库当做网页源码。<br>在 <code>Settings</code> 里找到 <code>pages</code> 选项，应该是这样子的：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxwTA.png" alt="settings2"></p>
+<p>把 <code>Source</code> 调成你现有的分支，点击 <code>Save</code> 。  </p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<h3 id="2-2-新建index-md"><a href="#2-2-新建index-md" class="headerlink" title="2.2 新建index.md"></a>2.2 新建<code>index.md</code></h3><p><img data-src="https://z3.ax1x.com/2021/08/15/fgxEWV.png" alt="change1"></p>
+<p>为了<code>Github Pages</code>更好的识别你的主页，我们需要新建一个<code>index.md</code>。你可以保留你的<code>README</code>不动，没有关系。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxtyD.png" alt="New1"></p>
+<p>点击 <code>+</code> 按钮，选择<code>Create New File</code>，然后进入如下界面：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxdwd.png" alt="New2"></p>
+<p>在输入框里输入<code>index.md</code>。<code>Index</code>指索引。你将会在这个新文件里写主页。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxNOe.png" alt="New3"></p>
+<p>点击<code>Commit New Changes</code>。<br>你的网站，如果已经<code>Publish</code>，应该叫做<code>&lt;username&gt;.github.io</code>。现在访问你的网站，如果可以访问，恭喜你，你已经成功了！<br>但是一个网站只有主页实在无聊，所以，为了让你的网站看起来更加高级亿点点，我们就要开始写文章了。<br>使用<code>GitHub Pages</code>功能时，你并不需要会写<code>HTML</code>，只需要写文章就行了。 而在<code>Github Pages</code>功能里，我们写文章的方法是写<code>Markdown</code>。<br>等等，为什么我觉得我的界面太难看了呢？？？(￣ε(#￣)☆╰╮(￣▽￣///))让我们给自己的网站换个样式。<br>不过，如果你想现在学习<code>Markdown</code>了。我另写了一篇文章， <a href="https://guleixibian2009.github.io/2021/08/25/真的非常简单-Markdown基本语法/">传送门</a> 。  </p>
+<h3 id="2-3-换个样式"><a href="#2-3-换个样式" class="headerlink" title="2.3 换个样式"></a>2.3 换个样式</h3><p>一个网站，也许最重要的不是文章的内容，而是它的门面，而一个“光鲜靓丽”的主页则是一个很好的选择。<br><code>GithubPages</code>已经给你提供好了一些样式，我们可以直接用。<br>转到刚刚那个<code>Settings/Pages</code>,不过这次点<code>ThemeChooser</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxBFI.png" alt="settings3"></p>
+<p>在这个界面，你可以选择一个你喜欢的样式（<code>Theme</code>）。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxDYt.png" alt="theme1"></p>
+<p>在这里面我选了一个<code>Cayman</code>（简约大气）。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxrfP.png" alt="theme2"></p>
+<p>不管你选了哪个，有没有发现你的网站好看多了呢？<br>不过，他会自动填充你的<code>index.md</code>。网站的默认文本是对<code>Github Pages</code>功能的介绍。这样的网站，也许对于别人来说没有意义。<br>(不过如果没有的话……也许是因为你先创建了文件再选择样式，其实也没事)  </p>
+<h3 id="2-4-config-yml"><a href="#2-4-config-yml" class="headerlink" title="2.4 _config.yml"></a>2.4 <code>_config.yml</code></h3><p>不知道细心的你有没有发现，你的仓库里面多了一个<code>_config.yml</code>文件（千万不要删！）<br>打开这个文件，你会发现里面有一行文字：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">jekyll-theme-cayman</span></span><br></pre></td></tr></table></figure>
+<p>这个<code>theme</code>就指的是样式。<code>jekyll-theme</code>指的是<code>Github Pages</code>默认给你使用<code>jekyll</code>渲染网站界面。<br>在这个文件里你可以调整你的网站的标题，仔细看！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgx6l8.png" alt="Title"></p>
+<p>其实很简单，只要往下面添加一行就可以啦！</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">Website~</span></span><br></pre></td></tr></table></figure>
+<p>你，都学废了吗？</p>
+<hr>
+<h2 id="3-404页面"><a href="#3-404页面" class="headerlink" title="3. 404页面"></a>3. <code>404</code>页面</h2><p>在访问你的网站时，别人总有输错网址的时候。<code>Github</code>其实有自带的<code>404</code>，像这样：</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fgxIf0.png" alt="404"></p>
+<p>不过这个灰色的<code>404</code>实在是不好看，那么，我就有了一个疑问：我能不能自己定制一个<code>404错误</code>页面呢？答案是肯定的。  </p>
+<p>在你的仓库里新建一个<code>404.md</code>文件，方法同上。在里面用<code>Markdown</code>填充上你想要的内容。比如说，我会这么写（直接上代码）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 404 错误</span><br><span class="line">**_你寻找的界面不存在！_**  </span><br><span class="line">即将返回 [主页](https://guleixibian2009.github.io/) ......</span><br></pre></td></tr></table></figure>
+<p>但实际上，光这么写还是不够。如果你现在访问<code>https://&#123;username&#125;.github.io/404</code>，你也许会看到你想要的页面。但如果你访问一个不存在的页面（指你的域名下面的错误网址，自己定义的<code>404</code>对其他<code>github.io</code>不起作用），它依然会显示那个灰色的<code>404</code>。  </p>
+<p>所以到底怎么办呢？为了解决这个问题，我们要引入一种新的东西：<code>YAML Front Matter</code>。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404.html</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>把上面这段代码复制到你的<code>404.md</code>的最开头，再次访问应该就有啦！  </p>
+<hr>
+<h2 id="4-新建页面-amp-文章"><a href="#4-新建页面-amp-文章" class="headerlink" title="4. 新建页面&amp;文章"></a>4. 新建页面&amp;文章</h2><p>现在你已经有了一个主页和<code>404</code>页面了。现在，我们将会进入最激动人心的一部分：写博客。</p>
+<h3 id="4-1-新建博客文件-amp-文件夹"><a href="#4-1-新建博客文件-amp-文件夹" class="headerlink" title="4.1 新建博客文件&amp;文件夹"></a>4.1 新建博客文件&amp;文件夹</h3><p>一个网站一般都是“分层”的，其实<code>Github Pages</code>也可以做到这一点。如果你想让<code>Jekyll</code>在你的仓库中渲染出“子页面”，你可以在仓库中新建一个文件夹。比如说，你可以创建<code>guleixibian2009.github.io/Github</code>，这样网址就会被渲染成<code>https://guleixibian2009.github.io/Github/</code>。点开新建文件页面，在输入框里输入你想要的页面名，现在你按下<code>/</code>，神奇的事情发生了：刚刚输入的名称成功地成为了一个文件夹！然后，继续输入<code>index.md</code>，并且<code>Commit New Changes</code>，再访问刚刚创建的页面，就可以啦！  </p>
+<p>其实，不一定只有一层文件夹。如果你愿意，你可以在一层的基础上再建N个/层文件夹，并在每一个文件夹下建一个<code>index.md</code>，就可以啦！现在把你的文章用<code>Markdown</code>填进去，再次访问就有新界面啦！</p>
+<h3 id="4-2-给页面添加特效"><a href="#4-2-给页面添加特效" class="headerlink" title="4.2 给页面添加特效"></a>4.2 给页面添加特效</h3><p>虽然我搜了很久，但是我实在没有搜到太多可以直接应用的特效。不过我听说过一种基于<code>Ruby</code>的桌面版<code>Jekyll</code>，大家可以自行搜索。话说回来，我的确搜到一个特效：404自动跳转回主页。  </p>
+<p>其实这个很容易实现，其实是一段<code>JavaScript</code>脚本。直接把如下脚本插在<code>404.md</code>最底下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">    <span class="built_in">setTimeout</span>(<span class="string">&quot;javascript:location.href=&#x27;/&#x27;&quot;</span>, <span class="number">10000</span>); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中，<code>setTimeout</code>函数就是定时。而<code>href=&#39;/&#39;</code>就指的是定时回到根目录。<code>10000</code>指10秒。也就是说，10秒钟后返回主页。</p>
+<hr>
+<h2 id="5-GitHub-Pages的工作原理"><a href="#5-GitHub-Pages的工作原理" class="headerlink" title="5. GitHub Pages的工作原理"></a>5. <code>GitHub Pages</code>的工作原理</h2><p>说到这大家可能会想，<code>Pages</code>能有什么工作原理？其实，如果好奇的你曾经点进过<code>GitHub</code>仓库内<code>Actions</code>一个栏目，你就会发现每一次更新提交后，系统就会自动触发<code>Page Build Deployment</code>这个内置<code>Action</code>，说明白了，就是自动化！具体讲解，敬请等待以后的<code>GitHub Actions</code>使用指南！</p>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>其实利用<code>Github Pages</code>作为域名做网站的方法有很多，除了仅仅用网页版<code>Jekyll</code>和桌面版<code>Jekyll</code>，还有<code>HEXO</code>和<code>Wordpress</code>等等。大家可以自行去探索，不过，掉了坑我可不救你！🤣</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>Pages</category>
+        <category>Jekyll</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Website</tag>
+        <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
+    <content><![CDATA[<blockquote>
+<p>在现实断裂的地方<br>梦 汇成了海</p>
+<p>顾城 《弥合》  </p>
+</blockquote>
+<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
+<span id="more"></span>
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
+<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
+<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
+<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
+<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>真的非常简单-Markdown基本语法</title>
     <url>/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p>
@@ -2121,7 +2121,7 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/03/vo8KfS.png" alt=""></p>
 <h5 id="5-2-1-3-插入swig模板"><a href="#5-2-1-3-插入swig模板" class="headerlink" title="5.2.1.3 插入swig模板"></a>5.2.1.3 插入<code>swig</code>模板</h5><p>到现在我们已经有了一个播放器，调了宽度，可是怎么把它插入到侧边栏里来呢？我们要到模板文件里去插。找到这个文件（<code>themes/next/layout/_partials/sidebar/site-overview.swig</code>），在105行左右（<code>CC</code>之后，<code>Blogroll</code>之前）插入代码即可：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/03/vo8uY8.png" alt=""></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.sidebar %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;cc-license motion-element&quot;</span> <span class="attr">itemprop</span>=<span class="string">&quot;license&quot;</span>&gt;</span></span><br><span class="line">  &#123;%- set ccImage = &#x27;<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&#x27; + url_for(theme.images + &#x27;/cc-&#x27; + theme.creative_commons.license + &#x27;.svg&#x27;) + &#x27;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Creative Commons&quot;</span>&gt;</span>&#x27; %&#125;</span><br><span class="line">    &#123;&#123; next_url(ccURL, ccImage, &#123;class: &#x27;cc-opacity&#x27;&#125;) &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginwidth</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginheight</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">280</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">&quot;//music.163.com/outchain/player?type=2&amp;id=2080607&amp;auto=0&amp;height=66&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;# Blogroll #&#125;</span><br><span class="line">&#123;%- if theme.links %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll motion-element&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-title&quot;</span>&gt;</span></span><br><span class="line">      &#123;%- if theme.links_settings.icon %&#125;<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;&#123;&#123; theme.links_settings.icon &#125;&#125; fa-fw&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>&#123;%- endif %&#125;</span><br><span class="line">      &#123;&#123; theme.links_settings.title &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-list&quot;</span>&gt;</span></span><br><span class="line">      &#123;%- for blogrollText, blogrollURL in theme.links %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;links-of-blogroll-item&quot;</span>&gt;</span></span><br><span class="line">          &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      &#123;%- endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.sidebar %&#125;</span><br><span class="line">  &lt;div class=&quot;cc-license motion-element&quot; itemprop=&quot;license&quot;&gt;</span><br><span class="line">  &#123;%- set ccImage = &#x27;&lt;img src=&quot;&#x27; + url_for(theme.images + &#x27;/cc-&#x27; + theme.creative_commons.license + &#x27;.svg&#x27;) + &#x27;&quot; alt=&quot;Creative Commons&quot;&gt;&#x27; %&#125;</span><br><span class="line">    &#123;&#123; next_url(ccURL, ccImage, &#123;class: &#x27;cc-opacity&#x27;&#125;) &#125;&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=280 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=2080607&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br><span class="line"></span><br><span class="line">&#123;# Blogroll #&#125;</span><br><span class="line">&#123;%- if theme.links %&#125;</span><br><span class="line">  &lt;div class=&quot;links-of-blogroll motion-element&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;links-of-blogroll-title&quot;&gt;</span><br><span class="line">      &#123;%- if theme.links_settings.icon %&#125;&lt;i class=&quot;&#123;&#123; theme.links_settings.icon &#125;&#125; fa-fw&quot;&gt;&lt;/i&gt;&#123;%- endif %&#125;</span><br><span class="line">      &#123;&#123; theme.links_settings.title &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;ul class=&quot;links-of-blogroll-list&quot;&gt;</span><br><span class="line">      &#123;%- for blogrollText, blogrollURL in theme.links %&#125;</span><br><span class="line">        &lt;li class=&quot;links-of-blogroll-item&quot;&gt;</span><br><span class="line">          &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">      &#123;%- endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>最后我们来看一下渲染出来的效果：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/03/vo8nFf.png" alt=""></p>
 <h4 id="5-2-2-天气插件"><a href="#5-2-2-天气插件" class="headerlink" title="5.2.2 天气插件"></a>5.2.2 天气插件</h4><p>接下来是一个天气的插件。我们这个插件来自<code>tianqi.com</code>，它这个可以实时获取城市，不过原来是直接使用的，现在要关注什么公众号了，不过我可以直接把代码给大家。这是我当时获取到的代码：</p>
@@ -2138,7 +2138,7 @@ e^x \qquad & x \le 0
 <p>可是不对啊，我既然选了<code>post_views</code>，怎么不显示计数呢？于是我就去翻代码…</p>
 <h4 id="5-3-2-翻swig，瞎折腾"><a href="#5-3-2-翻swig，瞎折腾" class="headerlink" title="5.3.2 翻swig，瞎折腾"></a>5.3.2 翻<code>swig</code>，瞎折腾</h4><p><img data-src="https://s1.ax1x.com/2022/09/04/voOcQI.png" alt=""></p>
 <p>在<code>themes/next/layout/_macro/post.swig</code>文件的120行找到这样的代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-item&quot;</span> <span class="attr">title</span>=<span class="string">&quot;&#123;&#123; __(&#x27;post.views&#x27;) &#125;&#125;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_page_pv&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">style</span>=<span class="string">&quot;display: none;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;&#123;&#123; theme.busuanzi_count.post_views_icon &#125;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;</span>&#123;&#123; __(&#x27;post.views&#x27;) + __(&#x27;symbol.colon&#x27;) &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_page_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %&#125;</span><br><span class="line">  &lt;span class=&quot;post-meta-item&quot; title=&quot;&#123;&#123; __(&#x27;post.views&#x27;) &#125;&#125;&quot; id=&quot;busuanzi_container_page_pv&quot; </span><br><span class="line">style=&quot;display: none;&quot;&gt;</span><br><span class="line">    &lt;span class=&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">      &lt;i class=&quot;&#123;&#123; theme.busuanzi_count.post_views_icon &#125;&#125;&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;post-meta-item-text&quot;&gt;&#123;&#123; __(&#x27;post.views&#x27;) + __(&#x27;symbol.colon&#x27;) &#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>凭直觉来看，<code>if not is_index</code>很成问题啊！核理推测一下，是不是我们进入一篇文章就能看见<code>post_views</code>计数了？</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/04/voOsWd.png" alt=""></p>
 <p>果然。那在核理推测一下，是不是把<code>not is_index and</code>去掉，就可以在主页上显示了呢？我自己试了一下，发现这样会有<code>bug</code>，哪怕不看文章，也会出现计数的情况，个人没有想到特别好的解决方案，于是还是没有改。</p>
@@ -2271,8 +2271,8 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpueU.png" alt=""></p>
 <h3 id="6-3-CDN与图床"><a href="#6-3-CDN与图床" class="headerlink" title="6.3 CDN与图床"></a>6.3 <code>CDN</code>与图床</h3><p>默认的话，<code>next</code>会使用<code>jsdelivr</code>作为默认的<code>CDN</code>，不过<code>cdn.jsdelivr.net</code>这个节点不是特别的稳定（被墙过），所以我个人是换到了<code>fastly</code>节点上。具体位置的话，在这里，至于改不改就看你自己了。</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXplFJ.png" alt=""></p>
-<p>同时如果你想要往文章里添加图片，那光靠自己的域名（也就是<code>GitHub</code>）肯定是不够的，我们一定会需要一个快速的、稳定的图床。我个人推荐是<code>imgse</code>路过图床，它这个是免费的，而且已经有10年历史，上传也非常方便。它支持<code>10MB</code>内的<code>JPG</code>和<code>PNG</code>，</p>
-<p>这里有图片</p>
+<p>同时如果你想要往文章里添加图片，那光靠自己的域名（也就是<code>GitHub</code>）肯定是不够的，我们一定会需要一个快速的、稳定的图床。我个人推荐是<code>imgse</code>路过图床，它这个是免费的，而且已经有10年历史，上传也非常方便。它支持<code>10MB</code>内的<code>JPG</code>和<code>PNG</code>，子节点是<code>ax1x.com</code>。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/12/vXoGPU.png" alt=""></p>
 <h3 id="6-4-Bing-SEO"><a href="#6-4-Bing-SEO" class="headerlink" title="6.4 Bing SEO"></a>6.4 <code>Bing SEO</code></h3><p>搜索引擎优化确实是一件很重要的事情，最简单的是<code>Bing</code>。官网的话，<a href="https://www.bing.com/webmasters/about/">https://www.bing.com/webmasters/about/</a>，用<code>Microsoft</code>账户登录是最方便的（除非你有<code>FB</code>或者<code>Google</code>，不过这不太可能吧）。</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpKwF.png" alt=""></p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpmLT.png" alt=""></p>
@@ -2292,7 +2292,36 @@ e^x \qquad & x \le 0
 <p>不过真正能搜到是需要2天时间的，先放一下我自己的博客的截图：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vX9inK.png" alt=""></p>
 <p>当然这个<code>SEO</code>肯定是不止这么多的。相关的功能等着你去探索，包括<code>Microsoft Clarity</code>等等。</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
+<h3 id="6-5-模板文件与动态样式表"><a href="#6-5-模板文件与动态样式表" class="headerlink" title="6.5 模板文件与动态样式表"></a>6.5 模板文件与动态样式表</h3><p>最后这一小节不是具体的教你去“干什么”，而是具体“怎么干”。每个人对网站的外观跟行为逻辑有自己的看法，而自定义的终极方式就是修改底层。</p>
+<p>这里有图片</p>
+<p>在<code>Next</code>这个主题下，关于底层的两个文件夹，一个是<code>layout</code>，一个是<code>source</code>，具体见下：</p>
+<h4 id="6-5-1-Mozilla-Nunjucks"><a href="#6-5-1-Mozilla-Nunjucks" class="headerlink" title="6.5.1 Mozilla Nunjucks"></a>6.5.1 <code>Mozilla Nunjucks</code></h4><p>在上网查之前我一直以为我们修改的什么<code>_layout.swig</code>啊都是用什么<code>swig</code>语言写的，但一搜其实并没有这个语言（有，但极其小众，且已为<code>unmaintained</code>状态）。直到我看到<code>renderer.js</code>里的代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* global hexo */</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> nunjucks = <span class="built_in">require</span>(<span class="string">&#x27;nunjucks&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// Return a compiled renderer.</span></span><br><span class="line">njkRenderer.compile = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> compiledTemplate = njkCompile(data);</span><br><span class="line">  <span class="comment">// Need a closure to keep the compiled template.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> compiledTemplate.render(locals);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">hexo.extend.renderer.register(<span class="string">&#x27;njk&#x27;</span>, <span class="string">&#x27;html&#x27;</span>, njkRenderer);</span><br><span class="line">hexo.extend.renderer.register(<span class="string">&#x27;swig&#x27;</span>, <span class="string">&#x27;html&#x27;</span>, njkRenderer);</span><br></pre></td></tr></table></figure>
+<p>才发现有<code>nunjucks</code>这种语言。它的语法可以在官网<a href="https://mozilla.github.io/nunjucks/">https://mozilla.github.io/nunjucks/</a>查到，据说和<code>jinja2</code>（基于<code>Python</code>的）一模一样，此外还支持自定义后缀什么的。这里讲一点特殊的变量，举些例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.pjax %&#125;</span><br><span class="line">    &lt;div id=&quot;pjax&quot;&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &#123;% include &#x27;_third-party/math/index.swig&#x27; %&#125;</span><br><span class="line">  &#123;% include &#x27;_third-party/quicklink.swig&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;&#123;- next_inject(&#x27;bodyEnd&#x27;) &#125;&#125;</span><br><span class="line">  &#123;%- if theme.pjax %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>（来自<code>_layout.swig</code>）有一个<code>if</code>语句，后面跟的是<code>theme.pjax</code>。这个<code>theme</code>指的是<code>Next</code>主题的<code>_config.yml</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;site-author motion-element&quot; itemprop=&quot;author&quot; itemscope itemtype=&quot;http://schema.org/Person&quot;&gt;</span><br><span class="line">  &#123;%- if theme.avatar.url %&#125;</span><br><span class="line">    &lt;img class=&quot;site-author-image&quot; itemprop=&quot;image&quot; alt=&quot;&#123;&#123; author &#125;&#125;&quot;</span><br><span class="line">      src=&quot;&#123;&#123; url_for(theme.avatar.url) &#125;&#125;&quot;&gt;</span><br><span class="line">  &#123;%- endif %&#125;</span><br><span class="line">  &lt;p class=&quot;site-author-name&quot; itemprop=&quot;name&quot;&gt;&#123;&#123; author &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;div class=&quot;site-description&quot; itemprop=&quot;description&quot;&gt;&#123;&#123; description &#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>（来自<code>_partials/sidebar/site-overview.swig</code>）这里引用了一个变量<code>&#123;&#123; author &#125;&#125;</code>，像这种没有<code>theme.</code>的都来自<code>Hexo</code>的<code>_config.yml</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% block title %&#125;&#123;&#123; page.title &#125;&#125; | &#123;&#123; title &#125;&#125;&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>（来自<code>post.swig</code>）这里引用的<code>&#123;&#123; page.title &#125;&#125;</code>有前缀<code>page.</code>，代表当前正渲染的页面（准确地说是<code>post</code>或<code>page</code>的<code>Front Matter</code>）。</p>
+<h4 id="6-5-2-Stylus"><a href="#6-5-2-Stylus" class="headerlink" title="6.5.2 Stylus"></a>6.5.2 <code>Stylus</code></h4><p>这个就没太多好讲的了，因为我自己也没学过动态<code>CSS</code>。在<code>source/css</code>这个文件夹下所有<code>.styl</code>后缀的文件都是样式表。我们之前修改过一个书签的，还记得吗？</p>
+<h2 id="7-总结与回顾"><a href="#7-总结与回顾" class="headerlink" title="7. 总结与回顾"></a>7. 总结与回顾</h2><p>到这里，我们所有的教程已经写完了。在这“短暂的”几十分钟，几小时，甚至几天中，我们终于成功的做出来这样一个基于<code>Hexo</code>+<code>Next</code>的博客网站了。还记得那几条命令吧，我还是写在这里备用。</p>
+<ul>
+<li><p><code>hexo clean</code>清除本地缓存</p>
+</li>
+<li><p><code>hexo g</code>生成网页</p>
+</li>
+<li><p><code>hexo s</code>打开本地服务器</p>
+</li>
+<li><p><code>hexo d</code>部署到远程</p>
+</li>
+<li><p><code>hexo new</code>新建文章</p>
+</li>
+<li><p><code>hexo new page</code>新建页面</p>
+</li>
+</ul>
+<p>接下来，就是你继续探索，大展身手的时刻了！我们下次再见喽~</p>
+<h2 id="8-致谢"><a href="#8-致谢" class="headerlink" title="8. 致谢"></a>8. 致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
 </li>
@@ -2315,6 +2344,7 @@ e^x \qquad & x \le 0
 <li><p><a href="https://blog.csdn.net/u010053344/article/details/50706790">Github 搭建 hexo （五）- 站点地图（sitemap.xml）|_Small蒙奇的博客 | CSDN博客</a></p>
 </li>
 </ol>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 ]]></content>
       <categories>
         <category>GitHub</category>

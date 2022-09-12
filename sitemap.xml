@@ -116,20 +116,6 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Website/</loc>
-    <lastmod>2022-09-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
-    <lastmod>2022-09-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
     <lastmod>2022-09-12</lastmod>
     <changefreq>daily</changefreq>
@@ -145,6 +131,20 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/Maths/</loc>
+    <lastmod>2022-09-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Website/</loc>
+    <lastmod>2022-09-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
     <lastmod>2022-09-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,14 +188,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-09-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
     <lastmod>2022-09-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -216,14 +216,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
     <lastmod>2022-09-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/</loc>
     <lastmod>2022-09-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
