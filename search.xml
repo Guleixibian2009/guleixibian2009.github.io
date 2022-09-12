@@ -2263,14 +2263,16 @@ e^x \qquad & x \le 0
 </blockquote>
 <p>好耶！我们现在就把这8个功能配置完啦！接下来…我们来看一点更高级的东东！</p>
 <h2 id="6-更高级的功能"><a href="#6-更高级的功能" class="headerlink" title="6. 更高级的功能"></a>6. 更高级的功能</h2><p>这一章的话，主要讲一些“看不见”的东西，比如站点地图，<code>RSS</code>等等。</p>
-<h3 id="6-1-RSS订阅"><a href="#6-1-RSS订阅" class="headerlink" title="6.1 RSS订阅"></a>6.1 <code>RSS</code>订阅</h3><p>一般博客都是提供<code>RSS Feed</code>来订阅的。我们只需要安装插件<code>hexo-generator-feed</code>，每次<code>hexo g</code>都会自动生成。</p>
+<h3 id="6-1-RSS订阅"><a href="#6-1-RSS订阅" class="headerlink" title="6.1 RSS订阅"></a>6.1 <code>RSS</code>订阅</h3><p>一般博客都是提供<code>RSS Feed</code>来订阅的。之前我们提到过<code>RSS</code>，包括侧边栏链接、文章结尾的友链，等等。要生成的话我们只需要安装插件<code>hexo-generator-feed</code>，每次<code>hexo g</code>都会自动生成。</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator</span><span class="literal">-feed</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
 <p>不过，生成出来的文件在哪里呢？看一下…应该是<code>/atom.xml</code>。</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpMo4.png" alt=""></p>
 <h3 id="6-2-站点地图sitemap"><a href="#6-2-站点地图sitemap" class="headerlink" title="6.2 站点地图sitemap"></a>6.2 站点地图<code>sitemap</code></h3><p>站点地图的话主要是为搜索引擎用的，这一小节算是给后文的一个铺垫。同样的，只需要安装插件<code>hexo-generator-sitemap</code>即可。这次生成出来的是<code>/sitemap.xml</code>。</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpueU.png" alt=""></p>
-<h3 id="6-3-CDN与jsdelivr"><a href="#6-3-CDN与jsdelivr" class="headerlink" title="6.3 CDN与jsdelivr"></a>6.3 <code>CDN</code>与<code>jsdelivr</code></h3><p>默认的话，<code>next</code>会使用<code>jsdelivr</code>作为默认的<code>CDN</code>，不过<code>cdn.jsdelivr.net</code>这个节点不是特别的稳定（被墙过），所以我个人是换到了<code>fastly</code>节点上。具体位置的话，在这里，至于改不改就看你自己了。</p>
+<h3 id="6-3-CDN与图床"><a href="#6-3-CDN与图床" class="headerlink" title="6.3 CDN与图床"></a>6.3 <code>CDN</code>与图床</h3><p>默认的话，<code>next</code>会使用<code>jsdelivr</code>作为默认的<code>CDN</code>，不过<code>cdn.jsdelivr.net</code>这个节点不是特别的稳定（被墙过），所以我个人是换到了<code>fastly</code>节点上。具体位置的话，在这里，至于改不改就看你自己了。</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXplFJ.png" alt=""></p>
+<p>同时如果你想要往文章里添加图片，那光靠自己的域名（也就是<code>GitHub</code>）肯定是不够的，我们一定会需要一个快速的、稳定的图床。我个人推荐是<code>imgse</code>路过图床，它这个是免费的，而且已经有10年历史，上传也非常方便。它支持<code>10MB</code>内的<code>JPG</code>和<code>PNG</code>，</p>
+<p>这里有图片</p>
 <h3 id="6-4-Bing-SEO"><a href="#6-4-Bing-SEO" class="headerlink" title="6.4 Bing SEO"></a>6.4 <code>Bing SEO</code></h3><p>搜索引擎优化确实是一件很重要的事情，最简单的是<code>Bing</code>。官网的话，<a href="https://www.bing.com/webmasters/about/">https://www.bing.com/webmasters/about/</a>，用<code>Microsoft</code>账户登录是最方便的（除非你有<code>FB</code>或者<code>Google</code>，不过这不太可能吧）。</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpKwF.png" alt=""></p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vXpmLT.png" alt=""></p>
@@ -2289,6 +2291,7 @@ e^x \qquad & x \le 0
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vX9CX6.png" alt=""></p>
 <p>不过真正能搜到是需要2天时间的，先放一下我自己的博客的截图：</p>
 <p><img data-src="https://s1.ax1x.com/2022/09/11/vX9inK.png" alt=""></p>
+<p>当然这个<code>SEO</code>肯定是不止这么多的。相关的功能等着你去探索，包括<code>Microsoft Clarity</code>等等。</p>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这里写一下我参考到的文章：</p>
 <ol>
 <li><p><a href="https://jerrymiao2019.github.io/2021/04/10/%E5%9F%BA%E4%BA%8EGithub-io-Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">基于Github.io+Hexo搭建个人博客 | JerryMiao2019’s Blog</a></p>
