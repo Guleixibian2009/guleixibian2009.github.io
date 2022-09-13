@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-09-13T10:31:31.080Z</updated>
+  <updated>2022-09-13T10:57:50.521Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>介绍一下我的其他项目~</title>
+    <link href="https://guleixibian2009.github.io/2022/09/13/other-projects/"/>
+    <id>https://guleixibian2009.github.io/2022/09/13/other-projects/</id>
+    <published>2022-09-13T10:44:20.000Z</published>
+    <updated>2022-09-13T10:57:50.521Z</updated>
+    
+    
+    <summary type="html">&lt;p style=&quot;text-align: center;&quot;&gt;不妨点进来，支持一下！😊&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="前端" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="后端" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
+    
+    <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
+    
+    <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
+    
+    <category term="JavaScript" scheme="https://guleixibian2009.github.io/tags/JavaScript/"/>
+    
+    <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
+    
+    <category term="Backend" scheme="https://guleixibian2009.github.io/tags/Backend/"/>
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>超详细：这个Hexo网站，到底是怎么做出来的？</title>
@@ -136,9 +171,9 @@
     <category term="Markdown语法" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/"/>
     
     
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
-    
     <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
     
     <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
     
@@ -176,7 +211,7 @@
     <link href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/"/>
     <id>https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</id>
     <published>2021-08-14T00:10:08.000Z</published>
-    <updated>2022-07-09T09:36:22.259Z</updated>
+    <updated>2022-09-13T10:50:58.968Z</updated>
     
     
     <summary type="html">&lt;p&gt;想必大家都知道&lt;code&gt;Github&lt;/code&gt;是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。&lt;br&gt;但在众多优点之中，有一个问题却一直深深地困扰着我，那就是&lt;code&gt;GitHub&lt;/code&gt;实在太！慢！啦！  &lt;/p&gt;</summary>
@@ -184,6 +219,10 @@
     
     
     <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/GitHub/"/>
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
+    
+    <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/GitHub/"/>
     
     
     <category term="Github" scheme="https://guleixibian2009.github.io/tags/Github/"/>
