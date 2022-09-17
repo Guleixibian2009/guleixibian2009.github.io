@@ -21,18 +21,21 @@
     var CONFIG = {"hostname":"guleixibian2009.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Be Vocal. Be yourself.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Guleixibian2009的个人博客~">
-<meta property="og:url" content="https://guleixibian2009.github.io/tags/LaTex/">
+  <meta name="description" content="最早接触到Cloudflare是在研究jsdelivr被墙后的解决方案，发现一个cloudflare.jsdelivr.net的节点。那是我第一次听到Cloudflare的大名。可没想到，真正把我拉回Cloudflare的，不是所谓高防DDOS，也不是加速，竟梅开二度又是被墙。这次，是Cloudflare自己被墙了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="临时解决方案：Cloudflare Workers与镜像站">
+<meta property="og:url" content="https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/">
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
-<meta property="og:description" content="Be Vocal. Be yourself.">
+<meta property="og:description" content="最早接触到Cloudflare是在研究jsdelivr被墙后的解决方案，发现一个cloudflare.jsdelivr.net的节点。那是我第一次听到Cloudflare的大名。可没想到，真正把我拉回Cloudflare的，不是所谓高防DDOS，也不是加速，竟梅开二度又是被墙。这次，是Cloudflare自己被墙了。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-17T13:49:30.000Z">
+<meta property="article:modified_time" content="2022-09-17T14:01:42.807Z">
 <meta property="article:author" content="Guleixibian2009">
-<meta property="article:tag" content="Python,Github,HEXO,Markdown,Website">
+<meta property="article:tag" content="Cloudflare">
+<meta property="article:tag" content="加速">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://guleixibian2009.github.io/tags/LaTex/">
+<link rel="canonical" href="https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/">
 
 
 <script id="page-configurations">
@@ -40,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: LaTex | Guleixibian2009的个人博客~</title>
+  <title>临时解决方案：Cloudflare Workers与镜像站 | Guleixibian2009的个人博客~</title>
   
 
 
@@ -215,57 +218,233 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">LaTex
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Guleixibian2009">
+      <meta itemprop="description" content="Be Vocal. Be yourself.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guleixibian2009的个人博客~">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          临时解决方案：Cloudflare Workers与镜像站
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-17 21:49:30 / 修改时间：22:01:42" itemprop="dateCreated datePublished" datetime="2022-09-17T21:49:30+08:00">2022-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%A0%E9%80%9F/" itemprop="url" rel="index"><span itemprop="name">加速</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>629</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>最早接触到<code>Cloudflare</code>是在研究<code>jsdelivr</code>被墙后的解决方案，发现一个<code>cloudflare.jsdelivr.net</code>的节点。那是我第一次听到<code>Cloudflare</code>的大名。可没想到，真正把我拉回<code>Cloudflare</code>的，不是所谓高防<code>DDOS</code>，也不是加速，竟梅开二度又是被墙。这次，是<code>Cloudflare</code>自己被墙了。</p>
+<span id="more"></span>
+<p>引用另一篇文章（<code>Hexo</code>网站教程）：</p>
+<blockquote>
+<p><strong>《论我捣鼓<code>GiTalk</code>的简要过程》</strong></p>
+<p>写到这里我本想去截图，结果一看启动不起来，没办法新建<code>issue</code>也没法登录<code>GitHub</code>账号。在排查了设置、网络的问题后，我发现有个致命的问题：<code>cors-anywhere.azm.workers.dev</code>被墙掉，然后<code>GiTalk</code>无法进行<code>GitHub oauth</code>，就不能用了。</p>
+<p>我于是尝试自己搭<code>worker</code>，结果发现是所有<code>Cloudflare worker</code>的链接都被墙掉了，然后我就彻底没招了，就只好作罢。不过……真的吗？</p>
+<p>后来我找到了<code>GiTalk</code>的仓库，里面有类似的<code>Issue</code>，甚至翻出了<code>CORS Anywhere</code>的仓库，找到了一个基于<code>Heroku</code>的备用<code>demo</code>链接。在一个<code>Issue</code>的<a target="_blank" rel="noopener" href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-870990778">某条评论</a>、<a target="_blank" rel="noopener" href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-1012060775">某条评论</a>中找到了一些备用链接。于是，就可以恢复正常了！</p>
+<p><strong>另及：今年（2022）11月28号<code>Heroku</code>会关闭所有的免费服务，所以你看到类似<code>herokuapp.com</code>的链接都不用试了…</strong></p>
+</blockquote>
+<p>这个<code>cors-anywhere.azm.workers.dev</code>，就是基于<code>Cloudflare Workers</code>的。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章  为你推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2021-08-14</div>
+      <div class="popular-posts-title"><a href="\2021\08\14\speed-up-github\" rel="bookmark">3个小妙招加速你的GitHub~</a></div>
+        <div class="popular-posts-excerpt"><p><p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p></p></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-28T19:35:40+08:00"
-              content="2021-11-28">
-          11-28
-        </time>
+        <div class="reward-container">
+  <div>赏作者一杯作业......</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/images/%E8%AE%BA%E4%BD%9C%E4%B8%9A%E6%95%B0%E9%87%8F.jpg" alt="Guleixibian2009 我没钱，但有作业">
+        <p>我没钱，但有作业</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/images/websiteQR.png" alt="Guleixibian2009 把我的网站分享给别人？">
+        <p>把我的网站分享给别人？</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/28/latex-syntax-in-markdown/" itemprop="url">
-            <span itemprop="name">【转】Markdown中Latex常用语法</span>
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Guleixibian2009
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/" title="临时解决方案：Cloudflare Workers与镜像站">https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian.github.io/">
+            <span class="icon">
+              <i class="fab fa-html5"></i>
+            </span>
 
+            <span class="label">旧版网站</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian2009.github.io/Hand-Written-HTML-Site/">
+            <span class="icon">
+              <i class="fas fa-laptop-code"></i>
+            </span>
+
+            <span class="label">手写网站</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian2009.github.io/awesome-bs5/">
+            <span class="icon">
+              <i class="fab fa-bootstrap"></i>
+            </span>
+
+            <span class="label">Awesome-Bootstrap项目</span>
+          </a>
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Cloudflare/" rel="tag"><i class="fa fa-tag"></i> Cloudflare</a>
+              <a href="/tags/%E5%8A%A0%E9%80%9F/" rel="tag"><i class="fa fa-tag"></i> 加速</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/13/other-projects/" rel="prev" title="介绍一下我的其他项目~">
+      <i class="fa fa-chevron-left"></i> 介绍一下我的其他项目~
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNi8zMzY3MA=="></div>
+  </div>
+  
+            </div>
+        </div>
+      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -552,7 +731,42 @@
 
   
 
+<link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '182d88027b3ae850cbeb',
+      clientSecret: '9dbad5843bcb640f1547407b20ee2eb8e3d71c81',
+      repo        : 'guleixibian2009.github.io',
+      owner       : 'guleixibian2009',
+      admin       : ['guleixibian2009'],
+      id          : 'e17989dcad5dfba56624acf263395699',
+        language: 'zh-CN',
+      distractionFreeMode: false,
+      proxy       : 'https://proxy.cors.sh/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 
   <!-- 页面点击小红心 -->

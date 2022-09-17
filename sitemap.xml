@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://guleixibian2009.github.io/2022/09/13/other-projects/</loc>
+    <loc>https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/</loc>
     
     <lastmod>2022-09-17</lastmod>
     
@@ -11,7 +11,14 @@
   <url>
     <loc>https://guleixibian2009.github.io/2021/08/14/speed-up-github/</loc>
     
-    <lastmod>2022-09-13</lastmod>
+    <lastmod>2022-09-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/09/13/other-projects/</loc>
+    
+    <lastmod>2022-09-17</lastmod>
     
   </url>
   
@@ -222,6 +229,20 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/FAQs/</loc>
+    <lastmod>2022-09-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Cloudflare/</loc>
+    <lastmod>2022-09-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

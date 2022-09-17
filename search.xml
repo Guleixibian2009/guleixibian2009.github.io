@@ -2388,6 +2388,7 @@ e^x \qquad & a \le 0
         <tag>Github</tag>
         <tag>DevSidecar</tag>
         <tag>FAQs</tag>
+        <tag>加速</tag>
       </tags>
   </entry>
   <entry>
@@ -2406,5 +2407,28 @@ e^x \qquad & a \le 0
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
 <p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>临时解决方案：Cloudflare Workers与镜像站</title>
+    <url>/2022/09/17/cloudflare-workers-for-mirror/</url>
+    <content><![CDATA[<p>最早接触到<code>Cloudflare</code>是在研究<code>jsdelivr</code>被墙后的解决方案，发现一个<code>cloudflare.jsdelivr.net</code>的节点。那是我第一次听到<code>Cloudflare</code>的大名。可没想到，真正把我拉回<code>Cloudflare</code>的，不是所谓高防<code>DDOS</code>，也不是加速，竟梅开二度又是被墙。这次，是<code>Cloudflare</code>自己被墙了。</p>
+<span id="more"></span>
+<p>引用另一篇文章（<code>Hexo</code>网站教程）：</p>
+<blockquote>
+<p><strong>《论我捣鼓<code>GiTalk</code>的简要过程》</strong></p>
+<p>写到这里我本想去截图，结果一看启动不起来，没办法新建<code>issue</code>也没法登录<code>GitHub</code>账号。在排查了设置、网络的问题后，我发现有个致命的问题：<code>cors-anywhere.azm.workers.dev</code>被墙掉，然后<code>GiTalk</code>无法进行<code>GitHub oauth</code>，就不能用了。</p>
+<p>我于是尝试自己搭<code>worker</code>，结果发现是所有<code>Cloudflare worker</code>的链接都被墙掉了，然后我就彻底没招了，就只好作罢。不过……真的吗？</p>
+<p>后来我找到了<code>GiTalk</code>的仓库，里面有类似的<code>Issue</code>，甚至翻出了<code>CORS Anywhere</code>的仓库，找到了一个基于<code>Heroku</code>的备用<code>demo</code>链接。在一个<code>Issue</code>的<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-870990778">某条评论</a>、<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-1012060775">某条评论</a>中找到了一些备用链接。于是，就可以恢复正常了！</p>
+<p><strong>另及：今年（2022）11月28号<code>Heroku</code>会关闭所有的免费服务，所以你看到类似<code>herokuapp.com</code>的链接都不用试了…</strong></p>
+</blockquote>
+<p>这个<code>cors-anywhere.azm.workers.dev</code>，就是基于<code>Cloudflare Workers</code>的。</p>
+]]></content>
+      <categories>
+        <category>加速</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>加速</tag>
+      </tags>
   </entry>
 </search>
