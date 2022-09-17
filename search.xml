@@ -1,180 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GitHub-Cli 的安装与使用</title>
-    <url>/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
-<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
-<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
-<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
-<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
-<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
-<p>嗯……搞定了！</p>
-<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
-<p>然后就会有下面的提示语：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
-<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
-<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
-<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
-<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
-<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
-<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
-<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
-<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
-<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
-<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
-<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
-<p>示意图如下：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
-<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
-<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
-<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p>就可以获得有关命令的更多信息了！</p>
-<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>GitHub-Cli</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>GitHub-Cli</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3个小妙招加速你的GitHub~</title>
-    <url>/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</url>
-    <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
-<span id="more"></span>
-<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天<em>（也许不是天天）</em>更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
-<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
-<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
-<li>方法二：改链接，做镜像，世界变得更加美好  </li>
-<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
-</ul>
-<hr>
-<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改<code>hosts</code>！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
-<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">网址</th>
-<th style="text-align:center">解释</th>
-<th style="text-align:center">IP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>github.com</code></td>
-<td style="text-align:center">这是主站</td>
-<td style="text-align:center"><del>140.82.114.4</del></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.108.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.109.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.110.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
-<td style="text-align:center">动态资源</td>
-<td style="text-align:center">185.199.111.153</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.108.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.109.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.110.133</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
-<td style="text-align:center">你的头像</td>
-<td style="text-align:center">185.199.111.133</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>注意，写入<code>hosts</code>的格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
-<p>如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
-<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
-<hr>
-<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p>但如果你用了镜像网站，速度会极快：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
-<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
-<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
-<hr>
-<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
-<p>不过后来我又发现一个问题……如果你用的是<code>Firefox</code>，那么他有时会有“未连接”的界面。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
-<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，这个模式不需要证书。实际上，造成刚刚那个界面的原因就是<code>Firefox</code>无法识别边车自动生成的证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
-<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
-<p>我们默默地把布尔值修改成<code>True</code>，重启浏览器，搞定！</p>
-<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
-<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
-<hr>
-<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
-<p><strong>THE END</strong> 谢谢你的阅读~</p>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-        <category>加速</category>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
-        <tag>DevSidecar</tag>
-        <tag>FAQs</tag>
-      </tags>
   </entry>
   <entry>
     <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
-    <url>/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</url>
+    <url>/2021/08/15/github-pages-jekyll/</url>
     <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
 <span id="more"></span>
 <h2 id="0-步骤分解"><a href="#0-步骤分解" class="headerlink" title="0. 步骤分解"></a>0. 步骤分解</h2><p><strong>话不多说，直接上步骤！</strong><br>1.注册github，创建<code>&lt;username&gt;.github.io</code>仓库；<br>2.创建<code>index.md</code>；<br>3.修改<code>_config.yml</code>，选择样式；<br>4.404页面；</p>
@@ -253,46 +96,64 @@
       </tags>
   </entry>
   <entry>
-    <title>介绍一下我的其他项目~</title>
-    <url>/2022/09/13/other-projects/</url>
-    <content><![CDATA[<p style="text-align: center;">不妨点进来，支持一下！😊</p>
-
+    <title>GitHub-Cli 的安装与使用</title>
+    <url>/2022/01/09/installation-and-usage-of-gh/</url>
+    <content><![CDATA[<h1 id="GitHub-Cli-的安装与使用"><a href="#GitHub-Cli-的安装与使用" class="headerlink" title="GitHub-Cli 的安装与使用"></a>GitHub-Cli 的安装与使用</h1><p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
 <span id="more"></span>
-<h2 id="1-总述"><a href="#1-总述" class="headerlink" title="1. 总述"></a>1. 总述</h2><p>我的话，从小学就开始搞编程，不过自以为也没搞出个什么花样来。直到上了初中，我接触到了前端开发，才慢慢有了一些拿得出手的项目。所有的项目，我都放在我的<code>GitHub</code>账户上，参见<a href="https://github.com/guleixibian2009">https://github.com/guleixibian2009</a>。</p>
+<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
+<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
+<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
+<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
+<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
+<p>嗯……搞定了！</p>
+<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
+<p>然后就会有下面的提示语：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
+<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
+<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
+<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
+<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
+<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
+<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
+<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
+<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
+<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
+<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
+<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
+<p>示意图如下：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
+<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
+<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>就可以获得有关命令的更多信息了！</p>
+<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
 ]]></content>
       <categories>
-        <category>编程</category>
-        <category>前端</category>
-        <category>后端</category>
+        <category>GitHub</category>
+        <category>GitHub-Cli</category>
       </categories>
       <tags>
-        <tag>Website</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>JavaScript</tag>
-        <tag>Frontend</tag>
-        <tag>Backend</tag>
-        <tag>编程</tag>
+        <tag>Github</tag>
+        <tag>GitHub-Cli</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>【转】Markdown中Latex常用语法</title>
-    <url>/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
+    <url>/2021/11/28/latex-syntax-in-markdown/</url>
     <content><![CDATA[<p>这篇文章是我转载过来的（很抱歉的是原网址已经找不到了），自己进行了一些格式上的修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……</p>
 <h2 id="0-LaTeX-是什么？"><a href="#0-LaTeX-是什么？" class="headerlink" title="0. LaTeX 是什么？"></a>0. LaTeX 是什么？</h2><blockquote>
 <p>$ \LaTeX $是一种基于<code>ΤeΧ</code>的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.<br>利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由<code>TeX</code>所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。<br>对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</p>
@@ -1240,25 +1101,8 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>序言</title>
-    <url>/2021/09/12/%E5%BA%8F%E8%A8%80/</url>
-    <content><![CDATA[<blockquote>
-<p>在现实断裂的地方<br>梦 汇成了海</p>
-<p>顾城 《弥合》  </p>
-</blockquote>
-<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
-<span id="more"></span>
-<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
-<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
-<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
-<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
-<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>真的非常简单-Markdown基本语法</title>
-    <url>/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <url>/2021/08/25/markdown-syntax/</url>
     <content><![CDATA[<p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p>
 <span id="more"></span>
 <h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. <code>Markdown</code> 是什么？</h2><blockquote>
@@ -1639,9 +1483,156 @@ e^x \qquad & a \le 0
         <category>Markdown语法</category>
       </categories>
       <tags>
-        <tag>编程</tag>
         <tag>Markdown</tag>
+        <tag>编程</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>介绍一下我的其他项目~</title>
+    <url>/2022/09/13/other-projects/</url>
+    <content><![CDATA[<p style="text-align: center;">不妨点进来，支持一下！😊</p>
+
+<span id="more"></span>
+<h2 id="1-总述"><a href="#1-总述" class="headerlink" title="1. 总述"></a>1. 总述</h2><p>我的话，从小学就开始搞编程，不过自以为也没搞出个什么花样来。直到上了初中，我接触到了前端开发，才慢慢有了一些拿得出手的项目。所有的项目，我都放在我的<code>GitHub</code>账户上，参见<a href="https://github.com/guleixibian2009">https://github.com/guleixibian2009</a>。</p>
+<h2 id="2-编程"><a href="#2-编程" class="headerlink" title="2. 编程"></a>2. 编程</h2><p>在程序方面本人自学的是<code>Python</code>，没有学特别高深，似乎唯一可以称得上“项目”的项目是“<code>Python</code>模拟蒲丰投针”，这是个学校作业，暂时没有上传<code>GitHub</code>，后期会写一篇更详细的讲解文章。蒲丰投针说的是：</p>
+<blockquote>
+<p>设我们有一个以平行且等距木纹铺成的地板（如概述图），随意抛一支长度比木纹之间距离小的针，求针和其中一条木纹相交的概率。并以此概率，布丰)提出的一种计算圆周率的方法——随机投针法。</p>
+</blockquote>
+<p>有一个没有图形界面的版本，旨在精确性；另外是<code>tkinter</code>写的图形界面，主要是追求可视化。最大的区别在于，投针次数越多，结果就越精确，所以图形界面（1000）总是比纯输出（10000）差的。</p>
+<p>这里有图片</p>
+<h2 id="3-前端开发"><a href="#3-前端开发" class="headerlink" title="3. 前端开发"></a>3. 前端开发</h2><p>我搞前端这件事还得说回小学五年级。我忘了是哪一天，突发奇想，用最简单的<code>GitHub Pages+Markdown</code>的方法（参见<a href="https://guleixibian2009.github.io/github-pages-jekyll/">https://guleixibian2009.github.io/github-pages-jekyll/</a>这篇文章）做出一个网站，这算是我在前端方面做出的第一个尝试。</p>
+<p>2021年8月13日，那是一个值得纪念的日子：那一天，这个<code>Hexo</code>网站诞生了。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>前端</category>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Website</tag>
+        <tag>编程</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>JavaScript</tag>
+        <tag>Frontend</tag>
+        <tag>Backend</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>3个小妙招加速你的GitHub~</title>
+    <url>/2021/08/14/speed-up-github/</url>
+    <content><![CDATA[<p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p>
+<span id="more"></span>
+<p>在我头几次用Github的时候，我几乎根本上不去，不过以前不过是下载一些搜索到的小工具啥的。<br>但现在不一样了。我开始做网站，开始天天<em>（也许不是天天）</em>更新，每一次都等待几十分钟的加载时间（白天还好），简直就是浪费生命。相信大家都有同感吧！<br>于是，我就整理了下面3种方法，给大家节约“生命”。</p>
+<h2 id="0-目录"><a href="#0-目录" class="headerlink" title="0. 目录"></a>0. 目录</h2><ul>
+<li>方法一：修改<code>Host</code>，其实更加浪费生命  </li>
+<li>方法二：改链接，做镜像，世界变得更加美好  </li>
+<li>方法三：装“边车”，速度嗖嗖嗖直窜3秒！  </li>
+</ul>
+<hr>
+<h2 id="1-我有大把时间，我要改hosts！"><a href="#1-我有大把时间，我要改hosts！" class="headerlink" title="1. 我有大把时间，我要改hosts！"></a>1. 我有大把时间，我要改<code>hosts</code>！</h2><p>好吧，如果你真的这么无聊，那我就讲一讲吧……<br>首先在<code>C:\Windows\System32\drivers\etc</code>找到<code>hosts</code>文件。如果你以前没用过，那可能需要打开权限。（如下图）</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKoNV.png" alt="hosts1"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKLjJ.png" alt="hosts2"></p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKXu9.png" alt="hosts3"></p>
+<p>用记事本打开，这个文件里在没有改动的情况下只有几行注释，忽略即可。<br>现在我们到 <a href="https://www.ipaddress.com"><code>Ipaddress</code></a> 或者<a href="https://www.itdog.cn/ping/"><code>itdog</code></a>查下面三个网址的<code>IP</code>，现在（其实是很久很久以前）查询如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">网址</th>
+<th style="text-align:center">解释</th>
+<th style="text-align:center">IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>github.com</code></td>
+<td style="text-align:center">这是主站</td>
+<td style="text-align:center"><del>140.82.114.4</del></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.108.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.109.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.110.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>raw.githubusercontent.com</code></td>
+<td style="text-align:center">动态资源</td>
+<td style="text-align:center">185.199.111.153</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.108.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.109.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.110.133</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>avatars.githubusercontent.com</code></td>
+<td style="text-align:center">你的头像</td>
+<td style="text-align:center">185.199.111.133</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注意，写入<code>hosts</code>的格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IPAddress HostName</span><br></pre></td></tr></table></figure>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">140.82.114.4    github.com  </span><br><span class="line">185.199.108.153 raw.githubusercontent.com  </span><br><span class="line">185.199.109.153 raw.githubusercontent.com  </span><br><span class="line">185.199.110.153 raw.githubusercontent.com  </span><br><span class="line">185.199.111.153 raw.githubusercontent.com</span><br><span class="line">185.199.108.133 avatars.githubusercontent.com</span><br><span class="line">185.199.109.133 avatars.githubusercontent.com</span><br><span class="line">185.199.110.133 avatars.githubusercontent.com</span><br><span class="line">185.199.111.133 avatars.githubusercontent.com</span><br></pre></td></tr></table></figure>
+<p>按照这样的格式输入到 <code>hosts</code> 文件里，再访问 <code>Github</code> 应该就很快了！<br><strong>小提示：每次只用查主站的<code>IP</code>就好了，其他的基本不会变~你可以在<code>itdog</code>中选择一些类似镜像的<code>IP</code>，比如<code>20.205.243.166</code>等等。</strong></p>
+<hr>
+<h2 id="2-我只用GitHub下载程序，不使用其他功能！"><a href="#2-我只用GitHub下载程序，不使用其他功能！" class="headerlink" title="2. 我只用GitHub下载程序，不使用其他功能！"></a>2. 我只用<code>GitHub</code>下载程序，不使用其他功能！</h2><h3 id="2-1-Git版"><a href="#2-1-Git版" class="headerlink" title="2.1 Git版"></a>2.1 <code>Git</code>版</h3><p>如果你是用<code>Git Clone</code>仓库，那么你就走运了。平时，我们<code>Clone</code>时语法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p>但如果你用了镜像网站，速度会极快：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br></pre></td></tr></table></figure>
+<p><code>https://hub.nuaa.cf</code>是一个极为神奇的网站：作为一个镜像网站，他把几<code>KiB/S</code>的速度提到了几百<code>MiB/S</code>，速度大幅提升！<br>但这样会有一个<code>bug</code>：<code>Git</code>会把你<code>Push</code>回去的网址变<code>https://hub.nuaa.cf</code>。很尴尬的是，这并不是你想要<code>Push</code>回去的地址，于是，经过无数尝试，我发现在<code>.git</code>文件夹（是隐藏的）中有一个<code>config</code>文件，里边是这样写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">    url = https://hub.nuaa.cf/guleixibian2009/guleixibian2009.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>有没有注意到那个<code>url</code>后面跟了一个<code>https://hub.nuaa.cf</code>？<br>为了让它“恢复正常”，要把它改回<code>https://github.com</code>。<br>现在，应该就可以了吧！<em>（如果没有<code>.git</code>文件夹说明你没有<code>Push</code>过，或者这不是你的项目）</em></p>
+<h3 id="2-2-网页版"><a href="#2-2-网页版" class="headerlink" title="2.2 网页版"></a>2.2 网页版</h3><p><code>https://hub.nuaa.cf</code>并不是<code>GitHub</code>的唯一镜像。如果你觉得<code>GitHub</code>太慢，<br>你可以注册一个中文版<code>GitHub</code>，叫做<code>Gitee</code>。<br>注册后，点击<code>+</code>号，并且导入你的<code>GitHub</code>仓库，继续下载就超级快乐啦！<br><img data-src="https://z3.ax1x.com/2021/08/15/fcKjBR.png" alt="import1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcKvH1.png" alt="import2"></p>
+<hr>
+<h2 id="3-我天天要用GitHub，给个靠谱的方法！"><a href="#3-我天天要用GitHub，给个靠谱的方法！" class="headerlink" title="3. 我天天要用GitHub，给个靠谱的方法！"></a>3. 我天天要用<code>GitHub</code>，给个靠谱的方法！</h2><p>在<code>GitHub</code>上有一个项目，叫做<code>@docmirror/DevSidecar</code>，中文名叫<code>开发者边车</code>（也就是我现在用的）。<br><strong><em>小提示：使用此系统可能会造成系统代理服务器配置更变，请小心驾驶</em></strong><br>这个软件是我某个同学推荐的，几乎解决了关于<code>Github</code>速度的所有问题。（后来，22年6月它又帮我解决一个大难题，众所周知<code>jsdeilvr</code>这时被墙了……）<br>如果你需要下载或帮助，请去他的 <a href="https://github.com/docmirror/dev-sidecar"><code>Github</code>项目地址</a>（这个项目在<code>gitee</code>上面已经被封锁了）。<br>用之前要先按指导安装证书，随后选择默认模式。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcMSN6.png" alt="sidecar1"><br><img data-src="https://z3.ax1x.com/2021/08/15/fcMp4K.png" alt="sidecar2"></p>
+<p>不过后来我又发现一个问题……如果你用的是<code>Firefox</code>，那么他有时会有“未连接”的界面。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKzAx.png" alt="problem">  </p>
+<p>白天速度不算慢，你就关掉代理就好了。不过如果你无法忍受的话，你可以把边车调成安全模式，这个模式不需要证书。实际上，造成刚刚那个界面的原因就是<code>Firefox</code>无法识别边车自动生成的证书。<br>所以，你学废了吗？<br>不过，经过一“晚上”的查询，我终于查到了一个解决办法。<br>在网址栏里输入<code>about:config</code>，会显示如下界面，我们可以通过修改底层配置的方法来解决这个问题。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKH9U.png" alt="config1"></p>
+<p>点击“接受风险并继续”，会显示如下界面，我们输入<code>security.enterprise_roots.enabled</code>。</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKThT.png" alt="config2"></p>
+<p>我们默默地把布尔值修改成<code>True</code>，重启浏览器，搞定！</p>
+<p><img data-src="https://z3.ax1x.com/2021/08/15/fcKqc4.png" alt="config3"></p>
+<p>如果点击“那把锁”后出现如下界面，说明你成功啦！</p>
+<hr>
+<p>现在你有没有发现自己空出来了大把时间呢？借助这三种方法，好好“享受”你的编程时光吧！</p>
+<p><strong>THE END</strong> 谢谢你的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>加速</category>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>DevSidecar</tag>
+        <tag>FAQs</tag>
       </tags>
   </entry>
   <entry>
@@ -2389,5 +2380,22 @@ e^x \qquad & x \le 0
         <tag>GitHub</tag>
         <tag>Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/09/12/preface/</url>
+    <content><![CDATA[<blockquote>
+<p>在现实断裂的地方<br>梦 汇成了海</p>
+<p>顾城 《弥合》  </p>
+</blockquote>
+<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
+<span id="more"></span>
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
+<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
+<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
+<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
+<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
+]]></content>
   </entry>
 </search>

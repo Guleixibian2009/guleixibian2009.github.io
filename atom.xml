@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-09-13T10:57:50.521Z</updated>
+  <updated>2022-09-17T10:28:07.918Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://guleixibian2009.github.io/2022/09/13/other-projects/"/>
     <id>https://guleixibian2009.github.io/2022/09/13/other-projects/</id>
     <published>2022-09-13T10:44:20.000Z</published>
-    <updated>2022-09-13T10:57:50.521Z</updated>
+    <updated>2022-09-17T10:28:07.918Z</updated>
     
     
     <summary type="html">&lt;p style=&quot;text-align: center;&quot;&gt;不妨点进来，支持一下！😊&lt;/p&gt;</summary>
@@ -37,6 +37,8 @@
     
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
     
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
     <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
     
     <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
@@ -46,8 +48,6 @@
     <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
     
     <category term="Backend" scheme="https://guleixibian2009.github.io/tags/Backend/"/>
-    
-    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -82,8 +82,8 @@
   
   <entry>
     <title>GitHub-Cli 的安装与使用</title>
-    <link href="https://guleixibian2009.github.io/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
-    <id>https://guleixibian2009.github.io/2022/01/09/GitHub-Cli%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</id>
+    <link href="https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/"/>
+    <id>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</id>
     <published>2022-01-09T10:58:00.000Z</published>
     <updated>2022-06-15T10:48:43.569Z</updated>
     
@@ -105,8 +105,8 @@
   
   <entry>
     <title>【转】Markdown中Latex常用语法</title>
-    <link href="https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
-    <id>https://guleixibian2009.github.io/2021/11/28/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://guleixibian2009.github.io/2021/11/28/latex-syntax-in-markdown/"/>
+    <id>https://guleixibian2009.github.io/2021/11/28/latex-syntax-in-markdown/</id>
     <published>2021-11-28T11:35:40.000Z</published>
     <updated>2022-08-27T08:48:24.024Z</updated>
     
@@ -135,8 +135,8 @@
   
   <entry>
     <title>序言</title>
-    <link href="https://guleixibian2009.github.io/2021/09/12/%E5%BA%8F%E8%A8%80/"/>
-    <id>https://guleixibian2009.github.io/2021/09/12/%E5%BA%8F%E8%A8%80/</id>
+    <link href="https://guleixibian2009.github.io/2021/09/12/preface/"/>
+    <id>https://guleixibian2009.github.io/2021/09/12/preface/</id>
     <published>2021-09-12T05:44:05.000Z</published>
     <updated>2022-08-29T04:07:53.523Z</updated>
     
@@ -154,8 +154,8 @@
   
   <entry>
     <title>真的非常简单-Markdown基本语法</title>
-    <link href="https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
-    <id>https://guleixibian2009.github.io/2021/08/25/%E7%9C%9F%E7%9A%84%E9%9D%9E%E5%B8%B8%E7%AE%80%E5%8D%95-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
+    <link href="https://guleixibian2009.github.io/2021/08/25/markdown-syntax/"/>
+    <id>https://guleixibian2009.github.io/2021/08/25/markdown-syntax/</id>
     <published>2021-08-25T06:46:50.000Z</published>
     <updated>2022-08-28T10:39:59.416Z</updated>
     
@@ -171,9 +171,9 @@
     <category term="Markdown语法" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/"/>
     
     
-    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
-    
     <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
     <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
     
@@ -181,8 +181,8 @@
   
   <entry>
     <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
-    <link href="https://guleixibian2009.github.io/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/"/>
-    <id>https://guleixibian2009.github.io/2021/08/15/GithubPages-%E7%AE%80%E5%8D%95%E6%98%93%E4%B8%8A%E6%89%8B%E7%9A%84%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C-Jekyll%E7%89%88/</id>
+    <link href="https://guleixibian2009.github.io/2021/08/15/github-pages-jekyll/"/>
+    <id>https://guleixibian2009.github.io/2021/08/15/github-pages-jekyll/</id>
     <published>2021-08-15T12:29:48.000Z</published>
     <updated>2022-08-30T00:16:39.707Z</updated>
     
@@ -208,8 +208,8 @@
   
   <entry>
     <title>3个小妙招加速你的GitHub~</title>
-    <link href="https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/"/>
-    <id>https://guleixibian2009.github.io/2021/08/14/3%E4%B8%AA%E5%B0%8F%E5%A6%99%E6%8B%9B%E5%8A%A0%E9%80%9F%E4%BD%A0%E7%9A%84GitHub/</id>
+    <link href="https://guleixibian2009.github.io/2021/08/14/speed-up-github/"/>
+    <id>https://guleixibian2009.github.io/2021/08/14/speed-up-github/</id>
     <published>2021-08-14T00:10:08.000Z</published>
     <updated>2022-09-13T10:50:58.968Z</updated>
     
