@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-09-17T14:01:42.807Z</updated>
+  <updated>2022-09-24T02:21:34.686Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -17,14 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>蝉蜕趣事</title>
+    <link href="https://guleixibian2009.github.io/2022/09/19/small-but-shining-ideas-2/"/>
+    <id>https://guleixibian2009.github.io/2022/09/19/small-but-shining-ideas-2/</id>
+    <published>2022-09-19T02:15:49.000Z</published>
+    <updated>2022-09-24T02:21:34.686Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;〇、蝉蜕&quot;&gt;&lt;a href=&quot;#〇、蝉蜕&quot; class=&quot;headerlink&quot; title=&quot;〇、蝉蜕&quot;&gt;&lt;/a&gt;〇、蝉蜕&lt;/h2&gt;&lt;p&gt;蝉蜕么，就是那些全身棕黄色的、晶莹剔透的小东西。偶有棕黑色的，个儿更大，却也属实少见。硬，但是脆，一压就变成碎屑了。算是我们苏中的特产，一抓一大把的那种。不知为何，我与那蝉蜕似乎结了缘，在它们出没的几个月里也给我带来了许多趣事。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>临时解决方案：Cloudflare Workers与镜像站</title>
     <link href="https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/"/>
     <id>https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/</id>
     <published>2022-09-17T13:49:30.000Z</published>
-    <updated>2022-09-17T14:01:42.807Z</updated>
+    <updated>2022-09-24T03:13:37.712Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最早接触到&lt;code&gt;Cloudflare&lt;/code&gt;是在研究&lt;code&gt;jsdelivr&lt;/code&gt;被墙后的解决方案，发现一个&lt;code&gt;cloudflare.jsdelivr.net&lt;/code&gt;的节点。那是我第一次听到&lt;code&gt;Cloudflare&lt;/code&gt;的大名。可没想到，真正把我拉回&lt;code&gt;Cloudflare&lt;/code&gt;的，不是所谓高防&lt;code&gt;DDOS&lt;/code&gt;，也不是加速，竟梅开二度又是被墙。这次，是&lt;code&gt;Cloudflare&lt;/code&gt;自己被墙了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;最早接触到&lt;code&gt;Cloudflare&lt;/code&gt;是在研究&lt;code&gt;jsdelivr&lt;/code&gt;被墙后的解决方案，发现一个&lt;code&gt;cloudflare.jsdelivr.net&lt;/code&gt;的节点。那是我第一次听到&lt;code&gt;Cloudflare&lt;/code&gt;的大名。可没想到，真正把我拉回&lt;code&gt;Cloudflare&lt;/code&gt;的，不是所谓高防&lt;code&gt;DDOS&lt;/code&gt;，也不是&lt;code&gt;CDN&lt;/code&gt;加速，竟梅开二度又是被墙。这次，是&lt;code&gt;Cloudflare&lt;/code&gt;自己被墙了。&lt;/p&gt;</summary>
     
     
     
@@ -34,6 +55,27 @@
     <category term="Cloudflare" scheme="https://guleixibian2009.github.io/tags/Cloudflare/"/>
     
     <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>与伟长结缘</title>
+    <link href="https://guleixibian2009.github.io/2022/09/16/small-but-shining-ideas-1/"/>
+    <id>https://guleixibian2009.github.io/2022/09/16/small-but-shining-ideas-1/</id>
+    <published>2022-09-16T13:33:29.000Z</published>
+    <updated>2022-09-24T02:22:17.691Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;code&gt;small but shining ideas&lt;/code&gt;，意为灵感。从今天起（主要是选修课老梅子的“怂恿”下），我将记录下头脑里闪过的那些小小的、闪光的点子。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -58,8 +100,6 @@
     
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
     
-    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
-    
     <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
     
     <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
@@ -70,6 +110,8 @@
     
     <category term="Backend" scheme="https://guleixibian2009.github.io/tags/Backend/"/>
     
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
   </entry>
   
   <entry>
@@ -77,7 +119,7 @@
     <link href="https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/"/>
     <id>https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</id>
     <published>2022-08-16T11:20:27.000Z</published>
-    <updated>2022-09-13T10:31:31.080Z</updated>
+    <updated>2022-09-24T03:17:23.751Z</updated>
     
     
     <summary type="html">&lt;p&gt;断更好久了，今天终于抽空来写一点。不知不觉之间，这个网站已经上线运行1年多了，于是，我就开了这个新坑（&lt;code&gt;Hexo&lt;/code&gt;网站的配置以及深度开发），应该够我写一阵子了，也算作送给这1年来的present……我也会随着教程的更新&lt;a href=&quot;/hexo-website-tutorial&quot;&gt;重复一遍过程&lt;/a&gt;，以保证内容的正确性。&lt;/p&gt;
@@ -239,20 +281,20 @@
     
     
     
-    <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/GitHub/"/>
-    
     <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
+    
+    <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/GitHub/"/>
     
     <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/GitHub/"/>
     
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
     <category term="Github" scheme="https://guleixibian2009.github.io/tags/Github/"/>
     
     <category term="DevSidecar" scheme="https://guleixibian2009.github.io/tags/DevSidecar/"/>
     
     <category term="FAQs" scheme="https://guleixibian2009.github.io/tags/FAQs/"/>
-    
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   

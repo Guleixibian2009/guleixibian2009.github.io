@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</loc>
+    <lastmod>2022-09-24</lastmod>
+  </url>
+  <url>
     <loc>https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/</loc>
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/09/16/small-but-shining-ideas-1/</loc>
+    <lastmod>2022-09-24</lastmod>
+  </url>
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/09/19/small-but-shining-ideas-2/</loc>
+    <lastmod>2022-09-24</lastmod>
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2021/08/14/speed-up-github/</loc>
@@ -11,10 +23,6 @@
   <url>
     <loc>https://guleixibian2009.github.io/2022/09/13/other-projects/</loc>
     <lastmod>2022-09-17</lastmod>
-  </url>
-  <url>
-    <loc>https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</loc>
-    <lastmod>2022-09-13</lastmod>
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2021/08/15/github-pages-jekyll/</loc>
