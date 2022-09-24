@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guleixibian2009.github.io/2022/09/23/small-but-shining-ideas-4/</loc>
+    
+    <lastmod>2022-09-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/09/20/small-but-shining-ideas-3/</loc>
+    
+    <lastmod>2022-09-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/2022/08/16/hexo-website-tutorial/</loc>
     
     <lastmod>2022-09-24</lastmod>
@@ -371,6 +385,13 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/</loc>
+    <lastmod>2022-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%80%9D%E8%80%83/</loc>
     <lastmod>2022-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
