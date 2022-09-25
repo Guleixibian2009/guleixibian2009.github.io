@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://guleixibian2009.github.io/2022/09/25/git-configuration-and-commands/</loc>
+    <lastmod>2022-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</loc>
+    <lastmod>2022-09-25</lastmod>
+  </url>
+  <url>
     <loc>https://guleixibian2009.github.io/2022/09/22/small-but-shining-ideas-5/</loc>
     <lastmod>2022-09-25</lastmod>
   </url>
@@ -55,9 +63,5 @@
   <url>
     <loc>https://guleixibian2009.github.io/2021/08/13/hello-world/</loc>
     <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
-    <loc>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</loc>
-    <lastmod>2022-06-15</lastmod>
   </url>
 </urlset> 

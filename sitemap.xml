@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guleixibian2009.github.io/2022/09/25/git-configuration-and-commands/</loc>
+    
+    <lastmod>2022-09-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</loc>
+    
+    <lastmod>2022-09-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/2022/09/22/small-but-shining-ideas-5/</loc>
     
     <lastmod>2022-09-25</lastmod>
@@ -110,13 +124,6 @@
     <loc>https://guleixibian2009.github.io/about/</loc>
     
     <lastmod>2022-06-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</loc>
-    
-    <lastmod>2022-06-15</lastmod>
     
   </url>
   
@@ -290,6 +297,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Git/</loc>
+    <lastmod>2022-09-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -315,13 +329,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/</loc>
-    <lastmod>2022-09-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/GitHub-Cli/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -399,6 +406,13 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/GitHub/</loc>
+    <lastmod>2022-09-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2022-09-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

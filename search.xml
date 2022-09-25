@@ -184,7 +184,7 @@
 ]]></content>
       <categories>
         <category>GitHub</category>
-        <category>GitHub-Cli</category>
+        <category>命令行</category>
       </categories>
       <tags>
         <tag>Github</tag>
@@ -2574,6 +2574,179 @@ e^x \qquad & a \le 0
         <tag>Github</tag>
         <tag>DevSidecar</tag>
         <tag>FAQs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【转】关于Git你需要知道的一切</title>
+    <url>/2022/09/25/git-configuration-and-commands/</url>
+    <content><![CDATA[<p>暂且记录一下，作为一个备忘录，方便之后查阅。也可作为初学者上手用。主要还是之前创作过程中提到了需要使用<code>Git</code>哦。</p>
+<blockquote>
+<p>原文链接：</p>
+<p><a href="https://blog.csdn.net/amf12345/article/details/121048818">git配置及常见命令_星辰浩宇的博客-CSDN博客_git配置命令</a></p>
+<p><a href="https://blog.csdn.net/Bwen_F/article/details/125007378">Git常用配置命令_油泼刀削面的博客-CSDN博客_git 配置命令</a></p>
+</blockquote>
+<span id="more"></span>
+<h2 id="1-安装后的配置"><a href="#1-安装后的配置" class="headerlink" title="1. 安装后的配置"></a>1. 安装后的配置</h2><p>安装<code>Git</code>后，我们需要本地<code>Git</code>与远程<code>GitHub</code>连接的建立，只有将<code>Git</code>本地与远程的<code>GitHub</code>建立了连接以后我们本地的项目才能上传至远程服务器。</p>
+<p>注：下面的命令请使用自己的用户名密码替换</p>
+<h3 id="1-1-在Git中配置全局的GitHub账号信息"><a href="#1-1-在Git中配置全局的GitHub账号信息" class="headerlink" title="1.1 在Git中配置全局的GitHub账号信息"></a>1.1 在<code>Git</code>中配置全局的<code>GitHub</code>账号信息</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git config -<span class="literal">-global</span> user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config -<span class="literal">-global</span> user.email <span class="string">&quot;email&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-生成RSA公、私钥文件"><a href="#1-2-生成RSA公、私钥文件" class="headerlink" title="1.2 生成RSA公、私钥文件"></a>1.2 生成<code>RSA</code>公、私钥文件</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-C</span> <span class="string">&quot;email&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-配对公、私钥"><a href="#1-3-配对公、私钥" class="headerlink" title="1.3 配对公、私钥"></a>1.3 配对公、私钥</h3><p>命令执行成功后，在本地电脑的名为<code>.ssh</code>的目录下（例如<code>C:\Users\gulei\.ssh\</code>）找到名为<code>id_rsa.pub</code>的文件，打开这个文件后将里面的内容先复制下来。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/25/xEoIk6.png" alt=""></p>
+<p>然后我们找到<code>GitHub Settings</code><a href="https://github.com/settings/keys">https://github.com/settings/keys</a>：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/25/xEootK.png" alt=""></p>
+<p>在左边的栏目中选择<code>SSH and GPG Keys</code>：然后在出来的右边的框框中选择 <code>New SSH</code>：其中<code>Title</code>可以随意写个名字，<code>Key</code>里面的内容需要把刚刚复制的id_rsa.pub文件中的内容拷贝进去，最后点击<code>Add SSH key</code>即可。 </p>
+<p><img data-src="https://s1.ax1x.com/2022/09/25/xEoTfO.png" alt=""></p>
+<p>我们如何检测是否已经连接上了呢？使用以下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/09/25/xE7qeA.png" alt=""></p>
+<hr>
+<h2 id="2-命令列表"><a href="#2-命令列表" class="headerlink" title="2. 命令列表"></a>2. 命令列表</h2><p><img data-src="https://s1.ax1x.com/2022/09/25/xE7HLd.png" alt=""></p>
+<p>说明：</p>
+<p><code>workspace</code>：工作区</p>
+<p><code>staging area</code>：暂存区/缓存区</p>
+<p><code>local repository</code>：版本库或本地仓库</p>
+<p><code>remote repository</code>：远程仓库</p>
+<p>1、查看用户名和邮箱地址：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+<p>2、修改用户名和邮箱地址</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git config -<span class="literal">-global</span> user.name  <span class="string">&quot;xxxx&quot;</span> </span><br><span class="line">git config -<span class="literal">-global</span> user.email  <span class="string">&quot;xxxx&quot;</span>  </span><br></pre></td></tr></table></figure>
+<p>3、如果我们是直接拉下代码库</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone url</span><br></pre></td></tr></table></figure>
+<p>那么我们这个文件夹本身已经就是一个<code>git</code>仓库了</p>
+<p>4、如果我们是本地已有的文件去与远程代码库相关联的话，需要执行以下步骤：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 文件/   <span class="comment">#即需要进入这个文件</span></span><br><span class="line">git init   <span class="comment">#将文件初始化为git文件</span></span><br><span class="line"><span class="comment">#与远程代码库添加链接</span></span><br><span class="line">git remote add origin 代码库链接</span><br><span class="line"><span class="comment">#后续提交过程都一样</span></span><br></pre></td></tr></table></figure>
+<p>5、查看本地分支</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p>注:名称前面加* 号的是当前的分支</p>
+<p>6、在本地创建新的分支并切换到该分支上</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git checkout <span class="literal">-b</span> private</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch private       <span class="comment">#在本地新创建private分支</span></span><br><span class="line">git checkout private     <span class="comment">#切换到新分支上</span></span><br></pre></td></tr></table></figure>
+<p>7、查看远程分支</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-r</span></span><br></pre></td></tr></table></figure>
+<p>8、查看所有的分支（包括本地分支以及远程分支）</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-a</span></span><br></pre></td></tr></table></figure>
+<p>加上<code>-a</code>参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）</p>
+<p>9、查看本地分支与远程分支的映射关系</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-vv</span></span><br></pre></td></tr></table></figure>
+<p>10、重命名本地分支</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-m</span>  </span><br></pre></td></tr></table></figure>
+<p>11、删除本地分支</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-d</span> name</span><br></pre></td></tr></table></figure>
+<p>12、删除远程分支</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-r</span> <span class="literal">-d</span> origin/name</span><br><span class="line">git push origin:name  <span class="comment">#删除后还需要推送到远程</span></span><br></pre></td></tr></table></figure>
+<p>13、查看当前远程仓库信息</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git remote <span class="literal">-vv</span></span><br></pre></td></tr></table></figure>
+<p>14、远程新建分支后，本地查看不到，使用以下命令同步</p>
+<p>远程新建分支，本地在未创建此新分支前便已经<code>clone</code>下来，现在本地查看分支时没有发现远程新建的 分支，使用如下命令更新，即可查看远程新建的分支</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git remote <span class="comment">#列出远程主机</span></span><br><span class="line">git remote update origin -<span class="literal">-prune</span>  <span class="comment">#更新远程主机origin整理分支</span></span><br></pre></td></tr></table></figure>
+<p>15、当我们手动在远程分支上建立了一个新的分支，本地也有一个新的分支时，想要本地的新分支提交到这个远程的新分支上时，我们需要新建本地分支与远程分支的关联</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch -<span class="literal">-set</span><span class="literal">-upstream</span><span class="literal">-to</span>=origin/name name</span><br></pre></td></tr></table></figure>
+<p>eg：我的本地新建了一个分支<code>private</code>远程新建了一个分支<code>dev</code>把二者进行关联起来</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch -<span class="literal">-set</span><span class="literal">-upstream</span><span class="literal">-to</span>=origin/dev private</span><br><span class="line">或者</span><br><span class="line">git branch <span class="literal">-u</span> orgin/dev private</span><br></pre></td></tr></table></figure>
+<p>如果此时已经在本地private分支上，可以直接</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch <span class="literal">-u</span> origin/dev</span><br></pre></td></tr></table></figure>
+<p>输出：Branch <code>private</code> set up to track remote branch <code>dev</code> from <code>origin</code>.</p>
+<p>16、如果本地有分支，但是远程没有分支对应，如何把本地的分支提交到远程</p>
+<p>假设有本地分支<code>dev</code>，远端没有该分支。此时<code>push</code>或者<code>pull</code>时，就不知道跟踪的是哪个分支。使用以下指令：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git push -<span class="literal">-set</span><span class="literal">-upstream</span> origin dev</span><br></pre></td></tr></table></figure>
+<p>推送后远程也会出现<code>dev</code>分支,二者建立连接，注意此时的<code>dev</code>并不是你给远程分支起的名字，而是根据本地的分支推送上去的远程分支。后续<code>push</code>和<code>pull</code>时，就不用指定分支。</p>
+<p>17、本地没有某个分支，远程仓库有此分支，怎样拉取远端分支代码到本地分支？</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git checkout -<span class="literal">-track</span> origin/name</span><br></pre></td></tr></table></figure>
+<p>此时，本地会自动创建分支<code>name</code>与远端分支同名，并与远端分支<code>name</code>关联。</p>
+<p>建议在弄分支的时候最好本地与远程的名字相同便于区别</p>
+<p>18、如果我们的本地文件已经关联了远程代码仓库，现在想关联新的代码仓库</p>
+<p>一种方法是将原来的远程仓库重新命名，另一种是删除原来的远程仓库；二者选其一，然后再新关联现在的远程仓库即可</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#方法一：重命名原来的远程仓库</span></span><br><span class="line">git remote rename origin old<span class="literal">-origin</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二：删除原来的远程仓库</span></span><br><span class="line">git remote <span class="built_in">rm</span> origin</span><br><span class="line"></span><br><span class="line"><span class="comment">#上面的二选一，然后重新指定新的源</span></span><br><span class="line">git remote add origin [<span class="type">url</span>]</span><br></pre></td></tr></table></figure>
+<p>19、撤销本地分支与远程分支的映射关系</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch -<span class="literal">-unset</span><span class="literal">-upstream</span></span><br></pre></td></tr></table></figure>
+<p>此时，当前的本地分支与远程分支解除关系</p>
+<p>20、<code>Git</code>在本地新建分支后，可做远程分支关联。关联目的是，如果在本地分支下进行<code>pull</code>和<code>push</code>操作时 ，便不需要指定远程的分支。</p>
+<p>21、新建本地分支与远程分支相关联</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git checkout <span class="literal">-b</span> dev origin/dev   <span class="comment"># 新建本地分支dev与远程dev分支相关联</span></span><br></pre></td></tr></table></figure>
+<p>22、执行<code>push</code>推送代码</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>23、本地分支<code>push</code>到远程分支</p>
+<p>本地分支 <code>v2</code> 远程分支<code>dev</code></p>
+<p>如果没有建立关系时</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git push origin v2:dev</span><br><span class="line">或者</span><br><span class="line">git push origin dev <span class="comment">#本地已经在v2分支上</span></span><br></pre></td></tr></table></figure>
+<p>如果已经建立关联 且目前的本地分支就在<code>v2</code>上，我们可以直接使用</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>24、多人合作提交代码</p>
+<p>在我们自己提交之前如果有别人提交了代码，我们需要先进行合并代码，再进行<code>push</code></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">方案一：合并远程分支代码</span><br><span class="line">git fetch origin </span><br><span class="line">(git remote update有的时候可能需要同步一下远程和本地）</span><br><span class="line">git merge origin/远程分支名　　</span><br><span class="line">方案二：合并远程分支代码</span><br><span class="line">git pull origin 远程分支名</span><br><span class="line">（<span class="built_in">PS</span>：方案一和方案二选择一个即可）</span><br><span class="line">执行push推送代码</span><br><span class="line">git push origin 本地分支名:远程分支名</span><br></pre></td></tr></table></figure>
+<p>25、<code>git fetch</code>与 <code>git pull</code>的区别</p>
+<p><code>git fetch</code>是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。</p>
+<p>而<code>git pull</code>则是将远程主机的最新内容拉下来后直接合并，即：<code>git pull = git fetch + git merge</code>，这样可能会产生冲突。</p>
+<p>26、<code>git fetch</code>的常见命令如下：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git fetch &lt;远程主机名&gt; //这个命令将某个远程主机的更新全部取回本地，一般远程主机名为origin</span><br><span class="line">git fetch &lt;远程主机名&gt; &lt;分支名&gt; //注意之间有空格,返回的是特定分支的更新</span><br></pre></td></tr></table></figure>
+<p>例如：返回<code>origin</code>主机的<code>maste</code>分支的更新 <code>git fetch origin master</code><br>取回更新后，会返回一个<code>FETCH_HEAD</code>，指的是某个<code>branch</code>在服务器上的最新状态，我们可以在本地通过它查看刚取回的更新信息：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git log <span class="literal">-p</span> FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<p>可以看到返回的信息包括更新的文件名，更新的作者和时间，以及更新的代码（红色删除和绿色新增）。</p>
+<p>我们可以通过这些信息来判断是否产生冲突，以确定是否将更新<code>merge</code>到当前分支。</p>
+<p>如果我们需要合并的话执行以下代码</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git merge FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<p>总结：<code>fetch</code>合并到分支需要两步</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git fetch origin master //从远程主机的master分支拉取最新内容  </span><br><span class="line">git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中</span><br></pre></td></tr></table></figure>
+<p>27、<code>git pull</code>的常见用法</p>
+<p>将远程主机的某个分支的更新取回，并与本地指定的分支合并</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br></pre></td></tr></table></figure>
+<p>如果需要合并的本地分支就是目前的分支，则后面的本地分支名可以省略</p>
+<p>28、还原代码至某个版本</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git reset -<span class="literal">-hard</span> 版本号</span><br></pre></td></tr></table></figure>
+<p>如果不加版本号，默认恢复上一个版本</p>
+<p>29、合并分支到<code>master</code>上</p>
+<p>首先切换到<code>master</code>分支上</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+<p>如果是多人开发的话 需要把远程<code>master</code>上的代码<code>pull</code>下来</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>然后我们把<code>dev</code>分支的代码合并到<code>master</code>上</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+<p>30、查看状态</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>31、git配置的一些其他的命令</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git log                                         <span class="comment"># 查看提交历史 </span></span><br><span class="line">git config core.ignorecase false                <span class="comment"># 设置大小写敏感</span></span><br></pre></td></tr></table></figure>
+<p>32、git的提交</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">diff</span>                        <span class="comment"># 查看变更内容 </span></span><br><span class="line">git add .                       <span class="comment"># 跟踪所有改动过的文件 </span></span><br><span class="line">git add                         <span class="comment"># 跟踪指定的文件 </span></span><br><span class="line">git <span class="built_in">mv</span>                          <span class="comment"># 文件改名 </span></span><br><span class="line">git <span class="built_in">rm</span>                          <span class="comment"># 删除文件 </span></span><br><span class="line">git <span class="built_in">rm</span> -<span class="literal">-cached</span>                 <span class="comment"># 停止跟踪文件但不删除 </span></span><br><span class="line">git commit <span class="literal">-m</span> <span class="string">&quot;commit message&quot;</span>  <span class="comment"># 提交所有更新过的文件 </span></span><br><span class="line">git commit -<span class="literal">-amend</span>              <span class="comment"># 修改最后一次提交</span></span><br></pre></td></tr></table></figure>
+<p>33.查看历史</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git log                         <span class="comment"># 查看提交历史 </span></span><br><span class="line">git log <span class="literal">-p</span>                      <span class="comment"># 查看指定文件的提交历史 </span></span><br><span class="line">git blame                       <span class="comment"># 以列表方式查看指定文件的提交历史</span></span><br></pre></td></tr></table></figure>
+<p>34.撤销</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git reset -<span class="literal">-hard</span> HEAD           <span class="comment"># 撤消工作目录中所有未提交文件的修改内容</span></span><br><span class="line">git reset -<span class="literal">-hard</span>                <span class="comment"># 撤销到某个特定版本 </span></span><br><span class="line">git checkout HEAD               <span class="comment"># 撤消指定的未提交文件的修改内容 </span></span><br><span class="line">git checkout --                 <span class="comment"># 同上一个命令 </span></span><br><span class="line">git revert                      <span class="comment"># 撤消指定的提交分支与标签</span></span><br></pre></td></tr></table></figure>
+<p>35.分支与标签</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git branch                      <span class="comment"># 显示所有本地分支 </span></span><br><span class="line">git checkout                    <span class="comment"># 切换到指定分支或标签 </span></span><br><span class="line">git branch                      <span class="comment"># 创建新分支 </span></span><br><span class="line">git branch <span class="literal">-d</span>                   <span class="comment"># 删除本地分支 </span></span><br><span class="line">git tag                         <span class="comment"># 列出所有本地标签 </span></span><br><span class="line">git tag                         <span class="comment"># 基于最新提交创建标签 </span></span><br><span class="line">git tag <span class="literal">-a</span> <span class="string">&quot;v1.0&quot;</span> <span class="literal">-m</span> <span class="string">&quot;一些说明&quot;</span>  <span class="comment"># -a指定标签名称，-m指定标签说明 </span></span><br><span class="line">git tag <span class="literal">-d</span>                      <span class="comment"># 删除标签  </span></span><br><span class="line">git checkout dev                <span class="comment"># 合并特定的commit到dev分支上 </span></span><br><span class="line">git cherry<span class="literal">-pick</span> <span class="number">62</span>ecb3</span><br></pre></td></tr></table></figure>
+<p>36.合并与衍合</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git merge                       <span class="comment"># 合并指定分支到当前分支 </span></span><br><span class="line">git merge -<span class="literal">-abort</span>               <span class="comment"># 取消当前合并，重建合并前状态 </span></span><br><span class="line">git merge dev <span class="literal">-Xtheirs</span>          <span class="comment"># 以合并dev分支到当前分支，有冲突则以dev分支为准</span></span><br><span class="line">git rebase                      <span class="comment"># 衍合指定分支到当前分支</span></span><br></pre></td></tr></table></figure>
+<p>37.远程操作</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git remote <span class="literal">-v</span>                   <span class="comment"># 查看远程版本库信息 </span></span><br><span class="line">git remote show                 <span class="comment"># 查看指定远程版本库信息 </span></span><br><span class="line">git remote add                  <span class="comment"># 添加远程版本库 </span></span><br><span class="line">git remote remove               <span class="comment"># 删除指定的远程版本库 </span></span><br><span class="line">git fetch                       <span class="comment"># 从远程库获取代码 </span></span><br><span class="line">git pull                        <span class="comment"># 下载代码及快速合并 </span></span><br><span class="line">git push                        <span class="comment"># 上传代码及快速合并</span></span><br></pre></td></tr></table></figure>
+<p>38.打包</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git archive -<span class="literal">-format</span>=zip -<span class="literal">-output</span> ../file.zip master    <span class="comment"># 将master分支打包成file.zip文件，保存在上一级目录 </span></span><br><span class="line">git archive -<span class="literal">-format</span>=zip -<span class="literal">-output</span> ../v1.<span class="number">2</span>.zip v1.<span class="number">2</span>      <span class="comment"># 打包v1.2标签的文件，保存在上一级目录v1.2.zip文件中 </span></span><br><span class="line">git archive -<span class="literal">-format</span>=zip v1.<span class="number">2</span> &gt; ../v1.<span class="number">2</span>.zip             <span class="comment"># 作用同上一条命令</span></span><br></pre></td></tr></table></figure>
+<p>39.远程与本地合并</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git init                              <span class="comment"># 初始化本地代码仓 </span></span><br><span class="line">git add .                             <span class="comment"># 添加本地代码 </span></span><br><span class="line">git commit <span class="literal">-m</span> <span class="string">&quot;add local source&quot;</span>      <span class="comment"># 提交本地代码 </span></span><br><span class="line">git pull origin master                <span class="comment"># 下载远程代码 </span></span><br><span class="line">git merge master                      <span class="comment"># 合并master分支</span></span><br><span class="line">git push <span class="literal">-u</span> origin master             <span class="comment"># 上传代码</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-gitignore文件"><a href="#3-gitignore文件" class="headerlink" title="3. .gitignore文件"></a>3. <code>.gitignore</code>文件</h2><p>在主目录下创建 .gitignore 文件</p>
+<ol>
+<li><p>忽略文件中的空行或以井号（<code>#</code>）开始的行将会被忽略。</p>
+</li>
+<li><p>可以使用Linux通配符。例如：星号（<code>*</code>）代表任意多个字符，问号（<code>?</code>）代表一个字符，方括号（<code>[abc]</code>）代表可选字符范围，大括号（<code>&#123;string1,string2,…&#125;</code>）代表可选的字符串等。</p>
+</li>
+<li><p>如果名称的最前面有一个感叹号（<code>!</code>），表示例外规则，将不被忽略。</p>
+</li>
+<li><p>如果名称的最前面是一个路径分隔符（<code>/</code>），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</p>
+</li>
+<li><p>如果名称的最后面是一个路径分隔符（<code>/</code>），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#为注释 </span><br><span class="line">*.txt #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！</span><br><span class="line">!lib.txt #但lib.txt除外</span><br><span class="line">/temp #仅忽略项目根目录下的TODO文件,不包括其它目录temp</span><br><span class="line">build/ #忽略build/目录下的所有文件</span><br><span class="line">doc/*.txt #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p><strong>THE END</strong>感谢您的阅读~</p>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+        <category>命令行</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
