@@ -1296,7 +1296,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #302636;
+  background: #1d2e3e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2447,6 +2447,37 @@ ul.breadcrumb li + li:last-child {
   font-weight: normal;
   line-height: 2.4;
   margin: 0;
+}
+.popular-posts-excerpt p,
+.popular-posts-excerpt strong,
+.popular-posts-excerpt i,
+.popular-posts-excerpt a,
+.popular-posts-excerpt h1,
+.popular-posts-excerpt h2,
+.popular-posts-excerpt h3,
+.popular-posts-excerpt h4,
+.popular-posts-excerpt h5,
+.popular-posts-excerpt h6 {
+  text-decoration: none !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 0.875em !important;
+  margin: 0 0 0 0;
+}
+.popular-posts-excerpt p br,
+.popular-posts-excerpt strong br,
+.popular-posts-excerpt i br,
+.popular-posts-excerpt a br,
+.popular-posts-excerpt h1 br,
+.popular-posts-excerpt h2 br,
+.popular-posts-excerpt h3 br,
+.popular-posts-excerpt h4 br,
+.popular-posts-excerpt h5 br,
+.popular-posts-excerpt h6 br {
+  display: none;
+}
+.popular-posts-excerpt img {
+  display: none !important;
 }
 mjx-container[jax="CHTML"][display="true"],
 .has-jax {
