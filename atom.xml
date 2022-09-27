@@ -42,7 +42,7 @@
     <link href="https://guleixibian2009.github.io/2022/09/25/git-configuration-and-commands/"/>
     <id>https://guleixibian2009.github.io/2022/09/25/git-configuration-and-commands/</id>
     <published>2022-09-25T05:45:35.000Z</published>
-    <updated>2022-09-25T14:01:07.319Z</updated>
+    <updated>2022-09-27T11:47:12.007Z</updated>
     
     
     <summary type="html">&lt;p&gt;暂且记录一下，作为一个备忘录，方便之后查阅。也可作为初学者上手用。主要还是之前创作过程中提到了需要使用&lt;code&gt;Git&lt;/code&gt;哦。&lt;/p&gt;
@@ -253,9 +253,9 @@
     <category term="Hexo" scheme="https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/"/>
     
     
-    <category term="GitHub" scheme="https://guleixibian2009.github.io/tags/GitHub/"/>
-    
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
+    
+    <category term="GitHub" scheme="https://guleixibian2009.github.io/tags/GitHub/"/>
     
     <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
     
@@ -289,7 +289,7 @@
     <link href="https://guleixibian2009.github.io/2021/11/28/latex-syntax-in-markdown/"/>
     <id>https://guleixibian2009.github.io/2021/11/28/latex-syntax-in-markdown/</id>
     <published>2021-11-28T11:35:40.000Z</published>
-    <updated>2022-08-27T08:48:24.024Z</updated>
+    <updated>2022-09-27T11:52:31.944Z</updated>
     
     
     <summary type="html">&lt;p&gt;这篇文章是我转载过来的（很抱歉的是原网址已经找不到了），自己进行了一些格式上的修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……&lt;/p&gt;
@@ -399,16 +399,16 @@
     
     
     
-    <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
-    
     <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/GitHub/"/>
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
     
     <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/GitHub/"/>
     
     
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
-    
     <category term="Github" scheme="https://guleixibian2009.github.io/tags/Github/"/>
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
     <category term="DevSidecar" scheme="https://guleixibian2009.github.io/tags/DevSidecar/"/>
     
@@ -421,7 +421,7 @@
     <link href="https://guleixibian2009.github.io/2021/08/13/hello-world/"/>
     <id>https://guleixibian2009.github.io/2021/08/13/hello-world/</id>
     <published>2021-08-13T13:23:54.886Z</published>
-    <updated>2022-08-19T09:23:25.705Z</updated>
+    <updated>2022-09-27T11:55:50.830Z</updated>
     
     
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
