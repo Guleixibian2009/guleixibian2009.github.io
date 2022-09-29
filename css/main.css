@@ -1296,7 +1296,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2a0d96;
+  background: #fbddff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1897,6 +1897,16 @@ pre .javascript .function {
   position: absolute;
   top: 0;
   width: 100%;
+}
+.index article.post-block {
+  background-color: #fff !important;
+  transform: scale(1);
+  transition: transform 0.5s, background-color 0.5s;
+}
+.index article.post-block:hover {
+  background-color: rgba(255,255,255,0.4) !important;
+  transform: scale(1.012);
+  transition: transform 0.5s, background-color 0.5s;
 }
 .post-gallery {
   align-items: center;
