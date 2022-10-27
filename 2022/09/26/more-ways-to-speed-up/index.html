@@ -28,12 +28,20 @@
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
 <meta property="og:description" content="速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：pip镜像、Microsoft Store加速、VSCode下载链接和Google Recaptcha加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKN5V.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKYEq.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKtU0.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/03/5bdd57f13c285.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/03/5bdd581a7ef27.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/03/5bdd583f06a1f.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/10/cpxHm8LtME4KGFf.png">
 <meta property="article:published_time" content="2022-09-26T11:29:21.000Z">
-<meta property="article:modified_time" content="2022-10-01T09:54:45.819Z">
+<meta property="article:modified_time" content="2022-10-27T12:27:37.213Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="加速">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/10/27/xhKN5V.png">
 
 <link rel="canonical" href="https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/">
 
@@ -255,7 +263,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-01 17:54:45" itemprop="dateModified" datetime="2022-10-01T17:54:45+08:00">2022-10-01</time>
+                <time title="修改时间：2022-10-27 20:27:37" itemprop="dateModified" datetime="2022-10-27T20:27:37+08:00">2022-10-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,14 +281,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>570</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -295,13 +303,51 @@
         <p>速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：<code>pip</code>镜像、<code>Microsoft Store</code>加速、<code>VSCode</code>下载链接和<code>Google Recaptcha</code>加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。</p>
 <span id="more"></span>
 <h2 id="1-Python-Pip镜像源"><a href="#1-Python-Pip镜像源" class="headerlink" title="1. Python Pip镜像源"></a>1. <code>Python Pip</code>镜像源</h2><p>周知所众<code>Python</code>官方的包管理器是<code>Pip</code>，但很不幸的是<code>Pypi</code>官方的源在国内是很慢的，速度大概在<code>KB</code>级。我们需要调整它的镜像源，比如国内的阿里云。</p>
-<p>这里有图片</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKN5V.png" alt=""></p>
 <p>具体的话，先找到<code>C:/Users</code>文件夹中你自己的用户文件夹（比如<code>C:/Users/gulei</code>），里面新建一个<code>pip</code>文件夹。</p>
-<p>这里有图片</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKYEq.png" alt=""></p>
 <p>在这个文件夹里面新建一个<code>pip.ini</code>配置文件，编辑器打开，把如下内容复制进去：</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span> </span><br><span class="line"><span class="attr">index-url</span> = http://mirrors.aliyun.com/pypi/simple/ </span><br><span class="line"><span class="section">[install]</span> </span><br><span class="line"><span class="attr">trusted-host</span> = mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
 <p>这样就可以配置镜像源了。运行一下<code>pip</code>，速度就可以供我们正常使用了。</p>
 <h2 id="2-Microsoft-Store应用商店临时加速"><a href="#2-Microsoft-Store应用商店临时加速" class="headerlink" title="2. Microsoft Store应用商店临时加速"></a>2. <code>Microsoft Store</code>应用商店临时加速</h2><p>其实微软的网站和服务速度慢的根本原因在于国内服务商解析不出（大概率是故意的）比较好的<code>DNS</code>，这就导致了连接失败的情况，比如<code>Microsoft Store</code>总是转圈圈等等。</p>
+<p>那怎么办呢？解铃还须系铃人。在不走代理的情况下，最优的解决办法是走微软的<code>DNS</code>解析，即<code>4.4.4.2</code>或<code>4.2.2.1</code>。具体调法，在<code>IPv4</code>的属性里面找一下：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKtU0.png" alt=""></p>
+<p>具体来说，就是“网络适配器选项”——某个连接的“属性”——“网络”——“IPv4”，选择手动模式。这样一来，自己家的服务自己家提供，速度就会快很多。不幸的是，微软的<code>DNS</code>解析对国内其他网站并不友好，故使用完毕还需调整回“自动”模式，所以我称其为“临时加速”。</p>
+<h2 id="3-VS-Code下载CDN链接"><a href="#3-VS-Code下载CDN链接" class="headerlink" title="3. VS Code下载CDN链接"></a>3. <code>VS Code</code>下载<code>CDN</code>链接</h2><p>在编程早期所谓广泛涉猎的时候（或者是暂未决定用哪个专门的编辑器的时候），我会想到<code>Visual Studio Code</code>这一款万金油。然而官方的下载链接仍然是对我们不友好的（<code>KB</code>级都没有）。但官方<code>CDN</code>还是有备用链接的，虽然不公开，但它莫名其妙就是高速。这是原链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://az764295.vo.msecnd.net/stable/d045a5eda657f4d7b676dedbfa7aab8207f8a075/VSCodeUserSetup-x64-1.72.2.exe</span><br></pre></td></tr></table></figure>
+<p>加速的话，只需把<code>az764295.vo.msecnd.net</code>换为国内官方镜像<code>vscode.cdn.azure.cn</code>即可。</p>
+<h2 id="4-Header-Editor与Google-Recaptcha"><a href="#4-Header-Editor与Google-Recaptcha" class="headerlink" title="4. Header Editor与Google Recaptcha"></a>4. <code>Header Editor</code>与<code>Google Recaptcha</code></h2><p>转载自一篇文章：<a target="_blank" rel="noopener" href="https://blog.azurezeng.com/recaptcha-use-in-china/">Google 人机验证(reCaptcha)无法显示解决方案(可解决大多数 CSP 问题) &#8211; Azure Zeng Blog</a></p>
+<blockquote>
+<p>前言：为了防止机器人攻击，国外很多网站都使用了 <code>Google reCaptcha</code> 验证码。<code>reCaptcha</code> 对于国外用户非常的友好，但是… 对于国内用户就不怎么友好了。究其原因，则是国内网络全线屏蔽 <code>Google</code> 服务，导致 <code>reCaptcha</code>完全加载不出来。这样，国内玩家就无法在对应的网站进行下一步操作了。本方案可以解决 <code>reCaptcha</code> 无法加载的问题。</p>
+</blockquote>
+<p><strong>适用平台</strong>: <code>Chrome</code> 电脑版，<code>Firefox</code> 电脑版</p>
+<p><strong>适用范围:</strong> <strong>大部分的 <code>Google</code> 人机验证的国内加载都可以用这个方案解决。</strong><br>本方案无法修改部分网站的 <code>Content-Security-Policy</code>。所以这个方案对于这部分网站是无效的。</p>
+<p>请注意，由于方案的特殊性，<strong>少数网络情况下不一定成功</strong>。但是，大部分网络情况下都是可以成功的。</p>
+<h3 id="第一步-安装插件"><a href="#第一步-安装插件" class="headerlink" title="第一步 安装插件"></a><strong>第一步 安装插件</strong></h3><p>本方案基于 <code>Header Editor</code> 插件。因此，您需要先在您的浏览器中安装这个插件。</p>
+<h3 id="第二步-配置插件"><a href="#第二步-配置插件" class="headerlink" title="第二步 配置插件"></a>第二步 配置插件</h3><p>打开 <code>Header Editor</code> 插件的配置页面，选择 “导入和导出” 选项。</p>
+<p><img data-src="https://i.loli.net/2018/11/03/5bdd57f13c285.png" alt=""></p>
+<p>此处需要导入我写好的配置。这里提供两种方法（我就直接方法2了）。</p>
+<p>方法 2: 导入在线配置</p>
+<p>在下载规则中，填入下面的地址 (任选其一，推荐使用 GitHub 版本):</p>
+<ul>
+<li>(GitHub，<strong>推荐</strong>) <a target="_blank" rel="noopener" href="https://github.azurezeng.com/static/HE-GoogleRedirect.json">https://github.azurezeng.com/static/HE-GoogleRedirect.json</a></li>
+<li>(本站服务器) <a target="_blank" rel="noopener" href="https://www.azurezeng.com/static/HE-GoogleRedirect.json">https://www.azurezeng.com/static/HE-GoogleRedirect.json</a></li>
+</ul>
+<p><strong>* 重要提醒：建议使用 GitHub 地址。本站服务器地址在站点维护时可能无法使用。</strong></p>
+<p>然后点击下载按钮。</p>
+<p>如果先前导入过，你应该可以在下载规则中直接找到这个地址，直接点击旁边的下载按钮即可。</p>
+<p><img data-src="https://i.loli.net/2018/11/03/5bdd581a7ef27.png" alt=""></p>
+<p>接下来你应该会在 “导入” 看到相关规则 (如果之前导入过，“操作” 中的 “添加” 会显示为 “覆盖已有”)。选择 “保存” 即可。</p>
+<p><img data-src="https://i.loli.net/2018/11/03/5bdd583f06a1f.png" alt=""></p>
+<p>最后你的规则列表应该是这样的:</p>
+<p><img data-src="https://i.loli.net/2020/07/10/cpxHm8LtME4KGFf.png" alt=""></p>
+<p>好了，关闭这个页面。然后就可以了，现在 <code>reCaptcha</code> 应该可以正常显示了。</p>
+<p>原理</p>
+<p>这个插件将 <code>reCaptcha</code> 的调用 (www.google.com/recaptcha) 直接跳转到了 <code>reCaptcha</code> 国内镜像上面 (recaptcha.net/recaptcha)。</p>
+<p>由于 reCaptcha 国内镜像是可以直接连接的，而且还是 <code>Google</code> 官方的镜像，所以就能正常加载了。</p>
+<p>另外，这个方案还会修改页面的 <code>Content-Security-Policy</code> (内容安全政策) 设置，使得有 <code>Content-Security-Policy</code> 的页面的 <code>reCaptcha</code> 能正常加载。</p>
+<hr>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 
     </div>
 
@@ -504,7 +550,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Python-Pip%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">1. Python Pip镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Microsoft-Store%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E4%B8%B4%E6%97%B6%E5%8A%A0%E9%80%9F"><span class="nav-text">2. Microsoft Store应用商店临时加速</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Python-Pip%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">1. Python Pip镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Microsoft-Store%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E4%B8%B4%E6%97%B6%E5%8A%A0%E9%80%9F"><span class="nav-text">2. Microsoft Store应用商店临时加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-VS-Code%E4%B8%8B%E8%BD%BDCDN%E9%93%BE%E6%8E%A5"><span class="nav-text">3. VS Code下载CDN链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Header-Editor%E4%B8%8EGoogle-Recaptcha"><span class="nav-text">4. Header Editor与Google Recaptcha</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-text">第一步 安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6"><span class="nav-text">第二步 配置插件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -591,13 +637,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">99k</span>
+    <span title="站点总字数">101k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:30</span>
+    <span title="站点阅读时长">1:32</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
