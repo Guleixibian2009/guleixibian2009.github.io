@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-10-17T11:02:10.796Z</updated>
+  <updated>2022-10-27T10:45:18.659Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>运动会杂记</title>
+    <link href="https://guleixibian2009.github.io/2022/10/22/small-but-shining-ideas-9/"/>
+    <id>https://guleixibian2009.github.io/2022/10/22/small-but-shining-ideas-9/</id>
+    <published>2022-10-22T10:34:31.000Z</published>
+    <updated>2022-10-27T10:45:18.659Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本来以为今天可以写很多，但是鉴于我这么累还是少写点吧。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>两颗银杏果</title>
@@ -320,9 +341,9 @@
     <category term="Hexo" scheme="https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/"/>
     
     
-    <category term="GitHub" scheme="https://guleixibian2009.github.io/tags/GitHub/"/>
-    
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
+    
+    <category term="GitHub" scheme="https://guleixibian2009.github.io/tags/GitHub/"/>
     
     <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
     
@@ -480,21 +501,6 @@
     <category term="DevSidecar" scheme="https://guleixibian2009.github.io/tags/DevSidecar/"/>
     
     <category term="FAQs" scheme="https://guleixibian2009.github.io/tags/FAQs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://guleixibian2009.github.io/2021/08/13/hello-world/"/>
-    <id>https://guleixibian2009.github.io/2021/08/13/hello-world/</id>
-    <published>2021-08-13T13:23:54.886Z</published>
-    <updated>2022-09-27T11:55:50.830Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
-    
-    
-    
     
   </entry>
   
