@@ -21,29 +21,29 @@
     var CONFIG = {"hostname":"guleixibian2009.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：pip镜像、Microsoft Store加速、VSCode下载链接和Google Recaptcha加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。">
+  <meta name="description" content="又是鸽了将近一个月了，今天来写点不一样的，CSDN爬虫。这大概是我这个博客网站上第一次出现Python项目吧，之后我会再更新一个长一点的，Python蒲丰投针，这是我已经完成的一个学校项目。 本人不经常上CSDN，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有CSDN的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="还需要……加速吗？">
-<meta property="og:url" content="https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/">
+<meta property="og:title" content="全文下载CSDN文章——Python爬虫一则">
+<meta property="og:url" content="https://guleixibian2009.github.io/2022/10/27/web-spider-for-CSDN/">
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
-<meta property="og:description" content="速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：pip镜像、Microsoft Store加速、VSCode下载链接和Google Recaptcha加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。">
+<meta property="og:description" content="又是鸽了将近一个月了，今天来写点不一样的，CSDN爬虫。这大概是我这个博客网站上第一次出现Python项目吧，之后我会再更新一个长一点的，Python蒲丰投针，这是我已经完成的一个学校项目。 本人不经常上CSDN，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有CSDN的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKN5V.png">
-<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKYEq.png">
-<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKtU0.png">
-<meta property="og:image" content="https://i.loli.net/2018/11/03/5bdd57f13c285.png">
-<meta property="og:image" content="https://i.loli.net/2018/11/03/5bdd581a7ef27.png">
-<meta property="og:image" content="https://i.loli.net/2018/11/03/5bdd583f06a1f.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/10/cpxHm8LtME4KGFf.png">
-<meta property="article:published_time" content="2022-09-26T11:29:21.000Z">
-<meta property="article:modified_time" content="2022-10-27T12:27:37.213Z">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/29/x56JXD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/29/x56N0H.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/29/x56tne.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/29/x5681K.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/29/x56G6O.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/29/x5fmnK.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png">
+<meta property="article:published_time" content="2022-10-27T12:28:46.000Z">
+<meta property="article:modified_time" content="2022-10-29T12:45:32.899Z">
 <meta property="article:author" content="Guleixibian2009">
-<meta property="article:tag" content="加速">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="CSDN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2022/10/27/xhKN5V.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/10/29/x56JXD.png">
 
-<link rel="canonical" href="https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/">
+<link rel="canonical" href="https://guleixibian2009.github.io/2022/10/27/web-spider-for-CSDN/">
 
 
 <script id="page-configurations">
@@ -56,7 +56,7 @@
   };
 </script>
 
-  <title>还需要……加速吗？ | Guleixibian2009的个人博客~</title>
+  <title>全文下载CSDN文章——Python爬虫一则 | Guleixibian2009的个人博客~</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/">
+    <link itemprop="mainEntityOfPage" href="https://guleixibian2009.github.io/2022/10/27/web-spider-for-CSDN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -246,7 +246,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          还需要……加速吗？
+          全文下载CSDN文章——Python爬虫一则
         </h1>
 
         <div class="post-meta">
@@ -256,14 +256,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-09-26 19:29:21" itemprop="dateCreated datePublished" datetime="2022-09-26T19:29:21+08:00">2022-09-26</time>
+              <time title="创建时间：2022-10-27 20:28:46" itemprop="dateCreated datePublished" datetime="2022-10-27T20:28:46+08:00">2022-10-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-27 20:27:37" itemprop="dateModified" datetime="2022-10-27T20:27:37+08:00">2022-10-27</time>
+                <time title="修改时间：2022-10-29 20:45:32" itemprop="dateModified" datetime="2022-10-29T20:45:32+08:00">2022-10-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,7 +271,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A0%E9%80%9F/" itemprop="url" rel="index"><span itemprop="name">加速</span></a>
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
             </span>
 
@@ -281,14 +285,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>3.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -300,52 +304,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：<code>pip</code>镜像、<code>Microsoft Store</code>加速、<code>VSCode</code>下载链接和<code>Google Recaptcha</code>加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。</p>
+        <p>又是鸽了将近一个月了，今天来写点不一样的，<code>CSDN</code>爬虫。这大概是我这个博客网站上第一次出现<code>Python</code>项目吧，之后我会再更新一个长一点的，<code>Python</code>蒲丰投针，这是我已经完成的一个学校项目。</p>
+<p>本人不经常上<code>CSDN</code>，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有<code>CSDN</code>的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个人觉得这是比较烦的。所以我就上网搜到了一个爬虫，可以直接下载<code>CSDN</code>文章的全文。</p>
+<p><strong>注：爬虫这个技术还是比较敏感的——下载到的文章请不要用于商业用途，我个人也建议转载时放一下原链接，这样也避免日后的一些问题。</strong></p>
 <span id="more"></span>
-<h2 id="1-Python-Pip镜像源"><a href="#1-Python-Pip镜像源" class="headerlink" title="1. Python Pip镜像源"></a>1. <code>Python Pip</code>镜像源</h2><p>周知所众<code>Python</code>官方的包管理器是<code>Pip</code>，但很不幸的是<code>Pypi</code>官方的源在国内是很慢的，速度大概在<code>KB</code>级。我们需要调整它的镜像源，比如国内的阿里云。</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKN5V.png" alt=""></p>
-<p>具体的话，先找到<code>C:/Users</code>文件夹中你自己的用户文件夹（比如<code>C:/Users/gulei</code>），里面新建一个<code>pip</code>文件夹。</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKYEq.png" alt=""></p>
-<p>在这个文件夹里面新建一个<code>pip.ini</code>配置文件，编辑器打开，把如下内容复制进去：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span> </span><br><span class="line"><span class="attr">index-url</span> = http://mirrors.aliyun.com/pypi/simple/ </span><br><span class="line"><span class="section">[install]</span> </span><br><span class="line"><span class="attr">trusted-host</span> = mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
-<p>这样就可以配置镜像源了。运行一下<code>pip</code>，速度就可以供我们正常使用了。</p>
-<h2 id="2-Microsoft-Store应用商店临时加速"><a href="#2-Microsoft-Store应用商店临时加速" class="headerlink" title="2. Microsoft Store应用商店临时加速"></a>2. <code>Microsoft Store</code>应用商店临时加速</h2><p>其实微软的网站和服务速度慢的根本原因在于国内服务商解析不出（大概率是故意的）比较好的<code>DNS</code>，这就导致了连接失败的情况，比如<code>Microsoft Store</code>总是转圈圈等等。</p>
-<p>那怎么办呢？解铃还须系铃人。在不走代理的情况下，最优的解决办法是走微软的<code>DNS</code>解析，即<code>4.4.4.2</code>或<code>4.2.2.1</code>。具体调法，在<code>IPv4</code>的属性里面找一下：</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKtU0.png" alt=""></p>
-<p>具体来说，就是“网络适配器选项”——某个连接的“属性”——“网络”——“IPv4”，选择手动模式。这样一来，自己家的服务自己家提供，速度就会快很多。不幸的是，微软的<code>DNS</code>解析对国内其他网站并不友好，故使用完毕还需调整回“自动”模式，所以我称其为“临时加速”。</p>
-<h2 id="3-VS-Code下载CDN链接"><a href="#3-VS-Code下载CDN链接" class="headerlink" title="3. VS Code下载CDN链接"></a>3. <code>VS Code</code>下载<code>CDN</code>链接</h2><p>在编程早期所谓广泛涉猎的时候（或者是暂未决定用哪个专门的编辑器的时候），我会想到<code>Visual Studio Code</code>这一款万金油。然而官方的下载链接仍然是对我们不友好的（<code>KB</code>级都没有）。但官方<code>CDN</code>还是有备用链接的，虽然不公开，但它莫名其妙就是高速。这是原链接：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://az764295.vo.msecnd.net/stable/d045a5eda657f4d7b676dedbfa7aab8207f8a075/VSCodeUserSetup-x64-1.72.2.exe</span><br></pre></td></tr></table></figure>
-<p>加速的话，只需把<code>az764295.vo.msecnd.net</code>换为国内官方镜像<code>vscode.cdn.azure.cn</code>即可。</p>
-<h2 id="4-Header-Editor与Google-Recaptcha"><a href="#4-Header-Editor与Google-Recaptcha" class="headerlink" title="4. Header Editor与Google Recaptcha"></a>4. <code>Header Editor</code>与<code>Google Recaptcha</code></h2><p>转载自一篇文章：<a target="_blank" rel="noopener" href="https://blog.azurezeng.com/recaptcha-use-in-china/">Google 人机验证(reCaptcha)无法显示解决方案(可解决大多数 CSP 问题) &#8211; Azure Zeng Blog</a></p>
-<blockquote>
-<p>前言：为了防止机器人攻击，国外很多网站都使用了 <code>Google reCaptcha</code> 验证码。<code>reCaptcha</code> 对于国外用户非常的友好，但是… 对于国内用户就不怎么友好了。究其原因，则是国内网络全线屏蔽 <code>Google</code> 服务，导致 <code>reCaptcha</code>完全加载不出来。这样，国内玩家就无法在对应的网站进行下一步操作了。本方案可以解决 <code>reCaptcha</code> 无法加载的问题。</p>
-</blockquote>
-<p><strong>适用平台</strong>: <code>Chrome</code> 电脑版，<code>Firefox</code> 电脑版</p>
-<p><strong>适用范围:</strong> <strong>大部分的 <code>Google</code> 人机验证的国内加载都可以用这个方案解决。</strong><br>本方案无法修改部分网站的 <code>Content-Security-Policy</code>。所以这个方案对于这部分网站是无效的。</p>
-<p>请注意，由于方案的特殊性，<strong>少数网络情况下不一定成功</strong>。但是，大部分网络情况下都是可以成功的。</p>
-<h3 id="第一步-安装插件"><a href="#第一步-安装插件" class="headerlink" title="第一步 安装插件"></a><strong>第一步 安装插件</strong></h3><p>本方案基于 <code>Header Editor</code> 插件。因此，您需要先在您的浏览器中安装这个插件。</p>
-<h3 id="第二步-配置插件"><a href="#第二步-配置插件" class="headerlink" title="第二步 配置插件"></a>第二步 配置插件</h3><p>打开 <code>Header Editor</code> 插件的配置页面，选择 “导入和导出” 选项。</p>
-<p><img data-src="https://i.loli.net/2018/11/03/5bdd57f13c285.png" alt=""></p>
-<p>此处需要导入我写好的配置。这里提供两种方法（我就直接方法2了）。</p>
-<p>方法 2: 导入在线配置</p>
-<p>在下载规则中，填入下面的地址 (任选其一，推荐使用 GitHub 版本):</p>
-<ul>
-<li>(GitHub，<strong>推荐</strong>) <a target="_blank" rel="noopener" href="https://github.azurezeng.com/static/HE-GoogleRedirect.json">https://github.azurezeng.com/static/HE-GoogleRedirect.json</a></li>
-<li>(本站服务器) <a target="_blank" rel="noopener" href="https://www.azurezeng.com/static/HE-GoogleRedirect.json">https://www.azurezeng.com/static/HE-GoogleRedirect.json</a></li>
-</ul>
-<p><strong>* 重要提醒：建议使用 GitHub 地址。本站服务器地址在站点维护时可能无法使用。</strong></p>
-<p>然后点击下载按钮。</p>
-<p>如果先前导入过，你应该可以在下载规则中直接找到这个地址，直接点击旁边的下载按钮即可。</p>
-<p><img data-src="https://i.loli.net/2018/11/03/5bdd581a7ef27.png" alt=""></p>
-<p>接下来你应该会在 “导入” 看到相关规则 (如果之前导入过，“操作” 中的 “添加” 会显示为 “覆盖已有”)。选择 “保存” 即可。</p>
-<p><img data-src="https://i.loli.net/2018/11/03/5bdd583f06a1f.png" alt=""></p>
-<p>最后你的规则列表应该是这样的:</p>
-<p><img data-src="https://i.loli.net/2020/07/10/cpxHm8LtME4KGFf.png" alt=""></p>
-<p>好了，关闭这个页面。然后就可以了，现在 <code>reCaptcha</code> 应该可以正常显示了。</p>
-<p>原理</p>
-<p>这个插件将 <code>reCaptcha</code> 的调用 (www.google.com/recaptcha) 直接跳转到了 <code>reCaptcha</code> 国内镜像上面 (recaptcha.net/recaptcha)。</p>
-<p>由于 reCaptcha 国内镜像是可以直接连接的，而且还是 <code>Google</code> 官方的镜像，所以就能正常加载了。</p>
-<p>另外，这个方案还会修改页面的 <code>Content-Security-Policy</code> (内容安全政策) 设置，使得有 <code>Content-Security-Policy</code> 的页面的 <code>reCaptcha</code> 能正常加载。</p>
+<h2 id="1-原先我是怎么做的"><a href="#1-原先我是怎么做的" class="headerlink" title="1. 原先我是怎么做的"></a>1. 原先我是怎么做的</h2><p>正常的文章内容是可以复制的，然而，一般人谁会去要那些呢，可不是去<del>白嫖</del>学习代码？（我没有指名道姓是谁）</p>
+<p>那我真的想要代码怎么办？来看一下一种很麻烦的办法：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56JXD.png" alt=""></p>
+<p>首先不管怎么样我们需要先定位到这个代码块的<code>&lt;pre&gt;</code>元素。但和它同名、同<code>class</code>的元素实在是太多了，怎么办呢？我就加一个<code>useful</code>这个类，区别开来（叫什么其实无所谓）</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56N0H.png" alt=""></p>
+<p>之后的话，我们直接用调试的命令行来找到这个代码块的<code>innerText</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;useful&quot;</span>)[<span class="number">0</span>].innerText</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56tne.png" alt=""></p>
+<p>然后我们就获得了这一段代码的内容了。</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x5681K.png" alt=""></p>
+<p>但可惜的是——不知道细心的你有没发现——这一整段代码都需要转义（<code>escaping</code>）。红框里的就是用<code>innerText</code>获取到的代码中被自动转义过的地方（未框全）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56G6O.png" alt=""></p>
+<p>当然我肯定有办法反转义，但这实在是太无聊了。然后如果一整篇文章里有太多想要的代码块的话，这个方法也不实用，<code>for in</code>循环也得反转义啊。</p>
+<p>所以……出于我<del>的懒惰</del>对爬虫的激情——我就上网搜到了一个（甚至都不是自己写的）。</p>
+<h2 id="2-CSDN上的解决方案"><a href="#2-CSDN上的解决方案" class="headerlink" title="2. CSDN上的解决方案"></a>2. <code>CSDN</code>上的解决方案</h2><p>对没错，这个爬取<code>CSDN</code>的程序很巧就是从<code>CSDN</code>上来的。原作的话：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_53268714/article/details/121058706">【python】爬取CSDN博客文章（保存为html，txt，md）_cloudmapleleaf的博客-CSDN博客</a>。我比较喜欢的在于这个<code>HTML</code>转<code>MD</code>的功能，然后它自己是可以自动转义的。我就不让大家去自己折腾了，我这里完全可以一键复制（）我自己是进行过一点点小修改的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> html2text <span class="keyword">import</span> HTML2Text</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> html <span class="keyword">import</span> unescape</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">requirements</span></span><br><span class="line"><span class="string">打了箭头的才需要手动安装，其余是自动安装的依赖库</span></span><br><span class="line"><span class="string">certifi==2021.10.8</span></span><br><span class="line"><span class="string">charset-normalizer==2.0.7</span></span><br><span class="line"><span class="string">cssselect==1.1.0</span></span><br><span class="line"><span class="string">html2text==2020.1.16  --  &lt;--</span></span><br><span class="line"><span class="string">idna==3.3</span></span><br><span class="line"><span class="string">lxml==4.6.3  -----------  &lt;--</span></span><br><span class="line"><span class="string">requests==2.26.0 -------  &lt;--</span></span><br><span class="line"><span class="string">urllib3==1.26.7</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl</span>(<span class="params">url</span>):</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;crawl...&quot;</span>)</span><br><span class="line">    <span class="comment"># 配置header破反爬</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line">    <span class="comment"># 200就继续</span></span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        html = response.content.decode(<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        tree = etree.HTML(html)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;look for text...&quot;</span>)</span><br><span class="line">        <span class="comment"># 找到需要的html块</span></span><br><span class="line">        title = tree.xpath(<span class="string">&#x27;//*[@id=&quot;articleContentId&quot;]/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        block = tree.xpath(<span class="string">&#x27;//*[@id=&quot;content_views&quot;]&#x27;</span>)</span><br><span class="line">        <span class="comment"># html</span></span><br><span class="line">        ohtml = unescape(etree.tostring(block[<span class="number">0</span>]).decode(<span class="string">&quot;utf8&quot;</span>))</span><br><span class="line">        <span class="comment"># 纯文本</span></span><br><span class="line">        text = block[<span class="number">0</span>].xpath(<span class="string">&#x27;string(.)&#x27;</span>).strip()</span><br><span class="line">        <span class="comment"># print(&quot;html:&quot;, ohtml)</span></span><br><span class="line">        <span class="comment"># print(&quot;text:&quot;, text)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title:&quot;</span>, title)</span><br><span class="line">        save(ohtml, text)</span><br><span class="line">        <span class="comment"># 完成！</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;finish!&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;failed!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">html, text</span>):</span></span><br><span class="line">    filename = <span class="built_in">int</span>(time.time())</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;output&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> os.listdir():</span><br><span class="line">        <span class="comment"># 不存在输出文件夹就创建</span></span><br><span class="line">        os.mkdir(<span class="string">&quot;output&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/html&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/text&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/markdown&quot;</span>)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/html/<span class="subst">&#123;filename&#125;</span>.html&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> html_file:</span><br><span class="line">        <span class="comment"># 保存html</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write html...&quot;</span>)</span><br><span class="line">        html_file.write(html)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/text/<span class="subst">&#123;filename&#125;</span>.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> txt_file:</span><br><span class="line">        <span class="comment"># 保存纯文本</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write text...&quot;</span>)</span><br><span class="line">        txt_file.write(text)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/markdown/<span class="subst">&#123;filename&#125;</span>.md&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> md_file:</span><br><span class="line">        <span class="comment"># 保存markdown</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write markdown...&quot;</span>)</span><br><span class="line">        text_maker = HTML2Text()</span><br><span class="line">        <span class="comment"># md转换</span></span><br><span class="line">        md_text = text_maker.handle(html)</span><br><span class="line">        md_file.write(md_text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 你想要爬取的文章url</span></span><br><span class="line">    url = <span class="built_in">str</span>(<span class="built_in">input</span>(<span class="string">&quot;Url: &quot;</span>))</span><br><span class="line">    crawl(url)</span><br></pre></td></tr></table></figure>
+<p>用之前的话是需要安装3个<code>package</code>的：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install lxml html2text requests</span><br></pre></td></tr></table></figure>
+<p>然后我们就可以方便的复制到我们急需的代码或命令了。不过，如需转载你下载下来的文章，我个人觉得还请放一下原文链接的哦。</p>
+<h2 id="3-图片去水印（不是P图"><a href="#3-图片去水印（不是P图" class="headerlink" title="3. 图片去水印（不是P图"></a>3. 图片去水印（不是P图</h2><p>这是我在爬取文章之后不经意间发现的一个功能。比如我们有下面这样一张图片：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x5fmnK.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pif6L6w5rWp5a6H,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center</span><br></pre></td></tr></table></figure>
+<p>有没有觉得后面那个<code>x-oss-process</code>很可疑？话说这个图片的水印竟然是请求时服务器再加上去的，甚至不是上传时水印。我们直接把那些配置都删掉，就可以得到没有水印的图片了。</p>
+<p><img data-src="https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png" alt=""></p>
 <hr>
 <p><strong>THE END</strong>感谢您的阅读~</p>
 
@@ -358,21 +344,9 @@
   <div class="popular-posts-header">相关文章  为你推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-        <div class="popular-posts-date">2022-09-17</div>
-      <div class="popular-posts-title"><a href="\2022\09\17\cloudflare-workers-for-mirror\" rel="bookmark">临时解决方案：Cloudflare Workers与镜像站</a></div>
-        <div class="popular-posts-excerpt"><p><p>最早接触到<code>Cloudflare</code>是在研究<code>jsdelivr</code>被墙后的解决方案，发现一个<code>cloudflare.jsdelivr.net</code>的节点。那是我第一次听到<code>Cloudflare</code>的大名。可没想到，真正把我拉回<code>Cloudflare</code>的，不是所谓高防<code>DDOS</code>，也不是<code>CDN</code>加速，竟梅开二度又是被墙。这次，是<code>Cloudflare</code>自己被墙了。</p></p></div>
-    </li>
-    <li class="popular-posts-item">
-        <div class="popular-posts-date">2021-08-14</div>
-      <div class="popular-posts-title"><a href="\2021\08\14\speed-up-github\" rel="bookmark">3个小妙招加速你的GitHub~</a></div>
-        <div class="popular-posts-excerpt"><p><p>想必大家都知道<code>Github</code>是一个极佳的云端代码储存、交流平台，同时你也可以简单粗暴地把它当作云盘或者服务器。<br>但在众多优点之中，有一个问题却一直深深地困扰着我，那就是<code>GitHub</code>实在太！慢！啦！  </p></p></div>
-    </li>
-    <li class="popular-posts-item">
-        <div class="popular-posts-date">2022-10-27</div>
-      <div class="popular-posts-title"><a href="\2022\10\27\web-spider-for-CSDN\" rel="bookmark">全文下载CSDN文章——Python爬虫一则</a></div>
-        <div class="popular-posts-excerpt"><p><p>又是鸽了将近一个月了，今天来写点不一样的，<code>CSDN</code>爬虫。这大概是我这个博客网站上第一次出现<code>Python</code>项目吧，之后我会再更新一个长一点的，<code>Python</code>蒲丰投针，这是我已经完成的一个学校项目。</p>
-<p>本人不经常上<code>CSDN</code>，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有<code>CSDN</code>的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个人觉得这是比较烦的。所以我就上网搜到了一个爬虫，可以直接下载<code>CSDN</code>文章的全文。</p>
-<p><strong>注：爬虫这个技术还是比较敏感的——下载到的文章请不要用于商业用途，我个人也建议转载时放一下原链接，这样也避免日后的一些问题。</strong></p></p></div>
+        <div class="popular-posts-date">2022-09-26</div>
+      <div class="popular-posts-title"><a href="\2022\09\26\more-ways-to-speed-up\" rel="bookmark">还需要……加速吗？</a></div>
+        <div class="popular-posts-excerpt"><p><p>速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：<code>pip</code>镜像、<code>Microsoft Store</code>加速、<code>VSCode</code>下载链接和<code>Google Recaptcha</code>加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。</p></p></div>
     </li>
   </ul>
 
@@ -403,7 +377,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/" title="还需要……加速吗？">https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/</a>
+    <a href="https://guleixibian2009.github.io/2022/10/27/web-spider-for-CSDN/" title="全文下载CSDN文章——Python爬虫一则">https://guleixibian2009.github.io/2022/10/27/web-spider-for-CSDN/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -464,8 +438,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E5%8A%A0%E9%80%9F/" rel="tag"><i class="fa fa-tag"></i> 加速</a>
               <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/CSDN/" rel="tag"><i class="fa fa-tag"></i> CSDN</a>
           </div>
 
         
@@ -474,13 +448,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/09/25/git-configuration-and-commands/" rel="prev" title="【转】关于Git你需要知道的一切">
-      <i class="fa fa-chevron-left"></i> 【转】关于Git你需要知道的一切
+    <a href="/2022/10/22/small-but-shining-ideas-9/" rel="prev" title="运动会杂记">
+      <i class="fa fa-chevron-left"></i> 运动会杂记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/09/29/small-but-shining-ideas-6/" rel="next" title="记忆中的夏老师">
-      记忆中的夏老师 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -557,7 +528,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Python-Pip%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">1. Python Pip镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Microsoft-Store%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E4%B8%B4%E6%97%B6%E5%8A%A0%E9%80%9F"><span class="nav-text">2. Microsoft Store应用商店临时加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-VS-Code%E4%B8%8B%E8%BD%BDCDN%E9%93%BE%E6%8E%A5"><span class="nav-text">3. VS Code下载CDN链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Header-Editor%E4%B8%8EGoogle-Recaptcha"><span class="nav-text">4. Header Editor与Google Recaptcha</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-text">第一步 安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6"><span class="nav-text">第二步 配置插件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8E%9F%E5%85%88%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="nav-text">1. 原先我是怎么做的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-CSDN%E4%B8%8A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-text">2. CSDN上的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9B%BE%E7%89%87%E5%8E%BB%E6%B0%B4%E5%8D%B0%EF%BC%88%E4%B8%8D%E6%98%AFP%E5%9B%BE"><span class="nav-text">3. 图片去水印（不是P图</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -809,7 +780,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'guleixibian2009.github.io',
       owner       : 'guleixibian2009',
       admin       : ['guleixibian2009'],
-      id          : '839241c1853700f8051c8d3b724fb339',
+      id          : '615afb37a31c9d1a10b8950b1165f601',
         language: 'zh-CN',
       distractionFreeMode: false,
       proxy       : 'https://proxy.cors.sh/https://github.com/login/oauth/access_token'
