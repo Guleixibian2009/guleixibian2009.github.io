@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2022-11-05T01:52:08.237Z</updated>
+  <updated>2022-11-20T11:49:36.500Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>雨·留白</title>
+    <link href="https://guleixibian2009.github.io/2022/11/18/small-but-shining-ideas-13/"/>
+    <id>https://guleixibian2009.github.io/2022/11/18/small-but-shining-ideas-13/</id>
+    <published>2022-11-18T10:34:31.000Z</published>
+    <updated>2022-11-20T11:49:36.500Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;11.18 画信话心课后有感&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;天气暗沉，乌云密布，空气潮湿，正是刚下过雨的样子。我一向期待着一节雨中的画信课，今天终于如愿以偿。天气已冷，身上穿着笨重的衣服，在碧霞池边站着画信，也是一种别样的体验。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>绿野村·杂记</title>
+    <link href="https://guleixibian2009.github.io/2022/11/11/small-but-shining-ideas-12/"/>
+    <id>https://guleixibian2009.github.io/2022/11/11/small-but-shining-ideas-12/</id>
+    <published>2022-11-11T10:34:31.000Z</published>
+    <updated>2022-11-20T11:46:03.894Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;美好的时光，一溜烟，早已跑得没影。我只能靠留下来的一大堆照片，激起一点点回忆，或甜或苦，苦中作乐。&lt;br&gt;我答应过梅子老师我会坚持写周记，但说到底这绿野村·杂记其实不是为了“让梅子老师看”而写的（一向都不是），只是回忆太珍贵，只能通过一点拙劣的语句简记一下，也许我会写的像流水账，但我觉得每件事都很重要。&lt;br&gt;另外，这个周末我还有一项更艰巨的任务，要把这次活动的视频剪出来。不知道，当我再一次仔细看那些照片时，心里会有怎样的感觉。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
+    
+    
+    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>转折·点</title>
@@ -438,55 +481,6 @@
     <category term="Github" scheme="https://guleixibian2009.github.io/tags/Github/"/>
     
     <category term="GitHub-Cli" scheme="https://guleixibian2009.github.io/tags/GitHub-Cli/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【转】Markdown中Latex常用语法</title>
-    <link href="https://guleixibian2009.github.io/2021/11/28/latex-syntax-in-markdown/"/>
-    <id>https://guleixibian2009.github.io/2021/11/28/latex-syntax-in-markdown/</id>
-    <published>2021-11-28T11:35:40.000Z</published>
-    <updated>2022-09-27T11:52:31.944Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这篇文章是我转载过来的（很抱歉的是原网址已经找不到了），自己进行了一些格式上的修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……&lt;/p&gt;
-&lt;h2 id=&quot;0-LaTeX-是什么？&quot;&gt;&lt;a href=&quot;#0-LaTeX-是什么？&quot; class=&quot;headerlink&quot; title=&quot;0. LaTeX 是什么？&quot;&gt;&lt;/a&gt;0. LaTeX 是什么？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;$ \LaTeX $是一种基于&lt;code&gt;ΤeΧ&lt;/code&gt;的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.&lt;br&gt;利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由&lt;code&gt;TeX&lt;/code&gt;所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。&lt;br&gt;对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/"/>
-    
-    <category term="LaTex" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/"/>
-    
-    
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
-    
-    <category term="LaTex" scheme="https://guleixibian2009.github.io/tags/LaTex/"/>
-    
-    <category term="Maths" scheme="https://guleixibian2009.github.io/tags/Maths/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>序言</title>
-    <link href="https://guleixibian2009.github.io/2021/09/12/preface/"/>
-    <id>https://guleixibian2009.github.io/2021/09/12/preface/</id>
-    <published>2021-09-12T05:44:05.000Z</published>
-    <updated>2022-08-29T04:07:53.523Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;在现实断裂的地方&lt;br&gt;梦 汇成了海&lt;/p&gt;
-&lt;p&gt;顾城 《弥合》  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;所以你好 欢迎来到 &lt;strong&gt;故垒西边2009的个人博客&lt;/strong&gt;。&lt;br&gt;这是我的博客 主要写一些技术类的文章&lt;br&gt;当然 可能还会放一些自己的作品&lt;br&gt;那么请持续关注啦😀&lt;br&gt;比心 ❤&lt;/p&gt;</summary>
-    
-    
-    
     
   </entry>
   
