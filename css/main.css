@@ -1296,7 +1296,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #83bd39;
+  background: #6cc8ee;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2919,4 +2919,7 @@ mjx-container + br {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.wtwind {
+  font-family: "Microsoft YaHei" !important;
 }
