@@ -31,8 +31,14 @@
 <meta property="og:image" content="https://s1.ax1x.com/2023/01/01/pSCf3HU.png">
 <meta property="og:image" content="https://s1.ax1x.com/2023/01/02/pSPFnPg.png">
 <meta property="og:image" content="https://s1.ax1x.com/2023/01/02/pSPFeIS.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/02/pSPFuGQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/01/pSCfY4J.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/01/pSCfGEF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/02/pSPmQtP.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/01/pSCfJN4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/01/02/pSPdKfS.png">
 <meta property="article:published_time" content="2023-01-01T08:25:40.000Z">
-<meta property="article:modified_time" content="2023-01-02T02:04:30.572Z">
+<meta property="article:modified_time" content="2023-01-02T09:40:17.978Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Website">
 <meta property="article:tag" content="CSS">
@@ -263,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-02 10:04:30" itemprop="dateModified" datetime="2023-01-02T10:04:30+08:00">2023-01-02</time>
+                <time title="修改时间：2023-01-02 17:40:17" itemprop="dateModified" datetime="2023-01-02T17:40:17+08:00">2023-01-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,14 +295,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
+              <span>4.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -345,8 +351,35 @@
 <p>它用的是通用的<code>background</code>，这样就万无一失了。我们直接把<code>color</code>改成：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">color:</span> <span class="string">&quot;linear-gradient(to right, #2299dd , #37c6c0)&quot;</span></span><br></pre></td></tr></table></figure>
 <p>并重新生成即可。</p>
+<p><img data-src="https://s1.ax1x.com/2023/01/02/pSPFuGQ.png" alt=""></p>
 <hr>
-<p>未完待续~~~</p>
+<h2 id="2-相关文章推荐中的CSS统一"><a href="#2-相关文章推荐中的CSS统一" class="headerlink" title="2. 相关文章推荐中的CSS统一"></a>2. 相关文章推荐中的<code>CSS</code>统一</h2><p>如果你像我之前一样，安装了相关文章推荐模块，却不对其进行任何调整，你会收获这样的文章推荐：</p>
+<p><img data-src="https://s1.ax1x.com/2023/01/01/pSCfY4J.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2023/01/01/pSCfGEF.png" alt=""></p>
+<p>字号、行距不统一，粗体、斜体没消除，甚至还有图片，根本不像一份合格的文章节选。原因在于，这个相关文章模块和文章主体共用<code>CSS</code>。我们要做的，就是用<code>!important</code>覆盖掉。</p>
+<p><img data-src="https://s1.ax1x.com/2023/01/02/pSPmQtP.png" alt=""></p>
+<p>这个节选是<code>div.popular-posts-excerpt</code>，默认继承<code>main.css</code>中的样式。找一下对应的<code>stylus</code>文件，是<code>themes/next/source/css/_common/components/third-party/related-posts.styl</code>。我们直接在末尾添加一段</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.popular-posts-excerpt&#123; </span><br><span class="line">  <span class="selector-tag">p</span>, <span class="selector-tag">strong</span>, <span class="selector-tag">i</span>, <span class="selector-tag">a</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">font-style</span>: normal <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.875em</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    br &#123;</span><br><span class="line">      <span class="attribute">display</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就可以规避掉大部分问题。后续如果发现更多需要屏蔽或调整的，也直接加在这里就好了。</p>
+<hr>
+<h2 id="3-给文章内Creative-Commons加个开关"><a href="#3-给文章内Creative-Commons加个开关" class="headerlink" title="3. 给文章内Creative Commons加个开关"></a>3. 给文章内<code>Creative Commons</code>加个开关</h2><p><img data-src="https://s1.ax1x.com/2023/01/01/pSCfJN4.png" alt=""></p>
+<p>在技术博中，转载和引用是常有的事。然而<code>Next</code>自带的版权方框就是这么尴尬，默认是串联起来的，只能在主题配置文件中选择全开或全关。全开时，不是你写的硬要说成你写的，心里总是不安。</p>
+<p>不过，有一种办法是类似之前我们有一个文章开头<code>yml</code>里配置的属性，叫做<code>sticky</code>。我们可以做一个类似的开关，比如叫<code>nocopyright</code>，<code>true</code>代表转载，不会显示版权方框；<code>false</code>或不写，则会显示。于是乎我们去看一下版权方框的生成逻辑，在<code>themes/next/layout/_macro</code>里的<code>post.swig</code>里面，大约在225行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.post %&#125;</span><br><span class="line">  &#123;&#123; partial(&#x27;_partials/post/post-copyright.swig&#x27;) &#125;&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>这是<code>Nunjucks</code>中的一个简单的条件语句，我们只要添加一个条件<code>and not page.nocopyright</code>就可以了。<code>page</code>指的是当前渲染的文章。所以就是这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if theme.creative_commons.license and theme.creative_commons.post and not page.nocopyright %&#125;</span><br><span class="line">  &#123;&#123; partial(&#x27;_partials/post/post-copyright.swig&#x27;) &#125;&#125;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>然后找到你不想显示版权方框的文章，在开头的<code>YAML Front Matter</code>里面加一行：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nocopyright:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>即可。需要显示则不需要加，默认显示。</p>
+<hr>
+<h2 id="4-主页文章悬浮特效"><a href="#4-主页文章悬浮特效" class="headerlink" title="4. 主页文章悬浮特效"></a>4. 主页文章悬浮特效</h2><p>这个的话，我主要是想做一个缩放+透明度的<code>transition</code>，应用在主页的<code>article.post-block</code>上面。不过我特意去检查了一下，在文章页也有这样的元素，但我只希望对主页应用，所以我找到一个父类<code>index</code>（文章内则是<code>post</code>）。</p>
+<p><img data-src="https://s1.ax1x.com/2023/01/02/pSPdKfS.png" alt=""></p>
+<p>这个就是简单的<code>CSS</code>了，随便找一段<code>styl</code>插进去，我就加在了<code>themes/next/source/css/_common/components/post/post-expand.styl</code>里面了：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.index</span> &#123;</span><br><span class="line">  <span class="selector-tag">article</span><span class="selector-class">.post-block</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>) <span class="meta">!important</span></span><br><span class="line">    <span class="attribute">transform</span>: scale(<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.5s</span>, background-color <span class="number">0.5s</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">article</span><span class="selector-class">.post-block</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.4</span>) <span class="meta">!important</span></span><br><span class="line">    <span class="attribute">transform</span>: scale(<span class="number">1.012</span>);</span><br><span class="line">    <span class="attribute">transition</span>: transform <span class="number">0.5s</span>, background-color <span class="number">0.5s</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就能实现缩放+透明度的特效了。</p>
+<hr>
+<p>总的来说，<code>Hexo+Next</code>留给个人的发挥空间还是非常大的，底层逻辑完全开放且容易修改，因此个性化变得非常简单，只需要一点点<code>CSS</code>的知识就能让你的博客锦上添花！</p>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 
     </div>
 
@@ -557,7 +590,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%B3%E4%BA%8E%E9%98%85%E8%AF%BB%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-text">1. 关于阅读百分比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%98%85%E8%AF%BB%E7%99%BE%E5%88%86%E6%AF%94%E5%8A%A8%E7%94%BB"><span class="nav-text">1.1 阅读百分比动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%B8%90%E5%8F%98%E8%89%B2"><span class="nav-text">1.2 阅读进度条渐变色</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%B3%E4%BA%8E%E9%98%85%E8%AF%BB%E7%99%BE%E5%88%86%E6%AF%94"><span class="nav-text">1. 关于阅读百分比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E9%98%85%E8%AF%BB%E7%99%BE%E5%88%86%E6%AF%94%E5%8A%A8%E7%94%BB"><span class="nav-text">1.1 阅读百分比动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%B8%90%E5%8F%98%E8%89%B2"><span class="nav-text">1.2 阅读进度条渐变色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0%E6%8E%A8%E8%8D%90%E4%B8%AD%E7%9A%84CSS%E7%BB%9F%E4%B8%80"><span class="nav-text">2. 相关文章推荐中的CSS统一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BB%99%E6%96%87%E7%AB%A0%E5%86%85Creative-Commons%E5%8A%A0%E4%B8%AA%E5%BC%80%E5%85%B3"><span class="nav-text">3. 给文章内Creative Commons加个开关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%B8%BB%E9%A1%B5%E6%96%87%E7%AB%A0%E6%82%AC%E6%B5%AE%E7%89%B9%E6%95%88"><span class="nav-text">4. 主页文章悬浮特效</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -644,13 +677,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">119k</span>
+    <span title="站点总字数">121k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:48</span>
+    <span title="站点阅读时长">1:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
