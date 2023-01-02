@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-01T07:22:15.574Z</updated>
+  <updated>2023-01-02T02:04:30.572Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo深度个性化——底层配置</title>
+    <link href="https://guleixibian2009.github.io/2023/01/01/hexo-website-update/"/>
+    <id>https://guleixibian2009.github.io/2023/01/01/hexo-website-update/</id>
+    <published>2023-01-01T08:25:40.000Z</published>
+    <updated>2023-01-02T02:04:30.572Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;新年伊始，没想到，我又决定回来更新了。这是我之前就想好的题目，今天终于动笔——&lt;code&gt;Hexo&lt;/code&gt;博客的深度个性化。（不瞒着你们，我一向这样，更一段时间，鸽一段时间。也许看着这学期我周更，但那些都是一些感想，并不是特别花时间的技术博）&lt;/p&gt;
+&lt;p&gt;这里会讲一讲：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;back2top&lt;/code&gt;按钮百分比的动画还有进度条颜色&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;相关文章推荐模块中的&lt;code&gt;CSS&lt;/code&gt;统一&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;给个别文章添加&lt;code&gt;Creative Commons&lt;/code&gt;许可证开关&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;主页文章节选悬浮特效&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="GitHub" scheme="https://guleixibian2009.github.io/categories/GitHub/"/>
+    
+    <category term="Pages" scheme="https://guleixibian2009.github.io/categories/GitHub/Pages/"/>
+    
+    <category term="Hexo" scheme="https://guleixibian2009.github.io/categories/GitHub/Pages/Hexo/"/>
+    
+    
+    <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
+    
+    <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
+    
+    <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
+    
+    <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
+    
+    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
+    
+    <category term="JavaScript" scheme="https://guleixibian2009.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>奇遇</title>
@@ -443,27 +487,6 @@
     <category term="Cloudflare" scheme="https://guleixibian2009.github.io/tags/Cloudflare/"/>
     
     <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>与伟长结缘</title>
-    <link href="https://guleixibian2009.github.io/2022/09/16/small-but-shining-ideas-01/"/>
-    <id>https://guleixibian2009.github.io/2022/09/16/small-but-shining-ideas-01/</id>
-    <published>2022-09-16T13:33:29.000Z</published>
-    <updated>2022-09-24T02:22:17.691Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;code&gt;small but shining ideas&lt;/code&gt;，意为灵感。从今天起（主要是选修课老梅子的“怂恿”下），我将记录下头脑里闪过的那些小小的、闪光的点子。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

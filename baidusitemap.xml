@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://guleixibian2009.github.io/2023/01/01/hexo-website-update/</loc>
+    <lastmod>2023-01-02</lastmod>
+  </url>
+  <url>
+    <loc>https://guleixibian2009.github.io/2021/08/14/speed-up-github/</loc>
+    <lastmod>2023-01-01</lastmod>
+  </url>
+  <url>
+    <loc>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</loc>
+    <lastmod>2023-01-01</lastmod>
+  </url>
+  <url>
+    <loc>https://guleixibian2009.github.io/2021/08/15/github-pages-jekyll/</loc>
+    <lastmod>2023-01-01</lastmod>
+  </url>
+  <url>
     <loc>https://guleixibian2009.github.io/2022/12/09/small-but-shining-ideas-16/</loc>
     <lastmod>2023-01-01</lastmod>
   </url>
@@ -38,10 +54,6 @@
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2022/10/27/web-spider-for-CSDN/</loc>
-    <lastmod>2022-10-29</lastmod>
-  </url>
-  <url>
-    <loc>https://guleixibian2009.github.io/2022/01/09/installation-and-usage-of-gh/</loc>
     <lastmod>2022-10-29</lastmod>
   </url>
   <url>
@@ -103,14 +115,6 @@
   <url>
     <loc>https://guleixibian2009.github.io/2022/09/19/small-but-shining-ideas-02/</loc>
     <lastmod>2022-09-24</lastmod>
-  </url>
-  <url>
-    <loc>https://guleixibian2009.github.io/2021/08/14/speed-up-github/</loc>
-    <lastmod>2022-09-17</lastmod>
-  </url>
-  <url>
-    <loc>https://guleixibian2009.github.io/2021/08/15/github-pages-jekyll/</loc>
-    <lastmod>2022-08-30</lastmod>
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2021/09/12/preface/</loc>
