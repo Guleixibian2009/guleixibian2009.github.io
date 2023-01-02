@@ -1,58 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>临时解决方案：Cloudflare Workers与镜像站</title>
-    <url>/2022/09/17/cloudflare-workers-for-mirror/</url>
-    <content><![CDATA[<p>最早接触到<code>Cloudflare</code>是在研究<code>jsdelivr</code>被墙后的解决方案，发现一个<code>cloudflare.jsdelivr.net</code>的节点。那是我第一次听到<code>Cloudflare</code>的大名。可没想到，真正把我拉回<code>Cloudflare</code>的，不是所谓高防<code>DDOS</code>，也不是<code>CDN</code>加速，竟梅开二度又是被墙。这次，是<code>Cloudflare</code>自己被墙了。</p>
-<span id="more"></span>
-<p>引用另一篇文章（<code>Hexo</code>网站教程）：</p>
-<blockquote>
-<p><strong>《论我捣鼓<code>GiTalk</code>的简要过程》</strong></p>
-<p>写到这里我本想去截图，结果一看启动不起来，没办法新建<code>issue</code>也没法登录<code>GitHub</code>账号。在排查了设置、网络的问题后，我发现有个致命的问题：<code>cors-anywhere.azm.workers.dev</code>被墙掉，然后<code>GiTalk</code>无法进行<code>GitHub oauth</code>，就不能用了。</p>
-<p>我于是尝试自己搭<code>worker</code>，结果发现是所有<code>Cloudflare worker</code>的链接都被墙掉了，然后我就彻底没招了，就只好作罢。不过……真的吗？</p>
-<p>后来我找到了<code>GiTalk</code>的仓库，里面有类似的<code>Issue</code>，甚至翻出了<code>CORS Anywhere</code>的仓库，找到了一个基于<code>Heroku</code>的备用<code>demo</code>链接。在一个<code>Issue</code>的<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-870990778">某条评论</a>、<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-1012060775">某条评论</a>中找到了一些备用链接。于是，就可以恢复正常了！</p>
-<p><strong>另及：今年（2022）11月28号<code>Heroku</code>会关闭所有的免费服务，所以你看到类似<code>herokuapp.com</code>的链接都不用试了…</strong></p>
+    <title>针、圆周率与……Python?</title>
+    <url>/2023/01/02/buffons-neddle-in-python/</url>
+    <content><![CDATA[<blockquote>
+<p>万事皆可变，万事亦皆有概率，而偏偏是日常生活中无比普遍的它，有时能创造出一个奇迹。蒲丰投针就恰恰体现了这一点。</p>
+<p>一根小小的针，也可以投出整个宇宙。</p>
 </blockquote>
-<p>这个<code>cors-anywhere.azm.workers.dev</code>，就是基于<code>Cloudflare Workers</code>的。上文也提到了我自己搭<code>Workers</code>，在这其中也有一点意外地收获。</p>
-<h2 id="1-关于我们今天到底在干什么"><a href="#1-关于我们今天到底在干什么" class="headerlink" title="1. 关于我们今天到底在干什么"></a>1. 关于我们今天到底在干什么</h2><p><code>Cloudflare Workers</code>，乍一听，我也没猜出这是什么东西。其实<code>Workers</code>是<code>Cloudflare</code>提供的免费服务器，类似<code>GitHub</code>给你一个二级域名（<code>GitHub</code>就是<code>github.io</code>，<code>Cloudflare Workers</code>是<code>workers.dev</code>）。这个<code>CF Workers</code>是支持自定义处理逻辑，说白点自己用<code>JavaScript</code>写脚本。当然我不会把事情变得太复杂，肯定是有可重用的模板的。</p>
-<p>但是我们没事儿搭服务器干嘛？不知道各位有没有听说过反向代理这回事。差不多如此：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Client --&gt; BlockedServer: GET xxx</span><br><span class="line">note left of Client: I cannot GET!</span><br><span class="line">Client -&gt; CF Worker: GET Blocked Server for me!</span><br><span class="line">note right of CF Worker: I can GET!</span><br><span class="line">CF Worker -&gt; BlockedServer: GET xxx</span><br><span class="line">BlockedServer -&gt; CF Worker: Responce xxx</span><br><span class="line">CF Worker -&gt; Client: Responce xxx</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oTDU.png" alt=""></p>
-<p><del>其实说白了这也是一种fq的方式嘛。</del></p>
-<h2 id="2-关于你的Cloudflare账号"><a href="#2-关于你的Cloudflare账号" class="headerlink" title="2. 关于你的Cloudflare账号"></a>2. 关于你的<code>Cloudflare</code>账号</h2><p>照例的话，我们肯定是要简要说一下官网和账号的….<a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a>，很人性化的就跳到中文版啊。</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oL59.png" alt=""></p>
-<p>然后点击注册就好了耶：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/19/x9o7bF.png" alt=""></p>
-<p>然后有一些配置，按照自己的喜好填就好了啊。不过由于资金问题和一些使用方式上的原因，我们选<code>Free Plan</code>就可以了，千万不要为了这个白买高级版，每天100000个请求完全完全够用了！</p>
-<h2 id="3-开始搭建Worker"><a href="#3-开始搭建Worker" class="headerlink" title="3. 开始搭建Worker"></a>3. 开始搭建<code>Worker</code></h2><h3 id="3-1-初始化Worker"><a href="#3-1-初始化Worker" class="headerlink" title="3.1 初始化Worker"></a>3.1 初始化<code>Worker</code></h3><p>我们接下来以访问速度慢的<code>GitHub</code>和无法访问的<code>Google</code>为例。</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/19/x9obE4.png" alt=""></p>
-<p>我们在左侧的菜单中找到<code>Workers</code>，然后新建服务：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oXCR.png" alt=""></p>
-<p>由于我们只需要一个<code>worker</code>就可以完成一切任务，我就没有新注册了。</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oqUJ.png" alt=""></p>
-<p>进来之后有这样一个界面：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/24/xAMkng.png" alt=""></p>
-<p>我们点击快速编辑，进入编辑页面：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/24/xAME7j.png" alt=""></p>
-<p>左边是处理逻辑，右边则是预览部分。</p>
-<h3 id="3-2-加入代码"><a href="#3-2-加入代码" class="headerlink" title="3.2 加入代码"></a>3.2 加入代码</h3><p>先复制一下下面这段代码：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 你要镜像的网站.</span></span><br><span class="line"><span class="keyword">const</span> upstream = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像网站的目录，比如你想镜像某个网站的二级目录则填写二级目录的目录名，镜像 google 用不到，默认即可.</span></span><br><span class="line"><span class="keyword">const</span> upstream_path = <span class="string">&#x27;/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像站是否有手机访问专用网址，没有则填一样的.</span></span><br><span class="line"><span class="keyword">const</span> upstream_mobile = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 屏蔽国家和地区.</span></span><br><span class="line"><span class="keyword">const</span> blocked_region = [<span class="string">&#x27;KP&#x27;</span>, <span class="string">&#x27;SY&#x27;</span>, <span class="string">&#x27;PK&#x27;</span>, <span class="string">&#x27;CU&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 屏蔽 IP 地址.</span></span><br><span class="line"><span class="keyword">const</span> blocked_ip_address = [<span class="string">&#x27;0.0.0.0&#x27;</span>, <span class="string">&#x27;127.0.0.1&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像站是否开启 HTTPS.</span></span><br><span class="line"><span class="keyword">const</span> https = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本替换.</span></span><br><span class="line"><span class="keyword">const</span> replace_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;$upstream&#x27;</span>: <span class="string">&#x27;$custom_domain&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;//www.google.com&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下保持默认，不要动</span></span><br><span class="line">addEventListener(<span class="string">&#x27;fetch&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">    event.respondWith(fetchAndApply(event.request));</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchAndApply</span>(<span class="params">request</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> region = request.headers.get(<span class="string">&#x27;cf-ipcountry&#x27;</span>).toUpperCase();</span><br><span class="line">    <span class="keyword">const</span> ip_address = request.headers.get(<span class="string">&#x27;cf-connecting-ip&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> user_agent = request.headers.get(<span class="string">&#x27;user-agent&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> response = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="keyword">new</span> URL(request.url);</span><br><span class="line">    <span class="keyword">let</span> url_hostname = url.hostname;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (https == <span class="literal">true</span>) &#123;</span><br><span class="line">        url.protocol = <span class="string">&#x27;https:&#x27;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        url.protocol = <span class="string">&#x27;http:&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">await</span> device_status(user_agent)) &#123;</span><br><span class="line">        <span class="keyword">var</span> upstream_domain = upstream;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> upstream_domain = upstream_mobile;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    url.host = upstream_domain;</span><br><span class="line">    <span class="keyword">if</span> (url.pathname == <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">        url.pathname = upstream_path;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        url.pathname = upstream_path + url.pathname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (blocked_region.includes(region)) &#123;</span><br><span class="line">        response = <span class="keyword">new</span> Response(<span class="string">&#x27;Access denied: WorkersProxy is not available in your region yet.&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="number">403</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (blocked_ip_address.includes(ip_address)) &#123;</span><br><span class="line">        response = <span class="keyword">new</span> Response(<span class="string">&#x27;Access denied: Your IP address is blocked by WorkersProxy.&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="number">403</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> method = request.method;</span><br><span class="line">        <span class="keyword">let</span> request_headers = request.headers;</span><br><span class="line">        <span class="keyword">let</span> new_request_headers = <span class="keyword">new</span> Headers(request_headers);</span><br><span class="line"></span><br><span class="line">        new_request_headers.set(<span class="string">&#x27;Host&#x27;</span>, url.hostname);</span><br><span class="line">        new_request_headers.set(<span class="string">&#x27;Referer&#x27;</span>, url.hostname);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> original_response = <span class="keyword">await</span> fetch(url.href, &#123;</span><br><span class="line">            <span class="attr">method</span>: method,</span><br><span class="line">            <span class="attr">headers</span>: new_request_headers</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> original_response_clone = original_response.clone();</span><br><span class="line">        <span class="keyword">let</span> original_text = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">let</span> response_headers = original_response.headers;</span><br><span class="line">        <span class="keyword">let</span> new_response_headers = <span class="keyword">new</span> Headers(response_headers);</span><br><span class="line">        <span class="keyword">let</span> status = original_response.status;</span><br><span class="line"></span><br><span class="line">        new_response_headers.set(<span class="string">&#x27;access-control-allow-origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">        new_response_headers.set(<span class="string">&#x27;access-control-allow-credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">&#x27;content-security-policy&#x27;</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">&#x27;content-security-policy-report-only&#x27;</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">&#x27;clear-site-data&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> content_type = new_response_headers.get(<span class="string">&#x27;content-type&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (content_type.includes(<span class="string">&#x27;text/html&#x27;</span>) &amp;&amp; content_type.includes(<span class="string">&#x27;UTF-8&#x27;</span>)) &#123;</span><br><span class="line">            original_text = <span class="keyword">await</span> replace_response_text(original_response_clone, upstream_domain, url_hostname);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            original_text = original_response_clone.body</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        response = <span class="keyword">new</span> Response(original_text, &#123;</span><br><span class="line">            status,</span><br><span class="line">            <span class="attr">headers</span>: new_response_headers</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">replace_response_text</span>(<span class="params">response, upstream_domain, host_name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> text = <span class="keyword">await</span> response.text()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i <span class="keyword">in</span> replace_dict) &#123;</span><br><span class="line">        j = replace_dict[i]</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="string">&#x27;$upstream&#x27;</span>) &#123;</span><br><span class="line">            i = upstream_domain</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="string">&#x27;$custom_domain&#x27;</span>) &#123;</span><br><span class="line">            i = host_name</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (j == <span class="string">&#x27;$upstream&#x27;</span>) &#123;</span><br><span class="line">            j = upstream_domain</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == <span class="string">&#x27;$custom_domain&#x27;</span>) &#123;</span><br><span class="line">            j = host_name</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(i, <span class="string">&#x27;g&#x27;</span>)</span><br><span class="line">        text = text.replace(re, j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">device_status</span>(<span class="params">user_agent_info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> agents = [<span class="string">&quot;Android&quot;</span>, <span class="string">&quot;iPhone&quot;</span>, <span class="string">&quot;SymbianOS&quot;</span>, <span class="string">&quot;Windows Phone&quot;</span>, <span class="string">&quot;iPad&quot;</span>, <span class="string">&quot;iPod&quot;</span>];</span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> v = <span class="number">0</span>; v &lt; agents.length; v++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (user_agent_info.indexOf(agents[v]) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后我们把它复制到左边的代码块中。这里面有几个我们需要修改的地方：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 你要镜像的网站.</span></span><br><span class="line"><span class="keyword">const</span> upstream = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像网站的目录，比如你想镜像某个网站的二级目录则填写二级目录的目录名，镜像 google 用不到，默认即可.</span></span><br><span class="line"><span class="keyword">const</span> upstream_path = <span class="string">&#x27;/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像站是否有手机访问专用网址，没有则填一样的.</span></span><br><span class="line"><span class="keyword">const</span> upstream_mobile = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本替换.</span></span><br><span class="line"><span class="keyword">const</span> replace_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;$upstream&#x27;</span>: <span class="string">&#x27;$custom_domain&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;//www.google.com&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>一定要保证<code>upstream</code>、<code>upstream_mobile</code>、<code>replace_dict</code>中三个网址是一样的。</p>
-<p>然后保存一下，点保存并部署即可。</p>
-<p>现在看一下效果吧：</p>
-<p><img data-src="https://s1.ax1x.com/2022/09/24/xAMABQ.png" alt=""></p>
-<p><img data-src="https://s1.ax1x.com/2022/09/24/xAMijS.png" alt=""></p>
-<p>可惜的是，那个部署出来的<code>workers.dev</code>链接是不能使用的。不过反过来想，我们已经获得了谷歌的永久访问，不是么？</p>
-<p><strong>THE END</strong>感谢您的阅读~</p>
+<p>蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用<code>Python</code>模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。</p>
+<p><em>注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还请谅解。</em></p>
+<span id="more"></span>
 ]]></content>
       <categories>
-        <category>加速</category>
+        <category>编程</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>Cloudflare</tag>
-        <tag>加速</tag>
+        <tag>Maths</tag>
+        <tag>Python</tag>
+        <tag>编程</tag>
       </tags>
   </entry>
   <entry>
@@ -229,21 +195,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/08/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>GithubPages-简单易上手的网站制作(Jekyll版)</title>
     <url>/2021/08/15/github-pages-jekyll/</url>
     <content><![CDATA[<p>其实我一直想要做网站。在6个月前（2021年2月），我开始看着 <a href="https://www.w3school.com.cn/"><code>W3School</code></a>上的教程，用<code>SublimeText</code>写<code>HTML</code>。<br>但写了一两个月后，我突然想起来一件事。大概在一年前，我有个同学给我推荐了一个录屏软件（不过我忘了叫什么了，好像是<code>Captura</code>？）。他给了我一个网址，然后，<strong>我看到了一个熟悉的东西</strong>————这个网址里有<code>Github</code>的字样。于是，我搜（百）索（度）了一会子，然后搜到好多有关“用<em><code>Github.io</code></em>创作个人博客”的文章，点开后没想到做网站也可以这么简单。今天我来教大家创建一个<code>GithubPages(github.io)</code>页面，分享一下我做网站时的心得。</p>
@@ -321,6 +272,76 @@
         <tag>GitHub</tag>
         <tag>Website</tag>
         <tag>Jekyll</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/08/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>临时解决方案：Cloudflare Workers与镜像站</title>
+    <url>/2022/09/17/cloudflare-workers-for-mirror/</url>
+    <content><![CDATA[<p>最早接触到<code>Cloudflare</code>是在研究<code>jsdelivr</code>被墙后的解决方案，发现一个<code>cloudflare.jsdelivr.net</code>的节点。那是我第一次听到<code>Cloudflare</code>的大名。可没想到，真正把我拉回<code>Cloudflare</code>的，不是所谓高防<code>DDOS</code>，也不是<code>CDN</code>加速，竟梅开二度又是被墙。这次，是<code>Cloudflare</code>自己被墙了。</p>
+<span id="more"></span>
+<p>引用另一篇文章（<code>Hexo</code>网站教程）：</p>
+<blockquote>
+<p><strong>《论我捣鼓<code>GiTalk</code>的简要过程》</strong></p>
+<p>写到这里我本想去截图，结果一看启动不起来，没办法新建<code>issue</code>也没法登录<code>GitHub</code>账号。在排查了设置、网络的问题后，我发现有个致命的问题：<code>cors-anywhere.azm.workers.dev</code>被墙掉，然后<code>GiTalk</code>无法进行<code>GitHub oauth</code>，就不能用了。</p>
+<p>我于是尝试自己搭<code>worker</code>，结果发现是所有<code>Cloudflare worker</code>的链接都被墙掉了，然后我就彻底没招了，就只好作罢。不过……真的吗？</p>
+<p>后来我找到了<code>GiTalk</code>的仓库，里面有类似的<code>Issue</code>，甚至翻出了<code>CORS Anywhere</code>的仓库，找到了一个基于<code>Heroku</code>的备用<code>demo</code>链接。在一个<code>Issue</code>的<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-870990778">某条评论</a>、<a href="https://github.com/Rob--W/cors-anywhere/issues/301#issuecomment-1012060775">某条评论</a>中找到了一些备用链接。于是，就可以恢复正常了！</p>
+<p><strong>另及：今年（2022）11月28号<code>Heroku</code>会关闭所有的免费服务，所以你看到类似<code>herokuapp.com</code>的链接都不用试了…</strong></p>
+</blockquote>
+<p>这个<code>cors-anywhere.azm.workers.dev</code>，就是基于<code>Cloudflare Workers</code>的。上文也提到了我自己搭<code>Workers</code>，在这其中也有一点意外地收获。</p>
+<h2 id="1-关于我们今天到底在干什么"><a href="#1-关于我们今天到底在干什么" class="headerlink" title="1. 关于我们今天到底在干什么"></a>1. 关于我们今天到底在干什么</h2><p><code>Cloudflare Workers</code>，乍一听，我也没猜出这是什么东西。其实<code>Workers</code>是<code>Cloudflare</code>提供的免费服务器，类似<code>GitHub</code>给你一个二级域名（<code>GitHub</code>就是<code>github.io</code>，<code>Cloudflare Workers</code>是<code>workers.dev</code>）。这个<code>CF Workers</code>是支持自定义处理逻辑，说白点自己用<code>JavaScript</code>写脚本。当然我不会把事情变得太复杂，肯定是有可重用的模板的。</p>
+<p>但是我们没事儿搭服务器干嘛？不知道各位有没有听说过反向代理这回事。差不多如此：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Client --&gt; BlockedServer: GET xxx</span><br><span class="line">note left of Client: I cannot GET!</span><br><span class="line">Client -&gt; CF Worker: GET Blocked Server for me!</span><br><span class="line">note right of CF Worker: I can GET!</span><br><span class="line">CF Worker -&gt; BlockedServer: GET xxx</span><br><span class="line">BlockedServer -&gt; CF Worker: Responce xxx</span><br><span class="line">CF Worker -&gt; Client: Responce xxx</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oTDU.png" alt=""></p>
+<p><del>其实说白了这也是一种fq的方式嘛。</del></p>
+<h2 id="2-关于你的Cloudflare账号"><a href="#2-关于你的Cloudflare账号" class="headerlink" title="2. 关于你的Cloudflare账号"></a>2. 关于你的<code>Cloudflare</code>账号</h2><p>照例的话，我们肯定是要简要说一下官网和账号的….<a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a>，很人性化的就跳到中文版啊。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oL59.png" alt=""></p>
+<p>然后点击注册就好了耶：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/19/x9o7bF.png" alt=""></p>
+<p>然后有一些配置，按照自己的喜好填就好了啊。不过由于资金问题和一些使用方式上的原因，我们选<code>Free Plan</code>就可以了，千万不要为了这个白买高级版，每天100000个请求完全完全够用了！</p>
+<h2 id="3-开始搭建Worker"><a href="#3-开始搭建Worker" class="headerlink" title="3. 开始搭建Worker"></a>3. 开始搭建<code>Worker</code></h2><h3 id="3-1-初始化Worker"><a href="#3-1-初始化Worker" class="headerlink" title="3.1 初始化Worker"></a>3.1 初始化<code>Worker</code></h3><p>我们接下来以访问速度慢的<code>GitHub</code>和无法访问的<code>Google</code>为例。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/19/x9obE4.png" alt=""></p>
+<p>我们在左侧的菜单中找到<code>Workers</code>，然后新建服务：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oXCR.png" alt=""></p>
+<p>由于我们只需要一个<code>worker</code>就可以完成一切任务，我就没有新注册了。</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/19/x9oqUJ.png" alt=""></p>
+<p>进来之后有这样一个界面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/24/xAMkng.png" alt=""></p>
+<p>我们点击快速编辑，进入编辑页面：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/24/xAME7j.png" alt=""></p>
+<p>左边是处理逻辑，右边则是预览部分。</p>
+<h3 id="3-2-加入代码"><a href="#3-2-加入代码" class="headerlink" title="3.2 加入代码"></a>3.2 加入代码</h3><p>先复制一下下面这段代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 你要镜像的网站.</span></span><br><span class="line"><span class="keyword">const</span> upstream = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像网站的目录，比如你想镜像某个网站的二级目录则填写二级目录的目录名，镜像 google 用不到，默认即可.</span></span><br><span class="line"><span class="keyword">const</span> upstream_path = <span class="string">&#x27;/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像站是否有手机访问专用网址，没有则填一样的.</span></span><br><span class="line"><span class="keyword">const</span> upstream_mobile = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 屏蔽国家和地区.</span></span><br><span class="line"><span class="keyword">const</span> blocked_region = [<span class="string">&#x27;KP&#x27;</span>, <span class="string">&#x27;SY&#x27;</span>, <span class="string">&#x27;PK&#x27;</span>, <span class="string">&#x27;CU&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 屏蔽 IP 地址.</span></span><br><span class="line"><span class="keyword">const</span> blocked_ip_address = [<span class="string">&#x27;0.0.0.0&#x27;</span>, <span class="string">&#x27;127.0.0.1&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像站是否开启 HTTPS.</span></span><br><span class="line"><span class="keyword">const</span> https = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本替换.</span></span><br><span class="line"><span class="keyword">const</span> replace_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;$upstream&#x27;</span>: <span class="string">&#x27;$custom_domain&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;//www.google.com&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下保持默认，不要动</span></span><br><span class="line">addEventListener(<span class="string">&#x27;fetch&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">    event.respondWith(fetchAndApply(event.request));</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchAndApply</span>(<span class="params">request</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> region = request.headers.get(<span class="string">&#x27;cf-ipcountry&#x27;</span>).toUpperCase();</span><br><span class="line">    <span class="keyword">const</span> ip_address = request.headers.get(<span class="string">&#x27;cf-connecting-ip&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> user_agent = request.headers.get(<span class="string">&#x27;user-agent&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> response = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="keyword">new</span> URL(request.url);</span><br><span class="line">    <span class="keyword">let</span> url_hostname = url.hostname;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (https == <span class="literal">true</span>) &#123;</span><br><span class="line">        url.protocol = <span class="string">&#x27;https:&#x27;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        url.protocol = <span class="string">&#x27;http:&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">await</span> device_status(user_agent)) &#123;</span><br><span class="line">        <span class="keyword">var</span> upstream_domain = upstream;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> upstream_domain = upstream_mobile;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    url.host = upstream_domain;</span><br><span class="line">    <span class="keyword">if</span> (url.pathname == <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">        url.pathname = upstream_path;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        url.pathname = upstream_path + url.pathname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (blocked_region.includes(region)) &#123;</span><br><span class="line">        response = <span class="keyword">new</span> Response(<span class="string">&#x27;Access denied: WorkersProxy is not available in your region yet.&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="number">403</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (blocked_ip_address.includes(ip_address)) &#123;</span><br><span class="line">        response = <span class="keyword">new</span> Response(<span class="string">&#x27;Access denied: Your IP address is blocked by WorkersProxy.&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="number">403</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> method = request.method;</span><br><span class="line">        <span class="keyword">let</span> request_headers = request.headers;</span><br><span class="line">        <span class="keyword">let</span> new_request_headers = <span class="keyword">new</span> Headers(request_headers);</span><br><span class="line"></span><br><span class="line">        new_request_headers.set(<span class="string">&#x27;Host&#x27;</span>, url.hostname);</span><br><span class="line">        new_request_headers.set(<span class="string">&#x27;Referer&#x27;</span>, url.hostname);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> original_response = <span class="keyword">await</span> fetch(url.href, &#123;</span><br><span class="line">            <span class="attr">method</span>: method,</span><br><span class="line">            <span class="attr">headers</span>: new_request_headers</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> original_response_clone = original_response.clone();</span><br><span class="line">        <span class="keyword">let</span> original_text = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">let</span> response_headers = original_response.headers;</span><br><span class="line">        <span class="keyword">let</span> new_response_headers = <span class="keyword">new</span> Headers(response_headers);</span><br><span class="line">        <span class="keyword">let</span> status = original_response.status;</span><br><span class="line"></span><br><span class="line">        new_response_headers.set(<span class="string">&#x27;access-control-allow-origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">        new_response_headers.set(<span class="string">&#x27;access-control-allow-credentials&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">&#x27;content-security-policy&#x27;</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">&#x27;content-security-policy-report-only&#x27;</span>);</span><br><span class="line">        new_response_headers.delete(<span class="string">&#x27;clear-site-data&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> content_type = new_response_headers.get(<span class="string">&#x27;content-type&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (content_type.includes(<span class="string">&#x27;text/html&#x27;</span>) &amp;&amp; content_type.includes(<span class="string">&#x27;UTF-8&#x27;</span>)) &#123;</span><br><span class="line">            original_text = <span class="keyword">await</span> replace_response_text(original_response_clone, upstream_domain, url_hostname);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            original_text = original_response_clone.body</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        response = <span class="keyword">new</span> Response(original_text, &#123;</span><br><span class="line">            status,</span><br><span class="line">            <span class="attr">headers</span>: new_response_headers</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">replace_response_text</span>(<span class="params">response, upstream_domain, host_name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> text = <span class="keyword">await</span> response.text()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> i, j;</span><br><span class="line">    <span class="keyword">for</span> (i <span class="keyword">in</span> replace_dict) &#123;</span><br><span class="line">        j = replace_dict[i]</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="string">&#x27;$upstream&#x27;</span>) &#123;</span><br><span class="line">            i = upstream_domain</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="string">&#x27;$custom_domain&#x27;</span>) &#123;</span><br><span class="line">            i = host_name</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (j == <span class="string">&#x27;$upstream&#x27;</span>) &#123;</span><br><span class="line">            j = upstream_domain</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == <span class="string">&#x27;$custom_domain&#x27;</span>) &#123;</span><br><span class="line">            j = host_name</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> re = <span class="keyword">new</span> <span class="built_in">RegExp</span>(i, <span class="string">&#x27;g&#x27;</span>)</span><br><span class="line">        text = text.replace(re, j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">device_status</span>(<span class="params">user_agent_info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> agents = [<span class="string">&quot;Android&quot;</span>, <span class="string">&quot;iPhone&quot;</span>, <span class="string">&quot;SymbianOS&quot;</span>, <span class="string">&quot;Windows Phone&quot;</span>, <span class="string">&quot;iPad&quot;</span>, <span class="string">&quot;iPod&quot;</span>];</span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> v = <span class="number">0</span>; v &lt; agents.length; v++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (user_agent_info.indexOf(agents[v]) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们把它复制到左边的代码块中。这里面有几个我们需要修改的地方：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 你要镜像的网站.</span></span><br><span class="line"><span class="keyword">const</span> upstream = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像网站的目录，比如你想镜像某个网站的二级目录则填写二级目录的目录名，镜像 google 用不到，默认即可.</span></span><br><span class="line"><span class="keyword">const</span> upstream_path = <span class="string">&#x27;/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 镜像站是否有手机访问专用网址，没有则填一样的.</span></span><br><span class="line"><span class="keyword">const</span> upstream_mobile = <span class="string">&#x27;www.google.com&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文本替换.</span></span><br><span class="line"><span class="keyword">const</span> replace_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;$upstream&#x27;</span>: <span class="string">&#x27;$custom_domain&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;//www.google.com&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一定要保证<code>upstream</code>、<code>upstream_mobile</code>、<code>replace_dict</code>中三个网址是一样的。</p>
+<p>然后保存一下，点保存并部署即可。</p>
+<p>现在看一下效果吧：</p>
+<p><img data-src="https://s1.ax1x.com/2022/09/24/xAMABQ.png" alt=""></p>
+<p><img data-src="https://s1.ax1x.com/2022/09/24/xAMijS.png" alt=""></p>
+<p>可惜的是，那个部署出来的<code>workers.dev</code>链接是不能使用的。不过反过来想，我们已经获得了谷歌的永久访问，不是么？</p>
+<p><strong>THE END</strong>感谢您的阅读~</p>
+]]></content>
+      <categories>
+        <category>加速</category>
+      </categories>
+      <tags>
+        <tag>Cloudflare</tag>
+        <tag>加速</tag>
       </tags>
   </entry>
   <entry>
@@ -408,392 +429,61 @@
       </tags>
   </entry>
   <entry>
-    <title>真的非常简单-Markdown基本语法</title>
-    <url>/2021/08/25/markdown-syntax/</url>
-    <content><![CDATA[<p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p>
+    <title>GitHub-Cli 的安装与使用</title>
+    <url>/2022/01/09/installation-and-usage-of-gh/</url>
+    <content><![CDATA[<p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
 <span id="more"></span>
-<h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. <code>Markdown</code> 是什么？</h2><blockquote>
-<p><code>Markdown</code>是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。<br>它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的<code>XHTML</code>(或者<code>HTML</code>)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。<br>由于<code>Markdown</code>的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用<code>Markdown</code>来撰写帮助文档或是用于论坛上发表消息。如<code>GitHub</code>、<code>OpenStreetMap</code> 、<code>SourceForge</code>、简书等，甚至还能被使用来撰写电子书。<br>（摘自百度百科）  </p>
-</blockquote>
-<p>注：一个好的编辑器是学习的基础。如果你坚持<code>WYSIWYG</code>（所见即所得），这里推荐开源项目<code>MarkText</code>。官网：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>。当然你也可以用<code>VSCode</code>或者（付费，虽然超好）<code>Typora</code>。</p>
-<hr>
-<h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像<code>HTML</code>一样写标题</h3><p>在<code>HTML</code>里，标题分六级：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>相对应的，<code>Markdown</code>标题也分六级。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># This is an H1  </span></span><br><span class="line"><span class="section">## This is an H2  </span></span><br><span class="line">...  </span><br><span class="line"><span class="section">###### This is an H6  </span></span><br></pre></td></tr></table></figure>
-<p>就像你看到的那样，每层标题就是几个 <strong><code>#</code></strong>。</p>
-<h3 id="1-2-Markdown专属标题"><a href="#1-2-Markdown专属标题" class="headerlink" title="1.2 Markdown专属标题"></a>1.2 <code>Markdown</code>专属标题</h3><p>不过，在<code>Markdown</code>中表示标题也可以用一种特殊的方式。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">This is an H1</span></span><br><span class="line"><span class="section">=============</span></span><br><span class="line"></span><br><span class="line"><span class="section">This is an H2</span></span><br><span class="line"><span class="section">-------------</span></span><br></pre></td></tr></table></figure>
-<p>不过它本身只支持2种标题，即大、小标题。</p>
-<hr>
-<h2 id="2-文字样式语法"><a href="#2-文字样式语法" class="headerlink" title="2. 文字样式语法"></a>2. 文字样式语法</h2><p>在<code>Markdown</code>中，文字可以是<em>斜体</em>、<strong>粗体</strong>、<strong><em>粗斜体</em></strong>,<del>删除线</del>，<u>下划线</u>。</p>
-<h3 id="2-1-基本样式"><a href="#2-1-基本样式" class="headerlink" title="2.1 基本样式"></a>2.1 基本样式</h3><ul>
-<li><p>斜体用一个<code>*</code>包围，就像<code>*这是斜体*</code>，显示出来就是 <em>这是斜体</em> </p>
-</li>
-<li><p>粗体用两个<code>*</code>包围，就像<code>**这是粗体**</code>，显示出来就是 <strong>这是粗体</strong></p>
-</li>
-<li><p>粗斜体用三个<code>*</code>包围，就像<code>***这是粗斜体***</code>，显示出来就是 <strong><em>这是粗斜体</em></strong></p>
-<p>（本质上它其实就是<strong>粗体</strong>包住了<em>斜体</em>，所以 <strong><em>你交学费</em></strong> 了吗）</p>
-</li>
-<li><p>删除线用两个<code>~</code>包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del>  </p>
-</li>
-<li><p><code>@mention</code>：<code>GFM</code>中的一种“点名”的方式，其他时候基本没用。</p>
-</li>
-</ul>
-<h4 id="2-1-1-引用块"><a href="#2-1-1-引用块" class="headerlink" title="2.1.1 引用块"></a>2.1.1 引用块</h4><p>想要突出显示你引用了某段话？可以使用引用段落！</p>
-<blockquote>
-<p>这就是一个简单的引用了！你可以在这里面<em>使用</em> <strong>其他</strong><code>的语法</code>。它的语法是：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用引用引用引用引用引用引用引用！</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>引用以一个右尖括号开始。一般情况下，我们在多行引用时，会在每一行的开头加一个符号，但如果你懒……</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></span><br><span class="line"><span class="quote">&gt; tempor incididunt ut labore et dolore magna aliqua.</span></span><br></pre></td></tr></table></figure>
-<p>可以变为：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  </span></span><br><span class="line">tempor incididunt ut labore et dolore magna aliqua.</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>想要嵌套引用，直接多加一个符号！</p>
-<blockquote>
-<p>嵌套引用中！</p>
-</blockquote>
-</blockquote>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum...</span></span><br><span class="line"><span class="quote">&gt; &gt; Lorem ipsum...</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自<code>HTML</code>的样式</h3><blockquote>
-<p>由于<code>Markdown</code>可以直接转换成<code>HTML</code>（在百科里说过了），所以有很多<code>HTML</code>标签都可以在<code>Markdown</code>中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code>（当然也不是所有标签都受支持，得看编译器） 。<strong>如果可能，他们会直接被插入生成的<code>HTML</code>文件中</strong>。</p>
-</blockquote>
-<h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用<code>HTML</code>实现的，在<code>HTML</code>里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>。  </p>
-<h4 id="2-2-2-颜色"><a href="#2-2-2-颜色" class="headerlink" title="2.2.2 颜色"></a>2.2.2 颜色</h4><p>如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 <code>&lt;font&gt;</code> 标签，语法为</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span> Some text <span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这个<code>&lt;font&gt;</code>标签接收一个参数<code>color</code>。你可以把它设为一些常见的颜色，比如</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">颜色</th>
-<th style="text-align:center">效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Red&gt;</code></td>
-<td style="text-align:center"><font color=Red>Red</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Yellow&gt;</code></td>
-<td style="text-align:center"><font color=Yellow>Yellow</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Blue&gt;</code></td>
-<td style="text-align:center"><font color=Blue>Blue</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Green&gt;</code></td>
-<td style="text-align:center"><font color=Green>Green</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Gold&gt;</code></td>
-<td style="text-align:center"><font color=Gold>Gold</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Grey&gt;</code></td>
-<td style="text-align:center"><font color=Grey>Grey</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Purple&gt;</code></td>
-<td style="text-align:center"><font color=Purple>Purple</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=Azure&gt;</code></td>
-<td style="text-align:center"><font color=Azure>Azure</font></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>&lt;font color=GreenYellow&gt;</code></td>
-<td style="text-align:center"><font color=GreenYellow>GreenYellow</font></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~  </p>
-<p>另外，这其实是一个过时了的<code>HTML</code> 标签。所以，我想，还是要避免使用吧。如果可行，可以试试行内<code>CSS</code>，即：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了，它表示一种快捷键方式。语法就是：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span>Ctrl+Shift+L<span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure>
-<p>这个脚注一般用数字表示。当然它还有更高级的功能，见下：</p>
-<hr>
-<h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
-<p>想要直接显示这个链接而不显示代替名？可以这样做：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://example.com&gt;</span></span><br></pre></td></tr></table></figure>
-<p>显示出来就是：<a href="https://example.com">https://example.com</a>  </p>
-<p>想要在一处集中显示所有链接？可以这样使用脚注来替代！</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Example</span>](<span class="link">example</span>)</span><br><span class="line">[example] : https://www.example.com/</span><br></pre></td></tr></table></figure>
-<p>当然我不太习惯用这个。</p>
-<h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在<code>[Name](Place)</code> 之前加上一个 <code>!</code> (都是英文标点),如</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Link &quot;替代名&quot;</span>)</span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">![<span class="string">Pull Shark</span>](<span class="link">https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png &quot;Pull Shark&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>“替代名”不是必要的，它会被解析为<code>img</code>标签的<code>alt</code>属性。在方括号<code>[Pull Shark]</code>中的内容在有些编译器下会作为一种标题被显示在渲染的图片下面。e.g.</p>
-<p><img data-src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="Pull Shark" title="Pull Shark"></p>
-<p>当然一些高级一些的属性（如居中）还是用<code>HTML</code>做出来的！（不知道为什么<code>Hexo</code>会自动居中）</p>
-<hr>
-<h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4. 列表"></a>4. 列表</h2><p>在<code>Markdown</code>中，列表分两种：有序的，和无序的。</p>
-<h3 id="4-1-有序列表"><a href="#4-1-有序列表" class="headerlink" title="4.1 有序列表"></a>4.1 有序列表</h3><p>有序列表，就像  </p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一个元素  </span><br><span class="line"><span class="bullet">2.</span> 第二个元素  </span><br><span class="line"><span class="bullet">3.</span> 第三个元素</span><br></pre></td></tr></table></figure>
-<p>在<code>Markdown</code>中，直接打 <code>1.</code> 就会出现一个有序列表。当然， <code>i.</code> <code>a.</code> 甚至不从头开始也可以：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">a. #1</span><br><span class="line">b. #2</span><br><span class="line">c. #3</span><br></pre></td></tr></table></figure>
-<p>当然这还是取决于你用的编译器啦！</p>
-<h3 id="4-2-无序列表"><a href="#4-2-无序列表" class="headerlink" title="4.2 无序列表"></a>4.2 无序列表</h3><p>无序列表的原理和有序列表一样，不过不以 <code>1.</code> 打头，而是：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 第一种方式</span><br><span class="line"><span class="bullet">-</span> 第一种方式</span><br></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">+</span> 第二种方式</span><br><span class="line"><span class="bullet">+</span> 第二种方式</span><br></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 第三种方式</span><br><span class="line"><span class="bullet">*</span> 第三种方式</span><br></pre></td></tr></table></figure>
-<p>显示出来都是</p>
-<ul>
-<li>无序列表</li>
-<li>无序列表</li>
-</ul>
-<p>怎么样，够简单吧……</p>
-<h3 id="4-3-To-do-list"><a href="#4-3-To-do-list" class="headerlink" title="4.3 To do list"></a>4.3 <code>To do list</code></h3><p>通过无序列表我们还可以创建一个任务表（<code>To do list</code>），如下：</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.1</li>
-<li style="list-style: none"><input type="checkbox" disabled="disabled"></input> No.2</li>
-<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.3</li>
-</ul>
-<p>语法如下：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] No.1</span><br><span class="line"><span class="bullet">-</span> [ ] No.2</span><br><span class="line"><span class="bullet">-</span> [x] No.3</span><br></pre></td></tr></table></figure>
-<p>其中 <code>[x]</code> 表示“已完成”，<code>[ ]</code> 表示“未完成”。可能<code>Hexo</code>有的时候渲染不出来这个，大家可以移步<a href="https://github.com/Guleixibian2009/Website-Ariticle-Backup/blob/master/_posts/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.md">原文件</a>查看！</p>
-<h3 id="4-4-合并列表"><a href="#4-4-合并列表" class="headerlink" title="4.4 合并列表"></a>4.4 合并列表</h3><p>你可以把多种列表嵌套起来。如：</p>
-<ul>
-<li><p>Hello World!</p>
-</li>
-<li><p>这是一个列表……</p>
-<ol>
-<li><p>里面还有一个列表！</p>
-</li>
-<li><p>的确是可以嵌套的！</p>
-</li>
-</ol>
-</li>
-<li><p>还是原来那个列表~</p>
-<ul>
-<li><p>可以同样嵌套无序列表</p>
-</li>
-<li><p>等等等等</p>
-</li>
-<li><p>[x] 还可以更改列表类型啊！</p>
-</li>
-<li><p>[ ] 怎么样？</p>
-</li>
-</ul>
-</li>
-<li><p>就是这样啦！</p>
-</li>
-</ul>
-<hr>
-<h2 id="5-文档里的小“零件”"><a href="#5-文档里的小“零件”" class="headerlink" title="5.  文档里的小“零件”"></a>5.  文档里的小“零件”</h2><h3 id="5-1-分割线"><a href="#5-1-分割线" class="headerlink" title="5.1 分割线"></a>5.1 分割线</h3><p>分割线这个东东在文章分节这个功能上还是非常的实用的。你可以这样创建一条：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">或</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
-<p>正如你看到的那样啦！</p>
-<h3 id="5-2-强制换行的几种方式"><a href="#5-2-强制换行的几种方式" class="headerlink" title="5.2 强制换行的几种方式"></a>5.2 强制换行的几种方式</h3><p>在<code>Markdown</code>里面如果你不进行所谓强制换行，那么连续的段落就会被自动连接在一起。这个时候，<code>HTML</code>大兄就会来打杂：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>直接把它放在某一行的结尾，这两行就会自动拆分。如果你嫌麻烦…那么在想要换行的地方（行尾）加两个空格就可以……我也是没法展示了，这个不够直观。</p>
-<h3 id="5-3-符号的转义-escaping"><a href="#5-3-符号的转义-escaping" class="headerlink" title="5.3 符号的转义(escaping)"></a>5.3 符号的转义(<code>escaping</code>)</h3><p>什么，这么简单的<code>Markdown</code>都需要转义？好吧，我承认，这还真的要！如果你仔细回想一下（或者预知一下未来，看下面的代码块）你就会发现，我们在处理文字样式的时候我们使用了各种符号，现整理如下：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>意义</th>
-<th>符号</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>\</code></td>
-<td>反斜杠（转义本身）</td>
-<td>``</td>
-<td>反引号（代码块）</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>星号（加粗，斜体，无序列表等）</td>
-<td><code>_</code></td>
-<td>下划线（加粗，斜体等）</td>
-</tr>
-<tr>
-<td><code>()</code></td>
-<td>小括号（链接，图片）</td>
-<td><code>[]</code></td>
-<td>中括号（链接，图片）</td>
-</tr>
-<tr>
-<td><code>~</code></td>
-<td>波浪号（下标，删除线）</td>
-<td><code>$</code></td>
-<td>美元（某些情况下，<code>LaTex</code>）</td>
-</tr>
-<tr>
-<td><code>#</code></td>
-<td>井号（标题）</td>
-<td><code>+</code></td>
-<td>加号（无序列表）</td>
-</tr>
-<tr>
-<td><code>-</code></td>
-<td>减号（无序列表）</td>
-<td><code>.</code></td>
-<td>点号（有序列表）</td>
-</tr>
-<tr>
-<td><code>@</code></td>
-<td>@号（<code>GFM</code>中，<code>@mention</code>）</td>
-<td>`\</td>
-<td>`</td>
-<td>竖线（表格）</td>
-</tr>
-<tr>
-<td><code>&lt;</code></td>
-<td>左尖括号（<code>HTML</code>）</td>
-<td><code>&gt;</code></td>
-<td>右尖括号（<code>HTML</code>）</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>那么，如何转义呢？只需要在需要转义的字符前面添加反斜杠就可以啦！比如，*这段文字其实不是斜体*！</p>
-<p>代码如下：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\<span class="emphasis">*这段文字其实不是斜体!\*</span></span><br><span class="line"><span class="emphasis">*但这个是！*</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-4-没什么用的注释"><a href="#5-4-没什么用的注释" class="headerlink" title="5.4 没什么用的注释"></a>5.4 没什么用的注释</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&lt;!-- 这就是个注释了，我甚至不想讲… --&gt;</span><br></pre></td></tr></table></figure>
-<p>对对，这就是个<code>HTML</code>注释而已。99.8%的情况下这个东东没有用，但如果…嗯好吧其实也不是一点作用都没有，如<code>Markdown</code>文档中的定位（比如你每天靠<code>GitHub Actions</code>生成点什么）或者<code>Hexo</code>文章的节选会使用<code>&lt;!-- More --&gt;</code>。</p>
-<hr>
-<h2 id="6-激动人心！代码块"><a href="#6-激动人心！代码块" class="headerlink" title="6. 激动人心！代码块"></a>6. 激动人心！代码块</h2><p><del>是不是等它好久了…</del> 行了也见了这么多行内代码块了，我怎么能不介绍一下呢。</p>
-<p>行内代码块，只需将代码块内的内容用 ````包围起来就可以了。如，</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="code">`hello, world!`</span></span><br></pre></td></tr></table></figure>
-<p>至于长篇的“大”代码块，有两种方法：</p>
-<ol>
-<li><p>在“代码块”前缩进4格，直到代码结束；</p>
-</li>
-<li><p>使用下面这种方式：</p>
-</li>
-</ol>
-<div class="highlight-container">
-  <figure class="highlight md">
-    <div class="table-container">
-      <table>
-        <tbody>
-          <tr>
-            <td class="gutter">
-              <pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span></pre>
-            </td>
-            <td class="code">
-              <pre><span class="line">```</span>
-<span class="line">Here is some code.</span>
-<span class="line">```</span></pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </figure>
-  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
-</div>
-
-<p>想要指定语法并获得高亮技能？看到下面那个<code>python</code>没有！</p>
-<div class="highlight-container">
-  <figure class="highlight md">
-    <div class="table-container">
-      <table>
-        <tbody>
-          <tr>
-            <td class="gutter">
-              <pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span></pre>
-            </td>
-            <td class="code">
-              <pre><span class="line">```python</span>
-<span class="line">def hello():</span>
-<span class="line">    print("Hello, world!")</span>
-<span class="line"></span>
-<span class="line">hello():</span>
-<span class="line">```</span></pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </figure>
-  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
-</div>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
-<h2 id="7-表格来了"><a href="#7-表格来了" class="headerlink" title="7. 表格来了"></a>7. 表格来了</h2><p>需要在自己的文档中直观地表示数据？可以尝试列一个表格！Here we go~</p>
-<h3 id="7-1-基本表格"><a href="#7-1-基本表格" class="headerlink" title="7.1 基本表格"></a>7.1 基本表格</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>第一列</th>
-<th>第二列</th>
-<th>第三列</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第一行</td>
-<td>数据1</td>
-<td>数据2</td>
-<td>数据3</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>光看这个表可能还真猜不出来它的语法是什么……但其实如果我真的写出来却会觉得这种语法也很直观！（不觉得那些竖线很像网格线吗）</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">||第一列|第二列|第三列|</span><br><span class="line">|第一行|数据1|数据2|数据3|</span><br></pre></td></tr></table></figure>
-<p>所以，每两个<code>|</code>之间是一格，5个<code>|</code>就是4格。没有限制最多多少行或多少列，且不要求每行格数相同！只是我这里渲染不出来……</p>
-<h3 id="7-2-每列的居中、靠右"><a href="#7-2-每列的居中、靠右" class="headerlink" title="7.2 每列的居中、靠右"></a>7.2 每列的居中、靠右</h3><p>什么，还有这种功能？好吧，我们只需要一条特殊“控制行”：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">|     | 第一列 | 第二列 | 第三列 |</span><br><span class="line">| --- |:--- |:---:| ---:|</span><br><span class="line">| 第一行 | 靠左  | 居中  | 靠右  |</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:left">第一列</th>
-<th style="text-align:center">第二列</th>
-<th style="text-align:right">第三列</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第一行</td>
-<td style="text-align:left">靠左</td>
-<td style="text-align:center">居中</td>
-<td style="text-align:right">靠右</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<p>到这里，你已经学完了基础的<code>Markdown</code>语法！想要学习<code>Markdown</code>中更高级的图表功能？敬请期待下一篇教程！</p>
-<hr>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>以下是注释内容：  </p>
-<blockquote id="fn_1">
-<sup>1</sup>. 你学废了吗？<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
+<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
+<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
+<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
+<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
+<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
+<p>嗯……搞定了！</p>
+<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
+<p>然后就会有下面的提示语：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
+<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
+<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
+<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
+<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
+<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
+<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
+<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
+<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
+<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
+<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
+<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
+<p>示意图如下：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
+<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
+<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>就可以获得有关命令的更多信息了！</p>
+<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
 <hr>
 <p><strong>THE END</strong>感谢您的阅读~</p>
 ]]></content>
       <categories>
-        <category>编程</category>
-        <category>Markdown</category>
-        <category>Markdown语法</category>
+        <category>GitHub</category>
+        <category>命令行</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
-        <tag>编程</tag>
-        <tag>语法</tag>
+        <tag>GitHub</tag>
+        <tag>GitHub-Cli</tag>
       </tags>
   </entry>
   <entry>
@@ -2486,85 +2176,399 @@ e^x \qquad & a \le 0
         <category>LaTex</category>
       </categories>
       <tags>
+        <tag>Maths</tag>
         <tag>Markdown</tag>
         <tag>LaTex</tag>
-        <tag>Maths</tag>
       </tags>
   </entry>
   <entry>
-    <title>GitHub-Cli 的安装与使用</title>
-    <url>/2022/01/09/installation-and-usage-of-gh/</url>
-    <content><![CDATA[<p><strong>Take GitHub to the command line!</strong><br><img data-src="https://s4.ax1x.com/2022/01/08/7iGY1P.png" alt="GitHub-Cli"><br>想必<code>GitHub</code>大家都不陌生。一开始我也只是偶尔上去安装个软件啥的，但是自从几个月前我接触到用<code>GitHub</code>作为服务器和二级域名来做网站后，我访问<code>GitHub</code>也就更加频繁了。每天都要重复登陆、收验证码实在是有些浪费时间了，再加上这么慢的网速，于是我开始使用<code>Git+Hexo</code>本地生成+上传的模式。可用了一段时间后，我却发现有比<code>Git</code>更快、更强、更高大上的终端命令行——<strong><code>GitHub-Cli</code></strong>(以下也简称gh)。</p>
+    <title>真的非常简单-Markdown基本语法</title>
+    <url>/2021/08/25/markdown-syntax/</url>
+    <content><![CDATA[<p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p>
 <span id="more"></span>
-<h2 id="一-Gh简介"><a href="#一-Gh简介" class="headerlink" title="一.Gh简介"></a>一.Gh简介</h2><p><code>GitHub-Cli</code>,也就是<code>GitHub</code><em>最新推出的命令行终端</em>，具有快速、高效等特性，给万千码农带来了极大的福利—— <u>更快地访问、克隆仓库，更快的提交更新，更高效的处理<code>issue</code>和<code>PR</code>。</u> 曾经必须要到<code>GitHub</code>网页端才能修改的元信息，现在在<code>CMD</code>上就可以操作。<br>十几天前<code>gh</code>已经推出了最新的<code>2.4.0</code>版本。这款终端使用<code>GoLang</code>编写，配合一定的批处理文件就可以完成一切任务。最新数据显示该仓库已经有了<strong>2万6千个Star</strong>。<br><a href="https://cli.github.com/">项目官网</a>  <a href="https://github.com/cli/cli/">项目源码地址</a></p>
-<h2 id="二-Gh的安装"><a href="#二-Gh的安装" class="headerlink" title="二.Gh的安装"></a>二.Gh的安装</h2><p>安装其实很简单，毕竟它不是<code>GUI</code>，只是一个类似<code>Bash</code>的东东嘛。下面以<em>Windows</em>为例：</p>
-<h3 id="1-安装包安装（通用）"><a href="#1-安装包安装（通用）" class="headerlink" title="1. 安装包安装（通用）"></a>1. 安装包安装（通用）</h3><p>访问<a href="https://github.com/cli/cli/releases/tag/v2.4.0">这个链接</a>，找到<code>Assets</code>。然后你会找到<strong>很多很多的安装包</strong>，在比较下面的地方有一个<code>gh_2.4.0_windows_amd64.msi</code>的安装文件（<em>貌似是64位的</em>）。尝试下载它……<br>下载下来以后，直接运行安装即可。安装完成后，打开<code>CMD</code>运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh --version  </span><br></pre></td></tr></table></figure>
-<p>如果<code>CMD</code>返回给你有用的信息（<em>而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。</em>），那么说明你已经安装好了！</p>
-<h3 id="2-Chocolatey安装"><a href="#2-Chocolatey安装" class="headerlink" title="2. Chocolatey安装"></a>2. <code>Chocolatey</code>安装</h3><p>使用过<code>Chocolatey</code>的同志直接运行下面的命令！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ clist gh</span><br><span class="line">$ choco install gh</span><br></pre></td></tr></table></figure>
-<p>嗯……搞定了！</p>
-<h2 id="三-Gh登录时刻！"><a href="#三-Gh登录时刻！" class="headerlink" title="三. Gh登录时刻！"></a>三. Gh登录时刻！</h2><p>准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh auth login  //这很简单吧！</span><br></pre></td></tr></table></figure>
-<p>然后就会有下面的提示语：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGJpt.png" alt="Auth_Login"></p>
-<p><em>图片来源于网络……所以不是我的用户名</em><br>两种登陆方法：你可以使用<strong>浏览器登陆账号</strong>后登录<code>GitHub-Cli</code>，也可以使用<strong>粘贴个人验证码</strong>登录。由于<code>GitHub-Cli</code>的内核也是用到<code>Git</code>的，所以它也会要求你配置<code>Git</code>，选择<code>SSH</code>或者<code>HTTPS</code>貌似都差不多。<br>如果最后它提示你类似<code>Logged in as …</code>说明你成功了！！  </p>
-<h2 id="四-关于你的仓库"><a href="#四-关于你的仓库" class="headerlink" title="四.关于你的仓库"></a>四.关于你的仓库</h2><p>使用“项目托管平台”你没有仓库怎么行？用你本地的<code>Git</code>或者在线创建一个仓库，然后你就可以操作了。<br><img data-src="https://s4.ax1x.com/2022/01/08/7iGt6f.md.png" alt="New_Repo"><br>创建一个仓库后，把它拉取到本地。这个时候<code>GitHub-Cli</code>就能派上用场了：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh repo <span class="built_in">clone</span> &#123;username&#125;/&#123;repo_name&#125;</span><br></pre></td></tr></table></figure>
-<p>现在你的电脑上应该就有了一个<code>本地仓库</code>。现在让我们来更新它！<br>首先我们来切换到一个新的分支<em>（Git版本库中存放项目不同版本的一种机制）</em> 。然后，做一点点修改，然后再提交回远程端 <em>（在这里就是GitHub！）</em>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout –b <span class="built_in">test</span>  //checkout -b 会创建并进入一个新的分支</span><br><span class="line">$ mkdir Test12.17  //创建一个文件夹</span><br><span class="line">$ <span class="built_in">cd</span> Test12.17</span><br><span class="line">$ <span class="built_in">echo</span> “What makes unicorns cry?”&gt;&gt;test.txt  //做一点点修改</span><br></pre></td></tr></table></figure>
-<p>现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .  //缓存所有修改</span><br><span class="line">$ git commit –m “Update 12.17”  //创建一个更新记录</span><br><span class="line">$ git push –-set-upstream origin <span class="built_in">test</span>  //上传 注意这里需要配置远程</span><br></pre></td></tr></table></figure>
-<p>现在貌似我们的更改已经被上传到<code>GitHub</code>上面去了！不过很明显，我们提交到的是一个叫做<code>test</code>的分支，我们还需要把他提交到<code>master</code>，即<strong>主分支</strong>上去。</p>
-<h2 id="五-PRs"><a href="#五-PRs" class="headerlink" title="五.PRs"></a>五.PRs</h2><p>其实我们的确可以将更新直接提交到<code>master</code>上，但这不是重点——在<code>GitHub</code>上更多的是<strong>多人合作项目</strong>，这时将更新代码直接提交到主分支上貌似就有点风险了 <em>（万一有Bug呢）</em> 。然后，我们就可以尝试一种新的方式——<code>Pull Request</code>。（感觉前面铺垫好多）<br><code>Pull Request</code> 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 <code>Pull Request</code>。<code>Pull Request</code> 本质上是一种<em>软件的合作方式</em>，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。<br>所以，你学废了吗……</p>
-<h3 id="1-创建PR"><a href="#1-创建PR" class="headerlink" title="1.创建PR"></a>1.创建PR</h3><p>现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。<br>如图所示，创建一个PR我们需要运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr create  //等同于 $ gh pr cr</span><br></pre></td></tr></table></figure>
-<p>同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Guleixibian2009/<span class="built_in">test</span>/pull/1</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGanS.png" alt="PR_Create">  </p>
-<h3 id="2-PR的合并"><a href="#2-PR的合并" class="headerlink" title="2.PR的合并"></a>2.PR的合并</h3><p>很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh pr list</span><br></pre></td></tr></table></figure>
-<p>这个命令可以帮助我们查看所有的<code>PR</code>。比如下面的仓库就有2个进行中的<code>PR</code>:  </p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGNX8.jpg" alt="PR_List"></p>
-<p>Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）<br>很明显我们的确有进行中的PR。为了将其合并入主分支，我们来<code>Merge</code>刚刚那个<code>PR</code>。  </p>
-<p>示意图如下：</p>
-<p><img data-src="https://s4.ax1x.com/2022/01/08/7iGd0g.png" alt="PR_Merge"></p>
-<p>当然在合并<code>PR</code>时我们会需要选择一些基本信息，一般情况下选择<code>Create a merge commit</code>。如果你不想删除这个<code>test</code>分支，你可以在第二个选项中选择<code>No</code>。最后它会有提示语：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Merged pull request <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
-<p>然后，我们怎么知道自己的<code>PR</code>真的真的已经被合并了呢？我们可以切换回原分支<code>master</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master  //不需要 -b ，因为不是新分支</span><br><span class="line">$ gh repo sync  //这个指令可以同步当前分支</span><br></pre></td></tr></table></figure>
-<p>如果你的<code>master</code>分支中多了一开始创建的文件，那么，这个<code>PR</code>就是真的被合并了。<br>最后，如果你还想了解<code>GitHub-Cli</code>更多有关命令，你可以运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gh &lt;<span class="built_in">command</span>&gt; &lt;subcommand&gt; --<span class="built_in">help</span></span><br><span class="line">  //此处 &lt;<span class="built_in">command</span>&gt;/&lt;subcommand&gt; 要用具体的命令代替</span><br><span class="line">  //如： gh repo <span class="built_in">clone</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<p>就可以获得有关命令的更多信息了！</p>
-<h2 id="六-写在最后"><a href="#六-写在最后" class="headerlink" title="六.写在最后"></a>六.写在最后</h2><p>经过我的一通讲解，相信大家已经掌握了<code>GitHub-Cli</code>的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了<code>Pull Request</code>。在此希望<code>GitHub-Cli</code>可以和广大码农一同进步，一同成长！我们下期再见~~~</p>
+<h2 id="0-Markdown-是什么？"><a href="#0-Markdown-是什么？" class="headerlink" title="0. Markdown 是什么？"></a>0. <code>Markdown</code> 是什么？</h2><blockquote>
+<p><code>Markdown</code>是一种轻量级标记语言，创始人为约翰·格鲁伯(英语:John Gruber)。<br>它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的<code>XHTML</code>(或者<code>HTML</code>)文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。<br>由于<code>Markdown</code>的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用<code>Markdown</code>来撰写帮助文档或是用于论坛上发表消息。如<code>GitHub</code>、<code>OpenStreetMap</code> 、<code>SourceForge</code>、简书等，甚至还能被使用来撰写电子书。<br>（摘自百度百科）  </p>
+</blockquote>
+<p>注：一个好的编辑器是学习的基础。如果你坚持<code>WYSIWYG</code>（所见即所得），这里推荐开源项目<code>MarkText</code>。官网：<a href="https://github.com/marktext/marktext/">https://github.com/marktext/marktext/</a>。当然你也可以用<code>VSCode</code>或者（付费，虽然超好）<code>Typora</code>。</p>
+<hr>
+<h2 id="1-文章标题-amp-小标题"><a href="#1-文章标题-amp-小标题" class="headerlink" title="1. 文章标题&amp;小标题"></a>1. 文章标题&amp;小标题</h2><h3 id="1-1-像HTML一样写标题"><a href="#1-1-像HTML一样写标题" class="headerlink" title="1.1 像HTML一样写标题"></a>1.1 像<code>HTML</code>一样写标题</h3><p>在<code>HTML</code>里，标题分六级：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is an H1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is an H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is an H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>相对应的，<code>Markdown</code>标题也分六级。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># This is an H1  </span></span><br><span class="line"><span class="section">## This is an H2  </span></span><br><span class="line">...  </span><br><span class="line"><span class="section">###### This is an H6  </span></span><br></pre></td></tr></table></figure>
+<p>就像你看到的那样，每层标题就是几个 <strong><code>#</code></strong>。</p>
+<h3 id="1-2-Markdown专属标题"><a href="#1-2-Markdown专属标题" class="headerlink" title="1.2 Markdown专属标题"></a>1.2 <code>Markdown</code>专属标题</h3><p>不过，在<code>Markdown</code>中表示标题也可以用一种特殊的方式。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">This is an H1</span></span><br><span class="line"><span class="section">=============</span></span><br><span class="line"></span><br><span class="line"><span class="section">This is an H2</span></span><br><span class="line"><span class="section">-------------</span></span><br></pre></td></tr></table></figure>
+<p>不过它本身只支持2种标题，即大、小标题。</p>
+<hr>
+<h2 id="2-文字样式语法"><a href="#2-文字样式语法" class="headerlink" title="2. 文字样式语法"></a>2. 文字样式语法</h2><p>在<code>Markdown</code>中，文字可以是<em>斜体</em>、<strong>粗体</strong>、<strong><em>粗斜体</em></strong>,<del>删除线</del>，<u>下划线</u>。</p>
+<h3 id="2-1-基本样式"><a href="#2-1-基本样式" class="headerlink" title="2.1 基本样式"></a>2.1 基本样式</h3><ul>
+<li><p>斜体用一个<code>*</code>包围，就像<code>*这是斜体*</code>，显示出来就是 <em>这是斜体</em> </p>
+</li>
+<li><p>粗体用两个<code>*</code>包围，就像<code>**这是粗体**</code>，显示出来就是 <strong>这是粗体</strong></p>
+</li>
+<li><p>粗斜体用三个<code>*</code>包围，就像<code>***这是粗斜体***</code>，显示出来就是 <strong><em>这是粗斜体</em></strong></p>
+<p>（本质上它其实就是<strong>粗体</strong>包住了<em>斜体</em>，所以 <strong><em>你交学费</em></strong> 了吗）</p>
+</li>
+<li><p>删除线用两个<code>~</code>包围，就像<code>~~这是删除线~~</code>，显示出来就是 <del>这是删除线</del>  </p>
+</li>
+<li><p><code>@mention</code>：<code>GFM</code>中的一种“点名”的方式，其他时候基本没用。</p>
+</li>
+</ul>
+<h4 id="2-1-1-引用块"><a href="#2-1-1-引用块" class="headerlink" title="2.1.1 引用块"></a>2.1.1 引用块</h4><p>想要突出显示你引用了某段话？可以使用引用段落！</p>
+<blockquote>
+<p>这就是一个简单的引用了！你可以在这里面<em>使用</em> <strong>其他</strong><code>的语法</code>。它的语法是：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用引用引用引用引用引用引用引用！</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>引用以一个右尖括号开始。一般情况下，我们在多行引用时，会在每一行的开头加一个符号，但如果你懒……</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></span><br><span class="line"><span class="quote">&gt; tempor incididunt ut labore et dolore magna aliqua.</span></span><br></pre></td></tr></table></figure>
+<p>可以变为：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  </span></span><br><span class="line">tempor incididunt ut labore et dolore magna aliqua.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想要嵌套引用，直接多加一个符号！</p>
+<blockquote>
+<p>嵌套引用中！</p>
+</blockquote>
+</blockquote>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; Lorem ipsum...</span></span><br><span class="line"><span class="quote">&gt; &gt; Lorem ipsum...</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-某些来自HTML的样式"><a href="#2-2-某些来自HTML的样式" class="headerlink" title="2.2 某些来自HTML的样式"></a>2.2 某些来自<code>HTML</code>的样式</h3><blockquote>
+<p>由于<code>Markdown</code>可以直接转换成<code>HTML</code>（在百科里说过了），所以有很多<code>HTML</code>标签都可以在<code>Markdown</code>中使用。比如说，<code>&lt;u&gt;</code> <code>&lt;kbd&gt;</code> <code>&lt;script&gt;</code>（当然也不是所有标签都受支持，得看编译器） 。<strong>如果可能，他们会直接被插入生成的<code>HTML</code>文件中</strong>。</p>
+</blockquote>
+<h4 id="2-2-1-瞎划线（下划线）"><a href="#2-2-1-瞎划线（下划线）" class="headerlink" title="2.2.1 瞎划线（下划线）"></a>2.2.1 瞎划线（下划线）</h4><p>下划线是用<code>HTML</code>实现的，在<code>HTML</code>里下划线是<code>&lt;u&gt;</code>,所以语法就是<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>,显示出来就是<u>这是下划线</u>。  </p>
+<h4 id="2-2-2-颜色"><a href="#2-2-2-颜色" class="headerlink" title="2.2.2 颜色"></a>2.2.2 颜色</h4><p>如果<font color=green> 你 </font>需要给文字调 <font color=red> 颜色 </font> ，可以用 <code>&lt;font&gt;</code> 标签，语法为</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span> Some text <span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个<code>&lt;font&gt;</code>标签接收一个参数<code>color</code>。你可以把它设为一些常见的颜色，比如</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">颜色</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Red&gt;</code></td>
+<td style="text-align:center"><font color=Red>Red</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Yellow&gt;</code></td>
+<td style="text-align:center"><font color=Yellow>Yellow</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Blue&gt;</code></td>
+<td style="text-align:center"><font color=Blue>Blue</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Green&gt;</code></td>
+<td style="text-align:center"><font color=Green>Green</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Gold&gt;</code></td>
+<td style="text-align:center"><font color=Gold>Gold</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Grey&gt;</code></td>
+<td style="text-align:center"><font color=Grey>Grey</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Purple&gt;</code></td>
+<td style="text-align:center"><font color=Purple>Purple</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=Azure&gt;</code></td>
+<td style="text-align:center"><font color=Azure>Azure</font></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;font color=GreenYellow&gt;</code></td>
+<td style="text-align:center"><font color=GreenYellow>GreenYellow</font></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果你还想要其他的颜色，你可以访问 <a href="https://www.w3school.com.cn/tags/html_ref_colornames.asp">https://www.w3school.com.cn/tags/html_ref_colornames.asp</a> 来研究更多颜色~  </p>
+<p>另外，这其实是一个过时了的<code>HTML</code> 标签。所以，我想，还是要避免使用吧。如果可行，可以试试行内<code>CSS</code>，即：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-3-按键？？"><a href="#2-2-3-按键？？" class="headerlink" title="2.2.3 按键？？"></a>2.2.3 按键？？</h4><p>听说过<code>&lt;kbd&gt;</code>吗？<del>（好奇）</del>我猜你肯定知道！啊啊，不知道？？？我教你！选中那个<code>&lt;kbd&gt;</code>，然后按住<kbd>Ctrl+C</kbd>，选中别处，<kbd>Ctrl+V</kbd>！这就是<code>&lt;kbd&gt;</code>了，它表示一种快捷键方式。语法就是：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span>Ctrl+Shift+L<span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-脚注"><a href="#2-3-脚注" class="headerlink" title="2.3 脚注"></a>2.3 脚注</h3><p>这是一个脚注 <sup><a href="#fn_1" id="reffn_1">1</a></sup> 。脚注的语法是：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">TextTextText [^name] TextTextText</span><br></pre></td></tr></table></figure>
+<p>这个脚注一般用数字表示。当然它还有更高级的功能，见下：</p>
+<hr>
+<h2 id="3-链接与图片"><a href="#3-链接与图片" class="headerlink" title="3. 链接与图片"></a>3. 链接与图片</h2><h3 id="3-1-链接"><a href="#3-1-链接" class="headerlink" title="3.1 链接"></a>3.1 链接</h3><p>文章中的“链接”指“超链接”。 <a href="https://guleixibian2009.github.io/">这是一个超链接实例</a> ，它指向我的主页。<br>链接的语法为 </p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Name</span>](<span class="link">Link</span>) </span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">[<span class="string">主页</span>](<span class="link">https://www.example.com/</span>)</span><br></pre></td></tr></table></figure>
+<p>想要直接显示这个链接而不显示代替名？可以这样做：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="xml">&lt;https://example.com&gt;</span></span><br></pre></td></tr></table></figure>
+<p>显示出来就是：<a href="https://example.com">https://example.com</a>  </p>
+<p>想要在一处集中显示所有链接？可以这样使用脚注来替代！</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">[<span class="string">Example</span>](<span class="link">example</span>)</span><br><span class="line">[example] : https://www.example.com/</span><br></pre></td></tr></table></figure>
+<p>当然我不太习惯用这个。</p>
+<h3 id="3-2-图片"><a href="#3-2-图片" class="headerlink" title="3.2 图片"></a>3.2 图片</h3><p>图片的语法和链接很相似，只是在<code>[Name](Place)</code> 之前加上一个 <code>!</code> (都是英文标点),如</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">Name</span>](<span class="link">Link &quot;替代名&quot;</span>)</span><br><span class="line">&lt;!--示例--&gt;</span><br><span class="line">![<span class="string">Pull Shark</span>](<span class="link">https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png &quot;Pull Shark&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>“替代名”不是必要的，它会被解析为<code>img</code>标签的<code>alt</code>属性。在方括号<code>[Pull Shark]</code>中的内容在有些编译器下会作为一种标题被显示在渲染的图片下面。e.g.</p>
+<p><img data-src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" alt="Pull Shark" title="Pull Shark"></p>
+<p>当然一些高级一些的属性（如居中）还是用<code>HTML</code>做出来的！（不知道为什么<code>Hexo</code>会自动居中）</p>
+<hr>
+<h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4. 列表"></a>4. 列表</h2><p>在<code>Markdown</code>中，列表分两种：有序的，和无序的。</p>
+<h3 id="4-1-有序列表"><a href="#4-1-有序列表" class="headerlink" title="4.1 有序列表"></a>4.1 有序列表</h3><p>有序列表，就像  </p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一个元素  </span><br><span class="line"><span class="bullet">2.</span> 第二个元素  </span><br><span class="line"><span class="bullet">3.</span> 第三个元素</span><br></pre></td></tr></table></figure>
+<p>在<code>Markdown</code>中，直接打 <code>1.</code> 就会出现一个有序列表。当然， <code>i.</code> <code>a.</code> 甚至不从头开始也可以：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">a. #1</span><br><span class="line">b. #2</span><br><span class="line">c. #3</span><br></pre></td></tr></table></figure>
+<p>当然这还是取决于你用的编译器啦！</p>
+<h3 id="4-2-无序列表"><a href="#4-2-无序列表" class="headerlink" title="4.2 无序列表"></a>4.2 无序列表</h3><p>无序列表的原理和有序列表一样，不过不以 <code>1.</code> 打头，而是：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> 第一种方式</span><br><span class="line"><span class="bullet">-</span> 第一种方式</span><br></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">+</span> 第二种方式</span><br><span class="line"><span class="bullet">+</span> 第二种方式</span><br></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 第三种方式</span><br><span class="line"><span class="bullet">*</span> 第三种方式</span><br></pre></td></tr></table></figure>
+<p>显示出来都是</p>
+<ul>
+<li>无序列表</li>
+<li>无序列表</li>
+</ul>
+<p>怎么样，够简单吧……</p>
+<h3 id="4-3-To-do-list"><a href="#4-3-To-do-list" class="headerlink" title="4.3 To do list"></a>4.3 <code>To do list</code></h3><p>通过无序列表我们还可以创建一个任务表（<code>To do list</code>），如下：</p>
+<ul>
+<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.1</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled"></input> No.2</li>
+<li style="list-style: none"><input type="checkbox" disabled="disabled" checked></input> No.3</li>
+</ul>
+<p>语法如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] No.1</span><br><span class="line"><span class="bullet">-</span> [ ] No.2</span><br><span class="line"><span class="bullet">-</span> [x] No.3</span><br></pre></td></tr></table></figure>
+<p>其中 <code>[x]</code> 表示“已完成”，<code>[ ]</code> 表示“未完成”。可能<code>Hexo</code>有的时候渲染不出来这个，大家可以移步<a href="https://github.com/Guleixibian2009/Website-Ariticle-Backup/blob/master/_posts/Markdown%E4%B8%ADLatex%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.md">原文件</a>查看！</p>
+<h3 id="4-4-合并列表"><a href="#4-4-合并列表" class="headerlink" title="4.4 合并列表"></a>4.4 合并列表</h3><p>你可以把多种列表嵌套起来。如：</p>
+<ul>
+<li><p>Hello World!</p>
+</li>
+<li><p>这是一个列表……</p>
+<ol>
+<li><p>里面还有一个列表！</p>
+</li>
+<li><p>的确是可以嵌套的！</p>
+</li>
+</ol>
+</li>
+<li><p>还是原来那个列表~</p>
+<ul>
+<li><p>可以同样嵌套无序列表</p>
+</li>
+<li><p>等等等等</p>
+</li>
+<li><p>[x] 还可以更改列表类型啊！</p>
+</li>
+<li><p>[ ] 怎么样？</p>
+</li>
+</ul>
+</li>
+<li><p>就是这样啦！</p>
+</li>
+</ul>
+<hr>
+<h2 id="5-文档里的小“零件”"><a href="#5-文档里的小“零件”" class="headerlink" title="5.  文档里的小“零件”"></a>5.  文档里的小“零件”</h2><h3 id="5-1-分割线"><a href="#5-1-分割线" class="headerlink" title="5.1 分割线"></a>5.1 分割线</h3><p>分割线这个东东在文章分节这个功能上还是非常的实用的。你可以这样创建一条：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">或</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
+<p>正如你看到的那样啦！</p>
+<h3 id="5-2-强制换行的几种方式"><a href="#5-2-强制换行的几种方式" class="headerlink" title="5.2 强制换行的几种方式"></a>5.2 强制换行的几种方式</h3><p>在<code>Markdown</code>里面如果你不进行所谓强制换行，那么连续的段落就会被自动连接在一起。这个时候，<code>HTML</code>大兄就会来打杂：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>直接把它放在某一行的结尾，这两行就会自动拆分。如果你嫌麻烦…那么在想要换行的地方（行尾）加两个空格就可以……我也是没法展示了，这个不够直观。</p>
+<h3 id="5-3-符号的转义-escaping"><a href="#5-3-符号的转义-escaping" class="headerlink" title="5.3 符号的转义(escaping)"></a>5.3 符号的转义(<code>escaping</code>)</h3><p>什么，这么简单的<code>Markdown</code>都需要转义？好吧，我承认，这还真的要！如果你仔细回想一下（或者预知一下未来，看下面的代码块）你就会发现，我们在处理文字样式的时候我们使用了各种符号，现整理如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\</code></td>
+<td>反斜杠（转义本身）</td>
+<td>``</td>
+<td>反引号（代码块）</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>星号（加粗，斜体，无序列表等）</td>
+<td><code>_</code></td>
+<td>下划线（加粗，斜体等）</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>小括号（链接，图片）</td>
+<td><code>[]</code></td>
+<td>中括号（链接，图片）</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>波浪号（下标，删除线）</td>
+<td><code>$</code></td>
+<td>美元（某些情况下，<code>LaTex</code>）</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>井号（标题）</td>
+<td><code>+</code></td>
+<td>加号（无序列表）</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减号（无序列表）</td>
+<td><code>.</code></td>
+<td>点号（有序列表）</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>@号（<code>GFM</code>中，<code>@mention</code>）</td>
+<td>`\</td>
+<td>`</td>
+<td>竖线（表格）</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>左尖括号（<code>HTML</code>）</td>
+<td><code>&gt;</code></td>
+<td>右尖括号（<code>HTML</code>）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>那么，如何转义呢？只需要在需要转义的字符前面添加反斜杠就可以啦！比如，*这段文字其实不是斜体*！</p>
+<p>代码如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">\<span class="emphasis">*这段文字其实不是斜体!\*</span></span><br><span class="line"><span class="emphasis">*但这个是！*</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-4-没什么用的注释"><a href="#5-4-没什么用的注释" class="headerlink" title="5.4 没什么用的注释"></a>5.4 没什么用的注释</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&lt;!-- 这就是个注释了，我甚至不想讲… --&gt;</span><br></pre></td></tr></table></figure>
+<p>对对，这就是个<code>HTML</code>注释而已。99.8%的情况下这个东东没有用，但如果…嗯好吧其实也不是一点作用都没有，如<code>Markdown</code>文档中的定位（比如你每天靠<code>GitHub Actions</code>生成点什么）或者<code>Hexo</code>文章的节选会使用<code>&lt;!-- More --&gt;</code>。</p>
+<hr>
+<h2 id="6-激动人心！代码块"><a href="#6-激动人心！代码块" class="headerlink" title="6. 激动人心！代码块"></a>6. 激动人心！代码块</h2><p><del>是不是等它好久了…</del> 行了也见了这么多行内代码块了，我怎么能不介绍一下呢。</p>
+<p>行内代码块，只需将代码块内的内容用 ````包围起来就可以了。如，</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="code">`hello, world!`</span></span><br></pre></td></tr></table></figure>
+<p>至于长篇的“大”代码块，有两种方法：</p>
+<ol>
+<li><p>在“代码块”前缩进4格，直到代码结束；</p>
+</li>
+<li><p>使用下面这种方式：</p>
+</li>
+</ol>
+<div class="highlight-container">
+  <figure class="highlight md">
+    <div class="table-container">
+      <table>
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span></pre>
+            </td>
+            <td class="code">
+              <pre><span class="line">```</span>
+<span class="line">Here is some code.</span>
+<span class="line">```</span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </figure>
+  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
+</div>
+
+<p>想要指定语法并获得高亮技能？看到下面那个<code>python</code>没有！</p>
+<div class="highlight-container">
+  <figure class="highlight md">
+    <div class="table-container">
+      <table>
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span></pre>
+            </td>
+            <td class="code">
+              <pre><span class="line">```python</span>
+<span class="line">def hello():</span>
+<span class="line">    print("Hello, world!")</span>
+<span class="line"></span>
+<span class="line">hello():</span>
+<span class="line">```</span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </figure>
+  <div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>
+</div>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+<h2 id="7-表格来了"><a href="#7-表格来了" class="headerlink" title="7. 表格来了"></a>7. 表格来了</h2><p>需要在自己的文档中直观地表示数据？可以尝试列一个表格！Here we go~</p>
+<h3 id="7-1-基本表格"><a href="#7-1-基本表格" class="headerlink" title="7.1 基本表格"></a>7.1 基本表格</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>第一列</th>
+<th>第二列</th>
+<th>第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一行</td>
+<td>数据1</td>
+<td>数据2</td>
+<td>数据3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>光看这个表可能还真猜不出来它的语法是什么……但其实如果我真的写出来却会觉得这种语法也很直观！（不觉得那些竖线很像网格线吗）</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">||第一列|第二列|第三列|</span><br><span class="line">|第一行|数据1|数据2|数据3|</span><br></pre></td></tr></table></figure>
+<p>所以，每两个<code>|</code>之间是一格，5个<code>|</code>就是4格。没有限制最多多少行或多少列，且不要求每行格数相同！只是我这里渲染不出来……</p>
+<h3 id="7-2-每列的居中、靠右"><a href="#7-2-每列的居中、靠右" class="headerlink" title="7.2 每列的居中、靠右"></a>7.2 每列的居中、靠右</h3><p>什么，还有这种功能？好吧，我们只需要一条特殊“控制行”：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">|     | 第一列 | 第二列 | 第三列 |</span><br><span class="line">| --- |:--- |:---:| ---:|</span><br><span class="line">| 第一行 | 靠左  | 居中  | 靠右  |</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:left">第一列</th>
+<th style="text-align:center">第二列</th>
+<th style="text-align:right">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一行</td>
+<td style="text-align:left">靠左</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">靠右</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<p>到这里，你已经学完了基础的<code>Markdown</code>语法！想要学习<code>Markdown</code>中更高级的图表功能？敬请期待下一篇教程！</p>
+<hr>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>以下是注释内容：  </p>
+<blockquote id="fn_1">
+<sup>1</sup>. 你学废了吗？<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
 <hr>
 <p><strong>THE END</strong>感谢您的阅读~</p>
 ]]></content>
       <categories>
-        <category>GitHub</category>
-        <category>命令行</category>
+        <category>编程</category>
+        <category>Markdown</category>
+        <category>Markdown语法</category>
       </categories>
       <tags>
-        <tag>GitHub</tag>
-        <tag>GitHub-Cli</tag>
+        <tag>编程</tag>
+        <tag>Markdown</tag>
+        <tag>语法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>序言</title>
-    <url>/2021/09/12/preface/</url>
-    <content><![CDATA[<blockquote>
-<p>在现实断裂的地方<br>梦 汇成了海</p>
-<p>顾城 《弥合》  </p>
-</blockquote>
-<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
-<span id="more"></span>
-<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
-<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
-<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
-<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
-<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
-]]></content>
   </entry>
   <entry>
     <title>还需要……加速吗？</title>
@@ -2622,9 +2626,26 @@ e^x \qquad & a \le 0
         <category>加速</category>
       </categories>
       <tags>
-        <tag>加速</tag>
         <tag>Python</tag>
+        <tag>加速</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序言</title>
+    <url>/2021/09/12/preface/</url>
+    <content><![CDATA[<blockquote>
+<p>在现实断裂的地方<br>梦 汇成了海</p>
+<p>顾城 《弥合》  </p>
+</blockquote>
+<p>所以你好 欢迎来到 <strong>故垒西边2009的个人博客</strong>。<br>这是我的博客 主要写一些技术类的文章<br>当然 可能还会放一些自己的作品<br>那么请持续关注啦😀<br>比心 ❤</p>
+<span id="more"></span>
+<h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>咸鱼终于想起来要更新啦哈哈哈哈哈。<br>目前在江苏省苏州中学勤奋<del>睡觉</del>学习.jpg<br>喜欢编程，喜欢设计，喜欢尝试各种新奇好玩的东西。<br>喜欢书，喜欢诗和奇奇怪怪的科普。<br>喜欢明信片，喜欢吃。<br>觉得自己应该是一只有趣的咸鱼😉</p>
+<h3 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h3><p>由于各种时间不够，上了初中就只能不定期诈尸😅<br><del>由于各种时间不够，所以大概放假前就都只能不定期诈尸啦。</del></p>
+<p>但是一旦闲下来就会<del>频繁诈尸</del>哦。<br>所以请多多关注哦😃</p>
+<h3 id="关于文章转载和其他"><a href="#关于文章转载和其他" class="headerlink" title="关于文章转载和其他"></a>关于文章转载和其他</h3><p>如果没有特殊说明 本站所有文章均采用 <strong><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 CN</a></strong> 许可协议<br>转载请注明作者并最好附带原文链接哦<br>顺便如果喜欢我的博客 欢迎友链😁</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>那么，送上一首Alan Walker的End Of Time。<br>请多多指教啦😊</p>
+<p><a href="https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect">https://i.y.qq.com/v8/playsong.html?songid=255148147#webchat_redirect</a></p>
+]]></content>
   </entry>
   <entry>
     <title>介绍一下我的其他项目~</title>
@@ -2657,13 +2678,33 @@ e^x \qquad & a \le 0
         <category>后端</category>
       </categories>
       <tags>
+        <tag>编程</tag>
         <tag>Website</tag>
         <tag>CSS</tag>
         <tag>Frontend</tag>
         <tag>HTML</tag>
         <tag>JavaScript</tag>
-        <tag>编程</tag>
         <tag>Backend</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蝉蜕趣事</title>
+    <url>/2022/09/19/small-but-shining-ideas-02/</url>
+    <content><![CDATA[<h2 id="〇、蝉蜕"><a href="#〇、蝉蜕" class="headerlink" title="〇、蝉蜕"></a>〇、蝉蜕</h2><p>蝉蜕么，就是那些全身棕黄色的、晶莹剔透的小东西。偶有棕黑色的，个儿更大，却也属实少见。硬，但是脆，一压就变成碎屑了。算是我们苏中的特产，一抓一大把的那种。不知为何，我与那蝉蜕似乎结了缘，在它们出没的几个月里也给我带来了许多趣事。</p>
+<span id="more"></span>
+<h2 id="一、引子"><a href="#一、引子" class="headerlink" title="一、引子"></a>一、引子</h2><p>生物课下课了，正巧和王老师一起出了教室。她便对我说，初一的小朋友都说自己一个蝉蜕都找不到；还是带他们出去了，才找到几个。<br>我想了想，于是说：估计是都被我找完了，一个都没剩下罢。<br>王老师正沿着台阶望三楼走，便也没回话。没有听明白他们为什么没找到过，也有可能是她并不认为是我导致了初一同学到这种“一蜕难求”的地步。恐怕是太卷了罢。<br>但是我一直坚信，我才是这件事的罪魁祸首。</p>
+<h2 id="二、结缘"><a href="#二、结缘" class="headerlink" title="二、结缘"></a>二、结缘</h2><p>初一开学第一天，我们就上了生物课，那天是周三。那堂课，我记得很清楚，是关于生物与非生物。即将打铃下课，老师布置了作业：选做：你认为蝉蜕是生物吗？请下课了自己试试看，在校园里找一个蝉蜕，周五截止。找到的同学可以加5分平时分！<br>于是，下了课，我便起了兴致，差点要开始在校园里闲逛起来。走出伟长楼宽敞的大厅，便是一片经多人踩踏的草地，旁边就是春雨池。没走多远，眼前便一亮：棕色，透光，又匍匐在树上，不是蝉蜕是什么？<br>我便跑上前去，用手把它从树皮上揪下来。蝉蜕的三对足总是夹着树皮，需用些力，又不能使蛮力，那样只会压碎它。小心翼翼的捧在手心，小跑回伟长楼，送到三楼的老师办公室。<br>哇，这么大一只，还一下课就找到了，这么厉害的吗？王老师当时的惊讶溢于言表。<br>我想，在那一天，我正式和蝉蜕结了缘。自以为，王老师喜欢我（个人推测）的一个小原因，在于我开学第一天就给她留下了一个很好的印象。<br>另外：生物课后的第二个课间，我带着几个同学又去春雨池旁找蝉蜕。这次收获颇丰，美中不足之处在于，我们下节课上课迟到了。</p>
+<h2 id="三、偶遇"><a href="#三、偶遇" class="headerlink" title="三、偶遇"></a>三、偶遇</h2><p>转眼到了初二。我参加了伟长学生会的工作，在初一新生建队仪式时在后台放PPT。那天真是个巧合，是个周三，我望着台下颇是激动而无比高兴的新生，又想起了找蝉蜕的那个周三。<br>第二天的一节出堂课后，我便留了个心眼。我回到最初找到蝉蜕的地方，仔细地，上下左右地观察，终于重拾了初一时的快乐。八个蝉蜕，平均是一分钟一个，一个课间足矣。一个是颇大的那种，我以此为骄傲。<br>用去年一样的速度、一样的节奏，我用同样的姿势捧着这八个宝贝，回到教室，好好欣赏一番。原来抓树抓的越紧，放在桌子上，也越容易立起来。有些是一定要躺平的，我便也不太管它。精心折一个盒子给王老师送去，给她一个大大的意料之外。<br>之后，我去“检查”树林的次数越来越多，吃完饭散散步也会独自去那里看一眼。最佳的战绩是同一棵树上找到十个，那次激动的久久难平。我还曾再给王老师送去过一盒，之后再攒的便也没送了。<br>蝉蜕，出于某种未知的力量，总是喜欢出现在表面凹凸不平的树上。也许是出于蜕皮时抓握的本能吧，总之春雨池旁的某种松树上（是针叶，不知道到底是什么树）蝉蜕最多。没太在其他的树上找到过蝉蜕，不过今天倒是某种树皮上长满了白色绒毛和絮状物的树上找到好几个。谁知道，是不是蝉也腻了，就像听音乐一样，同一首歌，也会听腻的。</p>
+<h2 id="四、害怕"><a href="#四、害怕" class="headerlink" title="四、害怕"></a>四、害怕</h2><p>虽说标题叫害怕，但请不要误解这个标题。不是说我害怕，是说做我旁边的女生害怕啊。这件事带给我的不是心情上的“趣”，而是一种自我“反思”（即思考）的“理趣”。<br>写之前恐怕还是需要辩解（也不能说是justify吧，见下文）一下：我平时可绝对不是喜欢吓唬人的人，别人看到我手上拿了蝉蜕害怕了，可不是我惹得啊。<br>我不愿意去描绘一个人被我吓到的样子，那样会让自己有一种高高在上的不平等的感觉。但我们必须承认的是，也有（大部分是…?）不害怕的女生啊。鸡丝问我要了一个拿去玩了，我估计徐一文看到了要害怕死了啊。<br>还是要另外：虽然动心课的老师警告过我们，不要在不合时宜的时间或地点讨论上课我们讲的一些内容，“语境”很重要，但暂且还是先把这句劝告放一放吧。<br>老师说道：一个人总有自己的行为准则，不论是总是吓唬别人还是从不吓唬别人。如果哪一天，这个人突然开始吓唬人，或者不吓唬人了，他总会给自己找一堆用于justify自己行为的理由。（justify，证明……正确）<br>其次，是我和老师在回伟长楼的时候单独探讨一下，说男女生在交往的过程中，终将会明白，自己的某种行为对于女生来说是讨厌的，是不可取的。这样他们就会去主动调整自己，所以，我必须说一句：以后，不会再这么做了。</p>
+<h2 id="五、画信"><a href="#五、画信" class="headerlink" title="五、画信"></a>五、画信</h2><p>我和蝉蜕最近发生的故事，大概是在第二节画信课上。我在出门采风回来的路上又一次途径那条蝉蜕小道。之前的蝉蜕大部分已被我找完，仍有遗留也是少量的、新的蝉蜕。虽然早已没有开始找到蝉蜕是那么激动，但终归是心满意足，觉得不虚此行。一大两小，颇像老妈带着孩子出门。<br>我把蝉蜕拿回教室，给老梅子看一眼。老梅子激动时惊叫一声，甚至让我以为老梅子会不会也害怕蝉蜕，差点把手缩回去。紧接着她对我高兴的说：我喜欢！我一颗悬着的心方才放下。<br>一位初一的女同学问我要了一个，我便把最大的一个给她了。这算拆散了一个家庭吗？我不得而知了。</p>
+<h2 id="六、无题"><a href="#六、无题" class="headerlink" title="六、无题"></a>六、无题</h2><p>接下来一段恐怕就不能称之为“趣”了。<br>我曾经跟潘橹说过，找蝉蜕这种事情，最好还是一个人去做，两个人会分神的。一旦你和他聊着天小跑着去，那渲染的氛围会荡然无存的。你的关注点都在谈话上，而不在蝉蜕上了。除非，两个人的目标都非常明确，都在仔细的找，不说话。<br>说实在，我个人觉得，“小乐”的氛围最好是一个人，无他人来打扰，例如找蝉蜕、采风这种。两个人在一起，必然会有谈话，甚至有胜负欲，我要比你找的多，什么什么，做事的本心就没了。但是呢，孤单的时候，最好还是要有一个人陪着，哪怕不说话。<br>不说话的时候，最需要的，是坚定的目光，无声的支持。我亲爱的、小小的蝉蜕啊，你一动不动不打转的眼睛，欲飞不飞半透明的翅膀，可以做到吗？</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>校园</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -2697,16 +2738,15 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>蝉蜕趣事</title>
-    <url>/2022/09/19/small-but-shining-ideas-02/</url>
-    <content><![CDATA[<h2 id="〇、蝉蜕"><a href="#〇、蝉蜕" class="headerlink" title="〇、蝉蜕"></a>〇、蝉蜕</h2><p>蝉蜕么，就是那些全身棕黄色的、晶莹剔透的小东西。偶有棕黑色的，个儿更大，却也属实少见。硬，但是脆，一压就变成碎屑了。算是我们苏中的特产，一抓一大把的那种。不知为何，我与那蝉蜕似乎结了缘，在它们出没的几个月里也给我带来了许多趣事。</p>
+    <title>你是那个圈？！</title>
+    <url>/2022/09/23/small-but-shining-ideas-04/</url>
+    <content><![CDATA[<p><strong>9.23 画信话心课后有感</strong></p>
+<p>如果说，第一次画信课是一种硬着头皮的尝试，那上周那节课，让我对它彻底改变了看法。与伟长结缘之后，我自然是无比期待与梅子老师再次相遇。千呼万唤始出来，终于让我盼到了又一个周五。<br>在这几节课中，我同样注意到更多的细节。</p>
 <span id="more"></span>
-<h2 id="一、引子"><a href="#一、引子" class="headerlink" title="一、引子"></a>一、引子</h2><p>生物课下课了，正巧和王老师一起出了教室。她便对我说，初一的小朋友都说自己一个蝉蜕都找不到；还是带他们出去了，才找到几个。<br>我想了想，于是说：估计是都被我找完了，一个都没剩下罢。<br>王老师正沿着台阶望三楼走，便也没回话。没有听明白他们为什么没找到过，也有可能是她并不认为是我导致了初一同学到这种“一蜕难求”的地步。恐怕是太卷了罢。<br>但是我一直坚信，我才是这件事的罪魁祸首。</p>
-<h2 id="二、结缘"><a href="#二、结缘" class="headerlink" title="二、结缘"></a>二、结缘</h2><p>初一开学第一天，我们就上了生物课，那天是周三。那堂课，我记得很清楚，是关于生物与非生物。即将打铃下课，老师布置了作业：选做：你认为蝉蜕是生物吗？请下课了自己试试看，在校园里找一个蝉蜕，周五截止。找到的同学可以加5分平时分！<br>于是，下了课，我便起了兴致，差点要开始在校园里闲逛起来。走出伟长楼宽敞的大厅，便是一片经多人踩踏的草地，旁边就是春雨池。没走多远，眼前便一亮：棕色，透光，又匍匐在树上，不是蝉蜕是什么？<br>我便跑上前去，用手把它从树皮上揪下来。蝉蜕的三对足总是夹着树皮，需用些力，又不能使蛮力，那样只会压碎它。小心翼翼的捧在手心，小跑回伟长楼，送到三楼的老师办公室。<br>哇，这么大一只，还一下课就找到了，这么厉害的吗？王老师当时的惊讶溢于言表。<br>我想，在那一天，我正式和蝉蜕结了缘。自以为，王老师喜欢我（个人推测）的一个小原因，在于我开学第一天就给她留下了一个很好的印象。<br>另外：生物课后的第二个课间，我带着几个同学又去春雨池旁找蝉蜕。这次收获颇丰，美中不足之处在于，我们下节课上课迟到了。</p>
-<h2 id="三、偶遇"><a href="#三、偶遇" class="headerlink" title="三、偶遇"></a>三、偶遇</h2><p>转眼到了初二。我参加了伟长学生会的工作，在初一新生建队仪式时在后台放PPT。那天真是个巧合，是个周三，我望着台下颇是激动而无比高兴的新生，又想起了找蝉蜕的那个周三。<br>第二天的一节出堂课后，我便留了个心眼。我回到最初找到蝉蜕的地方，仔细地，上下左右地观察，终于重拾了初一时的快乐。八个蝉蜕，平均是一分钟一个，一个课间足矣。一个是颇大的那种，我以此为骄傲。<br>用去年一样的速度、一样的节奏，我用同样的姿势捧着这八个宝贝，回到教室，好好欣赏一番。原来抓树抓的越紧，放在桌子上，也越容易立起来。有些是一定要躺平的，我便也不太管它。精心折一个盒子给王老师送去，给她一个大大的意料之外。<br>之后，我去“检查”树林的次数越来越多，吃完饭散散步也会独自去那里看一眼。最佳的战绩是同一棵树上找到十个，那次激动的久久难平。我还曾再给王老师送去过一盒，之后再攒的便也没送了。<br>蝉蜕，出于某种未知的力量，总是喜欢出现在表面凹凸不平的树上。也许是出于蜕皮时抓握的本能吧，总之春雨池旁的某种松树上（是针叶，不知道到底是什么树）蝉蜕最多。没太在其他的树上找到过蝉蜕，不过今天倒是某种树皮上长满了白色绒毛和絮状物的树上找到好几个。谁知道，是不是蝉也腻了，就像听音乐一样，同一首歌，也会听腻的。</p>
-<h2 id="四、害怕"><a href="#四、害怕" class="headerlink" title="四、害怕"></a>四、害怕</h2><p>虽说标题叫害怕，但请不要误解这个标题。不是说我害怕，是说做我旁边的女生害怕啊。这件事带给我的不是心情上的“趣”，而是一种自我“反思”（即思考）的“理趣”。<br>写之前恐怕还是需要辩解（也不能说是justify吧，见下文）一下：我平时可绝对不是喜欢吓唬人的人，别人看到我手上拿了蝉蜕害怕了，可不是我惹得啊。<br>我不愿意去描绘一个人被我吓到的样子，那样会让自己有一种高高在上的不平等的感觉。但我们必须承认的是，也有（大部分是…?）不害怕的女生啊。鸡丝问我要了一个拿去玩了，我估计徐一文看到了要害怕死了啊。<br>还是要另外：虽然动心课的老师警告过我们，不要在不合时宜的时间或地点讨论上课我们讲的一些内容，“语境”很重要，但暂且还是先把这句劝告放一放吧。<br>老师说道：一个人总有自己的行为准则，不论是总是吓唬别人还是从不吓唬别人。如果哪一天，这个人突然开始吓唬人，或者不吓唬人了，他总会给自己找一堆用于justify自己行为的理由。（justify，证明……正确）<br>其次，是我和老师在回伟长楼的时候单独探讨一下，说男女生在交往的过程中，终将会明白，自己的某种行为对于女生来说是讨厌的，是不可取的。这样他们就会去主动调整自己，所以，我必须说一句：以后，不会再这么做了。</p>
-<h2 id="五、画信"><a href="#五、画信" class="headerlink" title="五、画信"></a>五、画信</h2><p>我和蝉蜕最近发生的故事，大概是在第二节画信课上。我在出门采风回来的路上又一次途径那条蝉蜕小道。之前的蝉蜕大部分已被我找完，仍有遗留也是少量的、新的蝉蜕。虽然早已没有开始找到蝉蜕是那么激动，但终归是心满意足，觉得不虚此行。一大两小，颇像老妈带着孩子出门。<br>我把蝉蜕拿回教室，给老梅子看一眼。老梅子激动时惊叫一声，甚至让我以为老梅子会不会也害怕蝉蜕，差点把手缩回去。紧接着她对我高兴的说：我喜欢！我一颗悬着的心方才放下。<br>一位初一的女同学问我要了一个，我便把最大的一个给她了。这算拆散了一个家庭吗？我不得而知了。</p>
-<h2 id="六、无题"><a href="#六、无题" class="headerlink" title="六、无题"></a>六、无题</h2><p>接下来一段恐怕就不能称之为“趣”了。<br>我曾经跟潘橹说过，找蝉蜕这种事情，最好还是一个人去做，两个人会分神的。一旦你和他聊着天小跑着去，那渲染的氛围会荡然无存的。你的关注点都在谈话上，而不在蝉蜕上了。除非，两个人的目标都非常明确，都在仔细的找，不说话。<br>说实在，我个人觉得，“小乐”的氛围最好是一个人，无他人来打扰，例如找蝉蜕、采风这种。两个人在一起，必然会有谈话，甚至有胜负欲，我要比你找的多，什么什么，做事的本心就没了。但是呢，孤单的时候，最好还是要有一个人陪着，哪怕不说话。<br>不说话的时候，最需要的，是坚定的目光，无声的支持。我亲爱的、小小的蝉蜕啊，你一动不动不打转的眼睛，欲飞不飞半透明的翅膀，可以做到吗？</p>
+<h2 id="课前鞠躬（续）"><a href="#课前鞠躬（续）" class="headerlink" title="课前鞠躬（续）"></a>课前鞠躬（续）</h2><p>是的，我还是决定，要再来谈一谈师生问好这回事。<br>我曾说，梅子老师的问好，是一种仪式，一种ceremony的。今天，我对其这种印象不减。不过，我却没想到，原来她也会有些俏皮地对我们说：大声一点！<br>于是我们便拉长音调，增强了响度：“老——师——好——！！”<br>梅子老师满意的让我们坐下了。<br>许多女老师都是很注重同学们的精气神的。我们这学期新换的政治丁老师爱笑，于是她便笑了笑对我们说（连语调都和梅子老师差不多）：再大声一点！同学们便又要拉长音调、增大响度了。<br>乐音的响度与声源的振幅有关，这意味着，问好声音越大，我们就需要花更多力气在声带上。这是为了让我们清醒一下吗？<br>梅子老师说，她每周四的梅子时间画信活动，已经坚持了384次。在每一次的结束之时，她与活动成员都要对着孔子的像敬重的行礼。我想着，这一周该是第385次了，等同于，7年，第20次。<br>这就是鞠躬的力量吗？<br>另及：怀念。怀念陪伴了我们一年的政治秋老师，他的姓氏随着一年的变化而变化（本名夏老师）。怀念专属于他的课前传统。我们初二四个班达成一致：秋老师进班级，关灯，鼓掌！！！秋老师每次都看起来颇为惊讶：哦哦！掌声如雷鸣一般，逼着秋老师只好从后门走了。<br>秋老师觉得我们不会提前把门锁上吗？<br>（抱歉问题实在太多了）</p>
+<h2 id="研墨"><a href="#研墨" class="headerlink" title="研墨"></a>研墨</h2><p>水多到水少，是进步与成熟的表现。<br>第一次研墨是我倒的水。倾斜一下瓷缸子，没想到水多了，泛滥了，差点糟蹋了初一同学的桌子。不过最后磨得墨不算特别稀，这也算一种成就吧。<br>研墨的时候要用墨条。这上面刻过字的，不过可惜我没有记住刻了些什么。把墨条光滑的那一面轻轻抵在砚台上，缓缓地移动、打转，感受凹凸不平带来的摩擦力。丝一般的墨从接触的地方化开，一层一层的，像越开越大的墨花。<br>这节课我们终于学会了少倒水。但意外的是，水少了，却自以为是的少转了，也许是，几十圈，于是这墨就特别淡，随时可能会枯竭。<br>所以，我宁愿，再来一次水少到水多的过程。那是天真无邪的童真啊。</p>
+<h2 id="梅子的发明"><a href="#梅子的发明" class="headerlink" title="梅子的发明"></a>梅子的发明</h2><p>梅子老师说，她是个游戏老师，教做游戏的。于是她就自称有许多发明，把自己的左手当成纸张也是她的发明之一。今日同学们有幸体验了一回。<br>郑重地，郑重地，从末端拿起一支笔。用手腕微妙的力量转动起来，让笔毛在水中舒展开，再缓缓地使刷毛与缸口摩擦，排去多余的水分，并同时把笔毛聚拢在一起。步骤缺一不可，缺一个是对笔的不尊重，缺两个那就是大大的不尊重了。<br>用右手，让笔尖在左手掌心痒痒地划过，留下隐形的水迹。也许会感觉力不从心，手不听话了，那也是正常的事情。于是直线不小心变成了画圈，一圈一圈的，绕来绕去。<br>笔墨一定要用完，没用完绝对不许停，用完了也别再添了。</p>
+<h2 id="考核？"><a href="#考核？" class="headerlink" title="考核？"></a>考核？</h2><p>在最后的最后，梅子终于揭晓了我们今天的目的：一次考核。考核什么呢？还是考核画圈。<br>于是我们每个人取了一张草纸，裁出喜欢的形状，画起圈来。我还题上几个字：不需在意别人，只需“静心”。署名，故垒西边。<br>看样子使我们每个人都通过了。但我不知道，我是否在梅子老师的心里也通过了，大概率是不太满意吧。<br>但正如梅子老师说的，今天的主题叫“你是那个圈”，也许我们就得在一圈圈变大的过程中，渐渐变得正、变得标准，变得像个圈吧。<br>不过，说实话，我宁愿再经历一遍，无论是水少回到水多，还是正圆回到扁圆的过程。那是回归本心最好的途径罢。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2729,49 +2769,6 @@ e^x \qquad & a \le 0
       <categories>
         <category>随笔</category>
         <category>思考</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你是那个圈？！</title>
-    <url>/2022/09/23/small-but-shining-ideas-04/</url>
-    <content><![CDATA[<p><strong>9.23 画信话心课后有感</strong></p>
-<p>如果说，第一次画信课是一种硬着头皮的尝试，那上周那节课，让我对它彻底改变了看法。与伟长结缘之后，我自然是无比期待与梅子老师再次相遇。千呼万唤始出来，终于让我盼到了又一个周五。<br>在这几节课中，我同样注意到更多的细节。</p>
-<span id="more"></span>
-<h2 id="课前鞠躬（续）"><a href="#课前鞠躬（续）" class="headerlink" title="课前鞠躬（续）"></a>课前鞠躬（续）</h2><p>是的，我还是决定，要再来谈一谈师生问好这回事。<br>我曾说，梅子老师的问好，是一种仪式，一种ceremony的。今天，我对其这种印象不减。不过，我却没想到，原来她也会有些俏皮地对我们说：大声一点！<br>于是我们便拉长音调，增强了响度：“老——师——好——！！”<br>梅子老师满意的让我们坐下了。<br>许多女老师都是很注重同学们的精气神的。我们这学期新换的政治丁老师爱笑，于是她便笑了笑对我们说（连语调都和梅子老师差不多）：再大声一点！同学们便又要拉长音调、增大响度了。<br>乐音的响度与声源的振幅有关，这意味着，问好声音越大，我们就需要花更多力气在声带上。这是为了让我们清醒一下吗？<br>梅子老师说，她每周四的梅子时间画信活动，已经坚持了384次。在每一次的结束之时，她与活动成员都要对着孔子的像敬重的行礼。我想着，这一周该是第385次了，等同于，7年，第20次。<br>这就是鞠躬的力量吗？<br>另及：怀念。怀念陪伴了我们一年的政治秋老师，他的姓氏随着一年的变化而变化（本名夏老师）。怀念专属于他的课前传统。我们初二四个班达成一致：秋老师进班级，关灯，鼓掌！！！秋老师每次都看起来颇为惊讶：哦哦！掌声如雷鸣一般，逼着秋老师只好从后门走了。<br>秋老师觉得我们不会提前把门锁上吗？<br>（抱歉问题实在太多了）</p>
-<h2 id="研墨"><a href="#研墨" class="headerlink" title="研墨"></a>研墨</h2><p>水多到水少，是进步与成熟的表现。<br>第一次研墨是我倒的水。倾斜一下瓷缸子，没想到水多了，泛滥了，差点糟蹋了初一同学的桌子。不过最后磨得墨不算特别稀，这也算一种成就吧。<br>研墨的时候要用墨条。这上面刻过字的，不过可惜我没有记住刻了些什么。把墨条光滑的那一面轻轻抵在砚台上，缓缓地移动、打转，感受凹凸不平带来的摩擦力。丝一般的墨从接触的地方化开，一层一层的，像越开越大的墨花。<br>这节课我们终于学会了少倒水。但意外的是，水少了，却自以为是的少转了，也许是，几十圈，于是这墨就特别淡，随时可能会枯竭。<br>所以，我宁愿，再来一次水少到水多的过程。那是天真无邪的童真啊。</p>
-<h2 id="梅子的发明"><a href="#梅子的发明" class="headerlink" title="梅子的发明"></a>梅子的发明</h2><p>梅子老师说，她是个游戏老师，教做游戏的。于是她就自称有许多发明，把自己的左手当成纸张也是她的发明之一。今日同学们有幸体验了一回。<br>郑重地，郑重地，从末端拿起一支笔。用手腕微妙的力量转动起来，让笔毛在水中舒展开，再缓缓地使刷毛与缸口摩擦，排去多余的水分，并同时把笔毛聚拢在一起。步骤缺一不可，缺一个是对笔的不尊重，缺两个那就是大大的不尊重了。<br>用右手，让笔尖在左手掌心痒痒地划过，留下隐形的水迹。也许会感觉力不从心，手不听话了，那也是正常的事情。于是直线不小心变成了画圈，一圈一圈的，绕来绕去。<br>笔墨一定要用完，没用完绝对不许停，用完了也别再添了。</p>
-<h2 id="考核？"><a href="#考核？" class="headerlink" title="考核？"></a>考核？</h2><p>在最后的最后，梅子终于揭晓了我们今天的目的：一次考核。考核什么呢？还是考核画圈。<br>于是我们每个人取了一张草纸，裁出喜欢的形状，画起圈来。我还题上几个字：不需在意别人，只需“静心”。署名，故垒西边。<br>看样子使我们每个人都通过了。但我不知道，我是否在梅子老师的心里也通过了，大概率是不太满意吧。<br>但正如梅子老师说的，今天的主题叫“你是那个圈”，也许我们就得在一圈圈变大的过程中，渐渐变得正、变得标准，变得像个圈吧。<br>不过，说实话，我宁愿再经历一遍，无论是水少回到水多，还是正圆回到扁圆的过程。那是回归本心最好的途径罢。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>校园</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记忆中的夏老师</title>
-    <url>/2022/09/29/small-but-shining-ideas-06/</url>
-    <content><![CDATA[<p>夏老师，原名夏建民，便是我们初一的政治老师了。其人课程之奇，甚至其本人之奇，都是史无前例前所未有的。<br>初一第一节政治课，一位个子不高，面色浅棕，戴黑框眼镜的中年教师走进课堂。他并不自我介绍，清清嗓子便讲起课来。——那是我对他的第一印象。具体讲了些什么我早已不太记得，只知道他布置的作业是抄写《大学》第一章。<br>那时不懂得珍惜，敷衍了事了。</p>
-<span id="more"></span>
-<p>不知何时也不知为何，夏老师的姓会随着季节而变化。于是夏老师也称秋老师。他本人似乎不甚在意这些。<br>秋老师上课从不使用演示文稿，然而他习惯于讲话时低声细语，于是（也许因为他的教学风格），他便尝试用内容来吸引我们。他的课绝不拘泥于课本——课本上的一句话，就能让他引申出无限远。从书本，讲到大学中庸，讲到孔子老子，讲到易经诗经，高兴时甚至会讲起自己的人生故事！此时，若再不认真听，你便会心生困惑：为什么讲到这了？或是，老师到底在讲什么？<br>不过，也许他自己也发现了，老是听他空讲，还是有个别同学昏昏欲睡。于是他便挥动自己的右手，用近乎草书的行楷画起思维导图来！他用力书写时，黑板恐也承受不住，发出咚咚响声了。先抄下本课标题，随后——紧跟着一个大括号，似写数学上的分段函数，最后把书上一段段内容浓缩金四个字里，1.2.3.4.列举出来。<br>不，不！秋老师可不仅仅只“画”思维导图，他还要很连体的写上What，Why和How——意思是，是什么，为什么，怎么样，以划分课堂的版块——这通常是用红笔写的。除此之外，他的拿手好戏还有“八卦阵”“四象图”“三重门”。每讲起易经，他便铁定要画下阴阳、八卦，什么“飞龙在天”、“亢龙有悔”，记忆尤其深刻。<br>“三重门”则是另一个故事。那节课秋老师请同学在黑板上从下至上画出三个扁长的方框，前两个分别写上“依赖”“独立”，第三个空着。他问我们：“第三个填什么？说出你的理由。”于是我说，“依赖。”他笑了三四声，然后表情宁静下来：“嗯，嗯。不太对。”他眼睛一睁一闭，又说：“不过有点意思。”于是他又长篇大论起来：看山是山，看水是水。看山不是山，看是不是水。第三个境界是什么？看山还是山，看水还是水。<br>秋老师的另一个特别节目，是看今日说法。教室里关了灯，便放起来。不过比较吊胃口的是，他总是在揭晓判决结果之前暂停、让我们讨论，可是我就比较盼结果。同学们观点一个接一个，我也就越来越着急——不过同学们都很喜欢这种课堂，便演化出一种不成文的习俗：政治老师到门口了，立刻关灯，鼓掌！这是同学们的期待啊。秋老师眼睛猛的睁大了，每次都显得那么惊讶。<br>于是他便尝试多种方法“逃避”：不走前门走后门；卡着点了才进门，等等等等，他却发现同学们屡教不改，于是他半开玩笑半严肃对我们说：“看来我哪天要修一个办公室直达教室的滑梯了！而且要走外一侧的窗子才行。”说完，他自己也爽朗的笑起来。<br>那些课的作业是做“案件分析”。照例A4纸，大标题写上标题，然后便凭着记忆写出“案件脉络”“人物关系”“法律条文”“纵横点评”。他每一分都认真阅读，但从不拿到课堂上交流，不过这是因为——<br>后一节课我们会通过画“四象图”的方式共同探讨人物关系。案件脉络。画垂直的两条直线，成十字形，上下左右分别标上四个主要的人物。箭头表示相互关系，一目了然。<br>秋老师有些奇怪的作业不止这一种。一节课他讲到王阳明与我们学校的种种联系，下课就要求每个人画出那些与阳明有关之处：春雨池（春风化雨）、道山碑、天泉桥。谈到父母家庭关系时，他布置了做族谱的作业——班里有一个同学家里竟有现成的，一看才知道和秋老师是老乡。最令同学们惊讶的一次，他居然要我们找出伟长楼的三个消防安全隐患！<br>网课期间，政治课使用腾讯课堂进行大班教学。老师不熟悉软件，先是“不小心”把发言调为60秒，然后调不回去，后来竟忘记开摄像头，我们评论区老师没及时看，便名副其实上了一节“混沌课堂”。一位心急的同学通过QQ联系老师，却被秋老师当作广告轰炸，直接退出了QQ。我们哭笑不得。这算是政治课的一点小插曲。<br>期末考试结束，一学年的最后一节课，他拎了一包糖来。我比较幸运，和另外两个同学一起考了满分，秋老师（出乎意料）让三个人上台来，“发言！”。我有些尴尬，便支支吾吾，欲以“我不过是多翻了几页书，联系前后文……”未待我说完，他欣然“打断”：“很好！我把他的话接上一句，多翻几页书，多行几步路，怎么样？”全班鼓掌。他望向我们仨，语重心长，又说：“大衍之数五十，其用四十有九。考了五十分呢，我想，并不代表你们一定全都会了，只是说，你们恰巧全都对了。今后还需更加努力。”他给我们每人发一颗糖，作为一种鼓励。这段话，我一直铭记在心。<br>直到新学年，我们惊讶的发现，政治换老师了。夏老师继续去教初一，以后我们与他见面的机会越来越少了。<br>我多么希望，我们还能再在课堂上跟他说一句：“老师好——”</p>
-<p>……</p>
-<blockquote>
-<p>So I say a little prayer</p>
-<p>Wish that dream could take me there</p>
-<p>Where the skies are blue</p>
-<p>To see you once again My love</p>
-</blockquote>
-<p>于苏中伟长&amp;地铁上</p>
-<p>献给敬爱的夏老师。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>校园</category>
       </categories>
       <tags>
         <tag>随笔</tag>
@@ -2804,6 +2801,30 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
+    <title>记忆中的夏老师</title>
+    <url>/2022/09/29/small-but-shining-ideas-06/</url>
+    <content><![CDATA[<p>夏老师，原名夏建民，便是我们初一的政治老师了。其人课程之奇，甚至其本人之奇，都是史无前例前所未有的。<br>初一第一节政治课，一位个子不高，面色浅棕，戴黑框眼镜的中年教师走进课堂。他并不自我介绍，清清嗓子便讲起课来。——那是我对他的第一印象。具体讲了些什么我早已不太记得，只知道他布置的作业是抄写《大学》第一章。<br>那时不懂得珍惜，敷衍了事了。</p>
+<span id="more"></span>
+<p>不知何时也不知为何，夏老师的姓会随着季节而变化。于是夏老师也称秋老师。他本人似乎不甚在意这些。<br>秋老师上课从不使用演示文稿，然而他习惯于讲话时低声细语，于是（也许因为他的教学风格），他便尝试用内容来吸引我们。他的课绝不拘泥于课本——课本上的一句话，就能让他引申出无限远。从书本，讲到大学中庸，讲到孔子老子，讲到易经诗经，高兴时甚至会讲起自己的人生故事！此时，若再不认真听，你便会心生困惑：为什么讲到这了？或是，老师到底在讲什么？<br>不过，也许他自己也发现了，老是听他空讲，还是有个别同学昏昏欲睡。于是他便挥动自己的右手，用近乎草书的行楷画起思维导图来！他用力书写时，黑板恐也承受不住，发出咚咚响声了。先抄下本课标题，随后——紧跟着一个大括号，似写数学上的分段函数，最后把书上一段段内容浓缩金四个字里，1.2.3.4.列举出来。<br>不，不！秋老师可不仅仅只“画”思维导图，他还要很连体的写上What，Why和How——意思是，是什么，为什么，怎么样，以划分课堂的版块——这通常是用红笔写的。除此之外，他的拿手好戏还有“八卦阵”“四象图”“三重门”。每讲起易经，他便铁定要画下阴阳、八卦，什么“飞龙在天”、“亢龙有悔”，记忆尤其深刻。<br>“三重门”则是另一个故事。那节课秋老师请同学在黑板上从下至上画出三个扁长的方框，前两个分别写上“依赖”“独立”，第三个空着。他问我们：“第三个填什么？说出你的理由。”于是我说，“依赖。”他笑了三四声，然后表情宁静下来：“嗯，嗯。不太对。”他眼睛一睁一闭，又说：“不过有点意思。”于是他又长篇大论起来：看山是山，看水是水。看山不是山，看是不是水。第三个境界是什么？看山还是山，看水还是水。<br>秋老师的另一个特别节目，是看今日说法。教室里关了灯，便放起来。不过比较吊胃口的是，他总是在揭晓判决结果之前暂停、让我们讨论，可是我就比较盼结果。同学们观点一个接一个，我也就越来越着急——不过同学们都很喜欢这种课堂，便演化出一种不成文的习俗：政治老师到门口了，立刻关灯，鼓掌！这是同学们的期待啊。秋老师眼睛猛的睁大了，每次都显得那么惊讶。<br>于是他便尝试多种方法“逃避”：不走前门走后门；卡着点了才进门，等等等等，他却发现同学们屡教不改，于是他半开玩笑半严肃对我们说：“看来我哪天要修一个办公室直达教室的滑梯了！而且要走外一侧的窗子才行。”说完，他自己也爽朗的笑起来。<br>那些课的作业是做“案件分析”。照例A4纸，大标题写上标题，然后便凭着记忆写出“案件脉络”“人物关系”“法律条文”“纵横点评”。他每一分都认真阅读，但从不拿到课堂上交流，不过这是因为——<br>后一节课我们会通过画“四象图”的方式共同探讨人物关系。案件脉络。画垂直的两条直线，成十字形，上下左右分别标上四个主要的人物。箭头表示相互关系，一目了然。<br>秋老师有些奇怪的作业不止这一种。一节课他讲到王阳明与我们学校的种种联系，下课就要求每个人画出那些与阳明有关之处：春雨池（春风化雨）、道山碑、天泉桥。谈到父母家庭关系时，他布置了做族谱的作业——班里有一个同学家里竟有现成的，一看才知道和秋老师是老乡。最令同学们惊讶的一次，他居然要我们找出伟长楼的三个消防安全隐患！<br>网课期间，政治课使用腾讯课堂进行大班教学。老师不熟悉软件，先是“不小心”把发言调为60秒，然后调不回去，后来竟忘记开摄像头，我们评论区老师没及时看，便名副其实上了一节“混沌课堂”。一位心急的同学通过QQ联系老师，却被秋老师当作广告轰炸，直接退出了QQ。我们哭笑不得。这算是政治课的一点小插曲。<br>期末考试结束，一学年的最后一节课，他拎了一包糖来。我比较幸运，和另外两个同学一起考了满分，秋老师（出乎意料）让三个人上台来，“发言！”。我有些尴尬，便支支吾吾，欲以“我不过是多翻了几页书，联系前后文……”未待我说完，他欣然“打断”：“很好！我把他的话接上一句，多翻几页书，多行几步路，怎么样？”全班鼓掌。他望向我们仨，语重心长，又说：“大衍之数五十，其用四十有九。考了五十分呢，我想，并不代表你们一定全都会了，只是说，你们恰巧全都对了。今后还需更加努力。”他给我们每人发一颗糖，作为一种鼓励。这段话，我一直铭记在心。<br>直到新学年，我们惊讶的发现，政治换老师了。夏老师继续去教初一，以后我们与他见面的机会越来越少了。<br>我多么希望，我们还能再在课堂上跟他说一句：“老师好——”</p>
+<p>……</p>
+<blockquote>
+<p>So I say a little prayer</p>
+<p>Wish that dream could take me there</p>
+<p>Where the skies are blue</p>
+<p>To see you once again My love</p>
+</blockquote>
+<p>于苏中伟长&amp;地铁上</p>
+<p>献给敬爱的夏老师。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>校园</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为伟长画像</title>
     <url>/2022/09/30/small-but-shining-ideas-07/</url>
     <content><![CDATA[<p><strong>9.30 画信话心课后有感</strong></p>
@@ -2816,6 +2837,29 @@ e^x \qquad & a \le 0
 </blockquote>
 <p>这是此刻我正在听的歌。对对，我要自信一点……</p>
 <h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><p>总的来说呢，随笔这种东西呢，总是自己写了自己看。偶尔鼓起勇气，给别人看看，大多时候共鸣也不多。所以，那篇与伟长结缘居然能让梅子老师热泪盈眶，我颇为惊讶。那是幸福的泪水罢？<br>手有点酸。就这样吧，因为我可能还需要再去回味一段时间。<br>把一切交给时间。多年之后万一再看到此时的画和随笔，不知会有什么感想。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>校园</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两颗银杏果</title>
+    <url>/2022/10/14/small-but-shining-ideas-08/</url>
+    <content><![CDATA[<p><strong>10.14 画信话心课后有感</strong></p>
+<p>14号，正是那个被诅咒的日期，然而我们和梅子老师还是按时相见了。一周不见，如隔七天，那么两周不见，恐怕就是十四天了。</p>
+<p>想到今天有画信课，我心里舒服了许多——时局多变，疫情反复，我们却还可以在那一间曾经属于我们的教室里相见——那便是最令人欣慰的了。管什么烦心事？管什么繁多的杂事？</p>
+<p>你只是缺一堂画信课罢了，课后我这么想。</p>
+<span id="more"></span>
+<h2 id="课前（不是演讲）"><a href="#课前（不是演讲）" class="headerlink" title="课前（不是演讲）"></a>课前<del>（不是演讲）</del></h2><p>于是我顺着常走的那几十来级台阶走到一楼——主要还是为了可以看一眼朝气蓬勃的初一小朋友——然后差点忘记搬我们的材料。不知不觉这就成了我的工作了，大家都心照不宣。<br>还是不太敢进那间教室，因为有其他的同学——我一个人，尴尬——我就又走出来，走到大厅里，透过玻璃找梅子老师的影子。诶，她从南面走过来了，走进了伟长楼里，坐在了小沙发上，眼神有点呆呆地，注视着去上选修课的同学们。<br>自从那次课后鼓起勇气之后，我便没有把写过的文章给梅子老师看过了——有点过于的personal——所以她便也没太找我谈话——那是最好的，我可以观察她，她略显沧桑的脸，她手里的，红盒子。<br>其他的同学丝毫不去注意她的存在，感觉在这个大厅里梅子老师是一个隐身人——不过，我想我们也不能强迫每一个人去认识梅子老师——尽管不认识她，你的伟长生活将会变得不完整。<br>红盒子？</p>
+<h2 id="礼物"><a href="#礼物" class="headerlink" title="礼物"></a>礼物</h2><p>上课了。梅子老师问我们，你们要在教室里面还是出去？于是大家都回答要出去——谁不盼着呢？那早已是几节课前的诺言，然而我们并不在意。<br>不过少不了的，梅子老师总要多说几句，说一说她养的蝈蝈跳到仙人掌上，说一说前面一位同学的文章到哪去了，读了读她自己写的感想——竟然还有我的句子。受宠若惊。<br>但她没有告诉我们她手里的红盒子是什么，只说，那里面，是我们今天的主题。<br>是什么呢。</p>
+<h2 id="府学深处"><a href="#府学深处" class="headerlink" title="府学深处"></a>府学深处</h2><p>一个大箱子，经过几次接力，终于运到了那块府学之碑处。轻轻放在青石板小径上，躺在府学之碑旁，吸取苏中的灵气。取出几个碟子水缸，传给站在池中石头上的我——舀一碗，又一碗，又一碗的水，够我们用一节课。那水就是“鱼乐”之池中的水，有金鱼游，有水蚊子划船，有树叶子漂，不过我都没舀上来。传下去，开始研墨，味道真香。<br>梅子老师终于揭晓了盒中之物，是隔壁文庙银杏树的果子。我们一开始猜也猜不出来，直到隔壁班的张同学一语道破——“那是白果啊~”——才恍然大悟。白果？平时倒也少见，我们这不卖这些，没什么人吃。梅子老师说，一棵树是六百岁，一棵树是两千岁（传话时的口误，实为两百岁），那么这些果子恐怕已经吸收天地精华几百年了罢。<br>我们今天的主题便是白果了——一棵银杏果。我稍微变化一下，作两棵银杏果，希望也无妨。</p>
+<h2 id="银杏依旧剪秋风"><a href="#银杏依旧剪秋风" class="headerlink" title="银杏依旧剪秋风"></a>银杏依旧剪秋风</h2><p>我们便零零散散的，坐在草地上，石阶上，乱石上。我们班的女生围成一圈，一开始吵吵嚷嚷的，后来梅子老师委婉的批评了她们，周围便彻底安静了下来。<br>听得到笔杆撞击水缸的声音。和写字是不一样的，心境完全不一样的——一个讲究写的好不好，一个在于画的自己满不满意——是有本质差别的。<br>画什么呢？于是我就记录下了我能看到的一切——尊经阁的一角，碑廊旁的灌木丛，身侧的调色盘。只是没有画人——怕得罪人家。心里都有一种莫名的满足，像是毛躁的边角被抚平，心里便被清空，只有眼前的景，手里的笔，腿上的纸。<br>于是为了贴合主题，我在画面的左下角添上两粒白果——不知怎地来的灵感，可能是因为身侧的赵臻怡拿了两颗过来——倒也和谐。自以为调色今日比之前都好，用墨偏淡但也心满意足，也涨了教训，用两只笔——一支笔上色，一支笔用墨。这是迄今为止我画的最满意的一张信。<br>仍有点潦草，时间不够了，心里有点紧张，恐怕完不成。因为梅子老师曾说，心里要有完成感。<br>作为奖励，每个人去去了两颗银杏之果。我便把它们放于画的对应位置上，与其他同学的作品拍了合影。<br>下课了，心里有点醉醺醺，只听得，赵臻怡说，银杏依旧剪秋风。我跟一句——怎奈何，一墙之隔。一墙之隔是什么？六百年，还有两百年的银杏树。</p>
+<h2 id="有幸"><a href="#有幸" class="headerlink" title="有幸"></a>有幸</h2><p>直到今天，我终于决定，选到画信话心课是我三生有幸。本是阴差阳错，心中忐忑，到现在，心中满意，神态自如，也能和初一的同学交谈几句——夏老师曾说，生态影响心态。因为这里是纯粹的美，纯粹的爱，没有其他同学的冷嘲热讽。我在画信课外作画一向是很自卑的——从小画不好——但画信课上就能发挥自如，为什么？因为这里的大家很安静，都陶醉于画信时刻的感觉。<br>还有——<br>我必须要说，谢谢你，赵臻怡同学。<br>谢谢你。<br>因为，唯有你愿意和我彻夜长谈，不开心的时候开导我，画信的时候让我静心。你的画是那么美，文字又是那么美，银杏依旧剪秋风。<br>我相信，总有一天，一片小小的银杏，两颗小小的白果，可以化开那一墙之隔。<br>DO YOU EVER KNOW, THERE IS A SPARK IN YOU.<br>这一切的一切，皆是我有幸。</p>
+<p>银杏依旧剪秋风，怎奈何，一墙之隔。<br>但我相信，一切都会更好的。不是么？</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2864,29 +2908,6 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>两颗银杏果</title>
-    <url>/2022/10/14/small-but-shining-ideas-08/</url>
-    <content><![CDATA[<p><strong>10.14 画信话心课后有感</strong></p>
-<p>14号，正是那个被诅咒的日期，然而我们和梅子老师还是按时相见了。一周不见，如隔七天，那么两周不见，恐怕就是十四天了。</p>
-<p>想到今天有画信课，我心里舒服了许多——时局多变，疫情反复，我们却还可以在那一间曾经属于我们的教室里相见——那便是最令人欣慰的了。管什么烦心事？管什么繁多的杂事？</p>
-<p>你只是缺一堂画信课罢了，课后我这么想。</p>
-<span id="more"></span>
-<h2 id="课前（不是演讲）"><a href="#课前（不是演讲）" class="headerlink" title="课前（不是演讲）"></a>课前<del>（不是演讲）</del></h2><p>于是我顺着常走的那几十来级台阶走到一楼——主要还是为了可以看一眼朝气蓬勃的初一小朋友——然后差点忘记搬我们的材料。不知不觉这就成了我的工作了，大家都心照不宣。<br>还是不太敢进那间教室，因为有其他的同学——我一个人，尴尬——我就又走出来，走到大厅里，透过玻璃找梅子老师的影子。诶，她从南面走过来了，走进了伟长楼里，坐在了小沙发上，眼神有点呆呆地，注视着去上选修课的同学们。<br>自从那次课后鼓起勇气之后，我便没有把写过的文章给梅子老师看过了——有点过于的personal——所以她便也没太找我谈话——那是最好的，我可以观察她，她略显沧桑的脸，她手里的，红盒子。<br>其他的同学丝毫不去注意她的存在，感觉在这个大厅里梅子老师是一个隐身人——不过，我想我们也不能强迫每一个人去认识梅子老师——尽管不认识她，你的伟长生活将会变得不完整。<br>红盒子？</p>
-<h2 id="礼物"><a href="#礼物" class="headerlink" title="礼物"></a>礼物</h2><p>上课了。梅子老师问我们，你们要在教室里面还是出去？于是大家都回答要出去——谁不盼着呢？那早已是几节课前的诺言，然而我们并不在意。<br>不过少不了的，梅子老师总要多说几句，说一说她养的蝈蝈跳到仙人掌上，说一说前面一位同学的文章到哪去了，读了读她自己写的感想——竟然还有我的句子。受宠若惊。<br>但她没有告诉我们她手里的红盒子是什么，只说，那里面，是我们今天的主题。<br>是什么呢。</p>
-<h2 id="府学深处"><a href="#府学深处" class="headerlink" title="府学深处"></a>府学深处</h2><p>一个大箱子，经过几次接力，终于运到了那块府学之碑处。轻轻放在青石板小径上，躺在府学之碑旁，吸取苏中的灵气。取出几个碟子水缸，传给站在池中石头上的我——舀一碗，又一碗，又一碗的水，够我们用一节课。那水就是“鱼乐”之池中的水，有金鱼游，有水蚊子划船，有树叶子漂，不过我都没舀上来。传下去，开始研墨，味道真香。<br>梅子老师终于揭晓了盒中之物，是隔壁文庙银杏树的果子。我们一开始猜也猜不出来，直到隔壁班的张同学一语道破——“那是白果啊~”——才恍然大悟。白果？平时倒也少见，我们这不卖这些，没什么人吃。梅子老师说，一棵树是六百岁，一棵树是两千岁（传话时的口误，实为两百岁），那么这些果子恐怕已经吸收天地精华几百年了罢。<br>我们今天的主题便是白果了——一棵银杏果。我稍微变化一下，作两棵银杏果，希望也无妨。</p>
-<h2 id="银杏依旧剪秋风"><a href="#银杏依旧剪秋风" class="headerlink" title="银杏依旧剪秋风"></a>银杏依旧剪秋风</h2><p>我们便零零散散的，坐在草地上，石阶上，乱石上。我们班的女生围成一圈，一开始吵吵嚷嚷的，后来梅子老师委婉的批评了她们，周围便彻底安静了下来。<br>听得到笔杆撞击水缸的声音。和写字是不一样的，心境完全不一样的——一个讲究写的好不好，一个在于画的自己满不满意——是有本质差别的。<br>画什么呢？于是我就记录下了我能看到的一切——尊经阁的一角，碑廊旁的灌木丛，身侧的调色盘。只是没有画人——怕得罪人家。心里都有一种莫名的满足，像是毛躁的边角被抚平，心里便被清空，只有眼前的景，手里的笔，腿上的纸。<br>于是为了贴合主题，我在画面的左下角添上两粒白果——不知怎地来的灵感，可能是因为身侧的赵臻怡拿了两颗过来——倒也和谐。自以为调色今日比之前都好，用墨偏淡但也心满意足，也涨了教训，用两只笔——一支笔上色，一支笔用墨。这是迄今为止我画的最满意的一张信。<br>仍有点潦草，时间不够了，心里有点紧张，恐怕完不成。因为梅子老师曾说，心里要有完成感。<br>作为奖励，每个人去去了两颗银杏之果。我便把它们放于画的对应位置上，与其他同学的作品拍了合影。<br>下课了，心里有点醉醺醺，只听得，赵臻怡说，银杏依旧剪秋风。我跟一句——怎奈何，一墙之隔。一墙之隔是什么？六百年，还有两百年的银杏树。</p>
-<h2 id="有幸"><a href="#有幸" class="headerlink" title="有幸"></a>有幸</h2><p>直到今天，我终于决定，选到画信话心课是我三生有幸。本是阴差阳错，心中忐忑，到现在，心中满意，神态自如，也能和初一的同学交谈几句——夏老师曾说，生态影响心态。因为这里是纯粹的美，纯粹的爱，没有其他同学的冷嘲热讽。我在画信课外作画一向是很自卑的——从小画不好——但画信课上就能发挥自如，为什么？因为这里的大家很安静，都陶醉于画信时刻的感觉。<br>还有——<br>我必须要说，谢谢你，赵臻怡同学。<br>谢谢你。<br>因为，唯有你愿意和我彻夜长谈，不开心的时候开导我，画信的时候让我静心。你的画是那么美，文字又是那么美，银杏依旧剪秋风。<br>我相信，总有一天，一片小小的银杏，两颗小小的白果，可以化开那一墙之隔。<br>DO YOU EVER KNOW, THERE IS A SPARK IN YOU.<br>这一切的一切，皆是我有幸。</p>
-<p>银杏依旧剪秋风，怎奈何，一墙之隔。<br>但我相信，一切都会更好的。不是么？</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>校园</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>只为我心</title>
     <url>/2022/10/28/small-but-shining-ideas-10/</url>
     <content><![CDATA[<p><strong>10.28 画信话心课后有感</strong></p>
@@ -2904,61 +2925,6 @@ e^x \qquad & a \le 0
 <p>Damn right, from the bottom we rise<br>So high, now we cover sky lights<br>We’re building an empire<br>We owe it all to each other<br>Just look at us right now, destined<br>We’re so good right now, legend<br>Here’s to you and I<br>Raise ‘em to the sky</p>
 </blockquote>
 <p>就这样吧，写完这些，心里舒服多了。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>校园</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>雨·留白</title>
-    <url>/2022/11/18/small-but-shining-ideas-13/</url>
-    <content><![CDATA[<p><strong>11.18 画信话心课后有感</strong></p>
-<p>天气暗沉，乌云密布，空气潮湿，正是刚下过雨的样子。我一向期待着一节雨中的画信课，今天终于如愿以偿。天气已冷，身上穿着笨重的衣服，在碧霞池边站着画信，也是一种别样的体验。</p>
-<span id="more"></span>
-<h2 id="课前"><a href="#课前" class="headerlink" title="课前"></a>课前</h2><p>在周四，我把我们的画信课写进了英语作文，还提到了画信的“不好没关系，不好才是最好”这条特点。也是因为我们上一周没有上成画信课，比较遗憾，我就想到了这个主题。<br>我照常在伟长楼门口迎接梅子老师。她问起我脚伤怎么样了，我也就如实回答——没好到哪里去，去绿野村又受了伤，现在还在疼。于是我们进了教室，准备上课。<br>是我熟悉的师生问好环节。老师好。老师真好。</p>
-<h2 id="课后感想与回顾"><a href="#课后感想与回顾" class="headerlink" title="课后感想与回顾"></a>课后感想与回顾</h2><p>梅子老师每节课都会指定一位同学来写本节课的总结，她自己也会在课前写一篇回顾。至今为止还没有请到我，不过我也把自己写的周记或是打印了交给他，或是电子稿发给她——梅子老师会回我几个字，或是一句话。像绿野村那次，时间晚了，她也就回了“温暖。晚安”，我愿称之为简约而优雅。只是她今天因为有一点事情没有写，我们也就无缘听到梅子老师内心的想法。<br>梅子老师很珍视我们写的总结。</p>
-<h2 id="没有什么主题，就是出去画画"><a href="#没有什么主题，就是出去画画" class="headerlink" title="没有什么主题，就是出去画画"></a>没有什么主题，就是出去画画</h2><p>今天这节课我们本来不太计划出来画画，故没有什么特定的主题，于是梅子老师就即兴起名叫“留白”。我们去到碧霞池边，仰高亭下，舀水、研墨。雨开始下了，池面荡起圈圈涟漪，正是我所期待的天气。<br>我自己一个人拿了墨和颜料，放在远一点的栏杆上，自己听着音乐画信。没有人来打扰我，只有无数雨点打湿了我的纸笔，让墨都晕开，晕成一幅独特的画面。我画的是池中央的那个亭子，不是特别像，毕竟后来雨水打湿了我的视线，也打湿了我作画的对象。只是简单的勾了勾线、上了点色，时间就不够了，我只好作罢。<br>下课时分，雨停了，我望着池中央的亭子发呆。梅子老师问我，想什么呢，我说，很遗憾，现在雨已经停了。“现在那种感觉消失了？”<br>这句话正合我意。您还是很懂我的。<br>其实我也没有特别想什么，因为我的耳中一直循环着一首歌：</p>
-<blockquote>
-<p>When I was young I’d listen to the radio</p>
-<p>Waiting for my favorite songs</p>
-<p>When they played I’d sing along</p>
-<p>It made me smile</p>
-<p>Those were such happy times and not so long ago</p>
-<p>how I wondered where they’d gone</p>
-<p>all the songs I love so well</p>
-</blockquote>
-<h2 id="课后"><a href="#课后" class="headerlink" title="课后"></a>课后</h2><p>回家的地铁上，因为边听音乐边做数学卷子，我坐过站了。</p>
-<p>其实我今天没有什么特别想说的，就是想问一句，我有的时候是不是在故意矫情？是不是“为赋新词强说愁”？不知道。像“雨水打湿了我的视线”这种句子也是比较夸张的，故不用太当真。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-        <category>校园</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无题</title>
-    <url>/2022/11/25/small-but-shining-ideas-14/</url>
-    <content><![CDATA[<p><strong>11.25 画信话心课后有感</strong></p>
-<p>今天留给我的时间不多，但多少还是要写。不过，梅子老师即没有宣布本课的主题，我也没有想到特别好的题目，所以我只好记为“无题”。</p>
-<p>但是“无题”也是一种题目。</p>
-<span id="more"></span>
-<h2 id="忙碌着"><a href="#忙碌着" class="headerlink" title="忙碌着"></a>忙碌着</h2><p>布置板报。几个同学一筹莫展，缺少材料，无法开工。于是我提议，我们去楼梯三角间把画信课的工具拿出来用，大家犹豫后也只好同意了。随着课程的进行，我们对画信已经有一些感觉了，于是倒了水，蘸了颜料，在墙纸上画起来。</p>
-<p> 一棵树。先画树干，再画树叶。树干是棕里带黄的颜色，树叶则是用深绿、浅绿点出来，以粉色作为点缀的。把同学们的“我要点赞”贴上去，它就成了一棵点赞树。</p>
-<h2 id="上课"><a href="#上课" class="headerlink" title="上课"></a>上课</h2><p>我刚想要出门，去看看外面——银杏始黄，人群熙熙攘攘——然而梅子老师今天来得很早，故没有看成。不过我们几个给梅子老师展示了一下我们的“点赞树”，也算是一个充实的课间。</p>
-<p>梅子老师朗读了她刚写——补写的——课程记录，又跟我们说，过了一段时间，那种感觉就淡了。其实对我来说，只要一件事情一结束，很多细节我就会记不得了，补写也写不出来什么——不像语文作文，可以自由发挥细节。</p>
-<p>出去。梅子老师说，可以去玩，回来了画一片树叶了事——然而我没有。画信本身是一件庄严的事情——为何要敷衍作业呢？但我后来又觉得，她们玩得开心，画的也开心，却达成了画信的一个目标；我呢，则是自讨苦吃。</p>
-<p>有的时候，我这个人就是这样，做事太较真。常规积分统计，多给一分，来源不明，宁愿不要；英语默写没有全对老师却敲了章，也要找老师去划掉。我总是会做一些别人觉得很傻的事情，说“这个人怎么这样”，但其实这样我心里最安心——别人觉得，我做这些事，我是亏了；我觉得，我做这些事，是真正对得起自己、对得起别人。</p>
-<p>落笔，是春雨池畔的木桌子，长条椅，颜料，砚台，饼干。写上几个字，“属于我们的画信时光”。梅子老师说缺点颜色，但我也没去改了。</p>
-<p>我们去玩——她们去玩——的时候，梅子老师也没闲着，自己取了纸笔，画起信来，让我们送给自己的班主任老师。是春雨池里的大鹅，我们几个人写上名字，便送给了赵老师。出乎我们意料的是，赵老师说，顾梅老师每年都会给他画一封信。原来，这是梅子老师的老传统吗？</p>
-<p>梅子老师把我们的照片做成了书签送给我们。</p>
-<h2 id="课后"><a href="#课后" class="headerlink" title="课后"></a>课后</h2><p>又是艰巨的任务。今天初二足球赛踢完了，我照例负责做出视频。这无疑，又是一次考验。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -3050,27 +3016,51 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>“最后”一堂课</title>
-    <url>/2022/12/02/small-but-shining-ideas-15/</url>
-    <content><![CDATA[<p><strong>12.2 画信话心课后有感</strong></p>
-<h2 id="冬雪"><a href="#冬雪" class="headerlink" title="冬雪"></a>冬雪</h2><p>寒潮突然来袭。气温骤降，只有1C~5C。早上起来，居然下起了雪。</p>
-<p>等到了学校，雪下大了。雪花在空气中飘飞、翻滚，时而改变方向。外面是很冷的，然而我们都不顾一切的去一楼听了初一的歌王争霸赛。雪花，落在我们的衣服上、头发上、作业本上，又都消失不见。</p>
-<p>雪落无痕。</p>
+    <title>雨·留白</title>
+    <url>/2022/11/18/small-but-shining-ideas-13/</url>
+    <content><![CDATA[<p><strong>11.18 画信话心课后有感</strong></p>
+<p>天气暗沉，乌云密布，空气潮湿，正是刚下过雨的样子。我一向期待着一节雨中的画信课，今天终于如愿以偿。天气已冷，身上穿着笨重的衣服，在碧霞池边站着画信，也是一种别样的体验。</p>
 <span id="more"></span>
-<h2 id="噩耗"><a href="#噩耗" class="headerlink" title="噩耗"></a>噩耗</h2><p>梅子老师的身影，终于出现在我的视线之中。</p>
-<p>走近些，她第一句话跟我说，我们可能要把这一趟可当作最后一堂课来上了——疫情严重了。梅子时间也开不成了，多年的传统就此中断一次，实为遗憾。</p>
-<p>我心里霎时间吃了一惊，一颗热切的心，有些变凉了。上一次疫情，我们挺过来了，又在下一个周五得以相聚。难道我们的运气就此用完了吗？</p>
-<p>梅子老师在教室里宣布这一切的时候，一位同学提醒她：“您不要再说下去了啊！”然而事实就是如此。说与不说并不能改变什么，不如说出来，心里能放下一点负担。</p>
-<h2 id="泮池边"><a href="#泮池边" class="headerlink" title="泮池边"></a>泮池边</h2><p>每位同学此刻的心情，大概跟我一样。冷，身子在抖。那是一种无能为力的渺小感。</p>
-<p>取了水，研了墨，我和赵臻怡一起坐在泮池南侧的土坡上，没有人打扰我们。</p>
-<p>然而我不愿意记录我们都说了些什么——这些都是绝密的。嘴上勤快，笔下就迟了——简单地画了一棵银杏树，题上几个字：</p>
+<h2 id="课前"><a href="#课前" class="headerlink" title="课前"></a>课前</h2><p>在周四，我把我们的画信课写进了英语作文，还提到了画信的“不好没关系，不好才是最好”这条特点。也是因为我们上一周没有上成画信课，比较遗憾，我就想到了这个主题。<br>我照常在伟长楼门口迎接梅子老师。她问起我脚伤怎么样了，我也就如实回答——没好到哪里去，去绿野村又受了伤，现在还在疼。于是我们进了教室，准备上课。<br>是我熟悉的师生问好环节。老师好。老师真好。</p>
+<h2 id="课后感想与回顾"><a href="#课后感想与回顾" class="headerlink" title="课后感想与回顾"></a>课后感想与回顾</h2><p>梅子老师每节课都会指定一位同学来写本节课的总结，她自己也会在课前写一篇回顾。至今为止还没有请到我，不过我也把自己写的周记或是打印了交给他，或是电子稿发给她——梅子老师会回我几个字，或是一句话。像绿野村那次，时间晚了，她也就回了“温暖。晚安”，我愿称之为简约而优雅。只是她今天因为有一点事情没有写，我们也就无缘听到梅子老师内心的想法。<br>梅子老师很珍视我们写的总结。</p>
+<h2 id="没有什么主题，就是出去画画"><a href="#没有什么主题，就是出去画画" class="headerlink" title="没有什么主题，就是出去画画"></a>没有什么主题，就是出去画画</h2><p>今天这节课我们本来不太计划出来画画，故没有什么特定的主题，于是梅子老师就即兴起名叫“留白”。我们去到碧霞池边，仰高亭下，舀水、研墨。雨开始下了，池面荡起圈圈涟漪，正是我所期待的天气。<br>我自己一个人拿了墨和颜料，放在远一点的栏杆上，自己听着音乐画信。没有人来打扰我，只有无数雨点打湿了我的纸笔，让墨都晕开，晕成一幅独特的画面。我画的是池中央的那个亭子，不是特别像，毕竟后来雨水打湿了我的视线，也打湿了我作画的对象。只是简单的勾了勾线、上了点色，时间就不够了，我只好作罢。<br>下课时分，雨停了，我望着池中央的亭子发呆。梅子老师问我，想什么呢，我说，很遗憾，现在雨已经停了。“现在那种感觉消失了？”<br>这句话正合我意。您还是很懂我的。<br>其实我也没有特别想什么，因为我的耳中一直循环着一首歌：</p>
 <blockquote>
-<p>一棵银杏树见证当下</p>
-<p>在那偏僻的角落</p>
+<p>When I was young I’d listen to the radio</p>
+<p>Waiting for my favorite songs</p>
+<p>When they played I’d sing along</p>
+<p>It made me smile</p>
+<p>Those were such happy times and not so long ago</p>
+<p>how I wondered where they’d gone</p>
+<p>all the songs I love so well</p>
 </blockquote>
-<p>时光飞快。下课了。我们竟没有跟梅子老师好好告个别，就匆匆离去了。后悔啊！然而后悔又有什么用呢？</p>
-<p>梅子老师请我帮她剪我们的学期总结视频。不知道看到所有那些照片、视频的时候，我心里会作何感想。</p>
-<p>大概是无限的回忆，和对时光流逝的无奈吧。</p>
+<h2 id="课后"><a href="#课后" class="headerlink" title="课后"></a>课后</h2><p>回家的地铁上，因为边听音乐边做数学卷子，我坐过站了。</p>
+<p>其实我今天没有什么特别想说的，就是想问一句，我有的时候是不是在故意矫情？是不是“为赋新词强说愁”？不知道。像“雨水打湿了我的视线”这种句子也是比较夸张的，故不用太当真。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>校园</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无题</title>
+    <url>/2022/11/25/small-but-shining-ideas-14/</url>
+    <content><![CDATA[<p><strong>11.25 画信话心课后有感</strong></p>
+<p>今天留给我的时间不多，但多少还是要写。不过，梅子老师即没有宣布本课的主题，我也没有想到特别好的题目，所以我只好记为“无题”。</p>
+<p>但是“无题”也是一种题目。</p>
+<span id="more"></span>
+<h2 id="忙碌着"><a href="#忙碌着" class="headerlink" title="忙碌着"></a>忙碌着</h2><p>布置板报。几个同学一筹莫展，缺少材料，无法开工。于是我提议，我们去楼梯三角间把画信课的工具拿出来用，大家犹豫后也只好同意了。随着课程的进行，我们对画信已经有一些感觉了，于是倒了水，蘸了颜料，在墙纸上画起来。</p>
+<p> 一棵树。先画树干，再画树叶。树干是棕里带黄的颜色，树叶则是用深绿、浅绿点出来，以粉色作为点缀的。把同学们的“我要点赞”贴上去，它就成了一棵点赞树。</p>
+<h2 id="上课"><a href="#上课" class="headerlink" title="上课"></a>上课</h2><p>我刚想要出门，去看看外面——银杏始黄，人群熙熙攘攘——然而梅子老师今天来得很早，故没有看成。不过我们几个给梅子老师展示了一下我们的“点赞树”，也算是一个充实的课间。</p>
+<p>梅子老师朗读了她刚写——补写的——课程记录，又跟我们说，过了一段时间，那种感觉就淡了。其实对我来说，只要一件事情一结束，很多细节我就会记不得了，补写也写不出来什么——不像语文作文，可以自由发挥细节。</p>
+<p>出去。梅子老师说，可以去玩，回来了画一片树叶了事——然而我没有。画信本身是一件庄严的事情——为何要敷衍作业呢？但我后来又觉得，她们玩得开心，画的也开心，却达成了画信的一个目标；我呢，则是自讨苦吃。</p>
+<p>有的时候，我这个人就是这样，做事太较真。常规积分统计，多给一分，来源不明，宁愿不要；英语默写没有全对老师却敲了章，也要找老师去划掉。我总是会做一些别人觉得很傻的事情，说“这个人怎么这样”，但其实这样我心里最安心——别人觉得，我做这些事，我是亏了；我觉得，我做这些事，是真正对得起自己、对得起别人。</p>
+<p>落笔，是春雨池畔的木桌子，长条椅，颜料，砚台，饼干。写上几个字，“属于我们的画信时光”。梅子老师说缺点颜色，但我也没去改了。</p>
+<p>我们去玩——她们去玩——的时候，梅子老师也没闲着，自己取了纸笔，画起信来，让我们送给自己的班主任老师。是春雨池里的大鹅，我们几个人写上名字，便送给了赵老师。出乎我们意料的是，赵老师说，顾梅老师每年都会给他画一封信。原来，这是梅子老师的老传统吗？</p>
+<p>梅子老师把我们的照片做成了书签送给我们。</p>
+<h2 id="课后"><a href="#课后" class="headerlink" title="课后"></a>课后</h2><p>又是艰巨的任务。今天初二足球赛踢完了，我照例负责做出视频。这无疑，又是一次考验。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -3140,46 +3130,34 @@ e^x \qquad & a \le 0
       </tags>
   </entry>
   <entry>
-    <title>全文下载CSDN文章——Python爬虫一则</title>
-    <url>/2022/10/27/web-spider-for-CSDN/</url>
-    <content><![CDATA[<p>又是鸽了将近一个月了，今天来写点不一样的，<code>CSDN</code>爬虫。这大概是我这个博客网站上第一次出现<code>Python</code>项目吧，之后我会再更新一个长一点的，<code>Python</code>蒲丰投针，这是我已经完成的一个学校项目。</p>
-<p>本人不经常上<code>CSDN</code>，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有<code>CSDN</code>的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个人觉得这是比较烦的。所以我就上网搜到了一个爬虫，可以直接下载<code>CSDN</code>文章的全文。</p>
-<p><strong>注：爬虫这个技术还是比较敏感的——下载到的文章请不要用于商业用途，我个人也建议转载时放一下原链接，这样也避免日后的一些问题。</strong></p>
+    <title>“最后”一堂课</title>
+    <url>/2022/12/02/small-but-shining-ideas-15/</url>
+    <content><![CDATA[<p><strong>12.2 画信话心课后有感</strong></p>
+<h2 id="冬雪"><a href="#冬雪" class="headerlink" title="冬雪"></a>冬雪</h2><p>寒潮突然来袭。气温骤降，只有1C~5C。早上起来，居然下起了雪。</p>
+<p>等到了学校，雪下大了。雪花在空气中飘飞、翻滚，时而改变方向。外面是很冷的，然而我们都不顾一切的去一楼听了初一的歌王争霸赛。雪花，落在我们的衣服上、头发上、作业本上，又都消失不见。</p>
+<p>雪落无痕。</p>
 <span id="more"></span>
-<h2 id="1-原先我是怎么做的"><a href="#1-原先我是怎么做的" class="headerlink" title="1. 原先我是怎么做的"></a>1. 原先我是怎么做的</h2><p>正常的文章内容是可以复制的，然而，一般人谁会去要那些呢，可不是去<del>白嫖</del>学习代码？（我没有指名道姓是谁）</p>
-<p>那我真的想要代码怎么办？来看一下一种很麻烦的办法：</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/29/x56JXD.png" alt=""></p>
-<p>首先不管怎么样我们需要先定位到这个代码块的<code>&lt;pre&gt;</code>元素。但和它同名、同<code>class</code>的元素实在是太多了，怎么办呢？我就加一个<code>useful</code>这个类，区别开来（叫什么其实无所谓）</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/29/x56N0H.png" alt=""></p>
-<p>之后的话，我们直接用调试的命令行来找到这个代码块的<code>innerText</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;useful&quot;</span>)[<span class="number">0</span>].innerText</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://s1.ax1x.com/2022/10/29/x56tne.png" alt=""></p>
-<p>然后我们就获得了这一段代码的内容了。</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/29/x5681K.png" alt=""></p>
-<p>但可惜的是——不知道细心的你有没发现——这一整段代码都需要转义（<code>escaping</code>）。红框里的就是用<code>innerText</code>获取到的代码中被自动转义过的地方（未框全）：</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/29/x56G6O.png" alt=""></p>
-<p>当然我肯定有办法反转义，但这实在是太无聊了。然后如果一整篇文章里有太多想要的代码块的话，这个方法也不实用，<code>for in</code>循环也得反转义啊。</p>
-<p>所以……出于我<del>的懒惰</del>对爬虫的激情——我就上网搜到了一个（甚至都不是自己写的）。</p>
-<h2 id="2-CSDN上的解决方案"><a href="#2-CSDN上的解决方案" class="headerlink" title="2. CSDN上的解决方案"></a>2. <code>CSDN</code>上的解决方案</h2><p>对没错，这个爬取<code>CSDN</code>的程序很巧就是从<code>CSDN</code>上来的。原作的话：<a href="https://blog.csdn.net/m0_53268714/article/details/121058706">【python】爬取CSDN博客文章（保存为html，txt，md）_cloudmapleleaf的博客-CSDN博客</a>。我比较喜欢的在于这个<code>HTML</code>转<code>MD</code>的功能，然后它自己是可以自动转义的。我就不让大家去自己折腾了，我这里完全可以一键复制（）我自己是进行过一点点小修改的。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> html2text <span class="keyword">import</span> HTML2Text</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> html <span class="keyword">import</span> unescape</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">requirements</span></span><br><span class="line"><span class="string">打了箭头的才需要手动安装，其余是自动安装的依赖库</span></span><br><span class="line"><span class="string">certifi==2021.10.8</span></span><br><span class="line"><span class="string">charset-normalizer==2.0.7</span></span><br><span class="line"><span class="string">cssselect==1.1.0</span></span><br><span class="line"><span class="string">html2text==2020.1.16  --  &lt;--</span></span><br><span class="line"><span class="string">idna==3.3</span></span><br><span class="line"><span class="string">lxml==4.6.3  -----------  &lt;--</span></span><br><span class="line"><span class="string">requests==2.26.0 -------  &lt;--</span></span><br><span class="line"><span class="string">urllib3==1.26.7</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl</span>(<span class="params">url</span>):</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;crawl...&quot;</span>)</span><br><span class="line">    <span class="comment"># 配置header破反爬</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line">    <span class="comment"># 200就继续</span></span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        html = response.content.decode(<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        tree = etree.HTML(html)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;look for text...&quot;</span>)</span><br><span class="line">        <span class="comment"># 找到需要的html块</span></span><br><span class="line">        title = tree.xpath(<span class="string">&#x27;//*[@id=&quot;articleContentId&quot;]/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        block = tree.xpath(<span class="string">&#x27;//*[@id=&quot;content_views&quot;]&#x27;</span>)</span><br><span class="line">        <span class="comment"># html</span></span><br><span class="line">        ohtml = unescape(etree.tostring(block[<span class="number">0</span>]).decode(<span class="string">&quot;utf8&quot;</span>))</span><br><span class="line">        <span class="comment"># 纯文本</span></span><br><span class="line">        text = block[<span class="number">0</span>].xpath(<span class="string">&#x27;string(.)&#x27;</span>).strip()</span><br><span class="line">        <span class="comment"># print(&quot;html:&quot;, ohtml)</span></span><br><span class="line">        <span class="comment"># print(&quot;text:&quot;, text)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title:&quot;</span>, title)</span><br><span class="line">        save(ohtml, text)</span><br><span class="line">        <span class="comment"># 完成！</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;finish!&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;failed!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">html, text</span>):</span></span><br><span class="line">    filename = <span class="built_in">int</span>(time.time())</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;output&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> os.listdir():</span><br><span class="line">        <span class="comment"># 不存在输出文件夹就创建</span></span><br><span class="line">        os.mkdir(<span class="string">&quot;output&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/html&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/text&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/markdown&quot;</span>)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/html/<span class="subst">&#123;filename&#125;</span>.html&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> html_file:</span><br><span class="line">        <span class="comment"># 保存html</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write html...&quot;</span>)</span><br><span class="line">        html_file.write(html)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/text/<span class="subst">&#123;filename&#125;</span>.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> txt_file:</span><br><span class="line">        <span class="comment"># 保存纯文本</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write text...&quot;</span>)</span><br><span class="line">        txt_file.write(text)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/markdown/<span class="subst">&#123;filename&#125;</span>.md&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> md_file:</span><br><span class="line">        <span class="comment"># 保存markdown</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write markdown...&quot;</span>)</span><br><span class="line">        text_maker = HTML2Text()</span><br><span class="line">        <span class="comment"># md转换</span></span><br><span class="line">        md_text = text_maker.handle(html)</span><br><span class="line">        md_file.write(md_text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 你想要爬取的文章url</span></span><br><span class="line">    url = <span class="built_in">str</span>(<span class="built_in">input</span>(<span class="string">&quot;Url: &quot;</span>))</span><br><span class="line">    crawl(url)</span><br></pre></td></tr></table></figure>
-<p>用之前的话是需要安装3个<code>package</code>的：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pip install lxml html2text requests</span><br></pre></td></tr></table></figure>
-<p>然后我们就可以方便的复制到我们急需的代码或命令了。不过，如需转载你下载下来的文章，我个人觉得还请放一下原文链接的哦。</p>
-<h2 id="3-图片去水印（不是P图"><a href="#3-图片去水印（不是P图" class="headerlink" title="3. 图片去水印（不是P图"></a>3. 图片去水印（不是P图</h2><p>这是我在爬取文章之后不经意间发现的一个功能。比如我们有下面这样一张图片：</p>
-<p><img data-src="https://s1.ax1x.com/2022/10/29/x5fmnK.png" alt=""></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pif6L6w5rWp5a6H,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center</span><br></pre></td></tr></table></figure>
-<p>有没有觉得后面那个<code>x-oss-process</code>很可疑？话说这个图片的水印竟然是请求时服务器再加上去的，甚至不是上传时水印。我们直接把那些配置都删掉，就可以得到没有水印的图片了。</p>
-<p><img data-src="https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png" alt=""></p>
-<hr>
-<p><strong>THE END</strong>感谢您的阅读~</p>
+<h2 id="噩耗"><a href="#噩耗" class="headerlink" title="噩耗"></a>噩耗</h2><p>梅子老师的身影，终于出现在我的视线之中。</p>
+<p>走近些，她第一句话跟我说，我们可能要把这一趟可当作最后一堂课来上了——疫情严重了。梅子时间也开不成了，多年的传统就此中断一次，实为遗憾。</p>
+<p>我心里霎时间吃了一惊，一颗热切的心，有些变凉了。上一次疫情，我们挺过来了，又在下一个周五得以相聚。难道我们的运气就此用完了吗？</p>
+<p>梅子老师在教室里宣布这一切的时候，一位同学提醒她：“您不要再说下去了啊！”然而事实就是如此。说与不说并不能改变什么，不如说出来，心里能放下一点负担。</p>
+<h2 id="泮池边"><a href="#泮池边" class="headerlink" title="泮池边"></a>泮池边</h2><p>每位同学此刻的心情，大概跟我一样。冷，身子在抖。那是一种无能为力的渺小感。</p>
+<p>取了水，研了墨，我和赵臻怡一起坐在泮池南侧的土坡上，没有人打扰我们。</p>
+<p>然而我不愿意记录我们都说了些什么——这些都是绝密的。嘴上勤快，笔下就迟了——简单地画了一棵银杏树，题上几个字：</p>
+<blockquote>
+<p>一棵银杏树见证当下</p>
+<p>在那偏僻的角落</p>
+</blockquote>
+<p>时光飞快。下课了。我们竟没有跟梅子老师好好告个别，就匆匆离去了。后悔啊！然而后悔又有什么用呢？</p>
+<p>梅子老师请我帮她剪我们的学期总结视频。不知道看到所有那些照片、视频的时候，我心里会作何感想。</p>
+<p>大概是无限的回忆，和对时光流逝的无奈吧。</p>
 ]]></content>
       <categories>
-        <category>编程</category>
-        <category>Python</category>
+        <category>随笔</category>
+        <category>校园</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>CSDN</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -3288,15 +3266,58 @@ e^x \qquad & a \le 0
 <p><strong>THE END</strong> 谢谢你的阅读~</p>
 ]]></content>
       <categories>
-        <category>加速</category>
         <category>GitHub</category>
+        <category>加速</category>
         <category>GitHub</category>
       </categories>
       <tags>
-        <tag>加速</tag>
         <tag>GitHub</tag>
+        <tag>加速</tag>
         <tag>DevSidecar</tag>
         <tag>FAQs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全文下载CSDN文章——Python爬虫一则</title>
+    <url>/2022/10/27/web-spider-for-CSDN/</url>
+    <content><![CDATA[<p>又是鸽了将近一个月了，今天来写点不一样的，<code>CSDN</code>爬虫。这大概是我这个博客网站上第一次出现<code>Python</code>项目吧，之后我会再更新一个长一点的，<code>Python</code>蒲丰投针，这是我已经完成的一个学校项目。</p>
+<p>本人不经常上<code>CSDN</code>，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有<code>CSDN</code>的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个人觉得这是比较烦的。所以我就上网搜到了一个爬虫，可以直接下载<code>CSDN</code>文章的全文。</p>
+<p><strong>注：爬虫这个技术还是比较敏感的——下载到的文章请不要用于商业用途，我个人也建议转载时放一下原链接，这样也避免日后的一些问题。</strong></p>
+<span id="more"></span>
+<h2 id="1-原先我是怎么做的"><a href="#1-原先我是怎么做的" class="headerlink" title="1. 原先我是怎么做的"></a>1. 原先我是怎么做的</h2><p>正常的文章内容是可以复制的，然而，一般人谁会去要那些呢，可不是去<del>白嫖</del>学习代码？（我没有指名道姓是谁）</p>
+<p>那我真的想要代码怎么办？来看一下一种很麻烦的办法：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56JXD.png" alt=""></p>
+<p>首先不管怎么样我们需要先定位到这个代码块的<code>&lt;pre&gt;</code>元素。但和它同名、同<code>class</code>的元素实在是太多了，怎么办呢？我就加一个<code>useful</code>这个类，区别开来（叫什么其实无所谓）</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56N0H.png" alt=""></p>
+<p>之后的话，我们直接用调试的命令行来找到这个代码块的<code>innerText</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;useful&quot;</span>)[<span class="number">0</span>].innerText</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56tne.png" alt=""></p>
+<p>然后我们就获得了这一段代码的内容了。</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x5681K.png" alt=""></p>
+<p>但可惜的是——不知道细心的你有没发现——这一整段代码都需要转义（<code>escaping</code>）。红框里的就是用<code>innerText</code>获取到的代码中被自动转义过的地方（未框全）：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x56G6O.png" alt=""></p>
+<p>当然我肯定有办法反转义，但这实在是太无聊了。然后如果一整篇文章里有太多想要的代码块的话，这个方法也不实用，<code>for in</code>循环也得反转义啊。</p>
+<p>所以……出于我<del>的懒惰</del>对爬虫的激情——我就上网搜到了一个（甚至都不是自己写的）。</p>
+<h2 id="2-CSDN上的解决方案"><a href="#2-CSDN上的解决方案" class="headerlink" title="2. CSDN上的解决方案"></a>2. <code>CSDN</code>上的解决方案</h2><p>对没错，这个爬取<code>CSDN</code>的程序很巧就是从<code>CSDN</code>上来的。原作的话：<a href="https://blog.csdn.net/m0_53268714/article/details/121058706">【python】爬取CSDN博客文章（保存为html，txt，md）_cloudmapleleaf的博客-CSDN博客</a>。我比较喜欢的在于这个<code>HTML</code>转<code>MD</code>的功能，然后它自己是可以自动转义的。我就不让大家去自己折腾了，我这里完全可以一键复制（）我自己是进行过一点点小修改的。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> html2text <span class="keyword">import</span> HTML2Text</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">from</span> html <span class="keyword">import</span> unescape</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">requirements</span></span><br><span class="line"><span class="string">打了箭头的才需要手动安装，其余是自动安装的依赖库</span></span><br><span class="line"><span class="string">certifi==2021.10.8</span></span><br><span class="line"><span class="string">charset-normalizer==2.0.7</span></span><br><span class="line"><span class="string">cssselect==1.1.0</span></span><br><span class="line"><span class="string">html2text==2020.1.16  --  &lt;--</span></span><br><span class="line"><span class="string">idna==3.3</span></span><br><span class="line"><span class="string">lxml==4.6.3  -----------  &lt;--</span></span><br><span class="line"><span class="string">requests==2.26.0 -------  &lt;--</span></span><br><span class="line"><span class="string">urllib3==1.26.7</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl</span>(<span class="params">url</span>):</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;crawl...&quot;</span>)</span><br><span class="line">    <span class="comment"># 配置header破反爬</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line">    <span class="comment"># 200就继续</span></span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        html = response.content.decode(<span class="string">&quot;utf8&quot;</span>)</span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        tree = etree.HTML(html)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;look for text...&quot;</span>)</span><br><span class="line">        <span class="comment"># 找到需要的html块</span></span><br><span class="line">        title = tree.xpath(<span class="string">&#x27;//*[@id=&quot;articleContentId&quot;]/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        block = tree.xpath(<span class="string">&#x27;//*[@id=&quot;content_views&quot;]&#x27;</span>)</span><br><span class="line">        <span class="comment"># html</span></span><br><span class="line">        ohtml = unescape(etree.tostring(block[<span class="number">0</span>]).decode(<span class="string">&quot;utf8&quot;</span>))</span><br><span class="line">        <span class="comment"># 纯文本</span></span><br><span class="line">        text = block[<span class="number">0</span>].xpath(<span class="string">&#x27;string(.)&#x27;</span>).strip()</span><br><span class="line">        <span class="comment"># print(&quot;html:&quot;, ohtml)</span></span><br><span class="line">        <span class="comment"># print(&quot;text:&quot;, text)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title:&quot;</span>, title)</span><br><span class="line">        save(ohtml, text)</span><br><span class="line">        <span class="comment"># 完成！</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;finish!&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;failed!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">html, text</span>):</span></span><br><span class="line">    filename = <span class="built_in">int</span>(time.time())</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;output&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> os.listdir():</span><br><span class="line">        <span class="comment"># 不存在输出文件夹就创建</span></span><br><span class="line">        os.mkdir(<span class="string">&quot;output&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/html&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/text&quot;</span>)</span><br><span class="line">        os.mkdir(<span class="string">&quot;output/markdown&quot;</span>)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/html/<span class="subst">&#123;filename&#125;</span>.html&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> html_file:</span><br><span class="line">        <span class="comment"># 保存html</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write html...&quot;</span>)</span><br><span class="line">        html_file.write(html)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/text/<span class="subst">&#123;filename&#125;</span>.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> txt_file:</span><br><span class="line">        <span class="comment"># 保存纯文本</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write text...&quot;</span>)</span><br><span class="line">        txt_file.write(text)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;output/markdown/<span class="subst">&#123;filename&#125;</span>.md&quot;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>) <span class="keyword">as</span> md_file:</span><br><span class="line">        <span class="comment"># 保存markdown</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;write markdown...&quot;</span>)</span><br><span class="line">        text_maker = HTML2Text()</span><br><span class="line">        <span class="comment"># md转换</span></span><br><span class="line">        md_text = text_maker.handle(html)</span><br><span class="line">        md_file.write(md_text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 你想要爬取的文章url</span></span><br><span class="line">    url = <span class="built_in">str</span>(<span class="built_in">input</span>(<span class="string">&quot;Url: &quot;</span>))</span><br><span class="line">    crawl(url)</span><br></pre></td></tr></table></figure>
+<p>用之前的话是需要安装3个<code>package</code>的：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">pip install lxml html2text requests</span><br></pre></td></tr></table></figure>
+<p>然后我们就可以方便的复制到我们急需的代码或命令了。不过，如需转载你下载下来的文章，我个人觉得还请放一下原文链接的哦。</p>
+<h2 id="3-图片去水印（不是P图"><a href="#3-图片去水印（不是P图" class="headerlink" title="3. 图片去水印（不是P图"></a>3. 图片去水印（不是P图</h2><p>这是我在爬取文章之后不经意间发现的一个功能。比如我们有下面这样一张图片：</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/29/x5fmnK.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pif6L6w5rWp5a6H,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center</span><br></pre></td></tr></table></figure>
+<p>有没有觉得后面那个<code>x-oss-process</code>很可疑？话说这个图片的水印竟然是请求时服务器再加上去的，甚至不是上传时水印。我们直接把那些配置都删掉，就可以得到没有水印的图片了。</p>
+<p><img data-src="https://img-blog.csdnimg.cn/b1858e0e5a2a4221bd24f93f89a951c9.png" alt=""></p>
+<hr>
+<p><strong>THE END</strong>感谢您的阅读~</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>CSDN</tag>
       </tags>
   </entry>
 </search>

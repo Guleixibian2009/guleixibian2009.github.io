@@ -21,18 +21,22 @@
     var CONFIG = {"hostname":"guleixibian2009.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Be Vocal. Be yourself.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Guleixibian2009的个人博客~">
-<meta property="og:url" content="https://guleixibian2009.github.io/tags/Jekyll/">
+  <meta name="description" content="万事皆可变，万事亦皆有概率，而偏偏是日常生活中无比普遍的它，有时能创造出一个奇迹。蒲丰投针就恰恰体现了这一点。 一根小小的针，也可以投出整个宇宙。  蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用Python模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。 注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="针、圆周率与……Python?">
+<meta property="og:url" content="https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/">
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
-<meta property="og:description" content="Be Vocal. Be yourself.">
+<meta property="og:description" content="万事皆可变，万事亦皆有概率，而偏偏是日常生活中无比普遍的它，有时能创造出一个奇迹。蒲丰投针就恰恰体现了这一点。 一根小小的针，也可以投出整个宇宙。  蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用Python模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。 注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-02T10:03:47.000Z">
+<meta property="article:modified_time" content="2023-01-02T10:29:00.551Z">
 <meta property="article:author" content="Guleixibian2009">
-<meta property="article:tag" content="Python,Github,HEXO,Markdown,Website">
+<meta property="article:tag" content="Maths">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="编程">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://guleixibian2009.github.io/tags/Jekyll/">
+<link rel="canonical" href="https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/">
 
 
 <script id="page-configurations">
@@ -40,12 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: Jekyll | Guleixibian2009的个人博客~</title>
+  <title>针、圆周率与……Python? | Guleixibian2009的个人博客~</title>
   
 
 
@@ -215,57 +219,249 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Jekyll
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Guleixibian2009">
+      <meta itemprop="description" content="Be Vocal. Be yourself.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guleixibian2009的个人博客~">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          针、圆周率与……Python?
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-01-02 18:03:47 / 修改时间：18:29:00" itemprop="dateCreated datePublished" datetime="2023-01-02T18:03:47+08:00">2023-01-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>199</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <blockquote>
+<p>万事皆可变，万事亦皆有概率，而偏偏是日常生活中无比普遍的它，有时能创造出一个奇迹。蒲丰投针就恰恰体现了这一点。</p>
+<p>一根小小的针，也可以投出整个宇宙。</p>
+</blockquote>
+<p>蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用<code>Python</code>模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。</p>
+<p><em>注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还请谅解。</em></p>
+<span id="more"></span>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章  为你推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2021-11-28</div>
+      <div class="popular-posts-title"><a href="\2021\11\28\latex-syntax-in-markdown\" rel="bookmark">【转】Markdown中Latex常用语法</a></div>
+        <div class="popular-posts-excerpt"><p><p>这篇文章是我转载过来的（很抱歉的是原网址已经找不到了），自己进行了一些格式上的修改。有些 $\LaTeX$标签可能显示不出来，同志们这是编译器的问题，因人而异……</p>
+<h2 id="0-LaTeX-是什么？"><a href="#0-LaTeX-是什么？" class="headerlink" title="0. LaTeX 是什么？"></a>0. LaTeX 是什么？</h2><blockquote>
+<p>$ \LaTeX $是一种基于<code>ΤeΧ</code>的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发.<br>利用这种格式，即使使用者没有排版和程序设计的知识也可以充分发挥由<code>TeX</code>所提供的强大功能，能在几天、甚至几小时内生成很多具有书籍质量的印刷品。<br>对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</p>
+</blockquote></p></div>
+    </li>
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2022-09-26</div>
+      <div class="popular-posts-title"><a href="\2022\09\26\more-ways-to-speed-up\" rel="bookmark">还需要……加速吗？</a></div>
+        <div class="popular-posts-excerpt"><p><p>速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：<code>pip</code>镜像、<code>Microsoft Store</code>加速、<code>VSCode</code>下载链接和<code>Google Recaptcha</code>加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。</p></p></div>
+    </li>
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2022-10-27</div>
+      <div class="popular-posts-title"><a href="\2022\10\27\web-spider-for-CSDN\" rel="bookmark">全文下载CSDN文章——Python爬虫一则</a></div>
+        <div class="popular-posts-excerpt"><p><p>又是鸽了将近一个月了，今天来写点不一样的，<code>CSDN</code>爬虫。这大概是我这个博客网站上第一次出现<code>Python</code>项目吧，之后我会再更新一个长一点的，<code>Python</code>蒲丰投针，这是我已经完成的一个学校项目。</p>
+<p>本人不经常上<code>CSDN</code>，但偶尔需要搜一些资料不可避免的就会搜到相关的链接。但不幸的是，本人没有<code>CSDN</code>的号，无法直接复制代码块的内容，这就非常的麻烦。当然不用爬虫肯定也是有办法的，但极其的麻烦也很浪费时间，我个人觉得这是比较烦的。所以我就上网搜到了一个爬虫，可以直接下载<code>CSDN</code>文章的全文。</p>
+<p><strong>注：爬虫这个技术还是比较敏感的——下载到的文章请不要用于商业用途，我个人也建议转载时放一下原链接，这样也避免日后的一些问题。</strong></p></p></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-15T20:29:48+08:00"
-              content="2021-08-15">
-          08-15
-        </time>
+        <div class="reward-container">
+  <div>赏作者一杯作业......</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/images/%E8%AE%BA%E4%BD%9C%E4%B8%9A%E6%95%B0%E9%87%8F.jpg" alt="Guleixibian2009 我没钱，但有作业">
+        <p>我没钱，但有作业</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/images/websiteQR.png" alt="Guleixibian2009 把我的网站分享给别人？">
+        <p>把我的网站分享给别人？</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/15/github-pages-jekyll/" itemprop="url">
-            <span itemprop="name">GithubPages-简单易上手的网站制作(Jekyll版)</span>
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Guleixibian2009
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/" title="针、圆周率与……Python?">https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian.github.io/">
+            <span class="icon">
+              <i class="fab fa-html5"></i>
+            </span>
 
+            <span class="label">旧版网站</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian2009.github.io/Hand-Written-HTML-Site/">
+            <span class="icon">
+              <i class="fas fa-laptop-code"></i>
+            </span>
+
+            <span class="label">手写网站</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian2009.github.io/awesome-bs5/">
+            <span class="icon">
+              <i class="fab fa-bootstrap"></i>
+            </span>
+
+            <span class="label">Awesome-Bootstrap项目</span>
+          </a>
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Maths/" rel="tag"><i class="fa fa-tag"></i> Maths</a>
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/01/hexo-website-update/" rel="prev" title="Hexo深度个性化——底层配置">
+      <i class="fa fa-chevron-left"></i> Hexo深度个性化——底层配置
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNi8zMzY3MA=="></div>
+  </div>
+  
+            </div>
+        </div>
+      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -552,7 +748,42 @@
 
   
 
+<link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '182d88027b3ae850cbeb',
+      clientSecret: '9dbad5843bcb640f1547407b20ee2eb8e3d71c81',
+      repo        : 'guleixibian2009.github.io',
+      owner       : 'guleixibian2009',
+      admin       : ['guleixibian2009'],
+      id          : 'd60e829a4884d3cab690a9941b27925d',
+        language: 'zh-CN',
+      distractionFreeMode: false,
+      proxy       : 'https://proxy.cors.sh/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 
   <!-- 页面点击小红心 -->

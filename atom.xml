@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-02T09:40:17.978Z</updated>
+  <updated>2023-01-02T10:29:00.551Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>针、圆周率与……Python?</title>
+    <link href="https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/"/>
+    <id>https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/</id>
+    <published>2023-01-02T10:03:47.000Z</published>
+    <updated>2023-01-02T10:29:00.551Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;万事皆可变，万事亦皆有概率，而偏偏是日常生活中无比普遍的它，有时能创造出一个奇迹。蒲丰投针就恰恰体现了这一点。&lt;/p&gt;
+&lt;p&gt;一根小小的针，也可以投出整个宇宙。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用&lt;code&gt;Python&lt;/code&gt;模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还请谅解。&lt;/em&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    
+    
+    <category term="Maths" scheme="https://guleixibian2009.github.io/tags/Maths/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo深度个性化——底层配置</title>
@@ -345,9 +375,9 @@
     <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
     
     
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
-    
     <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   
@@ -466,27 +496,6 @@
     
     
     <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>临时解决方案：Cloudflare Workers与镜像站</title>
-    <link href="https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/"/>
-    <id>https://guleixibian2009.github.io/2022/09/17/cloudflare-workers-for-mirror/</id>
-    <published>2022-09-17T13:49:30.000Z</published>
-    <updated>2022-09-24T03:13:37.712Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最早接触到&lt;code&gt;Cloudflare&lt;/code&gt;是在研究&lt;code&gt;jsdelivr&lt;/code&gt;被墙后的解决方案，发现一个&lt;code&gt;cloudflare.jsdelivr.net&lt;/code&gt;的节点。那是我第一次听到&lt;code&gt;Cloudflare&lt;/code&gt;的大名。可没想到，真正把我拉回&lt;code&gt;Cloudflare&lt;/code&gt;的，不是所谓高防&lt;code&gt;DDOS&lt;/code&gt;，也不是&lt;code&gt;CDN&lt;/code&gt;加速，竟梅开二度又是被墙。这次，是&lt;code&gt;Cloudflare&lt;/code&gt;自己被墙了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
-    
-    
-    <category term="Cloudflare" scheme="https://guleixibian2009.github.io/tags/Cloudflare/"/>
-    
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   
