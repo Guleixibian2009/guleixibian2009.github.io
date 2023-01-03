@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-03T03:42:57.220Z</updated>
+  <updated>2023-01-03T05:11:06.211Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows-Linux子系统：快速入门</title>
+    <link href="https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/"/>
+    <id>https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/</id>
+    <published>2023-01-03T04:09:40.000Z</published>
+    <updated>2023-01-03T05:11:06.211Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;code&gt;Ubuntu&lt;/code&gt;是一个以桌面应用为主的&lt;code&gt;Linux&lt;/code&gt;操作系统，很久以前我就听说过它的大名。但当我询问如何在&lt;code&gt;Windows&lt;/code&gt;系统里面安装一个时，我才得知要使用&lt;code&gt;VM Ware&lt;/code&gt;等虚拟机软件，我也就没有去折腾了。不过买新电脑之后发现&lt;code&gt;Win10&lt;/code&gt;自带一个&lt;code&gt;Windows Subsystem for Linux&lt;/code&gt;的虚拟机功能，就来尝试一下。期间我也遇到了占用空间过大，&lt;code&gt;apt&lt;/code&gt;速度慢等问题，这里也顺带说一下解决方案。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;但其实到最后我发现装了这个&lt;code&gt;Ubuntu&lt;/code&gt;，除了对&lt;code&gt;Shell Script&lt;/code&gt;的原生支持以外，对我也没有多少用处（&lt;/del&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="后端" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="WSL" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/WSL/"/>
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Backend" scheme="https://guleixibian2009.github.io/tags/Backend/"/>
+    
+    <category term="Linux" scheme="https://guleixibian2009.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>针、圆周率与……Python?</title>
@@ -78,13 +106,13 @@
     
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
     
+    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
+    
     <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
     
     <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
     
     <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
-    
-    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
     
     <category term="JavaScript" scheme="https://guleixibian2009.github.io/tags/JavaScript/"/>
     
@@ -375,9 +403,9 @@
     <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
     
     
-    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
-    
     <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
     
   </entry>
   
@@ -472,27 +500,6 @@
     <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     <category term="思考" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%80%9D%E8%80%83/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>蝉蜕趣事</title>
-    <link href="https://guleixibian2009.github.io/2022/09/19/small-but-shining-ideas-02/"/>
-    <id>https://guleixibian2009.github.io/2022/09/19/small-but-shining-ideas-02/</id>
-    <published>2022-09-19T02:15:49.000Z</published>
-    <updated>2022-09-24T02:21:34.686Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;〇、蝉蜕&quot;&gt;&lt;a href=&quot;#〇、蝉蜕&quot; class=&quot;headerlink&quot; title=&quot;〇、蝉蜕&quot;&gt;&lt;/a&gt;〇、蝉蜕&lt;/h2&gt;&lt;p&gt;蝉蜕么，就是那些全身棕黄色的、晶莹剔透的小东西。偶有棕黑色的，个儿更大，却也属实少见。硬，但是脆，一压就变成碎屑了。算是我们苏中的特产，一抓一大把的那种。不知为何，我与那蝉蜕似乎结了缘，在它们出没的几个月里也给我带来了许多趣事。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
     
     
     <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
