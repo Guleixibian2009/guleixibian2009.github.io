@@ -29,7 +29,7 @@
 <meta property="og:description" content="Ubuntu是一个以桌面应用为主的Linux操作系统，很久以前我就听说过它的大名。但当我询问如何在Windows系统里面安装一个时，我才得知要使用VM Ware等虚拟机软件，我也就没有去折腾了。不过买新电脑之后发现Win10自带一个Windows Subsystem for Linux的虚拟机功能，就来尝试一下。期间我也遇到了占用空间过大，apt速度慢等问题，这里也顺带说一下解决方案。 但其实到最">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-03T04:09:40.000Z">
-<meta property="article:modified_time" content="2023-01-03T05:11:06.211Z">
+<meta property="article:modified_time" content="2023-01-03T08:39:07.506Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="Backend">
@@ -250,7 +250,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-01-03 12:09:40 / 修改时间：13:11:06" itemprop="dateCreated datePublished" datetime="2023-01-03T12:09:40+08:00">2023-01-03</time>
+              <time title="创建时间：2023-01-03 12:09:40 / 修改时间：16:39:07" itemprop="dateCreated datePublished" datetime="2023-01-03T12:09:40+08:00">2023-01-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,14 +276,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>242</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -298,6 +298,51 @@
         <p><code>Ubuntu</code>是一个以桌面应用为主的<code>Linux</code>操作系统，很久以前我就听说过它的大名。但当我询问如何在<code>Windows</code>系统里面安装一个时，我才得知要使用<code>VM Ware</code>等虚拟机软件，我也就没有去折腾了。不过买新电脑之后发现<code>Win10</code>自带一个<code>Windows Subsystem for Linux</code>的虚拟机功能，就来尝试一下。期间我也遇到了占用空间过大，<code>apt</code>速度慢等问题，这里也顺带说一下解决方案。</p>
 <p><del>但其实到最后我发现装了这个<code>Ubuntu</code>，除了对<code>Shell Script</code>的原生支持以外，对我也没有多少用处（</del></p>
 <span id="more"></span>
+<h2 id="1-安装WSL与Ubuntu"><a href="#1-安装WSL与Ubuntu" class="headerlink" title="1. 安装WSL与Ubuntu"></a>1. 安装<code>WSL</code>与<code>Ubuntu</code></h2><p>要安装<code>WSL</code>，我们首先需要用管理员权限在<code>powershell</code>中打开两个功能，分别是<code>WSL</code>本身和虚拟化：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+<p>这个时候我们用<code>wsl</code>这个命令来检查一下是否可用。如果一切正常，使用<code>wsl --install</code>命令就可以安装最新版本的<code>Ubuntu</code>。如果你不想安装<code>Ubuntu</code>而是别的系统的话，可以使用如下语法：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-install</span> <span class="literal">-d</span> &lt;Version&gt;</span><br></pre></td></tr></table></figure>
+<p>等安装完毕，之后的话就是设置用户名和密码，这里就不细说了。</p>
+<hr>
+<h2 id="2-转移Ubuntu文件位置"><a href="#2-转移Ubuntu文件位置" class="headerlink" title="2. 转移Ubuntu文件位置"></a>2. 转移<code>Ubuntu</code>文件位置</h2><p>之后你就可以用<code>apt</code>来安装你需要的包了，不过安装几个较大的包比如<code>nodejs</code>和<code>python</code>之后，你会发现<code>C</code>盘突然被<code>Ubuntu</code>占用了很多，像我一下子就60%~70%。这个时候我就打算把<code>Ubuntu</code>移到<code>D</code>盘去，幸运的是，这只需要几个步骤。</p>
+<p>首先，<code>wsl -l</code>获取自己的<code>Ubuntu</code>版本号，像我是<code>Ubuntu-20.04</code>。然后我们停止系统的运行，导出整个系统，并反注册。<code>wsl</code>会生成一个打包的<code>tar</code>文件，我们再导入即可：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-export</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> d://ProgramFiles//Ubuntu//ubuntu<span class="literal">-20</span>.<span class="number">04</span>.tar</span><br><span class="line">wsl -<span class="literal">-unregister</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span></span><br><span class="line">wsl -<span class="literal">-import</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> d://wslubuntu//Ubuntu d://ProgramFiles//Ubuntu//ubuntu<span class="literal">-20</span>.<span class="number">04</span>.tar</span><br></pre></td></tr></table></figure>
+<p>然后我们用<code>wsl</code>命令来看一下是否注册成功。但这个时候有个问题：你的用户名变成了<code>root</code>。这个时候我们在<code>Ubuntu</code>里面执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myUsername=&lt;username&gt;</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;[user]\ndefault=<span class="variable">$myUsername</span>&quot;</span> &gt;&gt; /etc/wsl.conf</span><br></pre></td></tr></table></figure>
+<p>就可以把名字改回来。之前生成的系统<code>tar</code>文件也就可以删除了。最后我们用管理员权限打开<code>powershell</code>重启<code>Ubuntu</code>系统，来应用所有更改：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop LxssManager</span><br><span class="line">net <span class="built_in">start</span> LxssManager</span><br></pre></td></tr></table></figure>
+<p>（<code>wsl</code>的运行依靠<code>LxssManager</code>，具体也不用太管）</p>
+<hr>
+<h2 id="3-修改Ubuntu镜像源"><a href="#3-修改Ubuntu镜像源" class="headerlink" title="3. 修改Ubuntu镜像源"></a>3. 修改<code>Ubuntu</code>镜像源</h2><p>首先进入<code>apt</code>的文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/apt/</span><br></pre></td></tr></table></figure>
+<p>然后对原先的配置文件做一个镜像，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -a sources.list sources.backup.list</span><br></pre></td></tr></table></figure>
+<p>到清华镜像官方获取到<code>ubuntu</code>的链接，比如<code>20.04</code>是这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p>然后用<code>vim</code>或<code>nano</code>编辑<code>sources.list</code>，清空后全部粘贴，保存退出。重启<code>wsl</code>，并使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>来确认是否切换到清华的镜像源了。</p>
+<hr>
+<h2 id="4-安装xfce4图形界面"><a href="#4-安装xfce4图形界面" class="headerlink" title="4. 安装xfce4图形界面"></a>4. 安装<code>xfce4</code>图形界面</h2><p>既然有了命令行的<code>Ubuntu</code>，我们能不能拥有它的<code>GUI</code>呢？我们可以借助<code>xfce4</code>搭配远程桌面来搭建一个图形界面。</p>
+<h3 id="4-1-安装依赖"><a href="#4-1-安装依赖" class="headerlink" title="4.1 安装依赖"></a>4.1 安装依赖</h3><p>安装<code>xrdp</code>、<code>xfce4</code>和<code>xfce4-goodies</code>。中间一路回车即可（会有一个粉色的界面）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install xrdp xfce4 xfce4-goodies</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-修改xrdp配置"><a href="#4-2-修改xrdp配置" class="headerlink" title="4.2 修改xrdp配置"></a>4.2 修改<code>xrdp</code>配置</h3><p>先对原配置做一个备份：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak</span><br></pre></td></tr></table></figure>
+<p>然后，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i <span class="string">&#x27;s/3389/3390/g&#x27;</span> /etc/xrdp/xrdp.ini</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/max_bpp=32/#max_bbp=32\nmax_bpp=128/g&#x27;</span> /etc/xrdp/xrdp.ini</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/xservervpp=24/#xservervpp=24\nxserverbpp=128/g&#x27;</span> /etc/xrdp/xrdp.ini</span><br></pre></td></tr></table></figure>
+<p>就会自动修改。然后执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> xfce4-session &gt; ~/.xsession</span><br><span class="line">sudo nano /etc/xrdp/startwm.sh</span><br></pre></td></tr></table></figure>
+<p>把光标移到文件的最后两行，用<code>#</code>号注释掉，然后新增两行，最后效果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test -x /etc/X11/Xsession &amp;&amp; exec /etc/X11/Xsession</span></span><br><span class="line"><span class="comment"># exec /binsh /etc/X11/Xsession</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># xfce</span></span><br><span class="line">startxfce4</span><br></pre></td></tr></table></figure>
+<p>保存并退出（<kbd>Ctrl+X</kbd>，按<code>y</code>并回车，退出）。</p>
+<h3 id="4-3-启动远程桌面"><a href="#4-3-启动远程桌面" class="headerlink" title="4.3 启动远程桌面"></a>4.3 启动远程桌面</h3><p>首先复制如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xrdp start</span><br></pre></td></tr></table></figure>
+<p>然后<code>vim</code>或<code>nano</code>打开<code>bash.bashrc</code>添加一个别名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> remote=<span class="string">&quot;sudo /etc/init.d/xrdp start&quot;</span></span><br></pre></td></tr></table></figure>
+<p>重启<code>wsl</code>。然后输入<code>remote</code>，就会启动服务器。用<code>Win10</code>自带的远程桌面连接<code>localhost:3390</code>，会跳出来一个蓝色框，输入自己<code>Ubuntu</code>的用户名和密码，就可以进入<code>Ubuntu</code>的远程桌面了。</p>
+<hr>
+<p>至此，你已经拥有了<code>WSL</code>中的<code>Ubuntu</code>，并且更改了镜像源，成功地开启了远程桌面。听说<code>Linux</code>系统中有意思的命令还挺多的，那下一篇文章就来讲讲这个。</p>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 
     </div>
 
@@ -508,6 +553,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85WSL%E4%B8%8EUbuntu"><span class="nav-text">1. 安装WSL与Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BD%AC%E7%A7%BBUbuntu%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="nav-text">2. 转移Ubuntu文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9Ubuntu%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">3. 修改Ubuntu镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85xfce4%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-text">4. 安装xfce4图形界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-text">4.1 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BF%AE%E6%94%B9xrdp%E9%85%8D%E7%BD%AE"><span class="nav-text">4.2 修改xrdp配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%90%AF%E5%8A%A8%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="nav-text">4.3 启动远程桌面</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -594,13 +640,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">131k</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:59</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

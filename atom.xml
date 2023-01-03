@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-03T05:11:06.211Z</updated>
+  <updated>2023-01-03T08:39:07.506Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/"/>
     <id>https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/</id>
     <published>2023-01-03T04:09:40.000Z</published>
-    <updated>2023-01-03T05:11:06.211Z</updated>
+    <updated>2023-01-03T08:39:07.506Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;code&gt;Ubuntu&lt;/code&gt;是一个以桌面应用为主的&lt;code&gt;Linux&lt;/code&gt;操作系统，很久以前我就听说过它的大名。但当我询问如何在&lt;code&gt;Windows&lt;/code&gt;系统里面安装一个时，我才得知要使用&lt;code&gt;VM Ware&lt;/code&gt;等虚拟机软件，我也就没有去折腾了。不过买新电脑之后发现&lt;code&gt;Win10&lt;/code&gt;自带一个&lt;code&gt;Windows Subsystem for Linux&lt;/code&gt;的虚拟机功能，就来尝试一下。期间我也遇到了占用空间过大，&lt;code&gt;apt&lt;/code&gt;速度慢等问题，这里也顺带说一下解决方案。&lt;/p&gt;
@@ -106,13 +106,13 @@
     
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
     
-    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
-    
     <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
     
     <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
     
     <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
+    
+    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
     
     <category term="JavaScript" scheme="https://guleixibian2009.github.io/tags/JavaScript/"/>
     
