@@ -29,7 +29,7 @@
 <meta property="og:description" content="Ubuntu是一个以桌面应用为主的Linux操作系统，很久以前我就听说过它的大名。但当我询问如何在Windows系统里面安装一个时，我才得知要使用VM Ware等虚拟机软件，我也就没有去折腾了。不过买新电脑之后发现Win10自带一个Windows Subsystem for Linux的虚拟机功能，就来尝试一下。期间我也遇到了占用空间过大，apt速度慢等问题，这里也顺带说一下解决方案。 但其实到最">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-03T04:09:40.000Z">
-<meta property="article:modified_time" content="2023-01-03T08:39:07.506Z">
+<meta property="article:modified_time" content="2023-01-04T05:24:29.160Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="Backend">
@@ -154,7 +154,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-rss">
@@ -248,10 +248,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-01-03 12:09:40 / 修改时间：16:39:07" itemprop="dateCreated datePublished" datetime="2023-01-03T12:09:40+08:00">2023-01-03</time>
+              <time title="创建时间：2023-01-03 12:09:40" itemprop="dateCreated datePublished" datetime="2023-01-03T12:09:40+08:00">2023-01-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-01-04 13:24:29" itemprop="dateModified" datetime="2023-01-04T13:24:29+08:00">2023-01-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -276,14 +282,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.5k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -323,7 +329,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 <p>来确认是否切换到清华的镜像源了。</p>
 <hr>
-<h2 id="4-安装xfce4图形界面"><a href="#4-安装xfce4图形界面" class="headerlink" title="4. 安装xfce4图形界面"></a>4. 安装<code>xfce4</code>图形界面</h2><p>既然有了命令行的<code>Ubuntu</code>，我们能不能拥有它的<code>GUI</code>呢？我们可以借助<code>xfce4</code>搭配远程桌面来搭建一个图形界面。</p>
+<h2 id="4-安装xfce4图形界面"><a href="#4-安装xfce4图形界面" class="headerlink" title="4. 安装xfce4图形界面"></a>4. 安装<code>xfce4</code>图形界面</h2><p>既然有了命令行的<code>Ubuntu</code>，我们能不能拥有它的<code>GUI</code>呢？<del>我们可以借助<code>xfce4</code>搭配远程桌面来搭建一个图形界面。</del></p>
+<p><strong>这里不建议使用<code>xfce4</code>，容易黑屏、报错，建议直接参考第5步，安装<code>gnome</code>桌面。</strong></p>
 <h3 id="4-1-安装依赖"><a href="#4-1-安装依赖" class="headerlink" title="4.1 安装依赖"></a>4.1 安装依赖</h3><p>安装<code>xrdp</code>、<code>xfce4</code>和<code>xfce4-goodies</code>。中间一路回车即可（会有一个粉色的界面）。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install xrdp xfce4 xfce4-goodies</span><br></pre></td></tr></table></figure>
 <h3 id="4-2-修改xrdp配置"><a href="#4-2-修改xrdp配置" class="headerlink" title="4.2 修改xrdp配置"></a>4.2 修改<code>xrdp</code>配置</h3><p>先对原配置做一个备份：</p>
@@ -341,7 +348,45 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> remote=<span class="string">&quot;sudo /etc/init.d/xrdp start&quot;</span></span><br></pre></td></tr></table></figure>
 <p>重启<code>wsl</code>。然后输入<code>remote</code>，就会启动服务器。用<code>Win10</code>自带的远程桌面连接<code>localhost:3390</code>，会跳出来一个蓝色框，输入自己<code>Ubuntu</code>的用户名和密码，就可以进入<code>Ubuntu</code>的远程桌面了。</p>
 <hr>
+<h2 id="5-gnome图形界面"><a href="#5-gnome图形界面" class="headerlink" title="5. gnome图形界面"></a>5. <code>gnome</code>图形界面</h2><p>这个<code>gnome</code>图形界面是要求<code>WSL2</code>的，如果你是<code>Win10</code>则默认是<code>WSL1</code>。先确认一下：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+<p>如果是<code>WSL1</code>的话则需要安装升级包：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">微软官网</a>，下载下来安装即可。然后管理员执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-version</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> <span class="number">2</span> </span><br></pre></td></tr></table></figure>
+<p>它就会自动升级为<code>WSL2</code>。然后进入<code>wsl</code>，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git</span><br><span class="line"><span class="built_in">cd</span> ubuntu-wsl2-systemd-script/</span><br><span class="line">bash ubuntu-wsl2-systemd-script.sh</span><br></pre></td></tr></table></figure>
+<p>来安装依赖<code>systemd</code>。安装好之后重启：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-shutdown</span></span><br><span class="line">wsl</span><br></pre></td></tr></table></figure>
+<p>输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl</span><br></pre></td></tr></table></figure>
+<p>如果它不回复你</p>
+<blockquote>
+<p>System has not been booted with systemd as init system (PID 1). Can’t operate.</p>
+</blockquote>
+<p>那就说明你做对了，随后我们来安装<code>gnome</code>桌面（确保你已经把<code>Ubuntu</code>切换到了<code>D</code>盘或其他，因为会占用3个<code>G</code>左右）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y ubuntu-desktop</span><br></pre></td></tr></table></figure>
+<p>然后安装<code>xrdp</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y xrdp</span><br><span class="line">sudo adduser xrdp ssl-cert</span><br><span class="line">sudo systemctl restart xrdp</span><br></pre></td></tr></table></figure>
+<p>配置防火墙：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 3389</span><br></pre></td></tr></table></figure>
+<p>这个时候远程连接<code>localhost:3389</code>即可。会要求你输入账号密码，进入图形界面后还是要你输入密码。如果一切正常的话，你的<code>gnome</code>图形界面就安装成功了！</p>
+<p><strong>注：如果你在升级<code>WSL2</code>后发现<code>sudo apt update</code>卡死了，别怕重装一次<code>Ubuntu</code>，重新执行1~3步即可。</strong></p>
+<hr>
 <p>至此，你已经拥有了<code>WSL</code>中的<code>Ubuntu</code>，并且更改了镜像源，成功地开启了远程桌面。听说<code>Linux</code>系统中有意思的命令还挺多的，那下一篇文章就来讲讲这个。</p>
+<hr>
+<p><strong>致谢</strong></p>
+<p>这里写一下我参考到的文章：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50321412/article/details/124592284">Win10 安装wsl并将文件位置从C盘迁移至D盘_快乐啊啊啊啊啊的博客-CSDN博客_wsl迁移到d盘</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/x356982611/article/details/107782513?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-107782513-blog-108133340.pc_relevant_default&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-107782513-blog-108133340.pc_relevant_default&amp;utm_relevant_index=1">windows下重启wsl_天已青色等烟雨来的博客-CSDN博客_wsl reboot</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41667316/article/details/120931194">更改手动导入的wsl的默认登录用户_skyandcloud-pal的博客-CSDN博客_wsl修改默认用户</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/af94731626e3">WSL GUI图形界面(xfce4)的安装 - 简书</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51194302/article/details/127891929">wsl安装ubuntu并设置gnome图形界面详细步骤（win11+ubuntu18）_heusjh的博客-CSDN博客_wsl安装gnome桌面</a></p>
+</li>
+</ol>
 <p><strong>THE END</strong>感谢您的阅读~</p>
 
     </div>
@@ -352,6 +397,13 @@
       
   <div class="popular-posts-header">相关文章  为你推荐</div>
   <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2023-01-04</div>
+      <div class="popular-posts-title"><a href="\2023\01\04\interesting-ubuntu-commands\" rel="bookmark">那些有趣的Linux命令，你都试过几个？</a></div>
+        <div class="popular-posts-excerpt"><p><p>OK那么既然我们安装好了<code>WSL</code>和<code>Ubuntu</code>，也成功地打开了它的<code>Gnome</code>图形界面，肯定要来体验一下，这一篇文章也是在<code>WSL</code>里面写的。不过在干活之前我也是找了一些有意思的命令，来熟悉一下<code>Ubuntu</code>的环境，比如：</p>
+<p><img src="https://s1.ax1x.com/2023/01/04/pSFYEjA.png" alt=""></p>
+<p><strong>注：除非特殊提醒，文中提到的包都可以使用<code>apt</code>安装。</strong></p></p></div>
+    </li>
     <li class="popular-posts-item">
         <div class="popular-posts-date">2022-09-13</div>
       <div class="popular-posts-title"><a href="\2022\09\13\other-projects\" rel="bookmark">介绍一下我的其他项目~</a></div>
@@ -366,11 +418,6 @@
 </blockquote>
 <p>蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用<code>Python</code>模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。</p>
 <p><em>注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还请谅解。</em></p></p></div>
-    </li>
-    <li class="popular-posts-item">
-        <div class="popular-posts-date">2021-08-25</div>
-      <div class="popular-posts-title"><a href="\2021\08\25\markdown-syntax\" rel="bookmark">真的非常简单-Markdown基本语法</a></div>
-        <div class="popular-posts-excerpt"><p><p>在很多博客、论坛，包括<code>Github Pages</code>(参见<a href="https://guleixibian2009.github.io/2021/08/15/GithubPages-简单易上手的网站制作-Jekyll版/">这篇文章</a>) 里都有大量运用到一种叫做<code>Markdown</code>的文本语言。不管你是在创建自己的网站、写文章，一般平台都需要写<code>Markdown</code>。如果你想学习<code>Markdown</code>，你算是来对地方了！</p></p></div>
     </li>
   </ul>
 
@@ -476,7 +523,10 @@
     <a href="/2023/01/02/buffons-neddle-in-python/" rel="prev" title="针、圆周率与……Python?">
       <i class="fa fa-chevron-left"></i> 针、圆周率与……Python?
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/01/04/interesting-ubuntu-commands/" rel="next" title="那些有趣的Linux命令，你都试过几个？">
+      那些有趣的Linux命令，你都试过几个？ <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -553,7 +603,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85WSL%E4%B8%8EUbuntu"><span class="nav-text">1. 安装WSL与Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BD%AC%E7%A7%BBUbuntu%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="nav-text">2. 转移Ubuntu文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9Ubuntu%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">3. 修改Ubuntu镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85xfce4%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-text">4. 安装xfce4图形界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-text">4.1 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BF%AE%E6%94%B9xrdp%E9%85%8D%E7%BD%AE"><span class="nav-text">4.2 修改xrdp配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%90%AF%E5%8A%A8%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="nav-text">4.3 启动远程桌面</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85WSL%E4%B8%8EUbuntu"><span class="nav-text">1. 安装WSL与Ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BD%AC%E7%A7%BBUbuntu%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="nav-text">2. 转移Ubuntu文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9Ubuntu%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-text">3. 修改Ubuntu镜像源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85xfce4%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-text">4. 安装xfce4图形界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-text">4.1 安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BF%AE%E6%94%B9xrdp%E9%85%8D%E7%BD%AE"><span class="nav-text">4.2 修改xrdp配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%90%AF%E5%8A%A8%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="nav-text">4.3 启动远程桌面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-gnome%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-text">5. gnome图形界面</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -569,7 +619,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -640,13 +690,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">134k</span>
+    <span title="站点总字数">137k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:02</span>
+    <span title="站点阅读时长">2:05</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

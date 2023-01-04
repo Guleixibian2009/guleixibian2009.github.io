@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://guleixibian2009.github.io/2023/01/04/interesting-ubuntu-commands/</loc>
+    <lastmod>2023-01-04</lastmod>
+  </url>
+  <url>
     <loc>https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/</loc>
-    <lastmod>2023-01-03</lastmod>
+    <lastmod>2023-01-04</lastmod>
   </url>
   <url>
     <loc>https://guleixibian2009.github.io/2023/01/02/buffons-neddle-in-python/</loc>
@@ -89,7 +93,7 @@
     <lastmod>2022-10-01</lastmod>
   </url>
   <url>
-    <loc>https://guleixibian2009.github.io/2021/08/13/hello-world/</loc>
+    <loc>https://guleixibian2009.github.io/1970/01/01/hello-world/</loc>
     <lastmod>2022-09-27</lastmod>
   </url>
   <url>

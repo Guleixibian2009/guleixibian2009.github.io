@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-03T08:39:07.506Z</updated>
+  <updated>2023-01-04T07:52:02.316Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>那些有趣的Linux命令，你都试过几个？</title>
+    <link href="https://guleixibian2009.github.io/2023/01/04/interesting-ubuntu-commands/"/>
+    <id>https://guleixibian2009.github.io/2023/01/04/interesting-ubuntu-commands/</id>
+    <published>2023-01-04T04:22:53.000Z</published>
+    <updated>2023-01-04T07:52:02.316Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;OK那么既然我们安装好了&lt;code&gt;WSL&lt;/code&gt;和&lt;code&gt;Ubuntu&lt;/code&gt;，也成功地打开了它的&lt;code&gt;Gnome&lt;/code&gt;图形界面，肯定要来体验一下，这一篇文章也是在&lt;code&gt;WSL&lt;/code&gt;里面写的。不过在干活之前我也是找了一些有意思的命令，来熟悉一下&lt;code&gt;Ubuntu&lt;/code&gt;的环境，比如：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2023/01/04/pSFYEjA.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：除非特殊提醒，文中提到的包都可以使用&lt;code&gt;apt&lt;/code&gt;安装。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="后端" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="WSL" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/WSL/"/>
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Backend" scheme="https://guleixibian2009.github.io/tags/Backend/"/>
+    
+    <category term="Linux" scheme="https://guleixibian2009.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows-Linux子系统：快速入门</title>
     <link href="https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/"/>
     <id>https://guleixibian2009.github.io/2023/01/03/wsl-installation-guide/</id>
     <published>2023-01-03T04:09:40.000Z</published>
-    <updated>2023-01-03T08:39:07.506Z</updated>
+    <updated>2023-01-04T05:24:29.160Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;code&gt;Ubuntu&lt;/code&gt;是一个以桌面应用为主的&lt;code&gt;Linux&lt;/code&gt;操作系统，很久以前我就听说过它的大名。但当我询问如何在&lt;code&gt;Windows&lt;/code&gt;系统里面安装一个时，我才得知要使用&lt;code&gt;VM Ware&lt;/code&gt;等虚拟机软件，我也就没有去折腾了。不过买新电脑之后发现&lt;code&gt;Win10&lt;/code&gt;自带一个&lt;code&gt;Windows Subsystem for Linux&lt;/code&gt;的虚拟机功能，就来尝试一下。期间我也遇到了占用空间过大，&lt;code&gt;apt&lt;/code&gt;速度慢等问题，这里也顺带说一下解决方案。&lt;/p&gt;
@@ -403,9 +432,9 @@
     <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
     
     
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
-    
     <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   
@@ -472,28 +501,6 @@
 &lt;p&gt;Soon may the Wellerman come,&lt;br&gt;to bring us sugar and tea and rum.&lt;br&gt;One day when the toungin’ is done&lt;br&gt;we’ll take our leave and go.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;这一段颇为“空想”的歌词来自Wellerman，写的是澳大利亚捕鲸船队从斗志昂扬到船毁人亡的悲惨故事。开始远航时，他们高歌：“惠勒曼（澳大利亚捕鲸船队补给公司）的船队马上就会到来！”；危险临近时，他们祈祷：“危险马上就会过去，我们就能回家了！”；但最终，惠勒曼的船队没有到来，船员，终是葬身大海，只留下那段Sea Shanty航海的号子，含恨而终。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="思考" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%80%9D%E8%80%83/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一本正经的胡说八道——生命地铁论</title>
-    <link href="https://guleixibian2009.github.io/2022/09/20/small-but-shining-ideas-03/"/>
-    <id>https://guleixibian2009.github.io/2022/09/20/small-but-shining-ideas-03/</id>
-    <published>2022-09-20T03:19:36.000Z</published>
-    <updated>2022-09-24T03:29:27.087Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;一本正经の胡说八道#1&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;我偶尔会觉得，人一辈子像一趟单行的地铁。这地铁颇有些奇怪：屏显不见了，车厢变多了，速度却时快时慢。&lt;/p&gt;</summary>
     
     
     
