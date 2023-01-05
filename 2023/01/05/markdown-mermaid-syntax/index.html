@@ -29,7 +29,7 @@
 <meta property="og:description" content="我在很久很久以前，似乎给这篇文章发过预告（似乎还是在那篇Markdown语法里面，前年发的了），那我决定把这个坑给填了。 graph LR     A(Markdown语法)--&gt;B[Hexo网站, 手写网站]--&gt;C&gt;鸽了一学期]--&gt;D{WSL与Ubuntu}--&gt;E((Markdown与Mermaid));     A-.本可以!.-&gt;E;  项目官网：Mermaid 如果你想要在Hexo+">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-05T00:25:05.000Z">
-<meta property="article:modified_time" content="2023-01-05T04:42:43.251Z">
+<meta property="article:modified_time" content="2023-01-05T05:39:22.658Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="Markdown">
@@ -250,7 +250,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-01-05 08:25:05 / 修改时间：12:42:43" itemprop="dateCreated datePublished" datetime="2023-01-05T08:25:05+08:00">2023-01-05</time>
+              <time title="创建时间：2023-01-05 08:25:05 / 修改时间：13:39:22" itemprop="dateCreated datePublished" datetime="2023-01-05T08:25:05+08:00">2023-01-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,14 +276,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>5.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -468,7 +468,6 @@
 <h3 id="1-4-子图"><a href="#1-4-子图" class="headerlink" title="1.4 子图"></a>1.4 子图</h3><p>子图的意思是把一个完整的图分为很多小部分，然后互相有联系，基本的语法是：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">subgraph title</span><br><span class="line"><span class="code">    graph definition</span></span><br><span class="line"><span class="code">end</span></span><br></pre></td></tr></table></figure>
 <p>举个例子：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    c1--&gt;a2</span></span><br><span class="line"><span class="code">    subgraph one</span></span><br><span class="line"><span class="code">    a1--&gt;a2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    subgraph two</span></span><br><span class="line"><span class="code">    b1--&gt;b2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    subgraph three</span></span><br><span class="line"><span class="code">    c1--&gt;c2</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    one --&gt; two</span></span><br><span class="line"><span class="code">    three --&gt; two</span></span><br><span class="line"><span class="code">    two --&gt; c2</span></span><br></pre></td></tr></table></figure>
 <pre class="mermaid">flowchart LR
     c1-->a2
     subgraph one
@@ -485,15 +484,15 @@
     two --> c2</pre>
 
 <h3 id="1-5-最终效果"><a href="#1-5-最终效果" class="headerlink" title="1.5 最终效果"></a>1.5 最终效果</h3><p>最后给一个完整的例子：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A[Hard edge] --&gt;|Link text| B(Round edge)</span></span><br><span class="line"><span class="code">    B --&gt; C&#123;Decision&#125;</span></span><br><span class="line"><span class="code">    C --&gt;|One| D[Result one]</span></span><br><span class="line"><span class="code">    C --&gt;|Two| E[Result two]</span></span><br></pre></td></tr></table></figure>
-<pre class="mermaid">flowchart LR
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"><span class="code">    A[Hard edge] --&gt;|Link text| B(Round edge)</span></span><br><span class="line"><span class="code">    B --&gt; C&#123;Decision&#125;</span></span><br><span class="line"><span class="code">    C --&gt;|One| D[Result one]</span></span><br><span class="line"><span class="code">    C --&gt;|Two| E[Result two]</span></span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Result two]</pre>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line"><span class="code">    A[Start] --&gt; B&#123;Is it?&#125;</span></span><br><span class="line"><span class="code">    B -- Yes --&gt; C[OK]</span></span><br><span class="line"><span class="code">    C --&gt; D[Rethink]</span></span><br><span class="line"><span class="code">    D --&gt; B</span></span><br><span class="line"><span class="code">    B -- No ----&gt; E[End]</span></span><br></pre></td></tr></table></figure>
-<pre class="mermaid">flowchart LR
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"><span class="code">    A[Start] --&gt; B&#123;Is it?&#125;</span></span><br><span class="line"><span class="code">    B -- Yes --&gt; C[OK]</span></span><br><span class="line"><span class="code">    C --&gt; D[Rethink]</span></span><br><span class="line"><span class="code">    D --&gt; B</span></span><br><span class="line"><span class="code">    B -- No ----&gt; E[End]</span></span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR
     A[Start] --> B{Is it?}
     B -- Yes --> C[OK]
     C --> D[Rethink]
@@ -501,7 +500,167 @@
     B -- No ----> E[End]</pre>
 
 <hr>
-<p>未完待续~</p>
+<h2 id="2-时序图（Sequence）"><a href="#2-时序图（Sequence）" class="headerlink" title="2. 时序图（Sequence）"></a>2. 时序图（<code>Sequence</code>）</h2><p>可能大家见过这样一组对话：</p>
+<pre class="mermaid">sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!</pre>
+
+<p>这种展现对话的方法叫做时序图，<code>sequence diagram</code>。主要特征，就是多个参与者<code>participant</code>和会话内容分别平行。</p>
+<h3 id="2-1-基础语法"><a href="#2-1-基础语法" class="headerlink" title="2.1 基础语法"></a>2.1 基础语法</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    participant Alice</span></span><br><span class="line"><span class="code">    participant Bob</span></span><br><span class="line"><span class="code">    Alice-&gt;&gt;Bob: Hi Bob</span></span><br><span class="line"><span class="code">    Bob-&gt;&gt;Alice: Hi Alice</span></span><br></pre></td></tr></table></figure>
+<p>首先<code>sequenceDiagram</code>标志这是时序图。然后我们要规定这张图里边有哪些参与者<code>participant</code>，这里则是Alice和Bob。最后就可以加入对话了。</p>
+<h4 id="2-1-1-participant和actor"><a href="#2-1-1-participant和actor" class="headerlink" title="2.1.1 participant和actor"></a>2.1.1 <code>participant</code>和<code>actor</code></h4><p>默认情况下使用<code>participant</code>命令会把人名用一个方框框起来，如果你不想这样的话，可以试试<code>actor</code>命令：</p>
+<pre class="mermaid">sequenceDiagram
+    actor Alice
+    actor Bob
+    Alice->>Bob: Hi Bob
+    Bob->>Alice: Hi Alice</pre>
+
+<p>其次就是一个简写，如果你觉得人名过长的话，可以使用简写<code>alias</code>：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    participant A as Alice</span></span><br><span class="line"><span class="code">    participant J as John</span></span><br><span class="line"><span class="code">    A-&gt;&gt;J: Hello John, how are you?</span></span><br><span class="line"><span class="code">    J-&gt;&gt;A: Great!</span></span><br></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+    participant A as Alice
+    participant J as John
+    A->>J: Hello John, how are you?
+    J->>A: Great!</pre>
+
+<p>这样多个字符的人名就可以简化为一个。</p>
+<h3 id="2-1-2-线型"><a href="#2-1-2-线型" class="headerlink" title="2.1.2 线型"></a>2.1.2 线型</h3><p>时序图的线型会比流程图简单一点，只有8种：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">线型</th>
+<th style="text-align:center">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">实线</td>
+<td style="text-align:center"><code>-&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">带箭头的实线</td>
+<td style="text-align:center"><code>-&gt;&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">虚线</td>
+<td style="text-align:center"><code>--&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">带箭头的虚线</td>
+<td style="text-align:center"><code>--&gt;&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">带<code>x</code>的实线</td>
+<td style="text-align:center"><code>-x</code></td>
+</tr>
+<tr>
+<td style="text-align:center">带<code>x</code>的虚线</td>
+<td style="text-align:center"><code>--x</code></td>
+</tr>
+<tr>
+<td style="text-align:center">带圆角箭头的实线</td>
+<td style="text-align:center"><code>-)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">带圆角箭头的虚线</td>
+<td style="text-align:center"><code>--)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="mermaid">sequenceDiagram
+    actor A as Alice
+    actor B as Bob
+    A->B: Hello!
+    B->>A: Hi!
+    A-->B: How are you today?
+    B-->>A: Fine, thx, and you?
+    A-xB: I'm great!
+    B--xA: Want to go to the movies?
+    A-)B: Of course!
+    B--)A: Let's go!</pre>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    actor A as Alice</span></span><br><span class="line"><span class="code">    actor B as Bob</span></span><br><span class="line"><span class="code">    A-&gt;B: Hello!</span></span><br><span class="line"><span class="code">    B-&gt;&gt;A: Hi!</span></span><br><span class="line"><span class="code">    A--&gt;B: How are you today?</span></span><br><span class="line"><span class="code">    B--&gt;&gt;A: Fine, thx, and you?</span></span><br><span class="line"><span class="code">    A-xB: I&#x27;m great!</span></span><br><span class="line"><span class="code">    B--xA: Want to go to the movies?</span></span><br><span class="line"><span class="code">    A-)B: Of course!</span></span><br><span class="line"><span class="code">    B--)A: Let&#x27;s go!</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2-标志会话范围"><a href="#2-2-标志会话范围" class="headerlink" title="2.2 标志会话范围"></a>2.2 标志会话范围</h2><p>在谈话过程中可能会发生话题的转移。这里有两种方式来标志话题的范围：</p>
+<h3 id="2-2-1-de-activate"><a href="#2-2-1-de-activate" class="headerlink" title="2.2.1 (de)activate"></a>2.2.1 <code>(de)activate</code></h3><p><code>activate</code>命令可以这么写：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    Alice-&gt;&gt;John: Hello John, how are you?</span></span><br><span class="line"><span class="code">    activate John</span></span><br><span class="line"><span class="code">    John--&gt;&gt;Alice: Great!</span></span><br><span class="line"><span class="code">    deactivate John</span></span><br></pre></td></tr></table></figure>
+<p>或直接在箭头后添加符号<code>+</code>或<code>-</code>：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    Alice-&gt;&gt;+John: Hello John, how are you?</span></span><br><span class="line"><span class="code">    John--&gt;&gt;-Alice: Great!</span></span><br></pre></td></tr></table></figure>
+<p>效果都是</p>
+<pre class="mermaid">sequenceDiagram
+    Alice->>+John: Hello John, how are you?
+    John-->>-Alice: Great!</pre>
+
+<p>它也可以层叠使用：</p>
+<pre class="mermaid">sequenceDiagram
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!</pre>
+
+<h3 id="2-2-2-背景颜色"><a href="#2-2-2-背景颜色" class="headerlink" title="2.2.2 背景颜色"></a>2.2.2 背景颜色</h3><pre class="mermaid">sequenceDiagram
+    participant Alice
+    participant John
+
+    rect rgb(191, 223, 255)
+    Alice->>+John: Hello John, how are you?
+    rect rgb(200, 150, 255)
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    end
+    John-->>-Alice: I feel great!
+    end
+    Alice ->>+ John: Did you want to go to the game tonight?
+    John -->>- Alice: Yeah! See you there.</pre>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    participant Alice</span></span><br><span class="line"><span class="code">    participant John</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">    rect rgb(191, 223, 255)</span></span><br><span class="line"><span class="code">    Alice-&gt;&gt;+John: Hello John, how are you?</span></span><br><span class="line"><span class="code">    rect rgb(200, 150, 255)</span></span><br><span class="line"><span class="code">    Alice-&gt;&gt;+John: John, can you hear me?</span></span><br><span class="line"><span class="code">    John--&gt;&gt;-Alice: Hi Alice, I can hear you!</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    John--&gt;&gt;-Alice: I feel great!</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    Alice -&gt;&gt;+ John: Did you want to go to the game tonight?</span></span><br><span class="line"><span class="code">    John --&gt;&gt;- Alice: Yeah! See you there.</span></span><br></pre></td></tr></table></figure>
+<p>在这个里面<code>rect</code>指令配合<code>end</code>使用就可以对某个区域进行背景高亮。颜色用<code>rgb()</code>来添加。</p>
+<h2 id="2-3-思考-amp-note"><a href="#2-3-思考-amp-note" class="headerlink" title="2.3 思考&amp;note"></a>2.3 思考&amp;<code>note</code></h2><pre class="mermaid">sequenceDiagram
+    Alice->John: Hello John, how are you?
+    Note right of John: thinking...
+    Note over Alice,John: A typical interaction</pre>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    Alice-&gt;John: Hello John, how are you?</span></span><br><span class="line"><span class="code">    Note right of John: thinking...</span></span><br><span class="line"><span class="code">    Note over Alice,John: A typical interaction</span></span><br></pre></td></tr></table></figure>
+<p>这个图里面有两种<code>note</code>，一个是在某人一侧的，一种是横跨几个人，分别用<code>Note left/right of</code>和<code>Note over</code>.</p>
+<h2 id="2-4-循环、选择、平行"><a href="#2-4-循环、选择、平行" class="headerlink" title="2.4 循环、选择、平行"></a>2.4 循环、选择、平行</h2><p>循环和选择的语法类似。循环表示一直回复某消息：</p>
+<pre class="mermaid">sequenceDiagram
+    Alice->John: Hello John, how are you?
+    loop Every minute
+        John-->Alice: Great!
+    end</pre>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    Alice-&gt;John: Hello John, how are you?</span></span><br><span class="line"><span class="code">    loop Every minute</span></span><br><span class="line"><span class="code">        John--&gt;Alice: Great!</span></span><br><span class="line"><span class="code">    end</span></span><br></pre></td></tr></table></figure>
+<p>首先用<code>loop</code>来标志一个循环，后面写上间隔。最后搭配<code>end</code>来标志循环结束。</p>
+<p>选择则是一种条件语句：</p>
+<pre class="mermaid">sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good :(
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+        Bob->>Alice: Thanks for asking
+    end</pre>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    Alice-&gt;&gt;Bob: Hello Bob, how are you?</span></span><br><span class="line"><span class="code">    alt is sick</span></span><br><span class="line"><span class="code">        Bob-&gt;&gt;Alice: Not so good :(</span></span><br><span class="line"><span class="code">    else is well</span></span><br><span class="line"><span class="code">        Bob-&gt;&gt;Alice: Feeling fresh like a daisy</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    opt Extra response</span></span><br><span class="line"><span class="code">        Bob-&gt;&gt;Alice: Thanks for asking</span></span><br><span class="line"><span class="code">    end</span></span><br></pre></td></tr></table></figure>
+<p>这里<code>alt</code>标志选择，搭配<code>else</code>使用。<code>opt</code>则标志<code>option</code>，额外的、可选的消息。</p>
+<p>平行则是指某人同时发出消息：</p>
+<pre class="mermaid">sequenceDiagram
+    par Alice to Bob
+        Alice->>Bob: Hello guys!
+    and Alice to John
+        Alice->>John: Hello guys!
+    end
+    Bob-->>Alice: Hi Alice!
+    John-->>Alice: Hi Alice!</pre>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"><span class="code">    par Alice to Bob</span></span><br><span class="line"><span class="code">        Alice-&gt;&gt;Bob: Hello guys!</span></span><br><span class="line"><span class="code">    and Alice to John</span></span><br><span class="line"><span class="code">        Alice-&gt;&gt;John: Hello guys!</span></span><br><span class="line"><span class="code">    end</span></span><br><span class="line"><span class="code">    Bob--&gt;&gt;Alice: Hi Alice!</span></span><br><span class="line"><span class="code">    John--&gt;&gt;Alice: Hi Alice!</span></span><br></pre></td></tr></table></figure>
+<p><code>par</code>标志<code>parallel</code>，平行，搭配<code>and</code>使用。</p>
+<hr>
+<p>未完待续~ </p>
 
     </div>
 
@@ -652,19 +811,19 @@
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-livere">livere</a></li>
             <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
         </ul>
         <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
             <div class="tab-pane livere" id="comment-livere">
               
   <div class="comments">
     <div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNi8zMzY3MA=="></div>
   </div>
   
-            </div>
-            <div class="tab-pane gitalk" id="comment-gitalk">
-              <div class="comments" id="gitalk-container"></div>
             </div>
         </div>
       </div>
@@ -714,7 +873,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-text">1. 流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%96%B9%E5%90%91"><span class="nav-text">1.1 方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E8%8A%82%E7%82%B9"><span class="nav-text">1.2 节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E8%BF%9E%E7%BA%BF"><span class="nav-text">1.3 连线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E5%AD%90%E5%9B%BE"><span class="nav-text">1.4 子图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="nav-text">1.5 最终效果</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-text">1. 流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%96%B9%E5%90%91"><span class="nav-text">1.1 方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E8%8A%82%E7%82%B9"><span class="nav-text">1.2 节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E8%BF%9E%E7%BA%BF"><span class="nav-text">1.3 连线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E5%AD%90%E5%9B%BE"><span class="nav-text">1.4 子图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="nav-text">1.5 最终效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%97%B6%E5%BA%8F%E5%9B%BE%EF%BC%88Sequence%EF%BC%89"><span class="nav-text">2. 时序图（Sequence）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">2.1 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-participant%E5%92%8Cactor"><span class="nav-text">2.1.1 participant和actor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-%E7%BA%BF%E5%9E%8B"><span class="nav-text">2.1.2 线型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%A0%87%E5%BF%97%E4%BC%9A%E8%AF%9D%E8%8C%83%E5%9B%B4"><span class="nav-text">2.2 标志会话范围</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-de-activate"><span class="nav-text">2.2.1 (de)activate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2"><span class="nav-text">2.2.2 背景颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%80%9D%E8%80%83-amp-note"><span class="nav-text">2.3 思考&amp;note</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%BE%AA%E7%8E%AF%E3%80%81%E9%80%89%E6%8B%A9%E3%80%81%E5%B9%B3%E8%A1%8C"><span class="nav-text">2.4 循环、选择、平行</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -801,13 +960,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">139k</span>
+    <span title="站点总字数">143k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:06</span>
+    <span title="站点阅读时长">2:10</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -968,22 +1127,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
-</script>
-
 <link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
@@ -1002,6 +1145,22 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
 });
 </script>
 
