@@ -156,7 +156,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">34</span></a>
 
   </li>
         <li class="menu-item menu-item-rss">
@@ -687,6 +687,17 @@
   <div class="popular-posts-header">相关文章  为你推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+        <div class="popular-posts-date">2023-01-05</div>
+      <div class="popular-posts-title"><a href="\2023\01\05\markdown-mermaid-syntax\" rel="bookmark">Markdown&Mermaid——告别复杂软件，轻松画图表</a></div>
+        <div class="popular-posts-excerpt"><p><p>我在很久很久以前，似乎给这篇文章发过预告（似乎还是在那篇<code>Markdown</code>语法里面，前年发的了），那我决定把这个坑给填了。</p>
+<pre class="mermaid">graph LR
+    A(Markdown语法)-->B[Hexo网站, 手写网站]-->C>鸽了一学期]-->D{WSL与Ubuntu}-->E((Markdown与Mermaid));
+    A-.本可以!.->E;</pre>
+
+<p>项目官网：<a target="_blank" rel="noopener" href="https://mermaid.js.org/">Mermaid</a></p>
+<p><strong>如果你想要在<code>Hexo+Next</code>中渲染<code>Mermaid</code>图表，请参见本文最后一章。</strong></p></p></div>
+    </li>
+    <li class="popular-posts-item">
         <div class="popular-posts-date">2023-01-02</div>
       <div class="popular-posts-title"><a href="\2023\01\02\buffons-neddle-in-python\" rel="bookmark">针、圆周率与……Python?</a></div>
         <div class="popular-posts-excerpt"><p><blockquote>
@@ -702,11 +713,6 @@
         <div class="popular-posts-excerpt"><p><p>OK那么既然我们安装好了<code>WSL</code>和<code>Ubuntu</code>，也成功地打开了它的<code>Gnome</code>图形界面，肯定要来体验一下，这一篇文章也是在<code>WSL</code>里面写的。不过在干活之前我也是找了一些有意思的命令，来熟悉一下<code>Ubuntu</code>的环境，比如：</p>
 <p><img src="https://s1.ax1x.com/2023/01/04/pSFYEjA.png" alt=""></p>
 <p><strong>注：除非特殊提醒，文中提到的包都可以使用<code>apt</code>安装。</strong></p></p></div>
-    </li>
-    <li class="popular-posts-item">
-        <div class="popular-posts-date">2022-09-13</div>
-      <div class="popular-posts-title"><a href="\2022\09\13\other-projects\" rel="bookmark">介绍一下我的其他项目~</a></div>
-        <div class="popular-posts-excerpt"><p><p style="text-align: center;">不妨点进来，支持一下！😊</p></p></div>
     </li>
   </ul>
 
@@ -830,19 +836,19 @@
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
             <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane gitalk" id="comment-gitalk">
-              <div class="comments" id="gitalk-container"></div>
-            </div>
             <div class="tab-pane livere" id="comment-livere">
               
   <div class="comments">
     <div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNi8zMzY3MA=="></div>
   </div>
   
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
             </div>
         </div>
       </div>
@@ -908,7 +914,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -979,13 +985,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">137k</span>
+    <span title="站点总字数">139k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:05</span>
+    <span title="站点阅读时长">2:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -1070,6 +1076,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//fastly.jsdelivr.net/npm/mermaid@9/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
@@ -1133,6 +1152,22 @@
 
   
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
 <link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
@@ -1151,22 +1186,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
-});
-</script>
-
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
 });
 </script>
 

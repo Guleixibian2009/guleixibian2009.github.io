@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-04T07:52:02.316Z</updated>
+  <updated>2023-01-05T04:42:43.251Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown&amp;Mermaid——告别复杂软件，轻松画图表</title>
+    <link href="https://guleixibian2009.github.io/2023/01/05/markdown-mermaid-syntax/"/>
+    <id>https://guleixibian2009.github.io/2023/01/05/markdown-mermaid-syntax/</id>
+    <published>2023-01-05T00:25:05.000Z</published>
+    <updated>2023-01-05T04:42:43.251Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我在很久很久以前，似乎给这篇文章发过预告（似乎还是在那篇&lt;code&gt;Markdown&lt;/code&gt;语法里面，前年发的了），那我决定把这个坑给填了。&lt;/p&gt;
+&lt;pre class=&quot;mermaid&quot;&gt;graph LR
+    A(Markdown语法)--&gt;B[Hexo网站, 手写网站]--&gt;C&gt;鸽了一学期]--&gt;D{WSL与Ubuntu}--&gt;E((Markdown与Mermaid));
+    A-.本可以!.-&gt;E;&lt;/pre&gt;
+
+&lt;p&gt;项目官网：&lt;a href=&quot;https://mermaid.js.org/&quot;&gt;Mermaid&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果你想要在&lt;code&gt;Hexo+Next&lt;/code&gt;中渲染&lt;code&gt;Mermaid&lt;/code&gt;图表，请参见本文最后一章。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/"/>
+    
+    <category term="Markdown语法" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/Markdown%E8%AF%AD%E6%B3%95/"/>
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
+    
+    <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>那些有趣的Linux命令，你都试过几个？</title>
@@ -432,9 +465,9 @@
     <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
     
     
-    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
-    
     <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
     
   </entry>
   
@@ -482,31 +515,6 @@
     <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一本正经的胡说八道——记忆黑洞论</title>
-    <link href="https://guleixibian2009.github.io/2022/09/22/small-but-shining-ideas-05/"/>
-    <id>https://guleixibian2009.github.io/2022/09/22/small-but-shining-ideas-05/</id>
-    <published>2022-09-22T01:00:42.000Z</published>
-    <updated>2022-10-01T03:34:42.157Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;一本正经の胡说八道#2&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Soon may the Wellerman come,&lt;br&gt;to bring us sugar and tea and rum.&lt;br&gt;One day when the toungin’ is done&lt;br&gt;we’ll take our leave and go.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这一段颇为“空想”的歌词来自Wellerman，写的是澳大利亚捕鲸船队从斗志昂扬到船毁人亡的悲惨故事。开始远航时，他们高歌：“惠勒曼（澳大利亚捕鲸船队补给公司）的船队马上就会到来！”；危险临近时，他们祈祷：“危险马上就会过去，我们就能回家了！”；但最终，惠勒曼的船队没有到来，船员，终是葬身大海，只留下那段Sea Shanty航海的号子，含恨而终。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="思考" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%80%9D%E8%80%83/"/>
     
     
     <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
