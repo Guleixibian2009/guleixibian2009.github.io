@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-05T05:39:22.658Z</updated>
+  <updated>2023-01-05T07:09:31.022Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>漫谈密码学——不仅仅是password</title>
+    <link href="https://guleixibian2009.github.io/2023/01/06/ramble-on-cryptography/"/>
+    <id>https://guleixibian2009.github.io/2023/01/06/ramble-on-cryptography/</id>
+    <published>2023-01-06T00:04:44.000Z</published>
+    <updated>2023-01-05T07:09:31.022Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;漫谈密码学，这是这个学期我研究性学习的主题。这次合作之路坎坎坷坷，中期报告和最后的结题报告分别因为活动和疫情取消了，但我也还是用心的写了几个有关加密的程序，最后的成绩也还不错。现在用这篇文章来做一个总结，也顺带再来“漫谈密码学”。&lt;/p&gt;
+&lt;p&gt;漫谈的内容主要有，密码学的定义与历史，艾伦·图灵，和三类加密方式。我也会展示我写的四个程序，讲一讲当时的思路。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Cryptography" scheme="https://guleixibian2009.github.io/tags/Cryptography/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Markdown&amp;Mermaid——告别复杂软件，轻松画图表</title>
     <link href="https://guleixibian2009.github.io/2023/01/05/markdown-mermaid-syntax/"/>
     <id>https://guleixibian2009.github.io/2023/01/05/markdown-mermaid-syntax/</id>
     <published>2023-01-05T00:25:05.000Z</published>
-    <updated>2023-01-05T05:39:22.658Z</updated>
+    <updated>2023-01-05T06:29:33.155Z</updated>
     
     
     <summary type="html">&lt;p&gt;我在很久很久以前，似乎给这篇文章发过预告（似乎还是在那篇&lt;code&gt;Markdown&lt;/code&gt;语法里面，前年发的了），那我决定把这个坑给填了。&lt;/p&gt;
@@ -496,28 +522,6 @@
     <category term="GitHub" scheme="https://guleixibian2009.github.io/tags/GitHub/"/>
     
     <category term="Git" scheme="https://guleixibian2009.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你是那个圈？！</title>
-    <link href="https://guleixibian2009.github.io/2022/09/23/small-but-shining-ideas-04/"/>
-    <id>https://guleixibian2009.github.io/2022/09/23/small-but-shining-ideas-04/</id>
-    <published>2022-09-23T03:22:37.000Z</published>
-    <updated>2022-09-24T03:26:44.714Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;9.23 画信话心课后有感&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果说，第一次画信课是一种硬着头皮的尝试，那上周那节课，让我对它彻底改变了看法。与伟长结缘之后，我自然是无比期待与梅子老师再次相遇。千呼万唤始出来，终于让我盼到了又一个周五。&lt;br&gt;在这几节课中，我同样注意到更多的细节。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
