@@ -29,7 +29,7 @@
 <meta property="og:description" content="漫谈密码学，这是这个学期我研究性学习的主题。这次合作之路坎坎坷坷，中期报告和最后的结题报告分别因为活动和疫情取消了，但我也还是用心的写了几个有关加密的程序，最后的成绩也还不错。现在用这篇文章来做一个总结，也顺带再来“漫谈密码学”。 漫谈的内容主要有，密码学的定义与历史，艾伦·图灵，和三类加密方式。我也会展示我写的四个程序，讲一讲当时的思路。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-06T00:04:44.000Z">
-<meta property="article:modified_time" content="2023-01-06T04:09:14.355Z">
+<meta property="article:modified_time" content="2023-01-06T06:07:22.181Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="编程">
@@ -250,7 +250,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-01-06 08:04:44 / 修改时间：12:09:14" itemprop="dateCreated datePublished" datetime="2023-01-06T08:04:44+08:00">2023-01-06</time>
+              <time title="创建时间：2023-01-06 08:04:44 / 修改时间：14:07:22" itemprop="dateCreated datePublished" datetime="2023-01-06T08:04:44+08:00">2023-01-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,14 +272,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>15k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>14 分钟</span>
+              <span>15 分钟</span>
             </span>
 
         </div>
@@ -385,7 +385,33 @@ c \oplus b = a</script><p>为了让加密更安全，我决定每一次随机生
 <p>此外，非对称式加密可以用于数字签名。甲方使用自己的私有密钥对信息进行加密后再发送给乙方；乙方使用甲方提供的公开密钥对加密后的信息进行解密，如果成功解密即可证实信息确实是由甲方所发，并非他人冒充，这就是常用的数字签名技术。</p>
 <p>常见的应用有<code>Git</code>，在配置时生成的就是非对称的一对公钥、密钥。</p>
 <hr>
-<p>未完待续~</p>
+<h2 id="4-延伸——艾伦·图灵与图灵机"><a href="#4-延伸——艾伦·图灵与图灵机" class="headerlink" title="4. 延伸——艾伦·图灵与图灵机"></a>4. 延伸——艾伦·图灵与图灵机</h2><p>前文提到了艾伦·图灵发明炸弹机，但这并不是图灵最大的成就。他最大的成就是另一台机器，以他的名字命名——图灵机。</p>
+<p>图灵机，指一个抽象的机器，是图灵于1936年提出的一种抽象的计算模型，即将人们使用纸笔进行数学运算的过程进行抽象，由一个虚拟的机器替代人类进行数学运算。它有一条无限长的纸带，纸带分成了一个一个的小方格，每个方格有不同的颜色。有一个机器头在纸带上移来移去。机器头有一组内部状态，还有一些固定的程序。在每个时刻，机器头都要从当前纸带上读入一个方格信息，然后结合自己的内部状态查找程序表，根据程序输出信息到纸带方格上，并转换自己的内部状态，然后进行移动。</p>
+<p>图灵的基本思想是用机器来模拟人们用纸笔进行数学运算的过程，他把这样的过程看作下列两种简单的动作：</p>
+<ol>
+<li><p>在纸上写上或擦除某个符号;</p>
+</li>
+<li><p>把注意力从纸的一个位置移动到另一个位置。</p>
+</li>
+</ol>
+<p>而在每个阶段，人要决定下一步的动作，依赖于(1)此人当前所关注的纸上某个位置的符号和(2)此人当前思维的状态。为了模拟人的这种运算过程，图灵构造出一台假想的机器，该机器由以下几个部分组成:</p>
+<ol>
+<li><p>一条无限长的纸带TAPE。纸带被划分为一个接一个的小格子，每个格子上包含一个来自有限字母表的符号，字母表中有一个特殊的符号表示空白。纸带上的格子从左到右依此被编号为0，1，2，..纸带的右端可以无限伸展。</p>
+</li>
+<li><p>一个读写头HEAD。该读写头可以在纸带上左右移动，它能读出当前所指的格子上的符号，并能改变当前格子上的符号。</p>
+</li>
+<li><p>一套控制规则TABLE。它根据当前机器所处的状态以及当前读写头所指的格子上的符号来确定读写头下一步的动作，并改变状态寄存器的值，令机器进入一个新的状态。</p>
+</li>
+<li><p>一个状态寄存器。它用来保存图灵机当前所处的状态。图灵机的所有可能状态的数目是有限的，并且有一个特殊的状态，称为停机状态。这里也引申出来一个停机问题。</p>
+</li>
+</ol>
+<p>注意这个机器的每一部分都是有限的，但它有一个潜在的无限长的纸带，因此这种机器只是一个理想的设备。图灵认为这样的一台机器就能模拟人类所能进行的任何计算过程。图灵机证明了通用计算理论，肯定了计算机实现的可能性，同时它给出了计算机应有的主要架构，引入了读写与算法与程序语言的概念，极大的突破了过去的计算机器的设计理念。</p>
+<p>最后再来看一个视频，了解一下停机问题。</p>
+<video src="../../../../videos/HaltProblem.mp4" controls="controls" />
+
+<hr>
+<p>虽然我没能把准备的所有内容都讲给我的同学听，但还是很高兴做了这次复盘，也算是了了自己一个心愿。</p>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 
     </div>
 
@@ -598,7 +624,7 @@ c \oplus b = a</script><p>为了让加密更安全，我决定每一次随机生
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B5%B7%E6%BA%90"><span class="nav-text">1. 密码学的定义与起源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%9F"><span class="nav-text">1.1 什么是密码学？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%9C%80%E6%97%A9%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="nav-text">1.2 最早的密码学</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BA%8C%E6%88%98%E6%97%B6%E6%9C%9F%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="nav-text">2. 二战时期的密码学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%81%A9%E5%B0%BC%E6%A0%BC%E7%A0%81%E6%9C%BA"><span class="nav-text">2.1 恩尼格码机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%82%B8%E5%BC%B9%E6%9C%BA"><span class="nav-text">2.2 炸弹机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B8%89%E7%B1%BB%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="nav-text">3. 三类加密方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%AF%B9%E7%A7%B0%E5%BC%8F%E5%8A%A0%E5%AF%86"><span class="nav-text">3.1 对称式加密</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="nav-text">3.1.1 凯撒密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-%E5%9F%BA%E4%BA%8E%E5%BC%82%E6%88%96%E7%9A%84%E5%8A%A0%E5%AF%86"><span class="nav-text">3.1.2 基于异或的加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95Hash"><span class="nav-text">3.2 摘要算法Hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%BC%8F%E5%8A%A0%E5%AF%86"><span class="nav-text">3.3 非对称式加密</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%B5%B7%E6%BA%90"><span class="nav-text">1. 密码学的定义与起源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%9F"><span class="nav-text">1.1 什么是密码学？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%9C%80%E6%97%A9%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="nav-text">1.2 最早的密码学</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BA%8C%E6%88%98%E6%97%B6%E6%9C%9F%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="nav-text">2. 二战时期的密码学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E6%81%A9%E5%B0%BC%E6%A0%BC%E7%A0%81%E6%9C%BA"><span class="nav-text">2.1 恩尼格码机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%82%B8%E5%BC%B9%E6%9C%BA"><span class="nav-text">2.2 炸弹机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B8%89%E7%B1%BB%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F"><span class="nav-text">3. 三类加密方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%AF%B9%E7%A7%B0%E5%BC%8F%E5%8A%A0%E5%AF%86"><span class="nav-text">3.1 对称式加密</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="nav-text">3.1.1 凯撒密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-%E5%9F%BA%E4%BA%8E%E5%BC%82%E6%88%96%E7%9A%84%E5%8A%A0%E5%AF%86"><span class="nav-text">3.1.2 基于异或的加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%91%98%E8%A6%81%E7%AE%97%E6%B3%95Hash"><span class="nav-text">3.2 摘要算法Hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%BC%8F%E5%8A%A0%E5%AF%86"><span class="nav-text">3.3 非对称式加密</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%BB%B6%E4%BC%B8%E2%80%94%E2%80%94%E8%89%BE%E4%BC%A6%C2%B7%E5%9B%BE%E7%81%B5%E4%B8%8E%E5%9B%BE%E7%81%B5%E6%9C%BA"><span class="nav-text">4. 延伸——艾伦·图灵与图灵机</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -685,7 +711,7 @@ c \oplus b = a</script><p>为了让加密更安全，我决定每一次随机生
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">162k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
