@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-07T09:47:11.728Z</updated>
+  <updated>2023-01-07T11:48:03.146Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生命游戏：在不确定中寻找确定</title>
+    <link href="https://guleixibian2009.github.io/2023/01/08/life-game-in-python/"/>
+    <id>https://guleixibian2009.github.io/2023/01/08/life-game-in-python/</id>
+    <published>2023-01-08T00:02:11.000Z</published>
+    <updated>2023-01-07T11:48:03.146Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;“在不确定中寻找确定”，这是我的语文老师在2022年2月刚开始转线上课时对我们的一句嘱咐。如今，疫情尘埃落定，也据说再也不会有网课了。也许，这就是生命——繁衍生息、变幻莫测。&lt;/p&gt;
+&lt;p&gt;但这两个词，又让我想起了另一种“生命”——康威生命游戏。这两天，灵机一动，用&lt;code&gt;Python&lt;/code&gt;实现了这“零玩家游戏”。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>【转】jQuery——从此前端JavaScript……不再愁？！</title>
@@ -511,27 +535,6 @@
     
     
     <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>还需要……加速吗？</title>
-    <link href="https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/"/>
-    <id>https://guleixibian2009.github.io/2022/09/26/more-ways-to-speed-up/</id>
-    <published>2022-09-26T11:29:21.000Z</published>
-    <updated>2022-10-27T12:27:37.213Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：&lt;code&gt;pip&lt;/code&gt;镜像、&lt;code&gt;Microsoft Store&lt;/code&gt;加速、&lt;code&gt;VSCode&lt;/code&gt;下载链接和&lt;code&gt;Google Recaptcha&lt;/code&gt;加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
-    
-    
-    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
-    
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   
