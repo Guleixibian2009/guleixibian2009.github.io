@@ -29,7 +29,7 @@
 <meta property="og:description" content="最近计划把我去年上半年的Hand-Written-HTML-Site拿出来讲一讲，展示一下我研究JavaScript的成果。在写的过程中我用到了jQuery，这里先转一篇入门的教程过来，后面如果有需要的话可以来这里查阅。 原文链接、参考资料：  jQuery入门 - 知乎  jQuery入门教程_小宇爱吃辣条的博客-CSDN博客_jquery教程  JQuery中Ajax的简单操作_低头只管敲的博">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-07T00:07:52.000Z">
-<meta property="article:modified_time" content="2023-01-06T13:42:38.842Z">
+<meta property="article:modified_time" content="2023-01-07T07:18:48.117Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="Frontend">
@@ -250,16 +250,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-01-07 08:07:52" itemprop="dateCreated datePublished" datetime="2023-01-07T08:07:52+08:00">2023-01-07</time>
+              <time title="创建时间：2023-01-07 08:07:52 / 修改时间：15:18:48" itemprop="dateCreated datePublished" datetime="2023-01-07T08:07:52+08:00">2023-01-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-06 21:42:38" itemprop="dateModified" datetime="2023-01-06T21:42:38+08:00">2023-01-06</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -280,14 +274,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>210</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>12 分钟</span>
             </span>
 
         </div>
@@ -310,6 +304,357 @@
 </li>
 </ol>
 <span id="more"></span>
+<h2 id="1-使用jQuery"><a href="#1-使用jQuery" class="headerlink" title="1. 使用jQuery"></a>1. 使用<code>jQuery</code></h2><p><code>jQuery</code>是一个快速、简洁的<code>JavaScript</code>框架，于2006年1月由John Resig发布。<code>jQuery</code>设计的宗旨是<code>Write Less，Do More</code>，即倡导写更少的代码，做更多的事情。它封装<code>JavaScript</code>常用的功能代码，提供一种简便的<code>JavaScript</code>设计模式，优化<code>HTML</code>文档操作、事件处理、动画设计和<code>Ajax</code>交互。</p>
+<p>一般为了获取最新的<code>jQuery</code>，我们使用<code>CDN</code>，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-jQuery元素选择器"><a href="#2-jQuery元素选择器" class="headerlink" title="2. jQuery元素选择器"></a>2. <code>jQuery</code>元素选择器</h2><h3 id="2-1-元素选择器"><a href="#2-1-元素选择器" class="headerlink" title="2.1 元素选择器"></a>2.1 元素选择器</h3><p><code>jQuery</code>使用<code>CSS</code>选择器来选取<code>HTML</code>元素：</p>
+<ol>
+<li><p><code>$(&quot;p&quot;)</code> 选取 <code>&lt;p&gt;</code> 元素</p>
+</li>
+<li><p><code>$(&quot;p.intro&quot;)</code> 选取所有<code>class=intro</code>的<code>&lt;p&gt;</code>元素</p>
+</li>
+<li><p><code>$(&quot;p#demo&quot;)</code>选取所有<code>id=&quot;demo&quot;</code>的<code>&lt;p&gt;</code>元素</p>
+</li>
+</ol>
+<h3 id="2-2-属性选择器"><a href="#2-2-属性选择器" class="headerlink" title="2.2 属性选择器"></a>2.2 属性选择器</h3><ol>
+<li><p><code>$(&quot;[href]&quot;)</code> 选取所有带有<code>href</code>属性的元素</p>
+</li>
+<li><p><code>$(&quot;[href=&#39;#&#39;]&quot;)</code> 选取所有带有<code>href</code>值等于<code>#</code>的元素</p>
+</li>
+<li><p><code>$(&quot;[href!=&#39;#&#39;]&quot;)</code> 选取所有带有<code>href</code>值不等于<code>#</code>的元素</p>
+</li>
+<li><p><code>$(&quot;[href$=&#39;.jpg&#39;]&quot;)</code> 选取所有<code>href</code>值以<code>.jpg</code>结尾的元素</p>
+</li>
+</ol>
+<h3 id="2-3-更多例子"><a href="#2-3-更多例子" class="headerlink" title="2.3 更多例子"></a>2.3 更多例子</h3><ol>
+<li><p><code>$(&quot;p.intro.demo&quot;)</code>选取所有<code>class=intro</code>同时<code>class=demo</code>的<code>&lt;p&gt;</code>元素</p>
+</li>
+<li><p><code>$(this)</code>选取<code>JavaScript</code>中当前元素</p>
+</li>
+<li><p><code>$(&quot;*&quot;)</code>选取所有元素</p>
+</li>
+<li><p><code>$(&quot;p,i,a&quot;)</code>选取所有<code>&lt;p&gt;</code>、<code>&lt;i&gt;</code>和<code>&lt;a&gt;</code></p>
+</li>
+</ol>
+<h3 id="2-4-层次选择器"><a href="#2-4-层次选择器" class="headerlink" title="2.4 层次选择器"></a>2.4 层次选择器</h3><ol>
+<li><p><code>$(&quot;p a&quot;)</code>选择所有<code>&lt;p&gt;</code>中的<code>&lt;a&gt;</code></p>
+</li>
+<li><p><code>$(&quot;div.demo &gt; div&quot;)</code>选择<code>&lt;div class=&quot;demo&quot;&gt;</code>中的<code>&lt;div&gt;</code>，不包括这些<code>&lt;div&gt;</code>的子代<code>&lt;div&gt;</code></p>
+</li>
+<li><p><code>$(&quot;span.code + button.copy&quot;)</code>选择<code>&lt;span class=&quot;code&quot;&gt;</code>后最相邻的<code>&lt;button class=&quot;copy&quot;&gt;</code></p>
+</li>
+<li><p><code>$(&quot;span#demo ~ img&quot;)</code>选择<code>&lt;span id=&quot;demo&quot;&gt;</code>后所有<code>&lt;img&gt;</code></p>
+</li>
+</ol>
+<h3 id="2-5-过滤选择器"><a href="#2-5-过滤选择器" class="headerlink" title="2.5 过滤选择器"></a>2.5 过滤选择器</h3><h4 id="2-5-1-基本过滤"><a href="#2-5-1-基本过滤" class="headerlink" title="2.5.1 基本过滤"></a>2.5.1 基本过滤</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>选择器</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+<th style="text-align:center"><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>:first</code></td>
+<td style="text-align:center">选择第1个元素</td>
+<td style="text-align:center"><code>$(&quot;div:first&quot;)</code>选择第1个<code>div</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:last</code></td>
+<td style="text-align:center">选择最后1个元素</td>
+<td style="text-align:center"><code>$(&quot;div:last&quot;)</code>选择最后1个<code>div</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:not(E1)</code></td>
+<td style="text-align:center">去除所有<code>E1</code>选择器匹配的元素</td>
+<td style="text-align:center"><code>$(&quot;input:not(.my)&quot;)</code>选择<code>class</code>不是<code>.my</code>的所有<code>input</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:even</code></td>
+<td style="text-align:center">选择索引是偶数的所有元素，索引从0开始</td>
+<td style="text-align:center"><code>$(&quot;tr:even&quot;)</code>选择表格中所有偶数的行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:odd</code></td>
+<td style="text-align:center">选择索引是奇数的所有元素，索引从0开始</td>
+<td style="text-align:center"><code>$(&quot;tr:odd&quot;)</code>选择表格中所有奇数的行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:eq(index)</code></td>
+<td style="text-align:center">选择索引值是<code>index</code>的元素，<code>index</code>从0开始</td>
+<td style="text-align:center"><code>$(&quot;tr:eq(1)&quot;)</code>选择表格行索引等于1的行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:gt(index)</code></td>
+<td style="text-align:center">选择索引值大于<code>index</code>的元素，<code>index</code>从0开始</td>
+<td style="text-align:center"><code>$(&quot;tr:gt(1)&quot;)</code>选择表格行索引大于1的行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:lt(index)</code></td>
+<td style="text-align:center">选择索引值小于<code>index</code>的元素，<code>index</code>从0开始</td>
+<td style="text-align:center"><code>$(&quot;tr:lt(1)&quot;)</code>选择表格行索引小于1的行</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:header</code></td>
+<td style="text-align:center">所取所有的标题元素</td>
+<td style="text-align:center"><code>$(&quot;:header&quot;)</code>选择网页中所有的<code>&lt;h1&gt;~&lt;h6&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:animated</code></td>
+<td style="text-align:center">选择当前正在执行动画的所有元素</td>
+<td style="text-align:center"><code>$(&quot;div:animated&quot;)</code>选择正在执行动画的<code>div</code>元素</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="2-5-2-内容过滤"><a href="#2-5-2-内容过滤" class="headerlink" title="2.5.2 内容过滤"></a>2.5.2 内容过滤</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>选择器</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+<th style="text-align:center"><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>:contains(text)</code></td>
+<td style="text-align:center">选择含有<code>text</code>文本内容的元素</td>
+<td style="text-align:center"><code>$(&quot;div:contains(&#39;我&#39;)&quot;)</code>选择内容里包含我的所有<code>div</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:empty</code></td>
+<td style="text-align:center">选择不包含子元素或文本的空元素</td>
+<td style="text-align:center"><code>$(&quot;div:empty&quot;)</code>选择不包含子元素（含文本）的所有<code>div</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:has(E1)</code></td>
+<td style="text-align:center">选择包含有(<code>E1</code>选择器匹配的元素)的所有元素</td>
+<td style="text-align:center"><code>$(&quot;div:has(p)&quot;)</code>选择含有<code>p</code>元素的所有<code>div</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>:parent</code></td>
+<td style="text-align:center">选择含有子元素或文本的元素</td>
+<td style="text-align:center"><code>$(&quot;div:parent&quot;)</code>选择拥有子元素（包含文本）的所有<code>div</code>元素</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="2-5-3-子元素过滤"><a href="#2-5-3-子元素过滤" class="headerlink" title="2.5.3 子元素过滤"></a>2.5.3 子元素过滤</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>选择器</strong></th>
+<th><strong>功能描述</strong></th>
+<th><strong>简单示例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:nth-child(index/even/odd)</code></td>
+<td>选取每个父元素下的第<code>index</code>个子元素或奇偶元素.(<code>index</code>从1开始）</td>
+<td><code>:eq(index)</code>只匹配一个元素,而<code>:nth-child(index)</code>将为每一个父元素匹配子元素,并且<code>:nth-child(index)</code>的<code>index</code>从1开始,而<code>:eq(index)</code>的<code>index</code>从0开始.</td>
+</tr>
+<tr>
+<td><code>:first-child</code></td>
+<td>选择每个父元素的第1个子元素</td>
+<td><code>:first</code>只选择单个元素,而<code>:first-child</code>将为每个父元素匹配第1个子元素如:<code>$(“ul li:first-child”)</code>选择每个<code>&lt;ul&gt;</code>下的第一个<code>&lt;li&gt;</code></td>
+</tr>
+<tr>
+<td><code>:last-child</code></td>
+<td>选取每个父元素的最后1个子元素</td>
+<td><code>$(“ul li:last-child”)</code>选择每个<code>&lt;ul&gt;</code>下的最后一个<code>&lt;li&gt;</code></td>
+</tr>
+<tr>
+<td><code>:only-child</code></td>
+<td>如果某个元素是它父元素中惟一的子元素,那么将会被匹配.如果父元素中含有其他元素,则不会被匹配</td>
+<td><code>$(“ul li:only-child”)</code>在中选取是惟一子元素的<code>&lt;li&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><code>:nth-child()</code>选择器详细功能描述:</p>
+<ul>
+<li><p><code>:nth-child(even)</code>能选择每个父元素下的索引值是偶数的元素</p>
+</li>
+<li><p><code>:nth-child(odd)</code>选择出每个父元素下的索引值是奇数的元素</p>
+</li>
+<li><p><code>:nth-child(2)</code>选取每个父元素下的索引值等于2的元素 </p>
+</li>
+<li><p><code>:nth-child(3n)</code>能选出每个父元素下的索引值是3的倍数的元素,n从0开始</p>
+</li>
+<li><p><code>:nth-child(3n+1)</code>能选取每个父元素下的索引值是3n+1的元素.n从0开始</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="3-jQuery事件"><a href="#3-jQuery事件" class="headerlink" title="3. jQuery事件"></a>3. <code>jQuery</code>事件</h2><p>页面对不同访问者的响应叫做事件，事件处理程序指的是当<code>HTML</code>中发生某些事件时所调用的方法</p>
+<p>页面中指定一个点击事件对应：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;Click&#x27;</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>其它的事件还有：</p>
+<ul>
+<li><p>鼠标事件：<code>click</code>、<code>dblclick</code>、<code>mouseenter</code>、<code>mouseleave</code>、<code>hover</code></p>
+</li>
+<li><p>键盘事件：<code>keypress</code>、<code>keydown</code>、<code>keyup</code></p>
+</li>
+<li><p>表单事件：<code>submit</code>、<code>change</code>、<code>focus</code>、<code>blur</code></p>
+</li>
+<li><p>文档、窗口事件：<code>load</code>、<code>resize</code>、<code>scroll</code>、<code>unload</code></p>
+</li>
+</ul>
+<p>这里面有一个入口函数<code>$(document).ready()</code>，简称<code>$()</code>。<code>$(document).ready()</code>与<code>window.οnlοad=function()&#123;&#125;</code>的区别:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>window.onload</code></th>
+<th><code>$(document).ready()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>执行时机</td>
+<td>必须等待网页全部加载完毕（包括 图片等），然后再执行包裹代码</td>
+<td>只需要等待网页中的<code>DOM</code>结构加载完毕，就能执行包裹的代码</td>
+</tr>
+<tr>
+<td>执行次数</td>
+<td>只能执行一次，如果第二次，那么 第一次的执行会被覆盖</td>
+<td>可以执行多次，第N次都不会被上 一次覆盖</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="4-jQuery操作元素动画"><a href="#4-jQuery操作元素动画" class="headerlink" title="4. jQuery操作元素动画"></a>4. <code>jQuery</code>操作元素动画</h2><h3 id="4-1-显示隐藏"><a href="#4-1-显示隐藏" class="headerlink" title="4.1 显示隐藏"></a>4.1 显示隐藏</h3><p>可以使用<code>hide()</code>和<code>show()</code>方法来隐藏和显示<code>HTML</code>元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).hide();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).show();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//speed  规定隐藏/显示的速度</span></span><br><span class="line"><span class="comment">//callback  隐藏或显示完成后所执行的函数</span></span><br><span class="line"></span><br><span class="line">$(selector).hide(speed,callback);</span><br><span class="line"></span><br><span class="line">$(selector).show(speed,callback);</span><br></pre></td></tr></table></figure>
+<p>可以使用<code>toggle()</code>方法来切换<code>hide()</code>和<code>show()</code>方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).toggle();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 语法</span></span><br><span class="line"><span class="comment">// $(selector).toggle(speed,callback);</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-淡入淡出"><a href="#4-2-淡入淡出" class="headerlink" title="4.2 淡入淡出"></a>4.2 淡入淡出</h3><p>通过<code>fade</code>，可以实现元素的淡入淡出效果。四种<code>fade</code>方法，都可接收2个参数：</p>
+<ol>
+<li><code>speed</code>：规定效果的时长</li>
+<li><code>callback</code>：完成后所执行的函数</li>
+</ol>
+<p><code>fadeIn()</code>用于淡入已隐藏的元素:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).fadeIn();</span><br><span class="line">  $(<span class="string">&quot;#div3&quot;</span>).fadeIn(<span class="number">3000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>fadeOut()</code>方法用于淡出可见元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).fadeOut();</span><br><span class="line">  $(<span class="string">&quot;#div3&quot;</span>).fadeOut(<span class="number">3000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>fadeToggle()</code>方法可以在<code>fadeIn()</code>与<code>fadeOut()</code>方法之间进行切换，如果元素已淡出，则<code>fadeToggle()</code>会向元素添加淡入效果；如果元素已淡入，则<code>fadeToggle()</code>会向元素添加淡出效果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).fadeOut();</span><br><span class="line">  $(<span class="string">&quot;#div3&quot;</span>).fadeOut(<span class="number">3000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>fadeTo()</code>方法允许渐变为给定的不透明度（值介于 0 与 1 之间）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div3&quot;</span>).fadeTo(<span class="number">3000</span>,<span class="number">0.3</span>);</span><br><span class="line">  $(<span class="string">&quot;#div3&quot;</span>).fadeTo(<span class="number">3000</span>,<span class="number">0.5</span>);</span><br><span class="line">  $(<span class="string">&quot;#div3&quot;</span>).fadeTo(<span class="number">3000</span>,<span class="number">0.7</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-滑动"><a href="#4-3-滑动" class="headerlink" title="4.3 滑动"></a>4.3 滑动</h3><p>通过<code>slide</code>，可以实现元素的滑入滑出效果。三种<code>slide</code>方法，都可接收2个参数：</p>
+<ol>
+<li><code>speed</code>：规定效果的时长</li>
+<li><code>callback</code>：完成后所执行的函数</li>
+</ol>
+<p><code>slideDown()</code>方法用于向下滑动元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).slideDown();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>slideUp()</code>方法用于向上滑动元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).slideUp();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>slideToggle()</code>方法可以在<code>slideDown()</code>与<code>slideUp()</code>方法之间进行切换。如果元素向下滑动，则<code>slideToggle()</code>可向上滑动它们；如果元素向上滑动，则<code>slideToggle()</code>可向下滑动它们：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#divl&quot;</span>).slideToggle();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-自定义动画"><a href="#4-4-自定义动画" class="headerlink" title="4.4 自定义动画"></a>4.4 自定义动画</h3><p><code>animate()</code>方法用于创建自定义动画。</p>
+<p>默认所有 HTML 元素都有一个静态位置，且无法移动。如需对位置进行操作，首先把元素的<code>CSS position</code>属性设置为<code>relative</code>、<code>fixed</code>或<code>absolute</code>才可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//必需的 params 参数定义形成动画的 CSS 属性。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可选的 speed 参数规定效果的时长。它可以取以下值：&quot;slow&quot;、&quot;fast&quot; 或毫秒。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可选的 callback 参数是动画完成后所执行的函数名称</span></span><br><span class="line"></span><br><span class="line">$(selector).animate(&#123;params&#125;,speed,callback);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).animate(&#123;<span class="attr">left</span>:<span class="string">&#x27;250px&#x27;</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>同时操作多个属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).animate(&#123;</span><br><span class="line">    <span class="attr">left</span>:<span class="string">&#x27;250px&#x27;</span>,</span><br><span class="line">    <span class="attr">opacity</span>:<span class="string">&#x27;0.5&#x27;</span>,</span><br><span class="line">    <span class="attr">height</span>:<span class="string">&#x27;150px&#x27;</span>,</span><br><span class="line">    <span class="attr">width</span>:<span class="string">&#x27;150px&#x27;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>animate()</code>方法可以用来操作大部分<code>CSS</code>属性。当使用<code>animate()</code>时，必须使用驼峰写所有的属性名，比如，必须使用<code>paddingLeft</code>而不是<code>padding-left</code>，使用<code>marginRight</code>而不是<code>margin-right</code>。</p>
+<p>也可以定义相对值（该值相对于元素的当前值）。需要在值的前面加上<code>+=</code>或<code>-=</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).animate(&#123;</span><br><span class="line">    <span class="attr">left</span>:<span class="string">&#x27;250px&#x27;</span>,</span><br><span class="line">    <span class="attr">height</span>:<span class="string">&#x27;+=150px&#x27;</span>,</span><br><span class="line">    <span class="attr">width</span>:<span class="string">&#x27;+=150px&#x27;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-5-停止所有动画"><a href="#4-5-停止所有动画" class="headerlink" title="4.5 停止所有动画"></a>4.5 停止所有动画</h3><p><code>stop()</code>方法用于停止还在执行的动画或效果，适用于所有<code>jQuery</code>效果函数，包括滑动、淡入淡出和自定义动画：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//$(selector).stop(stopAll,goToEnd);</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;#stop&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#panel&quot;</span>).stop();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="5-jQuery操作DOM"><a href="#5-jQuery操作DOM" class="headerlink" title="5. jQuery操作DOM"></a>5. <code>jQuery</code>操作<code>DOM</code></h2><h3 id="5-1-获取、改变元素内容"><a href="#5-1-获取、改变元素内容" class="headerlink" title="5.1 获取、改变元素内容"></a>5.1 获取、改变元素内容</h3><ul>
+<li><p>text() - 设置或返回所选元素的文本内容</p>
+</li>
+<li><p>html() - 设置或返回所选元素的内容（包括 HTML 标记）</p>
+</li>
+<li><p>val() - 设置或返回表单字段的值</p>
+</li>
+</ul>
+<p>获取内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#btn1&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">&quot;Text: &quot;</span> + $(<span class="string">&quot;#test&quot;</span>).text());</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">&quot;#btn2&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">&quot;HTML: &quot;</span> + $(<span class="string">&quot;#test&quot;</span>).html());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#btn1&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">&quot;Value: &quot;</span> + $(<span class="string">&quot;#test&quot;</span>).val());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>改变内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#btn1&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#test1&quot;</span>).text(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">&quot;#btn2&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#test2&quot;</span>).html(<span class="string">&quot;&lt;b&gt;Hello world!&lt;/b&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">&quot;#btn3&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#test3&quot;</span>).val(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-获取、设置元素属性"><a href="#5-2-获取、设置元素属性" class="headerlink" title="5.2 获取、设置元素属性"></a>5.2 获取、设置元素属性</h3><p><code>attr()</code>方法用于获取、设置属性值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert($(<span class="string">&quot;a&quot;</span>).attr(<span class="string">&quot;href&quot;</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;a&quot;</span>).attr(<span class="string">&quot;href&quot;</span>,<span class="string">&quot;https://www.baidu.com/&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置多个属性</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;a&quot;</span>).attr(&#123;</span><br><span class="line">      <span class="attr">href</span> :<span class="string">&quot;https://www.baidu.com/&quot;</span>,</span><br><span class="line">      <span class="attr">title</span> : <span class="string">&quot;百度&quot;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-添加、删除元素"><a href="#5-3-添加、删除元素" class="headerlink" title="5.3 添加、删除元素"></a>5.3 添加、删除元素</h3><p><code>append()</code>方法在被选元素的结尾插入内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).append(<span class="string">&quot;我是使用append插入的内容&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>prepend()</code>方法在被选元素的开头插入内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).prepend(<span class="string">&quot;我是使用prepend插入的内容&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>after()</code>方法在被选元素之后插入内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).after(<span class="string">&quot;我是使用after插入的内容&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>before()</code>方法在被选元素之前插入内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).before(<span class="string">&quot;我是使用before插入的内容&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>remove()</code>方法删除被选元素及其子元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#div1&quot;</span>).remove();</span><br></pre></td></tr></table></figure>
+<p><code>remove()</code>方法也可接受一个参数，允许对被删元素进行过滤</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).remove(<span class="string">&quot;.text&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>empty()</code>方法删除被选元素的子元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#div1&quot;</span>).empty();</span><br></pre></td></tr></table></figure>
+<h3 id="5-4-操作CSS"><a href="#5-4-操作CSS" class="headerlink" title="5.4 操作CSS"></a>5.4 操作<code>CSS</code></h3><p><code>addClass()</code>方法向元素添加<code>class</code>属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// list red</span></span><br><span class="line">  $(<span class="string">&quot;h1,h2,p&quot;</span>).addClass(<span class="string">&quot;red&quot;</span>);</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).addClass(<span class="string">&quot;box&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>也可以在<code>addClass()</code>方法中规定多个类：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).addClass(<span class="string">&quot;box blue&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>removeClass()</code>删除指定的<code>class</code>属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;h1,h2,p&quot;</span>).removeClass(<span class="string">&quot;red&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>toggleClass()</code>对被选元素进行添加/删除类的切换操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;h1,h2,p&quot;</span>).toggleClass(<span class="string">&quot;red&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>css()</code>方法设置或返回被选元素的一个或多个样式属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取样式</span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).css();</span><br><span class="line"><span class="comment">//获取背景颜色</span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).css(<span class="string">&quot;background-color&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置样式</span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>);</span><br><span class="line"><span class="comment">//设置多个样式</span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).css(&#123;<span class="string">&quot;background-color&quot;</span>:<span class="string">&quot;yellow&quot;</span>,<span class="string">&quot;font-size&quot;</span>:<span class="string">&quot;200%&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-5-获取尺寸"><a href="#5-5-获取尺寸" class="headerlink" title="5.5 获取尺寸"></a>5.5 获取尺寸</h3><p><code>width()</code>方法设置或返回元素的宽度（不包括<code>padding</code>、<code>border</code>、<code>margin</code>），<code>height()</code>方法设置或返回元素的高度（不包括<code>padding</code>、<code>border</code>、<code>margin</code>）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).width())</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).height())</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>innerWidth()</code>方法返回元素的宽度（包括<code>padding</code>），<code>innerHeight()</code>方法返回元素的高度（包括<code>padding</code>）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).innerWidth())</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).innerHeight())</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>outerWidth()</code>方法返回元素的宽度（包括<code>padding</code>和<code>border</code>），<code>outerHeight()</code>方法返回元素的高度（包括<code>padding</code>和<code>border</code>）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).outerWidth())</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).outerHeight())</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>outerWidth(true)</code>方法返回元素的宽度（包括<code>padding</code>、<code>border</code>、<code>margin</code>），<code>outerHeight(true)</code>方法返回元素的高度（包括<code>padding</code>、<code>border</code>、<code>margin</code>）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).outerWidth(<span class="literal">true</span>))</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="string">&quot;#div1&quot;</span>).outerHeight(<span class="literal">true</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>width()</code>和<code>height()</code>方法也可用于指定元素宽度高度：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">&quot;#div1&quot;</span>).width(<span class="number">500</span>).height(<span class="number">500</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="6-jQuery元素遍历"><a href="#6-jQuery元素遍历" class="headerlink" title="6. jQuery元素遍历"></a>6. <code>jQuery</code>元素遍历</h2><h3 id="6-1-向上遍历DOM树"><a href="#6-1-向上遍历DOM树" class="headerlink" title="6.1 向上遍历DOM树"></a>6.1 向上遍历<code>DOM</code>树</h3><p><code>parent()</code>方法返回被选元素的直接父元素，该方法只会向上一级对<code>DOM</code>树进行遍历：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;span&quot;</span>).parent().css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<p><code>parents()</code>方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 （<code>&lt;html&gt;</code>）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;span&quot;</span>).parents().css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<p><code>parentsUntil()</code>方法返回介于两个给定元素之间的所有祖先元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;span&quot;</span>).parentsUntil(<span class="string">&quot;div&quot;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-向下遍历DOM树"><a href="#6-2-向下遍历DOM树" class="headerlink" title="6.2 向下遍历DOM树"></a>6.2 向下遍历<code>DOM</code>树</h3><p><code>children()</code>方法返回被选元素的所有直接子元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).children().css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br><span class="line"><span class="comment">//过滤对子元素</span></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).children(<span class="string">&quot;p.1&quot;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>find()</code>方法返回被选元素的后代元素，一路向下直到最后一个后代：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//只选中span</span></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).find(<span class="string">&quot;span&quot;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br><span class="line"><span class="comment">//选中所有</span></span><br><span class="line">$(<span class="string">&quot;div&quot;</span>).find(<span class="string">&quot;*&quot;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-DOM树中水平遍历"><a href="#6-3-DOM树中水平遍历" class="headerlink" title="6.3 DOM树中水平遍历"></a>6.3 <code>DOM</code>树中水平遍历</h3><p><code>siblings()</code>方法返回被选元素的所有同胞元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;h2&quot;</span>).siblings().css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br><span class="line"><span class="comment">// &lt;h2&gt; 的同胞元素的所有 &lt;p&gt; 元素</span></span><br><span class="line">$(<span class="string">&quot;h2&quot;</span>).siblings(<span class="string">&quot;p&quot;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>next()</code>方法返回被选元素的下一个同胞元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;h2&quot;</span>).next().css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>nextAll()</code>方法返回被选元素的所有跟随的同胞元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;h2&quot;</span>).nextAll().css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>nextUntil()</code>方法返回介于两个给定参数之间的所有跟随的同胞元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;h2&quot;</span>).nextUntil(<span class="string">&quot;h6&quot;</span>).css(&#123;<span class="string">&quot;color&quot;</span>:<span class="string">&quot;red&quot;</span>,<span class="string">&quot;border&quot;</span>:<span class="string">&quot;2px solid red&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>同理，<code>prev()</code>获得匹配元素集合中每个元素紧邻的前一个同胞元素；<code>prevAll()</code>获得当前匹配元素集合中每个元素的前面的同胞元素；<code>prevUntil()</code>方法获得当前匹配元素集合中每个元素的前面的同胞元素。</p>
+<h3 id="6-4-遍历中的过滤"><a href="#6-4-遍历中的过滤" class="headerlink" title="6.4 遍历中的过滤"></a>6.4 遍历中的过滤</h3><p><code>first()</code>方法返回被选元素的首个元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div p&quot;</span>).first().css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>last()</code>方法返回被选元素的最后一个元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div p&quot;</span>).last().css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>eq()</code>方法返回被选元素中带有指定索引号的元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).eq(<span class="number">1</span>).css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>filter()</code>方法允许您规定一个标准,匹配的元素会被返回：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).filter(<span class="string">&quot;.info&quot;</span>).css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>not()</code>方法返回不匹配标准的所有元素：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).not(<span class="string">&quot;.info&quot;</span>).css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>未完待续~</p>
 
     </div>
 
@@ -517,6 +862,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8jQuery"><span class="nav-text">1. 使用jQuery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-jQuery%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">2. jQuery元素选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">2.1 元素选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">2.2 属性选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E6%9B%B4%E5%A4%9A%E4%BE%8B%E5%AD%90"><span class="nav-text">2.3 更多例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">2.4 层次选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E8%BF%87%E6%BB%A4%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">2.5 过滤选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-1-%E5%9F%BA%E6%9C%AC%E8%BF%87%E6%BB%A4"><span class="nav-text">2.5.1 基本过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-2-%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4"><span class="nav-text">2.5.2 内容过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-3-%E5%AD%90%E5%85%83%E7%B4%A0%E8%BF%87%E6%BB%A4"><span class="nav-text">2.5.3 子元素过滤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-jQuery%E4%BA%8B%E4%BB%B6"><span class="nav-text">3. jQuery事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-jQuery%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E5%8A%A8%E7%94%BB"><span class="nav-text">4. jQuery操作元素动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F"><span class="nav-text">4.1 显示隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA"><span class="nav-text">4.2 淡入淡出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E6%BB%91%E5%8A%A8"><span class="nav-text">4.3 滑动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB"><span class="nav-text">4.4 自定义动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E5%81%9C%E6%AD%A2%E6%89%80%E6%9C%89%E5%8A%A8%E7%94%BB"><span class="nav-text">4.5 停止所有动画</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-jQuery%E6%93%8D%E4%BD%9CDOM"><span class="nav-text">5. jQuery操作DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E8%8E%B7%E5%8F%96%E3%80%81%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9"><span class="nav-text">5.1 获取、改变元素内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E8%8E%B7%E5%8F%96%E3%80%81%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="nav-text">5.2 获取、设置元素属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E6%B7%BB%E5%8A%A0%E3%80%81%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-text">5.3 添加、删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E6%93%8D%E4%BD%9CCSS"><span class="nav-text">5.4 操作CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E8%8E%B7%E5%8F%96%E5%B0%BA%E5%AF%B8"><span class="nav-text">5.5 获取尺寸</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-jQuery%E5%85%83%E7%B4%A0%E9%81%8D%E5%8E%86"><span class="nav-text">6. jQuery元素遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E5%90%91%E4%B8%8A%E9%81%8D%E5%8E%86DOM%E6%A0%91"><span class="nav-text">6.1 向上遍历DOM树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E5%90%91%E4%B8%8B%E9%81%8D%E5%8E%86DOM%E6%A0%91"><span class="nav-text">6.2 向下遍历DOM树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-DOM%E6%A0%91%E4%B8%AD%E6%B0%B4%E5%B9%B3%E9%81%8D%E5%8E%86"><span class="nav-text">6.3 DOM树中水平遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-%E9%81%8D%E5%8E%86%E4%B8%AD%E7%9A%84%E8%BF%87%E6%BB%A4"><span class="nav-text">6.4 遍历中的过滤</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -603,13 +949,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">162k</span>
+    <span title="站点总字数">175k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:28</span>
+    <span title="站点阅读时长">2:39</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

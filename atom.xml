@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-06T13:42:38.842Z</updated>
+  <updated>2023-01-07T07:18:48.117Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://guleixibian2009.github.io/2023/01/07/jquery-basic-syntax/"/>
     <id>https://guleixibian2009.github.io/2023/01/07/jquery-basic-syntax/</id>
     <published>2023-01-07T00:07:52.000Z</published>
-    <updated>2023-01-06T13:42:38.842Z</updated>
+    <updated>2023-01-07T07:18:48.117Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近计划把我去年上半年的&lt;code&gt;Hand-Written-HTML-Site&lt;/code&gt;拿出来讲一讲，展示一下我研究&lt;code&gt;JavaScript&lt;/code&gt;的成果。在写的过程中我用到了&lt;code&gt;jQuery&lt;/code&gt;，这里先转一篇入门的教程过来，后面如果有需要的话可以来这里查阅。&lt;/p&gt;
@@ -529,9 +529,9 @@
     <category term="加速" scheme="https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/"/>
     
     
-    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
-    
     <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+    <category term="加速" scheme="https://guleixibian2009.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
     
   </entry>
   
