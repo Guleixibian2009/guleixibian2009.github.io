@@ -3175,7 +3175,31 @@ e^x \qquad & a \le 0
 <p><code>not()</code>方法返回不匹配标准的所有元素：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).not(<span class="string">&quot;.info&quot;</span>).css(<span class="string">&quot;background-color&quot;</span>,<span class="string">&quot;yellow&quot;</span>)</span><br></pre></td></tr></table></figure>
 <hr>
-<p>未完待续~</p>
+<h2 id="7-jQuery中的Ajax操作"><a href="#7-jQuery中的Ajax操作" class="headerlink" title="7. jQuery中的Ajax操作"></a>7. <code>jQuery</code>中的<code>Ajax</code>操作</h2><h3 id="7-1-Ajax是什么？"><a href="#7-1-Ajax是什么？" class="headerlink" title="7.1 Ajax是什么？"></a>7.1 <code>Ajax</code>是什么？</h3><p>全称：<code>ASynchronous JavaScript And XML</code> （代表 异步<code>JavaScript</code>和<code>XML</code>)</p>
+<p><code>Ajax</code>并不是编程语言，是一种用于创建快速动态网页的技术。</p>
+<p><code>Ajax</code>组合了：浏览器内建的<code>XMLHttpRequest</code>对象（从<code>web</code> 服务器请求数据）、<code>JavaScript</code>和<code>HTML DOM</code>（显示或使用数据）</p>
+<p><code>Ajax</code>是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。 </p>
+<p>通过在后台与服务器进行少量数据交换，<code>Ajax</code>可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。传统的网页（不使用<code>Ajax</code>）如果需要更新内容，必须重载整个网页页面。</p>
+<p>同步与异步的区别在于，当用户发送同步请求时，当前页面不可以使用，服务器响应页面到客户端，响应完成，用户才可以使用页面；但当用户发送异步请求时，当前页面还可以继续使用，当异步请求的数据响应给页面，页面把数据显示出来。</p>
+<pre class="mermaid">sequenceDiagram
+    participant B as Browser
+    participant S as Server
+
+    note left of B: Something happened.
+    B->>+S: XHR(XMLHttpRequest)
+    note left of B: Meanwhile, still working.
+    S->>-B: Responce
+    note left of B: Update page with JS.</pre>
+
+<h3 id="7-2-jQuery中Ajax函数"><a href="#7-2-jQuery中Ajax函数" class="headerlink" title="7.2 jQuery中Ajax函数"></a>7.2 <code>jQuery</code>中<code>Ajax</code>函数</h3><p>通过<code>jQuery AJAX</code>方法，可以使用<code>HTTP</code>的<code>get</code>和<code>post</code>方法， 从远程服务器上请求文本、<code>HTML</code>、<code>XML</code>或<code>JSON</code>，同时还能够把这些外部数据直接载入网页的被选元素中。</p>
+<p><code>load()</code>方法从服务器加载数据，并把返回的数据放入被选元素中，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">$(selector).load(URL,data,callback);</span><br><span class="line"></span><br><span class="line"><span class="comment">//URL 参数规定加载的 URL 必选</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//data 参数规定与请求一同发送的查询字符串键/值对集合 可选</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//callback 参数是 load() 方法完成后所执行的函数名称 可选</span></span><br><span class="line"></span><br><span class="line"> $(<span class="string">&quot;#btn1&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     $(<span class="string">&#x27;#test&#x27;</span>).load(<span class="string">&#x27;/foo/bar&#x27;</span>,data,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<p><code>$.get()</code>方法通过<code>HTTP GET</code>请求从服务器上请求数据。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//$.get(URL,callback);</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $.get(<span class="string">&#x27;/foo/bar&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data,status</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    <span class="built_in">console</span>.log(status);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>$.post()</code>方法通过<code>HTTP POST</code>请求从服务器上请求数据。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//$.post(URL,data,callback);</span></span><br><span class="line"></span><br><span class="line">$.post(<span class="string">&quot;/foo/bar/demo_test_post.asp&quot;</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">page</span>:<span class="number">1</span>,</span><br><span class="line">      <span class="attr">name</span>:<span class="string">&quot;Tina&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">data,status</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(data);</span><br><span class="line">      <span class="built_in">console</span>.log(status);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 ]]></content>
       <categories>
         <category>编程</category>
