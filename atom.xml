@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-08T08:49:37.174Z</updated>
+  <updated>2023-01-08T13:27:12.794Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python Pip常见问题与Package推荐</title>
+    <link href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/"/>
+    <id>https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/</id>
+    <published>2023-01-09T11:37:26.000Z</published>
+    <updated>2023-01-08T13:27:12.794Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;从开始自学编程到现在，我接触最多的还是&lt;code&gt;Python&lt;/code&gt;。用&lt;code&gt;Python&lt;/code&gt;就免不了要用到&lt;code&gt;Pip&lt;/code&gt;，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的&lt;code&gt;Package&lt;/code&gt;，也跟大家分享一下。&lt;/p&gt;
+&lt;p&gt;省流：&lt;code&gt;Pip&lt;/code&gt;换源、非管理员升级&lt;code&gt;Pip&lt;/code&gt;失败问题、&lt;code&gt;requirements.txt&lt;/code&gt;的生成、&lt;code&gt;PyInstaller&lt;/code&gt;打包可执行文件；附赠&lt;code&gt;bilili&lt;/code&gt;B站爬虫！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程中如有问题、造成损失，本人概不负责。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>生命游戏：在不确定中寻找确定</title>
     <link href="https://guleixibian2009.github.io/2023/01/08/life-game-in-python/"/>
     <id>https://guleixibian2009.github.io/2023/01/08/life-game-in-python/</id>
     <published>2023-01-08T00:02:11.000Z</published>
-    <updated>2023-01-08T08:49:37.174Z</updated>
+    <updated>2023-01-08T13:23:09.464Z</updated>
     
     
     <summary type="html">&lt;p&gt;“在不确定中寻找确定”，这是我的语文老师在2022年2月刚开始转线上课时对我们的一句嘱咐。如今，疫情尘埃落定，也据说再也不会有网课了。也许，这就是生命——不断前行、变幻莫测。&lt;/p&gt;
@@ -131,9 +154,9 @@
     
     <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
-    
     <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
     
   </entry>
   
@@ -505,27 +528,6 @@
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;9.30 画信话心课后有感&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在画信课后写点随笔似乎已经形成了一种习惯了。当然，写之前，写之中会有犹豫，记忆的短时性确实也在困扰着我。&lt;br&gt;但从某种程度上来说，这种转瞬即逝的记忆，赋予了人更高级的，想象力。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记忆中的夏老师</title>
-    <link href="https://guleixibian2009.github.io/2022/09/29/small-but-shining-ideas-06/"/>
-    <id>https://guleixibian2009.github.io/2022/09/29/small-but-shining-ideas-06/</id>
-    <published>2022-09-29T03:34:23.000Z</published>
-    <updated>2022-10-17T10:57:04.176Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;夏老师，原名夏建民，便是我们初一的政治老师了。其人课程之奇，甚至其本人之奇，都是史无前例前所未有的。&lt;br&gt;初一第一节政治课，一位个子不高，面色浅棕，戴黑框眼镜的中年教师走进课堂。他并不自我介绍，清清嗓子便讲起课来。——那是我对他的第一印象。具体讲了些什么我早已不太记得，只知道他布置的作业是抄写《大学》第一章。&lt;br&gt;那时不懂得珍惜，敷衍了事了。&lt;/p&gt;</summary>
     
     
     

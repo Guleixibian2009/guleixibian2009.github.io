@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/</loc>
+    
+    <lastmod>2023-01-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/2023/01/08/life-game-in-python/</loc>
     
     <lastmod>2023-01-08</lastmod>
@@ -340,13 +347,6 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Git/</loc>
-    <lastmod>2023-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://guleixibian2009.github.io/tags/Website/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
@@ -355,6 +355,13 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/Jekyll/</loc>
+    <lastmod>2023-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/Git/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -403,20 +410,6 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
-    <lastmod>2023-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/tags/LaTex/</loc>
-    <lastmod>2023-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://guleixibian2009.github.io/tags/Backend/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
@@ -438,7 +431,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://guleixibian2009.github.io/tags/Markdown/</loc>
+    <lastmod>2023-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/LaTex/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -446,6 +446,13 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/tags/Cryptography/</loc>
+    <lastmod>2023-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -503,20 +510,6 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/GitHub/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
-    <lastmod>2023-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/</loc>
-    <lastmod>2023-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
@@ -538,14 +531,14 @@
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/</loc>
+    <loc>https://guleixibian2009.github.io/categories/GitHub/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -559,7 +552,21 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2023-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/categories/GitHub/Pages/Jekyll/</loc>
+    <lastmod>2023-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Markdown/LaTex/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -580,6 +587,13 @@
   </url>
   
   <url>
+    <loc>https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/GitHub/</loc>
+    <lastmod>2023-01-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
@@ -588,13 +602,6 @@
   
   <url>
     <loc>https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%80%9D%E8%80%83/</loc>
-    <lastmod>2023-01-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://guleixibian2009.github.io/categories/%E5%8A%A0%E9%80%9F/GitHub/</loc>
     <lastmod>2023-01-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

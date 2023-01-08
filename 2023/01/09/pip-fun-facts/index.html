@@ -21,18 +21,20 @@
     var CONFIG = {"hostname":"guleixibian2009.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":260,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":true,"nav":null,"activeClass":"livere"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Be Vocal. Be yourself.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Guleixibian2009的个人博客~">
-<meta property="og:url" content="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/">
+  <meta name="description" content="从开始自学编程到现在，我接触最多的还是Python。用Python就免不了要用到Pip，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的Package，也跟大家分享一下。 省流：Pip换源、非管理员升级Pip失败问题、requirements.txt的生成、PyInstaller打包可执行文件；附赠bililiB站爬虫！ 注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Pip常见问题与Package推荐">
+<meta property="og:url" content="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/">
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
-<meta property="og:description" content="Be Vocal. Be yourself.">
+<meta property="og:description" content="从开始自学编程到现在，我接触最多的还是Python。用Python就免不了要用到Pip，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的Package，也跟大家分享一下。 省流：Pip换源、非管理员升级Pip失败问题、requirements.txt的生成、PyInstaller打包可执行文件；附赠bililiB站爬虫！ 注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-09T11:37:26.000Z">
+<meta property="article:modified_time" content="2023-01-08T13:27:12.794Z">
 <meta property="article:author" content="Guleixibian2009">
-<meta property="article:tag" content="Python,Github,HEXO,Markdown,Website">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/">
+<link rel="canonical" href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/">
 
 
 <script id="page-configurations">
@@ -40,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 校园 | Guleixibian2009的个人博客~</title>
+  <title>Python Pip常见问题与Package推荐 | Guleixibian2009的个人博客~</title>
   
 
 
@@ -215,240 +217,251 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">校园
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Guleixibian2009">
+      <meta itemprop="description" content="Be Vocal. Be yourself.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Guleixibian2009的个人博客~">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python Pip常见问题与Package推荐
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-01-09 19:37:26" itemprop="dateCreated datePublished" datetime="2023-01-09T19:37:26+08:00">2023-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-01-08 21:27:12" itemprop="dateModified" datetime="2023-01-08T21:27:12+08:00">2023-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>216</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <p>从开始自学编程到现在，我接触最多的还是<code>Python</code>。用<code>Python</code>就免不了要用到<code>Pip</code>，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的<code>Package</code>，也跟大家分享一下。</p>
+<p>省流：<code>Pip</code>换源、非管理员升级<code>Pip</code>失败问题、<code>requirements.txt</code>的生成、<code>PyInstaller</code>打包可执行文件；附赠<code>bilili</code>B站爬虫！</p>
+<p><strong>注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程中如有问题、造成损失，本人概不负责。</strong></p>
+<span id="more"></span>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章  为你推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2023-01-02</div>
+      <div class="popular-posts-title"><a href="\2023\01\02\buffons-neddle-in-python\" rel="bookmark">针、圆周率与……Python?</a></div>
+        <div class="popular-posts-excerpt"><p><blockquote>
+<p>万事皆可变，万事亦皆有概率，而偏偏是日常生活中无比普遍的它，有时能创造出一个奇迹。蒲丰投针就恰恰体现了这一点。</p>
+<p>一根小小的针，也可以投出整个宇宙。</p>
+</blockquote>
+<p>蒲丰投针实验，本是我们伟长七下的一次数学实验课，课后我将它深化了一下，作为一个编程课题，即“用<code>Python</code>模拟蒲丰投针”。这里用一篇博文，记录一下这次实验课中我的探究成果。</p>
+<p><em>注：写作这篇文章时，我已经八上结束了，故在一些细节可能会有记忆上的偏差，还请谅解。</em></p></p></div>
+    </li>
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2023-01-08</div>
+      <div class="popular-posts-title"><a href="\2023\01\08\life-game-in-python\" rel="bookmark">生命游戏：在不确定中寻找确定</a></div>
+        <div class="popular-posts-excerpt"><p><p>“在不确定中寻找确定”，这是我的语文老师在2022年2月刚开始转线上课时对我们的一句嘱咐。如今，疫情尘埃落定，也据说再也不会有网课了。也许，这就是生命——不断前行、变幻莫测。</p>
+<p>但这两个词，又让我想起了另一种“生命”——康威生命游戏。这两天，灵机一动，我用<code>Python</code>实现了这“零玩家游戏”。</p></p></div>
+    </li>
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2022-09-26</div>
+      <div class="popular-posts-title"><a href="\2022\09\26\more-ways-to-speed-up\" rel="bookmark">还需要……加速吗？</a></div>
+        <div class="popular-posts-excerpt"><p><p>速度，自然是每一个程序员追求的目标。随着本人编程渐渐深入，又发现了一些加速的地方，提高编程效率。这里包含：<code>pip</code>镜像、<code>Microsoft Store</code>加速、<code>VSCode</code>下载链接和<code>Google Recaptcha</code>加速。也算是一种小备忘录吧，方便之后，比如重装系统等等。</p></p></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-12-09T18:34:31+08:00"
-              content="2022-12-09">
-          12-09
-        </time>
+        <div class="reward-container">
+  <div>赏作者一杯作业......</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/images/%E8%AE%BA%E4%BD%9C%E4%B8%9A%E6%95%B0%E9%87%8F.jpg" alt="Guleixibian2009 我没钱，但有作业">
+        <p>我没钱，但有作业</p>
+      </div>
+      <div style="display: inline-block;">
+        <img src="/images/websiteQR.png" alt="Guleixibian2009 把我的网站分享给别人？">
+        <p>把我的网站分享给别人？</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/12/09/small-but-shining-ideas-16/" itemprop="url">
-            <span itemprop="name">奇遇</span>
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Guleixibian2009
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/" title="Python Pip常见问题与Package推荐">https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian.github.io/">
+            <span class="icon">
+              <i class="fab fa-html5"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-12-02T18:34:31+08:00"
-              content="2022-12-02">
-          12-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/12/02/small-but-shining-ideas-15/" itemprop="url">
-            <span itemprop="name">“最后”一堂课</span>
+            <span class="label">旧版网站</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian2009.github.io/Hand-Written-HTML-Site/">
+            <span class="icon">
+              <i class="fas fa-laptop-code"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-25T18:34:31+08:00"
-              content="2022-11-25">
-          11-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/25/small-but-shining-ideas-14/" itemprop="url">
-            <span itemprop="name">无题</span>
+            <span class="label">手写网站</span>
           </a>
-      </div>
+        </div>
 
-    </header>
-  </article>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://guleixibian2009.github.io/awesome-bs5/">
+            <span class="icon">
+              <i class="fab fa-bootstrap"></i>
+            </span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-18T18:34:31+08:00"
-              content="2022-11-18">
-          11-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/18/small-but-shining-ideas-13/" itemprop="url">
-            <span itemprop="name">雨·留白</span>
+            <span class="label">Awesome-Bootstrap项目</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-11T18:34:31+08:00"
-              content="2022-11-11">
-          11-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/11/small-but-shining-ideas-12/" itemprop="url">
-            <span itemprop="name">绿野村·杂记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-11-05T18:34:31+08:00"
-              content="2022-11-05">
-          11-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/05/small-but-shining-ideas-11/" itemprop="url">
-            <span itemprop="name">转折·点</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-10-28T18:34:31+08:00"
-              content="2022-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/28/small-but-shining-ideas-10/" itemprop="url">
-            <span itemprop="name">只为我心</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-10-22T18:34:31+08:00"
-              content="2022-10-22">
-          10-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/22/small-but-shining-ideas-09/" itemprop="url">
-            <span itemprop="name">运动会杂记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-10-14T11:34:31+08:00"
-              content="2022-10-14">
-          10-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/14/small-but-shining-ideas-08/" itemprop="url">
-            <span itemprop="name">两颗银杏果</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-09-30T11:34:31+08:00"
-              content="2022-09-30">
-          09-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/09/30/small-but-shining-ideas-07/" itemprop="url">
-            <span itemprop="name">为伟长画像</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/08/life-game-in-python/" rel="prev" title="生命游戏：在不确定中寻找确定">
+      <i class="fa fa-chevron-left"></i> 生命游戏：在不确定中寻找确定
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/page/2/">2</a><a class="extend next" rel="next" href="/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  
+  
 
 
 
           </div>
           
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNi8zMzY3MA=="></div>
+  </div>
+  
+            </div>
+        </div>
+      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -748,7 +761,42 @@ if (document.querySelectorAll('pre.mermaid').length) {
 
   
 
+<link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//fastly.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '182d88027b3ae850cbeb',
+      clientSecret: '9dbad5843bcb640f1547407b20ee2eb8e3d71c81',
+      repo        : 'guleixibian2009.github.io',
+      owner       : 'guleixibian2009',
+      admin       : ['guleixibian2009'],
+      id          : '51ca90da0a39748ead42dddb1c08fdb8',
+        language: 'zh-CN',
+      distractionFreeMode: false,
+      proxy       : 'https://proxy.cors.sh/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 
   <!-- 页面点击小红心 -->
