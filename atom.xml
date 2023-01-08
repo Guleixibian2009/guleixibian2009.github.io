@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-07T11:50:34.702Z</updated>
+  <updated>2023-01-08T08:49:37.174Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://guleixibian2009.github.io/2023/01/08/life-game-in-python/"/>
     <id>https://guleixibian2009.github.io/2023/01/08/life-game-in-python/</id>
     <published>2023-01-08T00:02:11.000Z</published>
-    <updated>2023-01-07T11:50:34.702Z</updated>
+    <updated>2023-01-08T08:49:37.174Z</updated>
     
     
-    <summary type="html">&lt;p&gt;“在不确定中寻找确定”，这是我的语文老师在2022年2月刚开始转线上课时对我们的一句嘱咐。如今，疫情尘埃落定，也据说再也不会有网课了。也许，这就是生命——繁衍生息、变幻莫测。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;“在不确定中寻找确定”，这是我的语文老师在2022年2月刚开始转线上课时对我们的一句嘱咐。如今，疫情尘埃落定，也据说再也不会有网课了。也许，这就是生命——不断前行、变幻莫测。&lt;/p&gt;
 &lt;p&gt;但这两个词，又让我想起了另一种“生命”——康威生命游戏。这两天，灵机一动，我用&lt;code&gt;Python&lt;/code&gt;实现了这“零玩家游戏”。&lt;/p&gt;</summary>
     
     
