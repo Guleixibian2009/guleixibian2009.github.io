@@ -28,11 +28,14 @@
 <meta property="og:site_name" content="Guleixibian2009的个人博客~">
 <meta property="og:description" content="从开始自学编程到现在，我接触最多的还是Python。用Python就免不了要用到Pip，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的Package，也跟大家分享一下。 省流：Pip换源、非管理员升级Pip失败问题、requirements.txt的生成、PyInstaller打包可执行文件；附赠bililiB站爬虫！ 注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKN5V.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/10/27/xhKYEq.png">
 <meta property="article:published_time" content="2023-01-09T11:37:26.000Z">
-<meta property="article:modified_time" content="2023-01-08T13:27:12.794Z">
+<meta property="article:modified_time" content="2023-01-09T03:27:55.495Z">
 <meta property="article:author" content="Guleixibian2009">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/10/27/xhKN5V.png">
 
 <link rel="canonical" href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/">
 
@@ -246,16 +249,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-01-09 19:37:26" itemprop="dateCreated datePublished" datetime="2023-01-09T19:37:26+08:00">2023-01-09</time>
+              <time title="创建时间：2023-01-09 19:37:26 / 修改时间：11:27:55" itemprop="dateCreated datePublished" datetime="2023-01-09T19:37:26+08:00">2023-01-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-08 21:27:12" itemprop="dateModified" datetime="2023-01-08T21:27:12+08:00">2023-01-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -276,7 +273,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>216</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -299,6 +296,41 @@
 <p>省流：<code>Pip</code>换源、非管理员升级<code>Pip</code>失败问题、<code>requirements.txt</code>的生成、<code>PyInstaller</code>打包可执行文件；附赠<code>bilili</code>B站爬虫！</p>
 <p><strong>注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程中如有问题、造成损失，本人概不负责。</strong></p>
 <span id="more"></span>
+<h2 id="1-Pip换源"><a href="#1-Pip换源" class="headerlink" title="1. Pip换源"></a>1. <code>Pip</code>换源</h2><p>这个我之前应该讲过，这里还是再放一下：</p>
+<p><code>Pypi</code>官方的源在国内是很慢的，速度大概在<code>KB</code>级。我们需要调整它的镜像源，比如国内的阿里云。</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKN5V.png" alt=""></p>
+<p>具体的话，先找到<code>C:/Users</code>文件夹中你自己的用户文件夹（比如<code>C:/Users/gulei</code>），里面新建一个<code>pip</code>文件夹。</p>
+<p><img data-src="https://s1.ax1x.com/2022/10/27/xhKYEq.png" alt=""></p>
+<p>在这个文件夹里面新建一个<code>pip.ini</code>配置文件，编辑器打开，把如下内容复制进去：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[global]</span> </span><br><span class="line"><span class="attr">index-url</span> = http://mirrors.aliyun.com/pypi/simple/ </span><br><span class="line"><span class="section">[install]</span> </span><br><span class="line"><span class="attr">trusted-host</span> = mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+<p>这样就可以配置镜像源了。运行一下<code>pip</code>，速度就可以供我们正常使用了。</p>
+<hr>
+<h2 id="2-非管理员更新Pip问题解决"><a href="#2-非管理员更新Pip问题解决" class="headerlink" title="2. 非管理员更新Pip问题解决"></a>2. 非管理员更新<code>Pip</code>问题解决</h2><p><code>Pip</code>提示有新版本之后别急着更新，一定要先用管理员权限打开命令行。否则会安装失败，这个时候如果你去用<code>pip</code>的话会提示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named &#x27;pip&#x27;</span><br></pre></td></tr></table></figure>
+<p>这时我们运行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#卸载旧版本的pip，引用python的ensurepip库来安装pip标准库</span></span><br><span class="line">python <span class="literal">-m</span> ensurepip</span><br><span class="line"><span class="comment">#更新pip版本</span></span><br><span class="line">python <span class="literal">-m</span> pip install -<span class="literal">-upgrade</span> pip</span><br></pre></td></tr></table></figure>
+<p>就可以重新安装<code>pip</code>了。这个方法很保险，不会删除已经安装的<code>package</code>。</p>
+<hr>
+<h2 id="3-requirements-txt的生成"><a href="#3-requirements-txt的生成" class="headerlink" title="3. requirements.txt的生成"></a>3. <code>requirements.txt</code>的生成</h2><p>默认情况下，使用</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<p>是可以导出一个<code>requirements.txt</code>的，但是这样会把你安装的所有<code>Package</code>都导出，所以不是特别方便。这里还有一种解决方案：<code>pipreqs</code>。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipreqs ./ requirements.txt -<span class="literal">-encoding</span>=utf<span class="literal">-8</span></span><br></pre></td></tr></table></figure>
+<p>先用<code>pip</code>安装<code>pipreqs</code>，然后在项目的根目录下执行这个命令就可以自动扫描项目的依赖了。</p>
+<p>安装依赖的时候，执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="literal">-r</span> requirements.txt</span><br></pre></td></tr></table></figure>
+<p>就可以了。</p>
+<hr>
+<h2 id="4-打包可执行文件"><a href="#4-打包可执行文件" class="headerlink" title="4. 打包可执行文件"></a>4. 打包可执行文件</h2><p>这个需要依赖<code>pyInstaller</code>。用<code>pip</code>安装之后，找到你想要的文件，然后执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller <span class="operator">-F</span> demo.py</span><br></pre></td></tr></table></figure>
+<p>就可以全自动打包。打包之后在<code>dist</code>文件夹里就可以找到打包的文件。</p>
+<hr>
+<h2 id="5-B站爬虫bilili"><a href="#5-B站爬虫bilili" class="headerlink" title="5. B站爬虫bilili"></a>5. B站爬虫<code>bilili</code></h2><p>最后推一个发现的<code>Package</code>：<code>bilili</code>。这是一个B站的爬虫。用法：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bilili &lt;url&gt;</span><br></pre></td></tr></table></figure>
+<p>然后按指引操作就可以免登陆下载到免费视频了。例如：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bilili https://www.bilibili.com/video/BV1GJ411x7h7/</span><br></pre></td></tr></table></figure>
+<p>就可以了。</p>
+<hr>
+<p><strong>THE END</strong>感谢您的阅读~</p>
 
     </div>
 
@@ -508,6 +540,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Pip%E6%8D%A2%E6%BA%90"><span class="nav-text">1. Pip换源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%9D%9E%E7%AE%A1%E7%90%86%E5%91%98%E6%9B%B4%E6%96%B0Pip%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-text">2. 非管理员更新Pip问题解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-requirements-txt%E7%9A%84%E7%94%9F%E6%88%90"><span class="nav-text">3. requirements.txt的生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%89%93%E5%8C%85%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="nav-text">4. 打包可执行文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-B%E7%AB%99%E7%88%AC%E8%99%ABbilili"><span class="nav-text">5. B站爬虫bilili</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -594,13 +627,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">185k</span>
+    <span title="站点总字数">186k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:48</span>
+    <span title="站点阅读时长">2:49</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
