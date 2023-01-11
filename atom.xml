@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-09T03:27:55.495Z</updated>
+  <updated>2023-01-11T01:10:57.288Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -17,34 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python Pip常见问题与Package推荐</title>
-    <link href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/"/>
-    <id>https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/</id>
-    <published>2023-01-09T11:37:26.000Z</published>
-    <updated>2023-01-09T03:27:55.495Z</updated>
+    <title>Chocolatey——Windows上的“APT”</title>
+    <link href="https://guleixibian2009.github.io/2023/01/11/installation-and-usage-of-chocolatey/"/>
+    <id>https://guleixibian2009.github.io/2023/01/11/installation-and-usage-of-chocolatey/</id>
+    <published>2023-01-11T00:36:07.000Z</published>
+    <updated>2023-01-11T01:10:57.288Z</updated>
     
     
-    <summary type="html">&lt;p&gt;从开始自学编程到现在，我接触最多的还是&lt;code&gt;Python&lt;/code&gt;。用&lt;code&gt;Python&lt;/code&gt;就免不了要用到&lt;code&gt;Pip&lt;/code&gt;，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的&lt;code&gt;Package&lt;/code&gt;，也跟大家分享一下。&lt;/p&gt;
-&lt;p&gt;省流：&lt;code&gt;Pip&lt;/code&gt;换源、非管理员升级&lt;code&gt;Pip&lt;/code&gt;失败问题、&lt;code&gt;requirements.txt&lt;/code&gt;的生成、&lt;code&gt;PyInstaller&lt;/code&gt;打包可执行文件；附赠&lt;code&gt;bilili&lt;/code&gt;B站爬虫！&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程中如有问题、造成损失，本人概不负责。&lt;/strong&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;在&lt;code&gt;Ubuntu&lt;/code&gt;平台上，安装软件有一种极其方便的思路——&lt;code&gt;APT&lt;/code&gt;。用命令行管理电脑上安装的软件，既方便，又显得很酷。我就寻思了——&lt;code&gt;Windows&lt;/code&gt;平台上有没有类似的替代软件呢？&lt;/p&gt;
+&lt;p&gt;肯定是有的。这个软件，叫做“巧克力”&lt;code&gt;Chocolatey&lt;/code&gt;。最酷的一点是，它连安装都是一个命令即可。&lt;/p&gt;</summary>
     
     
     
     <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Python" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    <category term="命令行" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     
-    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
+    <category term="软件" scheme="https://guleixibian2009.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="命令行" scheme="https://guleixibian2009.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>【转】科幻小说No.2《艾皮凯克》</title>
-    <link href="https://guleixibian2009.github.io/2023/01/09/science-fiction-2/"/>
-    <id>https://guleixibian2009.github.io/2023/01/09/science-fiction-2/</id>
-    <published>2023-01-09T06:20:02.000Z</published>
-    <updated>2023-01-09T07:36:20.719Z</updated>
+    <link href="https://guleixibian2009.github.io/2023/01/10/science-fiction-2/"/>
+    <id>https://guleixibian2009.github.io/2023/01/10/science-fiction-2/</id>
+    <published>2023-01-10T06:20:02.000Z</published>
+    <updated>2023-01-11T00:33:23.388Z</updated>
     
     
     <summary type="html">&lt;p&gt;这一篇《艾皮凯克》也是我在《读者》上看到的。让机器人拥有人的情感，属实有趣。&lt;/p&gt;</summary>
@@ -78,6 +79,29 @@
     
     
     <category term="科幻" scheme="https://guleixibian2009.github.io/tags/%E7%A7%91%E5%B9%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python Pip常见问题与Package推荐</title>
+    <link href="https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/"/>
+    <id>https://guleixibian2009.github.io/2023/01/09/pip-fun-facts/</id>
+    <published>2023-01-09T02:37:26.000Z</published>
+    <updated>2023-01-11T00:33:43.557Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;从开始自学编程到现在，我接触最多的还是&lt;code&gt;Python&lt;/code&gt;。用&lt;code&gt;Python&lt;/code&gt;就免不了要用到&lt;code&gt;Pip&lt;/code&gt;，在这个过程中我算是踩了三个大坑；与此同时我也找到了几个极其有用的&lt;code&gt;Package&lt;/code&gt;，也跟大家分享一下。&lt;/p&gt;
+&lt;p&gt;省流：&lt;code&gt;Pip&lt;/code&gt;换源、非管理员升级&lt;code&gt;Pip&lt;/code&gt;失败问题、&lt;code&gt;requirements.txt&lt;/code&gt;的生成、&lt;code&gt;PyInstaller&lt;/code&gt;打包可执行文件；附赠&lt;code&gt;bilili&lt;/code&gt;B站爬虫！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：爬虫下载到的视频仅供学习用，千万不可作商用用途，使用过程中如有问题、造成损失，本人概不负责。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    
+    
+    <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
     
   </entry>
   
@@ -196,9 +220,9 @@
     
     <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
-    
     <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
+    
+    <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
@@ -512,27 +536,6 @@
     <category term="Python" scheme="https://guleixibian2009.github.io/tags/Python/"/>
     
     <category term="CSDN" scheme="https://guleixibian2009.github.io/tags/CSDN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>运动会杂记</title>
-    <link href="https://guleixibian2009.github.io/2022/10/22/small-but-shining-ideas-09/"/>
-    <id>https://guleixibian2009.github.io/2022/10/22/small-but-shining-ideas-09/</id>
-    <published>2022-10-22T10:34:31.000Z</published>
-    <updated>2022-11-03T11:08:51.020Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本来以为今天可以写很多，但是鉴于我这么累还是少写点吧。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    <category term="校园" scheme="https://guleixibian2009.github.io/categories/%E9%9A%8F%E7%AC%94/%E6%A0%A1%E5%9B%AD/"/>
-    
-    
-    <category term="随笔" scheme="https://guleixibian2009.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
