@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-11T01:10:57.288Z</updated>
+  <updated>2023-01-13T05:34:37.155Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Chocolatey——Windows上的“APT”</title>
-    <link href="https://guleixibian2009.github.io/2023/01/11/installation-and-usage-of-chocolatey/"/>
-    <id>https://guleixibian2009.github.io/2023/01/11/installation-and-usage-of-chocolatey/</id>
-    <published>2023-01-11T00:36:07.000Z</published>
-    <updated>2023-01-11T01:10:57.288Z</updated>
+    <link href="https://guleixibian2009.github.io/2023/01/12/installation-and-usage-of-chocolatey/"/>
+    <id>https://guleixibian2009.github.io/2023/01/12/installation-and-usage-of-chocolatey/</id>
+    <published>2023-01-12T00:36:07.000Z</published>
+    <updated>2023-01-13T05:34:37.155Z</updated>
     
     
     <summary type="html">&lt;p&gt;在&lt;code&gt;Ubuntu&lt;/code&gt;平台上，安装软件有一种极其方便的思路——&lt;code&gt;APT&lt;/code&gt;。用命令行管理电脑上安装的软件，既方便，又显得很酷。我就寻思了——&lt;code&gt;Windows&lt;/code&gt;平台上有没有类似的替代软件呢？&lt;/p&gt;
@@ -42,10 +42,10 @@
   
   <entry>
     <title>【转】科幻小说No.2《艾皮凯克》</title>
-    <link href="https://guleixibian2009.github.io/2023/01/10/science-fiction-2/"/>
-    <id>https://guleixibian2009.github.io/2023/01/10/science-fiction-2/</id>
-    <published>2023-01-10T06:20:02.000Z</published>
-    <updated>2023-01-11T00:33:23.388Z</updated>
+    <link href="https://guleixibian2009.github.io/2023/01/11/science-fiction-2/"/>
+    <id>https://guleixibian2009.github.io/2023/01/11/science-fiction-2/</id>
+    <published>2023-01-11T06:20:02.000Z</published>
+    <updated>2023-01-13T05:34:13.013Z</updated>
     
     
     <summary type="html">&lt;p&gt;这一篇《艾皮凯克》也是我在《读者》上看到的。让机器人拥有人的情感，属实有趣。&lt;/p&gt;</summary>
@@ -61,10 +61,10 @@
   
   <entry>
     <title>【转】科幻小说No.1 张寒寺-《回答》</title>
-    <link href="https://guleixibian2009.github.io/2023/01/09/science-fiction-1/"/>
-    <id>https://guleixibian2009.github.io/2023/01/09/science-fiction-1/</id>
-    <published>2023-01-09T06:19:50.000Z</published>
-    <updated>2023-01-09T06:26:10.290Z</updated>
+    <link href="https://guleixibian2009.github.io/2023/01/10/science-fiction-1/"/>
+    <id>https://guleixibian2009.github.io/2023/01/10/science-fiction-1/</id>
+    <published>2023-01-10T06:19:50.000Z</published>
+    <updated>2023-01-13T05:34:07.820Z</updated>
     
     
     <summary type="html">&lt;p&gt;这篇文章，我最早在《读者》上看到。后来，我找了更多寒寺的软科幻小说来看。但一切的源头，就是这篇回答。&lt;/p&gt;
@@ -220,9 +220,9 @@
     
     <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
-    
     <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
     
   </entry>
   
@@ -345,13 +345,13 @@
     
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
     
+    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
+    
     <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
     
     <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
     
     <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
-    
-    <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
     
     <category term="JavaScript" scheme="https://guleixibian2009.github.io/tags/JavaScript/"/>
     
