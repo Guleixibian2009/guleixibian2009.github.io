@@ -6,7 +6,7 @@
   <link href="https://guleixibian2009.github.io/atom.xml" rel="self"/>
   
   <link href="https://guleixibian2009.github.io/"/>
-  <updated>2023-01-17T13:17:28.510Z</updated>
+  <updated>2023-01-17T13:19:16.434Z</updated>
   <id>https://guleixibian2009.github.io/</id>
   
   <author>
@@ -21,25 +21,22 @@
     <link href="https://guleixibian2009.github.io/2023/01/17/hmcl-usage/"/>
     <id>https://guleixibian2009.github.io/2023/01/17/hmcl-usage/</id>
     <published>2023-01-17T12:24:57.000Z</published>
-    <updated>2023-01-17T13:17:28.510Z</updated>
+    <updated>2023-01-17T13:19:16.434Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
+    <summary type="html">&lt;p&gt;嗯……鸽了几天之后，我居然决定写一篇关于某游戏某启动器（确切地说，&lt;code&gt;HMCL&lt;/code&gt;）的文章。虽然本人&lt;code&gt;HMCL&lt;/code&gt;和&lt;code&gt;PCL&lt;/code&gt;都用过，但是一开始用的还是朋友发的&lt;code&gt;HMCL&lt;/code&gt;，所以还是用了这一款。&lt;/p&gt;
+&lt;p&gt;总体来说，我个人需要的功能是有的，用起来也比较简单，不过有些地方也可以向&lt;code&gt;PCL&lt;/code&gt;学习。&lt;del&gt;（&lt;code&gt;PCL&lt;/code&gt;党勿喷&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2023/01/17/pS39B4S.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;另外说一句，这个启动器是&lt;code&gt;GitHub&lt;/code&gt;上面依据&lt;code&gt;GPL&lt;/code&gt;协议开源的，地址&lt;a href=&quot;https://github.com/huanghongxun/HMCL/&quot;&gt;在这里&lt;/a&gt;。写作时，最新版本为&lt;code&gt;3.5.3.228&lt;/code&gt;。&lt;/p&gt;</summary>
     
     
     
     <category term="软件" scheme="https://guleixibian2009.github.io/categories/%E8%BD%AF%E4%BB%B6/"/>
     
     
-    <category term="软件" scheme="https://guleixibian2009.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
     <category term="Minecraft" scheme="https://guleixibian2009.github.io/tags/Minecraft/"/>
+    
+    <category term="软件" scheme="https://guleixibian2009.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
@@ -269,9 +266,9 @@
     
     <category term="编程" scheme="https://guleixibian2009.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
-    
     <category term="语法" scheme="https://guleixibian2009.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+    <category term="Markdown" scheme="https://guleixibian2009.github.io/tags/Markdown/"/>
     
   </entry>
   
@@ -394,13 +391,13 @@
     
     <category term="Website" scheme="https://guleixibian2009.github.io/tags/Website/"/>
     
-    <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
-    
     <category term="Frontend" scheme="https://guleixibian2009.github.io/tags/Frontend/"/>
     
-    <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
-    
     <category term="Hexo" scheme="https://guleixibian2009.github.io/tags/Hexo/"/>
+    
+    <category term="CSS" scheme="https://guleixibian2009.github.io/tags/CSS/"/>
+    
+    <category term="HTML" scheme="https://guleixibian2009.github.io/tags/HTML/"/>
     
     <category term="JavaScript" scheme="https://guleixibian2009.github.io/tags/JavaScript/"/>
     
